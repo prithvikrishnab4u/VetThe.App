@@ -1,6 +1,6 @@
 baseURL = 'https://vettheapp.com/'
 languageCode = 'en-us'
 title = 'VetThe.App - SaaS Identity Security Comparison'
-
+dataDir = "../data"
 [params]
   description = 'Community-driven comparison of identity security features across SaaS applications'
