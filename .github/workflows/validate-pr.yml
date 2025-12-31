@@ -1,0 +1,56 @@
+name: Validate App Data
+
+on:
+  pull_request:
+    paths:
+      - "data/apps/*.yaml"
+  push:
+    branches:
+      - main
+    paths:
+      - "data/apps/*.yaml"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install pyyaml
+
+      - name: Run validation
+        run: |
+          python scripts/validate.py
+
+      - name: Comment on PR (if validation fails)
+        if: failure() && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '❌ **Validation failed!**\n\nPlease check the errors above and fix your YAML file.\n\nNeed help? Ask in the comments!'
+            })
+
+      - name: Comment on PR (if validation passes)
+        if: success() && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '✅ **Validation passed!**\n\nYour data looks good. Thank you for contributing!'
+            })

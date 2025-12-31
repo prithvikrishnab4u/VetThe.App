@@ -1,0 +1,107 @@
+# VetThe.App - App Data Schema
+# This file defines the valid structure and values for app YAML files
+
+# Valid values for each field
+categories:
+  - collaboration
+  - productivity
+  - development
+  - sales_marketing
+  - support
+  - design
+  - hr
+  - finance
+  - security
+  - infrastructure
+
+tiers:
+  - free
+  - paid
+  - enterprise
+
+sso_protocols:
+  - SAML
+  - OIDC
+  - OAuth2
+
+scim_support_levels:
+  - full
+  - partial
+  - none
+
+scim_versions:
+  - "2.0"
+  - "1.1"
+
+mfa_types:
+  - TOTP
+  - SMS
+  - Email
+  - WebAuthn
+  - Push
+  - Hardware
+
+mfa_enforcement:
+  - none
+  - optional
+  - admin_enforced
+  - required
+
+# Required fields
+required_fields:
+  root:
+    - name
+    - category
+    - website
+    - description
+  sso:
+    - supported
+    - tier
+  scim:
+    - supported
+    - tier
+  mfa:
+    - supported
+    - tier
+  compliance:
+    - soc2
+    - iso27001
+  meta:
+    - last_verified
+    - ready_to_publish
+
+# Conditional required fields
+conditional_required:
+  # If SSO is supported, protocols must be provided
+  sso_supported:
+    - protocols
+
+  # If SCIM is full or partial, version must be provided
+  scim_supported:
+    - version
+
+  # If MFA is supported, types and enforcement must be provided
+  mfa_supported:
+    - types
+    - enforcement
+
+# Data type requirements
+data_types:
+  name: string
+  category: string
+  website: url
+  description: string
+  sso.supported: boolean
+  sso.tier: string
+  sso.protocols: array
+  scim.supported: string # "full", "partial", or "none"
+  scim.tier: string
+  scim.version: string
+  mfa.supported: boolean
+  mfa.tier: string
+  mfa.types: array
+  mfa.enforcement: string
+  compliance.soc2: boolean
+  compliance.iso27001: boolean
+  meta.last_verified: date # YYYY-MM-DD format
+  meta.ready_to_publish: boolean
