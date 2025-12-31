@@ -1,0 +1,54 @@
+# Hugo
+/site/public/
+/site/resources/_gen/
+/site/.hugo_build.lock
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+
+# Node
+node_modules/
+package-lock.json
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Generated files by hugo
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+
+# Executable may be added to repository
+hugo.exe
+hugo.darwin
+hugo.linux
+
+# Temporary lock file while building
+/.hugo_build.lock
