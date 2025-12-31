@@ -1,21 +1,21 @@
-name: "Google Workspace"
-category: "productivity"
-website: "https://workspace.google.com"
-description: "Cloud-based collaboration and productivity tools including Gmail, Drive, and Docs."
+name: "Atlassian Confluence"
+category: "collaboration"
+website: "https://atlassian.com/software/confluence"
+description: "Web-based corporate wiki and collaboration software for teams."
 
 sso:
   supported: true
-  protocols: ["SAML", "OIDC"]
-  tier: "free"
+  protocols: ["SAML"]
+  tier: "paid"
 
 scim:
   supported: "full"
   version: "2.0"
-  tier: "free"
+  tier: "paid"
 
 mfa:
   supported: true
-  types: ["TOTP", "SMS", "WebAuthn", "Push"]
+  types: ["TOTP", "SMS"]
   enforcement: "admin_enforced"
   tier: "free"
 
@@ -31,7 +31,7 @@ meta:
 # Currently not using session and audit fields, but doing research on these fields.
 session:
   timeout_configurable: true
-  max_duration: "14 days"
+  max_duration: "30 days"
 
 audit:
   logs_available: true

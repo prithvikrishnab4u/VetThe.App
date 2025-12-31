@@ -1,0 +1,268 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VetThe.App - SaaS Identity Security Comparison</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        table {
+            width: 100%;
+            background: white;
+            border-collapse: collapse;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            position: relative;
+            /* CRITICAL: needed for absolute positioning of tooltip */
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .check {
+            color: #27ae60;
+        }
+
+        .cross {
+            color: #e74c3c;
+        }
+
+        .partial {
+            color: #f39c12;
+        }
+
+        .tier {
+            background: #ecf0f1;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            color: #555;
+        }
+
+        .version {
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        /* Guide Section */
+        .guide {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        details {
+            cursor: pointer;
+        }
+
+        summary {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #2c3e50;
+            padding: 10px;
+            user-select: none;
+        }
+
+        summary:hover {
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+
+        .guide-content {
+            padding: 20px 10px 10px 10px;
+        }
+
+        .guide-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            margin-top: 15px;
+        }
+
+        .guide-col h3 {
+            color: #2c3e50;
+            font-size: 1em;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+
+        .guide-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .guide-col li {
+            padding: 8px 0;
+            line-height: 1.5;
+        }
+
+        .guide-col strong {
+            color: #2c3e50;
+        }
+
+        .symbol {
+            display: inline-block;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Column Header Tooltips */
+        th[data-tooltip] {
+            position: relative;
+            cursor: help;
+        }
+
+        .custom-tooltip {
+            position: absolute;
+            background: #2c3e50;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: normal;
+            z-index: 9999;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .custom-tooltip.show {
+            opacity: 1;
+        }
+
+
+        /* Filter Row */
+        .filter-row th {
+            background: #34495e;
+            padding: 8px;
+        }
+
+        .filter-row select {
+            width: 100%;
+            padding: 6px 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+            font-size: 0.85em;
+            cursor: pointer;
+        }
+
+        .filter-row select:hover {
+            border-color: #3498db;
+        }
+
+        .filter-row select:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+
+        /* Hidden rows */
+        tbody tr.hidden {
+            display: none;
+        }
+
+        /* Result counter */
+        .result-info {
+            background: white;
+            padding: 12px 20px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .result-info strong {
+            color: #2c3e50;
+            font-size: 1.1em;
+        }
+
+        .clear-filters-btn {
+            padding: 6px 14px;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .clear-filters-btn:hover {
+            background: #c0392b;
+        }
+
+        @media (max-width: 768px) {
+            .guide-columns {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #666;
+        }
+
+        footer a {
+            color: #3498db;
+            margin: 0 10px;
+        }
+    </style>
+</head>

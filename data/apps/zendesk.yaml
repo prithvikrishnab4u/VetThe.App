@@ -1,7 +1,7 @@
 name: "Zendesk"
 category: "sales_marketing"
 website: "https://zendesk.com"
-description: "Customer service and engagement platform including support ticketing and chat."
+description: "Customer service software and support ticketing system."
 
 sso:
   supported: true

@@ -1,22 +1,22 @@
-name: "Google Workspace"
-category: "productivity"
-website: "https://workspace.google.com"
-description: "Cloud-based collaboration and productivity tools including Gmail, Drive, and Docs."
+name: "Salesforce"
+category: "sales_marketing"
+website: "https://salesforce.com"
+description: "Cloud-based customer relationship management (CRM) platform."
 
 sso:
   supported: true
   protocols: ["SAML", "OIDC"]
-  tier: "free"
+  tier: "paid"
 
 scim:
   supported: "full"
   version: "2.0"
-  tier: "free"
+  tier: "enterprise"
 
 mfa:
   supported: true
   types: ["TOTP", "SMS", "WebAuthn", "Push"]
-  enforcement: "admin_enforced"
+  enforcement: "required"
   tier: "free"
 
 compliance:
@@ -31,7 +31,7 @@ meta:
 # Currently not using session and audit fields, but doing research on these fields.
 session:
   timeout_configurable: true
-  max_duration: "14 days"
+  max_duration: "24 hours"
 
 audit:
   logs_available: true

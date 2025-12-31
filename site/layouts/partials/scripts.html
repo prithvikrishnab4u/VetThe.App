@@ -1,0 +1,197 @@
+<script>
+    // Tooltip functionality
+    (function () {
+        const headers = document.querySelectorAll('th[data-tooltip]');
+        let tooltip = null;
+        let hideTimeout = null;
+        let currentHeader = null;
+
+        headers.forEach(th => {
+            th.addEventListener('mouseenter', (e) => {
+                // Clear any pending hide
+                if (hideTimeout) {
+                    clearTimeout(hideTimeout);
+                    hideTimeout = null;
+                }
+
+                // If tooltip already exists for this header, don't recreate
+                if (currentHeader === th && tooltip) {
+                    return;
+                }
+
+                // Remove old tooltip if exists
+                if (tooltip && tooltip.parentNode) {
+                    tooltip.parentNode.removeChild(tooltip);
+                }
+
+                currentHeader = th;
+
+                // Create tooltip
+                tooltip = document.createElement('div');
+                tooltip.className = 'custom-tooltip';
+                tooltip.textContent = th.getAttribute('data-tooltip');
+                document.body.appendChild(tooltip);
+
+                // Position tooltip above the header
+                const rect = th.getBoundingClientRect();
+                const tooltipRect = tooltip.getBoundingClientRect();
+
+                tooltip.style.left = (rect.left + rect.width / 2 - tooltipRect.width / 2) + 'px';
+                tooltip.style.top = (rect.top - tooltipRect.height - 10) + window.scrollY + 'px';
+
+                // Show with fade-in
+                setTimeout(() => tooltip.classList.add('show'), 10);
+            });
+
+            th.addEventListener('mouseleave', () => {
+                // Add delay before hiding
+                hideTimeout = setTimeout(() => {
+                    if (tooltip) {
+                        tooltip.classList.remove('show');
+                        setTimeout(() => {
+                            if (tooltip && tooltip.parentNode) {
+                                tooltip.parentNode.removeChild(tooltip);
+                            }
+                            tooltip = null;
+                            currentHeader = null;
+                        }, 200);
+                    }
+                }, 100); // 100ms delay before hiding
+            });
+        });
+    })();
+
+    // Excel-style column filtering
+    (function () {
+        const table = document.getElementById('appsTable');
+        const tbody = table.querySelector('tbody');
+        const rows = Array.from(tbody.querySelectorAll('tr'));
+        const resultCount = document.getElementById('resultCount');
+        const clearBtn = document.getElementById('clearFilters');
+
+        // Filter elements
+        const filters = {
+            app: document.getElementById('filterApp'),
+            category: document.getElementById('filterCategory'),
+            sso: document.getElementById('filterSSO'),
+            ssoProtocols: document.getElementById('filterSSOProtocols'),
+            scim: document.getElementById('filterSCIM'),
+            mfa: document.getElementById('filterMFA'),
+            mfaTypes: document.getElementById('filterMFATypes'),
+            compliance: document.getElementById('filterCompliance'),
+            verified: document.getElementById('filterVerified')
+        };
+
+        // Populate filter dropdowns with unique values
+        function populateFilters() {
+            const values = {
+                app: new Set(),
+                category: new Set(),
+                sso: new Set(),
+                ssoProtocols: new Set(),
+                scim: new Set(),
+                mfa: new Set(),
+                mfaTypes: new Set(),
+                compliance: new Set(),
+                verified: new Set()
+            };
+
+            rows.forEach(row => {
+                const cells = row.cells;
+                values.app.add(cells[0].getAttribute('data-app'));
+                values.category.add(cells[1].getAttribute('data-category'));
+                values.sso.add(cells[2].getAttribute('data-sso'));
+
+                // SSO Protocols
+                const protocols = cells[3].getAttribute('data-sso-protocols').split(',');
+                protocols.forEach(p => p.trim() && values.ssoProtocols.add(p.trim()));
+
+                values.scim.add(cells[4].getAttribute('data-scim'));
+                values.mfa.add(cells[5].getAttribute('data-mfa'));
+
+                // MFA Types
+                const mfaTypes = cells[6].getAttribute('data-mfa-types').split(',');
+                mfaTypes.forEach(t => t.trim() && values.mfaTypes.add(t.trim()));
+
+                // Compliance
+                const comp = cells[7].getAttribute('data-compliance').split(',');
+                comp.forEach(c => c.trim() && values.compliance.add(c.trim()));
+
+                values.verified.add(cells[8].getAttribute('data-verified'));
+            });
+
+            // Populate dropdowns
+            Object.keys(values).forEach(key => {
+                const select = filters[key];
+                const sorted = Array.from(values[key]).filter(v => v && v !== 'none').sort();
+                sorted.forEach(value => {
+                    const option = document.createElement('option');
+                    option.value = value;
+                    option.textContent = value.charAt(0).toUpperCase() + value.slice(1);
+                    select.appendChild(option);
+                });
+            });
+        }
+
+        // Apply all filters
+        function applyFilters() {
+            let visibleCount = 0;
+
+            rows.forEach(row => {
+                const cells = row.cells;
+                let show = true;
+
+                // Check each filter
+                if (filters.app.value && cells[0].getAttribute('data-app') !== filters.app.value) show = false;
+                if (filters.category.value && cells[1].getAttribute('data-category') !== filters.category.value) show = false;
+                if (filters.sso.value && cells[2].getAttribute('data-sso') !== filters.sso.value) show = false;
+
+                if (filters.ssoProtocols.value) {
+                    const protocols = cells[3].getAttribute('data-sso-protocols').split(',');
+                    if (!protocols.some(p => p.trim() === filters.ssoProtocols.value)) show = false;
+                }
+
+                if (filters.scim.value && cells[4].getAttribute('data-scim') !== filters.scim.value) show = false;
+                if (filters.mfa.value && cells[5].getAttribute('data-mfa') !== filters.mfa.value) show = false;
+
+                if (filters.mfaTypes.value) {
+                    const types = cells[6].getAttribute('data-mfa-types').split(',');
+                    if (!types.some(t => t.trim() === filters.mfaTypes.value)) show = false;
+                }
+
+                if (filters.compliance.value) {
+                    const comp = cells[7].getAttribute('data-compliance').split(',');
+                    if (!comp.some(c => c.trim() === filters.compliance.value)) show = false;
+                }
+
+                if (filters.verified.value && cells[8].getAttribute('data-verified') !== filters.verified.value) show = false;
+
+                // Show/hide row
+                if (show) {
+                    row.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    row.classList.add('hidden');
+                }
+            });
+
+            resultCount.textContent = visibleCount;
+        }
+
+        // Clear all filters
+        function clearFilters() {
+            Object.values(filters).forEach(select => select.value = '');
+            applyFilters();
+        }
+
+        // Add event listeners
+        Object.values(filters).forEach(select => {
+            select.addEventListener('change', applyFilters);
+        });
+        clearBtn.addEventListener('click', clearFilters);
+
+        // Initialize
+        populateFilters();
+        applyFilters();
+    })();
+</script>

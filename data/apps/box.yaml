@@ -1,21 +1,21 @@
-name: "Google Workspace"
-category: "productivity"
-website: "https://workspace.google.com"
-description: "Cloud-based collaboration and productivity tools including Gmail, Drive, and Docs."
+name: "Box"
+category: "collaboration"
+website: "https://box.com"
+description: "Cloud content management and file sharing service for businesses."
 
 sso:
   supported: true
-  protocols: ["SAML", "OIDC"]
-  tier: "free"
+  protocols: ["SAML"]
+  tier: "paid"
 
 scim:
   supported: "full"
   version: "2.0"
-  tier: "free"
+  tier: "paid"
 
 mfa:
   supported: true
-  types: ["TOTP", "SMS", "WebAuthn", "Push"]
+  types: ["TOTP", "SMS"]
   enforcement: "admin_enforced"
   tier: "free"
 
@@ -31,9 +31,9 @@ meta:
 # Currently not using session and audit fields, but doing research on these fields.
 session:
   timeout_configurable: true
-  max_duration: "14 days"
+  max_duration: "Configurable"
 
 audit:
   logs_available: true
-  retention_period: "180 days"
+  retention_period: "Unlimited"
   tier: "paid"
