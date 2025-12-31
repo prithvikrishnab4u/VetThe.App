@@ -24,7 +24,7 @@ compliance:
   iso27001: true
 
 meta:
-  last_verified: "2025-12-31"
+  last_verified: "2026-01-01"
   ready_to_publish: true
 
 # Unused fields - tracked but not displayed in main table
