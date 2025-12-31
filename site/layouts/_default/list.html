@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VetThe.App - SaaS Identity Security Comparison</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        table {
+            width: 100%;
+            background: white;
+            border-collapse: collapse;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .check {
+            color: #27ae60;
+        }
+
+        .cross {
+            color: #e74c3c;
+        }
+
+        .partial {
+            color: #f39c12;
+        }
+
+        .tier {
+            background: #ecf0f1;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            color: #555;
+        }
+
+        .version {
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        /* Guide Section */
+        .guide {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        details {
+            cursor: pointer;
+        }
+
+        summary {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #2c3e50;
+            padding: 10px;
+            user-select: none;
+        }
+
+        summary:hover {
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+
+        .guide-content {
+            padding: 20px 10px 10px 10px;
+        }
+
+        .guide-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            margin-top: 15px;
+        }
+
+        .guide-col h3 {
+            color: #2c3e50;
+            font-size: 1em;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+
+        .guide-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .guide-col li {
+            padding: 8px 0;
+            line-height: 1.5;
+        }
+
+        .guide-col strong {
+            color: #2c3e50;
+        }
+
+        .symbol {
+            display: inline-block;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Tooltip for column headers */
+        th {
+            position: relative;
+        }
+
+        th[data-tooltip] {
+            cursor: help;
+        }
+
+        th[data-tooltip]:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: -45px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2c3e50;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            white-space: nowrap;
+            font-size: 0.85em;
+            font-weight: normal;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            pointer-events: none;
+        }
+
+        th[data-tooltip]:hover::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-bottom-color: #2c3e50;
+            z-index: 100;
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .guide-columns {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #666;
+        }
+
+        footer a {
+            color: #3498db;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>VetThe.App</h1>
+    <p class="subtitle">Community-driven comparison of identity security features across SaaS applications</p>
+
+    <div class="guide">
+        <details>
+            <summary>📖 How to Read This Table (click to expand)</summary>
+            <div class="guide-content">
+                <div class="guide-columns">
+                    <div class="guide-col">
+                        <h3>Columns Explained</h3>
+                        <ul>
+                            <li><strong>SSO:</strong> Single Sign-On support and which tier it's available on</li>
+                            <li><strong>SSO Protocols:</strong> Which authentication protocols are supported (SAML,
+                                OIDC, OAuth2)</li>
+                            <li><strong>SCIM:</strong> Automated user provisioning support level and version</li>
+                            <li><strong>MFA:</strong> Multi-factor authentication availability and how it can be
+                                enforced</li>
+                            <li><strong>MFA Types:</strong> Which MFA methods are supported (TOTP, SMS, WebAuthn, etc.)
+                            </li>
+                            <li><strong>Compliance:</strong> Security certifications (we only track SOC 2 and ISO 27001)
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="guide-col">
+                        <h3>Tier Meanings</h3>
+                        <p style="margin-bottom: 10px; font-size: 0.9em; color: #555;"><strong>The tier indicates the
+                                MINIMUM plan level where the feature is available.</strong></p>
+                        <ul>
+                            <li><strong>free:</strong> Available on free tier without payment</li>
+                            <li><strong>paid:</strong> Available on any paid plan (Pro, Business, Team, etc.) but not
+                                enterprise-only</li>
+                            <li><strong>enterprise:</strong> Only available on the highest tier, usually requires
+                                contacting sales</li>
+                        </ul>
+                        <h3 style="margin-top: 20px;">SCIM Support Levels</h3>
+                        <ul>
+                            <li><strong>✓ Full:</strong> Complete SCIM 2.0 implementation</li>
+                            <li><strong>~ Partial:</strong> Limited SCIM features or read-only</li>
+                            <li><strong>✗ None:</strong> No SCIM support available</li>
+                        </ul>
+                    </div>
+
+                    <div class="guide-col">
+                        <h3>Symbols Used</h3>
+                        <ul>
+                            <li><span class="symbol check">✓</span> Feature is available</li>
+                            <li><span class="symbol cross">✗</span> Feature is not available</li>
+                            <li><span class="symbol partial">~</span> Partial or limited support</li>
+                            <li><span class="symbol">—</span> Not applicable</li>
+                        </ul>
+                        <h3 style="margin-top: 20px;">MFA Enforcement</h3>
+                        <ul>
+                            <li><strong>Admin enforced:</strong> Administrators can require MFA for all users</li>
+                            <li><strong>Optional:</strong> Users can enable MFA but it's not required</li>
+                            <li><strong>Required:</strong> MFA is always mandatory for all users</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </details>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th data-tooltip="Application name">App</th>
+                <th data-tooltip="App category (collaboration, productivity, etc.)">Category</th>
+                <th data-tooltip="Single Sign-On support and pricing tier">SSO</th>
+                <th data-tooltip="Authentication protocols supported (SAML, OIDC, OAuth2)">SSO Protocols</th>
+                <th data-tooltip="User provisioning: ✓=Full, ~=Partial, ✗=None">SCIM</th>
+                <th data-tooltip="Multi-factor authentication support and enforcement policy">MFA</th>
+                <th data-tooltip="MFA methods available (TOTP, SMS, WebAuthn, etc.)">MFA Types</th>
+                <th data-tooltip="Security certifications: SOC 2 and ISO 27001 only">Compliance</th>
+                <th data-tooltip="Date when this data was last verified">Last Verified</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ range $.Site.Data.apps }}
+            <tr>
+                <!-- App Name -->
+                <td><a href="{{ .website }}" target="_blank" rel="noopener">{{ .name }}</a></td>
+
+                <!-- Category -->
+                <td style="text-transform: capitalize;">{{ .category }}</td>
+
+                <!-- SSO -->
+                <td>
+                    {{ if .sso.supported }}
+                    <span class="check">✓</span>
+                    <span class="tier">{{ .sso.tier }}</span>
+                    {{ else }}
+                    <span class="cross">✗</span>
+                    {{ end }}
+                </td>
+
+                <!-- SSO Protocols -->
+                <td>
+                    {{ if .sso.supported }}
+                    {{ delimit .sso.protocols ", " }}
+                    {{ else }}
+                    <span class="cross">—</span>
+                    {{ end }}
+                </td>
+
+                <!-- SCIM -->
+                <td>
+                    {{ if eq .scim.supported "full" }}
+                    <span class="check">✓</span>
+                    <span class="tier">{{ .scim.tier }}</span>
+                    {{ else if eq .scim.supported "partial" }}
+                    <span class="partial">~</span>
+                    <span class="tier">{{ .scim.tier }}</span>
+                    {{ else if eq .scim.supported true }}
+                    <span class="check">✓</span>
+                    <span class="tier">{{ .scim.tier }}</span>
+                    {{ else }}
+                    <span class="cross">✗</span>
+                    {{ end }}
+                </td>
+
+                <!-- MFA -->
+                <td>
+                    {{ if .mfa.supported }}
+                    <span class="check">✓</span>
+                    {{ if eq .mfa.enforcement "admin_enforced" }}
+                    Admin enforced
+                    {{ else if eq .mfa.enforcement "optional" }}
+                    Optional
+                    {{ else if eq .mfa.enforcement "required" }}
+                    Required
+                    {{ else }}
+                    {{ .mfa.enforcement }}
+                    {{ end }}
+                    {{ else }}
+                    <span class="cross">✗</span>
+                    {{ end }}
+                </td>
+
+                <!-- MFA Types -->
+                <td>
+                    {{ if .mfa.supported }}
+                    {{ delimit .mfa.types ", " }}
+                    {{ else }}
+                    <span class="cross">—</span>
+                    {{ end }}
+                </td>
+
+                <!-- Compliance -->
+                <td>
+                    {{ if .compliance.soc2 }}<span title="SOC 2">SOC2</span>{{ end }}{{ if and .compliance.soc2
+                    .compliance.iso27001 }}, {{ end }}{{ if .compliance.iso27001 }}<span
+                        title="ISO 27001">ISO27001</span>{{ end }}
+                    {{ if and (not .compliance.soc2) (not .compliance.iso27001) }}<span class="cross">—</span>{{ end }}
+                </td>
+
+                <!-- Last Verified -->
+                <td>{{ .meta.last_verified }}</td>
+            </tr>
+            {{ end }}
+        </tbody>
+    </table>
+    </div>
+
+    <footer>
+        <p>
+            <strong>{{ len $.Site.Data.apps }}</strong> apps tracked |
+            Last updated: {{ now.Format "2006-01-02" }}
+        </p>
+        <p>
+            <a href="https://github.com/prithvikrishnab4u/VetThe.App" target="_blank" rel="noopener">Contribute on
+                GitHub</a> |
+            <a href="https://github.com/prithvikrishnab4u/VetThe.App/issues/new" target="_blank" rel="noopener">Report
+                an Issue</a>
+        </p>
+    </footer>
+    </div>
+</body>
+
+</html>

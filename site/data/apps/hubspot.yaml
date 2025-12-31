@@ -1,0 +1,39 @@
+name: "HubSpot"
+category: "sales_marketing"
+website: "https://hubspot.com"
+description: "Customer platform with software for marketing, sales, content management, and service."
+
+sso:
+  supported: true
+  protocols: ["SAML"]
+  tier: "enterprise"
+
+scim:
+  supported: "full"
+  version: "2.0"
+  tier: "enterprise"
+
+mfa:
+  supported: true
+  types: ["TOTP", "SMS", "Email", "Push"]
+  enforcement: "admin_enforced"
+  tier: "enterprise"
+
+compliance:
+  soc2: true
+  iso27001: false
+
+meta:
+  last_verified: "2025-12-31"
+  ready_to_publish: true
+
+# Unused fields - tracked but not displayed in main table
+# Currently not using session and audit fields, but doing research on these fields.
+session:
+  timeout_configurable: true
+  max_duration: "24 hours"
+
+audit:
+  logs_available: true
+  retention_period: "365 days"
+  tier: "enterprise"

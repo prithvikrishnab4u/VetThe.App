@@ -1,0 +1,39 @@
+name: "Linear"
+category: "development"
+website: "https://linear.app"
+description: "Project management tool for high-performance software teams."
+
+sso:
+  supported: true
+  protocols: ["SAML"]
+  tier: "paid"
+
+scim:
+  supported: "full"
+  version: "2.0"
+  tier: "enterprise"
+
+mfa:
+  supported: true
+  types: ["TOTP", "SMS"]
+  enforcement: "admin_enforced"
+  tier: "free"
+
+compliance:
+  soc2: true
+  iso27001: true
+
+meta:
+  last_verified: "2025-12-31"
+  ready_to_publish: true
+
+# Unused fields - tracked but not displayed in main table
+# Currently not using session and audit fields, but doing research on these fields.
+session:
+  timeout_configurable: true
+  max_duration: "Configurable"
+
+audit:
+  logs_available: true
+  retention_period: "Indefinite"
+  tier: "enterprise"
