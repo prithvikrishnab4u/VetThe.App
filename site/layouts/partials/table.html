@@ -1,22 +1,38 @@
-<!-- Result counter and clear filters -->
+<!-- Search and export controls -->
 <div class="result-info">
-    <div>Showing <strong id="resultCount">0</strong> apps</div>
-    <button id="clearFilters" class="clear-filters-btn">Clear All Filters</button>
+    <div style="display: flex; gap: 15px; align-items: center;">
+        <input type="text" id="searchInput" placeholder="Search apps..."
+            style="padding: 8px 12px; border: 1px solid #ddd; border-radius: 4px; width: 250px; font-size: 0.9em;" />
+        <div>Showing <strong id="resultCount">0</strong> apps</div>
+    </div>
+    <div style="display: flex; gap: 10px;">
+        <button id="exportCSV" class="export-btn">Export to CSV</button>
+        <button id="clearFilters" class="clear-filters-btn">Clear All Filters</button>
+    </div>
 </div>
 
 <table id="appsTable">
     <thead>
         <!-- Row 1: Column names with tooltips -->
         <tr>
-            <th data-tooltip="Application name">App</th>
-            <th data-tooltip="App category (Collaboration, Productivity, Development, Sales)">Category</th>
-            <th data-tooltip="Does this app support SSO? Shows checkmark and minimum tier needed">SSO</th>
-            <th data-tooltip="Which SSO protocols does this app support?">SSO Protocols</th>
-            <th data-tooltip="Does this app support automated user provisioning via SCIM?">SCIM</th>
-            <th data-tooltip="Does this app support MFA? Shows how it can be enforced">MFA</th>
-            <th data-tooltip="Which MFA methods does this app support?">MFA Types</th>
-            <th data-tooltip="Which security certifications does this app have?">Compliance</th>
-            <th data-tooltip="When we last verified this information">Last Verified</th>
+            <th data-tooltip="Application name"><span class="header-text">App</span><span class="sort-arrows">⇅</span>
+            </th>
+            <th data-tooltip="App category (Collaboration, Productivity, Development, Sales)"><span
+                    class="header-text">Category</span><span class="sort-arrows">⇅</span></th>
+            <th data-tooltip="Does this app support SSO? Shows checkmark and minimum tier needed"><span
+                    class="header-text">SSO</span><span class="sort-arrows">⇅</span></th>
+            <th data-tooltip="Which SSO protocols does this app support?"><span class="header-text">SSO
+                    Protocols</span><span class="sort-arrows">⇅</span></th>
+            <th data-tooltip="Does this app support automated user provisioning via SCIM?"><span
+                    class="header-text">SCIM</span><span class="sort-arrows">⇅</span></th>
+            <th data-tooltip="Does this app support MFA? Shows how it can be enforced"><span
+                    class="header-text">MFA</span><span class="sort-arrows">⇅</span></th>
+            <th data-tooltip="Which MFA methods does this app support?"><span class="header-text">MFA Types</span><span
+                    class="sort-arrows">⇅</span></th>
+            <th data-tooltip="Which security certifications does this app have?"><span
+                    class="header-text">Compliance</span><span class="sort-arrows">⇅</span></th>
+            <th data-tooltip="When we last verified this information"><span class="header-text">Last
+                    Verified</span><span class="sort-arrows">⇅</span></th>
         </tr>
 
         <!-- Row 2: Filter dropdowns -->
@@ -24,27 +40,39 @@
             <th><select id="filterApp">
                     <option value="">All</option>
                 </select></th>
-            <th><select id="filterCategory">
-                    <option value="">All</option>
-                </select></th>
+            <th>
+                <div class="multi-select" id="filterCategory">
+                    <div class="multi-select-display empty"></div>
+                    <div class="multi-select-dropdown"></div>
+                </div>
+            </th>
             <th><select id="filterSSO">
                     <option value="">All</option>
                 </select></th>
-            <th><select id="filterSSOProtocols">
-                    <option value="">All</option>
-                </select></th>
+            <th>
+                <div class="multi-select" id="filterSSOProtocols">
+                    <div class="multi-select-display empty"></div>
+                    <div class="multi-select-dropdown"></div>
+                </div>
+            </th>
             <th><select id="filterSCIM">
                     <option value="">All</option>
                 </select></th>
             <th><select id="filterMFA">
                     <option value="">All</option>
                 </select></th>
-            <th><select id="filterMFATypes">
-                    <option value="">All</option>
-                </select></th>
-            <th><select id="filterCompliance">
-                    <option value="">All</option>
-                </select></th>
+            <th>
+                <div class="multi-select" id="filterMFATypes">
+                    <div class="multi-select-display empty"></div>
+                    <div class="multi-select-dropdown"></div>
+                </div>
+            </th>
+            <th>
+                <div class="multi-select" id="filterCompliance">
+                    <div class="multi-select-display empty"></div>
+                    <div class="multi-select-dropdown"></div>
+                </div>
+            </th>
             <th><select id="filterVerified">
                     <option value="">All</option>
                 </select></th>
@@ -82,13 +110,13 @@
             <td data-scim="{{ .scim.supported }}">
                 {{ if eq .scim.supported "full" }}
                 <span class="check">✓</span>
-                <span class="tier">{{ .scim.tier }}</span>
+                <span class="tier">{{ .scim.tier }}</span> <span class="version">{{ .scim.version }}</span>
                 {{ else if eq .scim.supported "partial" }}
                 <span class="partial">~</span>
-                <span class="tier">{{ .scim.tier }}</span>
+                <span class="tier">{{ .scim.tier }}</span> <span class="version">{{ .scim.version }}</span>
                 {{ else if eq .scim.supported true }}
                 <span class="check">✓</span>
-                <span class="tier">{{ .scim.tier }}</span>
+                <span class="tier">{{ .scim.tier }}</span> <span class="version">{{ .scim.version }}</span>
                 {{ else }}
                 <span class="cross">✗</span>
                 {{ end }}

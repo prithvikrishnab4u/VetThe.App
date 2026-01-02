@@ -21,13 +21,24 @@
             margin-bottom: 20px;
         }
 
-        .note {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 12px 15px;
+        .intro {
+            background: white;
+            padding: 20px;
             margin-bottom: 20px;
-            border-radius: 4px;
-            font-size: 0.9em;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            line-height: 1.6;
+        }
+
+        .intro h2 {
+            margin-top: 0;
+            color: #2c3e50;
+            font-size: 1.3em;
+        }
+
+        .intro p {
+            margin: 10px 0;
+            color: #555;
         }
 
         table {
@@ -46,7 +57,22 @@
             text-align: left;
             font-weight: 600;
             position: relative;
-            /* CRITICAL: needed for absolute positioning of tooltip */
+            cursor: pointer;
+        }
+
+        th:hover {
+            background: #34495e;
+        }
+
+        th .sort-arrows {
+            font-size: 0.7em;
+            margin-left: 4px;
+            opacity: 0.3;
+            color: #ecf0f1;
+        }
+
+        th .sort-arrows.active {
+            opacity: 1;
         }
 
         td {
@@ -160,7 +186,6 @@
         /* Column Header Tooltips */
         th[data-tooltip] {
             position: relative;
-            cursor: help;
         }
 
         .custom-tooltip {
@@ -183,13 +208,13 @@
             opacity: 1;
         }
 
-
         /* Filter Row */
         .filter-row th {
             background: #34495e;
             padding: 8px;
         }
 
+        /* Standard select dropdowns */
         .filter-row select {
             width: 100%;
             padding: 6px 8px;
@@ -198,6 +223,8 @@
             background: white;
             font-size: 0.85em;
             cursor: pointer;
+            box-sizing: border-box;
+            height: 32px;
         }
 
         .filter-row select:hover {
@@ -208,6 +235,92 @@
             outline: none;
             border-color: #3498db;
             box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+
+        /* Multi-select dropdown */
+        .multi-select {
+            position: relative;
+            width: 100%;
+        }
+
+        .multi-select-display {
+            padding: 6px 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+            cursor: pointer;
+            font-size: 0.85em;
+            min-height: 20px;
+            height: 32px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 4px;
+            overflow: hidden;
+        }
+
+        .multi-select-display:hover {
+            border-color: #3498db;
+        }
+
+        .multi-select-display.empty::before {
+            content: 'All';
+            color: #999;
+        }
+
+        .multi-select-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-top: 4px;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .multi-select-dropdown.open {
+            display: block;
+        }
+
+        .multi-select-option {
+            padding: 8px 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85em;
+            user-select: none;
+        }
+
+        .multi-select-option:hover {
+            background: #f8f9fa;
+        }
+
+        .multi-select-option input[type="checkbox"] {
+            cursor: pointer;
+            margin: 0;
+        }
+
+        .multi-select-option label {
+            flex: 1;
+            margin: 0;
+        }
+
+        .multi-select-tag {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.75em;
+            white-space: nowrap;
         }
 
         /* Hidden rows */
@@ -245,6 +358,21 @@
 
         .clear-filters-btn:hover {
             background: #c0392b;
+        }
+
+        .export-btn {
+            padding: 6px 14px;
+            background: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .export-btn:hover {
+            background: #229954;
         }
 
         @media (max-width: 768px) {

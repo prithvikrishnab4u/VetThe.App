@@ -8,43 +8,36 @@
 
         headers.forEach(th => {
             th.addEventListener('mouseenter', (e) => {
-                // Clear any pending hide
                 if (hideTimeout) {
                     clearTimeout(hideTimeout);
                     hideTimeout = null;
                 }
 
-                // If tooltip already exists for this header, don't recreate
                 if (currentHeader === th && tooltip) {
                     return;
                 }
 
-                // Remove old tooltip if exists
                 if (tooltip && tooltip.parentNode) {
                     tooltip.parentNode.removeChild(tooltip);
                 }
 
                 currentHeader = th;
 
-                // Create tooltip
                 tooltip = document.createElement('div');
                 tooltip.className = 'custom-tooltip';
                 tooltip.textContent = th.getAttribute('data-tooltip');
                 document.body.appendChild(tooltip);
 
-                // Position tooltip above the header
                 const rect = th.getBoundingClientRect();
                 const tooltipRect = tooltip.getBoundingClientRect();
 
                 tooltip.style.left = (rect.left + rect.width / 2 - tooltipRect.width / 2) + 'px';
                 tooltip.style.top = (rect.top - tooltipRect.height - 10) + window.scrollY + 'px';
 
-                // Show with fade-in
                 setTimeout(() => tooltip.classList.add('show'), 10);
             });
 
             th.addEventListener('mouseleave', () => {
-                // Add delay before hiding
                 hideTimeout = setTimeout(() => {
                     if (tooltip) {
                         tooltip.classList.remove('show');
@@ -56,31 +49,136 @@
                             currentHeader = null;
                         }, 200);
                     }
-                }, 100); // 100ms delay before hiding
+                }, 100);
             });
         });
     })();
 
-    // Excel-style column filtering
+    // Multi-select dropdown component
+    class MultiSelect {
+        constructor(element, onChange) {
+            this.element = element;
+            this.onChange = onChange;
+            this.selected = new Set();
+            this.display = element.querySelector('.multi-select-display');
+            this.dropdown = element.querySelector('.multi-select-dropdown');
+            this.options = [];
+
+            this.display.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.toggle();
+            });
+
+            document.addEventListener('click', () => {
+                this.close();
+            });
+        }
+
+        setOptions(options) {
+            this.options = options;
+            this.dropdown.innerHTML = '';
+            options.forEach(opt => {
+                const div = document.createElement('div');
+                div.className = 'multi-select-option';
+
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.value = opt;
+                checkbox.checked = this.selected.has(opt);
+                checkbox.id = 'ms-' + this.element.id + '-' + opt;
+
+                const label = document.createElement('label');
+                label.htmlFor = checkbox.id;
+                label.textContent = opt.charAt(0).toUpperCase() + opt.slice(1);
+                label.style.cursor = 'pointer';
+                label.style.userSelect = 'none';
+
+                div.appendChild(checkbox);
+                div.appendChild(label);
+
+                checkbox.addEventListener('change', (e) => {
+                    e.stopPropagation();
+                    this.toggleOption(opt, checkbox.checked);
+                });
+
+                this.dropdown.appendChild(div);
+            });
+        }
+
+        toggleOption(value, checked) {
+            if (checked) {
+                this.selected.add(value);
+            } else {
+                this.selected.delete(value);
+            }
+            this.updateDisplay();
+            this.onChange();
+        }
+
+        updateDisplay() {
+            this.display.innerHTML = '';
+            if (this.selected.size === 0) {
+                this.display.classList.add('empty');
+            } else {
+                this.display.classList.remove('empty');
+                this.selected.forEach(val => {
+                    const tag = document.createElement('span');
+                    tag.className = 'multi-select-tag';
+                    tag.textContent = val.charAt(0).toUpperCase() + val.slice(1);
+                    this.display.appendChild(tag);
+                });
+            }
+        }
+
+        toggle() {
+            this.dropdown.classList.toggle('open');
+        }
+
+        close() {
+            this.dropdown.classList.remove('open');
+        }
+
+        clear() {
+            this.selected.clear();
+            this.dropdown.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+            this.updateDisplay();
+        }
+
+        getSelected() {
+            return this.selected;
+        }
+    }
+
+    // Enhanced filtering with multi-value support and sorting
     (function () {
         const table = document.getElementById('appsTable');
         const tbody = table.querySelector('tbody');
         const rows = Array.from(tbody.querySelectorAll('tr'));
         const resultCount = document.getElementById('resultCount');
         const clearBtn = document.getElementById('clearFilters');
+        const searchInput = document.getElementById('searchInput');
+        const exportBtn = document.getElementById('exportCSV');
 
-        // Filter elements
-        const filters = {
+        // Single-select filters
+        const singleFilters = {
             app: document.getElementById('filterApp'),
-            category: document.getElementById('filterCategory'),
             sso: document.getElementById('filterSSO'),
-            ssoProtocols: document.getElementById('filterSSOProtocols'),
             scim: document.getElementById('filterSCIM'),
             mfa: document.getElementById('filterMFA'),
-            mfaTypes: document.getElementById('filterMFATypes'),
-            compliance: document.getElementById('filterCompliance'),
             verified: document.getElementById('filterVerified')
         };
+
+        // Multi-select filters
+        const multiFilters = {
+            category: new MultiSelect(document.getElementById('filterCategory'), applyFilters),
+            ssoProtocols: new MultiSelect(document.getElementById('filterSSOProtocols'), applyFilters),
+            mfaTypes: new MultiSelect(document.getElementById('filterMFATypes'), applyFilters),
+            compliance: new MultiSelect(document.getElementById('filterCompliance'), applyFilters)
+        };
+
+        // Sorting state
+        let sortColumn = null;
+        let sortDirection = 'asc';
 
         // Populate filter dropdowns with unique values
         function populateFilters() {
@@ -102,27 +200,24 @@
                 values.category.add(cells[1].getAttribute('data-category'));
                 values.sso.add(cells[2].getAttribute('data-sso'));
 
-                // SSO Protocols
                 const protocols = cells[3].getAttribute('data-sso-protocols').split(',');
                 protocols.forEach(p => p.trim() && values.ssoProtocols.add(p.trim()));
 
                 values.scim.add(cells[4].getAttribute('data-scim'));
                 values.mfa.add(cells[5].getAttribute('data-mfa'));
 
-                // MFA Types
                 const mfaTypes = cells[6].getAttribute('data-mfa-types').split(',');
                 mfaTypes.forEach(t => t.trim() && values.mfaTypes.add(t.trim()));
 
-                // Compliance
                 const comp = cells[7].getAttribute('data-compliance').split(',');
                 comp.forEach(c => c.trim() && values.compliance.add(c.trim()));
 
                 values.verified.add(cells[8].getAttribute('data-verified'));
             });
 
-            // Populate dropdowns
-            Object.keys(values).forEach(key => {
-                const select = filters[key];
+            // Populate single-select dropdowns
+            Object.keys(singleFilters).forEach(key => {
+                const select = singleFilters[key];
                 const sorted = Array.from(values[key]).filter(v => v && v !== 'none').sort();
                 sorted.forEach(value => {
                     const option = document.createElement('option');
@@ -131,40 +226,60 @@
                     select.appendChild(option);
                 });
             });
+
+            // Populate multi-select dropdowns
+            multiFilters.category.setOptions(Array.from(values.category).filter(v => v).sort());
+            multiFilters.ssoProtocols.setOptions(Array.from(values.ssoProtocols).filter(v => v).sort());
+            multiFilters.mfaTypes.setOptions(Array.from(values.mfaTypes).filter(v => v).sort());
+            multiFilters.compliance.setOptions(Array.from(values.compliance).filter(v => v).sort());
         }
 
         // Apply all filters
         function applyFilters() {
             let visibleCount = 0;
+            const searchTerm = searchInput.value.toLowerCase();
 
             rows.forEach(row => {
                 const cells = row.cells;
                 let show = true;
 
-                // Check each filter
-                if (filters.app.value && cells[0].getAttribute('data-app') !== filters.app.value) show = false;
-                if (filters.category.value && cells[1].getAttribute('data-category') !== filters.category.value) show = false;
-                if (filters.sso.value && cells[2].getAttribute('data-sso') !== filters.sso.value) show = false;
-
-                if (filters.ssoProtocols.value) {
-                    const protocols = cells[3].getAttribute('data-sso-protocols').split(',');
-                    if (!protocols.some(p => p.trim() === filters.ssoProtocols.value)) show = false;
+                // Search filter
+                if (searchTerm) {
+                    const appName = cells[0].textContent.toLowerCase();
+                    if (!appName.includes(searchTerm)) show = false;
                 }
 
-                if (filters.scim.value && cells[4].getAttribute('data-scim') !== filters.scim.value) show = false;
-                if (filters.mfa.value && cells[5].getAttribute('data-mfa') !== filters.mfa.value) show = false;
+                // Single-select filters
+                if (singleFilters.app.value && cells[0].getAttribute('data-app') !== singleFilters.app.value) show = false;
+                if (singleFilters.sso.value && cells[2].getAttribute('data-sso') !== singleFilters.sso.value) show = false;
+                if (singleFilters.scim.value && cells[4].getAttribute('data-scim') !== singleFilters.scim.value) show = false;
+                if (singleFilters.mfa.value && cells[5].getAttribute('data-mfa') !== singleFilters.mfa.value) show = false;
+                if (singleFilters.verified.value && cells[8].getAttribute('data-verified') !== singleFilters.verified.value) show = false;
 
-                if (filters.mfaTypes.value) {
-                    const types = cells[6].getAttribute('data-mfa-types').split(',');
-                    if (!types.some(t => t.trim() === filters.mfaTypes.value)) show = false;
+                // Multi-select filters
+                const selectedCategories = multiFilters.category.getSelected();
+                if (selectedCategories.size > 0) {
+                    const category = cells[1].getAttribute('data-category');
+                    if (!selectedCategories.has(category)) show = false;
                 }
 
-                if (filters.compliance.value) {
-                    const comp = cells[7].getAttribute('data-compliance').split(',');
-                    if (!comp.some(c => c.trim() === filters.compliance.value)) show = false;
+                const selectedProtocols = multiFilters.ssoProtocols.getSelected();
+                if (selectedProtocols.size > 0) {
+                    const protocols = cells[3].getAttribute('data-sso-protocols').split(',').map(p => p.trim());
+                    if (!Array.from(selectedProtocols).some(sp => protocols.includes(sp))) show = false;
                 }
 
-                if (filters.verified.value && cells[8].getAttribute('data-verified') !== filters.verified.value) show = false;
+                const selectedMFATypes = multiFilters.mfaTypes.getSelected();
+                if (selectedMFATypes.size > 0) {
+                    const types = cells[6].getAttribute('data-mfa-types').split(',').map(t => t.trim());
+                    if (!Array.from(selectedMFATypes).some(st => types.includes(st))) show = false;
+                }
+
+                const selectedCompliance = multiFilters.compliance.getSelected();
+                if (selectedCompliance.size > 0) {
+                    const comp = cells[7].getAttribute('data-compliance').split(',').map(c => c.trim());
+                    if (!Array.from(selectedCompliance).some(sc => comp.includes(sc))) show = false;
+                }
 
                 // Show/hide row
                 if (show) {
@@ -178,17 +293,110 @@
             resultCount.textContent = visibleCount;
         }
 
+        // Sorting function
+        function sortTable(columnIndex) {
+            const visibleRows = rows.filter(row => !row.classList.contains('hidden'));
+
+            if (sortColumn === columnIndex) {
+                sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+            } else {
+                sortColumn = columnIndex;
+                sortDirection = 'asc';
+            }
+
+            visibleRows.sort((a, b) => {
+                let aVal = a.cells[columnIndex].textContent.trim();
+                let bVal = b.cells[columnIndex].textContent.trim();
+
+                if (columnIndex === 8) {
+                    aVal = new Date(aVal);
+                    bVal = new Date(bVal);
+                }
+
+                if (aVal < bVal) return sortDirection === 'asc' ? -1 : 1;
+                if (aVal > bVal) return sortDirection === 'asc' ? 1 : -1;
+                return 0;
+            });
+
+            visibleRows.forEach(row => tbody.appendChild(row));
+            updateSortIndicators(columnIndex);
+        }
+
+        // Update sort indicators in headers
+        function updateSortIndicators(activeColumn) {
+            const headerCells = table.querySelectorAll('thead tr:first-child th');
+            headerCells.forEach((th, index) => {
+                const arrows = th.querySelector('.sort-arrows');
+                if (arrows) {
+                    if (index === activeColumn) {
+                        arrows.classList.add('active');
+                        arrows.textContent = sortDirection === 'asc' ? '▲' : '▼';
+                    } else {
+                        arrows.classList.remove('active');
+                        arrows.textContent = '⇅';
+                    }
+                }
+            });
+        }
+
+        // Add click handlers to headers for sorting
+        const headerCells = table.querySelectorAll('thead tr:first-child th');
+        headerCells.forEach((th, index) => {
+            th.addEventListener('click', () => sortTable(index));
+        });
+
         // Clear all filters
         function clearFilters() {
-            Object.values(filters).forEach(select => select.value = '');
+            Object.values(singleFilters).forEach(select => select.value = '');
+            Object.values(multiFilters).forEach(ms => ms.clear());
+            searchInput.value = '';
+            sortColumn = null;
+            sortDirection = 'asc';
+            updateSortIndicators(-1);
             applyFilters();
         }
 
+        // Export visible rows to CSV
+        function exportToCSV() {
+            const visibleRows = rows.filter(row => !row.classList.contains('hidden'));
+
+            const headers = ['App', 'Category', 'SSO', 'SSO Protocols', 'SCIM', 'MFA', 'MFA Types', 'Compliance', 'Last Verified'];
+            let csv = headers.join(',') + '\n';
+
+            visibleRows.forEach(row => {
+                const cells = row.cells;
+                const rowData = [
+                    `"${cells[0].textContent.trim()}"`,
+                    `"${cells[1].textContent.trim()}"`,
+                    `"${cells[2].textContent.trim()}"`,
+                    `"${cells[3].textContent.trim()}"`,
+                    `"${cells[4].textContent.trim()}"`,
+                    `"${cells[5].textContent.trim()}"`,
+                    `"${cells[6].textContent.trim()}"`,
+                    `"${cells[7].textContent.trim()}"`,
+                    `"${cells[8].textContent.trim()}"`
+                ];
+                csv += rowData.join(',') + '\n';
+            });
+
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'vettheapp-export-' + new Date().toISOString().split('T')[0] + '.csv';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
         // Add event listeners
-        Object.values(filters).forEach(select => {
+        Object.values(singleFilters).forEach(select => {
             select.addEventListener('change', applyFilters);
         });
         clearBtn.addEventListener('click', clearFilters);
+        searchInput.addEventListener('input', applyFilters);
+        exportBtn.addEventListener('click', exportToCSV);
 
         // Initialize
         populateFilters();
