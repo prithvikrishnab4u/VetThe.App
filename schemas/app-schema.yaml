@@ -23,6 +23,7 @@ sso_protocols:
   - SAML
   - OIDC
   - OAuth2
+  - WS-Fed
 
 scim_support_levels:
   - full

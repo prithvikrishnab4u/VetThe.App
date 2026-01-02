@@ -52,6 +52,17 @@ compliance:
 meta:
   last_verified: "2025-12-31"
   ready_to_publish: true
+
+# Unused fields - tracked but not displayed in main table
+# Currently not using session and audit fields, but doing research on these fields.
+session:
+  timeout_configurable: true
+  max_duration: "X days"
+
+audit:
+  logs_available: true
+  retention_period: "X days"
+  tier: "enterprise"
 ```
 
 ---
@@ -76,6 +87,7 @@ description: "Video conferencing platform"
 - `design` (Figma, Canva)
 - `hr` (BambooHR, Workday)
 - `finance` (QuickBooks, Expensify)
+- `security` (Okta, CISCO, Ping)
 
 ---
 
@@ -85,9 +97,9 @@ Does the app let you login with your company's identity provider (Okta, Azure AD
 
 ```yaml
 sso:
-  supported: true              # true or false
-  protocols: ["SAML", "OIDC"]  # Which protocols? SAML, OIDC, OAuth2
-  tier: "paid"                 # Which plan? free, paid, or enterprise
+  supported: true                                            # true or false
+  protocols: ["SAML", "OIDC", "WS-Fed", "Kerberos", "LDAP"]  # Which protocols? SAML, OIDC, OAuth2
+  tier: "paid"                                               # Which plan? free, paid, or enterprise
 ```
 
 **How to find this:**
