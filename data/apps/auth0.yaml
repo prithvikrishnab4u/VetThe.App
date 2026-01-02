@@ -1,0 +1,38 @@
+name: "Auth0"
+category: "ciam"
+website: "https://auth0.com"
+description: "Customer identity and access management platform for developers (acquired by Okta)."
+
+sso:
+  supported: true
+  protocols: ["SAML", "OIDC", "WS-Fed"]
+  tier: "free"
+
+scim:
+  supported: "full"
+  version: "2.0"
+  tier: "paid"
+
+mfa:
+  supported: true
+  types: ["TOTP", "SMS", "WebAuthn", "Push", "Email"]
+  enforcement: "admin_enforced"
+  tier: "free"
+
+compliance:
+  soc2: true
+  iso27001: true
+
+meta:
+  last_verified: "2026-01-02"
+  ready_to_publish: true
+
+# Unused fields - tracked but not displayed in main table
+session:
+  timeout_configurable: true
+  max_duration: "Configurable"
+
+audit:
+  logs_available: true
+  retention_period: "5"
+  tier: "free"
