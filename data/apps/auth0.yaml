@@ -1,5 +1,5 @@
 name: "Auth0"
-category: "ciam"
+category: "security"
 website: "https://auth0.com"
 description: "Customer identity and access management platform for developers (acquired by Okta)."
 
