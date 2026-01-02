@@ -1,10 +1,66 @@
-<footer>
-    <p>
-        <strong>{{ len $.Site.Data.apps }}</strong> apps tracked | 
-        Last updated: {{ now.Format "2006-01-02" }}
-    </p>
-    <p>
-        <a href="https://github.com/prithvikrishnab4u/VetThe.App" target="_blank" rel="noopener">Contribute on GitHub</a> |
-        <a href="https://github.com/prithvikrishnab4u/VetThe.App/issues/new" target="_blank" rel="noopener">Report an Issue</a>
-    </p>
+<footer class="mt-16 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div>
+                <h3 class="font-semibold text-slate-900 mb-3">VetThe.App</h3>
+                <p class="text-sm text-slate-600">
+                    Community-driven comparison of identity security features across SaaS applications.
+                </p>
+                <p class="text-sm text-slate-500 mt-2">
+                    <strong class="text-slate-700">{{ len $.Site.Data.apps }}</strong> apps tracked
+                </p>
+            </div>
+
+            <div>
+                <h3 class="font-semibold text-slate-900 mb-3">Contribute</h3>
+                <ul class="space-y-2 text-sm">
+                    <li>
+                        <a href="https://github.com/prithvikrishnab4u/VetThe.App" target="_blank" class="text-slate-600 hover:text-blue-600">
+                            View on GitHub
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/prithvikrishnab4u/VetThe.App/issues/new?template=app-request.md" target="_blank" class="text-slate-600 hover:text-blue-600">
+                            Request an App
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/prithvikrishnab4u/VetThe.App/issues/new" target="_blank" class="text-slate-600 hover:text-blue-600">
+                            Report an Issue
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-semibold text-slate-900 mb-3">Author</h3>
+                <p class="text-sm text-slate-600 mb-2">
+                    <strong>Prithvi Poreddy</strong>
+                </p>
+                <ul class="space-y-2 text-sm">
+                    <li>
+                        <a href="https://iam.ninja" target="_blank" class="text-slate-600 hover:text-blue-600">
+                            Website
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://linkedin.com/in/pporeddy" target="_blank" class="text-slate-600 hover:text-blue-600">
+                            LinkedIn
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/prithvikrishnab4u" target="_blank" class="text-slate-600 hover:text-blue-600">
+                            GitHub
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-slate-200 pt-8 text-center text-sm text-slate-500">
+            <p>
+                Built with Hugo • Data for informational purposes - always verify with vendors • MIT License
+            </p>
+        </div>
+    </div>
 </footer>

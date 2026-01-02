@@ -2,5 +2,14 @@ baseURL = 'https://vettheapp.com/'
 languageCode = 'en-us'
 title = 'VetThe.App - SaaS Identity Security Comparison'
 dataDir = "../data"
+
+[build]
+  [[build.cachebusters]]
+    source = "assets/css/main\\.css"
+    target = "css/main\\..*\\.css"
+
+# Merge everything under ONE params table
 [params]
   description = 'Community-driven comparison of identity security features across SaaS applications'
+  # This helps Hugo find your CSS for the Tailwind pipeline
+  css_main = "css/main.css"

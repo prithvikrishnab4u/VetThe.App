@@ -2,202 +2,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VetThe.App - SaaS Identity Security Comparison</title>
+
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+    {{ $css := resources.Get "css/main.css" | css.TailwindCSS }}
+    {{ if not hugo.IsDevelopment }}
+    {{ $css = $css | minify | fingerprint }}
+    {{ end }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-            background: #f5f5f5;
-        }
-
-        h1 {
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .intro {
-            background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            line-height: 1.6;
-        }
-
-        .intro h2 {
-            margin-top: 0;
-            color: #2c3e50;
-            font-size: 1.3em;
-        }
-
-        .intro p {
-            margin: 10px 0;
-            color: #555;
-        }
-
-        table {
-            width: 100%;
-            background: white;
-            border-collapse: collapse;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        th {
-            background: #2c3e50;
-            color: white;
-            padding: 15px;
-            text-align: left;
-            font-weight: 600;
-            position: relative;
-            cursor: pointer;
-        }
-
-        th:hover {
-            background: #34495e;
-        }
-
-        th .sort-arrows {
-            font-size: 0.7em;
-            margin-left: 4px;
-            opacity: 0.3;
-            color: #ecf0f1;
-        }
-
-        th .sort-arrows.active {
-            opacity: 1;
-        }
-
-        td {
-            padding: 12px 15px;
-            border-bottom: 1px solid #eee;
-        }
-
-        tr:hover {
-            background: #f8f9fa;
-        }
-
-        a {
-            color: #3498db;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .check {
-            color: #27ae60;
-        }
-
-        .cross {
-            color: #e74c3c;
-        }
-
-        .partial {
-            color: #f39c12;
-        }
-
-        .tier {
-            background: #ecf0f1;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.85em;
-            color: #555;
-        }
-
-        .version {
-            font-size: 0.85em;
-            color: #666;
-        }
-
-        /* Guide Section */
-        .guide {
-            background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        details {
-            cursor: pointer;
-        }
-
-        summary {
-            font-size: 1.1em;
-            font-weight: 600;
-            color: #2c3e50;
-            padding: 10px;
-            user-select: none;
-        }
-
-        summary:hover {
-            background: #f8f9fa;
-            border-radius: 4px;
-        }
-
-        .guide-content {
-            padding: 20px 10px 10px 10px;
-        }
-
-        .guide-columns {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 30px;
-            margin-top: 15px;
-        }
-
-        .guide-col h3 {
-            color: #2c3e50;
-            font-size: 1em;
-            margin-bottom: 10px;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 5px;
-        }
-
-        .guide-col ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .guide-col li {
-            padding: 8px 0;
-            line-height: 1.5;
-        }
-
-        .guide-col strong {
-            color: #2c3e50;
-        }
-
-        .symbol {
-            display: inline-block;
-            width: 20px;
-            text-align: center;
-        }
-
-        /* Column Header Tooltips */
-        th[data-tooltip] {
-            position: relative;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
         .custom-tooltip {
             position: absolute;
-            background: #2c3e50;
+            background: #1e293b;
             color: white;
-            padding: 10px 15px;
-            border-radius: 4px;
-            font-size: 0.85em;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.75rem;
             font-weight: normal;
             z-index: 9999;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
             white-space: nowrap;
             pointer-events: none;
             opacity: 0;
@@ -208,77 +37,45 @@
             opacity: 1;
         }
 
-        /* Filter Row */
-        .filter-row th {
-            background: #34495e;
-            padding: 8px;
-        }
-
-        /* Standard select dropdowns */
-        .filter-row select {
-            width: 100%;
-            padding: 6px 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            background: white;
-            font-size: 0.85em;
-            cursor: pointer;
-            box-sizing: border-box;
-            height: 32px;
-        }
-
-        .filter-row select:hover {
-            border-color: #3498db;
-        }
-
-        .filter-row select:focus {
-            outline: none;
-            border-color: #3498db;
-            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
-        }
-
-        /* Multi-select dropdown */
         .multi-select {
             position: relative;
             width: 100%;
         }
 
         .multi-select-display {
-            padding: 6px 24px 6px 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            padding: 0.5rem 0.75rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 0.5rem;
             background: white;
             cursor: pointer;
-            font-size: 0.85em;
-            min-height: 20px;
-            height: 32px;
-            box-sizing: border-box;
+            font-size: 0.875rem;
+            height: 40px;
             display: flex;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 4px;
-            overflow: hidden;
             position: relative;
+            color: #0f172a;
+            font-weight: 500;
         }
 
         .multi-select-display::after {
             content: '▼';
             position: absolute;
-            right: 8px;
+            right: 0.75rem;
             top: 50%;
             transform: translateY(-50%);
-            font-size: 0.7em;
-            color: #666;
+            font-size: 0.5em;
+            color: #64748b;
             pointer-events: none;
         }
 
         .multi-select-display:hover {
-            border-color: #3498db;
+            border-color: #3b82f6;
         }
-
+        
         .multi-select-display.empty::before {
             content: 'All';
-            color: #999;
+            color: #0f172a;
+            font-weight: 500;
         }
 
         .multi-select-dropdown {
@@ -287,146 +84,97 @@
             left: 0;
             right: 0;
             background: white;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            margin-top: 4px;
-            max-height: 250px;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            margin-top: 0.25rem;
+            max-height: 16rem;
             overflow-y: auto;
-            z-index: 1000;
-            display: none;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .multi-select-footer {
-            padding: 8px 12px;
-            border-top: 1px solid #e0e0e0;
-            background: white;
-            position: sticky;
-            bottom: 0;
-            text-align: center;
-            font-size: 0.8em;
-        }
-
-        .multi-select-clear {
-            color: #999;
-            cursor: pointer;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .multi-select-clear:hover {
-            color: #e74c3c;
+            overflow-x: hidden;
+            z-index: 50;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            display: none !important;
+            min-width: 100%;
+            width: max-content;
         }
 
         .multi-select-dropdown.open {
-            display: block;
+            display: block !important;
         }
 
         .multi-select-option {
-            padding: 8px 12px;
+            padding: 0.625rem 0.75rem;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 0.85em;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: #334155;
+            background: white;
+            transition: background-color 0.15s;
             user-select: none;
-            color: #333;
         }
-
+        
         .multi-select-option:hover {
-            background: #f8f9fa;
+            background-color: #f8fafc;
         }
 
         .multi-select-option input[type="checkbox"] {
             cursor: pointer;
+            width: 1rem;
+            height: 1rem;
+            color: #3b82f6;
+            border-radius: 0.25rem;
+            border: 1px solid #cbd5e1;
+            flex-shrink: 0;
             margin: 0;
         }
 
         .multi-select-option label {
             flex: 1;
-            margin: 0;
-            color: #333;
             cursor: pointer;
-        }
-
-        .multi-select-tag {
-            display: inline-block;
-            background: #3498db;
-            color: white;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.75em;
+            user-select: none;
+            margin: 0;
+            line-height: 1.25rem;
             white-space: nowrap;
+            font-weight: 500;
         }
 
-        /* Hidden rows */
+        .multi-select-footer {
+            padding: 0.5rem 0.75rem;
+            border-top: 1px solid #e2e8f0;
+            background: #f8fafc;
+            text-align: center;
+            position: sticky;
+            bottom: 0;
+        }
+
+        .multi-select-clear {
+            color: #64748b;
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.15s;
+        }
+
+        .multi-select-clear:hover {
+            color: #ef4444;
+        }
+
         tbody tr.hidden {
             display: none;
         }
 
-        /* Result counter */
-        .result-info {
-            background: white;
-            padding: 12px 20px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .sort-arrows {
+            margin-left: 4px;
+            font-size: 0.7em;
+            opacity: 0.3;
+            color: #64748b;
         }
 
-        .result-info strong {
-            color: #2c3e50;
-            font-size: 1.1em;
-        }
-
-        .clear-filters-btn {
-            padding: 6px 14px;
-            background: #e74c3c;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.9em;
-            font-weight: 600;
-        }
-
-        .clear-filters-btn:hover {
-            background: #c0392b;
-        }
-
-        .export-btn {
-            padding: 6px 14px;
-            background: #27ae60;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.9em;
-            font-weight: 600;
-        }
-
-        .export-btn:hover {
-            background: #229954;
-        }
-
-        @media (max-width: 768px) {
-            .guide-columns {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-        }
-
-        footer {
-            margin-top: 40px;
-            text-align: center;
-            color: #666;
-        }
-
-        footer a {
-            color: #3498db;
-            margin: 0 10px;
+        .sort-arrows.active {
+            opacity: 1;
+            color: #334155;
         }
     </style>
 </head>

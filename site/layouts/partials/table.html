@@ -1,165 +1,280 @@
-<!-- Search and export controls -->
-<div class="result-info">
-    <div style="display: flex; gap: 15px; align-items: center;">
-        <input type="text" id="searchInput" placeholder="Search apps..."
-            style="padding: 8px 12px; border: 1px solid #ddd; border-radius: 4px; width: 250px; font-size: 0.9em;" />
-        <div>Showing <strong id="resultCount">0</strong> apps</div>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<div class="max-w-7xl mx-auto px-1 sm:px-1 lg:px-1 py-1">
+    <div
+        class="bg-white rounded-lg shadow-sm border border-slate-200 p-1 mb-2 flex flex-row items-center justify-between gap-4">
+
+        <div class="flex items-center gap-4 flex-1">
+            <input type="text" id="searchInput" placeholder="Search apps..."
+                class="w-64 px-4 py-2 bg-slate-50 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:bg-white outline-none transition-all" />
+            <div class="text-sm text-slate-500 font-medium whitespace-nowrap">
+                Showing <span id="resultCount" class="text-slate-900 font-bold">{{ len $.Site.Data.apps }}</span> apps
+            </div>
+        </div>
+
+        <div class="flex items-center gap-1">
+
+            <button id="exportCSV"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full shadow-sm transition-transform active:scale-95">
+                Export CSV
+            </button>
+
+            <button id="clearFilters"
+                class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full shadow-sm transition-transform active:scale-95">
+                Clear Filters
+            </button>
+
+        </div>
     </div>
-    <div style="display: flex; gap: 10px;">
-        <button id="exportCSV" class="export-btn">Export to CSV</button>
-        <button id="clearFilters" class="clear-filters-btn">Clear All Filters</button>
+
+    <!-- Table -->
+    <div class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
+        <div class="overflow-x-auto">
+            <table id="appsTable" class="w-full">
+                <thead>
+                    <!-- Column Headers -->
+                    <tr class="bg-gradient-to-r from-slate-50 to-slate-100 border-b border-slate-200">
+                        <th data-tooltip="Application name"
+                            class="px-4 py-3 text-left text-xs font-semibold text-slate-700 uppercase tracking-wider cursor-pointer hover:text-blue-600 transition-colors">
+                            <span class="header-text">App</span><span class="sort-arrows">⇅</span>
+                        </th>
+                        <th data-tooltip="App category"
+                            class="px-4 py-3 text-left text-xs font-semibold text-slate-700 uppercase tracking-wider cursor-pointer hover:text-blue-600 transition-colors">
+                            <span class="header-text">Category</span><span class="sort-arrows">⇅</span>
+                        </th>
+                        <th data-tooltip="SSO support and minimum tier"
+                            class="px-4 py-3 text-left text-xs font-semibold text-slate-700 uppercase tracking-wider cursor-pointer hover:text-blue-600 transition-colors">
+                            <span class="header-text">SSO</span><span class="sort-arrows">⇅</span>
+                        </th>
+                        <th data-tooltip="Supported SSO protocols"
+                            class="px-4 py-3 text-left text-xs font-semibold text-slate-700 uppercase tracking-wider cursor-pointer hover:text-blue-600 transition-colors">
+                            <span class="header-text">SSO Protocols</span><span class="sort-arrows">⇅</span>
+                        </th>
+                        <th data-tooltip="SCIM provisioning support"
+                            class="px-4 py-3 text-left text-xs font-semibold text-slate-700 uppercase tracking-wider cursor-pointer hover:text-blue-600 transition-colors">
+                            <span class="header-text">SCIM</span><span class="sort-arrows">⇅</span>
+                        </th>
+                        <th data-tooltip="MFA support and enforcement"
+                            class="px-4 py-3 text-left text-xs font-semibold text-slate-700 uppercase tracking-wider cursor-pointer hover:text-blue-600 transition-colors">
+                            <span class="header-text">MFA</span><span class="sort-arrows">⇅</span>
+                        </th>
+                        <th data-tooltip="Supported MFA methods"
+                            class="px-4 py-3 text-left text-xs font-semibold text-slate-700 uppercase tracking-wider cursor-pointer hover:text-blue-600 transition-colors"
+                            style="width: 140px;">
+                            <span class="header-text">MFA Types</span><span class="sort-arrows">⇅</span>
+                        </th>
+                        <th data-tooltip="Security certifications"
+                            class="px-4 py-3 text-left text-xs font-semibold text-slate-700 uppercase tracking-wider cursor-pointer hover:text-blue-600 transition-colors">
+                            <span class="header-text">Compliance</span><span class="sort-arrows">⇅</span>
+                        </th>
+                        <th data-tooltip="Last verification date"
+                            class="px-4 py-3 text-left text-xs font-semibold text-slate-700 uppercase tracking-wider cursor-pointer hover:text-blue-600 transition-colors">
+                            <span class="header-text">Last Verified</span><span class="sort-arrows">⇅</span>
+                        </th>
+                    </tr>
+
+                    <!-- Filter Row -->
+                    <tr class="bg-white border-b border-slate-200">
+                        <th class="px-4 py-2">
+                            <select id="filterApp"
+                                class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                <option value="">All</option>
+                            </select>
+                        </th>
+                        <th class="px-4 py-2">
+                            <div class="multi-select" id="filterCategory">
+                                <div class="multi-select-display empty"></div>
+                                <div class="multi-select-dropdown"></div>
+                            </div>
+                        </th>
+                        <th class="px-4 py-2">
+                            <select id="filterSSO"
+                                class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                <option value="">All</option>
+                            </select>
+                        </th>
+                        <th class="px-4 py-2">
+                            <div class="multi-select" id="filterSSOProtocols">
+                                <div class="multi-select-display empty"></div>
+                                <div class="multi-select-dropdown"></div>
+                            </div>
+                        </th>
+                        <th class="px-4 py-2">
+                            <select id="filterSCIM"
+                                class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                <option value="">All</option>
+                            </select>
+                        </th>
+                        <th class="px-4 py-2">
+                            <select id="filterMFA"
+                                class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                <option value="">All</option>
+                            </select>
+                        </th>
+                        <th class="px-4 py-2" style="width: 150px; min-width: 150px;">
+                            <div class="multi-select" id="filterMFATypes">
+                                <div class="multi-select-display empty"></div>
+                                <div class="multi-select-dropdown"></div>
+                            </div>
+                        </th>
+                        <th class="px-4 py-2">
+                            <div class="multi-select" id="filterCompliance">
+                                <div class="multi-select-display empty"></div>
+                                <div class="multi-select-dropdown"></div>
+                            </div>
+                        </th>
+                        <th class="px-4 py-2">
+                            <select id="filterVerified"
+                                class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                <option value="">All</option>
+                            </select>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                    {{ range $.Site.Data.apps }}
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <!-- App Name -->
+                        <td data-app="{{ .name }}" class="px-4 py-2">
+                            <a href="{{ .website }}" target="_blank" rel="noopener"
+                                class="text-blue-600 hover:text-blue-700 font-semibold text-sm hover:underline transition-colors">
+                                {{ .name }}
+                            </a>
+                        </td>
+
+                        <!-- Category -->
+                        <td data-category="{{ .category }}" class="px-1 py-1">
+                            <span
+                                class="inline-flex items-center px-1 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-700 capitalize">
+                                {{ .category }}
+                            </span>
+                        </td>
+
+                        <!-- SSO -->
+                        <td data-sso="{{ if .sso.supported }}{{ .sso.tier }}{{ else }}none{{ end }}" class="px-1 py-1">
+                            {{ if .sso.supported }}
+                            <div class="flex items-center gap-2">
+                                <span class="text-green-600 text-lg">✓</span>
+                                <span
+                                    class="inline-flex items-center px-1 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700 capitalize">
+                                    {{ .sso.tier }}
+                                </span>
+                            </div>
+                            {{ else }}
+                            <span class="text-slate-400 text-lg">✗</span>
+                            {{ end }}
+                        </td>
+
+                        <!-- SSO Protocols -->
+                        <td data-sso-protocols="{{ delimit .sso.protocols " ," }}" class="px-1 py-1">
+                            {{ if .sso.supported }}
+                            <div class="flex gap-1.5 flex-wrap">
+                                {{ range .sso.protocols }}
+                                <span
+                                    class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-700">
+                                    {{ . }}
+                                </span>
+                                {{ end }}
+                            </div>
+                            {{ else }}
+                            <span class="text-slate-400">—</span>
+                            {{ end }}
+                        </td>
+
+                        <!-- SCIM -->
+                        <td data-scim="{{ .scim.tier }}" class="px-1 py-1">
+                            {{ if eq .scim.supported "full" }}
+                            <div class="flex items-center gap-2">
+                                <span class="text-green-600 text-lg">✓</span>
+                                <span
+                                    class="inline-flex items-center px-1 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700 capitalize">
+                                    {{ .scim.tier }}
+                                </span>
+                            </div>
+                            {{ else if eq .scim.supported "partial" }}
+                            <div class="flex items-center gap-2">
+                                <span class="text-amber-600 text-lg">~</span>
+                                <span
+                                    class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-amber-50 text-amber-700 capitalize">
+                                    {{ .scim.tier }}
+                                </span>
+                            </div>
+                            {{ else }}
+                            <span class="text-slate-400 text-lg">✗</span>
+                            {{ end }}
+                        </td>
+
+                        <!-- MFA -->
+                        <td data-mfa="{{ if .mfa.supported }}{{ .mfa.enforcement }}{{ else }}none{{ end }}"
+                            class="px-4 py-3">
+                            {{ if .mfa.supported }}
+                            <div class="flex items-center gap-1">
+                                <span class="text-green-600 text-lg">✓</span>
+                                <span
+                                    class="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-slate-100 text-slate-700 capitalize">
+                                    {{ if eq .mfa.enforcement "admin_enforced" }}Admin
+                                    {{ else if eq .mfa.enforcement "optional" }}Optional
+                                    {{ else if eq .mfa.enforcement "required" }}Required
+                                    {{ else }}{{ .mfa.enforcement }}{{ end }}
+                                </span>
+                            </div>
+                            {{ else }}
+                            <span class="text-slate-400 text-lg">✗</span>
+                            {{ end }}
+                        </td>
+
+                        <!-- MFA Types -->
+
+                        <td data-mfa-types="{{ delimit .mfa.types " ," }}" class="px-1 py-1 whitespace-normal"
+                            style="width: 140px; max-width: 180px;">
+                            {{ if .mfa.supported }}
+                            <div class="inline-grid grid-cols-2 gap-1 w-[170px] whitespace-normal">
+                                {{ range .mfa.types }}
+                                <span
+                                    class="inline-flex items-center justify-center px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-700 whitespace-nowrap">
+                                    {{ . }}
+                                </span>
+                                {{ end }}
+                            </div>
+                            {{ else }}
+                            <span class="text-slate-400">—</span>
+                            {{ end }}
+                        </td>
+
+                        <!-- Compliance -->
+                        <td data-compliance="{{ if .compliance.soc2 }}soc2{{ end }}{{ if and .compliance.soc2 .compliance.iso27001 }},{{ end }}{{ if .compliance.iso27001 }}iso27001{{ end }}"
+                            class="px-4 py-3">
+                            <div class="flex gap-1.5">
+                                {{ if .compliance.soc2 }}
+                                <span
+                                    class="inline-flex items-center px-1 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">
+                                    SOC2
+                                </span>
+                                {{ end }}
+                                {{ if .compliance.iso27001 }}
+                                <span
+                                    class="inline-flex items-center px-1 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">
+                                    ISO27001
+                                </span>
+                                {{ end }}
+                                {{ if and (not .compliance.soc2) (not .compliance.iso27001) }}
+                                <span class="text-slate-400">—</span>
+                                {{ end }}
+                            </div>
+                        </td>
+
+                        <!-- Last Verified -->
+                        <td data-verified="{{ .meta.last_verified }}" class="px-4 py-3">
+                            {{ $date := time .meta.last_verified }}
+                            <span
+                                class="inline-flex items-center px-1 py-0.5 rounded text-xs font-medium bg-slate-50 text-slate-600 whitespace-nowrap">
+                                {{ $date.Format "02-01-2006" }}
+                            </span>
+                        </td>
+                    </tr>
+                    {{ end }}
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
-
-<table id="appsTable">
-    <thead>
-        <!-- Row 1: Column names with tooltips -->
-        <tr>
-            <th data-tooltip="Application name"><span class="header-text">App</span><span class="sort-arrows">⇅</span>
-            </th>
-            <th data-tooltip="App category (Collaboration, Productivity, Development, Sales)"><span
-                    class="header-text">Category</span><span class="sort-arrows">⇅</span></th>
-            <th data-tooltip="Does this app support SSO? Shows checkmark and minimum tier needed"><span
-                    class="header-text">SSO</span><span class="sort-arrows">⇅</span></th>
-            <th data-tooltip="Which SSO protocols does this app support?"><span class="header-text">SSO
-                    Protocols</span><span class="sort-arrows">⇅</span></th>
-            <th data-tooltip="Does this app support automated user provisioning via SCIM?"><span
-                    class="header-text">SCIM</span><span class="sort-arrows">⇅</span></th>
-            <th data-tooltip="Does this app support MFA? Shows how it can be enforced"><span
-                    class="header-text">MFA</span><span class="sort-arrows">⇅</span></th>
-            <th data-tooltip="Which MFA methods does this app support?"><span class="header-text">MFA Types</span><span
-                    class="sort-arrows">⇅</span></th>
-            <th data-tooltip="Which security certifications does this app have?"><span
-                    class="header-text">Compliance</span><span class="sort-arrows">⇅</span></th>
-            <th data-tooltip="When we last verified this information"><span class="header-text">Last
-                    Verified</span><span class="sort-arrows">⇅</span></th>
-        </tr>
-
-        <!-- Row 2: Filter dropdowns -->
-        <tr class="filter-row">
-            <th><select id="filterApp">
-                    <option value="">All</option>
-                </select></th>
-            <th>
-                <div class="multi-select" id="filterCategory">
-                    <div class="multi-select-display empty"></div>
-                    <div class="multi-select-dropdown"></div>
-                </div>
-            </th>
-            <th><select id="filterSSO">
-                    <option value="">All</option>
-                </select></th>
-            <th>
-                <div class="multi-select" id="filterSSOProtocols">
-                    <div class="multi-select-display empty"></div>
-                    <div class="multi-select-dropdown"></div>
-                </div>
-            </th>
-            <th><select class="multi-select" id="filterSCIM">
-                    <option value="">All</option>
-                </select></th>
-            <th><select id="filterMFA">
-                    <option value="">All</option>
-                </select></th>
-            <th>
-                <div class="multi-select" id="filterMFATypes">
-                    <div class="multi-select-display empty"></div>
-                    <div class="multi-select-dropdown"></div>
-                </div>
-            </th>
-            <th>
-                <div class="multi-select" id="filterCompliance">
-                    <div class="multi-select-display empty"></div>
-                    <div class="multi-select-dropdown"></div>
-                </div>
-            </th>
-            <th><select id="filterVerified">
-                    <option value="">All</option>
-                </select></th>
-        </tr>
-    </thead>
-    <tbody>
-        {{ range $.Site.Data.apps }}
-        <tr>
-            <!-- App Name -->
-            <td data-app="{{ .name }}"><a href="{{ .website }}" target="_blank" rel="noopener">{{ .name }}</a></td>
-
-            <!-- Category -->
-            <td data-category="{{ .category }}" style="text-transform: capitalize;">{{ .category }}</td>
-
-            <!-- SSO -->
-            <td data-sso="{{ if .sso.supported }}{{ .sso.tier }}{{ else }}none{{ end }}">
-                {{ if .sso.supported }}
-                <span class="check">✓</span>
-                <span class="tier">{{ .sso.tier }}</span>
-                {{ else }}
-                <span class="cross">✗</span>
-                {{ end }}
-            </td>
-
-            <!-- SSO Protocols -->
-            <td data-sso-protocols="{{ delimit .sso.protocols " ," }}">
-                {{ if .sso.supported }}
-                {{ delimit .sso.protocols ", " }}
-                {{ else }}
-                <span class="cross">—</span>
-                {{ end }}
-            </td>
-
-            <!-- SCIM -->
-            <td data-scim="{{ .scim.tier }}">
-                {{ if eq .scim.supported "full" }}
-                <span class="check">✓</span>
-                <span class="tier">{{ .scim.tier }}</span>
-                {{ else if eq .scim.supported "partial" }}
-                <span class="partial">~</span>
-                <span class="tier">{{ .scim.tier }}</span>
-                {{ else if eq .scim.supported true }}
-                <span class="check">✓</span>
-                <span class="tier">{{ .scim.tier }}</span>
-                {{ else }}
-                <span class="cross">✗</span>
-                {{ end }}
-            </td>
-
-            <!-- MFA -->
-            <td data-mfa="{{ if .mfa.supported }}{{ .mfa.enforcement }}{{ else }}none{{ end }}">
-                {{ if .mfa.supported }}
-                <span class="check">✓</span>
-                {{ if eq .mfa.enforcement "admin_enforced" }}
-                Admin enforced
-                {{ else if eq .mfa.enforcement "optional" }}
-                Optional
-                {{ else if eq .mfa.enforcement "required" }}
-                Required
-                {{ else }}
-                {{ .mfa.enforcement }}
-                {{ end }}
-                {{ else }}
-                <span class="cross">✗</span>
-                {{ end }}
-            </td>
-
-            <!-- MFA Types -->
-            <td data-mfa-types="{{ delimit .mfa.types " ," }}">
-                {{ if .mfa.supported }}
-                {{ delimit .mfa.types ", " }}
-                {{ else }}
-                <span class="cross">—</span>
-                {{ end }}
-            </td>
-
-            <!-- Compliance -->
-            <td
-                data-compliance="{{ if .compliance.soc2 }}soc2{{ end }}{{ if and .compliance.soc2 .compliance.iso27001 }},{{ end }}{{ if .compliance.iso27001 }}iso27001{{ end }}">
-                {{ if .compliance.soc2 }}SOC2{{ end }}{{ if and .compliance.soc2 .compliance.iso27001 }}, {{ end }}{{ if
-                .compliance.iso27001 }}ISO27001{{ end }}
-                {{ if and (not .compliance.soc2) (not .compliance.iso27001) }}<span class="cross">—</span>{{ end }}
-            </td>
-
-            <!-- Last Verified -->
-            <td data-verified="{{ .meta.last_verified }}">{{ .meta.last_verified }}</td>
-        </tr>
-        {{ end }}
-    </tbody>
-</table>
