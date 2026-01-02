@@ -1,0 +1,5 @@
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+@source "../../layouts/**/*.html";
+@source "../../*.md";
+@source "../../node_modules/flowbite/";
