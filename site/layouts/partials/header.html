@@ -1,48 +1,79 @@
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
 
-    <div class="text-center mb-10">
-        <h1 class="text-3xl font-bold text-slate-900 mb-2">
-            VetThe.App
+    <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">
+            VetThe<span class="bg-gradient-to-r from-blue-700 to-indigo-700 text-indigo-600">.App</span>
         </h1>
-        <p class="text-lg text-slate-600">
-            Community-driven comparison of identity security features across SaaS applications.
+        <p class="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed">
+            Community-driven comparison of identity security features.
         </p>
     </div>
 
-    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-        <div class="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-100">
+    <div class="relative bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
 
-            <div class="p-8 md:col-span-2">
-                <h2 class="text-base font-semibold text-slate-900 mb-3">
-                    Project Overview
-                </h2>
-                <p class="text-slate-600 leading-relaxed mb-4">
-                    VetThe.App aggregates technical data regarding Identity and Access Management (IAM) capabilities for various SaaS vendors. It serves as a central reference point for security teams and administrators to verify supported features, such as SSO protocols and SCIM provisioning, without needing to navigate individual vendor documentation.
+        <div
+            class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-blue-50/50 rounded-full blur-3xl pointer-events-none">
+        </div>
+
+        <div class="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-100 relative z-10">
+
+            <div class="p-8 md:p-10 md:col-span-2">
+                <div class="flex items-center gap-3 mb-4">
+                    <div
+                        class="h-10 w-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-600 border border-slate-100">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                            </path>
+                        </svg>
+                    </div>
+                    <h2 class="text-xl font-bold text-slate-900">
+                        We aggregate identity security data.
+                    </h2>
+                </div>
+
+                <p class="text-slate-600 leading-relaxed mb-6 text-base">
+                    VetThe.App aggregates technical data regarding Identity security capabilities for various SaaS
+                    vendors. It serves as a central reference point for security teams and administrators to verify
+                    supported features, such as SSO & MFA protocols support, SCIM provisioning capabilities, and
+                    compliance certifications, without needing to navigate individual vendor documentation.
                 </p>
-                <p class="text-sm text-slate-500">
+
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-100">
+                    <span class="relative flex h-2 w-2">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
                     Data is community-verified and updated regularly to ensure accuracy.
-                </p>
+                </div>
             </div>
 
-            <div class="p-8 bg-slate-50">
-                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">
+            <div class="p-8 bg-slate-50/80">
+                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-5">
                     Tracked Capabilities
                 </h3>
 
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700 border border-blue-200">
+                <div class="flex flex-wrap gap-2.5">
+                    <span
+                        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-blue-100 text-blue-700 border border-blue-200">
                         SSO (SAML/OIDC)
                     </span>
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700 border border-indigo-200">
+                    <span
+                        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-indigo-100 text-indigo-700 border border-indigo-200">
                         SCIM Provisioning
                     </span>
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-700 border border-purple-200">
+                    <span
+                        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-purple-100 text-purple-700 border border-purple-200">
                         SOC 2 & ISO 27001
                     </span>
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-100 text-emerald-700 border border-emerald-200">
+                    <span
+                        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-700 border border-emerald-200">
                         MFA Enforcement
                     </span>
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-200 text-slate-700 border border-slate-300">
+                    <span
+                        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-slate-200 text-slate-700 border border-slate-300">
                         Pricing Tiers
                     </span>
                 </div>

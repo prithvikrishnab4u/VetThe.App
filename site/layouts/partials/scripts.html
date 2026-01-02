@@ -1,5 +1,7 @@
 <script>
-    // Tooltip functionality
+    /* -------------------------------------------------------------------------- */
+    /* 1. TOOLTIP LOGIC                                                           */
+    /* -------------------------------------------------------------------------- */
     (function () {
         const headers = document.querySelectorAll('th[data-tooltip]');
         let tooltip = null;
@@ -8,32 +10,23 @@
 
         headers.forEach(th => {
             th.addEventListener('mouseenter', (e) => {
-                if (hideTimeout) {
-                    clearTimeout(hideTimeout);
-                    hideTimeout = null;
-                }
-
-                if (currentHeader === th && tooltip) {
-                    return;
-                }
-
-                if (tooltip && tooltip.parentNode) {
-                    tooltip.parentNode.removeChild(tooltip);
-                }
+                if (hideTimeout) { clearTimeout(hideTimeout); hideTimeout = null; }
+                if (currentHeader === th && tooltip) return;
+                if (tooltip && tooltip.parentNode) tooltip.parentNode.removeChild(tooltip);
 
                 currentHeader = th;
-
                 tooltip = document.createElement('div');
                 tooltip.className = 'custom-tooltip';
                 tooltip.textContent = th.getAttribute('data-tooltip');
                 document.body.appendChild(tooltip);
 
                 const rect = th.getBoundingClientRect();
-                const tooltipRect = tooltip.getBoundingClientRect();
+                tooltip.style.position = 'fixed';
+                tooltip.style.left = (rect.left + rect.width / 2) + 'px';
+                tooltip.style.top = (rect.top - 10) + 'px';
+                tooltip.style.transform = 'translate(-50%, -100%)';
 
-                tooltip.style.left = (rect.left + rect.width / 2 - tooltipRect.width / 2) + 'px';
-                tooltip.style.top = (rect.top - tooltipRect.height - 10) + window.scrollY + 'px';
-
+                // ADD THIS LINE HERE:
                 setTimeout(() => tooltip.classList.add('show'), 10);
             });
 
@@ -42,9 +35,7 @@
                     if (tooltip) {
                         tooltip.classList.remove('show');
                         setTimeout(() => {
-                            if (tooltip && tooltip.parentNode) {
-                                tooltip.parentNode.removeChild(tooltip);
-                            }
+                            if (tooltip && tooltip.parentNode) tooltip.parentNode.removeChild(tooltip);
                             tooltip = null;
                             currentHeader = null;
                         }, 200);
@@ -54,107 +45,117 @@
         });
     })();
 
-    // Multi-select dropdown component
-    class MultiSelect {
-        constructor(element, onChange) {
+    /* -------------------------------------------------------------------------- */
+    /* 2. UNIFIED DROPDOWN LOGIC (Single & Multi)                                 */
+    /* -------------------------------------------------------------------------- */
+    const allSelectInstances = [];
+
+    // Helper to Capitalize First Letter
+    function capitalize(str) {
+        if (!str) return '';
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    class CustomSelect {
+        constructor(element, onChange, isMulti = false) {
             this.element = element;
             this.onChange = onChange;
+            this.isMulti = isMulti;
             this.selected = new Set();
-            this.display = element.querySelector('.multi-select-display');
-            this.dropdown = element.querySelector('.multi-select-dropdown');
-            this.options = [];
+            this.display = element.querySelector('.custom-select-display');
+            this.dropdown = element.querySelector('.custom-select-dropdown');
+            this.closeTimeout = null;
 
-            this.display.addEventListener('click', (e) => {
-                e.stopPropagation();
-                this.toggle();
+            allSelectInstances.push(this);
+
+            // Toggle logic
+            this.display.addEventListener('click', (e) => { e.stopPropagation(); this.toggle(); });
+            this.dropdown.addEventListener('click', (e) => { e.stopPropagation(); });
+
+            // Mouse Leave Logic (Close on exit)
+            this.element.addEventListener('mouseleave', () => {
+                this.closeTimeout = setTimeout(() => { this.close(); }, 300);
+            });
+            this.element.addEventListener('mouseenter', () => {
+                if (this.closeTimeout) { clearTimeout(this.closeTimeout); this.closeTimeout = null; }
             });
 
-            // Prevent dropdown from closing when clicking inside it
-            this.dropdown.addEventListener('click', (e) => {
-                e.stopPropagation();
-            });
+            // Close on Global Click
+            document.addEventListener('click', () => { this.close(); });
 
-            // Close dropdown when clicking outside
-            document.addEventListener('click', () => {
-                this.close();
-            });
+            // NEW: Close on Global Scroll (Prevents floating dropdowns)
+            window.addEventListener('scroll', () => { if (this.isOpen()) this.close(); }, true);
 
             this.createFooter();
         }
 
         createFooter() {
             const footerDiv = document.createElement('div');
-            footerDiv.className = 'multi-select-footer';
-
-            // Clear button
+            footerDiv.className = 'custom-select-footer';
             const clearLink = document.createElement('a');
-            clearLink.className = 'multi-select-clear';
+            clearLink.className = 'custom-select-clear';
             clearLink.textContent = 'Clear';
             clearLink.href = '#';
             clearLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                this.selected.clear();
-                this.dropdown.querySelectorAll('input[type="checkbox"]').forEach(cb => {
-                    cb.checked = false;
-                });
-                this.updateDisplay();
+                e.preventDefault(); e.stopPropagation();
+                this.clear();
                 this.onChange();
             });
             footerDiv.appendChild(clearLink);
-
-            // Append footer at the end (will be added after options are populated)
             this.footerElement = footerDiv;
         }
 
-
         setOptions(options) {
-            this.options = options;
-            // Clear dropdown
             this.dropdown.innerHTML = '';
-
-            // Add all option checkboxes
             options.forEach(opt => {
                 const div = document.createElement('div');
-                div.className = 'multi-select-option';
+                div.className = 'custom-select-option';
 
-                const checkbox = document.createElement('input');
-                checkbox.type = 'checkbox';
-                checkbox.value = opt;
-                checkbox.checked = this.selected.has(opt);
-                checkbox.id = 'ms-' + this.element.id + '-' + opt;
+                const input = document.createElement('input');
+                input.type = this.isMulti ? 'checkbox' : 'radio';
+                input.name = 'group-' + this.element.id;
+                input.value = opt;
+                input.checked = this.selected.has(opt);
+                input.id = 'opt-' + this.element.id + '-' + opt.replace(/\s+/g, '-');
+                input.style.pointerEvents = 'none';
 
                 const label = document.createElement('label');
-                label.htmlFor = checkbox.id;
-                label.textContent = opt.charAt(0).toUpperCase() + opt.slice(1);
-                label.style.cursor = 'pointer';
-                label.style.userSelect = 'none';
+                label.htmlFor = input.id;
+                label.textContent = capitalize(opt);
+                label.style.pointerEvents = 'none';
 
-                div.appendChild(checkbox);
+                div.appendChild(input);
                 div.appendChild(label);
 
-                checkbox.addEventListener('change', (e) => {
+                // Row Click Handler
+                div.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    this.toggleOption(opt, checkbox.checked);
+
+                    if (this.isMulti) {
+                        if (this.selected.has(opt)) {
+                            this.selected.delete(opt);
+                            input.checked = false;
+                        } else {
+                            this.selected.add(opt);
+                            input.checked = true;
+                        }
+                    } else {
+                        this.selected.clear();
+                        this.selected.add(opt);
+                        this.updateDisplay();
+                        this.onChange();
+                        this.close();
+                        this.dropdown.querySelectorAll('input').forEach(r => r.checked = r.value === opt);
+                        return;
+                    }
+
+                    this.updateDisplay();
+                    this.onChange();
                 });
 
                 this.dropdown.appendChild(div);
             });
-
-            // Append footer at the end
-            if (this.footerElement) {
-                this.dropdown.appendChild(this.footerElement);
-            }
-        }
-
-        toggleOption(value, checked) {
-            if (checked) {
-                this.selected.add(value);
-            } else {
-                this.selected.delete(value);
-            }
-            this.updateDisplay();
-            this.onChange();
+            if (this.footerElement) this.dropdown.appendChild(this.footerElement);
         }
 
         updateDisplay() {
@@ -163,11 +164,7 @@
                 this.display.classList.add('empty');
             } else {
                 this.display.classList.remove('empty');
-                // Show as comma-separated text instead of tags
-                const selectedText = Array.from(this.selected)
-                    .map(val => val.charAt(0).toUpperCase() + val.slice(1))
-                    .join(', ');
-                
+                const selectedText = Array.from(this.selected).map(val => capitalize(val)).join(', ');
                 const textSpan = document.createElement('span');
                 textSpan.textContent = selectedText;
                 textSpan.style.color = '#334155';
@@ -176,7 +173,28 @@
         }
 
         toggle() {
-            this.dropdown.classList.toggle('open');
+            const isOpen = this.dropdown.classList.contains('open');
+            allSelectInstances.forEach(ms => ms.close()); // Close others
+
+            if (!isOpen) {
+                // DYNAMIC POSITIONING FIX
+                // 1. Get position of the trigger button
+                const rect = this.display.getBoundingClientRect();
+
+                // 2. Set Fixed positioning to break out of table overflow
+                this.dropdown.style.position = 'fixed';
+                this.dropdown.style.top = (rect.bottom + 4) + 'px'; // 4px gap
+                this.dropdown.style.left = rect.left + 'px';
+                this.dropdown.style.width = 'auto'; // Reset width
+                this.dropdown.style.minWidth = Math.max(rect.width, 160) + 'px'; // At least as wide as trigger
+                this.dropdown.style.zIndex = '99999'; // Float above everything
+
+                this.dropdown.classList.add('open');
+            }
+        }
+
+        isOpen() {
+            return this.dropdown.classList.contains('open');
         }
 
         close() {
@@ -185,270 +203,155 @@
 
         clear() {
             this.selected.clear();
-            this.dropdown.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+            this.dropdown.querySelectorAll('input').forEach(cb => cb.checked = false);
             this.updateDisplay();
         }
-
-        getSelected() {
-            return this.selected;
-        }
+        getSelected() { return this.selected; }
+        getValue() { return this.selected.size > 0 ? Array.from(this.selected)[0] : ''; }
     }
 
-    // Enhanced filtering with multi-value support and sorting
+    /* -------------------------------------------------------------------------- */
+    /* 3. CONTROLLER                                                              */
+    /* -------------------------------------------------------------------------- */
     (function () {
         const table = document.getElementById('appsTable');
+        if (!table) return;
+
         const tbody = table.querySelector('tbody');
         const rows = Array.from(tbody.querySelectorAll('tr'));
-        const resultCount = document.getElementById('resultCount');
-        const clearBtn = document.getElementById('clearFilters');
-        const searchInput = document.getElementById('searchInput');
-        const exportBtn = document.getElementById('exportCSV');
+        const clearBtn = document.getElementById('clearFiltersBtn');
+        const exportBtn = document.getElementById('exportCSVBtn');
 
-        // Single-select filters
-        const singleFilters = {
-            app: document.getElementById('filterApp'),
-            sso: document.getElementById('filterSSO'),
-            scim: document.getElementById('filterSCIM'),
-            mfa: document.getElementById('filterMFA'),
-            verified: document.getElementById('filterVerified')
+        // Initialize Filters
+        const filters = {
+            sso: new CustomSelect(document.getElementById('filterSSO'), applyFilters, false),
+            scim: new CustomSelect(document.getElementById('filterSCIM'), applyFilters, false),
+            mfa: new CustomSelect(document.getElementById('filterMFA'), applyFilters, false),
+            verified: new CustomSelect(document.getElementById('filterVerified'), applyFilters, false),
+            category: new CustomSelect(document.getElementById('filterCategory'), applyFilters, true),
+            protocols: new CustomSelect(document.getElementById('filterSSOProtocols'), applyFilters, true),
+            mfaTypes: new CustomSelect(document.getElementById('filterMFATypes'), applyFilters, true),
+            compliance: new CustomSelect(document.getElementById('filterCompliance'), applyFilters, true)
         };
 
-        // Multi-select filters
-        const multiFilters = {
-            category: new MultiSelect(document.getElementById('filterCategory'), applyFilters),
-            ssoProtocols: new MultiSelect(document.getElementById('filterSSOProtocols'), applyFilters),
-            mfaTypes: new MultiSelect(document.getElementById('filterMFATypes'), applyFilters),
-            compliance: new MultiSelect(document.getElementById('filterCompliance'), applyFilters)
-        };
-
-        // Sorting state
+        const appInput = document.getElementById('filterApp');
         let sortColumn = null;
         let sortDirection = 'asc';
 
-        // Populate filter dropdowns with unique values
         function populateFilters() {
             const values = {
-                app: new Set(),
-                category: new Set(),
-                sso: new Set(),
-                ssoProtocols: new Set(),
-                scim: new Set(),
-                mfa: new Set(),
-                mfaTypes: new Set(),
-                compliance: new Set(),
-                verified: new Set()
+                sso: new Set(), scim: new Set(), mfa: new Set(), verified: new Set(),
+                category: new Set(), protocols: new Set(), mfaTypes: new Set(), compliance: new Set()
             };
 
             rows.forEach(row => {
-                const cells = row.cells;
-                values.app.add(cells[0].getAttribute('data-app'));
-                values.category.add(cells[1].getAttribute('data-category'));
-                values.sso.add(cells[2].getAttribute('data-sso'));
+                const td = row.cells[0];
 
-                const protocols = cells[3].getAttribute('data-sso-protocols').split(',');
-                protocols.forEach(p => p.trim() && values.ssoProtocols.add(p.trim()));
+                values.sso.add(td.getAttribute('data-sso'));
+                values.scim.add(td.getAttribute('data-scim'));
+                values.mfa.add(td.getAttribute('data-mfa'));
+                values.verified.add(td.getAttribute('data-verified'));
+                values.category.add(td.getAttribute('data-category'));
 
-                values.scim.add(cells[4].getAttribute('data-scim'));
-                values.mfa.add(cells[5].getAttribute('data-mfa'));
-
-                const mfaTypes = cells[6].getAttribute('data-mfa-types').split(',');
-                mfaTypes.forEach(t => t.trim() && values.mfaTypes.add(t.trim()));
-
-                const comp = cells[7].getAttribute('data-compliance').split(',');
-                comp.forEach(c => c.trim() && values.compliance.add(c.trim()));
-
-                values.verified.add(cells[8].getAttribute('data-verified'));
+                td.getAttribute('data-sso-protocols').split(',').forEach(x => x.trim() && values.protocols.add(x.trim()));
+                td.getAttribute('data-mfa-types').split(',').forEach(x => x.trim() && values.mfaTypes.add(x.trim()));
+                td.getAttribute('data-compliance').split(',').forEach(x => x.trim() && values.compliance.add(x.trim().toUpperCase()));
             });
 
-            // Populate single-select dropdowns
-            Object.keys(singleFilters).forEach(key => {
-                const select = singleFilters[key];
-                // For SCIM, keep "none" as it's a valid option; for others, filter it out
-                const filterFunc = key === 'scim'
-                    ? (v => v)
-                    : (v => v && v !== 'none');
-                const sorted = Array.from(values[key]).filter(filterFunc).sort();
-                sorted.forEach(value => {
-                    const option = document.createElement('option');
-                    option.value = value;
-                    option.textContent = value.charAt(0).toUpperCase() + value.slice(1);
-                    select.appendChild(option);
-                });
+            // Single Selects
+            ['sso', 'scim', 'mfa', 'verified'].forEach(k => {
+                const filterFunc = k === 'scim' ? (v => v) : (v => v && v !== 'none');
+                filters[k].setOptions(Array.from(values[k]).filter(filterFunc).sort());
             });
 
-            // Populate multi-select dropdowns
-            multiFilters.category.setOptions(Array.from(values.category).filter(v => v).sort());
-            multiFilters.ssoProtocols.setOptions(Array.from(values.ssoProtocols).filter(v => v).sort());
-            multiFilters.mfaTypes.setOptions(Array.from(values.mfaTypes).filter(v => v).sort());
-            // Locate this section at the end of populateFilters()
-            multiFilters.compliance.setOptions(Array.from(values.compliance).filter(v => v).sort().map(v => v.toUpperCase()));
+            // Multi Selects
+            ['category', 'protocols', 'mfaTypes', 'compliance'].forEach(k => {
+                filters[k].setOptions(Array.from(values[k]).filter(v => v).sort());
+            });
         }
 
-        // Apply all filters
         function applyFilters() {
-            let visibleCount = 0;
-            const searchTerm = searchInput.value.toLowerCase();
+            const appVal = appInput.value.toLowerCase();
 
             rows.forEach(row => {
-                const cells = row.cells;
+                const td = row.cells[0];
                 let show = true;
 
-                // Search filter
-                if (searchTerm) {
-                    const appName = cells[0].textContent.toLowerCase();
-                    if (!appName.includes(searchTerm)) show = false;
-                }
+                if (appVal && !td.getAttribute('data-app').toLowerCase().includes(appVal)) show = false;
 
-                // Single-select filters
-                if (singleFilters.app.value && cells[0].getAttribute('data-app') !== singleFilters.app.value) show = false;
-                if (singleFilters.sso.value && cells[2].getAttribute('data-sso') !== singleFilters.sso.value) show = false;
-                if (singleFilters.scim.value && cells[4].getAttribute('data-scim') !== singleFilters.scim.value) show = false;
-                if (singleFilters.mfa.value && cells[5].getAttribute('data-mfa') !== singleFilters.mfa.value) show = false;
-                if (singleFilters.verified.value && cells[8].getAttribute('data-verified') !== singleFilters.verified.value) show = false;
+                if (filters.sso.getValue() && td.getAttribute('data-sso') !== filters.sso.getValue()) show = false;
+                if (filters.scim.getValue() && td.getAttribute('data-scim') !== filters.scim.getValue()) show = false;
+                if (filters.mfa.getValue() && td.getAttribute('data-mfa') !== filters.mfa.getValue()) show = false;
+                if (filters.verified.getValue() && td.getAttribute('data-verified') !== filters.verified.getValue()) show = false;
 
-                // Multi-select filters (OR logic - show if ANY selected option matches)
-                const selectedCategories = multiFilters.category.getSelected();
-                if (selectedCategories.size > 0) {
-                    const category = cells[1].getAttribute('data-category');
-                    if (!selectedCategories.has(category)) show = false;
-                }
+                const selCats = filters.category.getSelected();
+                if (selCats.size > 0 && !selCats.has(td.getAttribute('data-category'))) show = false;
 
-                const selectedProtocols = multiFilters.ssoProtocols.getSelected();
-                if (selectedProtocols.size > 0) {
-                    const protocols = cells[3].getAttribute('data-sso-protocols').split(',').map(p => p.trim()).filter(p => p);
-                    if (!Array.from(selectedProtocols).some(sp => protocols.includes(sp))) show = false;
-                }
+                const selProtos = filters.protocols.getSelected();
+                if (selProtos.size > 0 && !td.getAttribute('data-sso-protocols').split(',').some(x => selProtos.has(x.trim()))) show = false;
 
-                const selectedMFATypes = multiFilters.mfaTypes.getSelected();
-                if (selectedMFATypes.size > 0) {
-                    const types = cells[6].getAttribute('data-mfa-types').split(',').map(t => t.trim()).filter(t => t);
-                    if (!Array.from(selectedMFATypes).some(st => types.includes(st))) show = false;
-                }
+                const selTypes = filters.mfaTypes.getSelected();
+                if (selTypes.size > 0 && !td.getAttribute('data-mfa-types').split(',').some(x => selTypes.has(x.trim()))) show = false;
 
-                const selectedCompliance = multiFilters.compliance.getSelected();
-                if (selectedCompliance.size > 0) {
-                    const comp = cells[7].getAttribute('data-compliance').split(',').map(c => c.trim()).filter(c => c);
-                    if (!Array.from(selectedCompliance).some(sc => comp.includes(sc))) show = false;
-                }
+                const selComp = filters.compliance.getSelected();
+                if (selComp.size > 0 && !td.getAttribute('data-compliance').split(',').some(x => selComp.has(x.trim().toUpperCase()))) show = false;
 
-                // Show/hide row
-                if (show) {
-                    row.classList.remove('hidden');
-                    visibleCount++;
-                } else {
-                    row.classList.add('hidden');
-                }
+                row.classList.toggle('hidden', !show);
             });
-
-            resultCount.textContent = visibleCount;
         }
 
-        // Sorting function
         function sortTable(columnIndex) {
             const visibleRows = rows.filter(row => !row.classList.contains('hidden'));
-
-            if (sortColumn === columnIndex) {
-                sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
-            } else {
-                sortColumn = columnIndex;
-                sortDirection = 'asc';
-            }
+            if (sortColumn === columnIndex) sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+            else { sortColumn = columnIndex; sortDirection = 'asc'; }
 
             visibleRows.sort((a, b) => {
-                let aVal = a.cells[columnIndex].textContent.trim();
-                let bVal = b.cells[columnIndex].textContent.trim();
-
-                if (columnIndex === 8) {
-                    aVal = new Date(aVal);
-                    bVal = new Date(bVal);
-                }
-
-                if (aVal < bVal) return sortDirection === 'asc' ? -1 : 1;
-                if (aVal > bVal) return sortDirection === 'asc' ? 1 : -1;
+                const valA = a.cells[columnIndex].innerText.trim();
+                const valB = b.cells[columnIndex].innerText.trim();
+                if (valA < valB) return sortDirection === 'asc' ? -1 : 1;
+                if (valA > valB) return sortDirection === 'asc' ? 1 : -1;
                 return 0;
             });
-
             visibleRows.forEach(row => tbody.appendChild(row));
-            updateSortIndicators(columnIndex);
+            updateArrows(columnIndex);
         }
 
-        // Update sort indicators in headers
-        function updateSortIndicators(activeColumn) {
-            const headerCells = table.querySelectorAll('thead tr:first-child th');
-            headerCells.forEach((th, index) => {
-                const arrows = th.querySelector('.sort-arrows');
-                if (arrows) {
-                    if (index === activeColumn) {
-                        arrows.classList.add('active');
-                        arrows.textContent = sortDirection === 'asc' ? '▲' : '▼';
-                    } else {
-                        arrows.classList.remove('active');
-                        arrows.textContent = '⇅';
-                    }
+        function updateArrows(idx) {
+            table.querySelectorAll('thead th .sort-arrows').forEach((arrow, i) => {
+                if (i === idx) {
+                    arrow.classList.add('active');
+                    arrow.textContent = sortDirection === 'asc' ? '▲' : '▼';
+                } else {
+                    arrow.classList.remove('active');
+                    arrow.textContent = '⇅';
                 }
             });
         }
 
-        // Add click handlers to headers for sorting
-        const headerCells = table.querySelectorAll('thead tr:first-child th');
-        headerCells.forEach((th, index) => {
-            th.addEventListener('click', () => sortTable(index));
-        });
-
-        // Clear all filters
-        function clearFilters() {
-            Object.values(singleFilters).forEach(select => select.value = '');
-            Object.values(multiFilters).forEach(ms => ms.clear());
-            searchInput.value = '';
-            sortColumn = null;
-            sortDirection = 'asc';
-            updateSortIndicators(-1);
+        function clearAll() {
+            appInput.value = '';
+            Object.values(filters).forEach(f => f.clear());
             applyFilters();
         }
 
-        // Export visible rows to CSV
-        function exportToCSV() {
-            const visibleRows = rows.filter(row => !row.classList.contains('hidden'));
-
-            const headers = ['App', 'Category', 'SSO', 'SSO Protocols', 'SCIM', 'MFA', 'MFA Types', 'Compliance', 'Last Verified'];
-            let csv = headers.join(',') + '\n';
-
-            visibleRows.forEach(row => {
-                const cells = row.cells;
-                const rowData = [
-                    `"${cells[0].textContent.trim()}"`,
-                    `"${cells[1].textContent.trim()}"`,
-                    `"${cells[2].textContent.trim()}"`,
-                    `"${cells[3].textContent.trim()}"`,
-                    `"${cells[4].textContent.trim()}"`,
-                    `"${cells[5].textContent.trim()}"`,
-                    `"${cells[6].textContent.trim()}"`,
-                    `"${cells[7].textContent.trim()}"`,
-                    `"${cells[8].textContent.trim()}"`
-                ];
-                csv += rowData.join(',') + '\n';
+        function exportCSV() {
+            const visible = rows.filter(r => !r.classList.contains('hidden'));
+            let csv = "App,Category,SSO,Protocols,SCIM,MFA,MFA Types,Compliance,Verified\n";
+            visible.forEach(row => {
+                const cols = Array.from(row.cells).map(c => '"' + c.innerText.trim().replace(/"/g, '""') + '"');
+                csv += cols.join(',') + "\n";
             });
-
-            const blob = new Blob([csv], { type: 'text/csv' });
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'vettheapp-export-' + new Date().toISOString().split('T')[0] + '.csv';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            window.URL.revokeObjectURL(url);
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" }));
+            link.download = "saas-data.csv";
+            link.click();
         }
 
-        // Add event listeners
-        Object.values(singleFilters).forEach(select => {
-            select.addEventListener('change', applyFilters);
-        });
-        clearBtn.addEventListener('click', clearFilters);
-        searchInput.addEventListener('input', applyFilters);
-        exportBtn.addEventListener('click', exportToCSV);
+        table.querySelectorAll('thead th').forEach((th, i) => th.addEventListener('click', () => sortTable(i)));
+        appInput.addEventListener('input', applyFilters);
+        if (clearBtn) clearBtn.addEventListener('click', clearAll);
+        if (exportBtn) exportBtn.addEventListener('click', exportCSV);
 
-        // Initialize
         populateFilters();
         applyFilters();
     })();
