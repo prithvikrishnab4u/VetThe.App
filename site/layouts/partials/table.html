@@ -55,7 +55,7 @@
                     <div class="multi-select-dropdown"></div>
                 </div>
             </th>
-            <th><select id="filterSCIM">
+            <th><select class="multi-select" id="filterSCIM">
                     <option value="">All</option>
                 </select></th>
             <th><select id="filterMFA">
@@ -107,16 +107,16 @@
             </td>
 
             <!-- SCIM -->
-            <td data-scim="{{ .scim.supported }}">
+            <td data-scim="{{ .scim.tier }}">
                 {{ if eq .scim.supported "full" }}
                 <span class="check">✓</span>
-                <span class="tier">{{ .scim.tier }}</span> <span class="version">{{ .scim.version }}</span>
+                <span class="tier">{{ .scim.tier }}</span>
                 {{ else if eq .scim.supported "partial" }}
                 <span class="partial">~</span>
-                <span class="tier">{{ .scim.tier }}</span> <span class="version">{{ .scim.version }}</span>
+                <span class="tier">{{ .scim.tier }}</span>
                 {{ else if eq .scim.supported true }}
                 <span class="check">✓</span>
-                <span class="tier">{{ .scim.tier }}</span> <span class="version">{{ .scim.version }}</span>
+                <span class="tier">{{ .scim.tier }}</span>
                 {{ else }}
                 <span class="cross">✗</span>
                 {{ end }}
