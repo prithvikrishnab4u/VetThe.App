@@ -126,8 +126,7 @@ MIT License. Data provided for informational purposes - always verify with vendo
 - LinkedIn: [pporeddy](https://www.linkedin.com/in/pporeddy/)
 - GitHub: [@prithvikrishnab4u](https://github.com/prithvikrishnab4u)
 
-Built with [Hugo](https://gohugo.io/)
-
+Built with ❤️
 ---
 
 **⭐ Star this repo if you find it useful!**
