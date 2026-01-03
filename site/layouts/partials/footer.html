@@ -1,90 +1,96 @@
 <style>
-    /* 1. IDLE: 10s Spin/Glow + 10s Rest */
     @keyframes ninja-idle {
         0% {
             transform: rotate(0deg);
-            filter: drop-shadow(0 0 2px rgba(60, 63, 213, 0.5));
+            filter: drop-shadow(0 0 2px rgba(59, 130, 246, 0.5));
         }
 
-        5% {
-            filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.8));
-        }
-
-        /* Glow pulse start */
         45% {
-            filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.8));
+            filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.8));
         }
 
-        /* Glow pulse end */
         50% {
             transform: rotate(2440deg);
             filter: none;
         }
 
-        /* 10s mark: Stop spinning, remove glow */
         100% {
             transform: rotate(2440deg);
             filter: none;
         }
-
-        /* 20s mark: Stay still */
     }
 
     .animate-ninja-idle {
         animation: ninja-idle 5s ease-in-out infinite;
     }
 
-    /* 2. HOVER: Fast Spin */
     .group:hover .ninja-icon {
         animation: spin 50ms linear infinite !important;
-        /* Override idle */
     }
 
-    /* 3. HOVER: Entire Site Glow */
     .group:hover .ninja-text,
     .group:hover .ninja-icon {
-        filter: drop-shadow(0 0 6px rgba(138, 74, 133, 0.6));
-        color: #0509f0;
-        /* Indigo-600 */
+        filter: drop-shadow(0 0 6px rgba(99, 102, 241, 0.6));
+        color: #4f46e5;
     }
 </style>
 
-<footer class="mt-4 border-t border-slate-200 bg-slate-50/50">
-    <div class="max-w-7xl mx-auto px-6 py-6 lg:px-8">
+<footer class="bg-white border-t border-gray-200 mt-4">
+    <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-
-            <div class="space-y-4">
-                <h3 class="text-xl font-extrabold text-slate-900 tracking-tight">
-                    VetThe<span class="text-indigo-600">.App</span>
+        <!-- Top Row: Logo + App Counter -->
+        <div class="flex items-center justify-between pb-5 mb-5 border-b border-gray-200">
+            <!-- Logo -->
+            <div class="flex items-center gap-2.5">
+                <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    aria-label="VetThe.App Icon">
+                    <defs>
+                        <linearGradient id="footerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#2563eb" />
+                            <stop offset="100%" stop-color="#4f46e5" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="40" height="40" rx="10" fill="url(#footerGradient)" />
+                    <path d="M13 19L18 24L27 13" stroke="white" stroke-width="3" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <h3 class="text-lg font-bold text-gray-900">
+                    VetThe<span class="text-blue-600">.App</span>
                 </h3>
-                <p class="text-sm text-slate-600 leading-relaxed max-w-xs">
-                    Community-driven comparison of identity security features across SaaS applications.
-                </p>
-
-                <div
-                    class="inline-flex items-center gap-3 bg-white border border-slate-200 rounded-xl px-4 py-3 shadow-sm mt-4 cursor-default group hover:border-emerald-200 transition-colors">
-                    <span class="relative flex h-3 w-3">
-                        <span
-                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
-                    </span>
-                    <div class="flex flex-col">
-                        <span
-                            class="text-[10px] font-bold text-slate-400 uppercase tracking-wider group-hover:text-emerald-600 transition-colors">Tracking</span>
-                        <span class="text-sm font-bold text-slate-900">{{ len $.Site.Data.apps }} Applications</span>
-                    </div>
-                </div>
             </div>
 
+            <!-- App Counter -->
+            <div class="inline-flex items-center gap-2 bg-gray-50 border border-gray-200 rounded-lg px-3 py-1.5">
+                <span class="relative flex h-2 w-2">
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </span>
+                <span class="text-sm font-semibold text-gray-900">{{ len $.Site.Data.apps }} Apps Tracked</span>
+            </div>
+        </div>
+
+        <!-- Main Grid: 3 Columns -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <!-- About Section -->
             <div>
-                <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-6">Contribute</h3>
-                <ul class="space-y-4">
+                <h3 class="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-3">About</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                    Verified IAM security features across SaaS apps.
+                    </br>Community-maintained and regularly updated.
+                </p>
+            </div>
+
+            <!-- Contribute Section -->
+            <div>
+                <h3 class="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-3">Contribute</h3>
+                <ul class="space-y-2">
                     <li>
                         <a href="https://github.com/prithvikrishnab4u/VetThe.App" target="_blank"
-                            class="group flex items-center gap-3 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
-                            <svg class="w-5 h-5 text-slate-400 group-hover:text-black transition-colors"
-                                fill="currentColor" viewBox="0 0 24 24">
+                            class="group inline-flex items-center text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                            <svg class="w-4 h-4 mr-2 text-gray-400 group-hover:text-gray-900" fill="currentColor"
+                                viewBox="0 0 24 24">
                                 <path fill-rule="evenodd"
                                     d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
                                     clip-rule="evenodd" />
@@ -95,107 +101,90 @@
                     <li>
                         <a href="https://github.com/prithvikrishnab4u/VetThe.App/issues/new?template=app-request.md"
                             target="_blank"
-                            class="group flex items-center gap-3 text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">
-                            <svg class="w-5 h-5 text-slate-400 group-hover:text-blue-600 transition-colors" fill="none"
+                            class="group inline-flex items-center text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                            <svg class="w-4 h-4 mr-2 text-gray-400 group-hover:text-gray-900" fill="none"
                                 stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 4v16m8-8H4"></path>
+                                    d="M12 4v16m8-8H4" />
                             </svg>
-                            Request an App
+                            Request App
                         </a>
                     </li>
                     <li>
                         <a href="https://github.com/prithvikrishnab4u/VetThe.App/issues/new" target="_blank"
-                            class="group flex items-center gap-3 text-sm font-medium text-slate-600 hover:text-amber-600 transition-colors">
-                            <svg class="w-5 h-5 text-slate-400 group-hover:text-amber-600 transition-colors" fill="none"
+                            class="group inline-flex items-center text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                            <svg class="w-4 h-4 mr-2 text-gray-400 group-hover:text-gray-900" fill="none"
                                 stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
-                                </path>
+                                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                             </svg>
-                            Report an Issue
+                            Report Issue
                         </a>
                     </li>
                     <li>
-    <a href="https://github.com/prithvikrishnab4u/VetThe.App?tab=contributing-ov-file" target="_blank"
-        class="group flex items-center gap-3 text-sm font-medium text-slate-600 hover:text-green-600 transition-colors">
-        <svg class="w-5 h-5 text-slate-400 group-hover:text-green-600 transition-colors" fill="none"
-            stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
-            </path>
-        </svg>
-        Contributing Guide
-    </a>
-</li>
+                        <a href="https://github.com/prithvikrishnab4u/VetThe.App?tab=contributing-ov-file"
+                            target="_blank"
+                            class="group inline-flex items-center text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                            <svg class="w-4 h-4 mr-2 text-gray-400 group-hover:text-gray-900" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                            Contributing Guide
+                        </a>
+                    </li>
                 </ul>
             </div>
 
-            <div class="flex flex-col">
-                <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-6">Curated By</h3>
+            <!-- Author Section -->
+            <div>
+                <h3 class="text-sm font-semibold text-gray-600 uppercase tracking-wider mb-3">Author</h3>
 
-                <div class="flex items-center gap-3 mb-6">
+                <div class="flex items-center gap-2.5 mb-3">
                     <div
-                        class="h-11 w-11 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-700 shadow-sm shrink-0">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path fill-rule="evenodd"
-                                d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z"
-                                clip-rule="evenodd" />
-                        </svg>
+                        class="h-9 w-9 rounded-full bg-indigo-600 flex items-center justify-center text-white text-sm font-bold">
+                        PP
                     </div>
                     <div>
-                        <p class="text-base font-extrabold text-slate-900 tracking-tight leading-tight">
-                            Prithvi Poreddy
-                        </p>
-                        <p class="text-xs text-slate-500 font-medium italic mt-0.5">I think therefore IAM</p>
+                        <p class="text-m font-bold text-gray-900">Prithvi Poreddy</p>
+                        <p class="text-xs text-gray-600">I think therefore IAM</p>
                     </div>
                 </div>
 
-                <div class="flex items-center gap-8">
-
-                    <a href="https://iam.ninja" target="_blank" class="group flex items-center gap-2.5 cursor-pointer">
+                <div class="flex items-center gap-3">
+                    <a href="https://iam.ninja" target="_blank" class="group inline-flex items-center gap-1.5">
                         <div
-                            class="flex items-center justify-center w-8 h-8 rounded-lg bg-slate-100 group-hover:bg-indigo-50 transition-colors">
-                            <svg class="w-5 h-5 text-slate-500 ninja-icon animate-ninja-idle" viewBox="0 0 24 24"
+                            class="flex items-center justify-center w-6 h-6 rounded bg-gray-100 group-hover:bg-blue-50 transition-colors">
+                            <svg class="w-3.5 h-3.5 text-black-700 ninja-icon animate-ninja-idle" viewBox="0 0 24 24"
                                 fill="currentColor">
                                 <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5L12 0Z" />
                             </svg>
                         </div>
-
                         <span
-                            class="font-mono text-sm font-semibold text-slate-600 ninja-text transition-all">iam.ninja</span>
+                            class="font-mono text-xs font-semibold text-gray-600 ninja-text transition-all">iam.ninja</span>
                     </a>
 
                     <a href="https://linkedin.com/in/pporeddy" target="_blank"
-                        class="text-slate-400 hover:text-[#0077b5] hover:scale-110 transition-all duration-200"
-                        aria-label="LinkedIn">
-                        <svg class="w-9 h-9" fill="currentColor" viewBox="0 0 24 24">
+                        class="text-gray-400 hover:text-[#0077b5] transition-colors" aria-label="LinkedIn">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                         </svg>
                     </a>
-
                 </div>
             </div>
         </div>
 
-        <div
-            class="border-t border-slate-200 pt-8 pb-4 flex flex-col md:flex-row justify-center items-center text-center gap-x-6 gap-y-2">
-            <p class="text-sm font-medium text-slate-600 flex items-center gap-1.5">
-                Built with <span class="text-red-500 animate-pulse">❤️</span>
-            </p>
+        <!-- Bottom Bar -->
+        <div class="mt-2 pt-1 border-t border-gray-200 justify-between">
+            <div class="flex flex-col sm:flex-row items-center gap-2 text-xs text-gray-500">
 
-            <span class="hidden md:inline text-slate-300">•</span>
+                <span>Crafted with</span>
+                <span class="text-red-500 animate-pulse">❤️</span>
+                <span>for the IAM community</span>
 
-            <p class="text-sm text-slate-500">
-                MIT License
-            </p>
-
-            <span class="hidden md:inline text-slate-300">•</span>
-
-            <p class="text-sm text-slate-500">
-                Data for informational purposes only. Always verify with vendors.
-            </p>
+            </div>
         </div>
+    </div>
     </div>
 </footer>

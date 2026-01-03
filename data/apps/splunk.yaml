@@ -11,7 +11,7 @@ sso:
   domain_claiming: true
 mfa:
   supported: true
-  types: ["TOTP", "Duo"]
+  types: ["TOTP"]
   enforcement: "admin_enforced"
   tier: "paid"
   adaptive_mfa: false

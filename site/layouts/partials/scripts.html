@@ -1,200 +1,164 @@
 <script>
-    /* -------------------------------------------------------------------------- */
-    /* 1. TOOLTIP LOGIC                                                           */
-    /* -------------------------------------------------------------------------- */
-    (function () {
-        const headers = document.querySelectorAll('th[data-tooltip]');
-        let tooltip = null;
-        let hideTimeout = null;
-        let currentHeader = null;
-
-        headers.forEach(th => {
-            th.addEventListener('mouseenter', (e) => {
-                if (hideTimeout) { clearTimeout(hideTimeout); hideTimeout = null; }
-                if (currentHeader === th && tooltip) return;
-                if (tooltip && tooltip.parentNode) tooltip.parentNode.removeChild(tooltip);
-
-                currentHeader = th;
-                tooltip = document.createElement('div');
-                tooltip.className = 'custom-tooltip';
-                tooltip.textContent = th.getAttribute('data-tooltip');
-                document.body.appendChild(tooltip);
-
-                const rect = th.getBoundingClientRect();
-                tooltip.style.position = 'fixed';
-                tooltip.style.left = (rect.left + rect.width / 2) + 'px';
-                tooltip.style.top = (rect.top - 10) + 'px';
-                tooltip.style.transform = 'translate(-50%, -100%)';
-
-                // ADD THIS LINE HERE:
-                setTimeout(() => tooltip.classList.add('show'), 10);
-            });
-
-            th.addEventListener('mouseleave', () => {
-                hideTimeout = setTimeout(() => {
-                    if (tooltip) {
-                        tooltip.classList.remove('show');
-                        setTimeout(() => {
-                            if (tooltip && tooltip.parentNode) tooltip.parentNode.removeChild(tooltip);
-                            tooltip = null;
-                            currentHeader = null;
-                        }, 200);
-                    }
-                }, 100);
-            });
-        });
-    })();
-
-    /* -------------------------------------------------------------------------- */
-    /* 2. UNIFIED DROPDOWN LOGIC (Single & Multi)                                 */
-    /* -------------------------------------------------------------------------- */
-    const allSelectInstances = [];
-
-    // Helper to Capitalize First Letter
-    function capitalize(str) {
-        if (!str) return '';
-        return str.charAt(0).toUpperCase() + str.slice(1);
-    }
-
-    class CustomSelect {
-        constructor(element, onChange, isMulti = false) {
-            this.element = element;
-            this.onChange = onChange;
+(function() {
+    const table = document.getElementById('appsTable');
+    const tbody = document.getElementById('tableBody');
+    const globalSearch = document.getElementById('globalSearch');
+    const filterApp = document.getElementById('filterApp');
+    const clearAllBtn = document.getElementById('clearAllBtn');
+    const exportCSVBtn = document.getElementById('exportCSVBtn');
+    const resultCount = document.getElementById('resultCount');
+    
+    let allRows = Array.from(tbody.querySelectorAll('tr'));
+    let filteredRows = [...allRows];
+    let currentPage = 1;
+    let rowsPerPage = 25;
+    let sortColumn = null;
+    let sortDirection = 'asc';
+    
+    // Flowbite-style Dropdown Class
+    class FlowbiteDropdown {
+        constructor(containerId, isMulti = false) {
+            this.container = document.getElementById(containerId);
+            if (!this.container) return;
+            
+            this.button = this.container.querySelector('.dropdown-button');
+            this.buttonText = this.button.querySelector('span');
+            this.dropdown = this.container.querySelector('.flowbite-dropdown');
             this.isMulti = isMulti;
             this.selected = new Set();
-            this.display = element.querySelector('.custom-select-display');
-            this.dropdown = element.querySelector('.custom-select-dropdown');
-            this.closeTimeout = null;
-
-            allSelectInstances.push(this);
-
-            // Toggle logic
-            this.display.addEventListener('click', (e) => { e.stopPropagation(); this.toggle(); });
-            this.dropdown.addEventListener('click', (e) => { e.stopPropagation(); });
-
-            // Mouse Leave Logic (Close on exit)
-            this.element.addEventListener('mouseleave', () => {
-                this.closeTimeout = setTimeout(() => { this.close(); }, 300);
-            });
-            this.element.addEventListener('mouseenter', () => {
-                if (this.closeTimeout) { clearTimeout(this.closeTimeout); this.closeTimeout = null; }
-            });
-
-            // Close on Global Click
-            document.addEventListener('click', () => { this.close(); });
-
-            // NEW: Close on Global Scroll (Prevents floating dropdowns)
-            window.addEventListener('scroll', () => { if (this.isOpen()) this.close(); }, true);
-
-            this.createFooter();
+            
+            this.init();
         }
 
-        createFooter() {
-            const footerDiv = document.createElement('div');
-            footerDiv.className = 'custom-select-footer';
-            const clearLink = document.createElement('a');
-            clearLink.className = 'custom-select-clear';
-            clearLink.textContent = 'Clear';
-            clearLink.href = '#';
-            clearLink.addEventListener('click', (e) => {
-                e.preventDefault(); e.stopPropagation();
-                this.clear();
-                this.onChange();
+        init() {
+            // Toggle dropdown
+            this.button.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.toggle();
             });
-            footerDiv.appendChild(clearLink);
-            this.footerElement = footerDiv;
+
+            // Close on outside click
+            document.addEventListener('click', (e) => {
+                if (!this.container.contains(e.target)) {
+                    this.close();
+                }
+            });
+            
+            // Prevent dropdown from closing when clicking inside
+            this.dropdown.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
         }
 
         setOptions(options) {
             this.dropdown.innerHTML = '';
+            
+            // Add search for long lists
+            if (options.length > 8) {
+                const searchDiv = document.createElement('div');
+                searchDiv.className = 'sticky top-0 bg-white border-b border-gray-200 p-2';
+                searchDiv.innerHTML = `
+                    <input type="text" 
+                           placeholder="Search..." 
+                           class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none">
+                `;
+                this.dropdown.appendChild(searchDiv);
+                
+                const searchInput = searchDiv.querySelector('input');
+                searchInput.addEventListener('input', (e) => {
+                    e.stopPropagation();
+                    const query = e.target.value.toLowerCase();
+                    const opts = this.dropdown.querySelectorAll('.dropdown-option');
+                    opts.forEach(opt => {
+                        const text = opt.textContent.toLowerCase();
+                        opt.style.display = text.includes(query) ? 'flex' : 'none';
+                    });
+                });
+                searchInput.addEventListener('click', (e) => e.stopPropagation());
+            }
+
+            // Add options
             options.forEach(opt => {
                 const div = document.createElement('div');
-                div.className = 'custom-select-option';
-
-                const input = document.createElement('input');
-                input.type = this.isMulti ? 'checkbox' : 'radio';
-                input.name = 'group-' + this.element.id;
-                input.value = opt;
-                input.checked = this.selected.has(opt);
-                input.id = 'opt-' + this.element.id + '-' + opt.replace(/\s+/g, '-');
-                input.style.pointerEvents = 'none';
-
-                const label = document.createElement('label');
-                label.htmlFor = input.id;
-                label.textContent = capitalize(opt);
-                label.style.pointerEvents = 'none';
-
-                div.appendChild(input);
-                div.appendChild(label);
-
-                // Row Click Handler
-                div.addEventListener('click', (e) => {
-                    e.stopPropagation();
-
-                    if (this.isMulti) {
-                        if (this.selected.has(opt)) {
-                            this.selected.delete(opt);
-                            input.checked = false;
-                        } else {
+                div.className = 'dropdown-option';
+                
+                if (this.isMulti) {
+                    const checkboxId = `${this.container.id}_${opt.replace(/\s+/g, '_')}`;
+                    div.innerHTML = `
+                        <input type="checkbox" 
+                               id="${checkboxId}"
+                               value="${opt}" 
+                               class="flowbite-checkbox"
+                               ${this.selected.has(opt) ? 'checked' : ''}>
+                        <label for="${checkboxId}" class="ml-2 text-sm font-medium text-gray-900 cursor-pointer capitalize flex-1">${opt}</label>
+                    `;
+                    
+                    const checkbox = div.querySelector('input');
+                    const label = div.querySelector('label');
+                    
+                    const handleChange = (e) => {
+                        e.stopPropagation();
+                        if (checkbox.checked) {
                             this.selected.add(opt);
-                            input.checked = true;
+                        } else {
+                            this.selected.delete(opt);
                         }
-                    } else {
+                        this.updateButtonText();
+                        applyFilters();
+                    };
+                    
+                    checkbox.addEventListener('change', handleChange);
+                    checkbox.addEventListener('click', (e) => e.stopPropagation());
+                    label.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        checkbox.checked = !checkbox.checked;
+                        handleChange(e);
+                    });
+                } else {
+                    div.innerHTML = `<label class="text-sm font-medium text-gray-900 cursor-pointer capitalize flex-1">${opt}</label>`;
+                    div.addEventListener('click', (e) => {
+                        e.stopPropagation();
                         this.selected.clear();
                         this.selected.add(opt);
-                        this.updateDisplay();
-                        this.onChange();
+                        this.updateButtonText();
+                        applyFilters();
                         this.close();
-                        this.dropdown.querySelectorAll('input').forEach(r => r.checked = r.value === opt);
-                        return;
-                    }
-
-                    this.updateDisplay();
-                    this.onChange();
-                });
-
+                    });
+                }
+                
                 this.dropdown.appendChild(div);
             });
-            if (this.footerElement) this.dropdown.appendChild(this.footerElement);
-        }
 
-        updateDisplay() {
-            this.display.innerHTML = '';
-            if (this.selected.size === 0) {
-                this.display.classList.add('empty');
-            } else {
-                this.display.classList.remove('empty');
-                const selectedText = Array.from(this.selected).map(val => capitalize(val)).join(', ');
-                const textSpan = document.createElement('span');
-                textSpan.textContent = selectedText;
-                textSpan.style.color = '#334155';
-                this.display.appendChild(textSpan);
+            // Add Clear button for multi-select
+            if (this.isMulti && options.length > 0) {
+                const footer = document.createElement('div');
+                footer.className = 'sticky bottom-0 bg-white border-t border-gray-200 p-2';
+                footer.innerHTML = '<button class="w-full px-3 py-2 text-sm font-medium text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">Clear Selection</button>';
+                const clearBtn = footer.querySelector('button');
+                clearBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    this.clear();
+                });
+                this.dropdown.appendChild(footer);
             }
         }
 
         toggle() {
             const isOpen = this.dropdown.classList.contains('open');
-            allSelectInstances.forEach(ms => ms.close()); // Close others
-
-            if (!isOpen) {
-                // DYNAMIC POSITIONING FIX
-                // 1. Get position of the trigger button
-                const rect = this.display.getBoundingClientRect();
-
-                // 2. Set Fixed positioning to break out of table overflow
-                this.dropdown.style.position = 'fixed';
-                this.dropdown.style.top = (rect.bottom + 4) + 'px'; // 4px gap
-                this.dropdown.style.left = rect.left + 'px';
-                this.dropdown.style.width = 'auto'; // Reset width
-                this.dropdown.style.minWidth = Math.max(rect.width, 160) + 'px'; // At least as wide as trigger
-                this.dropdown.style.zIndex = '99999'; // Float above everything
-
+            
+            // Close all other dropdowns
+            document.querySelectorAll('.flowbite-dropdown.open').forEach(d => {
+                if (d !== this.dropdown) d.classList.remove('open');
+            });
+            
+            if (isOpen) {
+                this.close();
+            } else {
                 this.dropdown.classList.add('open');
             }
-        }
-
-        isOpen() {
-            return this.dropdown.classList.contains('open');
         }
 
         close() {
@@ -203,156 +167,328 @@
 
         clear() {
             this.selected.clear();
-            this.dropdown.querySelectorAll('input').forEach(cb => cb.checked = false);
-            this.updateDisplay();
-        }
-        getSelected() { return this.selected; }
-        getValue() { return this.selected.size > 0 ? Array.from(this.selected)[0] : ''; }
-    }
-
-    /* -------------------------------------------------------------------------- */
-    /* 3. CONTROLLER                                                              */
-    /* -------------------------------------------------------------------------- */
-    (function () {
-        const table = document.getElementById('appsTable');
-        if (!table) return;
-
-        const tbody = table.querySelector('tbody');
-        const rows = Array.from(tbody.querySelectorAll('tr'));
-        const clearBtn = document.getElementById('clearFiltersBtn');
-        const exportBtn = document.getElementById('exportCSVBtn');
-
-        // Initialize Filters
-        const filters = {
-            sso: new CustomSelect(document.getElementById('filterSSO'), applyFilters, false),
-            scim: new CustomSelect(document.getElementById('filterSCIM'), applyFilters, false),
-            mfa: new CustomSelect(document.getElementById('filterMFA'), applyFilters, false),
-            verified: new CustomSelect(document.getElementById('filterVerified'), applyFilters, false),
-            category: new CustomSelect(document.getElementById('filterCategory'), applyFilters, true),
-            protocols: new CustomSelect(document.getElementById('filterSSOProtocols'), applyFilters, true),
-            mfaTypes: new CustomSelect(document.getElementById('filterMFATypes'), applyFilters, true),
-            compliance: new CustomSelect(document.getElementById('filterCompliance'), applyFilters, true)
-        };
-
-        const appInput = document.getElementById('filterApp');
-        let sortColumn = null;
-        let sortDirection = 'asc';
-
-        function populateFilters() {
-            const values = {
-                sso: new Set(), scim: new Set(), mfa: new Set(), verified: new Set(),
-                category: new Set(), protocols: new Set(), mfaTypes: new Set(), compliance: new Set()
-            };
-
-            rows.forEach(row => {
-                const td = row.cells[0];
-
-                values.sso.add(td.getAttribute('data-sso'));
-                values.scim.add(td.getAttribute('data-scim'));
-                values.mfa.add(td.getAttribute('data-mfa'));
-                values.verified.add(td.getAttribute('data-verified'));
-                values.category.add(td.getAttribute('data-category'));
-
-                td.getAttribute('data-sso-protocols').split(',').forEach(x => x.trim() && values.protocols.add(x.trim()));
-                td.getAttribute('data-mfa-types').split(',').forEach(x => x.trim() && values.mfaTypes.add(x.trim()));
-                td.getAttribute('data-compliance').split(',').forEach(x => x.trim() && values.compliance.add(x.trim().toUpperCase()));
-            });
-
-            // Single Selects
-            ['sso', 'scim', 'mfa', 'verified'].forEach(k => {
-                const filterFunc = k === 'scim' ? (v => v) : (v => v && v !== 'none');
-                filters[k].setOptions(Array.from(values[k]).filter(filterFunc).sort());
-            });
-
-            // Multi Selects
-            ['category', 'protocols', 'mfaTypes', 'compliance'].forEach(k => {
-                filters[k].setOptions(Array.from(values[k]).filter(v => v).sort());
-            });
-        }
-
-        function applyFilters() {
-            const appVal = appInput.value.toLowerCase();
-
-            rows.forEach(row => {
-                const td = row.cells[0];
-                let show = true;
-
-                if (appVal && !td.getAttribute('data-app').toLowerCase().includes(appVal)) show = false;
-
-                if (filters.sso.getValue() && td.getAttribute('data-sso') !== filters.sso.getValue()) show = false;
-                if (filters.scim.getValue() && td.getAttribute('data-scim') !== filters.scim.getValue()) show = false;
-                if (filters.mfa.getValue() && td.getAttribute('data-mfa') !== filters.mfa.getValue()) show = false;
-                if (filters.verified.getValue() && td.getAttribute('data-verified') !== filters.verified.getValue()) show = false;
-
-                const selCats = filters.category.getSelected();
-                if (selCats.size > 0 && !selCats.has(td.getAttribute('data-category'))) show = false;
-
-                const selProtos = filters.protocols.getSelected();
-                if (selProtos.size > 0 && !td.getAttribute('data-sso-protocols').split(',').some(x => selProtos.has(x.trim()))) show = false;
-
-                const selTypes = filters.mfaTypes.getSelected();
-                if (selTypes.size > 0 && !td.getAttribute('data-mfa-types').split(',').some(x => selTypes.has(x.trim()))) show = false;
-
-                const selComp = filters.compliance.getSelected();
-                if (selComp.size > 0 && !td.getAttribute('data-compliance').split(',').some(x => selComp.has(x.trim().toUpperCase()))) show = false;
-
-                row.classList.toggle('hidden', !show);
-            });
-        }
-
-        function sortTable(columnIndex) {
-            const visibleRows = rows.filter(row => !row.classList.contains('hidden'));
-            if (sortColumn === columnIndex) sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
-            else { sortColumn = columnIndex; sortDirection = 'asc'; }
-
-            visibleRows.sort((a, b) => {
-                const valA = a.cells[columnIndex].innerText.trim();
-                const valB = b.cells[columnIndex].innerText.trim();
-                if (valA < valB) return sortDirection === 'asc' ? -1 : 1;
-                if (valA > valB) return sortDirection === 'asc' ? 1 : -1;
-                return 0;
-            });
-            visibleRows.forEach(row => tbody.appendChild(row));
-            updateArrows(columnIndex);
-        }
-
-        function updateArrows(idx) {
-            table.querySelectorAll('thead th .sort-arrows').forEach((arrow, i) => {
-                if (i === idx) {
-                    arrow.classList.add('active');
-                    arrow.textContent = sortDirection === 'asc' ? '▲' : '▼';
-                } else {
-                    arrow.classList.remove('active');
-                    arrow.textContent = '⇅';
-                }
-            });
-        }
-
-        function clearAll() {
-            appInput.value = '';
-            Object.values(filters).forEach(f => f.clear());
+            this.dropdown.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+            this.updateButtonText();
             applyFilters();
         }
 
-        function exportCSV() {
-            const visible = rows.filter(r => !r.classList.contains('hidden'));
-            let csv = "App,Category,SSO,Protocols,SCIM,MFA,MFA Types,Compliance,Verified\n";
-            visible.forEach(row => {
-                const cols = Array.from(row.cells).map(c => '"' + c.innerText.trim().replace(/"/g, '""') + '"');
-                csv += cols.join(',') + "\n";
-            });
-            const link = document.createElement("a");
-            link.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" }));
-            link.download = "saas-data.csv";
-            link.click();
+        updateButtonText() {
+            if (this.selected.size === 0) {
+                this.buttonText.textContent = 'All';
+                this.buttonText.className = 'text-gray-500';
+            } else if (this.selected.size === 1) {
+                const value = Array.from(this.selected)[0];
+                this.buttonText.textContent = value.charAt(0).toUpperCase() + value.slice(1);
+                this.buttonText.className = 'text-gray-900 font-medium';
+            } else {
+                this.buttonText.textContent = `${this.selected.size} selected`;
+                this.buttonText.className = 'text-gray-900 font-medium';
+            }
         }
 
-        table.querySelectorAll('thead th').forEach((th, i) => th.addEventListener('click', () => sortTable(i)));
-        appInput.addEventListener('input', applyFilters);
-        if (clearBtn) clearBtn.addEventListener('click', clearAll);
-        if (exportBtn) exportBtn.addEventListener('click', exportCSV);
+        getSelected() {
+            return this.selected;
+        }
+    }
 
-        populateFilters();
+    // Initialize dropdowns
+    const dropdowns = {
+        category: new FlowbiteDropdown('filterCategoryContainer', true),
+        sso: new FlowbiteDropdown('filterSSOContainer', false),
+        protocols: new FlowbiteDropdown('filterProtocolsContainer', true),
+        scim: new FlowbiteDropdown('filterSCIMContainer', false),
+        mfa: new FlowbiteDropdown('filterMFAContainer', false),
+        mfaTypes: new FlowbiteDropdown('filterMFATypesContainer', true),
+        compliance: new FlowbiteDropdown('filterComplianceContainer', true)
+    };
+
+    // Populate filter options
+    function populateFilters() {
+        const values = {
+            category: new Set(),
+            sso: new Set(),
+            protocols: new Set(),
+            scim: new Set(),
+            mfa: new Set(),
+            mfaTypes: new Set(),
+            compliance: new Set()
+        };
+
+        allRows.forEach(row => {
+            values.category.add(row.dataset.category);
+            
+            const ssoValue = row.dataset.sso;
+            if (ssoValue && ssoValue !== 'none') {
+                values.sso.add(ssoValue);
+            }
+            
+            const scimValue = row.dataset.scim;
+            if (scimValue && scimValue !== 'none') {
+                values.scim.add(scimValue);
+            }
+            
+            const mfaValue = row.dataset.mfa;
+            if (mfaValue && mfaValue !== 'none') {
+                values.mfa.add(mfaValue);
+            }
+            
+            row.dataset.protocols.split(',').forEach(p => p.trim() && values.protocols.add(p.trim()));
+            row.dataset.mfaTypes.split(',').forEach(m => m.trim() && values.mfaTypes.add(m.trim()));
+            row.dataset.compliance.split(',').forEach(c => c.trim() && values.compliance.add(c.trim().toUpperCase()));
+        });
+
+        dropdowns.category.setOptions(Array.from(values.category).filter(v => v).sort());
+        dropdowns.sso.setOptions(Array.from(values.sso).sort());
+        dropdowns.protocols.setOptions(Array.from(values.protocols).sort());
+        dropdowns.scim.setOptions(Array.from(values.scim).sort());
+        dropdowns.mfa.setOptions(Array.from(values.mfa).sort());
+        dropdowns.mfaTypes.setOptions(Array.from(values.mfaTypes).sort());
+        dropdowns.compliance.setOptions(Array.from(values.compliance).sort());
+    }
+
+    // Apply all filters
+    function applyFilters() {
+        const globalQuery = globalSearch.value.toLowerCase();
+        const appQuery = filterApp.value.toLowerCase();
+
+        filteredRows = allRows.filter(row => {
+            // Global search
+            if (globalQuery && !row.textContent.toLowerCase().includes(globalQuery)) {
+                return false;
+            }
+
+            // App name filter
+            if (appQuery && !row.dataset.app.toLowerCase().includes(appQuery)) {
+                return false;
+            }
+
+            // Category
+            const selectedCats = dropdowns.category.getSelected();
+            if (selectedCats.size > 0 && !selectedCats.has(row.dataset.category)) {
+                return false;
+            }
+
+            // SSO
+            const selectedSSO = dropdowns.sso.getSelected();
+            if (selectedSSO.size > 0 && !selectedSSO.has(row.dataset.sso)) {
+                return false;
+            }
+
+            // Protocols
+            const selectedProtos = dropdowns.protocols.getSelected();
+            if (selectedProtos.size > 0) {
+                const protocols = row.dataset.protocols.split(',').map(p => p.trim());
+                if (!Array.from(selectedProtos).some(sp => protocols.includes(sp))) {
+                    return false;
+                }
+            }
+
+            // SCIM
+            const selectedSCIM = dropdowns.scim.getSelected();
+            if (selectedSCIM.size > 0 && !selectedSCIM.has(row.dataset.scim)) {
+                return false;
+            }
+
+            // MFA
+            const selectedMFA = dropdowns.mfa.getSelected();
+            if (selectedMFA.size > 0 && !selectedMFA.has(row.dataset.mfa)) {
+                return false;
+            }
+
+            // MFA Types
+            const selectedMFATypes = dropdowns.mfaTypes.getSelected();
+            if (selectedMFATypes.size > 0) {
+                const types = row.dataset.mfaTypes.split(',').map(t => t.trim());
+                if (!Array.from(selectedMFATypes).some(st => types.includes(st))) {
+                    return false;
+                }
+            }
+
+            // Compliance
+            const selectedCompliance = dropdowns.compliance.getSelected();
+            if (selectedCompliance.size > 0) {
+                const compliance = row.dataset.compliance.split(',').map(c => c.trim().toUpperCase());
+                if (!Array.from(selectedCompliance).some(sc => compliance.includes(sc))) {
+                    return false;
+                }
+            }
+
+            return true;
+        });
+
+        currentPage = 1;
+        renderTable();
+    }
+
+    // Sort table
+    function sortTable(column) {
+        if (sortColumn === column) {
+            sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+        } else {
+            sortColumn = column;
+            sortDirection = 'asc';
+        }
+
+        filteredRows.sort((a, b) => {
+            let valA = a.dataset[column] || '';
+            let valB = b.dataset[column] || '';
+            
+            if (column === 'verified') {
+                valA = new Date(valA);
+                valB = new Date(valB);
+            }
+            
+            if (valA < valB) return sortDirection === 'asc' ? -1 : 1;
+            if (valA > valB) return sortDirection === 'asc' ? 1 : -1;
+            return 0;
+        });
+
+        updateSortIndicators();
+        renderTable();
+    }
+
+    function updateSortIndicators() {
+        document.querySelectorAll('.sort-indicator').forEach(ind => {
+            ind.textContent = '⇅';
+            ind.classList.remove('active');
+        });
+
+        const activeHeader = document.querySelector(`[data-column="${sortColumn}"]`);
+        if (activeHeader) {
+            const indicator = activeHeader.querySelector('.sort-indicator');
+            indicator.textContent = sortDirection === 'asc' ? '↑' : '↓';
+            indicator.classList.add('active');
+        }
+    }
+
+    // Render table with pagination
+    function renderTable() {
+        const start = (currentPage - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
+        const pageRows = filteredRows.slice(start, end);
+
+        // Hide all rows
+        allRows.forEach(row => row.style.display = 'none');
+        
+        // Show current page rows
+        pageRows.forEach(row => row.style.display = '');
+
+        // Update counts
+        resultCount.textContent = filteredRows.length;
+        document.getElementById('pageStart').textContent = filteredRows.length > 0 ? start + 1 : 0;
+        document.getElementById('pageEnd').textContent = Math.min(end, filteredRows.length);
+        document.getElementById('totalRows').textContent = filteredRows.length;
+
+        renderPagination();
+    }
+
+    function renderPagination() {
+        const totalPages = Math.ceil(filteredRows.length / rowsPerPage);
+        const controls = document.getElementById('paginationControls');
+        controls.innerHTML = '';
+
+        if (totalPages <= 1) return;
+
+        // Previous button
+        const prevBtn = document.createElement('button');
+        prevBtn.className = 'pagination-btn';
+        prevBtn.innerHTML = `
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+        `;
+        prevBtn.disabled = currentPage === 1;
+        prevBtn.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                renderTable();
+            }
+        });
+        controls.appendChild(prevBtn);
+
+        // Page numbers
+        const maxButtons = 5;
+        let startPage = Math.max(1, currentPage - Math.floor(maxButtons / 2));
+        let endPage = Math.min(totalPages, startPage + maxButtons - 1);
+        
+        if (endPage - startPage < maxButtons - 1) {
+            startPage = Math.max(1, endPage - maxButtons + 1);
+        }
+
+        for (let i = startPage; i <= endPage; i++) {
+            const btn = document.createElement('button');
+            btn.className = 'pagination-btn' + (i === currentPage ? ' active' : '');
+            btn.textContent = i;
+            btn.addEventListener('click', () => {
+                currentPage = i;
+                renderTable();
+            });
+            controls.appendChild(btn);
+        }
+
+        // Next button
+        const nextBtn = document.createElement('button');
+        nextBtn.className = 'pagination-btn';
+        nextBtn.innerHTML = `
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+            </svg>
+        `;
+        nextBtn.disabled = currentPage === totalPages;
+        nextBtn.addEventListener('click', () => {
+            if (currentPage < totalPages) {
+                currentPage++;
+                renderTable();
+            }
+        });
+        controls.appendChild(nextBtn);
+    }
+
+    // Clear all filters
+    function clearAll() {
+        globalSearch.value = '';
+        filterApp.value = '';
+        Object.values(dropdowns).forEach(d => d.clear());
         applyFilters();
-    })();
+    }
+
+    // Export CSV
+    function exportCSV() {
+        const headers = ['App', 'Category', 'SSO', 'Protocols', 'SCIM', 'MFA', 'MFA Types', 'Compliance', 'Verified'];
+        let csv = headers.join(',') + '\n';
+
+        filteredRows.forEach(row => {
+            const cells = Array.from(row.cells).map(cell => {
+                const text = cell.textContent.trim().replace(/\s+/g, ' ');
+                return '"' + text.replace(/"/g, '""') + '"';
+            });
+            csv += cells.join(',') + '\n';
+        });
+
+        const blob = new Blob([csv], { type: 'text/csv' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `vettheapp-${new Date().toISOString().split('T')[0]}.csv`;
+        link.click();
+        URL.revokeObjectURL(url);
+    }
+
+    // Event listeners
+    globalSearch.addEventListener('input', applyFilters);
+    filterApp.addEventListener('input', applyFilters);
+    clearAllBtn.addEventListener('click', clearAll);
+    exportCSVBtn.addEventListener('click', exportCSV);
+
+    // Sortable headers
+    document.querySelectorAll('th[data-column]').forEach(th => {
+        th.addEventListener('click', () => {
+            sortTable(th.dataset.column);
+        });
+    });
+
+    // Initialize
+    populateFilters();
+    renderTable();
+})();
 </script>

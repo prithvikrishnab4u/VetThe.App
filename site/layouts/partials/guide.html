@@ -1,136 +1,172 @@
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-1">
-    <details
-        class="group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-md">
+<div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 mb-2">
+    <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
 
-        <summary
-            class="flex items-center justify-between px-6 py-2.5 cursor-pointer bg-white hover:bg-slate-50 transition-colors duration-200 list-none select-none">
-
+        <!-- Accordion Header -->
+        <button type="button"
+                class="accordion-toggle w-full flex items-center justify-between p-4 font-medium text-left text-gray-900 bg-white hover:bg-gray-50 transition-colors"
+                data-accordion-target="#accordion-body"
+                aria-expanded="false">
             <div class="flex items-center gap-3">
-                <div
-                    class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-50 text-blue-600 ring-1 ring-blue-100">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                <div class="flex items-center justify-center w-8 h-8 bg-blue-50 rounded-lg">
+                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
                 </div>
-                <span class="font-semibold text-slate-700 text-sm md:text-base">How to interpret this data</span>
+                <span class="text-sm font-semibold text-gray-900">How to Read This Data</span>
             </div>
+            <svg class="w-5 h-5 text-gray-500 transition-transform duration-200 accordion-arrow" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+            </svg>
+        </button>
 
-            <div class="flex items-center gap-3 text-slate-400 group-hover:text-blue-600 transition-colors">
-                <span class="text-xs font-medium uppercase tracking-wider group-open:hidden">View Legend</span>
-                <span class="text-xs font-medium uppercase tracking-wider hidden group-open:block">Hide Legend</span>
+        <!-- Accordion Body -->
+        <div id="accordion-body" class="hidden border-t border-gray-200">
+            <div class="p-5 bg-gray-50">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
 
-                <div
-                    class="w-8 h-8 flex items-center justify-center rounded-full bg-slate-50 group-hover:bg-blue-50 transition-colors">
-                    <svg class="w-4 h-4 transform transition-transform duration-300 group-open:rotate-180" fill="none"
-                        stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
+                    <!-- Column 1: Columns Explained -->
+                    <div>
+                        <h3 class="flex items-center gap-2 text-sm font-bold text-gray-900 mb-3">
+                            <span class="w-1 h-4 bg-blue-600 rounded-full"></span>
+                            Columns Explained
+                        </h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start gap-2">
+                                <svg class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span class="text-xs"><strong class="text-gray-900">SSO:</strong> Single Sign-On support and which tier it's available on</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span class="text-xs"><strong class="text-gray-900">Protocols:</strong> Supported authentication protocols (SAML, OIDC, OAuth2)</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span class="text-xs"><strong class="text-gray-900">SCIM:</strong> Automated user provisioning support level</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span class="text-xs"><strong class="text-gray-900">MFA:</strong> Multi-factor authentication and enforcement</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span class="text-xs"><strong class="text-gray-900">MFA Types:</strong> Supported methods (TOTP, SMS, WebAuthn, Push, Email)</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span class="text-xs"><strong class="text-gray-900">Compliance:</strong> Security certifications (SOC2, ISO27001)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 2: Tiers & SCIM -->
+                    <div>
+                        <h3 class="flex items-center gap-2 text-sm font-bold text-gray-900 mb-3">
+                            <span class="w-1 h-4 bg-blue-600 rounded-full"></span>
+                            Tier Meanings
+                        </h3>
+                        <div class="mb-3 p-2.5 bg-blue-50 border border-blue-200 rounded-lg">
+                            <p class="text-xs text-blue-800 font-medium">
+                                💡 Tier badges show the <strong>MINIMUM</strong> plan level where a feature is available
+                            </p>
+                        </div>
+                        <ul class="space-y-2 text-gray-700 mb-4">
+                            <li class="flex items-center gap-2">
+                                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-white text-gray-700 border border-gray-200">Free</span>
+                                <span class="text-xs">Available on free tier</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-white text-gray-700 border border-gray-200">Paid</span>
+                                <span class="text-xs">Requires paid subscription</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-white text-gray-700 border border-gray-200">Enterprise</span>
+                                <span class="text-xs">Enterprise plans only</span>
+                            </li>
+                        </ul>
+
+                        <h3 class="flex items-center gap-2 text-sm font-bold text-gray-900 mb-2 mt-4">
+                            <span class="w-1 h-4 bg-blue-600 rounded-full"></span>
+                            SCIM Support Levels
+                        </h3>
+                        <ul class="space-y-1.5 text-gray-700">
+                            <li class="flex items-center gap-2">
+                                <span class="text-green-600 font-bold">✓</span>
+                                <span class="text-xs"><strong class="text-gray-900">Full:</strong> Complete SCIM 2.0</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="text-yellow-500 font-bold">~</span>
+                                <span class="text-xs"><strong class="text-gray-900">Partial:</strong> Limited features</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="text-gray-400 font-bold">✗</span>
+                                <span class="text-xs"><strong class="text-gray-900">None:</strong> No support</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 3: Symbols & MFA -->
+                    <div>
+                        <h3 class="flex items-center gap-2 text-sm font-bold text-gray-900 mb-3">
+                            <span class="w-1 h-4 bg-blue-600 rounded-full"></span>
+                            Symbols Used
+                        </h3>
+                        <ul class="space-y-2 text-gray-700 mb-4">
+                            <li class="flex items-center gap-2">
+                                <span class="text-green-600 font-bold text-lg">✓</span>
+                                <span class="text-xs">Feature is available</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="text-gray-400 font-bold text-lg">✗</span>
+                                <span class="text-xs">Not supported</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="text-yellow-500 font-bold text-lg">~</span>
+                                <span class="text-xs">Partial support</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="text-gray-400 font-bold text-lg">—</span>
+                                <span class="text-xs">Not applicable</span>
+                            </li>
+                        </ul>
+
+                        <h3 class="flex items-center gap-2 text-sm font-bold text-gray-900 mb-2">
+                            <span class="w-1 h-4 bg-blue-600 rounded-full"></span>
+                            MFA Enforcement
+                        </h3>
+                        <ul class="space-y-1.5 text-gray-700">
+                            <li class="text-xs"><strong class="text-gray-900">Admin:</strong> Admins can require MFA</li>
+                            <li class="text-xs"><strong class="text-gray-900">Optional:</strong> User choice</li>
+                            <li class="text-xs"><strong class="text-gray-900">Required:</strong> Mandatory for all</li>
+                        </ul>
+                    </div>
+
                 </div>
-            </div>
-        </summary>
-
-        <div class="px-6 py-8 border-t border-slate-100 bg-slate-50/50">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
-
-                <div>
-                    <h3 class="font-bold text-slate-900 mb-4 pb-2 border-b-2 border-blue-500 inline-block">
-                        Columns Explained
-                    </h3>
-                    <ul class="space-y-4 text-slate-700">
-                        <li><strong class="text-slate-900">SSO:</strong> Single Sign-On support and which tier it's
-                            available on.</li>
-                        <li><strong class="text-slate-900">SSO Protocols:</strong> Which authentication protocols are
-                            supported (SAML, OIDC, OAuth2).</li>
-                        <li><strong class="text-slate-900">SCIM:</strong> Automated user provisioning support level.
-                        </li>
-                        <li><strong class="text-slate-900">MFA:</strong> Multi-factor authentication availability and
-                            how it can be enforced.</li>
-                        <li><strong class="text-slate-900">MFA Types:</strong> Which MFA methods are supported (TOTP,
-                            SMS, WebAuthn, Push, Email).</li>
-                        <li><strong class="text-slate-900">Compliance:</strong> Security certifications (SOC2 and
-                            ISO27001).</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 class="font-bold text-slate-900 mb-4 pb-2 border-b-2 border-blue-500 inline-block">
-                        Tier Meanings
-                    </h3>
-                    <p class="mb-4 text-slate-600 italic text-xs">
-                        The tier indicates the <strong>MINIMUM</strong> plan level where the feature is available.
-                    </p>
-                    <ul class="space-y-3 text-slate-700">
-                        <li class="flex items-center gap-3">
-                            <span
-                                class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-semibold bg-white text-slate-700 border border-slate-200 w-24 justify-center shrink-0">Free</span>
-                            <span>Available on free tier.</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span
-                                class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-semibold bg-white text-slate-700 border border-slate-200 w-24 justify-center shrink-0">Paid</span>
-                            <span>Mid-tier paid plans.</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span
-                                class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-semibold bg-white text-slate-700 border border-slate-200 w-24 justify-center shrink-0">Enterprise</span>
-                            <span>Highest tier only.</span>
-                        </li>
-                    </ul>
-
-                    <h3 class="font-bold text-slate-900 mb-3 mt-8 pb-2 border-b-2 border-blue-500 inline-block">
-                        SCIM Support Levels
-                    </h3>
-                    <ul class="space-y-2 text-slate-700">
-                        <li class="flex items-center gap-2">
-                            <span class="text-green-600 font-bold w-5 text-center">✓</span>
-                            <span><strong class="text-slate-900">Full:</strong> Complete SCIM 2.0 implementation.</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-amber-500 font-bold w-5 text-center">~</span>
-                            <span><strong class="text-slate-900">Partial:</strong> Limited/Read-only features.</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-slate-400 font-bold w-5 text-center">✗</span>
-                            <span><strong class="text-slate-900">None:</strong> No SCIM support.</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 class="font-bold text-slate-900 mb-4 pb-2 border-b-2 border-blue-500 inline-block">
-                        Symbols Used
-                    </h3>
-                    <ul class="space-y-3 text-slate-700">
-                        <li class="flex items-center gap-2">
-                            <span class="text-green-600 font-bold text-lg w-6 text-center leading-none">✓</span>
-                            <span>Feature is available</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-slate-400 font-bold text-lg w-6 text-center leading-none">✗</span>
-                            <span>Feature is not supported</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-amber-500 font-bold text-lg w-6 text-center leading-none">~</span>
-                            <span>Partial or limited support</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-slate-400 font-bold text-lg w-6 text-center leading-none">—</span>
-                            <span>Not applicable</span>
-                        </li>
-                    </ul>
-
-                    <h3 class="font-bold text-slate-900 mb-3 mt-8 pb-2 border-b-2 border-blue-500 inline-block">
-                        MFA Enforcement
-                    </h3>
-                    <ul class="space-y-3 text-slate-700">
-                        <li><strong class="text-slate-900">Admin:</strong> Admins can require MFA for users.</li>
-                        <li><strong class="text-slate-900">Optional:</strong> Users can enable, but not required.</li>
-                        <li><strong class="text-slate-900">Required:</strong> Mandatory for all users.</li>
-                    </ul>
-                </div>
-
             </div>
         </div>
-    </details>
+    </div>
 </div>
+
+<script>
+// Simple accordion toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.querySelector('.accordion-toggle');
+    const body = document.querySelector('#accordion-body');
+    const arrow = document.querySelector('.accordion-arrow');
+
+    if (toggle && body && arrow) {
+        toggle.addEventListener('click', function() {
+            const isOpen = !body.classList.contains('hidden');
+
+            if (isOpen) {
+                body.classList.add('hidden');
+                arrow.style.transform = 'rotate(0deg)';
+                toggle.setAttribute('aria-expanded', 'false');
+            } else {
+                body.classList.remove('hidden');
+                arrow.style.transform = 'rotate(180deg)';
+                toggle.setAttribute('aria-expanded', 'true');
+            }
+        });
+    }
+});
+</script>

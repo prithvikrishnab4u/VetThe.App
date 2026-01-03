@@ -1,256 +1,479 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
-
 <style type="text/tailwindcss">
     @layer utilities {
-        /* JS Tooltip */
-        .custom-tooltip { @apply fixed z-[9999] bg-slate-900 text-white text-xs font-medium px-3 py-2 rounded-lg shadow-xl opacity-0 transition-opacity duration-200 pointer-events-none max-w-xs text-center leading-relaxed; }
-        .custom-tooltip.show { @apply opacity-100; }
-
-        /* CUSTOM DROPDOWN STYLING (Unified for Single & Multi) */
-        .custom-select { @apply relative w-full font-normal; }
-
-        .custom-select-display {
-            @apply w-full px-3 py-2 text-xs border border-slate-300 rounded-lg bg-white cursor-pointer min-h-[34px] flex items-center whitespace-nowrap overflow-hidden text-ellipsis text-slate-700 relative select-none transition-colors hover:border-blue-400;
+        /* Sticky header */
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 30;
+            background: white;
         }
 
-        /* Dropdown Arrow */
-        .custom-select-display::after { content: ''; @apply absolute right-3 top-1/2 -translate-y-1/2 border-4 border-transparent border-t-slate-400; }
-        .custom-select-display.empty::before { content: 'All'; @apply text-slate-400; }
-
-        /* The Dropdown Menu - FIXED WIDTH */
-        .custom-select-dropdown {
-            @apply absolute top-full left-0 min-w-[160px] w-auto max-w-[240px] bg-white border border-slate-200 rounded-xl shadow-2xl z-50 hidden mt-1 max-h-64 overflow-y-auto p-1;
-        }
-        .custom-select-dropdown.open { @apply block; }
-
-        /* Options */
-        .custom-select-option {
-            @apply flex items-center gap-2 px-3 py-2 hover:bg-slate-50 rounded-lg cursor-pointer transition-colors text-xs text-slate-700 select-none;
+        /* App favicon */
+        .app-favicon {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            object-fit: cover;
         }
 
-        /* Checkbox/Radio Styling */
-        .custom-select-option input[type="checkbox"],
-        .custom-select-option input[type="radio"] {
-            @apply rounded border-slate-300 text-blue-600 focus:ring-blue-500 w-3.5 h-3.5 shrink-0;
+        /* Custom scrollbar */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f9fafb;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #d1d5db;
+            border-radius: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #9ca3af;
         }
 
-        /* Footer (Clear button) */
-        .custom-select-footer { @apply sticky bottom-0 bg-white border-t border-slate-100 p-2 mt-1 flex justify-end; }
-        .custom-select-clear { @apply text-xs text-blue-600 hover:text-blue-800 font-medium hover:underline; }
+        /* Flowbite-style dropdown */
+        .flowbite-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            margin-top: 4px;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            z-index: 50;
+            display: none;
+            max-height: 300px;
+            overflow-y: auto;
+            min-width: 200px;
+        }
 
-        /* Arrows */
-        .sort-arrows { @apply inline-block ml-1 text-slate-900 transition-colors; }
-        .sort-arrows.active { @apply text-blue-600 font-bold scale-110; }
+        .flowbite-dropdown.open {
+            display: block;
+        }
 
-        /* Utils */
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-    }
-    /* Custom Scrollbar for Dropdowns */
-    .custom-scrollbar::-webkit-scrollbar {
-        width: 8px; /* Wide enough to click */
-    }
-    .custom-scrollbar::-webkit-scrollbar-track {
-        background: #f1f5f9; /* Slate-100 */
-        border-radius: 4px;
-    }
-    .custom-scrollbar::-webkit-scrollbar-thumb {
-        background: #cbd5e1; /* Slate-300 */
-        border-radius: 4px;
-        border: 2px solid #f1f5f9; /* Creates a padding effect */
-    }
-    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-        background: #94a3b8; /* Slate-400 on hover */
+        /* Dropdown trigger button */
+        .dropdown-button {
+            @apply w-full px-3 py-2 text-sm text-left bg-white border border-gray-300 rounded-lg hover:bg-gray-50 focus:ring-4 focus:ring-blue-300 focus:outline-none transition-all flex items-center justify-between;
+        }
+
+        .dropdown-button:hover {
+            border-color: #3b82f6;
+        }
+
+        /* Dropdown option styling */
+        .dropdown-option {
+            @apply flex items-center px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer transition-colors;
+        }
+
+        .dropdown-option:first-child {
+            @apply rounded-t-lg;
+        }
+
+        .dropdown-option:last-child {
+            @apply rounded-b-lg;
+        }
+
+        /* Checkbox styling (Flowbite style) */
+        .flowbite-checkbox {
+            @apply w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2;
+        }
+
+        /* Search in dropdown */
+        .dropdown-search-input {
+            @apply w-full px-3 py-2 text-sm border-b border-gray-200 focus:outline-none focus:ring-0 sticky top-0 bg-white z-10;
+        }
+
+        /* Pagination */
+        .pagination-btn {
+            @apply px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:ring-4 focus:ring-blue-300 transition-all disabled:opacity-50 disabled:cursor-not-allowed;
+        }
+
+        .pagination-btn.active {
+            @apply bg-blue-700 text-white border-blue-700 hover:bg-blue-800;
+        }
+
+        /* Sort indicators */
+        .sort-indicator {
+            @apply ml-1 text-gray-400 text-xs;
+        }
+
+        .sort-indicator.active {
+            @apply text-blue-600 font-bold;
+        }
     }
 </style>
 
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1 mb-1">
+<div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-4">
 
-    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col max-h-[185vh]">
-        <div class="overflow-auto">
+    <!-- Controls Bar -->
+    <div
+        class="bg-white rounded-lg shadow-sm border border-gray-200 p-4 mb-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div class="flex items-center gap-3 w-full sm:w-auto">
+            <div class="relative w-full sm:w-80">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </div>
+                <input type="text" id="globalSearch" placeholder="Search across all columns..."
+                    class="w-full pl-10 pr-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-4 focus:ring-blue-300 focus:border-blue-500 focus:outline-none transition-all" />
+            </div>
+            <div class="flex items-center gap-1.5 text-sm text-gray-600 whitespace-nowrap">
+                <strong id="resultCount" class="text-blue-600 font-bold">0</strong>
+                <span class="text-gray-500">apps</span>
+            </div>
+        </div>
+        <div class="flex gap-2">
+            <button id="clearAllBtn"
+                class="px-4 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 transition-all">
+                Clear Filters
+            </button>
+            <button id="exportCSVBtn"
+                class="px-4 py-2.5 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 transition-all shadow-sm">
+                Export CSV
+            </button>
+        </div>
+    </div>
+
+    <!-- Table Container -->
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+        <div class="overflow-x-auto custom-scrollbar" style="max-height: 70vh;">
             <table id="appsTable" class="w-full text-left border-collapse">
-
-                <thead class="sticky top-0 z-20 bg-slate-50 shadow-sm text-slate-700">
-                    <tr class="border-b border-slate-200 text-xs font-bold uppercase tracking-wider">
-                        <th class="px-3 py-3 w-48 cursor-pointer hover:bg-slate-100 group select-none"
-                            data-tooltip="Application name">
-                            <div class="flex items-center gap-1">App Name<span class="sort-arrows">⇅</span></div>
+                <thead class="sticky-header">
+                    <!-- Column Headers -->
+                    <tr class="border-b-2 border-gray-200 bg-gray-50">
+                        <th class="px-4 py-3 text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                            data-column="app">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                </svg>
+                                Application
+                                <span class="sort-indicator">⇅</span>
+                            </div>
                         </th>
-                        <th class="px-3 py-3 w-32 cursor-pointer hover:bg-slate-100 group select-none"
-                            data-tooltip="Application category">
-                            <div class="flex items-center gap-1">Category <span class="sort-arrows">⇅</span></div>
+                        <th class="px-4 py-3 text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                            data-column="category">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                                </svg>
+                                Category
+                                <span class="sort-indicator">⇅</span>
+                            </div>
                         </th>
-                        <th class="px-3 py-3 w-24 cursor-pointer hover:bg-slate-100 group select-none"
-                            data-tooltip="Single Sign-On Support & Tier">
-                            <div class="flex items-center gap-1">SSO <span class="sort-arrows">⇅</span></div>
+                        <th class="px-4 py-3 text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                            data-column="sso">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                </svg>
+                                SSO
+                                <span class="sort-indicator">⇅</span>
+                            </div>
                         </th>
-                        <th class="px-3 py-3 w-32 cursor-pointer hover:bg-slate-100 group select-none"
-                            data-tooltip="Supported Protocols (SAML, OIDC)">
-                            <div class="flex items-center gap-1">Protocols <span class="sort-arrows">⇅</span></div>
+                        <th class="px-4 py-3 text-xs font-bold text-gray-700 uppercase tracking-wider">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                                Protocols
+                            </div>
                         </th>
-                        <th class="px-3 py-3 w-24 cursor-pointer hover:bg-slate-100 group select-none"
-                            data-tooltip="SCIM Provisioning Support">
-                            <div class="flex items-center gap-1">SCIM <span class="sort-arrows">⇅</span></div>
+                        <th class="px-4 py-3 text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                            data-column="scim">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                                SCIM
+                                <span class="sort-indicator">⇅</span>
+                            </div>
                         </th>
-                        <th class="px-3 py-3 w-24 cursor-pointer hover:bg-slate-100 group select-none"
-                            data-tooltip="MFA Enforcement Policy">
-                            <div class="flex items-center gap-1">MFA <span class="sort-arrows">⇅</span></div>
+                        <th class="px-4 py-3 text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                            data-column="mfa">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                                </svg>
+                                MFA
+                                <span class="sort-indicator">⇅</span>
+                            </div>
                         </th>
-                        <th class="px-3 py-3 w-40 cursor-pointer hover:bg-slate-100 group select-none"
-                            data-tooltip="Supported MFA Methods">
-                            <div class="flex items-center gap-1">MFA Types <span class="sort-arrows">⇅</span></div>
+                        <th class="px-4 py-3 text-xs font-bold text-gray-700 uppercase tracking-wider">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                                </svg>
+                                MFA Types
+                            </div>
                         </th>
-                        <th class="px-3 py-3 w-32 cursor-pointer hover:bg-slate-100 group select-none"
-                            data-tooltip="Security Certifications">
-                            <div class="flex items-center gap-1">Compliance <span class="sort-arrows">⇅</span></div>
+                        <th class="px-4 py-3 text-xs font-bold text-gray-700 uppercase tracking-wider">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                Compliance
+                            </div>
                         </th>
-                        <th class="px-3 py-3 w-36 cursor-pointer hover:bg-slate-100 group select-none"
-                            data-tooltip="Last verified date">
-                            <div class="flex items-center gap-1">Verified On<span class="sort-arrows">⇅</span></div>
+                        <th class="px-4 py-3 text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                            data-column="verified">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                                Verified
+                                <span class="sort-indicator">⇅</span>
+                            </div>
                         </th>
                     </tr>
 
-                    <tr class="bg-slate-50 border-b border-slate-200">
-                        <th class="p-2 align-top">
-                            <div class="flex items-center gap-1">
-                                <input type="text" id="filterApp" placeholder="Filter..."
-                                    class="w-full px-3 py-2 text-xs border border-slate-300 rounded-lg focus:border-blue-500 outline-none font-normal bg-white">
-                                <button id="clearFiltersBtn" title="Clear all filters"
-                                    class="p-2 text-slate-400 hover:text-red-500 transition-colors bg-white border border-slate-300 rounded-lg">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20"
-                                        fill="currentColor">
+                    <!-- Filter Row -->
+                    <tr class="bg-white border-b border-gray-200">
+                        <th class="px-4 py-2">
+                            <div class="relative">
+                                <input type="text" id="filterApp" placeholder="Filter apps..."
+                                    class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-4 focus:ring-blue-300 focus:border-blue-500 focus:outline-none transition-all">
+                            </div>
+                        </th>
+                        <th class="px-4 py-2">
+                            <div class="relative" id="filterCategoryContainer">
+                                <button class="dropdown-button">
+                                    <span>All</span>
+                                    <svg class="w-4 h-4 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd"
-                                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                            clip-rule="evenodd" />
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd"></path>
                                     </svg>
                                 </button>
+                                <div class="flowbite-dropdown custom-scrollbar">
+                                    <!-- Populated by JS -->
+                                </div>
                             </div>
                         </th>
-
-                        <th class="p-2 align-top">
-                            <div id="filterCategory" class="custom-select">
-                                <div class="custom-select-display empty"></div>
-                                <div class="custom-select-dropdown"></div>
+                        <th class="px-4 py-2">
+                            <div class="relative" id="filterSSOContainer">
+                                <button class="dropdown-button">
+                                    <span>All</span>
+                                    <svg class="w-4 h-4 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <div class="flowbite-dropdown custom-scrollbar">
+                                    <!-- Populated by JS -->
+                                </div>
                             </div>
                         </th>
-                        <th class="p-2 align-top">
-                            <div id="filterSSO" class="custom-select">
-                                <div class="custom-select-display empty"></div>
-                                <div class="custom-select-dropdown"></div>
+                        <th class="px-4 py-2">
+                            <div class="relative" id="filterProtocolsContainer">
+                                <button class="dropdown-button">
+                                    <span>All</span>
+                                    <svg class="w-4 h-4 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <div class="flowbite-dropdown custom-scrollbar">
+                                    <!-- Populated by JS -->
+                                </div>
                             </div>
                         </th>
-                        <th class="p-2 align-top">
-                            <div id="filterSSOProtocols" class="custom-select">
-                                <div class="custom-select-display empty"></div>
-                                <div class="custom-select-dropdown"></div>
+                        <th class="px-4 py-2">
+                            <div class="relative" id="filterSCIMContainer">
+                                <button class="dropdown-button">
+                                    <span>All</span>
+                                    <svg class="w-4 h-4 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <div class="flowbite-dropdown custom-scrollbar">
+                                    <!-- Populated by JS -->
+                                </div>
                             </div>
                         </th>
-                        <th class="p-2 align-top">
-                            <div id="filterSCIM" class="custom-select">
-                                <div class="custom-select-display empty"></div>
-                                <div class="custom-select-dropdown"></div>
+                        <th class="px-4 py-2">
+                            <div class="relative" id="filterMFAContainer">
+                                <button class="dropdown-button">
+                                    <span>All</span>
+                                    <svg class="w-4 h-4 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <div class="flowbite-dropdown custom-scrollbar">
+                                    <!-- Populated by JS -->
+                                </div>
                             </div>
                         </th>
-                        <th class="p-2 align-top">
-                            <div id="filterMFA" class="custom-select">
-                                <div class="custom-select-display empty"></div>
-                                <div class="custom-select-dropdown"></div>
+                        <th class="px-4 py-2">
+                            <div class="relative" id="filterMFATypesContainer">
+                                <button class="dropdown-button">
+                                    <span>All</span>
+                                    <svg class="w-4 h-4 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <div class="flowbite-dropdown custom-scrollbar">
+                                    <!-- Populated by JS -->
+                                </div>
                             </div>
                         </th>
-                        <th class="p-2 align-top">
-                            <div id="filterMFATypes" class="custom-select">
-                                <div class="custom-select-display empty"></div>
-                                <div class="custom-select-dropdown"></div>
+                        <th class="px-4 py-2">
+                            <div class="relative" id="filterComplianceContainer">
+                                <button class="dropdown-button">
+                                    <span>All</span>
+                                    <svg class="w-4 h-4 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <div class="flowbite-dropdown custom-scrollbar">
+                                    <!-- Populated by JS -->
+                                </div>
                             </div>
                         </th>
-                        <th class="p-2 align-top">
-                            <div id="filterCompliance" class="custom-select">
-                                <div class="custom-select-display empty"></div>
-                                <div class="custom-select-dropdown"></div>
-                            </div>
-                        </th>
-                        <th class="p-2 align-top">
-                            <div id="filterVerified" class="custom-select">
-                                <div class="custom-select-display empty"></div>
-                                <div class="custom-select-dropdown"></div>
-                            </div>
+                        <th class="px-4 py-2">
+                            <!-- Empty for verified date -->
                         </th>
                     </tr>
                 </thead>
 
-                <tbody class="divide-y divide-slate-100 bg-white">
+                <tbody id="tableBody" class="divide-y divide-gray-100 bg-white">
                     {{ range $.Site.Data.apps }}
-                    <tr class="hover:bg-blue-50/60 transition-colors group">
-                        <td class="px-3 py-2.5" data-app="{{ .name }}" data-category="{{ .category }}"
-                            data-sso="{{ if .sso.supported }}{{ .sso.tier }}{{ else }}none{{ end }}"
-                            data-sso-protocols="{{ delimit .sso.protocols " ," }}" data-scim="{{ .scim.tier }}"
-                            data-mfa="{{ if .mfa.supported }}{{ .mfa.enforcement }}{{ else }}none{{ end }}"
-                            data-mfa-types="{{ delimit .mfa.types " ," }}"
-                            data-compliance="{{ if .compliance.soc2 }}soc2,{{ end }}{{ if .compliance.iso27001 }}iso27001{{ end }}"
-                            data-verified="{{ .meta.last_verified }}">
-                            <a href="{{ .website }}" target="_blank"
-                                class="text-sm font-semibold text-slate-900 hover:text-blue-600 flex items-center gap-2">{{
-                                .name }} <svg
-                                    class="w-3 h-3 text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity"
-                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                </svg></a>
+                    <tr class="hover:bg-blue-50/40 transition-colors cursor-pointer group" data-app="{{ .name }}"
+                        data-category="{{ .category }}"
+                        data-sso="{{ if .sso.supported }}{{ .sso.tier }}{{ else }}none{{ end }}"
+                        data-protocols="{{ delimit .sso.protocols " ," }}"
+                        data-scim="{{ if .scim.supported }}{{ .scim.tier }}{{ else }}none{{ end }}"
+                        data-mfa="{{ if .mfa.supported }}{{ .mfa.enforcement }}{{ else }}none{{ end }}"
+                        data-mfa-types="{{ delimit .mfa.types " ," }}"
+                        data-compliance="{{ if .compliance.soc2 }}soc2{{ end }}{{ if and .compliance.soc2 .compliance.iso27001 }},{{ end }}{{ if .compliance.iso27001 }}iso27001{{ end }}"
+                        data-verified="{{ .meta.last_verified }}">
+
+                        <!-- App Name with Favicon -->
+                        <td class="px-4 py-3">
+                            <div class="flex items-center gap-3">
+                                <img src="https://www.google.com/s2/favicons?domain={{ .website }}&sz=32"
+                                    alt="{{ .name }} logo" class="app-favicon" onerror="this.style.display='none'">
+                                <a href="{{ .website }}" target="_blank" rel="noopener"
+                                    class="text-sm font-semibold text-gray-900 hover:text-blue-600 transition-colors flex items-center gap-1.5">
+                                    {{ .name }}
+                                    <svg class="w-3 h-3 text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    </svg>
+                                </a>
+                            </div>
                         </td>
-                        <td class="px-3 py-2.5"><span
-                                class="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-slate-100 text-slate-600 capitalize border border-slate-200">{{
-                                .category }}</span></td>
-                        <td class="px-3 py-2.5">
+
+                        <!-- Category -->
+                        <td class="px-4 py-3">
+                            <span
+                                class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-gray-100 text-gray-700 border border-gray-200 capitalize">
+                                {{ .category }}
+                            </span>
+                        </td>
+
+                        <!-- SSO -->
+                        <td class="px-4 py-3">
                             {{ if .sso.supported }}
                             <div class="flex items-center gap-2">
                                 <span class="text-green-600 text-base font-bold">✓</span>
                                 <span
-                                    class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-white text-slate-700 border border-slate-200 capitalize">{{
-                                    .sso.tier }}</span>
+                                    class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-white text-gray-700 border border-gray-200 capitalize">
+                                    {{ .sso.tier }}
+                                </span>
                             </div>
                             {{ else }}
                             <div class="flex items-center gap-2">
-                                <span class="text-slate-400 text-base">✗</span>
-                                <span class="text-xs text-slate-500">Not Supported</span>
-                            </div>
-                            {{ end }}
-                        </td>
-                        <td class="px-3 py-2.5">{{ if .sso.supported }}<div class="flex flex-wrap gap-1">{{ range
-                                .sso.protocols }}<span
-                                    class="text-[11px] font-semibold px-1.5 py-0.5 bg-white text-slate-600 border border-slate-200 rounded shadow-sm">{{
-                                    . }}</span>{{ end }}</div>{{ else }}<span class="text-slate-300 text-xs">—</span>{{
-                            end }}</td>
-                        <!-- SCIM Column - PROPOSED -->
-                        <td class="px-3 py-2.5">
-                            {{ if eq .scim.supported "full" }}
-                            <div class="flex items-center gap-2">
-                                <span class="text-green-600 text-base font-bold">✓</span>
-                                <span
-                                    class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-white text-slate-700 border border-slate-200 capitalize">{{
-                                    .scim.tier }}</span>
-                            </div>
-                            {{ else if eq .scim.supported "partial" }}
-                            <div class="flex items-center gap-2">
-                                <span class="text-amber-500 text-base font-bold">~</span>
-                                <span
-                                    class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-white text-slate-700 border border-slate-200 capitalize">{{
-                                    .scim.tier }}</span>
-                            </div>
-                            {{ else }}
-                            <div class="flex items-center gap-2">
-                                <span class="text-slate-400 text-base">✗</span>
-                                <span class="text-xs text-slate-500">Not Supported</span>
+                                <span class="text-gray-400 text-base">✗</span>
+                                <span class="text-xs text-gray-500">Not Supported</span>
                             </div>
                             {{ end }}
                         </td>
 
-                        <!-- MFA Column - PROPOSED -->
-                        <td class="px-3 py-2.5">
+                        <!-- Protocols -->
+                        <td class="px-4 py-3">
+                            {{ if .sso.supported }}
+                            <div class="flex flex-wrap gap-1">
+                                {{ range .sso.protocols }}
+                                <span
+                                    class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-white text-gray-700 border border-gray-200">
+                                    {{ . }}
+                                </span>
+                                {{ end }}
+                            </div>
+                            {{ else }}
+                            <span class="text-gray-300 text-xs">—</span>
+                            {{ end }}
+                        </td>
+
+                        <!-- SCIM -->
+                        <td class="px-4 py-3">
+                            {{ if eq .scim.supported "full" }}
+                            <div class="flex items-center gap-2">
+                                <span class="text-green-600 text-base font-bold">✓</span>
+                                <span
+                                    class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-white text-gray-700 border border-gray-200 capitalize">
+                                    {{ .scim.tier }}
+                                </span>
+                            </div>
+                            {{ else if eq .scim.supported "partial" }}
+                            <div class="flex items-center gap-2">
+                                <span class="text-yellow-500 text-base font-bold">~</span>
+                                <span
+                                    class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-white text-gray-700 border border-gray-200 capitalize">
+                                    {{ .scim.tier }}
+                                </span>
+                            </div>
+                            {{ else }}
+                            <div class="flex items-center gap-2">
+                                <span class="text-gray-400 text-base">✗</span>
+                                <span class="text-xs text-gray-500">Not Supported</span>
+                            </div>
+                            {{ end }}
+                        </td>
+
+                        <!-- MFA -->
+                        <td class="px-4 py-3">
                             {{ if .mfa.supported }}
                             <div class="flex items-center gap-2">
                                 <span class="text-green-600 text-base font-bold">✓</span>
-                                <span class="text-xs text-slate-700 font-medium capitalize">
+                                <span class="text-xs text-gray-700 font-medium capitalize">
                                     {{ if eq .mfa.enforcement "admin_enforced" }}Admin
                                     {{ else if eq .mfa.enforcement "optional" }}Optional
                                     {{ else if eq .mfa.enforcement "required" }}Required
@@ -259,47 +482,72 @@
                             </div>
                             {{ else }}
                             <div class="flex items-center gap-2">
-                                <span class="text-slate-400 text-base">✗</span>
-                                <span class="text-xs text-slate-500">Not Supported</span>
+                                <span class="text-gray-400 text-base">✗</span>
+                                <span class="text-xs text-gray-500">Not Supported</span>
                             </div>
                             {{ end }}
                         </td>
-                        <td class="px-3 py-2.5">
+
+                        <!-- MFA Types -->
+                        <td class="px-4 py-3">
                             {{ if .mfa.supported }}
                             <div class="flex flex-wrap gap-1">
                                 {{ range .mfa.types }}
                                 <span
-                                    class="text-[11px] font-semibold px-1.5 py-0.5 bg-white text-slate-600 border border-slate-200 rounded shadow-sm">{{
-                                    . }}</span>
+                                    class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-white text-gray-700 border border-gray-200">
+                                    {{ . }}
+                                </span>
                                 {{ end }}
                             </div>
                             {{ else }}
-                            <span class="text-slate-300 text-xs">—</span>
+                            <span class="text-gray-300 text-xs">—</span>
                             {{ end }}
                         </td>
-                        <td class="px-3 py-2.5">
-                            <div class="flex flex-wrap gap-1">{{ if .compliance.soc2 }}<span
-                                    class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-purple-50 text-purple-700 border border-purple-100">SOC2</span>{{
-                                end }}{{ if .compliance.iso27001 }}<span
-                                    class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-indigo-50 text-indigo-700 border border-indigo-100">ISO</span>{{
-                                end }}</div>
+
+                        <!-- Compliance -->
+                        <td class="px-4 py-3">
+                            <div class="flex flex-wrap gap-1">
+                                {{ if .compliance.soc2 }}
+                                <span
+                                    class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700 border border-purple-100">
+                                    SOC2
+                                </span>
+                                {{ end }}
+                                {{ if .compliance.iso27001 }}
+                                <span
+                                    class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700 border border-purple-100">
+                                    ISO27001
+                                </span>
+                                {{ end }}
+                                {{ if and (not .compliance.soc2) (not .compliance.iso27001) }}
+                                <span class="text-gray-300 text-xs">—</span>
+                                {{ end }}
+                            </div>
                         </td>
-                        <td class="px-3 py-2.5">{{ $date := time .meta.last_verified }}<span
-                                class="text-xs font-mono text-slate-500">{{ $date.Format "2006-01-02" }}</span></td>
+
+                        <!-- Verified Date -->
+                        <td class="px-4 py-3">
+                            {{ $date := time .meta.last_verified }}
+                            <span class="text-xs text-gray-500 font-mono">
+                                {{ $date.Format "02-01-2006" }}
+                            </span>
+                        </td>
                     </tr>
                     {{ end }}
                 </tbody>
             </table>
         </div>
-    </div>
-    <div class="flex justify-end mt-4">
-        <button id="exportCSVBtn"
-            class="flex items-center gap-2 bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-medium py-2 px-4 rounded-lg shadow-sm transition-all active:scale-95 text-sm">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
-            </svg>
-            Export to CSV
-        </button>
+
+        <!-- Pagination -->
+        <div class="px-4 py-3 border-t border-gray-200 flex items-center justify-between bg-white">
+            <div class="flex items-center text-sm text-gray-700">
+                Showing <span id="pageStart" class="font-medium text-gray-900 mx-1">1</span> to <span id="pageEnd"
+                    class="font-medium text-gray-900 mx-1">25</span> of <span id="totalRows"
+                    class="font-medium text-gray-900 mx-1">0</span> results
+            </div>
+            <div class="flex items-center gap-2" id="paginationControls">
+                <!-- Populated by JS -->
+            </div>
+        </div>
     </div>
 </div>
