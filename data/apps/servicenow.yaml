@@ -1,0 +1,24 @@
+name: "ServiceNow"
+category: "infrastructure"
+website: "https://www.servicenow.com"
+description: "Cloud-based platform for automating IT, employee, and customer workflows."
+sso:
+  supported: true
+  protocols: ["SAML", "OIDC"]
+  tier: "enterprise"
+  sp_initiated: true
+  jit_provisioning: true
+  domain_claiming: true
+mfa:
+  supported: true
+  types: ["TOTP", "SMS", "WebAuthn"]
+  enforcement: "admin_enforced"
+  tier: "enterprise"
+  adaptive_mfa: true
+  phishing_resistant: true
+compliance:
+  soc2: true
+  iso27001: true
+meta:
+  last_verified: "2026-01-02"
+  ready_to_publish: true

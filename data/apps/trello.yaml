@@ -1,0 +1,39 @@
+name: "Trello"
+category: "productivity"
+website: "https://trello.com"
+description: "A visual tool that empowers your team to manage any type of project, workflow, or task tracking."
+
+sso:
+  supported: true
+  protocols: ["SAML"]
+  tier: "enterprise"
+  sp_initiated: true
+  jit_provisioning: true
+  domain_claiming: true
+
+mfa:
+  supported: true
+  types: ["TOTP", "SMS"]
+  enforcement: "admin_enforced"
+  tier: "paid"
+  adaptive_mfa: false
+  phishing_resistant: false
+
+compliance:
+  soc2: true
+  iso27001: true
+
+meta:
+  last_verified: "2026-01-02"
+  ready_to_publish: true
+
+# Unused fields - tracked but not displayed in main table
+# Currently not using session and audit fields, but doing research on these fields.
+session:
+  timeout_configurable: true
+  max_duration: "Configurable"
+
+audit:
+  logs_available: true
+  retention_period: "Configurable"
+  tier: "enterprise"

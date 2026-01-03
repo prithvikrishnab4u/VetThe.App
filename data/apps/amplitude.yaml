@@ -1,0 +1,24 @@
+name: "Amplitude"
+category: "productivity"
+website: "https://amplitude.com"
+description: "Product analytics platform for building better digital products."
+sso:
+  supported: true
+  protocols: ["SAML"]
+  tier: "enterprise"
+  sp_initiated: true
+  jit_provisioning: true
+  domain_claiming: true
+mfa:
+  supported: true
+  types: ["TOTP"]
+  enforcement: "admin_enforced"
+  tier: "enterprise"
+  adaptive_mfa: false
+  phishing_resistant: false
+compliance:
+  soc2: true
+  iso27001: true
+meta:
+  last_verified: "2026-01-03"
+  ready_to_publish: true

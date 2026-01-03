@@ -1,0 +1,24 @@
+name: "ZoomInfo"
+category: "sales_marketing"
+website: "https://www.zoominfo.com"
+description: "GTM software, data, and intelligence for more than 35,000 companies worldwide."
+sso:
+  supported: true
+  protocols: ["SAML", "OIDC"]
+  tier: "enterprise"
+  sp_initiated: true
+  jit_provisioning: true
+  domain_claiming: false
+mfa:
+  supported: true
+  types: ["TOTP", "SMS"]
+  enforcement: "admin_enforced"
+  tier: "enterprise"
+  adaptive_mfa: false
+  phishing_resistant: false
+compliance:
+  soc2: true
+  iso27001: true
+meta:
+  last_verified: "2026-01-03"
+  ready_to_publish: true

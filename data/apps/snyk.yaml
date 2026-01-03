@@ -1,0 +1,24 @@
+name: "Snyk"
+category: "security"
+website: "https://snyk.io"
+description: "Developer-first security platform for finding and fixing vulnerabilities in code, dependencies, containers, and IaC."
+sso:
+  supported: true
+  protocols: ["SAML", "OIDC"]
+  tier: "enterprise"
+  sp_initiated: true
+  jit_provisioning: true
+  domain_claiming: true
+mfa:
+  supported: true
+  types: ["TOTP", "WebAuthn"]
+  enforcement: "admin_enforced"
+  tier: "enterprise"
+  adaptive_mfa: false
+  phishing_resistant: true
+compliance:
+  soc2: true
+  iso27001: true
+meta:
+  last_verified: "2026-01-03"
+  ready_to_publish: true

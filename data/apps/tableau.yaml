@@ -1,0 +1,43 @@
+name: "Tableau"
+
+category: "productivity"
+
+website: "https://www.tableau.com"
+
+description: "A business intelligence and data visualization platform used for analyzing and sharing data insights."
+
+sso:
+  supported: true
+
+  protocols: ["SAML", "OIDC"]
+
+  tier: "paid"
+
+  sp_initiated: true
+
+  jit_provisioning: true
+
+  domain_claiming: true
+
+mfa:
+  supported: true
+
+  types: ["TOTP", "WebAuthn"]
+
+  enforcement: "required"
+
+  tier: "paid"
+
+  adaptive_mfa: true
+
+  phishing_resistant: true
+
+compliance:
+  soc2: true
+
+  iso27001: true
+
+meta:
+  last_verified: "2026-01-02"
+
+  ready_to_publish: true

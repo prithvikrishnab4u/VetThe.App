@@ -1,0 +1,24 @@
+name: "Databricks"
+category: "infrastructure"
+website: "https://www.databricks.com"
+description: "Data and AI company offering a unified lakehouse platform for data engineering, science, and analytics."
+sso:
+  supported: true
+  protocols: ["SAML", "OIDC"]
+  tier: "paid"
+  sp_initiated: true
+  jit_provisioning: true
+  domain_claiming: true
+mfa:
+  supported: true
+  types: ["TOTP", "Push"]
+  enforcement: "admin_enforced"
+  tier: "paid"
+  adaptive_mfa: true
+  phishing_resistant: false
+compliance:
+  soc2: true
+  iso27001: true
+meta:
+  last_verified: "2026-01-02"
+  ready_to_publish: true

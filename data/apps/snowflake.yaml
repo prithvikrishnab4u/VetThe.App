@@ -1,0 +1,24 @@
+name: "Snowflake"
+category: "infrastructure"
+website: "https://www.snowflake.com"
+description: "Cloud-based data storage and analytics service known as the 'Data Cloud'."
+sso:
+  supported: true
+  protocols: ["SAML"]
+  tier: "free"
+  sp_initiated: true
+  jit_provisioning: true
+  domain_claiming: true
+mfa:
+  supported: true
+  types: ["TOTP"]
+  enforcement: "required"
+  tier: "free"
+  adaptive_mfa: true
+  phishing_resistant: false
+compliance:
+  soc2: true
+  iso27001: true
+meta:
+  last_verified: "2026-01-02"
+  ready_to_publish: true

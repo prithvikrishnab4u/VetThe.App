@@ -1,0 +1,39 @@
+name: "Microsoft Teams"
+category: "collaboration"
+website: "https://www.microsoft.com/en-us/microsoft-teams"
+description: "The hub for teamwork in Microsoft 365 that combines chat, meetings, calling, and collaboration."
+
+sso:
+  supported: true
+  protocols: ["SAML", "OIDC", "WS-Fed"]
+  tier: "free"
+  sp_initiated: true
+  jit_provisioning: true
+  domain_claiming: true
+
+mfa:
+  supported: true
+  types: ["TOTP", "Push", "WebAuthn", "SMS"]
+  enforcement: "required"
+  tier: "free"
+  adaptive_mfa: true
+  phishing_resistant: true
+
+compliance:
+  soc2: true
+  iso27001: true
+
+meta:
+  last_verified: "2026-01-02"
+  ready_to_publish: true
+
+# Unused fields - tracked but not displayed in main table
+# Currently not using session and audit fields, but doing research on these fields.
+session:
+  timeout_configurable: true
+  max_duration: "Configurable"
+
+audit:
+  logs_available: true
+  retention_period: "90 days"
+  tier: "paid"

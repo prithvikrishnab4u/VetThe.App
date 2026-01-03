@@ -1,0 +1,47 @@
+name: "Front"
+
+category: "collaboration"
+
+website: "https://front.com"
+
+description: "Customer operations platform that combines a help desk with the collaboration of email."
+
+sso:
+
+  supported: true
+
+  protocols: ["SAML"]
+
+  tier: "paid"
+
+  sp_initiated: true
+
+  jit_provisioning: true
+
+  domain_claiming: false
+
+mfa:
+
+  supported: true
+
+  types: ["TOTP"]
+
+  enforcement: "admin_enforced"
+
+  tier: "paid"
+
+  adaptive_mfa: false
+
+  phishing_resistant: false
+
+compliance:
+
+  soc2: true
+
+  iso27001: true
+
+meta:
+
+  last_verified: "2026-01-02"
+
+  ready_to_publish: true

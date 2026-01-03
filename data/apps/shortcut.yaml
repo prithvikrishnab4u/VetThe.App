@@ -1,0 +1,47 @@
+name: "Shortcut"
+
+category: "development"
+
+website: "https://www.shortcut.com"
+
+description: "Project management platform designed for software development teams to unify planning and development."
+
+sso:
+
+  supported: true
+
+  protocols: ["SAML"]
+
+  tier: "paid"
+
+  sp_initiated: true
+
+  jit_provisioning: true
+
+  domain_claiming: true
+
+mfa:
+
+  supported: true
+
+  types: ["TOTP"]
+
+  enforcement: "admin_enforced"
+
+  tier: "paid"
+
+  adaptive_mfa: true
+
+  phishing_resistant: false
+
+compliance:
+
+  soc2: true
+
+  iso27001: false
+
+meta:
+
+  last_verified: "2026-01-02"
+
+  ready_to_publish: true

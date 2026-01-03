@@ -1,0 +1,47 @@
+name: "GitLab"
+
+category: "development"
+
+website: "https://about.gitlab.com"
+
+description: "The DevSecOps platform that brings development, operations, and security teams together in a single application."
+
+sso:
+
+  supported: true
+
+  protocols: ["SAML", "OIDC"]
+
+  tier: "paid"
+
+  sp_initiated: true
+
+  jit_provisioning: true
+
+  domain_claiming: true
+
+mfa:
+
+  supported: true
+
+  types: ["TOTP", "SMS", "WebAuthn"]
+
+  enforcement: "admin_enforced"
+
+  tier: "paid"
+
+  adaptive_mfa: false
+
+  phishing_resistant: true
+
+compliance:
+
+  soc2: true
+
+  iso27001: true
+
+meta:
+
+  last_verified: "2026-01-02"
+
+  ready_to_publish: true

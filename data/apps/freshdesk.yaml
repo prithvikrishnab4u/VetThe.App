@@ -1,0 +1,24 @@
+name: "Freshdesk"
+category: "sales_marketing"
+website: "https://freshdesk.com"
+description: "Online cloud-based customer service software providing help desk support with all smart automations."
+sso:
+  supported: true
+  protocols: ["SAML", "OIDC"]
+  tier: "paid"
+  sp_initiated: true
+  jit_provisioning: true
+  domain_claiming: true
+mfa:
+  supported: true
+  types: ["TOTP"]
+  enforcement: "admin_enforced"
+  tier: "paid"
+  adaptive_mfa: false
+  phishing_resistant: false
+compliance:
+  soc2: true
+  iso27001: true
+meta:
+  last_verified: "2026-01-03"
+  ready_to_publish: true

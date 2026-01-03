@@ -1,0 +1,35 @@
+name: "Basecamp"
+category: "collaboration"
+website: "https://basecamp.com"
+description: "An all-in-one project management and team communication tool designed for simplicity and clarity."
+
+sso:
+  supported: true
+  protocols: ["SAML", "OIDC"]
+  tier: "enterprise" # via 3rd party
+
+
+mfa:
+  supported: true
+  types: ["TOTP"]
+  enforcement: "optional"
+  tier: "free"
+
+compliance:
+  soc2: true
+  iso27001: false
+
+meta:
+  last_verified: "2026-01-02"
+  ready_to_publish: true
+
+# Unused fields - tracked but not displayed in main table
+# Currently not using session and audit fields, but doing research on these fields.
+session:
+  timeout_configurable: false
+  max_duration: "N/A"
+
+audit:
+  logs_available: true
+  retention_period: "90 days"
+  tier: "paid"

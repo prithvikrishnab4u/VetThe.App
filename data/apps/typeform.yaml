@@ -1,0 +1,24 @@
+name: "Typeform"
+category: "sales_marketing"
+website: "https://www.typeform.com"
+description: "SaaS company that specializes in online form building and online surveys."
+sso:
+  supported: true
+  protocols: ["SAML"]
+  tier: "enterprise"
+  sp_initiated: true
+  jit_provisioning: false
+  domain_claiming: true
+mfa:
+  supported: true
+  types: ["TOTP"]
+  enforcement: "admin_enforced"
+  tier: "enterprise"
+  adaptive_mfa: false
+  phishing_resistant: false
+compliance:
+  soc2: true
+  iso27001: true
+meta:
+  last_verified: "2026-01-03"
+  ready_to_publish: true

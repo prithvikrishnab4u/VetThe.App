@@ -1,0 +1,24 @@
+name: "SAP Concur"
+category: "finance"
+website: "https://www.concur.com"
+description: "Integrated travel, expense, and invoice management solution."
+sso:
+  supported: true
+  protocols: ["SAML", "OIDC"]
+  tier: "enterprise"
+  sp_initiated: true
+  jit_provisioning: true
+  domain_claiming: true
+mfa:
+  supported: true
+  types: ["TOTP", "SMS"]
+  enforcement: "admin_enforced"
+  tier: "enterprise"
+  adaptive_mfa: false
+  phishing_resistant: false
+compliance:
+  soc2: true
+  iso27001: true
+meta:
+  last_verified: "2026-01-03"
+  ready_to_publish: true
