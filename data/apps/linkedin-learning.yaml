@@ -4,7 +4,7 @@ website: "https://learning.linkedin.com"
 description: "Online educational platform that helps you discover and develop business, technology-related, and creative skills."
 sso:
   supported: true
-  protocols: ["SAML", "LTI"]
+  protocols: ["SAML"]
   tier: "paid"
   sp_initiated: true
   jit_provisioning: true
