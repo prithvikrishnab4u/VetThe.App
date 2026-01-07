@@ -106,37 +106,6 @@
 
 <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-4">
 
-    <!-- Controls Bar -->
-    <div
-        class="bg-white rounded-lg shadow-sm border border-gray-200 p-4 mb-4 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <div class="flex items-center gap-3 w-full sm:w-auto">
-            <div class="relative w-full sm:w-80">
-                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                    <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                </div>
-                <input type="text" id="globalSearch" placeholder="Search across all columns..."
-                    class="w-full pl-10 pr-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-4 focus:ring-blue-300 focus:border-blue-500 focus:outline-none transition-all" />
-            </div>
-            <div class="flex items-center gap-1.5 text-sm text-gray-600 whitespace-nowrap">
-                <strong id="resultCount" class="text-blue-600 font-bold">0</strong>
-                <span class="text-gray-500">apps</span>
-            </div>
-        </div>
-        <div class="flex gap-2">
-            <button id="clearAllBtn"
-                class="px-4 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 transition-all">
-                Clear Filters
-            </button>
-            <button id="exportCSVBtn"
-                class="px-4 py-2.5 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 transition-all shadow-sm">
-                Export CSV
-            </button>
-        </div>
-    </div>
-
     <!-- Table Container -->
     <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
         <div class="overflow-x-auto custom-scrollbar" style="max-height: 70vh;">
@@ -362,7 +331,10 @@
                             </div>
                         </th>
                         <th class="px-4 py-2">
-                            <!-- Empty for verified date -->
+                            <button id="clearAllBtn"
+                                class="w-full px-3 py-2 text-xs font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 transition-colors">
+                                Clear Filters
+                            </button>
                         </th>
                     </tr>
                 </thead>
@@ -536,10 +508,17 @@
 
         <!-- Pagination -->
         <div class="px-4 py-3 border-t border-gray-200 flex items-center justify-between bg-white">
-            <div class="flex items-center text-sm text-gray-700">
-                Showing <span id="pageStart" class="font-medium text-gray-900 mx-1">1</span> to <span id="pageEnd"
-                    class="font-medium text-gray-900 mx-1">25</span> of <span id="totalRows"
-                    class="font-medium text-gray-900 mx-1">0</span> results
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2 text-sm">
+                    <strong id="resultCount" class="text-blue-600 font-bold text-base">0</strong>
+                    <span class="text-gray-600">apps</span>
+                </div>
+                <div class="h-4 w-px bg-gray-300"></div>
+                <div class="flex items-center text-sm text-gray-700">
+                    Showing <span id="pageStart" class="font-medium text-gray-900 mx-1">1</span> to <span id="pageEnd"
+                        class="font-medium text-gray-900 mx-1">25</span> of <span id="totalRows"
+                        class="font-medium text-gray-900 mx-1">0</span>
+                </div>
             </div>
             <div class="flex items-center gap-2" id="paginationControls">
                 <!-- Populated by JS -->
