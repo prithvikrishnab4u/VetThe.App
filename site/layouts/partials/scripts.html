@@ -1,497 +1,500 @@
 <script>
-    (function () {
-        const table = document.getElementById('appsTable');
-        const tbody = document.getElementById('tableBody');
-        const globalSearch = document.getElementById('globalSearch');
-        const filterApp = document.getElementById('filterApp');
-        const clearAllBtn = document.getElementById('clearAllBtn');
-        const exportCSVBtn = document.getElementById('exportCSVBtn');
-        const resultCount = document.getElementById('resultCount');
+(function() {
+    const table = document.getElementById('appsTable');
+    const tbody = document.getElementById('tableBody');
+    const globalSearch = document.getElementById('globalSearch');
+    const filterApp = document.getElementById('filterApp');
+    const clearAllBtn = document.getElementById('clearAllBtn');
+    const exportCSVBtn = document.getElementById('exportCSVBtn');
+    const resultCount = document.getElementById('resultCount');
+    
+    let allRows = Array.from(tbody.querySelectorAll('tr'));
+    let filteredRows = [...allRows];
+    let currentPage = 1;
+    let rowsPerPage = 25;
+    let sortColumn = null;
+    let sortDirection = 'asc';
+    
+    // Flowbite-style Dropdown Class
+    class FlowbiteDropdown {
+        constructor(containerId, isMulti = false) {
+            this.container = document.getElementById(containerId);
+            if (!this.container) return;
+            
+            this.button = this.container.querySelector('.dropdown-button');
+            this.buttonText = this.button.querySelector('span');
+            this.dropdown = this.container.querySelector('.flowbite-dropdown');
+            this.isMulti = isMulti;
+            this.selected = new Set();
+            
+            this.init();
+        }
 
-        let allRows = Array.from(tbody.querySelectorAll('tr'));
-        let filteredRows = [...allRows];
-        let currentPage = 1;
-        let rowsPerPage = 25;
-        let sortColumn = null;
-        let sortDirection = 'asc';
+        init() {
+            // Toggle dropdown
+            this.button.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.toggle();
+            });
 
-        // Flowbite-style Dropdown Class
-        class FlowbiteDropdown {
-            constructor(containerId, isMulti = false) {
-                this.container = document.getElementById(containerId);
-                if (!this.container) return;
+            // Close on outside click
+            document.addEventListener('click', (e) => {
+                if (!this.container.contains(e.target)) {
+                    this.close();
+                }
+            });
+            
+            // Prevent dropdown from closing when clicking inside
+            this.dropdown.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        }
 
-                this.button = this.container.querySelector('.dropdown-button');
-                this.buttonText = this.button.querySelector('span');
-                this.dropdown = this.container.querySelector('.flowbite-dropdown');
-                this.isMulti = isMulti;
-                this.selected = new Set();
-
-                this.init();
-            }
-
-            init() {
-                // Toggle dropdown
-                this.button.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    this.toggle();
-                });
-
-                // Close on outside click
-                document.addEventListener('click', (e) => {
-                    if (!this.container.contains(e.target)) {
-                        this.close();
-                    }
-                });
-
-                // Prevent dropdown from closing when clicking inside
-                this.dropdown.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                });
-            }
-
-            setOptions(options) {
-                this.dropdown.innerHTML = '';
-
-                // Add search for long lists
-                if (options.length > 8) {
-                    const searchDiv = document.createElement('div');
-                    searchDiv.className = 'sticky top-0 bg-white border-b border-gray-200 p-2';
-                    searchDiv.innerHTML = `
-                    <input type="text"
-                           placeholder="Search..."
+        setOptions(options) {
+            this.dropdown.innerHTML = '';
+            
+            // Add search for long lists
+            if (options.length > 8) {
+                const searchDiv = document.createElement('div');
+                searchDiv.className = 'sticky top-0 bg-white border-b border-gray-200 p-2';
+                searchDiv.innerHTML = `
+                    <input type="text" 
+                           placeholder="Search..." 
                            class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none">
                 `;
-                    this.dropdown.appendChild(searchDiv);
-
-                    const searchInput = searchDiv.querySelector('input');
-                    searchInput.addEventListener('input', (e) => {
-                        e.stopPropagation();
-                        const query = e.target.value.toLowerCase();
-                        const opts = this.dropdown.querySelectorAll('.dropdown-option');
-                        opts.forEach(opt => {
-                            const text = opt.textContent.toLowerCase();
-                            opt.style.display = text.includes(query) ? 'flex' : 'none';
-                        });
+                this.dropdown.appendChild(searchDiv);
+                
+                const searchInput = searchDiv.querySelector('input');
+                searchInput.addEventListener('input', (e) => {
+                    e.stopPropagation();
+                    const query = e.target.value.toLowerCase();
+                    const opts = this.dropdown.querySelectorAll('.dropdown-option');
+                    opts.forEach(opt => {
+                        const text = opt.textContent.toLowerCase();
+                        opt.style.display = text.includes(query) ? 'flex' : 'none';
                     });
-                    searchInput.addEventListener('click', (e) => e.stopPropagation());
-                }
+                });
+                searchInput.addEventListener('click', (e) => e.stopPropagation());
+            }
 
-                // Add options
-                options.forEach(opt => {
-                    const div = document.createElement('div');
-                    div.className = 'dropdown-option';
-
-                    if (this.isMulti) {
-                        const checkboxId = `${this.container.id}_${opt.replace(/\s+/g, '_')}`;
-                        div.innerHTML = `
-                        <input type="checkbox"
+            // Add options
+            options.forEach(opt => {
+                const div = document.createElement('div');
+                div.className = 'dropdown-option';
+                
+                if (this.isMulti) {
+                    const checkboxId = `${this.container.id}_${opt.replace(/\s+/g, '_')}`;
+                    div.innerHTML = `
+                        <input type="checkbox" 
                                id="${checkboxId}"
-                               value="${opt}"
+                               value="${opt}" 
                                class="flowbite-checkbox"
                                ${this.selected.has(opt) ? 'checked' : ''}>
                         <label for="${checkboxId}" class="ml-2 text-sm font-medium text-gray-900 cursor-pointer capitalize flex-1">${opt}</label>
                     `;
-
-                        const checkbox = div.querySelector('input');
-                        const label = div.querySelector('label');
-
-                        const handleChange = (e) => {
-                            e.stopPropagation();
-                            if (checkbox.checked) {
-                                this.selected.add(opt);
-                            } else {
-                                this.selected.delete(opt);
-                            }
-                            this.updateButtonText();
-                            applyFilters();
-                        };
-
-                        checkbox.addEventListener('change', handleChange);
-                        checkbox.addEventListener('click', (e) => e.stopPropagation());
-                        label.addEventListener('click', (e) => {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            checkbox.checked = !checkbox.checked;
-                            handleChange(e);
-                        });
-                    } else {
-                        div.innerHTML = `<label class="text-sm font-medium text-gray-900 cursor-pointer capitalize flex-1">${opt}</label>`;
-                        div.addEventListener('click', (e) => {
-                            e.stopPropagation();
-                            this.selected.clear();
+                    
+                    const checkbox = div.querySelector('input');
+                    const label = div.querySelector('label');
+                    
+                    const handleChange = (e) => {
+                        e.stopPropagation();
+                        if (checkbox.checked) {
                             this.selected.add(opt);
-                            this.updateButtonText();
-                            applyFilters();
-                            this.close();
-                        });
-                    }
-
-                    this.dropdown.appendChild(div);
-                });
-
-                // Add Clear button for multi-select
-                if (this.isMulti && options.length > 0) {
-                    const footer = document.createElement('div');
-                    footer.className = 'sticky bottom-0 bg-white border-t border-gray-200 p-2';
-                    footer.innerHTML = '<button class="w-full px-3 py-2 text-sm font-medium text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">Clear Selection</button>';
-                    const clearBtn = footer.querySelector('button');
-                    clearBtn.addEventListener('click', (e) => {
+                        } else {
+                            this.selected.delete(opt);
+                        }
+                        this.updateButtonText();
+                        applyFilters();
+                    };
+                    
+                    checkbox.addEventListener('change', handleChange);
+                    checkbox.addEventListener('click', (e) => e.stopPropagation());
+                    label.addEventListener('click', (e) => {
                         e.preventDefault();
                         e.stopPropagation();
-                        this.clear();
+                        checkbox.checked = !checkbox.checked;
+                        handleChange(e);
                     });
-                    this.dropdown.appendChild(footer);
+                } else {
+                    div.innerHTML = `<label class="text-sm font-medium text-gray-900 cursor-pointer capitalize flex-1">${opt}</label>`;
+                    div.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        this.selected.clear();
+                        this.selected.add(opt);
+                        this.updateButtonText();
+                        applyFilters();
+                        this.close();
+                    });
+                }
+                
+                this.dropdown.appendChild(div);
+            });
+
+            // Add Clear button for multi-select
+            if (this.isMulti && options.length > 0) {
+                const footer = document.createElement('div');
+                footer.className = 'sticky bottom-0 bg-white border-t border-gray-200 p-2';
+                footer.innerHTML = '<button class="w-full px-3 py-2 text-sm font-medium text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">Clear Selection</button>';
+                const clearBtn = footer.querySelector('button');
+                clearBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    this.clear();
+                });
+                this.dropdown.appendChild(footer);
+            }
+        }
+
+
+        toggle() {
+            const isOpen = this.dropdown.classList.contains('open');
+
+            // Close all other dropdowns
+            document.querySelectorAll('.flowbite-dropdown.open').forEach(d => {
+                if (d !== this.dropdown) d.classList.remove('open');
+            });
+
+            if (isOpen) {
+                this.close();
+            } else {
+                // Calculate position for fixed dropdown
+                const rect = this.button.getBoundingClientRect();
+                this.dropdown.style.top = `${rect.bottom + 4}px`;
+                this.dropdown.style.left = `${rect.left}px`;
+                this.dropdown.style.width = `${rect.width}px`;
+                this.dropdown.classList.add('open');
+            }
+        }
+
+        close() {
+            this.dropdown.classList.remove('open');
+        }
+
+        clear() {
+            this.selected.clear();
+            this.dropdown.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+            this.updateButtonText();
+            applyFilters();
+        }
+
+        updateButtonText() {
+            if (this.selected.size === 0) {
+                this.buttonText.textContent = 'All';
+                this.buttonText.className = 'text-gray-500';
+            } else if (this.selected.size === 1) {
+                const value = Array.from(this.selected)[0];
+                this.buttonText.textContent = value.charAt(0).toUpperCase() + value.slice(1);
+                this.buttonText.className = 'text-gray-900 font-medium';
+            } else {
+                this.buttonText.textContent = `${this.selected.size} selected`;
+                this.buttonText.className = 'text-gray-900 font-medium';
+            }
+        }
+
+        getSelected() {
+            return this.selected;
+        }
+    }
+
+    // Initialize dropdowns
+    const dropdowns = {
+        category: new FlowbiteDropdown('filterCategoryContainer', true),
+        sso: new FlowbiteDropdown('filterSSOContainer', false),
+        protocols: new FlowbiteDropdown('filterProtocolsContainer', true),
+        scim: new FlowbiteDropdown('filterSCIMContainer', false),
+        mfa: new FlowbiteDropdown('filterMFAContainer', false),
+        mfaTypes: new FlowbiteDropdown('filterMFATypesContainer', true),
+        compliance: new FlowbiteDropdown('filterComplianceContainer', true)
+    };
+
+    // Populate filter options
+    function populateFilters() {
+        const values = {
+            category: new Set(),
+            sso: new Set(),
+            protocols: new Set(),
+            scim: new Set(),
+            mfa: new Set(),
+            mfaTypes: new Set(),
+            compliance: new Set()
+        };
+
+        allRows.forEach(row => {
+            values.category.add(row.dataset.category);
+            
+            const ssoValue = row.dataset.sso;
+            if (ssoValue && ssoValue !== 'none') {
+                values.sso.add(ssoValue);
+            }
+            
+            const scimValue = row.dataset.scim;
+            if (scimValue && scimValue !== 'none') {
+                values.scim.add(scimValue);
+            }
+            
+            const mfaValue = row.dataset.mfa;
+            if (mfaValue && mfaValue !== 'none') {
+                values.mfa.add(mfaValue);
+            }
+            
+            row.dataset.protocols.split(',').forEach(p => p.trim() && values.protocols.add(p.trim()));
+            row.dataset.mfaTypes.split(',').forEach(m => m.trim() && values.mfaTypes.add(m.trim()));
+            row.dataset.compliance.split(',').forEach(c => c.trim() && values.compliance.add(c.trim().toUpperCase()));
+        });
+
+        dropdowns.category.setOptions(Array.from(values.category).filter(v => v).sort());
+        dropdowns.sso.setOptions(Array.from(values.sso).sort());
+        dropdowns.protocols.setOptions(Array.from(values.protocols).sort());
+        dropdowns.scim.setOptions(Array.from(values.scim).sort());
+        dropdowns.mfa.setOptions(Array.from(values.mfa).sort());
+        dropdowns.mfaTypes.setOptions(Array.from(values.mfaTypes).sort());
+        dropdowns.compliance.setOptions(Array.from(values.compliance).sort());
+    }
+
+    // Apply all filters
+    function applyFilters() {
+        const globalQuery = globalSearch.value.toLowerCase();
+        const appQuery = filterApp.value.toLowerCase();
+
+        filteredRows = allRows.filter(row => {
+            // Global search
+            if (globalQuery && !row.textContent.toLowerCase().includes(globalQuery)) {
+                return false;
+            }
+
+            // App name filter
+            if (appQuery && !row.dataset.app.toLowerCase().includes(appQuery)) {
+                return false;
+            }
+
+            // Category
+            const selectedCats = dropdowns.category.getSelected();
+            if (selectedCats.size > 0 && !selectedCats.has(row.dataset.category)) {
+                return false;
+            }
+
+            // SSO
+            const selectedSSO = dropdowns.sso.getSelected();
+            if (selectedSSO.size > 0 && !selectedSSO.has(row.dataset.sso)) {
+                return false;
+            }
+
+            // Protocols
+            const selectedProtos = dropdowns.protocols.getSelected();
+            if (selectedProtos.size > 0) {
+                const protocols = row.dataset.protocols.split(',').map(p => p.trim());
+                if (!Array.from(selectedProtos).some(sp => protocols.includes(sp))) {
+                    return false;
                 }
             }
 
-            toggle() {
-                const isOpen = this.dropdown.classList.contains('open');
+            // SCIM
+            const selectedSCIM = dropdowns.scim.getSelected();
+            if (selectedSCIM.size > 0 && !selectedSCIM.has(row.dataset.scim)) {
+                return false;
+            }
 
-                // Close all other dropdowns
-                document.querySelectorAll('.flowbite-dropdown.open').forEach(d => {
-                    if (d !== this.dropdown) d.classList.remove('open');
-                });
+            // MFA
+            const selectedMFA = dropdowns.mfa.getSelected();
+            if (selectedMFA.size > 0 && !selectedMFA.has(row.dataset.mfa)) {
+                return false;
+            }
 
-                if (isOpen) {
-                    this.close();
-                } else {
-                    // Calculate position for fixed dropdown
-                    const rect = this.button.getBoundingClientRect();
-                    this.dropdown.style.top = `${rect.bottom + 4}px`;
-                    this.dropdown.style.left = `${rect.left}px`;
-                    this.dropdown.style.width = `${rect.width}px`;
-                    this.dropdown.classList.add('open');
-
-                    close() {
-                        this.dropdown.classList.remove('open');
-                    }
-
-                    clear() {
-                        this.selected.clear();
-                        this.dropdown.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
-                        this.updateButtonText();
-                        applyFilters();
-                    }
-
-                    updateButtonText() {
-                        if (this.selected.size === 0) {
-                            this.buttonText.textContent = 'All';
-                            this.buttonText.className = 'text-gray-500';
-                        } else if (this.selected.size === 1) {
-                            const value = Array.from(this.selected)[0];
-                            this.buttonText.textContent = value.charAt(0).toUpperCase() + value.slice(1);
-                            this.buttonText.className = 'text-gray-900 font-medium';
-                        } else {
-                            this.buttonText.textContent = `${this.selected.size} selected`;
-                            this.buttonText.className = 'text-gray-900 font-medium';
-                        }
-                    }
-
-                    getSelected() {
-                        return this.selected;
-                    }
+            // MFA Types
+            const selectedMFATypes = dropdowns.mfaTypes.getSelected();
+            if (selectedMFATypes.size > 0) {
+                const types = row.dataset.mfaTypes.split(',').map(t => t.trim());
+                if (!Array.from(selectedMFATypes).some(st => types.includes(st))) {
+                    return false;
                 }
+            }
 
-                // Initialize dropdowns
-                const dropdowns = {
-                    category: new FlowbiteDropdown('filterCategoryContainer', true),
-                    sso: new FlowbiteDropdown('filterSSOContainer', false),
-                    protocols: new FlowbiteDropdown('filterProtocolsContainer', true),
-                    scim: new FlowbiteDropdown('filterSCIMContainer', false),
-                    mfa: new FlowbiteDropdown('filterMFAContainer', false),
-                    mfaTypes: new FlowbiteDropdown('filterMFATypesContainer', true),
-                    compliance: new FlowbiteDropdown('filterComplianceContainer', true)
-                };
-
-                // Populate filter options
-                function populateFilters() {
-                    const values = {
-                        category: new Set(),
-                        sso: new Set(),
-                        protocols: new Set(),
-                        scim: new Set(),
-                        mfa: new Set(),
-                        mfaTypes: new Set(),
-                        compliance: new Set()
-                    };
-
-                    allRows.forEach(row => {
-                        values.category.add(row.dataset.category);
-
-                        const ssoValue = row.dataset.sso;
-                        if (ssoValue && ssoValue !== 'none') {
-                            values.sso.add(ssoValue);
-                        }
-
-                        const scimValue = row.dataset.scim;
-                        if (scimValue && scimValue !== 'none') {
-                            values.scim.add(scimValue);
-                        }
-
-                        const mfaValue = row.dataset.mfa;
-                        if (mfaValue && mfaValue !== 'none') {
-                            values.mfa.add(mfaValue);
-                        }
-
-                        row.dataset.protocols.split(',').forEach(p => p.trim() && values.protocols.add(p.trim()));
-                        row.dataset.mfaTypes.split(',').forEach(m => m.trim() && values.mfaTypes.add(m.trim()));
-                        row.dataset.compliance.split(',').forEach(c => c.trim() && values.compliance.add(c.trim().toUpperCase()));
-                    });
-
-                    dropdowns.category.setOptions(Array.from(values.category).filter(v => v).sort());
-                    dropdowns.sso.setOptions(Array.from(values.sso).sort());
-                    dropdowns.protocols.setOptions(Array.from(values.protocols).sort());
-                    dropdowns.scim.setOptions(Array.from(values.scim).sort());
-                    dropdowns.mfa.setOptions(Array.from(values.mfa).sort());
-                    dropdowns.mfaTypes.setOptions(Array.from(values.mfaTypes).sort());
-                    dropdowns.compliance.setOptions(Array.from(values.compliance).sort());
+            // Compliance
+            const selectedCompliance = dropdowns.compliance.getSelected();
+            if (selectedCompliance.size > 0) {
+                const compliance = row.dataset.compliance.split(',').map(c => c.trim().toUpperCase());
+                if (!Array.from(selectedCompliance).some(sc => compliance.includes(sc))) {
+                    return false;
                 }
+            }
 
-                // Apply all filters
-                function applyFilters() {
-                    const globalQuery = globalSearch.value.toLowerCase();
-                    const appQuery = filterApp.value.toLowerCase();
+            return true;
+        });
 
-                    filteredRows = allRows.filter(row => {
-                        // Global search
-                        if (globalQuery && !row.textContent.toLowerCase().includes(globalQuery)) {
-                            return false;
-                        }
+        currentPage = 1;
+        renderTable();
+    }
 
-                        // App name filter
-                        if (appQuery && !row.dataset.app.toLowerCase().includes(appQuery)) {
-                            return false;
-                        }
+    // Sort table
+    function sortTable(column) {
+        if (sortColumn === column) {
+            sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+        } else {
+            sortColumn = column;
+            sortDirection = 'asc';
+        }
 
-                        // Category
-                        const selectedCats = dropdowns.category.getSelected();
-                        if (selectedCats.size > 0 && !selectedCats.has(row.dataset.category)) {
-                            return false;
-                        }
+        filteredRows.sort((a, b) => {
+            let valA = a.dataset[column] || '';
+            let valB = b.dataset[column] || '';
+            
+            if (column === 'verified') {
+                valA = new Date(valA);
+                valB = new Date(valB);
+            }
+            
+            if (valA < valB) return sortDirection === 'asc' ? -1 : 1;
+            if (valA > valB) return sortDirection === 'asc' ? 1 : -1;
+            return 0;
+        });
 
-                        // SSO
-                        const selectedSSO = dropdowns.sso.getSelected();
-                        if (selectedSSO.size > 0 && !selectedSSO.has(row.dataset.sso)) {
-                            return false;
-                        }
+        updateSortIndicators();
+        renderTable();
+    }
 
-                        // Protocols
-                        const selectedProtos = dropdowns.protocols.getSelected();
-                        if (selectedProtos.size > 0) {
-                            const protocols = row.dataset.protocols.split(',').map(p => p.trim());
-                            if (!Array.from(selectedProtos).some(sp => protocols.includes(sp))) {
-                                return false;
-                            }
-                        }
+    function updateSortIndicators() {
+        document.querySelectorAll('.sort-indicator').forEach(ind => {
+            ind.textContent = '⇅';
+            ind.classList.remove('active');
+        });
 
-                        // SCIM
-                        const selectedSCIM = dropdowns.scim.getSelected();
-                        if (selectedSCIM.size > 0 && !selectedSCIM.has(row.dataset.scim)) {
-                            return false;
-                        }
+        const activeHeader = document.querySelector(`[data-column="${sortColumn}"]`);
+        if (activeHeader) {
+            const indicator = activeHeader.querySelector('.sort-indicator');
+            indicator.textContent = sortDirection === 'asc' ? '↑' : '↓';
+            indicator.classList.add('active');
+        }
+    }
 
-                        // MFA
-                        const selectedMFA = dropdowns.mfa.getSelected();
-                        if (selectedMFA.size > 0 && !selectedMFA.has(row.dataset.mfa)) {
-                            return false;
-                        }
+    // Render table with pagination
+    function renderTable() {
+        const start = (currentPage - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
+        const pageRows = filteredRows.slice(start, end);
 
-                        // MFA Types
-                        const selectedMFATypes = dropdowns.mfaTypes.getSelected();
-                        if (selectedMFATypes.size > 0) {
-                            const types = row.dataset.mfaTypes.split(',').map(t => t.trim());
-                            if (!Array.from(selectedMFATypes).some(st => types.includes(st))) {
-                                return false;
-                            }
-                        }
+        // Hide all rows
+        allRows.forEach(row => row.style.display = 'none');
+        
+        // Show current page rows
+        pageRows.forEach(row => row.style.display = '');
 
-                        // Compliance
-                        const selectedCompliance = dropdowns.compliance.getSelected();
-                        if (selectedCompliance.size > 0) {
-                            const compliance = row.dataset.compliance.split(',').map(c => c.trim().toUpperCase());
-                            if (!Array.from(selectedCompliance).some(sc => compliance.includes(sc))) {
-                                return false;
-                            }
-                        }
+        // Update counts
+        resultCount.textContent = filteredRows.length;
+        document.getElementById('pageStart').textContent = filteredRows.length > 0 ? start + 1 : 0;
+        document.getElementById('pageEnd').textContent = Math.min(end, filteredRows.length);
+        document.getElementById('totalRows').textContent = filteredRows.length;
 
-                        return true;
-                    });
+        renderPagination();
+    }
 
-                    currentPage = 1;
-                    renderTable();
-                }
+    function renderPagination() {
+        const totalPages = Math.ceil(filteredRows.length / rowsPerPage);
+        const controls = document.getElementById('paginationControls');
+        controls.innerHTML = '';
 
-                // Sort table
-                function sortTable(column) {
-                    if (sortColumn === column) {
-                        sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
-                    } else {
-                        sortColumn = column;
-                        sortDirection = 'asc';
-                    }
+        if (totalPages <= 1) return;
 
-                    filteredRows.sort((a, b) => {
-                        let valA = a.dataset[column] || '';
-                        let valB = b.dataset[column] || '';
-
-                        if (column === 'verified') {
-                            valA = new Date(valA);
-                            valB = new Date(valB);
-                        }
-
-                        if (valA < valB) return sortDirection === 'asc' ? -1 : 1;
-                        if (valA > valB) return sortDirection === 'asc' ? 1 : -1;
-                        return 0;
-                    });
-
-                    updateSortIndicators();
-                    renderTable();
-                }
-
-                function updateSortIndicators() {
-                    document.querySelectorAll('.sort-indicator').forEach(ind => {
-                        ind.textContent = '⇅';
-                        ind.classList.remove('active');
-                    });
-
-                    const activeHeader = document.querySelector(`[data-column="${sortColumn}"]`);
-                    if (activeHeader) {
-                        const indicator = activeHeader.querySelector('.sort-indicator');
-                        indicator.textContent = sortDirection === 'asc' ? '↑' : '↓';
-                        indicator.classList.add('active');
-                    }
-                }
-
-                // Render table with pagination
-                function renderTable() {
-                    const start = (currentPage - 1) * rowsPerPage;
-                    const end = start + rowsPerPage;
-                    const pageRows = filteredRows.slice(start, end);
-
-                    // Hide all rows
-                    allRows.forEach(row => row.style.display = 'none');
-
-                    // Show current page rows
-                    pageRows.forEach(row => row.style.display = '');
-
-                    // Update counts
-                    resultCount.textContent = filteredRows.length;
-                    document.getElementById('pageStart').textContent = filteredRows.length > 0 ? start + 1 : 0;
-                    document.getElementById('pageEnd').textContent = Math.min(end, filteredRows.length);
-                    document.getElementById('totalRows').textContent = filteredRows.length;
-
-                    renderPagination();
-                }
-
-                function renderPagination() {
-                    const totalPages = Math.ceil(filteredRows.length / rowsPerPage);
-                    const controls = document.getElementById('paginationControls');
-                    controls.innerHTML = '';
-
-                    if (totalPages <= 1) return;
-
-                    // Previous button
-                    const prevBtn = document.createElement('button');
-                    prevBtn.className = 'pagination-btn';
-                    prevBtn.innerHTML = `
+        // Previous button
+        const prevBtn = document.createElement('button');
+        prevBtn.className = 'pagination-btn';
+        prevBtn.innerHTML = `
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"/>
             </svg>
         `;
-                    prevBtn.disabled = currentPage === 1;
-                    prevBtn.addEventListener('click', () => {
-                        if (currentPage > 1) {
-                            currentPage--;
-                            renderTable();
-                        }
-                    });
-                    controls.appendChild(prevBtn);
+        prevBtn.disabled = currentPage === 1;
+        prevBtn.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                renderTable();
+            }
+        });
+        controls.appendChild(prevBtn);
 
-                    // Page numbers
-                    const maxButtons = 5;
-                    let startPage = Math.max(1, currentPage - Math.floor(maxButtons / 2));
-                    let endPage = Math.min(totalPages, startPage + maxButtons - 1);
+        // Page numbers
+        const maxButtons = 5;
+        let startPage = Math.max(1, currentPage - Math.floor(maxButtons / 2));
+        let endPage = Math.min(totalPages, startPage + maxButtons - 1);
+        
+        if (endPage - startPage < maxButtons - 1) {
+            startPage = Math.max(1, endPage - maxButtons + 1);
+        }
 
-                    if (endPage - startPage < maxButtons - 1) {
-                        startPage = Math.max(1, endPage - maxButtons + 1);
-                    }
+        for (let i = startPage; i <= endPage; i++) {
+            const btn = document.createElement('button');
+            btn.className = 'pagination-btn' + (i === currentPage ? ' active' : '');
+            btn.textContent = i;
+            btn.addEventListener('click', () => {
+                currentPage = i;
+                renderTable();
+            });
+            controls.appendChild(btn);
+        }
 
-                    for (let i = startPage; i <= endPage; i++) {
-                        const btn = document.createElement('button');
-                        btn.className = 'pagination-btn' + (i === currentPage ? ' active' : '');
-                        btn.textContent = i;
-                        btn.addEventListener('click', () => {
-                            currentPage = i;
-                            renderTable();
-                        });
-                        controls.appendChild(btn);
-                    }
-
-                    // Next button
-                    const nextBtn = document.createElement('button');
-                    nextBtn.className = 'pagination-btn';
-                    nextBtn.innerHTML = `
+        // Next button
+        const nextBtn = document.createElement('button');
+        nextBtn.className = 'pagination-btn';
+        nextBtn.innerHTML = `
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
             </svg>
         `;
-                    nextBtn.disabled = currentPage === totalPages;
-                    nextBtn.addEventListener('click', () => {
-                        if (currentPage < totalPages) {
-                            currentPage++;
-                            renderTable();
-                        }
-                    });
-                    controls.appendChild(nextBtn);
-                }
-
-                // Clear all filters
-                function clearAll() {
-                    globalSearch.value = '';
-                    filterApp.value = '';
-                    Object.values(dropdowns).forEach(d => d.clear());
-                    applyFilters();
-                }
-
-                // Export CSV
-                function exportCSV() {
-                    const headers = ['App', 'Category', 'SSO', 'Protocols', 'SCIM', 'MFA', 'MFA Types', 'Compliance', 'Verified'];
-                    let csv = headers.join(',') + '\n';
-
-                    filteredRows.forEach(row => {
-                        const cells = Array.from(row.cells).map(cell => {
-                            const text = cell.textContent.trim().replace(/\s+/g, ' ');
-                            return '"' + text.replace(/"/g, '""') + '"';
-                        });
-                        csv += cells.join(',') + '\n';
-                    });
-
-                    const blob = new Blob([csv], { type: 'text/csv' });
-                    const url = URL.createObjectURL(blob);
-                    const link = document.createElement('a');
-                    link.href = url;
-                    link.download = `vettheapp-${new Date().toISOString().split('T')[0]}.csv`;
-                    link.click();
-                    URL.revokeObjectURL(url);
-                }
-
-                // Event listeners
-                globalSearch.addEventListener('input', applyFilters);
-                filterApp.addEventListener('input', applyFilters);
-                clearAllBtn.addEventListener('click', clearAll);
-                exportCSVBtn.addEventListener('click', exportCSV);
-
-                // Sortable headers
-                document.querySelectorAll('th[data-column]').forEach(th => {
-                    th.addEventListener('click', () => {
-                        sortTable(th.dataset.column);
-                    });
-                });
-
-                // Initialize
-                populateFilters();
+        nextBtn.disabled = currentPage === totalPages;
+        nextBtn.addEventListener('click', () => {
+            if (currentPage < totalPages) {
+                currentPage++;
                 renderTable();
-            })();
+            }
+        });
+        controls.appendChild(nextBtn);
+    }
+
+    // Clear all filters
+    function clearAll() {
+        globalSearch.value = '';
+        filterApp.value = '';
+        Object.values(dropdowns).forEach(d => d.clear());
+        applyFilters();
+    }
+
+    // Export CSV
+    function exportCSV() {
+        const headers = ['App', 'Category', 'SSO', 'Protocols', 'SCIM', 'MFA', 'MFA Types', 'Compliance', 'Verified'];
+        let csv = headers.join(',') + '\n';
+
+        filteredRows.forEach(row => {
+            const cells = Array.from(row.cells).map(cell => {
+                const text = cell.textContent.trim().replace(/\s+/g, ' ');
+                return '"' + text.replace(/"/g, '""') + '"';
+            });
+            csv += cells.join(',') + '\n';
+        });
+
+        const blob = new Blob([csv], { type: 'text/csv' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `vettheapp-${new Date().toISOString().split('T')[0]}.csv`;
+        link.click();
+        URL.revokeObjectURL(url);
+    }
+
+    // Event listeners
+    globalSearch.addEventListener('input', applyFilters);
+    filterApp.addEventListener('input', applyFilters);
+    clearAllBtn.addEventListener('click', clearAll);
+    exportCSVBtn.addEventListener('click', exportCSV);
+
+    // Sortable headers
+    document.querySelectorAll('th[data-column]').forEach(th => {
+        th.addEventListener('click', () => {
+            sortTable(th.dataset.column);
+        });
+    });
+
+    // Initialize
+    populateFilters();
+    renderTable();
+})();
 </script>
