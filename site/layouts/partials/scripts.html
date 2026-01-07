@@ -2,10 +2,10 @@
 (function() {
     const table = document.getElementById('appsTable');
     const tbody = document.getElementById('tableBody');
-    const globalSearch = document.getElementById('globalSearch');
+    // Global search removed
     const filterApp = document.getElementById('filterApp');
     const clearAllBtn = document.getElementById('clearAllBtn');
-    const exportCSVBtn = document.getElementById('exportCSVBtn');
+    // exportCSVBtn removed
     const resultCount = document.getElementById('resultCount');
     
     let allRows = Array.from(tbody.querySelectorAll('tr'));
@@ -254,15 +254,9 @@
 
     // Apply all filters
     function applyFilters() {
-        const globalQuery = globalSearch.value.toLowerCase();
         const appQuery = filterApp.value.toLowerCase();
 
         filteredRows = allRows.filter(row => {
-            // Global search
-            if (globalQuery && !row.textContent.toLowerCase().includes(globalQuery)) {
-                return false;
-            }
-
             // App name filter
             if (appQuery && !row.dataset.app.toLowerCase().includes(appQuery)) {
                 return false;
@@ -452,39 +446,17 @@
 
     // Clear all filters
     function clearAll() {
-        globalSearch.value = '';
+        // globalSearch removed
         filterApp.value = '';
         Object.values(dropdowns).forEach(d => d.clear());
         applyFilters();
     }
 
-    // Export CSV
-    function exportCSV() {
-        const headers = ['App', 'Category', 'SSO', 'Protocols', 'SCIM', 'MFA', 'MFA Types', 'Compliance', 'Verified'];
-        let csv = headers.join(',') + '\n';
-
-        filteredRows.forEach(row => {
-            const cells = Array.from(row.cells).map(cell => {
-                const text = cell.textContent.trim().replace(/\s+/g, ' ');
-                return '"' + text.replace(/"/g, '""') + '"';
-            });
-            csv += cells.join(',') + '\n';
-        });
-
-        const blob = new Blob([csv], { type: 'text/csv' });
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = `vettheapp-${new Date().toISOString().split('T')[0]}.csv`;
-        link.click();
-        URL.revokeObjectURL(url);
-    }
-
     // Event listeners
-    globalSearch.addEventListener('input', applyFilters);
+    // globalSearch removed
     filterApp.addEventListener('input', applyFilters);
     clearAllBtn.addEventListener('click', clearAll);
-    exportCSVBtn.addEventListener('click', exportCSV);
+    // exportCSVBtn removed
 
     // Sortable headers
     document.querySelectorAll('th[data-column]').forEach(th => {

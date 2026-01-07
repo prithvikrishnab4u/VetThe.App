@@ -1,37 +1,46 @@
 ---
-name: Request New App
-about: Suggest an app to add to VetThe.App
-title: '[App Request] '
-labels: 'new-app'
+name: Request App
+about: Request a new application or add it yourself
+title: '[APP REQUEST] '
+labels: 'app-request'
 assignees: ''
 ---
 
-## App Information
+## Application Information
 
-**App Name:**
-**Website:**
-**Category:** (collaboration, productivity, development, etc.)
+**App Name:** 
 
-## Why This App?
+**Website:** 
 
-Tell us why this app should be tracked:
-- [ ] Widely used across organizations
-- [ ] Important for security/compliance
-- [ ] Other: _____
-
-## What You Know (Optional)
-
-If you know any details, share them here:
-
-**SSO Support?** Yes / No / Unknown
-**SCIM Support?** Yes / No / Unknown
-**MFA Support?** Yes / No / Unknown
-**Compliance?** SOC2 / ISO27001 / Unknown
-
-## Sources (Optional)
-
-Any links to documentation or pricing pages?
+**Category:** (e.g., Productivity, Security, Collaboration)
 
 ---
 
-💡 **Want to add it yourself?** Check out our [Contributing Guide](../CONTRIBUTING.md)!
+## 🚀 Want to Add It Yourself?
+
+**It's easy! No coding required.**
+
+1. Go to our [Contributing Guide](../CONTRIBUTING.md)
+2. Copy the YAML template
+3. Fill it out (takes 5-10 minutes)
+4. Submit a Pull Request
+
+**Or just submit this request and we'll add it for you!**
+
+---
+
+## Why Add This App?
+
+Tell us briefly why this app would be valuable to track.
+
+---
+
+## What You Know (Optional)
+
+If you already know any details, share them here to speed things up:
+
+- SSO Support: 
+- SCIM Support: 
+- MFA Support: 
+- Compliance Certifications: 
+- Documentation Links:
