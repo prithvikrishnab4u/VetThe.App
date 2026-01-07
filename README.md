@@ -18,7 +18,7 @@ Quickly compare SSO, SCIM, MFA, and compliance capabilities across popular SaaS 
 
 ## 🚀 Quick Start
 
-**View the site:** [vetthe.app](https://vetthe.app) *(coming soon)*
+**View the site:** [vetthe.app](https://vetthe.app) 
 
 **Run locally:**
 ```bash
