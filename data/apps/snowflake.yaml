@@ -1,69 +1,58 @@
-name: Snowflake
-category: infrastructure
-website: https://www.snowflake.com
-description: Cloud-based data storage and analytics service known as the 'Data Cloud'.
-status: draft
+name: "Snowflake"
+category: "infrastructure"
+website: "https://www.snowflake.com"
+description: "Cloud-based data storage and analytics service known as the 'Data Cloud'."
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
-    support: supported
-    notes: SAML 2.0 and OIDC security integrations; edition requirement not stated
-    protocols:
-    - SAML
-    - OIDC
-    source: https://docs.snowflake.com/en/user-guide/admin-security-fed-auth-overview
-    checked: '2026-09-14'
+    support: "supported"
+    notes: "SAML 2.0 and OIDC security integrations; edition requirement not stated"
+    protocols: ["SAML", "OIDC"]
+    source: "https://docs.snowflake.com/en/user-guide/admin-security-fed-auth-overview"
+    checked: "2026-09-14"
   sso_enforcement:
-    support: supported
-    notes: An authentication policy whose AUTHENTICATION_METHODS contains only SAML,
-      set on the account or on specific users
-    source: https://docs.snowflake.com/en/user-guide/authentication-policies
-    checked: '2026-09-14'
+    support: "supported"
+    notes: "An authentication policy whose AUTHENTICATION_METHODS contains only SAML, set on the account or on specific users"
+    source: "https://docs.snowflake.com/en/user-guide/authentication-policies"
+    checked: "2026-09-14"
   scim:
-    support: supported
-    notes: Okta, Microsoft Entra ID and custom IdPs; creates, updates and disables
-      users
-    source: https://docs.snowflake.com/en/user-guide/scim-okta
-    checked: '2026-09-14'
+    support: "supported"
+    notes: "Okta, Microsoft Entra ID and custom IdPs; creates, updates and disables users"
+    source: "https://docs.snowflake.com/en/user-guide/scim-okta"
+    checked: "2026-09-14"
   mfa_enforcement:
-    support: supported
-    notes: Authentication policy with MFA_ENROLLMENT = REQUIRED, for password and
-      SSO users
-    source: https://docs.snowflake.com/en/user-guide/authentication-policies
-    checked: '2026-09-14'
+    support: "supported"
+    notes: "Authentication policy with MFA_ENROLLMENT = REQUIRED, for password and SSO users"
+    source: "https://docs.snowflake.com/en/user-guide/authentication-policies"
+    checked: "2026-09-14"
   phishing_resistant_mfa:
-    support: supported
-    notes: Passkeys as a second factor; authentication policies can limit the allowed
-      methods
-    source: https://docs.snowflake.com/en/user-guide/security-mfa
-    checked: '2026-09-14'
+    support: "supported"
+    notes: "Passkeys as a second factor; authentication policies can limit the allowed methods"
+    source: "https://docs.snowflake.com/en/user-guide/security-mfa"
+    checked: "2026-09-14"
   audit_logs:
-    support: supported
-    notes: LOGIN_HISTORY view records successful and failed logins with authentication
-      method
-    retention: 365 days
-    source: https://docs.snowflake.com/en/sql-reference/account-usage/login_history
-    checked: '2026-09-14'
+    support: "supported"
+    notes: "LOGIN_HISTORY view records successful and failed logins with authentication method"
+    retention: "365 days"
+    source: "https://docs.snowflake.com/en/sql-reference/account-usage/login_history"
+    checked: "2026-09-14"
   jit_provisioning:
-    support: supported
+    support: "supported"
   domain_verification:
-    support: supported
+    support: "supported"
   custom_roles:
-    support: supported
-    notes: Custom account roles and role hierarchies
-    source: https://docs.snowflake.com/en/user-guide/security-access-control-overview
-    checked: '2026-09-14'
+    support: "supported"
+    notes: "Custom account roles and role hierarchies"
+    source: "https://docs.snowflake.com/en/user-guide/security-access-control-overview"
+    checked: "2026-09-14"
   group_role_mapping:
-    support: supported
-    notes: Okta Push Groups create Snowflake roles with the same names
-    source: https://docs.snowflake.com/en/user-guide/scim-okta
-    checked: '2026-09-14'
+    support: "supported"
+    notes: "Okta Push Groups create Snowflake roles with the same names"
+    source: "https://docs.snowflake.com/en/user-guide/scim-okta"
+    checked: "2026-09-14"
   session_controls:
-    support: unknown
+    support: "unknown"
   api_token_controls:
-    support: unknown
-provenance:
-  source: auto-scan
-  source_url: https://www.snowflake.com
-  verified_by: auto-scan
-  checked: '2026-09-14'
-  evidence: sso,mfa
+    support: "unknown"

@@ -1,108 +1,108 @@
 id,name,website,http_status,sso,scim,mfa,soc2,iso27001,error
-1password,1Password,https://1password.com,200,True,True,True,True,True,
-activecampaign,ActiveCampaign,https://www.activecampaign.com,200,True,False,True,False,False,
-adobe-creative-cloud,Adobe Creative Cloud,https://www.adobe.com/creativecloud.html,200,False,False,False,False,False,
+1password,1Password,https://1password.com,,,,,,,"HTTPSConnectionPool(host='1password.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+activecampaign,ActiveCampaign,https://www.activecampaign.com,,,,,,,"HTTPSConnectionPool(host='www.activecampaign.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+adobe-creative-cloud,Adobe Creative Cloud,https://www.adobe.com/creativecloud.html,,,,,,,"HTTPSConnectionPool(host='www.adobe.com', port=443): Max retries exceeded with url: /creativecloud.html (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
 adp-workforce-now,ADP Workforce Now,https://www.adp.com,200,True,False,True,False,False,
-airtable,Airtable,https://airtable.com,200,True,True,True,True,False,
-amazon-web-services-aws,Amazon Web Services (AWS),https://aws.amazon.com,200,True,True,True,False,False,
-amplitude,Amplitude,https://amplitude.com,200,True,False,True,False,False,
-asana,Asana,https://asana.com,200,True,True,False,False,False,
-atlassianconfluence,Atlassian Confluence,https://atlassian.com/software/confluence,200,True,True,True,False,False,
-atlassianjira,Atlassian Jira,https://atlassian.com/software/jira,200,True,True,True,False,False,
-auth0,Auth0,https://auth0.com,200,True,True,True,False,False,
+airtable,Airtable,https://airtable.com,,,,,,,"HTTPSConnectionPool(host='airtable.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+amazon-web-services-aws,Amazon Web Services (AWS),https://aws.amazon.com,,,,,,,"HTTPSConnectionPool(host='aws.amazon.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+amplitude,Amplitude,https://amplitude.com,,,,,,,"HTTPSConnectionPool(host='amplitude.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+asana,Asana,https://asana.com,,,,,,,"HTTPSConnectionPool(host='asana.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+atlassianconfluence,Atlassian Confluence,https://atlassian.com/software/confluence,,,,,,,"HTTPSConnectionPool(host='atlassian.com', port=443): Max retries exceeded with url: /software/confluence (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+atlassianjira,Atlassian Jira,https://atlassian.com/software/jira,,,,,,,"HTTPSConnectionPool(host='atlassian.com', port=443): Max retries exceeded with url: /software/jira (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+auth0,Auth0,https://auth0.com,,,,,,,"HTTPSConnectionPool(host='auth0.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
 azure-devops,Azure DevOps,https://azure.microsoft.com/en-us/products/devops,200,True,False,True,False,False,
-bamboohr,BambooHR,https://www.bamboohr.com,200,True,False,False,False,False,
-basecamp,Basecamp,https://basecamp.com,200,False,False,False,False,False,
+bamboohr,BambooHR,https://www.bamboohr.com,,,,,,,"HTTPSConnectionPool(host='www.bamboohr.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+basecamp,Basecamp,https://basecamp.com,,,,,,,"HTTPSConnectionPool(host='basecamp.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
 bill-com,Bill.com,https://www.bill.com,200,True,False,False,False,False,
-bitbucket-cloud,Bitbucket Cloud,https://bitbucket.org,200,True,False,True,True,False,
-box,Box,https://box.com,503,False,False,False,False,False,
-braze,Braze,https://www.braze.com,200,True,False,True,False,True,
+bitbucket-cloud,Bitbucket Cloud,https://bitbucket.org,,,,,,,"HTTPSConnectionPool(host='bitbucket.org', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+box,Box,https://box.com,,,,,,,"HTTPSConnectionPool(host='box.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+braze,Braze,https://www.braze.com,,,,,,,"HTTPSConnectionPool(host='www.braze.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
 brex,Brex,https://www.brex.com,200,True,False,True,False,False,
-calendly,Calendly,https://calendly.com,200,True,False,False,False,False,
-canva,Canva,https://canva.com,200,False,False,False,False,False,
-circleci,CircleCI,https://circleci.com,200,True,False,False,False,False,
-cisco-webex,Cisco Webex,https://webex.com,403,False,False,False,False,False,
-citrix-sharefile,Citrix ShareFile,https://www.sharefile.com,200,True,False,True,False,False,
-clickup,ClickUp,https://clickup.com,200,True,False,False,True,True,
-coursera-for-business,Coursera for Business,https://www.coursera.org/business,200,True,False,True,False,False,
-crowdstrike,CrowdStrike,https://www.crowdstrike.com,200,False,False,False,False,False,
-databricks,Databricks,https://www.databricks.com,200,True,False,False,False,False,
-datadog,Datadog,https://www.datadoghq.com,200,True,False,True,False,False,
-deel,Deel,https://www.deel.com,200,True,False,True,False,False,
-docker-hub,Docker Hub,https://hub.docker.com,200,True,False,True,False,False,
-docusign,DocuSign,https://docusign.com,200,True,False,True,False,True,
-dropbox,Dropbox,https://dropbox.com,503,False,False,False,False,False,
+calendly,Calendly,https://calendly.com,,,,,,,"HTTPSConnectionPool(host='calendly.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+canva,Canva,https://canva.com,,,,,,,"HTTPSConnectionPool(host='canva.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+circleci,CircleCI,https://circleci.com,,,,,,,"HTTPSConnectionPool(host='circleci.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+cisco-webex,Cisco Webex,https://webex.com,,,,,,,"HTTPSConnectionPool(host='webex.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+citrix-sharefile,Citrix ShareFile,https://www.sharefile.com,,,,,,,"HTTPSConnectionPool(host='www.sharefile.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+clickup,ClickUp,https://clickup.com,,,,,,,"HTTPSConnectionPool(host='clickup.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+coursera-for-business,Coursera for Business,https://www.coursera.org/business,,,,,,,"HTTPSConnectionPool(host='www.coursera.org', port=443): Max retries exceeded with url: /business (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+crowdstrike,CrowdStrike,https://www.crowdstrike.com,,,,,,,"HTTPSConnectionPool(host='www.crowdstrike.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+databricks,Databricks,https://www.databricks.com,,,,,,,"HTTPSConnectionPool(host='www.databricks.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+datadog,Datadog,https://www.datadoghq.com,,,,,,,"HTTPSConnectionPool(host='www.datadoghq.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+deel,Deel,https://www.deel.com,,,,,,,"HTTPSConnectionPool(host='www.deel.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+docker-hub,Docker Hub,https://hub.docker.com,,,,,,,"HTTPSConnectionPool(host='hub.docker.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+docusign,DocuSign,https://docusign.com,,,,,,,"HTTPSConnectionPool(host='docusign.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+dropbox,Dropbox,https://dropbox.com,,,,,,,"HTTPSConnectionPool(host='dropbox.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
 egnyte,Egnyte,https://www.egnyte.com,200,True,False,False,False,False,
 expensify,Expensify,https://www.expensify.com,403,True,True,True,False,False,
-figma,Figma,https://figma.com,200,True,False,True,False,False,
-freshdesk,Freshdesk,https://freshdesk.com,200,True,False,True,False,False,
-freshservice,Freshservice,https://freshservice.com,200,True,True,True,False,False,
+figma,Figma,https://figma.com,,,,,,,"HTTPSConnectionPool(host='figma.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+freshdesk,Freshdesk,https://freshdesk.com,,,,,,,"HTTPSConnectionPool(host='freshdesk.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+freshservice,Freshservice,https://freshservice.com,,,,,,,"HTTPSConnectionPool(host='freshservice.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
 front,Front,https://front.com,200,True,False,True,False,False,
-github,GitHub,https://github.com,200,True,False,False,False,False,
-gitlab,GitLab,https://about.gitlab.com,200,True,False,False,False,False,
-gong,Gong,https://www.gong.io,200,True,False,True,False,False,
-googleworkspace,Google Workspace,https://workspace.google.com,200,True,False,False,False,False,
-grammarly,Grammarly,https://www.grammarly.com,200,True,False,True,False,False,
-greenhouse,Greenhouse,https://www.greenhouse.io,200,True,False,False,False,False,
-gusto,Gusto,https://gusto.com,403,False,False,False,False,False,
-hootsuite,Hootsuite,https://www.hootsuite.com,200,True,False,True,False,False,
-hubspot,HubSpot,https://hubspot.com,200,True,False,False,False,False,
+github,GitHub,https://github.com,,,,,,,"HTTPSConnectionPool(host='github.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+gitlab,GitLab,https://about.gitlab.com,,,,,,,"HTTPSConnectionPool(host='about.gitlab.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+gong,Gong,https://www.gong.io,,,,,,,"HTTPSConnectionPool(host='www.gong.io', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+googleworkspace,Google Workspace,https://workspace.google.com,,,,,,,"HTTPSConnectionPool(host='workspace.google.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+grammarly,Grammarly,https://www.grammarly.com,,,,,,,"HTTPSConnectionPool(host='www.grammarly.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+greenhouse,Greenhouse,https://www.greenhouse.io,,,,,,,"HTTPSConnectionPool(host='www.greenhouse.io', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+gusto,Gusto,https://gusto.com,,,,,,,"HTTPSConnectionPool(host='gusto.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+hootsuite,Hootsuite,https://www.hootsuite.com,,,,,,,"HTTPSConnectionPool(host='www.hootsuite.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+hubspot,HubSpot,https://hubspot.com,,,,,,,"HTTPSConnectionPool(host='hubspot.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
 intercom,Intercom,https://intercom.com,200,True,True,True,True,False,
-lark,Lark,https://www.larksuite.com,200,True,False,True,False,False,
+lark,Lark,https://www.larksuite.com,,,,,,,"HTTPSConnectionPool(host='www.larksuite.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
 lastpass,LastPass,https://www.lastpass.com,200,True,False,True,False,False,
-linear,Linear,https://linear.app,200,True,False,False,False,False,
-linkedin-learning,LinkedIn Learning,https://learning.linkedin.com,200,False,False,True,False,False,
-loom,Loom,https://www.loom.com,200,True,True,True,False,False,
+linear,Linear,https://linear.app,,,,,,,"HTTPSConnectionPool(host='linear.app', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+linkedin-learning,LinkedIn Learning,https://learning.linkedin.com,,,,,,,"HTTPSConnectionPool(host='learning.linkedin.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+loom,Loom,https://www.loom.com,,,,,,,"HTTPSConnectionPool(host='www.loom.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
 lucidchart,Lucidchart,https://www.lucidchart.com,200,True,True,True,False,False,
 mailchimp,Mailchimp,https://mailchimp.com,200,True,False,False,False,False,
-marketo,Marketo,https://www.marketo.com,,,,,,,"HTTPSConnectionPool(host='business.adobe.com', port=443): Read timed out. (read timeout=10)"
+marketo,Marketo,https://www.marketo.com,,,,,,,"HTTPSConnectionPool(host='www.marketo.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
 microsoft-teams,Microsoft Teams,https://www.microsoft.com/en-us/microsoft-teams,,,,,,,"HTTPSConnectionPool(host='www.microsoft.com', port=443): Read timed out. (read timeout=10)"
 microsoft365,Microsoft 365,https://microsoft365.com,200,True,False,True,False,False,
-miro,Miro,https://miro.com,200,True,False,True,True,True,
-mixpanel,Mixpanel,https://mixpanel.com,200,True,False,False,False,False,
-monday-com,monday.com,https://monday.com,200,True,False,True,True,False,
+miro,Miro,https://miro.com,,,,,,,"HTTPSConnectionPool(host='miro.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+mixpanel,Mixpanel,https://mixpanel.com,,,,,,,"HTTPSConnectionPool(host='mixpanel.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+monday-com,monday.com,https://monday.com,,,,,,,"HTTPSConnectionPool(host='monday.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
 mural,Mural,https://www.mural.co,200,True,False,True,False,False,
-navan,Navan,https://navan.com,200,True,False,False,False,False,
+navan,Navan,https://navan.com,,,,,,,"HTTPSConnectionPool(host='navan.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
 netsuite,NetSuite,https://www.netsuite.com,403,False,False,False,False,False,
-new-relic,New Relic,https://newrelic.com,200,True,False,False,False,False,
-notion,Notion,https://notion.so,200,True,False,True,False,False,
-outreach,Outreach,https://www.outreach.io,200,True,False,False,False,False,
-pagerduty,PagerDuty,https://www.pagerduty.com,200,True,False,False,False,False,
-pandadoc,PandaDoc,https://www.pandadoc.com,429,False,False,False,False,False,
-pipedrive,Pipedrive,https://www.pipedrive.com,200,True,False,True,True,False,
-pluralsight,Pluralsight,https://www.pluralsight.com,200,False,False,False,False,False,
-postman,Postman,https://www.postman.com,200,True,False,False,False,False,
-qualtrics,Qualtrics,https://www.qualtrics.com,200,True,False,False,False,False,
-quickbooks-online,QuickBooks Online,https://quickbooks.intuit.com,200,True,False,True,False,False,
-ramp,Ramp,https://ramp.com,200,True,False,False,False,False,
-ringcentral,RingCentral,https://www.ringcentral.com,200,True,False,True,True,False,
-rippling,Rippling,https://www.rippling.com,200,True,False,True,True,False,
-salesforce,Salesforce,https://salesforce.com,200,True,False,True,False,False,
+new-relic,New Relic,https://newrelic.com,,,,,,,"HTTPSConnectionPool(host='newrelic.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+notion,Notion,https://notion.so,,,,,,,"HTTPSConnectionPool(host='notion.so', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+outreach,Outreach,https://www.outreach.io,,,,,,,"HTTPSConnectionPool(host='www.outreach.io', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+pagerduty,PagerDuty,https://www.pagerduty.com,,,,,,,"HTTPSConnectionPool(host='www.pagerduty.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+pandadoc,PandaDoc,https://www.pandadoc.com,,,,,,,"HTTPSConnectionPool(host='www.pandadoc.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+pipedrive,Pipedrive,https://www.pipedrive.com,,,,,,,"HTTPSConnectionPool(host='www.pipedrive.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+pluralsight,Pluralsight,https://www.pluralsight.com,,,,,,,"HTTPSConnectionPool(host='www.pluralsight.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+postman,Postman,https://www.postman.com,,,,,,,"HTTPSConnectionPool(host='www.postman.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+qualtrics,Qualtrics,https://www.qualtrics.com,,,,,,,"HTTPSConnectionPool(host='www.qualtrics.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+quickbooks-online,QuickBooks Online,https://quickbooks.intuit.com,,,,,,,"HTTPSConnectionPool(host='quickbooks.intuit.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+ramp,Ramp,https://ramp.com,,,,,,,"HTTPSConnectionPool(host='ramp.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+ringcentral,RingCentral,https://www.ringcentral.com,,,,,,,"HTTPSConnectionPool(host='www.ringcentral.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+rippling,Rippling,https://www.rippling.com,,,,,,,"HTTPSConnectionPool(host='www.rippling.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+salesforce,Salesforce,https://salesforce.com,,,,,,,"HTTPSConnectionPool(host='salesforce.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
 sap-concur,SAP Concur,https://www.concur.com,200,False,False,False,False,False,
-servicenow,ServiceNow,https://www.servicenow.com,403,False,False,False,False,False,
+servicenow,ServiceNow,https://www.servicenow.com,,,,,,,"HTTPSConnectionPool(host='www.servicenow.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
 shopify,Shopify,https://www.shopify.com,200,True,False,True,False,False,
-shortcut,Shortcut,https://www.shortcut.com,200,True,True,False,True,False,
-slack,Slack,https://slack.com,200,True,False,False,False,False,
-smartsheet,Smartsheet,https://smartsheet.com,200,True,False,False,False,False,
-snowflake,Snowflake,https://www.snowflake.com,200,True,False,True,False,False,
-snyk,Snyk,https://snyk.io,200,True,False,True,False,False,
-splunk,Splunk,https://www.splunk.com,200,True,False,False,False,False,
-sprout-social,Sprout Social,https://sproutsocial.com,200,True,False,True,False,False,
+shortcut,Shortcut,https://www.shortcut.com,,,,,,,"HTTPSConnectionPool(host='www.shortcut.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+slack,Slack,https://slack.com,,,,,,,"HTTPSConnectionPool(host='slack.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+smartsheet,Smartsheet,https://smartsheet.com,,,,,,,"HTTPSConnectionPool(host='smartsheet.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+snowflake,Snowflake,https://www.snowflake.com,,,,,,,"HTTPSConnectionPool(host='www.snowflake.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+snyk,Snyk,https://snyk.io,,,,,,,"HTTPSConnectionPool(host='snyk.io', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+splunk,Splunk,https://www.splunk.com,,,,,,,"HTTPSConnectionPool(host='www.splunk.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+sprout-social,Sprout Social,https://sproutsocial.com,,,,,,,"HTTPSConnectionPool(host='sproutsocial.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
 stripe,Stripe,https://stripe.com,200,True,True,False,False,False,
-surveymonkey,SurveyMonkey,https://www.surveymonkey.com,200,True,False,True,False,False,
-tableau,Tableau,https://www.tableau.com,403,False,False,False,False,False,
-teamviewer,TeamViewer,https://www.teamviewer.com,503,False,False,False,False,False,
-trello,Trello,https://trello.com,200,True,False,True,False,False,
-twilio,Twilio,https://www.twilio.com,200,False,False,True,False,False,
-typeform,Typeform,https://www.typeform.com,200,True,False,False,False,False,
-uber-for-business,Uber for Business,https://www.uber.com/business,406,False,False,False,False,False,
-udemy-business,Udemy Business,https://business.udemy.com,403,False,False,False,False,False,
-workday,Workday,https://www.workday.com,200,True,False,True,False,False,
-wrike,Wrike,https://wrike.com,200,True,False,True,False,False,
+surveymonkey,SurveyMonkey,https://www.surveymonkey.com,,,,,,,"HTTPSConnectionPool(host='www.surveymonkey.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+tableau,Tableau,https://www.tableau.com,,,,,,,"HTTPSConnectionPool(host='www.tableau.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+teamviewer,TeamViewer,https://www.teamviewer.com,,,,,,,"HTTPSConnectionPool(host='www.teamviewer.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+trello,Trello,https://trello.com,,,,,,,"HTTPSConnectionPool(host='trello.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+twilio,Twilio,https://www.twilio.com,,,,,,,"HTTPSConnectionPool(host='www.twilio.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+typeform,Typeform,https://www.typeform.com,,,,,,,"HTTPSConnectionPool(host='www.typeform.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+uber-for-business,Uber for Business,https://www.uber.com/business,,,,,,,"HTTPSConnectionPool(host='www.uber.com', port=443): Max retries exceeded with url: /business (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+udemy-business,Udemy Business,https://business.udemy.com,,,,,,,"HTTPSConnectionPool(host='business.udemy.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+workday,Workday,https://www.workday.com,,,,,,,"HTTPSConnectionPool(host='www.workday.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+wrike,Wrike,https://wrike.com,,,,,,,"HTTPSConnectionPool(host='wrike.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
 xero,Xero,https://www.xero.com,200,True,False,False,False,False,
-zapier,Zapier,https://zapier.com,503,False,False,False,False,False,
-zendesk,Zendesk,https://zendesk.com,200,True,False,False,False,False,
-zoho-crm,Zoho CRM,https://www.zoho.com/crm,200,True,False,False,False,False,
+zapier,Zapier,https://zapier.com,,,,,,,"HTTPSConnectionPool(host='zapier.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+zendesk,Zendesk,https://zendesk.com,,,,,,,"HTTPSConnectionPool(host='zendesk.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+zoho-crm,Zoho CRM,https://www.zoho.com/crm,,,,,,,"HTTPSConnectionPool(host='www.zoho.com', port=443): Max retries exceeded with url: /crm (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
 zoom,Zoom,https://zoom.us,200,True,False,False,False,False,
-zoominfo,ZoomInfo,https://www.zoominfo.com,200,True,True,True,False,False,
-zscaler,Zscaler,https://www.zscaler.com,200,True,False,True,False,False,
+zoominfo,ZoomInfo,https://www.zoominfo.com,,,,,,,"HTTPSConnectionPool(host='www.zoominfo.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+zscaler,Zscaler,https://www.zscaler.com,,,,,,,"HTTPSConnectionPool(host='www.zscaler.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"

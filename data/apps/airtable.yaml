@@ -1,44 +1,38 @@
-name: Airtable
-category: productivity
-website: https://airtable.com
-description: A platform for building collaborative apps and databases with powerful
-  automation.
-status: draft
+name: "Airtable"
+category: "productivity"
+website: "https://airtable.com"
+description: "A platform for building collaborative apps and databases with powerful automation."
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
-    support: supported
-    tier: paid
-    protocols:
-    - SAML
+    support: "supported"
+    tier: "paid"
+    protocols: ["SAML"]
   sso_enforcement:
-    support: unknown
+    support: "unknown"
   scim:
-    support: supported
-    tier: enterprise
+    support: "supported"
+    tier: "enterprise"
   mfa_enforcement:
-    support: supported
-    tier: paid
+    support: "supported"
+    tier: "paid"
   phishing_resistant_mfa:
-    support: unknown
+    support: "unknown"
   audit_logs:
-    support: supported
-    tier: enterprise
-    retention: 180 days
+    support: "supported"
+    tier: "enterprise"
+    retention: "180 days"
   jit_provisioning:
-    support: unknown
+    support: "unknown"
   domain_verification:
-    support: unknown
+    support: "unknown"
   custom_roles:
-    support: unknown
+    support: "unknown"
   group_role_mapping:
-    support: unknown
+    support: "unknown"
   session_controls:
-    support: supported
+    support: "supported"
   api_token_controls:
-    support: unknown
-provenance:
-  source: auto-scan
-  source_url: https://airtable.com
-  verified_by: auto-scan
-  checked: '2026-09-14'
-  evidence: sso,scim,mfa,soc2
+    support: "unknown"

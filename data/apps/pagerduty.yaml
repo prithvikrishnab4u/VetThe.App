@@ -1,67 +1,58 @@
-name: PagerDuty
-category: infrastructure
-website: https://www.pagerduty.com
-description: Incident management platform that provides reliable notifications, automatic
-  escalations, and on-call scheduling.
-status: draft
+name: "PagerDuty"
+category: "infrastructure"
+website: "https://www.pagerduty.com"
+description: "Incident management platform that provides reliable notifications, automatic escalations, and on-call scheduling."
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
-    support: supported
-    tier: paid
-    plan: Professional
-    notes: SAML 2.0 for external IdPs; Google sign-in uses OAuth 2.0
-    protocols:
-    - SAML
-    source: https://support.pagerduty.com/main/docs/sso
-    checked: '2026-09-14'
+    support: "supported"
+    tier: "paid"
+    plan: "Professional"
+    notes: "SAML 2.0 for external IdPs; Google sign-in uses OAuth 2.0"
+    protocols: ["SAML"]
+    source: "https://support.pagerduty.com/main/docs/sso"
+    checked: "2026-09-14"
   sso_enforcement:
-    support: supported
-    tier: paid
-    plan: Professional
-    notes: Turn off "Allow username/password login"; the Account Owner always keeps
-      email and password login
-    source: https://support.pagerduty.com/main/docs/sso
-    checked: '2026-09-14'
+    support: "supported"
+    tier: "paid"
+    plan: "Professional"
+    notes: "Turn off \"Allow username/password login\"; the Account Owner always keeps email and password login"
+    source: "https://support.pagerduty.com/main/docs/sso"
+    checked: "2026-09-14"
   scim:
-    support: supported
-    tier: free
-    notes: All plans; Entra ID, Okta and OneLogin; creates and updates users, and
-      setting active to false deletes the user; roles can be set through SCIM
-    source: https://support.pagerduty.com/main/docs/scim-user-provisioning
-    checked: '2026-09-14'
+    support: "supported"
+    tier: "free"
+    notes: "All plans; Entra ID, Okta and OneLogin; creates and updates users, and setting active to false deletes the user; roles can be set through SCIM"
+    source: "https://support.pagerduty.com/main/docs/scim-user-provisioning"
+    checked: "2026-09-14"
   mfa_enforcement:
-    support: unknown
+    support: "unknown"
   phishing_resistant_mfa:
-    support: unknown
+    support: "unknown"
   audit_logs:
-    support: supported
-    tier: paid
-    plan: Business
-    notes: Changes to users, teams, escalation policies, schedules, services and incident
-      workflows; also available through the API
-    retention: 12 months
-    source: https://support.pagerduty.com/main/docs/audit-trail-reporting
-    checked: '2026-09-14'
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "Changes to users, teams, escalation policies, schedules, services and incident workflows; also available through the API"
+    retention: "12 months"
+    source: "https://support.pagerduty.com/main/docs/audit-trail-reporting"
+    checked: "2026-09-14"
   jit_provisioning:
-    support: supported
-    tier: paid
-    plan: Professional
-    notes: Optional "Auto-provision users on first login" setting
-    source: https://support.pagerduty.com/main/docs/sso
-    checked: '2026-09-14'
+    support: "supported"
+    tier: "paid"
+    plan: "Professional"
+    notes: "Optional \"Auto-provision users on first login\" setting"
+    source: "https://support.pagerduty.com/main/docs/sso"
+    checked: "2026-09-14"
   domain_verification:
-    support: supported
+    support: "supported"
   custom_roles:
-    support: unknown
+    support: "unknown"
   group_role_mapping:
-    support: unknown
+    support: "unknown"
   session_controls:
-    support: unknown
+    support: "unknown"
   api_token_controls:
-    support: unknown
-provenance:
-  source: auto-scan
-  source_url: https://www.pagerduty.com
-  verified_by: auto-scan
-  checked: '2026-09-14'
-  evidence: sso
+    support: "unknown"

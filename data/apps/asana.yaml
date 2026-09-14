@@ -1,47 +1,41 @@
-name: Asana
-category: productivity
-website: https://asana.com
-description: A work management platform that helps teams orchestrate their work.
-status: draft
+name: "Asana"
+category: "productivity"
+website: "https://asana.com"
+description: "A work management platform that helps teams orchestrate their work."
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
-    support: supported
-    tier: enterprise
-    protocols:
-    - SAML
+    support: "supported"
+    tier: "enterprise"
+    protocols: ["SAML"]
   sso_enforcement:
-    support: unknown
+    support: "unknown"
   scim:
-    support: supported
-    tier: enterprise
+    support: "supported"
+    tier: "enterprise"
   mfa_enforcement:
-    support: supported
-    tier: free
+    support: "supported"
+    tier: "free"
   phishing_resistant_mfa:
-    support: unknown
+    support: "unknown"
   audit_logs:
-    support: supported
-    tier: enterprise
-    plan: Enterprise+, or Enterprise with the Compliance Management add-on
-    notes: Audit log API for service accounts; in-app view and retention not stated
-      on this page
-    source: https://developers.asana.com/docs/audit-log-api
-    checked: '2026-09-14'
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise+, or Enterprise with the Compliance Management add-on"
+    notes: "Audit log API for service accounts; in-app view and retention not stated on this page"
+    source: "https://developers.asana.com/docs/audit-log-api"
+    checked: "2026-09-14"
   jit_provisioning:
-    support: unknown
+    support: "unknown"
   domain_verification:
-    support: unknown
+    support: "unknown"
   custom_roles:
-    support: unknown
+    support: "unknown"
   group_role_mapping:
-    support: unknown
+    support: "unknown"
   session_controls:
-    support: supported
+    support: "supported"
   api_token_controls:
-    support: unknown
-provenance:
-  source: auto-scan
-  source_url: https://asana.com
-  verified_by: auto-scan
-  checked: '2026-09-14'
-  evidence: sso,scim
+    support: "unknown"

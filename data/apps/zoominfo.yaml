@@ -1,41 +1,35 @@
-name: ZoomInfo
-category: sales_marketing
-website: https://www.zoominfo.com
-description: GTM software, data, and intelligence for more than 35,000 companies worldwide.
-status: draft
+name: "ZoomInfo"
+category: "sales_marketing"
+website: "https://www.zoominfo.com"
+description: "GTM software, data, and intelligence for more than 35,000 companies worldwide."
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
-    support: supported
-    tier: enterprise
-    protocols:
-    - SAML
-    - OIDC
+    support: "supported"
+    tier: "enterprise"
+    protocols: ["SAML", "OIDC"]
   sso_enforcement:
-    support: unknown
+    support: "unknown"
   scim:
-    support: unknown
+    support: "unknown"
   mfa_enforcement:
-    support: supported
-    tier: enterprise
+    support: "supported"
+    tier: "enterprise"
   phishing_resistant_mfa:
-    support: unknown
+    support: "unknown"
   audit_logs:
-    support: unknown
+    support: "unknown"
   jit_provisioning:
-    support: supported
+    support: "supported"
   domain_verification:
-    support: not_supported
+    support: "not_supported"
   custom_roles:
-    support: unknown
+    support: "unknown"
   group_role_mapping:
-    support: unknown
+    support: "unknown"
   session_controls:
-    support: unknown
+    support: "unknown"
   api_token_controls:
-    support: unknown
-provenance:
-  source: auto-scan
-  source_url: https://www.zoominfo.com
-  verified_by: auto-scan
-  checked: '2026-09-14'
-  evidence: sso,scim,mfa
+    support: "unknown"

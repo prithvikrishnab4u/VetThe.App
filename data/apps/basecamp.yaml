@@ -1,43 +1,36 @@
-name: Basecamp
-category: collaboration
-website: https://basecamp.com
-description: An all-in-one project management and team communication tool designed
-  for simplicity and clarity.
-status: draft
+name: "Basecamp"
+category: "collaboration"
+website: "https://basecamp.com"
+description: "An all-in-one project management and team communication tool designed for simplicity and clarity."
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
-    support: supported
-    tier: enterprise
-    protocols:
-    - SAML
-    - OIDC
+    support: "supported"
+    tier: "enterprise"
+    protocols: ["SAML", "OIDC"]
   sso_enforcement:
-    support: unknown
+    support: "unknown"
   scim:
-    support: unknown
+    support: "unknown"
   mfa_enforcement:
-    support: not_supported
+    support: "not_supported"
   phishing_resistant_mfa:
-    support: unknown
+    support: "unknown"
   audit_logs:
-    support: supported
-    tier: paid
-    retention: 90 days
+    support: "supported"
+    tier: "paid"
+    retention: "90 days"
   jit_provisioning:
-    support: unknown
+    support: "unknown"
   domain_verification:
-    support: unknown
+    support: "unknown"
   custom_roles:
-    support: unknown
+    support: "unknown"
   group_role_mapping:
-    support: unknown
+    support: "unknown"
   session_controls:
-    support: not_supported
+    support: "not_supported"
   api_token_controls:
-    support: unknown
-provenance:
-  source: auto-scan
-  source_url: https://basecamp.com
-  verified_by: auto-scan
-  checked: '2026-09-14'
-  evidence: site-reachable
+    support: "unknown"

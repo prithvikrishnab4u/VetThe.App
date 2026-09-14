@@ -1,41 +1,35 @@
-name: Shortcut
-category: development
-website: https://www.shortcut.com
-description: Project management platform designed for software development teams to
-  unify planning and development.
-status: draft
+name: "Shortcut"
+category: "development"
+website: "https://www.shortcut.com"
+description: "Project management platform designed for software development teams to unify planning and development."
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
-    support: supported
-    tier: paid
-    protocols:
-    - SAML
+    support: "supported"
+    tier: "paid"
+    protocols: ["SAML"]
   sso_enforcement:
-    support: unknown
+    support: "unknown"
   scim:
-    support: unknown
+    support: "unknown"
   mfa_enforcement:
-    support: supported
-    tier: paid
+    support: "supported"
+    tier: "paid"
   phishing_resistant_mfa:
-    support: unknown
+    support: "unknown"
   audit_logs:
-    support: unknown
+    support: "unknown"
   jit_provisioning:
-    support: supported
+    support: "supported"
   domain_verification:
-    support: supported
+    support: "supported"
   custom_roles:
-    support: unknown
+    support: "unknown"
   group_role_mapping:
-    support: unknown
+    support: "unknown"
   session_controls:
-    support: unknown
+    support: "unknown"
   api_token_controls:
-    support: unknown
-provenance:
-  source: auto-scan
-  source_url: https://www.shortcut.com
-  verified_by: auto-scan
-  checked: '2026-09-14'
-  evidence: sso,scim,soc2
+    support: "unknown"

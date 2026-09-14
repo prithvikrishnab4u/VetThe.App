@@ -1,43 +1,38 @@
-name: DocuSign
-category: productivity
-website: https://docusign.com
-description: Electronic signature and agreement management platform.
-status: draft
+name: "DocuSign"
+category: "productivity"
+website: "https://docusign.com"
+description: "Electronic signature and agreement management platform."
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
-    support: supported
-    tier: enterprise
-    protocols:
-    - SAML
+    support: "supported"
+    tier: "enterprise"
+    protocols: ["SAML"]
   sso_enforcement:
-    support: unknown
+    support: "unknown"
   scim:
-    support: supported
-    tier: enterprise
+    support: "supported"
+    tier: "enterprise"
   mfa_enforcement:
-    support: supported
-    tier: free
+    support: "supported"
+    tier: "free"
   phishing_resistant_mfa:
-    support: unknown
+    support: "unknown"
   audit_logs:
-    support: supported
-    tier: enterprise
-    retention: Unlimited
+    support: "supported"
+    tier: "enterprise"
+    retention: "Unlimited"
   jit_provisioning:
-    support: unknown
+    support: "unknown"
   domain_verification:
-    support: unknown
+    support: "unknown"
   custom_roles:
-    support: unknown
+    support: "unknown"
   group_role_mapping:
-    support: unknown
+    support: "unknown"
   session_controls:
-    support: supported
+    support: "supported"
   api_token_controls:
-    support: unknown
-provenance:
-  source: auto-scan
-  source_url: https://docusign.com
-  verified_by: auto-scan
-  checked: '2026-09-14'
-  evidence: sso,mfa,iso27001
+    support: "unknown"

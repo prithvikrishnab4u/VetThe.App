@@ -1987,13 +1987,6 @@
     "category": "finance",
     "description": "Expense management software for receipt scanning and reimbursement.",
     "name": "Expensify",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,scim,mfa",
-      "source": "auto-scan",
-      "source_url": "https://www.expensify.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.expensify.com"
   },
@@ -2998,13 +2991,6 @@
     "category": "security",
     "description": "Password management solution for storing encrypted passwords online.",
     "name": "LastPass",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa",
-      "source": "auto-scan",
-      "source_url": "https://www.lastpass.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.lastpass.com"
   },
@@ -3304,13 +3290,6 @@
     "category": "sales_marketing",
     "description": "Marketing, automation, and email marketing platform for growing businesses.",
     "name": "Mailchimp",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso",
-      "source": "auto-scan",
-      "source_url": "https://mailchimp.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://mailchimp.com"
   },

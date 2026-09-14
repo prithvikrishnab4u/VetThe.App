@@ -1,79 +1,72 @@
-name: Linear
-category: development
-website: https://linear.app
-description: Project management tool for high-performance software teams.
-status: draft
+name: "Linear"
+category: "development"
+website: "https://linear.app"
+description: "Project management tool for high-performance software teams."
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
-    support: supported
-    tier: enterprise
-    plan: Enterprise
-    notes: Needs a domain claimed with a DNS TXT record
-    protocols:
-    - SAML
-    source: https://linear.app/docs/saml-and-access-control
-    checked: '2026-09-14'
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Needs a domain claimed with a DNS TXT record"
+    protocols: ["SAML"]
+    source: "https://linear.app/docs/saml-and-access-control"
+    checked: "2026-09-14"
   sso_enforcement:
-    support: supported
-    tier: enterprise
-    plan: Enterprise
-    notes: Members on SAML-approved domains must sign in with SAML by default
-    source: https://linear.app/docs/saml-and-access-control
-    checked: '2026-09-14'
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Members on SAML-approved domains must sign in with SAML by default"
+    source: "https://linear.app/docs/saml-and-access-control"
+    checked: "2026-09-14"
   scim:
-    support: supported
-    tier: enterprise
-    plan: Enterprise
-    notes: Creates, updates and suspends users; supports group push
-    source: https://linear.app/docs/scim
-    checked: '2026-09-14'
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Creates, updates and suspends users; supports group push"
+    source: "https://linear.app/docs/scim"
+    checked: "2026-09-14"
   mfa_enforcement:
-    support: unknown
+    support: "unknown"
   phishing_resistant_mfa:
-    support: supported
-    notes: Passkeys are a login method; plan availability not stated
-    source: https://linear.app/changelog/2024-05-30-passkeys-a-fast-and-secure-way-to-log-in-to-linear
-    checked: '2026-09-14'
+    support: "supported"
+    notes: "Passkeys are a login method; plan availability not stated"
+    source: "https://linear.app/changelog/2024-05-30-passkeys-a-fast-and-secure-way-to-log-in-to-linear"
+    checked: "2026-09-14"
   audit_logs:
-    support: supported
-    tier: enterprise
-    plan: Enterprise
-    notes: Filter in the app, query through the GraphQL API, or stream to a webhook
-      for SIEM
-    retention: 90 days
-    source: https://linear.app/docs/audit-log
-    checked: '2026-09-14'
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Filter in the app, query through the GraphQL API, or stream to a webhook for SIEM"
+    retention: "90 days"
+    source: "https://linear.app/docs/audit-log"
+    checked: "2026-09-14"
   jit_provisioning:
-    support: supported
-    tier: enterprise
-    plan: Enterprise
-    notes: Creates the account from IdP data on first SAML sign-in
-    source: https://linear.app/docs/saml-and-access-control
-    checked: '2026-09-14'
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Creates the account from IdP data on first SAML sign-in"
+    source: "https://linear.app/docs/saml-and-access-control"
+    checked: "2026-09-14"
   domain_verification:
-    support: supported
-    tier: enterprise
-    plan: Enterprise
-    notes: Domains are claimed with a DNS TXT record as part of SAML setup
-    source: https://linear.app/docs/saml-and-access-control
-    checked: '2026-09-14'
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Domains are claimed with a DNS TXT record as part of SAML setup"
+    source: "https://linear.app/docs/saml-and-access-control"
+    checked: "2026-09-14"
   custom_roles:
-    support: unknown
+    support: "unknown"
   group_role_mapping:
-    support: supported
-    tier: enterprise
-    plan: Enterprise
-    notes: SCIM groups map to teams; linear-owners, linear-admins and linear-guests
-      groups set roles
-    source: https://linear.app/docs/scim
-    checked: '2026-09-14'
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM groups map to teams; linear-owners, linear-admins and linear-guests groups set roles"
+    source: "https://linear.app/docs/scim"
+    checked: "2026-09-14"
   session_controls:
-    support: supported
+    support: "supported"
   api_token_controls:
-    support: unknown
-provenance:
-  source: auto-scan
-  source_url: https://linear.app
-  verified_by: auto-scan
-  checked: '2026-09-14'
-  evidence: sso
+    support: "unknown"
