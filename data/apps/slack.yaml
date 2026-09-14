@@ -9,21 +9,40 @@ capabilities:
   sso:
     support: "supported"
     tier: "paid"
+    plan: "Business+"
+    notes: "Also on Free and Pro when a Salesforce org is connected to Slack"
     protocols: ["SAML"]
+    source: "https://slack.com/help/articles/203772216-Set-up-SAML-single-sign-on-for-Slack"
+    checked: "2026-09-14"
   sso_enforcement:
-    support: "unknown"
+    support: "supported"
+    tier: "paid"
+    plan: "Business+"
+    notes: "SSO can be required for all members, or for all members except guests"
+    source: "https://slack.com/help/articles/203772216-Set-up-SAML-single-sign-on-for-Slack"
+    checked: "2026-09-14"
   scim:
     support: "supported"
     tier: "paid"
+    plan: "Business+"
+    notes: "Creates and deactivates members, syncs profile fields and user groups"
+    source: "https://slack.com/help/articles/212572638-Manage-members-with-SCIM-provisioning"
+    checked: "2026-09-14"
   mfa_enforcement:
     support: "supported"
-    tier: "paid"
+    tier: "free"
+    notes: "With SSO on, only owners and admins who can bypass SSO must use 2FA"
+    source: "https://slack.com/help/articles/212221668-Mandatory-workspace-two-factor-authentication"
+    checked: "2026-09-14"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
     support: "supported"
     tier: "enterprise"
-    retention: "Indefinite"
+    plan: "Enterprise"
+    notes: "View in Slack, export CSV/JSON, or use the Audit Logs API"
+    source: "https://slack.com/help/articles/360000394286-Audit-logs-in-Slack"
+    checked: "2026-09-14"
   jit_provisioning:
     support: "unknown"
   domain_verification:

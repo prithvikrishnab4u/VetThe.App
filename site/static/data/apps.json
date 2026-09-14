@@ -2038,9 +2038,11 @@
         "support": "unknown"
       },
       "audit_logs": {
+        "checked": "2026-09-14",
+        "notes": "Minimum plan not confirmed from GitHub sources; audit log API and streaming need Enterprise Cloud",
         "retention": "180 days",
-        "support": "supported",
-        "tier": "enterprise"
+        "source": "https://docs.github.com/en/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/reviewing-the-audit-log-for-your-organization",
+        "support": "supported"
       },
       "custom_roles": {
         "support": "unknown"
@@ -2055,29 +2057,49 @@
         "support": "unknown"
       },
       "mfa_enforcement": {
+        "checked": "2026-09-14",
+        "notes": "Members without 2FA lose access to organization resources; outside collaborators are removed",
+        "source": "https://docs.github.com/en/organizations/keeping-your-organization-secure/managing-two-factor-authentication-for-your-organization/requiring-two-factor-authentication-in-your-organization",
         "support": "supported",
         "tier": "free"
       },
       "phishing_resistant_mfa": {
-        "support": "supported"
+        "checked": "2026-09-14",
+        "notes": "Passkeys for sign-in and security keys for 2FA, for all users",
+        "source": "https://github.blog/changelog/2023-09-21-passkeys-are-generally-available/",
+        "support": "supported",
+        "tier": "free"
       },
       "scim": {
-        "support": "supported",
+        "checked": "2026-09-14",
+        "notes": "Organization SCIM manages membership and deprovisioning only; Enterprise Managed Users has its own SCIM for the full account lifecycle",
+        "plan": "Enterprise Cloud",
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-saml-single-sign-on-for-your-organization/about-scim-for-organizations",
+        "support": "partial",
         "tier": "enterprise"
       },
       "session_controls": {
         "support": "supported"
       },
       "sso": {
+        "checked": "2026-09-14",
+        "notes": "Organization SSO is SAML; OIDC only with Enterprise Managed Users and Microsoft Entra ID",
+        "plan": "Enterprise Cloud",
         "protocols": [
           "SAML",
           "OIDC"
         ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-saml-single-sign-on-for-your-organization/about-identity-and-access-management-with-saml-single-sign-on",
         "support": "supported",
         "tier": "enterprise"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Enforcing removes members who haven't authenticated through the IdP",
+        "plan": "Enterprise Cloud",
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-saml-single-sign-on-for-your-organization/enforcing-saml-single-sign-on-for-your-organization",
+        "support": "supported",
+        "tier": "enterprise"
       }
     },
     "category": "development",
@@ -3446,7 +3468,11 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "retention": "Indefinite",
+        "checked": "2026-09-14",
+        "notes": "In-app view, CSV export, and SIEM streaming",
+        "plan": "Enterprise",
+        "retention": "365 days",
+        "source": "https://www.notion.com/help/audit-log",
         "support": "supported",
         "tier": "enterprise"
       },
@@ -3454,22 +3480,40 @@
         "support": "unknown"
       },
       "domain_verification": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Workspace owners verify domains; required to turn on SAML SSO",
+        "plan": "Business",
+        "source": "https://www.notion.com/help/saml-sso-configuration",
+        "support": "supported",
+        "tier": "paid"
       },
       "group_role_mapping": {
         "support": "unknown"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "\"Automatic account creation\" when signing in with SAML SSO",
+        "plan": "Business",
+        "source": "https://www.notion.com/help/saml-sso-configuration",
+        "support": "supported",
+        "tier": "paid"
       },
       "mfa_enforcement": {
-        "support": "supported",
-        "tier": "free"
+        "checked": "2026-09-14",
+        "notes": "Organization owners can require MFA for guests only, not workspace members",
+        "plan": "Enterprise",
+        "source": "https://www.notion.com/help/mfa-enforcement",
+        "support": "partial",
+        "tier": "enterprise"
       },
       "phishing_resistant_mfa": {
         "support": "unknown"
       },
       "scim": {
+        "checked": "2026-09-14",
+        "notes": "Creates, updates and removes users; manages groups",
+        "plan": "Enterprise",
+        "source": "https://www.notion.com/help/provision-users-and-groups-with-scim",
         "support": "supported",
         "tier": "enterprise"
       },
@@ -3477,14 +3521,23 @@
         "support": "supported"
       },
       "sso": {
+        "checked": "2026-09-14",
+        "notes": "Requires at least one verified domain",
+        "plan": "Business",
         "protocols": [
           "SAML"
         ],
+        "source": "https://www.notion.com/help/saml-sso-configuration",
         "support": "supported",
-        "tier": "enterprise"
+        "tier": "paid"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "\"Only SAML SSO\" login method requires members to sign in with SAML",
+        "plan": "Business",
+        "source": "https://www.notion.com/help/saml-sso-configuration",
+        "support": "supported",
+        "tier": "paid"
       }
     },
     "category": "productivity",
@@ -4324,7 +4377,10 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "retention": "Indefinite",
+        "checked": "2026-09-14",
+        "notes": "View in Slack, export CSV/JSON, or use the Audit Logs API",
+        "plan": "Enterprise",
+        "source": "https://slack.com/help/articles/360000394286-Audit-logs-in-Slack",
         "support": "supported",
         "tier": "enterprise"
       },
@@ -4341,13 +4397,20 @@
         "support": "unknown"
       },
       "mfa_enforcement": {
+        "checked": "2026-09-14",
+        "notes": "With SSO on, only owners and admins who can bypass SSO must use 2FA",
+        "source": "https://slack.com/help/articles/212221668-Mandatory-workspace-two-factor-authentication",
         "support": "supported",
-        "tier": "paid"
+        "tier": "free"
       },
       "phishing_resistant_mfa": {
         "support": "unknown"
       },
       "scim": {
+        "checked": "2026-09-14",
+        "notes": "Creates and deactivates members, syncs profile fields and user groups",
+        "plan": "Business+",
+        "source": "https://slack.com/help/articles/212572638-Manage-members-with-SCIM-provisioning",
         "support": "supported",
         "tier": "paid"
       },
@@ -4355,14 +4418,23 @@
         "support": "supported"
       },
       "sso": {
+        "checked": "2026-09-14",
+        "notes": "Also on Free and Pro when a Salesforce org is connected to Slack",
+        "plan": "Business+",
         "protocols": [
           "SAML"
         ],
+        "source": "https://slack.com/help/articles/203772216-Set-up-SAML-single-sign-on-for-Slack",
         "support": "supported",
         "tier": "paid"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "SSO can be required for all members, or for all members except guests",
+        "plan": "Business+",
+        "source": "https://slack.com/help/articles/203772216-Set-up-SAML-single-sign-on-for-Slack",
+        "support": "supported",
+        "tier": "paid"
       }
     },
     "category": "collaboration",

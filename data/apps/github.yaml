@@ -9,21 +9,43 @@ capabilities:
   sso:
     support: "supported"
     tier: "enterprise"
+    plan: "Enterprise Cloud"
+    notes: "Organization SSO is SAML; OIDC only with Enterprise Managed Users and Microsoft Entra ID"
     protocols: ["SAML", "OIDC"]
+    source: "https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-saml-single-sign-on-for-your-organization/about-identity-and-access-management-with-saml-single-sign-on"
+    checked: "2026-09-14"
   sso_enforcement:
-    support: "unknown"
-  scim:
     support: "supported"
     tier: "enterprise"
+    plan: "Enterprise Cloud"
+    notes: "Enforcing removes members who haven't authenticated through the IdP"
+    source: "https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-saml-single-sign-on-for-your-organization/enforcing-saml-single-sign-on-for-your-organization"
+    checked: "2026-09-14"
+  scim:
+    support: "partial"
+    tier: "enterprise"
+    plan: "Enterprise Cloud"
+    notes: "Organization SCIM manages membership and deprovisioning only; Enterprise Managed Users has its own SCIM for the full account lifecycle"
+    source: "https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-saml-single-sign-on-for-your-organization/about-scim-for-organizations"
+    checked: "2026-09-14"
   mfa_enforcement:
     support: "supported"
     tier: "free"
+    notes: "Members without 2FA lose access to organization resources; outside collaborators are removed"
+    source: "https://docs.github.com/en/organizations/keeping-your-organization-secure/managing-two-factor-authentication-for-your-organization/requiring-two-factor-authentication-in-your-organization"
+    checked: "2026-09-14"
   phishing_resistant_mfa:
     support: "supported"
+    tier: "free"
+    notes: "Passkeys for sign-in and security keys for 2FA, for all users"
+    source: "https://github.blog/changelog/2023-09-21-passkeys-are-generally-available/"
+    checked: "2026-09-14"
   audit_logs:
     support: "supported"
-    tier: "enterprise"
+    notes: "Minimum plan not confirmed from GitHub sources; audit log API and streaming need Enterprise Cloud"
     retention: "180 days"
+    source: "https://docs.github.com/en/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/reviewing-the-audit-log-for-your-organization"
+    checked: "2026-09-14"
   jit_provisioning:
     support: "unknown"
   domain_verification:
