@@ -223,10 +223,10 @@
     "id": "canva",
     "name": "Canva",
     "website": "https://canva.com",
-    "http_status": 200,
-    "sso": false,
+    "http_status": 403,
+    "sso": true,
     "scim": false,
-    "mfa": false,
+    "mfa": true,
     "soc2": false,
     "iso27001": false
   },
@@ -611,7 +611,7 @@
     "http_status": 200,
     "sso": true,
     "scim": false,
-    "mfa": true,
+    "mfa": false,
     "soc2": false,
     "iso27001": false
   },
@@ -822,8 +822,8 @@
     "website": "https://ramp.com",
     "http_status": 200,
     "sso": true,
-    "scim": false,
-    "mfa": false,
+    "scim": true,
+    "mfa": true,
     "soc2": false,
     "iso27001": false
   },

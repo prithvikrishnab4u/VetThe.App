@@ -1108,6 +1108,13 @@
     "category": "collaboration",
     "description": "Cloud content management and file sharing service for businesses.",
     "name": "Box",
+    "provenance": {
+      "checked": "2026-09-14",
+      "evidence": "security,trust,sso",
+      "source": "auto-search",
+      "source_url": "https://duckduckgo.com/",
+      "verified_by": "auto-search"
+    },
     "status": "draft",
     "website": "https://box.com"
   },
@@ -1453,6 +1460,13 @@
     "category": "collaboration",
     "description": "Enterprise video conferencing, online meetings, and screen sharing platform with advanced security.",
     "name": "Cisco Webex",
+    "provenance": {
+      "checked": "2026-09-14",
+      "evidence": "security,trust,sso",
+      "source": "auto-search",
+      "source_url": "https://duckduckgo.com/",
+      "verified_by": "auto-search"
+    },
     "status": "draft",
     "website": "https://webex.com"
   },
@@ -2060,6 +2074,13 @@
     "category": "collaboration",
     "description": "Cloud storage, file synchronization, and client software service.",
     "name": "Dropbox",
+    "provenance": {
+      "checked": "2026-09-14",
+      "evidence": "security,trust,sso",
+      "source": "auto-search",
+      "source_url": "https://duckduckgo.com/",
+      "verified_by": "auto-search"
+    },
     "status": "draft",
     "website": "https://dropbox.com"
   },
@@ -3656,6 +3677,13 @@
     "category": "sales_marketing",
     "description": "Marketing automation software that helps marketers master the art and science of digital marketing.",
     "name": "Marketo",
+    "provenance": {
+      "checked": "2026-09-14",
+      "evidence": "security,trust,sso",
+      "source": "auto-search",
+      "source_url": "https://duckduckgo.com/",
+      "verified_by": "auto-search"
+    },
     "status": "draft",
     "website": "https://www.marketo.com"
   },
@@ -4474,6 +4502,13 @@
     "category": "productivity",
     "description": "All-in-one document automation software to create, approve, track, and eSign documents.",
     "name": "PandaDoc",
+    "provenance": {
+      "checked": "2026-09-14",
+      "evidence": "security,trust,sso",
+      "source": "auto-search",
+      "source_url": "https://duckduckgo.com/",
+      "verified_by": "auto-search"
+    },
     "status": "draft",
     "website": "https://www.pandadoc.com"
   },
@@ -5888,6 +5923,13 @@
     "category": "infrastructure",
     "description": "Remote connectivity platform for accessing and controlling devices.",
     "name": "TeamViewer",
+    "provenance": {
+      "checked": "2026-09-14",
+      "evidence": "security,trust,sso",
+      "source": "auto-search",
+      "source_url": "https://duckduckgo.com/",
+      "verified_by": "auto-search"
+    },
     "status": "draft",
     "website": "https://www.teamviewer.com"
   },
@@ -6143,6 +6185,13 @@
     "category": "finance",
     "description": "Global mobility and delivery platform for enterprises.",
     "name": "Uber for Business",
+    "provenance": {
+      "checked": "2026-09-14",
+      "evidence": "security,trust,sso",
+      "source": "auto-search",
+      "source_url": "https://duckduckgo.com/",
+      "verified_by": "auto-search"
+    },
     "status": "draft",
     "website": "https://www.uber.com/business"
   },
@@ -6195,6 +6244,13 @@
     "category": "productivity",
     "description": "Enterprise learning platform offering courses for professional development.",
     "name": "Udemy Business",
+    "provenance": {
+      "checked": "2026-09-14",
+      "evidence": "security,trust,sso",
+      "source": "auto-search",
+      "source_url": "https://duckduckgo.com/",
+      "verified_by": "auto-search"
+    },
     "status": "draft",
     "website": "https://business.udemy.com"
   },
@@ -6423,6 +6479,13 @@
     "category": "productivity",
     "description": "Automation platform that connects your apps and services to automate workflows.",
     "name": "Zapier",
+    "provenance": {
+      "checked": "2026-09-14",
+      "evidence": "security,trust,sso",
+      "source": "auto-search",
+      "source_url": "https://duckduckgo.com/",
+      "verified_by": "auto-search"
+    },
     "status": "draft",
     "website": "https://zapier.com"
   },

@@ -1,38 +1,43 @@
-name: "Box"
-category: "collaboration"
-website: "https://box.com"
-description: "Cloud content management and file sharing service for businesses."
-status: "draft"
-
-# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+name: Box
+category: collaboration
+website: https://box.com
+description: Cloud content management and file sharing service for businesses.
+status: draft
 capabilities:
   sso:
-    support: "supported"
-    tier: "paid"
-    protocols: ["SAML"]
+    support: supported
+    tier: paid
+    protocols:
+    - SAML
   sso_enforcement:
-    support: "unknown"
+    support: unknown
   scim:
-    support: "supported"
-    tier: "paid"
+    support: supported
+    tier: paid
   mfa_enforcement:
-    support: "supported"
-    tier: "free"
+    support: supported
+    tier: free
   phishing_resistant_mfa:
-    support: "unknown"
+    support: unknown
   audit_logs:
-    support: "supported"
-    tier: "paid"
-    retention: "Unlimited"
+    support: supported
+    tier: paid
+    retention: Unlimited
   jit_provisioning:
-    support: "unknown"
+    support: unknown
   domain_verification:
-    support: "unknown"
+    support: unknown
   custom_roles:
-    support: "unknown"
+    support: unknown
   group_role_mapping:
-    support: "unknown"
+    support: unknown
   session_controls:
-    support: "supported"
+    support: supported
   api_token_controls:
-    support: "unknown"
+    support: unknown
+provenance:
+  source: auto-search
+  source_url: https://duckduckgo.com/
+  verified_by: auto-search
+  checked: '2026-09-14'
+  evidence: security,trust,sso

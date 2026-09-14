@@ -1,35 +1,41 @@
-name: "Zapier"
-category: "productivity"
-website: "https://zapier.com"
-description: "Automation platform that connects your apps and services to automate workflows."
-status: "draft"
-
-# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+name: Zapier
+category: productivity
+website: https://zapier.com
+description: Automation platform that connects your apps and services to automate
+  workflows.
+status: draft
 capabilities:
   sso:
-    support: "supported"
-    tier: "paid"
-    protocols: ["SAML"]
+    support: supported
+    tier: paid
+    protocols:
+    - SAML
   sso_enforcement:
-    support: "unknown"
+    support: unknown
   scim:
-    support: "unknown"
+    support: unknown
   mfa_enforcement:
-    support: "supported"
-    tier: "paid"
+    support: supported
+    tier: paid
   phishing_resistant_mfa:
-    support: "unknown"
+    support: unknown
   audit_logs:
-    support: "unknown"
+    support: unknown
   jit_provisioning:
-    support: "supported"
+    support: supported
   domain_verification:
-    support: "supported"
+    support: supported
   custom_roles:
-    support: "unknown"
+    support: unknown
   group_role_mapping:
-    support: "unknown"
+    support: unknown
   session_controls:
-    support: "unknown"
+    support: unknown
   api_token_controls:
-    support: "unknown"
+    support: unknown
+provenance:
+  source: auto-search
+  source_url: https://duckduckgo.com/
+  verified_by: auto-search
+  checked: '2026-09-14'
+  evidence: security,trust,sso

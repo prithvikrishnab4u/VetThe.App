@@ -1,35 +1,40 @@
-name: "TeamViewer"
-category: "infrastructure"
-website: "https://www.teamviewer.com"
-description: "Remote connectivity platform for accessing and controlling devices."
-status: "draft"
-
-# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+name: TeamViewer
+category: infrastructure
+website: https://www.teamviewer.com
+description: Remote connectivity platform for accessing and controlling devices.
+status: draft
 capabilities:
   sso:
-    support: "supported"
-    tier: "enterprise"
-    protocols: ["SAML"]
+    support: supported
+    tier: enterprise
+    protocols:
+    - SAML
   sso_enforcement:
-    support: "unknown"
+    support: unknown
   scim:
-    support: "unknown"
+    support: unknown
   mfa_enforcement:
-    support: "supported"
-    tier: "enterprise"
+    support: supported
+    tier: enterprise
   phishing_resistant_mfa:
-    support: "unknown"
+    support: unknown
   audit_logs:
-    support: "unknown"
+    support: unknown
   jit_provisioning:
-    support: "supported"
+    support: supported
   domain_verification:
-    support: "supported"
+    support: supported
   custom_roles:
-    support: "unknown"
+    support: unknown
   group_role_mapping:
-    support: "unknown"
+    support: unknown
   session_controls:
-    support: "unknown"
+    support: unknown
   api_token_controls:
-    support: "unknown"
+    support: unknown
+provenance:
+  source: auto-search
+  source_url: https://duckduckgo.com/
+  verified_by: auto-search
+  checked: '2026-09-14'
+  evidence: security,trust,sso
