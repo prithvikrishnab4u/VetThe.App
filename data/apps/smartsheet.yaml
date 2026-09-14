@@ -1,37 +1,43 @@
-name: "Smartsheet"
-category: "productivity"
-website: "https://smartsheet.com"
-description: "A spreadsheet-style platform for project management, data visualization, and automated business workflows."
-status: "draft"
-
-# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+name: Smartsheet
+category: productivity
+website: https://smartsheet.com
+description: A spreadsheet-style platform for project management, data visualization,
+  and automated business workflows.
+status: draft
 capabilities:
   sso:
-    support: "supported"
-    tier: "enterprise"
-    protocols: ["SAML"]
+    support: supported
+    tier: enterprise
+    protocols:
+    - SAML
   sso_enforcement:
-    support: "unknown"
+    support: unknown
   scim:
-    support: "unknown"
+    support: unknown
   mfa_enforcement:
-    support: "supported"
-    tier: "paid"
+    support: supported
+    tier: paid
   phishing_resistant_mfa:
-    support: "unknown"
+    support: unknown
   audit_logs:
-    support: "supported"
-    tier: "enterprise"
-    retention: "Configurable"
+    support: supported
+    tier: enterprise
+    retention: Configurable
   jit_provisioning:
-    support: "supported"
+    support: supported
   domain_verification:
-    support: "supported"
+    support: supported
   custom_roles:
-    support: "unknown"
+    support: unknown
   group_role_mapping:
-    support: "unknown"
+    support: unknown
   session_controls:
-    support: "supported"
+    support: supported
   api_token_controls:
-    support: "unknown"
+    support: unknown
+provenance:
+  source: auto-scan
+  source_url: https://smartsheet.com
+  verified_by: auto-scan
+  checked: '2026-09-14'
+  evidence: sso

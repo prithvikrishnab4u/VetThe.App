@@ -1,61 +1,72 @@
-name: "HubSpot"
-category: "sales_marketing"
-website: "https://hubspot.com"
-description: "Customer platform with software for marketing, sales, content management, and service."
-status: "draft"
-
-# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+name: HubSpot
+category: sales_marketing
+website: https://hubspot.com
+description: Customer platform with software for marketing, sales, content management,
+  and service.
+status: draft
 capabilities:
   sso:
-    support: "supported"
-    tier: "paid"
-    plan: "Professional"
-    notes: "Professional or Enterprise tier of any Hub"
-    protocols: ["SAML"]
-    source: "https://knowledge.hubspot.com/account/can-i-use-single-sign-on-sso-with-hubspot"
-    checked: "2026-09-14"
+    support: supported
+    tier: paid
+    plan: Professional
+    notes: Professional or Enterprise tier of any Hub
+    protocols:
+    - SAML
+    source: https://knowledge.hubspot.com/account/can-i-use-single-sign-on-sso-with-hubspot
+    checked: '2026-09-14'
   sso_enforcement:
-    support: "supported"
-    tier: "paid"
-    plan: "Professional"
-    notes: "Require single sign-on is on by default; Super Admins can exclude specific users"
-    source: "https://knowledge.hubspot.com/account/can-i-use-single-sign-on-sso-with-hubspot"
-    checked: "2026-09-14"
+    support: supported
+    tier: paid
+    plan: Professional
+    notes: Require single sign-on is on by default; Super Admins can exclude specific
+      users
+    source: https://knowledge.hubspot.com/account/can-i-use-single-sign-on-sso-with-hubspot
+    checked: '2026-09-14'
   scim:
-    support: "supported"
-    tier: "paid"
-    plan: "Professional"
-    notes: "Creates, updates and deactivates users; Okta roles can sync to permission sets; custom SCIM for Entra ID, PingFederate, OneLogin and JumpCloud"
-    source: "https://knowledge.hubspot.com/account/provision-hubspot-users-with-scim-through-okta"
-    checked: "2026-09-14"
+    support: supported
+    tier: paid
+    plan: Professional
+    notes: Creates, updates and deactivates users; Okta roles can sync to permission
+      sets; custom SCIM for Entra ID, PingFederate, OneLogin and JumpCloud
+    source: https://knowledge.hubspot.com/account/provision-hubspot-users-with-scim-through-okta
+    checked: '2026-09-14'
   mfa_enforcement:
-    support: "supported"
-    tier: "free"
-    notes: "Always required for username/password logins on Starter and above; Super Admins can require it on free accounts; SSO logins aren't prompted"
-    source: "https://knowledge.hubspot.com/account-security/set-up-two-factor-authentication-for-your-hubspot-login"
-    checked: "2026-09-14"
+    support: supported
+    tier: free
+    notes: Always required for username/password logins on Starter and above; Super
+      Admins can require it on free accounts; SSO logins aren't prompted
+    source: https://knowledge.hubspot.com/account-security/set-up-two-factor-authentication-for-your-hubspot-login
+    checked: '2026-09-14'
   phishing_resistant_mfa:
-    support: "supported"
-    tier: "free"
-    notes: "Passkey login on all plans; Super Admins can enforce passkeys as the login method"
-    source: "https://knowledge.hubspot.com/account-management/set-up-and-log-in-with-passkeys"
-    checked: "2026-09-14"
+    support: supported
+    tier: free
+    notes: Passkey login on all plans; Super Admins can enforce passkeys as the login
+      method
+    source: https://knowledge.hubspot.com/account-management/set-up-and-log-in-with-passkeys
+    checked: '2026-09-14'
   audit_logs:
-    support: "supported"
-    tier: "paid"
-    plan: "Starter"
-    notes: "Logins and security activity on Starter and above; Enterprise adds many more event types"
-    source: "https://knowledge.hubspot.com/account-management/view-and-export-account-activity-history"
-    checked: "2026-09-14"
+    support: supported
+    tier: paid
+    plan: Starter
+    notes: Logins and security activity on Starter and above; Enterprise adds many
+      more event types
+    source: https://knowledge.hubspot.com/account-management/view-and-export-account-activity-history
+    checked: '2026-09-14'
   jit_provisioning:
-    support: "unknown"
+    support: unknown
   domain_verification:
-    support: "unknown"
+    support: unknown
   custom_roles:
-    support: "unknown"
+    support: unknown
   group_role_mapping:
-    support: "unknown"
+    support: unknown
   session_controls:
-    support: "supported"
+    support: supported
   api_token_controls:
-    support: "unknown"
+    support: unknown
+provenance:
+  source: auto-scan
+  source_url: https://hubspot.com
+  verified_by: auto-scan
+  checked: '2026-09-14'
+  evidence: sso

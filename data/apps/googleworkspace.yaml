@@ -1,69 +1,82 @@
-name: "Google Workspace"
-category: "productivity"
-website: "https://workspace.google.com"
-description: "Cloud-based collaboration and productivity tools including Gmail, Drive, and Docs."
-status: "draft"
-
-# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+name: Google Workspace
+category: productivity
+website: https://workspace.google.com
+description: Cloud-based collaboration and productivity tools including Gmail, Drive,
+  and Docs.
+status: draft
 capabilities:
   sso:
-    support: "supported"
-    tier: "paid"
-    plan: "Business Starter"
-    notes: "SSO with a third-party IdP on all Business editions; SAML and OIDC profiles, including a preconfigured Microsoft Entra OIDC profile"
-    protocols: ["SAML", "OIDC"]
-    source: "https://knowledge.workspace.google.com/admin/getting-started/editions/compare-business-editions"
-    checked: "2026-09-14"
+    support: supported
+    tier: paid
+    plan: Business Starter
+    notes: SSO with a third-party IdP on all Business editions; SAML and OIDC profiles,
+      including a preconfigured Microsoft Entra OIDC profile
+    protocols:
+    - SAML
+    - OIDC
+    source: https://knowledge.workspace.google.com/admin/getting-started/editions/compare-business-editions
+    checked: '2026-09-14'
   sso_enforcement:
-    support: "supported"
-    tier: "paid"
-    plan: "Business Starter"
-    notes: "SSO profiles are assigned to organizational units or groups, not individual users"
-    source: "https://knowledge.workspace.google.com/admin/apps/setting-up-sso?hl=en"
-    checked: "2026-09-14"
+    support: supported
+    tier: paid
+    plan: Business Starter
+    notes: SSO profiles are assigned to organizational units or groups, not individual
+      users
+    source: https://knowledge.workspace.google.com/admin/apps/setting-up-sso?hl=en
+    checked: '2026-09-14'
   scim:
-    support: "partial"
-    tier: "paid"
-    plan: "Business Starter"
-    notes: "Identity providers such as Microsoft Entra create, update and suspend users and sync groups through Google's Directory API, not a SCIM endpoint"
-    source: "https://learn.microsoft.com/en-us/entra/identity/saas-apps/g-suite-provisioning-tutorial"
-    checked: "2026-09-14"
+    support: partial
+    tier: paid
+    plan: Business Starter
+    notes: Identity providers such as Microsoft Entra create, update and suspend users
+      and sync groups through Google's Directory API, not a SCIM endpoint
+    source: https://learn.microsoft.com/en-us/entra/identity/saas-apps/g-suite-provisioning-tutorial
+    checked: '2026-09-14'
   mfa_enforcement:
-    support: "supported"
-    tier: "paid"
-    plan: "Business Starter"
-    notes: "For all users, organizational units or configuration groups; by default doesn't apply to sign-ins through third-party SSO"
-    source: "https://knowledge.workspace.google.com/admin/security/deploy-2-step-verification?hl=en"
-    checked: "2026-09-14"
+    support: supported
+    tier: paid
+    plan: Business Starter
+    notes: For all users, organizational units or configuration groups; by default
+      doesn't apply to sign-ins through third-party SSO
+    source: https://knowledge.workspace.google.com/admin/security/deploy-2-step-verification?hl=en
+    checked: '2026-09-14'
   phishing_resistant_mfa:
-    support: "supported"
-    tier: "paid"
-    plan: "Business Starter"
-    notes: "Admins can enforce \"Only security key\", which accepts security keys and passkeys"
-    source: "https://knowledge.workspace.google.com/admin/security/deploy-2-step-verification?hl=en"
-    checked: "2026-09-14"
+    support: supported
+    tier: paid
+    plan: Business Starter
+    notes: Admins can enforce "Only security key", which accepts security keys and
+      passkeys
+    source: https://knowledge.workspace.google.com/admin/security/deploy-2-step-verification?hl=en
+    checked: '2026-09-14'
   audit_logs:
-    support: "supported"
-    tier: "paid"
-    plan: "Business Starter"
-    notes: "Audit and investigation tool on all Business editions; the security investigation tool needs an Enterprise edition. Retention per Google's data retention page"
-    retention: "6 months"
-    source: "https://knowledge.workspace.google.com/admin/getting-started/editions/compare-business-editions"
-    checked: "2026-09-14"
+    support: supported
+    tier: paid
+    plan: Business Starter
+    notes: Audit and investigation tool on all Business editions; the security investigation
+      tool needs an Enterprise edition. Retention per Google's data retention page
+    retention: 6 months
+    source: https://knowledge.workspace.google.com/admin/getting-started/editions/compare-business-editions
+    checked: '2026-09-14'
   jit_provisioning:
-    support: "unknown"
+    support: unknown
   domain_verification:
-    support: "unknown"
+    support: unknown
   custom_roles:
-    support: "unknown"
+    support: unknown
   group_role_mapping:
-    support: "unknown"
+    support: unknown
   session_controls:
-    support: "supported"
-    tier: "paid"
-    plan: "Business Plus"
-    notes: "Set session length for Google services"
-    source: "https://knowledge.workspace.google.com/admin/getting-started/editions/compare-business-editions"
-    checked: "2026-09-14"
+    support: supported
+    tier: paid
+    plan: Business Plus
+    notes: Set session length for Google services
+    source: https://knowledge.workspace.google.com/admin/getting-started/editions/compare-business-editions
+    checked: '2026-09-14'
   api_token_controls:
-    support: "unknown"
+    support: unknown
+provenance:
+  source: auto-scan
+  source_url: https://workspace.google.com
+  verified_by: auto-scan
+  checked: '2026-09-14'
+  evidence: sso

@@ -1,37 +1,45 @@
-name: "Auth0"
-category: "security"
-website: "https://auth0.com"
-description: "Customer identity and access management platform for developers (acquired by Okta)."
-status: "draft"
-
-# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+name: Auth0
+category: security
+website: https://auth0.com
+description: Customer identity and access management platform for developers (acquired
+  by Okta).
+status: draft
 capabilities:
   sso:
-    support: "supported"
-    tier: "free"
-    protocols: ["SAML", "OIDC", "WS-Fed"]
+    support: supported
+    tier: free
+    protocols:
+    - SAML
+    - OIDC
+    - WS-Fed
   sso_enforcement:
-    support: "unknown"
+    support: unknown
   scim:
-    support: "supported"
-    tier: "paid"
+    support: supported
+    tier: paid
   mfa_enforcement:
-    support: "supported"
-    tier: "free"
+    support: supported
+    tier: free
   phishing_resistant_mfa:
-    support: "supported"
+    support: supported
   audit_logs:
-    support: "supported"
-    tier: "free"
+    support: supported
+    tier: free
   jit_provisioning:
-    support: "unknown"
+    support: unknown
   domain_verification:
-    support: "unknown"
+    support: unknown
   custom_roles:
-    support: "unknown"
+    support: unknown
   group_role_mapping:
-    support: "unknown"
+    support: unknown
   session_controls:
-    support: "supported"
+    support: supported
   api_token_controls:
-    support: "unknown"
+    support: unknown
+provenance:
+  source: auto-scan
+  source_url: https://auth0.com
+  verified_by: auto-scan
+  checked: '2026-09-14'
+  evidence: sso,scim,mfa

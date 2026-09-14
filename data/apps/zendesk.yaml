@@ -1,38 +1,44 @@
-name: "Zendesk"
-category: "sales_marketing"
-website: "https://zendesk.com"
-description: "Customer service software and support ticketing system."
-status: "draft"
-
-# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+name: Zendesk
+category: sales_marketing
+website: https://zendesk.com
+description: Customer service software and support ticketing system.
+status: draft
 capabilities:
   sso:
-    support: "supported"
-    tier: "paid"
-    protocols: ["SAML", "OIDC"]
+    support: supported
+    tier: paid
+    protocols:
+    - SAML
+    - OIDC
   sso_enforcement:
-    support: "unknown"
+    support: unknown
   scim:
-    support: "supported"
-    tier: "enterprise"
+    support: supported
+    tier: enterprise
   mfa_enforcement:
-    support: "supported"
-    tier: "free"
+    support: supported
+    tier: free
   phishing_resistant_mfa:
-    support: "unknown"
+    support: unknown
   audit_logs:
-    support: "supported"
-    tier: "enterprise"
-    retention: "90 days"
+    support: supported
+    tier: enterprise
+    retention: 90 days
   jit_provisioning:
-    support: "unknown"
+    support: unknown
   domain_verification:
-    support: "unknown"
+    support: unknown
   custom_roles:
-    support: "unknown"
+    support: unknown
   group_role_mapping:
-    support: "unknown"
+    support: unknown
   session_controls:
-    support: "supported"
+    support: supported
   api_token_controls:
-    support: "unknown"
+    support: unknown
+provenance:
+  source: auto-scan
+  source_url: https://zendesk.com
+  verified_by: auto-scan
+  checked: '2026-09-14'
+  evidence: sso

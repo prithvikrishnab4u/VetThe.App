@@ -1,75 +1,87 @@
-name: "Atlassian Jira"
-category: "development"
-website: "https://atlassian.com/software/jira"
-description: "Issue tracking and project management software for software development teams."
-status: "draft"
-
-# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+name: Atlassian Jira
+category: development
+website: https://atlassian.com/software/jira
+description: Issue tracking and project management software for software development
+  teams.
+status: draft
 capabilities:
   sso:
-    support: "supported"
-    tier: "add_on"
-    plan: "Atlassian Guard Standard"
-    notes: "Applies only to accounts on verified domains"
-    protocols: ["SAML"]
-    source: "https://support.atlassian.com/security-and-access-policies/docs/configure-saml-single-sign-on-with-an-identity-provider/"
-    checked: "2026-09-14"
+    support: supported
+    tier: add_on
+    plan: Atlassian Guard Standard
+    notes: Applies only to accounts on verified domains
+    protocols:
+    - SAML
+    source: https://support.atlassian.com/security-and-access-policies/docs/configure-saml-single-sign-on-with-an-identity-provider/
+    checked: '2026-09-14'
   sso_enforcement:
-    support: "supported"
-    tier: "add_on"
-    plan: "Atlassian Guard Standard"
-    notes: "Set per authentication policy with \"Enforce single sign-on\""
-    source: "https://support.atlassian.com/security-and-access-policies/docs/configure-saml-single-sign-on-with-an-identity-provider/"
-    checked: "2026-09-14"
+    support: supported
+    tier: add_on
+    plan: Atlassian Guard Standard
+    notes: Set per authentication policy with "Enforce single sign-on"
+    source: https://support.atlassian.com/security-and-access-policies/docs/configure-saml-single-sign-on-with-an-identity-provider/
+    checked: '2026-09-14'
   scim:
-    support: "supported"
-    tier: "add_on"
-    plan: "Atlassian Guard Standard"
-    notes: "Creates, updates and deactivates accounts on verified domains; syncs groups for Jira and Confluence"
-    source: "https://support.atlassian.com/provisioning-users/docs/configure-user-provisioning-with-an-identity-provider/"
-    checked: "2026-09-14"
+    support: supported
+    tier: add_on
+    plan: Atlassian Guard Standard
+    notes: Creates, updates and deactivates accounts on verified domains; syncs groups
+      for Jira and Confluence
+    source: https://support.atlassian.com/provisioning-users/docs/configure-user-provisioning-with-an-identity-provider/
+    checked: '2026-09-14'
   mfa_enforcement:
-    support: "supported"
-    tier: "free"
-    notes: "Enforced per authentication policy for managed accounts, and through external user security policies"
-    source: "https://support.atlassian.com/security-and-access-policies/docs/enforce-two-step-verification/"
-    checked: "2026-09-14"
+    support: supported
+    tier: free
+    notes: Enforced per authentication policy for managed accounts, and through external
+      user security policies
+    source: https://support.atlassian.com/security-and-access-policies/docs/enforce-two-step-verification/
+    checked: '2026-09-14'
   phishing_resistant_mfa:
-    support: "partial"
-    notes: "Security keys work as a 2-step verification factor; passkeys aren't available for organization-managed accounts"
-    source: "https://www.atlassian.com/blog/announcements/introducing-passkeys-and-multiple-2-step-verification-factors"
-    checked: "2026-09-14"
+    support: partial
+    notes: Security keys work as a 2-step verification factor; passkeys aren't available
+      for organization-managed accounts
+    source: https://www.atlassian.com/blog/announcements/introducing-passkeys-and-multiple-2-step-verification-factors
+    checked: '2026-09-14'
   audit_logs:
-    support: "supported"
-    tier: "add_on"
-    plan: "Atlassian Guard, or an Enterprise plan"
-    notes: "Without Guard or an Enterprise plan no organization events are stored; 7 days shown by default"
-    retention: "180 days"
-    source: "https://support.atlassian.com/security-and-access-policies/docs/view-audit-log-activities/"
-    checked: "2026-09-14"
+    support: supported
+    tier: add_on
+    plan: Atlassian Guard, or an Enterprise plan
+    notes: Without Guard or an Enterprise plan no organization events are stored;
+      7 days shown by default
+    retention: 180 days
+    source: https://support.atlassian.com/security-and-access-policies/docs/view-audit-log-activities/
+    checked: '2026-09-14'
   jit_provisioning:
-    support: "supported"
-    tier: "add_on"
-    plan: "Atlassian Guard Standard"
-    notes: "Needs SAML enforced on the default authentication policy and domains linked to the IdP directory"
-    source: "https://support.atlassian.com/security-and-access-policies/docs/configure-saml-single-sign-on-with-an-identity-provider/"
-    checked: "2026-09-14"
+    support: supported
+    tier: add_on
+    plan: Atlassian Guard Standard
+    notes: Needs SAML enforced on the default authentication policy and domains linked
+      to the IdP directory
+    source: https://support.atlassian.com/security-and-access-policies/docs/configure-saml-single-sign-on-with-an-identity-provider/
+    checked: '2026-09-14'
   domain_verification:
-    support: "supported"
-    tier: "free"
-    notes: "Accounts on a verified domain become managed accounts the organization can edit, deactivate or delete"
-    source: "https://support.atlassian.com/user-management/docs/verify-a-domain-to-manage-accounts/"
-    checked: "2026-09-14"
+    support: supported
+    tier: free
+    notes: Accounts on a verified domain become managed accounts the organization
+      can edit, deactivate or delete
+    source: https://support.atlassian.com/user-management/docs/verify-a-domain-to-manage-accounts/
+    checked: '2026-09-14'
   custom_roles:
-    support: "unknown"
+    support: unknown
   group_role_mapping:
-    support: "unknown"
+    support: unknown
   session_controls:
-    support: "supported"
+    support: supported
   api_token_controls:
-    support: "supported"
-    tier: "add_on"
-    plan: "Atlassian Guard Standard"
-    notes: "User API token management"
-    source: "https://support.atlassian.com/security-and-access-policies/docs/understand-atlassian-guard/"
-    checked: "2026-09-14"
+    support: supported
+    tier: add_on
+    plan: Atlassian Guard Standard
+    notes: User API token management
+    source: https://support.atlassian.com/security-and-access-policies/docs/understand-atlassian-guard/
+    checked: '2026-09-14'
+provenance:
+  source: auto-scan
+  source_url: https://atlassian.com/software/jira
+  verified_by: auto-scan
+  checked: '2026-09-14'
+  evidence: sso,scim,mfa

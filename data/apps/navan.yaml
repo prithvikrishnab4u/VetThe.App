@@ -1,35 +1,41 @@
-name: "Navan"
-category: "finance"
-website: "https://navan.com"
-description: "Corporate travel and expense management solution."
-status: "draft"
-
-# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+name: Navan
+category: finance
+website: https://navan.com
+description: Corporate travel and expense management solution.
+status: draft
 capabilities:
   sso:
-    support: "supported"
-    tier: "enterprise"
-    protocols: ["SAML", "OIDC"]
+    support: supported
+    tier: enterprise
+    protocols:
+    - SAML
+    - OIDC
   sso_enforcement:
-    support: "unknown"
+    support: unknown
   scim:
-    support: "unknown"
+    support: unknown
   mfa_enforcement:
-    support: "supported"
-    tier: "enterprise"
+    support: supported
+    tier: enterprise
   phishing_resistant_mfa:
-    support: "unknown"
+    support: unknown
   audit_logs:
-    support: "unknown"
+    support: unknown
   jit_provisioning:
-    support: "supported"
+    support: supported
   domain_verification:
-    support: "supported"
+    support: supported
   custom_roles:
-    support: "unknown"
+    support: unknown
   group_role_mapping:
-    support: "unknown"
+    support: unknown
   session_controls:
-    support: "unknown"
+    support: unknown
   api_token_controls:
-    support: "unknown"
+    support: unknown
+provenance:
+  source: auto-scan
+  source_url: https://navan.com
+  verified_by: auto-scan
+  checked: '2026-09-14'
+  evidence: sso

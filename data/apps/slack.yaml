@@ -1,57 +1,63 @@
-name: "Slack"
-category: "collaboration"
-website: "https://slack.com"
-description: "A messaging platform for teams that integrates with numerous tools and services."
-status: "draft"
-
-# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+name: Slack
+category: collaboration
+website: https://slack.com
+description: A messaging platform for teams that integrates with numerous tools and
+  services.
+status: draft
 capabilities:
   sso:
-    support: "supported"
-    tier: "paid"
-    plan: "Business+"
-    notes: "Also on Free and Pro when a Salesforce org is connected to Slack"
-    protocols: ["SAML"]
-    source: "https://slack.com/help/articles/203772216-Set-up-SAML-single-sign-on-for-Slack"
-    checked: "2026-09-14"
+    support: supported
+    tier: paid
+    plan: Business+
+    notes: Also on Free and Pro when a Salesforce org is connected to Slack
+    protocols:
+    - SAML
+    source: https://slack.com/help/articles/203772216-Set-up-SAML-single-sign-on-for-Slack
+    checked: '2026-09-14'
   sso_enforcement:
-    support: "supported"
-    tier: "paid"
-    plan: "Business+"
-    notes: "SSO can be required for all members, or for all members except guests"
-    source: "https://slack.com/help/articles/203772216-Set-up-SAML-single-sign-on-for-Slack"
-    checked: "2026-09-14"
+    support: supported
+    tier: paid
+    plan: Business+
+    notes: SSO can be required for all members, or for all members except guests
+    source: https://slack.com/help/articles/203772216-Set-up-SAML-single-sign-on-for-Slack
+    checked: '2026-09-14'
   scim:
-    support: "supported"
-    tier: "paid"
-    plan: "Business+"
-    notes: "Creates and deactivates members, syncs profile fields and user groups"
-    source: "https://slack.com/help/articles/212572638-Manage-members-with-SCIM-provisioning"
-    checked: "2026-09-14"
+    support: supported
+    tier: paid
+    plan: Business+
+    notes: Creates and deactivates members, syncs profile fields and user groups
+    source: https://slack.com/help/articles/212572638-Manage-members-with-SCIM-provisioning
+    checked: '2026-09-14'
   mfa_enforcement:
-    support: "supported"
-    tier: "free"
-    notes: "With SSO on, only owners and admins who can bypass SSO must use 2FA"
-    source: "https://slack.com/help/articles/212221668-Mandatory-workspace-two-factor-authentication"
-    checked: "2026-09-14"
+    support: supported
+    tier: free
+    notes: With SSO on, only owners and admins who can bypass SSO must use 2FA
+    source: https://slack.com/help/articles/212221668-Mandatory-workspace-two-factor-authentication
+    checked: '2026-09-14'
   phishing_resistant_mfa:
-    support: "unknown"
+    support: unknown
   audit_logs:
-    support: "supported"
-    tier: "enterprise"
-    plan: "Enterprise"
-    notes: "View in Slack, export CSV/JSON, or use the Audit Logs API"
-    source: "https://slack.com/help/articles/360000394286-Audit-logs-in-Slack"
-    checked: "2026-09-14"
+    support: supported
+    tier: enterprise
+    plan: Enterprise
+    notes: View in Slack, export CSV/JSON, or use the Audit Logs API
+    source: https://slack.com/help/articles/360000394286-Audit-logs-in-Slack
+    checked: '2026-09-14'
   jit_provisioning:
-    support: "unknown"
+    support: unknown
   domain_verification:
-    support: "unknown"
+    support: unknown
   custom_roles:
-    support: "unknown"
+    support: unknown
   group_role_mapping:
-    support: "unknown"
+    support: unknown
   session_controls:
-    support: "supported"
+    support: supported
   api_token_controls:
-    support: "unknown"
+    support: unknown
+provenance:
+  source: auto-scan
+  source_url: https://slack.com
+  verified_by: auto-scan
+  checked: '2026-09-14'
+  evidence: sso
