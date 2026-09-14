@@ -435,7 +435,7 @@
     "http_status": 200,
     "sso": true,
     "scim": false,
-    "mfa": false,
+    "mfa": true,
     "soc2": false,
     "iso27001": false
   },
@@ -501,7 +501,7 @@
     "http_status": 403,
     "sso": false,
     "scim": false,
-    "mfa": false,
+    "mfa": true,
     "soc2": false,
     "iso27001": false
   },
@@ -611,7 +611,7 @@
     "http_status": 200,
     "sso": true,
     "scim": false,
-    "mfa": false,
+    "mfa": true,
     "soc2": false,
     "iso27001": false
   },

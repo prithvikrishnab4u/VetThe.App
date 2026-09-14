@@ -4,6 +4,13 @@ website: "https://www.microsoft.com/en-us/microsoft-teams"
 description: "The hub for teamwork in Microsoft 365 that combines chat, meetings, calling, and collaboration."
 status: "draft"
 
+provenance:
+  source: "auto-scan"
+  source_url: "https://www.microsoft.com/en-us/microsoft-teams/security"
+  verified_by: "auto-scan"
+  checked: "2026-09-14"
+  evidence: "security page reachable"
+
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
