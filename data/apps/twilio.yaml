@@ -8,23 +8,51 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "enterprise"
-    protocols: ["SAML", "OIDC"]
+    tier: "add_on"
+    plan: "Twilio Editions"
+    notes: "Twilio is a SAML 2.0 service provider; needs verified domains for users' email addresses"
+    protocols: ["SAML"]
+    source: "https://www.twilio.com/docs/iam/single-sign-on"
+    checked: "2026-09-14"
   sso_enforcement:
-    support: "unknown"
+    support: "supported"
+    tier: "add_on"
+    plan: "Twilio Editions"
+    notes: "Enforced by email domain, which blocks password login; admins can turn SSO off for individual users"
+    source: "https://www.twilio.com/docs/iam/single-sign-on"
+    checked: "2026-09-14"
   scim:
-    support: "unknown"
+    support: "supported"
+    notes: "Creates, updates and deactivates users; Okta and Microsoft Entra ID integrations; edition requirement not stated"
+    source: "https://www.twilio.com/docs/iam/scim"
+    checked: "2026-09-14"
   mfa_enforcement:
     support: "supported"
-    tier: "free"
+    tier: "paid"
+    notes: "Mandatory for every user on paid accounts since October 2020 with no exceptions; trial accounts excluded"
+    source: "https://www.twilio.com/en-us/blog/mandatory-2fa-account-login"
+    checked: "2026-09-14"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
-    support: "unknown"
-  jit_provisioning:
     support: "supported"
+    tier: "free"
+    notes: "Monitor Events logs Console, API and Twilio employee actions; 13 months of data with Administration, Security or Enterprise Edition"
+    retention: "30 days"
+    source: "https://www.twilio.com/docs/usage/monitor-events"
+    checked: "2026-09-14"
+  jit_provisioning:
+    support: "not_supported"
+    notes: "SSO handles authentication only; users must be created first manually, by bulk import, or through SCIM"
+    source: "https://www.twilio.com/docs/iam/single-sign-on"
+    checked: "2026-09-14"
   domain_verification:
     support: "supported"
+    tier: "add_on"
+    plan: "Twilio Editions"
+    notes: "Verified domains are a prerequisite for SSO enforcement"
+    source: "https://www.twilio.com/docs/iam/single-sign-on"
+    checked: "2026-09-14"
   custom_roles:
     support: "unknown"
   group_role_mapping:

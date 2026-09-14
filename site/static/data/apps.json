@@ -6,7 +6,13 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "CSV export; Events Reporting and the Events API for SIEM",
+        "plan": "Business",
+        "retention": "365 days",
+        "source": "https://support.1password.com/activity-log/",
+        "support": "supported",
+        "tier": "paid"
       },
       "custom_roles": {
         "support": "unknown"
@@ -15,34 +21,59 @@
         "support": "supported"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Groups synced from the directory grant and revoke access in 1Password",
+        "plan": "Business",
+        "source": "https://support.1password.com/scim/",
+        "support": "supported",
+        "tier": "paid"
       },
       "jit_provisioning": {
-        "support": "supported"
+        "support": "unknown"
       },
       "mfa_enforcement": {
+        "checked": "2026-09-14",
+        "notes": "Needs the Strict account password policy; applies to everyone in the organization",
+        "plan": "Business",
+        "source": "https://support.1password.com/manage-two-factor-authentication/",
         "support": "supported",
         "tier": "paid"
       },
       "phishing_resistant_mfa": {
+        "checked": "2026-09-14",
+        "notes": "FIDO U2F security keys as a second factor; unlocking with a passkey is in beta",
+        "source": "https://support.1password.com/security-key/",
         "support": "supported"
       },
       "scim": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Creates users and groups, grants and revokes group access, suspends users; SCIM Bridge for Google Workspace and Rippling, direct provisioning for Entra ID, JumpCloud, Okta and OneLogin",
+        "plan": "Business",
+        "source": "https://support.1password.com/scim/",
+        "support": "supported",
+        "tier": "paid"
       },
       "session_controls": {
         "support": "unknown"
       },
       "sso": {
+        "checked": "2026-09-14",
+        "notes": "Unlock with SSO uses OpenID Connect; people in the Owners group can't unlock with SSO",
+        "plan": "Business",
         "protocols": [
-          "OIDC",
-          "SAML"
+          "OIDC"
         ],
+        "source": "https://support.1password.com/sso/",
         "support": "supported",
         "tier": "paid"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Apply to selected groups, everyone except excluded groups, or everyone except guests; Owners keep their account password; 1\u201330 day grace period",
+        "plan": "Business",
+        "source": "https://support.1password.com/sso-configure-generic/",
+        "support": "supported",
+        "tier": "paid"
       }
     },
     "category": "security",
@@ -5311,43 +5342,70 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Monitor Events logs Console, API and Twilio employee actions; 13 months of data with Administration, Security or Enterprise Edition",
+        "retention": "30 days",
+        "source": "https://www.twilio.com/docs/usage/monitor-events",
+        "support": "supported",
+        "tier": "free"
       },
       "custom_roles": {
         "support": "unknown"
       },
       "domain_verification": {
-        "support": "supported"
+        "checked": "2026-09-14",
+        "notes": "Verified domains are a prerequisite for SSO enforcement",
+        "plan": "Twilio Editions",
+        "source": "https://www.twilio.com/docs/iam/single-sign-on",
+        "support": "supported",
+        "tier": "add_on"
       },
       "group_role_mapping": {
         "support": "unknown"
       },
       "jit_provisioning": {
-        "support": "supported"
+        "checked": "2026-09-14",
+        "notes": "SSO handles authentication only; users must be created first manually, by bulk import, or through SCIM",
+        "source": "https://www.twilio.com/docs/iam/single-sign-on",
+        "support": "not_supported"
       },
       "mfa_enforcement": {
+        "checked": "2026-09-14",
+        "notes": "Mandatory for every user on paid accounts since October 2020 with no exceptions; trial accounts excluded",
+        "source": "https://www.twilio.com/en-us/blog/mandatory-2fa-account-login",
         "support": "supported",
-        "tier": "free"
+        "tier": "paid"
       },
       "phishing_resistant_mfa": {
         "support": "unknown"
       },
       "scim": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Creates, updates and deactivates users; Okta and Microsoft Entra ID integrations; edition requirement not stated",
+        "source": "https://www.twilio.com/docs/iam/scim",
+        "support": "supported"
       },
       "session_controls": {
         "support": "unknown"
       },
       "sso": {
+        "checked": "2026-09-14",
+        "notes": "Twilio is a SAML 2.0 service provider; needs verified domains for users' email addresses",
+        "plan": "Twilio Editions",
         "protocols": [
-          "SAML",
-          "OIDC"
+          "SAML"
         ],
+        "source": "https://www.twilio.com/docs/iam/single-sign-on",
         "support": "supported",
-        "tier": "enterprise"
+        "tier": "add_on"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Enforced by email domain, which blocks password login; admins can turn SSO off for individual users",
+        "plan": "Twilio Editions",
+        "source": "https://www.twilio.com/docs/iam/single-sign-on",
+        "support": "supported",
+        "tier": "add_on"
       }
     },
     "category": "infrastructure",
