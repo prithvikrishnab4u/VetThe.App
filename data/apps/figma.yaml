@@ -9,30 +9,64 @@ capabilities:
   sso:
     support: "supported"
     tier: "paid"
+    plan: "Organization"
     protocols: ["SAML"]
+    source: "https://help.figma.com/hc/en-us/articles/360040532333-Guide-to-SAML-SSO"
+    checked: "2026-09-14"
   sso_enforcement:
-    support: "unknown"
-  scim:
-    support: "supported"
-    tier: "enterprise"
-  mfa_enforcement:
     support: "supported"
     tier: "paid"
-  phishing_resistant_mfa:
+    plan: "Organization"
+    notes: "Applies to members only; guests can still sign in with email and password"
+    source: "https://help.figma.com/hc/en-us/articles/360052497994-Choose-organization-authentication-method"
+    checked: "2026-09-14"
+  scim:
     support: "supported"
+    tier: "paid"
+    plan: "Organization"
+    notes: "Creates, updates and deactivates users; seat assignment and group sync for workspaces need Enterprise"
+    source: "https://help.figma.com/hc/en-us/articles/360048514653-Set-up-automatic-provisioning-via-SCIM"
+    checked: "2026-09-14"
+  mfa_enforcement:
+    support: "partial"
+    tier: "add_on"
+    plan: "Enterprise with Governance+"
+    notes: "Enforced 2FA covers guests only; members can't be required to use 2FA"
+    source: "https://help.figma.com/hc/en-us/articles/31825370509591-Governance-for-Figma-Enterprise"
+    checked: "2026-09-14"
+  phishing_resistant_mfa:
+    support: "unknown"
   audit_logs:
     support: "supported"
-    tier: "enterprise"
-    retention: "180 days"
+    tier: "paid"
+    plan: "Organization"
+    notes: "Organization admins can view and export to CSV; Activity Logs API needs Enterprise"
+    source: "https://help.figma.com/hc/en-us/articles/360040449533-View-and-export-activity-logs"
+    checked: "2026-09-14"
   jit_provisioning:
-    support: "unknown"
+    support: "supported"
+    tier: "paid"
+    plan: "Organization"
+    notes: "SAML SSO creates and updates users on sign-in"
+    source: "https://help.figma.com/hc/en-us/articles/360040532333-Guide-to-SAML-SSO"
+    checked: "2026-09-14"
   domain_verification:
-    support: "unknown"
+    support: "supported"
+    tier: "paid"
+    plan: "Organization"
+    notes: "Optional; removes per-device email verification for SSO users"
+    source: "https://help.figma.com/hc/en-us/articles/360040532333-Guide-to-SAML-SSO"
+    checked: "2026-09-14"
   custom_roles:
     support: "unknown"
   group_role_mapping:
     support: "unknown"
   session_controls:
     support: "supported"
+    tier: "add_on"
+    plan: "Enterprise with Governance+"
+    notes: "Idle session timeout as short as 15 minutes, for members only (default is 21 days)"
+    source: "https://help.figma.com/hc/en-us/articles/31825370509591-Governance-for-Figma-Enterprise"
+    checked: "2026-09-14"
   api_token_controls:
     support: "unknown"
