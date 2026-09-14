@@ -9,23 +9,53 @@ capabilities:
   sso:
     support: "supported"
     tier: "paid"
+    plan: "Business"
+    notes: "Needs an approved vanity URL"
     protocols: ["SAML"]
+    source: "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0060673"
+    checked: "2026-09-14"
   sso_enforcement:
-    support: "unknown"
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "Can force SSO for users when the account has an associated domain"
+    source: "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0064901"
+    checked: "2026-09-14"
   scim:
     support: "supported"
     tier: "paid"
+    plan: "Business"
+    notes: "Needs an approved vanity URL and SSO; creates, updates and deactivates users"
+    source: "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0058988"
+    checked: "2026-09-14"
   mfa_enforcement:
     support: "supported"
-    tier: "free"
+    tier: "paid"
+    plan: "Pro"
+    notes: "Can be required for all users, or for specific roles or groups"
+    source: "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0066054"
+    checked: "2026-09-14"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "supported"
+    tier: "paid"
+    plan: "Pro"
+    notes: "Passkey sign-in, turned on by an admin in security settings"
+    source: "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0083521"
+    checked: "2026-09-14"
   audit_logs:
     support: "supported"
     tier: "paid"
-    retention: "180 days"
+    plan: "Pro"
+    notes: "Admin activity logs with CSV export"
+    source: "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0067251"
+    checked: "2026-09-14"
   jit_provisioning:
-    support: "unknown"
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "Creates the account on first SAML sign-in"
+    source: "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0060673"
+    checked: "2026-09-14"
   domain_verification:
     support: "unknown"
   custom_roles:
@@ -34,5 +64,10 @@ capabilities:
     support: "unknown"
   session_controls:
     support: "supported"
+    tier: "paid"
+    plan: "Pro"
+    notes: "Automatic sign-out period (default 90 days) and inactivity timeout"
+    source: "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0064901"
+    checked: "2026-09-14"
   api_token_controls:
     support: "unknown"

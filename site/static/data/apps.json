@@ -5519,7 +5519,10 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "retention": "180 days",
+        "checked": "2026-09-14",
+        "notes": "Admin activity logs with CSV export",
+        "plan": "Pro",
+        "source": "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0067251",
         "support": "supported",
         "tier": "paid"
       },
@@ -5533,31 +5536,63 @@
         "support": "unknown"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Creates the account on first SAML sign-in",
+        "plan": "Business",
+        "source": "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0060673",
+        "support": "supported",
+        "tier": "paid"
       },
       "mfa_enforcement": {
+        "checked": "2026-09-14",
+        "notes": "Can be required for all users, or for specific roles or groups",
+        "plan": "Pro",
+        "source": "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0066054",
         "support": "supported",
-        "tier": "free"
+        "tier": "paid"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Passkey sign-in, turned on by an admin in security settings",
+        "plan": "Pro",
+        "source": "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0083521",
+        "support": "supported",
+        "tier": "paid"
       },
       "scim": {
+        "checked": "2026-09-14",
+        "notes": "Needs an approved vanity URL and SSO; creates, updates and deactivates users",
+        "plan": "Business",
+        "source": "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0058988",
         "support": "supported",
         "tier": "paid"
       },
       "session_controls": {
-        "support": "supported"
+        "checked": "2026-09-14",
+        "notes": "Automatic sign-out period (default 90 days) and inactivity timeout",
+        "plan": "Pro",
+        "source": "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0064901",
+        "support": "supported",
+        "tier": "paid"
       },
       "sso": {
+        "checked": "2026-09-14",
+        "notes": "Needs an approved vanity URL",
+        "plan": "Business",
         "protocols": [
           "SAML"
         ],
+        "source": "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0060673",
         "support": "supported",
         "tier": "paid"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Can force SSO for users when the account has an associated domain",
+        "plan": "Business",
+        "source": "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0064901",
+        "support": "supported",
+        "tier": "paid"
       }
     },
     "category": "collaboration",
