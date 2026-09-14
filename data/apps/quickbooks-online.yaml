@@ -1,41 +1,35 @@
-name: QuickBooks Online
-category: finance
-website: https://quickbooks.intuit.com
-description: Accounting software for small businesses to track expenses and manage
-  cash flow.
-status: draft
+name: "QuickBooks Online"
+category: "finance"
+website: "https://quickbooks.intuit.com"
+description: "Accounting software for small businesses to track expenses and manage cash flow."
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
-    support: supported
-    tier: paid
-    protocols:
-    - OIDC
+    support: "supported"
+    tier: "paid"
+    protocols: ["OIDC"]
   sso_enforcement:
-    support: unknown
+    support: "unknown"
   scim:
-    support: unknown
+    support: "unknown"
   mfa_enforcement:
-    support: supported
-    tier: paid
+    support: "supported"
+    tier: "paid"
   phishing_resistant_mfa:
-    support: unknown
+    support: "unknown"
   audit_logs:
-    support: unknown
+    support: "unknown"
   jit_provisioning:
-    support: not_supported
+    support: "not_supported"
   domain_verification:
-    support: not_supported
+    support: "not_supported"
   custom_roles:
-    support: unknown
+    support: "unknown"
   group_role_mapping:
-    support: unknown
+    support: "unknown"
   session_controls:
-    support: unknown
+    support: "unknown"
   api_token_controls:
-    support: unknown
-provenance:
-  source: auto-verified
-  source_url: https://quickbooks.intuit.com
-  verified_by: auto-verified
-  verified_date: '2026-09-14'
-  evidence: sso,mfa
+    support: "unknown"

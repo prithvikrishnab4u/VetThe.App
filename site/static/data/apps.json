@@ -233,13 +233,6 @@
     "category": "hr",
     "description": "All-in-one HR platform for payroll, benefits, talent, and time management.",
     "name": "ADP Workforce Now",
-    "provenance": {
-      "evidence": "sso,mfa",
-      "source": "auto-verified",
-      "source_url": "https://www.adp.com",
-      "verified_by": "auto-verified",
-      "verified_date": "2026-09-14"
-    },
     "status": "draft",
     "website": "https://www.adp.com"
   },
@@ -743,13 +736,6 @@
     "category": "development",
     "description": "Services for teams to share code, track work, and ship software.",
     "name": "Azure DevOps",
-    "provenance": {
-      "evidence": "sso,mfa",
-      "source": "auto-verified",
-      "source_url": "https://azure.microsoft.com/en-us/products/devops",
-      "verified_by": "auto-verified",
-      "verified_date": "2026-09-14"
-    },
     "status": "draft",
     "website": "https://azure.microsoft.com/en-us/products/devops"
   },
@@ -905,13 +891,6 @@
     "category": "finance",
     "description": "Intelligent business payments platform for accounts payable and receivable.",
     "name": "Bill.com",
-    "provenance": {
-      "evidence": "sso",
-      "source": "auto-verified",
-      "source_url": "https://www.bill.com",
-      "verified_by": "auto-verified",
-      "verified_date": "2026-09-14"
-    },
     "status": "draft",
     "website": "https://www.bill.com"
   },
@@ -1120,13 +1099,6 @@
     "category": "finance",
     "description": "Financial stack designed for the next generation of business.",
     "name": "Brex",
-    "provenance": {
-      "evidence": "sso,mfa",
-      "source": "auto-verified",
-      "source_url": "https://www.brex.com",
-      "verified_by": "auto-verified",
-      "verified_date": "2026-09-14"
-    },
     "status": "draft",
     "website": "https://www.brex.com"
   },
@@ -1929,13 +1901,6 @@
     "category": "collaboration",
     "description": "Cloud content security and governance platform.",
     "name": "Egnyte",
-    "provenance": {
-      "evidence": "sso",
-      "source": "auto-verified",
-      "source_url": "https://www.egnyte.com",
-      "verified_by": "auto-verified",
-      "verified_date": "2026-09-14"
-    },
     "status": "draft",
     "website": "https://www.egnyte.com"
   },
@@ -2230,13 +2195,6 @@
     "category": "collaboration",
     "description": "Customer operations platform that combines a help desk with the collaboration of email.",
     "name": "Front",
-    "provenance": {
-      "evidence": "sso,mfa",
-      "source": "auto-verified",
-      "source_url": "https://front.com",
-      "verified_by": "auto-verified",
-      "verified_date": "2026-09-14"
-    },
     "status": "draft",
     "website": "https://front.com"
   },
@@ -2881,13 +2839,6 @@
     "category": "sales_marketing",
     "description": "AI-first customer service platform that connects businesses with customers via messaging, bots, and help center.",
     "name": "Intercom",
-    "provenance": {
-      "evidence": "sso,scim,mfa,soc2",
-      "source": "auto-verified",
-      "source_url": "https://intercom.com",
-      "verified_by": "auto-verified",
-      "verified_date": "2026-09-14"
-    },
     "status": "draft",
     "website": "https://intercom.com"
   },
@@ -3233,13 +3184,6 @@
     "category": "productivity",
     "description": "Intelligent diagramming application that brings teams together to make better decisions and build the future.",
     "name": "Lucidchart",
-    "provenance": {
-      "evidence": "sso,scim,mfa",
-      "source": "auto-verified",
-      "source_url": "https://www.lucidchart.com",
-      "verified_by": "auto-verified",
-      "verified_date": "2026-09-14"
-    },
     "status": "draft",
     "website": "https://www.lucidchart.com"
   },
@@ -3451,13 +3395,6 @@
     "category": "productivity",
     "description": "Suite of productivity apps, cloud services, and security for businesses.",
     "name": "Microsoft 365",
-    "provenance": {
-      "evidence": "sso,mfa",
-      "source": "auto-verified",
-      "source_url": "https://microsoft365.com",
-      "verified_by": "auto-verified",
-      "verified_date": "2026-09-14"
-    },
     "status": "draft",
     "website": "https://microsoft365.com"
   },
@@ -3666,13 +3603,6 @@
     "category": "collaboration",
     "description": "Digital workspace for visual collaboration, enabling teams to understand and solve problems.",
     "name": "Mural",
-    "provenance": {
-      "evidence": "sso,mfa",
-      "source": "auto-verified",
-      "source_url": "https://www.mural.co",
-      "verified_by": "auto-verified",
-      "verified_date": "2026-09-14"
-    },
     "status": "draft",
     "website": "https://www.mural.co"
   },
@@ -4344,13 +4274,6 @@
     "category": "finance",
     "description": "Accounting software for small businesses to track expenses and manage cash flow.",
     "name": "QuickBooks Online",
-    "provenance": {
-      "evidence": "sso,mfa",
-      "source": "auto-verified",
-      "source_url": "https://quickbooks.intuit.com",
-      "verified_by": "auto-verified",
-      "verified_date": "2026-09-14"
-    },
     "status": "draft",
     "website": "https://quickbooks.intuit.com"
   },
@@ -4613,13 +4536,6 @@
     "category": "finance",
     "description": "Integrated travel, expense, and invoice management solution.",
     "name": "SAP Concur",
-    "provenance": {
-      "evidence": "",
-      "source": "auto-verified",
-      "source_url": "https://www.concur.com",
-      "verified_by": "auto-verified",
-      "verified_date": "2026-09-14"
-    },
     "status": "draft",
     "website": "https://www.concur.com"
   },
@@ -4723,13 +4639,6 @@
     "category": "sales_marketing",
     "description": "E-commerce platform for businesses of all sizes to sell online, in-store, and everywhere in between.",
     "name": "Shopify",
-    "provenance": {
-      "evidence": "sso,mfa",
-      "source": "auto-verified",
-      "source_url": "https://www.shopify.com",
-      "verified_by": "auto-verified",
-      "verified_date": "2026-09-14"
-    },
     "status": "draft",
     "website": "https://www.shopify.com"
   },
@@ -5216,13 +5125,6 @@
     "category": "finance",
     "description": "Financial infrastructure platform for the internet.",
     "name": "Stripe",
-    "provenance": {
-      "evidence": "sso,scim",
-      "source": "auto-verified",
-      "source_url": "https://stripe.com",
-      "verified_by": "auto-verified",
-      "verified_date": "2026-09-14"
-    },
     "status": "draft",
     "website": "https://stripe.com"
   },
@@ -5819,13 +5721,6 @@
     "category": "finance",
     "description": "Cloud-based accounting software for small businesses to manage finances, invoicing, and inventory.",
     "name": "Xero",
-    "provenance": {
-      "evidence": "sso",
-      "source": "auto-verified",
-      "source_url": "https://www.xero.com",
-      "verified_by": "auto-verified",
-      "verified_date": "2026-09-14"
-    },
     "status": "draft",
     "website": "https://www.xero.com"
   },
@@ -6072,13 +5967,6 @@
     "category": "collaboration",
     "description": "Video conferencing and communication platform for teams and individuals.",
     "name": "Zoom",
-    "provenance": {
-      "evidence": "sso",
-      "source": "auto-verified",
-      "source_url": "https://zoom.us",
-      "verified_by": "auto-verified",
-      "verified_date": "2026-09-14"
-    },
     "status": "draft",
     "website": "https://zoom.us"
   },
