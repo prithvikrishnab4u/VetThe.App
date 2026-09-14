@@ -1,43 +1,37 @@
-name: Cisco Webex
-category: collaboration
-website: https://webex.com
-description: Enterprise video conferencing, online meetings, and screen sharing platform
-  with advanced security.
-status: draft
+name: "Cisco Webex"
+category: "collaboration"
+website: "https://webex.com"
+description: "Enterprise video conferencing, online meetings, and screen sharing platform with advanced security."
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
-    support: supported
-    tier: paid
-    protocols:
-    - SAML
+    support: "supported"
+    tier: "paid"
+    protocols: ["SAML"]
   sso_enforcement:
-    support: unknown
+    support: "unknown"
   scim:
-    support: unknown
+    support: "unknown"
   mfa_enforcement:
-    support: supported
-    tier: paid
+    support: "supported"
+    tier: "paid"
   phishing_resistant_mfa:
-    support: unknown
+    support: "unknown"
   audit_logs:
-    support: supported
-    tier: paid
-    retention: 360 days
+    support: "supported"
+    tier: "paid"
+    retention: "360 days"
   jit_provisioning:
-    support: supported
+    support: "supported"
   domain_verification:
-    support: supported
+    support: "supported"
   custom_roles:
-    support: unknown
+    support: "unknown"
   group_role_mapping:
-    support: unknown
+    support: "unknown"
   session_controls:
-    support: supported
+    support: "supported"
   api_token_controls:
-    support: unknown
-provenance:
-  source: auto-search
-  source_url: https://duckduckgo.com/
-  verified_by: auto-search
-  checked: '2026-09-14'
-  evidence: security,trust,sso
+    support: "unknown"
