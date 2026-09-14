@@ -1,24 +1,35 @@
-name: "Brex"
-category: "finance"
-website: "https://www.brex.com"
-description: "Financial stack designed for the next generation of business."
+name: Brex
+category: finance
+website: https://www.brex.com
+description: Financial stack designed for the next generation of business.
 sso:
   supported: true
-  protocols: ["SAML", "OIDC"]
-  tier: "paid"
+  protocols:
+  - SAML
+  - OIDC
+  tier: paid
   sp_initiated: true
   jit_provisioning: true
   domain_claiming: true
 mfa:
   supported: true
-  types: ["TOTP", "SMS", "WebAuthn"]
-  enforcement: "required"
-  tier: "paid"
+  types:
+  - TOTP
+  - SMS
+  - WebAuthn
+  enforcement: required
+  tier: paid
   adaptive_mfa: true
   phishing_resistant: true
 compliance:
   soc2: true
   iso27001: true
 meta:
-  last_verified: "2026-01-03"
+  last_verified: '2026-01-03'
   ready_to_publish: true
+provenance:
+  source: vendor documentation (auto)
+  source_url: https://www.brex.com
+  verified_by: auto-scan
+  verified_date: '2026-09-14'
+  evidence: 2fa,sso

@@ -1,47 +1,34 @@
-name: "Intercom"
-
-category: "sales_marketing"
-
-website: "https://intercom.com"
-
-description: "AI-first customer service platform that connects businesses with customers via messaging, bots, and help center."
-
+name: Intercom
+category: sales_marketing
+website: https://intercom.com
+description: AI-first customer service platform that connects businesses with customers
+  via messaging, bots, and help center.
 sso:
-
   supported: true
-
-  protocols: ["SAML"]
-
-  tier: "paid"
-
+  protocols:
+  - SAML
+  tier: paid
   sp_initiated: true
-
   jit_provisioning: true
-
   domain_claiming: true
-
 mfa:
-
   supported: true
-
-  types: ["TOTP", "SMS"]
-
-  enforcement: "admin_enforced"
-
-  tier: "paid"
-
+  types:
+  - TOTP
+  - SMS
+  enforcement: admin_enforced
+  tier: paid
   adaptive_mfa: false
-
   phishing_resistant: false
-
 compliance:
-
   soc2: true
-
   iso27001: true
-
 meta:
-
-  last_verified: "2026-01-02"
-
+  last_verified: '2026-01-02'
   ready_to_publish: true
+provenance:
+  source: vendor documentation (auto)
+  source_url: https://intercom.com
+  verified_by: auto-scan
+  verified_date: '2026-09-14'
+  evidence: 2fa,mfa,oauth,saml,soc2,sso

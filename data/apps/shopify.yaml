@@ -1,24 +1,35 @@
-name: "Shopify"
-category: "sales_marketing"
-website: "https://www.shopify.com"
-description: "E-commerce platform for businesses of all sizes to sell online, in-store, and everywhere in between."
+name: Shopify
+category: sales_marketing
+website: https://www.shopify.com
+description: E-commerce platform for businesses of all sizes to sell online, in-store,
+  and everywhere in between.
 sso:
   supported: true
-  protocols: ["SAML"]
-  tier: "enterprise"
+  protocols:
+  - SAML
+  tier: enterprise
   sp_initiated: true
   jit_provisioning: true
   domain_claiming: true
 mfa:
   supported: true
-  types: ["TOTP", "SMS", "Email"]
-  enforcement: "admin_enforced"
-  tier: "enterprise"
+  types:
+  - TOTP
+  - SMS
+  - Email
+  enforcement: admin_enforced
+  tier: enterprise
   adaptive_mfa: false
   phishing_resistant: false
 compliance:
   soc2: true
   iso27001: true
 meta:
-  last_verified: "2026-01-02"
+  last_verified: '2026-01-02'
   ready_to_publish: true
+provenance:
+  source: vendor documentation (auto)
+  source_url: https://www.shopify.com
+  verified_by: auto-scan
+  verified_date: '2026-09-14'
+  evidence: 2fa,sso

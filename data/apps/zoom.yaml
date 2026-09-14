@@ -1,39 +1,40 @@
-name: "Zoom"
-category: "collaboration"
-website: "https://zoom.us"
-description: "Video conferencing and communication platform for teams and individuals."
-
+name: Zoom
+category: collaboration
+website: https://zoom.us
+description: Video conferencing and communication platform for teams and individuals.
 sso:
   supported: true
-  protocols: ["SAML"]
-  tier: "paid"
-
+  protocols:
+  - SAML
+  tier: paid
 scim:
-  supported: "full"
-  version: "2.0"
-  tier: "paid"
-
+  supported: full
+  version: '2.0'
+  tier: paid
 mfa:
   supported: true
-  types: ["TOTP", "SMS", "Email"]
-  enforcement: "admin_enforced"
-  tier: "free"
-
+  types:
+  - TOTP
+  - SMS
+  - Email
+  enforcement: admin_enforced
+  tier: free
 compliance:
   soc2: true
   iso27001: true
-
 meta:
-  last_verified: "2025-12-31"
+  last_verified: '2025-12-31'
   ready_to_publish: true
-
-# Unused fields - tracked but not displayed in main table
-# Currently not using session and audit fields, but doing research on these fields.
 session:
   timeout_configurable: true
-  max_duration: "Configurable"
-
+  max_duration: Configurable
 audit:
   logs_available: true
-  retention_period: "180 days"
-  tier: "paid"
+  retention_period: 180 days
+  tier: paid
+provenance:
+  source: vendor documentation (auto)
+  source_url: https://zoom.us
+  verified_by: auto-scan
+  verified_date: '2026-09-14'
+  evidence: sso

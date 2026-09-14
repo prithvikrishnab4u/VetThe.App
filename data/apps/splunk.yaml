@@ -1,24 +1,33 @@
-name: "Splunk"
-category: "infrastructure"
-website: "https://www.splunk.com"
-description: "Data-to-Everything Platform to investigate, monitor, analyze and act on data."
+name: Splunk
+category: infrastructure
+website: https://www.splunk.com
+description: Data-to-Everything Platform to investigate, monitor, analyze and act
+  on data.
 sso:
   supported: true
-  protocols: ["SAML"]
-  tier: "paid"
+  protocols:
+  - SAML
+  tier: paid
   sp_initiated: true
   jit_provisioning: true
   domain_claiming: true
 mfa:
   supported: true
-  types: ["TOTP"]
-  enforcement: "admin_enforced"
-  tier: "paid"
+  types:
+  - TOTP
+  enforcement: admin_enforced
+  tier: paid
   adaptive_mfa: false
   phishing_resistant: false
 compliance:
   soc2: true
   iso27001: true
 meta:
-  last_verified: "2026-01-03"
+  last_verified: '2026-01-03'
   ready_to_publish: true
+provenance:
+  source: vendor documentation (auto)
+  source_url: https://www.splunk.com
+  verified_by: auto-scan
+  verified_date: '2026-09-14'
+  evidence: saml,sso

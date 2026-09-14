@@ -1,24 +1,36 @@
-name: "Azure DevOps"
-category: "development"
-website: "https://azure.microsoft.com/en-us/products/devops"
-description: "Services for teams to share code, track work, and ship software."
+name: Azure DevOps
+category: development
+website: https://azure.microsoft.com/en-us/products/devops
+description: Services for teams to share code, track work, and ship software.
 sso:
   supported: true
-  protocols: ["SAML", "OIDC"]
-  tier: "free"
+  protocols:
+  - SAML
+  - OIDC
+  tier: free
   sp_initiated: true
   jit_provisioning: true
   domain_claiming: true
 mfa:
   supported: true
-  types: ["TOTP", "SMS", "WebAuthn", "Push"]
-  enforcement: "required"
-  tier: "free"
+  types:
+  - TOTP
+  - SMS
+  - WebAuthn
+  - Push
+  enforcement: required
+  tier: free
   adaptive_mfa: true
   phishing_resistant: true
 compliance:
   soc2: true
   iso27001: true
 meta:
-  last_verified: "2026-01-03"
+  last_verified: '2026-01-03'
   ready_to_publish: true
+provenance:
+  source: vendor documentation (auto)
+  source_url: https://azure.microsoft.com
+  verified_by: auto-scan
+  verified_date: '2026-09-14'
+  evidence: 2fa,sso

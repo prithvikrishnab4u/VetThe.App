@@ -1,39 +1,42 @@
-name: "Microsoft 365"
-category: "productivity"
-website: "https://microsoft365.com"
-description: "Suite of productivity apps, cloud services, and security for businesses."
-
+name: Microsoft 365
+category: productivity
+website: https://microsoft365.com
+description: Suite of productivity apps, cloud services, and security for businesses.
 sso:
   supported: true
-  protocols: ["SAML", "OIDC"]
-  tier: "free"
-
+  protocols:
+  - SAML
+  - OIDC
+  tier: free
 scim:
-  supported: "full"
-  version: "2.0"
-  tier: "free"
-
+  supported: full
+  version: '2.0'
+  tier: free
 mfa:
   supported: true
-  types: ["TOTP", "SMS", "WebAuthn", "Push"]
-  enforcement: "required"
-  tier: "free"
-
+  types:
+  - TOTP
+  - SMS
+  - WebAuthn
+  - Push
+  enforcement: required
+  tier: free
 compliance:
   soc2: true
   iso27001: true
-
 meta:
-  last_verified: "2025-12-31"
+  last_verified: '2025-12-31'
   ready_to_publish: true
-
-# Unused fields - tracked but not displayed in main table
-# Currently not using session and audit fields, but doing research on these fields.
 session:
   timeout_configurable: true
-  max_duration: "Configurable"
-
+  max_duration: Configurable
 audit:
   logs_available: true
-  retention_period: "90 days"
-  tier: "free"
+  retention_period: 90 days
+  tier: free
+provenance:
+  source: vendor documentation (auto)
+  source_url: https://microsoft365.com
+  verified_by: auto-scan
+  verified_date: '2026-09-14'
+  evidence: mfa,sso

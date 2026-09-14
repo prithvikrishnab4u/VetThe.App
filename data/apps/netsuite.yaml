@@ -1,24 +1,35 @@
-name: "NetSuite"
-category: "finance"
-website: "https://www.netsuite.com"
-description: "Unified business management suite for ERP, financials, CRM, and ecommerce."
+name: NetSuite
+category: finance
+website: https://www.netsuite.com
+description: Unified business management suite for ERP, financials, CRM, and ecommerce.
 sso:
   supported: true
-  protocols: ["SAML", "OIDC"]
-  tier: "enterprise"
+  protocols:
+  - SAML
+  - OIDC
+  tier: enterprise
   sp_initiated: true
   jit_provisioning: true
   domain_claiming: true
 mfa:
   supported: true
-  types: ["TOTP", "SMS", "Email"]
-  enforcement: "required"
-  tier: "enterprise"
+  types:
+  - TOTP
+  - SMS
+  - Email
+  enforcement: required
+  tier: enterprise
   adaptive_mfa: true
   phishing_resistant: false
 compliance:
   soc2: true
   iso27001: true
 meta:
-  last_verified: "2026-01-03"
+  last_verified: '2026-01-03'
   ready_to_publish: true
+provenance:
+  source: vendor documentation (auto)
+  source_url: https://www.netsuite.com/developer
+  verified_by: auto-scan
+  verified_date: '2026-09-14'
+  evidence: 2fa,sso
