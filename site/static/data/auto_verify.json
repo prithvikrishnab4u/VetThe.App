@@ -17,8 +17,12 @@
     "id": "adobe-creative-cloud",
     "name": "Adobe Creative Cloud",
     "website": "https://www.adobe.com/creativecloud.html",
-    "http_status": null,
-    "error": "HTTPSConnectionPool(host='www.adobe.com', port=443): Max retries exceeded with url: /creativecloud.html (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
+    "http_status": 200,
+    "sso": false,
+    "scim": false,
+    "mfa": false,
+    "soc2": false,
+    "iso27001": false
   },
   {
     "id": "adp-workforce-now",
@@ -378,12 +382,8 @@
     "id": "lark",
     "name": "Lark",
     "website": "https://www.larksuite.com",
-    "http_status": 200,
-    "sso": true,
-    "scim": false,
-    "mfa": true,
-    "soc2": false,
-    "iso27001": false
+    "http_status": null,
+    "error": "HTTPSConnectionPool(host='www.larksuite.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)')))"
   },
   {
     "id": "lastpass",

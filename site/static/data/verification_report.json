@@ -269,20 +269,6 @@
     "auto_status": null
   },
   {
-    "id": "adobe-creative-cloud",
-    "name": "Adobe Creative Cloud",
-    "issues": [
-      "sso_not_found",
-      "mfa_not_found",
-      "soc2_not_found",
-      "iso27001_not_found",
-      "site_unreachable"
-    ],
-    "issue_count": 5,
-    "website": "https://www.adobe.com/creativecloud.html",
-    "auto_status": null
-  },
-  {
     "id": "amazon-web-services-aws",
     "name": "Amazon Web Services (AWS)",
     "issues": [
@@ -630,6 +616,20 @@
     ],
     "issue_count": 5,
     "website": "https://hubspot.com",
+    "auto_status": null
+  },
+  {
+    "id": "lark",
+    "name": "Lark",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.larksuite.com",
     "auto_status": null
   },
   {
@@ -1178,6 +1178,19 @@
     "auto_status": null
   },
   {
+    "id": "adobe-creative-cloud",
+    "name": "Adobe Creative Cloud",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found"
+    ],
+    "issue_count": 4,
+    "website": "https://www.adobe.com/creativecloud.html",
+    "auto_status": 200
+  },
+  {
     "id": "basecamp",
     "name": "Basecamp",
     "issues": [
@@ -1392,17 +1405,6 @@
     ],
     "issue_count": 2,
     "website": "https://front.com",
-    "auto_status": 200
-  },
-  {
-    "id": "lark",
-    "name": "Lark",
-    "issues": [
-      "soc2_not_found",
-      "iso27001_not_found"
-    ],
-    "issue_count": 2,
-    "website": "https://www.larksuite.com",
     "auto_status": 200
   },
   {

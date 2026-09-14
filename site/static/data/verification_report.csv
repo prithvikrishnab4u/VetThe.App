@@ -17,7 +17,6 @@ salesforce,Salesforce,https://salesforce.com,6,sso_not_found;scim_not_found;mfa_
 slack,Slack,https://slack.com,6,sso_not_found;scim_not_found;mfa_not_found;soc2_not_found;iso27001_not_found;site_unreachable,
 zendesk,Zendesk,https://zendesk.com,6,sso_not_found;scim_not_found;mfa_not_found;soc2_not_found;iso27001_not_found;site_unreachable,
 1password,1Password,https://1password.com,5,sso_not_found;mfa_not_found;soc2_not_found;iso27001_not_found;site_unreachable,
-adobe-creative-cloud,Adobe Creative Cloud,https://www.adobe.com/creativecloud.html,5,sso_not_found;mfa_not_found;soc2_not_found;iso27001_not_found;site_unreachable,
 amazon-web-services-aws,Amazon Web Services (AWS),https://aws.amazon.com,5,sso_not_found;mfa_not_found;soc2_not_found;iso27001_not_found;site_unreachable,
 amplitude,Amplitude,https://amplitude.com,5,sso_not_found;mfa_not_found;soc2_not_found;iso27001_not_found;site_unreachable,
 bamboohr,BambooHR,https://www.bamboohr.com,5,sso_not_found;mfa_not_found;soc2_not_found;iso27001_not_found;site_unreachable,
@@ -43,6 +42,7 @@ grammarly,Grammarly,https://www.grammarly.com,5,sso_not_found;mfa_not_found;soc2
 greenhouse,Greenhouse,https://www.greenhouse.io,5,sso_not_found;mfa_not_found;soc2_not_found;iso27001_not_found;site_unreachable,
 hootsuite,Hootsuite,https://www.hootsuite.com,5,sso_not_found;mfa_not_found;soc2_not_found;iso27001_not_found;site_unreachable,
 hubspot,HubSpot,https://hubspot.com,5,sso_not_found;scim_not_found;mfa_not_found;soc2_not_found;site_unreachable,
+lark,Lark,https://www.larksuite.com,5,sso_not_found;mfa_not_found;soc2_not_found;iso27001_not_found;site_unreachable,
 lastpass,LastPass,https://www.lastpass.com,5,sso_not_found;mfa_not_found;soc2_not_found;iso27001_not_found;site_unreachable,
 linkedin-learning,LinkedIn Learning,https://learning.linkedin.com,5,sso_not_found;mfa_not_found;soc2_not_found;iso27001_not_found;site_unreachable,
 loom,Loom,https://www.loom.com,5,sso_not_found;mfa_not_found;soc2_not_found;iso27001_not_found;site_unreachable,
@@ -82,6 +82,7 @@ zoominfo,ZoomInfo,https://www.zoominfo.com,5,sso_not_found;mfa_not_found;soc2_no
 zscaler,Zscaler,https://www.zscaler.com,5,sso_not_found;mfa_not_found;soc2_not_found;iso27001_not_found;site_unreachable,
 monday-com,monday.com,https://monday.com,5,sso_not_found;mfa_not_found;soc2_not_found;iso27001_not_found;site_unreachable,
 activecampaign,ActiveCampaign,https://www.activecampaign.com,4,sso_not_found;mfa_not_found;soc2_not_found;site_unreachable,
+adobe-creative-cloud,Adobe Creative Cloud,https://www.adobe.com/creativecloud.html,4,sso_not_found;mfa_not_found;soc2_not_found;iso27001_not_found,200
 basecamp,Basecamp,https://basecamp.com,4,sso_not_found;mfa_not_found;soc2_not_found;site_unreachable,
 gusto,Gusto,https://gusto.com,4,sso_not_found;mfa_not_found;soc2_not_found;site_unreachable,
 netsuite,NetSuite,https://www.netsuite.com,4,sso_not_found;mfa_not_found;soc2_not_found;iso27001_not_found,403
@@ -100,7 +101,6 @@ azure-devops,Azure DevOps,https://azure.microsoft.com/en-us/products/devops,2,so
 brex,Brex,https://www.brex.com,2,soc2_not_found;iso27001_not_found,200
 expensify,Expensify,https://www.expensify.com,2,soc2_not_found;iso27001_not_found,403
 front,Front,https://front.com,2,soc2_not_found;iso27001_not_found,200
-lark,Lark,https://www.larksuite.com,2,soc2_not_found;iso27001_not_found,200
 mural,Mural,https://www.mural.co,2,soc2_not_found;iso27001_not_found,200
 quickbooks-online,QuickBooks Online,https://quickbooks.intuit.com,2,soc2_not_found;iso27001_not_found,200
 shopify,Shopify,https://www.shopify.com,2,soc2_not_found;iso27001_not_found,200

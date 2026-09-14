@@ -134,6 +134,13 @@
       ]
     },
     "name": "ADP Workforce Now",
+    "provenance": {
+      "evidence": "2fa,sso",
+      "source": "vendor documentation (auto)",
+      "source_url": "https://www.adp.com/support",
+      "verified_by": "auto-scan",
+      "verified_date": "2026-09-14"
+    },
     "sso": {
       "domain_claiming": true,
       "jit_provisioning": true,
@@ -475,6 +482,13 @@
       ]
     },
     "name": "Azure DevOps",
+    "provenance": {
+      "evidence": "2fa,sso",
+      "source": "vendor documentation (auto)",
+      "source_url": "https://azure.microsoft.com",
+      "verified_by": "auto-scan",
+      "verified_date": "2026-09-14"
+    },
     "sso": {
       "domain_claiming": true,
       "jit_provisioning": true,
@@ -587,6 +601,13 @@
       ]
     },
     "name": "Bill.com",
+    "provenance": {
+      "evidence": "sso",
+      "source": "vendor documentation (auto)",
+      "source_url": "https://www.bill.com",
+      "verified_by": "auto-scan",
+      "verified_date": "2026-09-14"
+    },
     "sso": {
       "domain_claiming": false,
       "jit_provisioning": false,
@@ -740,6 +761,13 @@
       ]
     },
     "name": "Brex",
+    "provenance": {
+      "evidence": "2fa,sso",
+      "source": "vendor documentation (auto)",
+      "source_url": "https://www.brex.com",
+      "verified_by": "auto-scan",
+      "verified_date": "2026-09-14"
+    },
     "sso": {
       "domain_claiming": true,
       "jit_provisioning": true,
@@ -1313,6 +1341,13 @@
       ]
     },
     "name": "Egnyte",
+    "provenance": {
+      "evidence": "sso",
+      "source": "vendor documentation (auto)",
+      "source_url": "https://www.egnyte.com",
+      "verified_by": "auto-scan",
+      "verified_date": "2026-09-14"
+    },
     "sso": {
       "domain_claiming": true,
       "jit_provisioning": true,
@@ -1502,6 +1537,13 @@
       ]
     },
     "name": "Front",
+    "provenance": {
+      "evidence": "2fa,sso",
+      "source": "vendor documentation (auto)",
+      "source_url": "https://front.com",
+      "verified_by": "auto-scan",
+      "verified_date": "2026-09-14"
+    },
     "sso": {
       "domain_claiming": false,
       "jit_provisioning": true,
@@ -1896,6 +1938,13 @@
       ]
     },
     "name": "Intercom",
+    "provenance": {
+      "evidence": "2fa,mfa,oauth,saml,soc2,sso",
+      "source": "vendor documentation (auto)",
+      "source_url": "https://intercom.com",
+      "verified_by": "auto-scan",
+      "verified_date": "2026-09-14"
+    },
     "sso": {
       "domain_claiming": true,
       "jit_provisioning": true,
@@ -2237,6 +2286,13 @@
       ]
     },
     "name": "Microsoft Teams",
+    "provenance": {
+      "evidence": "sso",
+      "source": "vendor documentation (auto)",
+      "source_url": "https://www.microsoft.com",
+      "verified_by": "auto-scan",
+      "verified_date": "2026-09-14"
+    },
     "session": {
       "max_duration": "Configurable",
       "timeout_configurable": true
@@ -2284,6 +2340,13 @@
       ]
     },
     "name": "Microsoft 365",
+    "provenance": {
+      "evidence": "mfa,sso",
+      "source": "vendor documentation (auto)",
+      "source_url": "https://microsoft365.com",
+      "verified_by": "auto-scan",
+      "verified_date": "2026-09-14"
+    },
     "scim": {
       "supported": "full",
       "tier": "free",
@@ -2443,6 +2506,13 @@
       ]
     },
     "name": "Mural",
+    "provenance": {
+      "evidence": "2fa,sso",
+      "source": "vendor documentation (auto)",
+      "source_url": "https://www.mural.co",
+      "verified_by": "auto-scan",
+      "verified_date": "2026-09-14"
+    },
     "sso": {
       "domain_claiming": true,
       "jit_provisioning": true,
@@ -2516,6 +2586,13 @@
       ]
     },
     "name": "NetSuite",
+    "provenance": {
+      "evidence": "2fa,sso",
+      "source": "vendor documentation (auto)",
+      "source_url": "https://www.netsuite.com/developer",
+      "verified_by": "auto-scan",
+      "verified_date": "2026-09-14"
+    },
     "sso": {
       "domain_claiming": true,
       "jit_provisioning": true,
@@ -3155,6 +3232,13 @@
       ]
     },
     "name": "Shopify",
+    "provenance": {
+      "evidence": "2fa,sso",
+      "source": "vendor documentation (auto)",
+      "source_url": "https://www.shopify.com",
+      "verified_by": "auto-scan",
+      "verified_date": "2026-09-14"
+    },
     "sso": {
       "domain_claiming": true,
       "jit_provisioning": true,
@@ -3351,6 +3435,13 @@
       ]
     },
     "name": "Snyk",
+    "provenance": {
+      "evidence": "2fa,sso",
+      "source": "vendor documentation (auto)",
+      "source_url": "https://snyk.io",
+      "verified_by": "auto-scan",
+      "verified_date": "2026-09-14"
+    },
     "sso": {
       "domain_claiming": true,
       "jit_provisioning": true,
@@ -3387,6 +3478,13 @@
       ]
     },
     "name": "Splunk",
+    "provenance": {
+      "evidence": "saml,sso",
+      "source": "vendor documentation (auto)",
+      "source_url": "https://www.splunk.com",
+      "verified_by": "auto-scan",
+      "verified_date": "2026-09-14"
+    },
     "sso": {
       "domain_claiming": true,
       "jit_provisioning": true,
@@ -3459,6 +3557,13 @@
       ]
     },
     "name": "Stripe",
+    "provenance": {
+      "evidence": "oauth,sso",
+      "source": "vendor documentation (auto)",
+      "source_url": "https://stripe.com",
+      "verified_by": "auto-scan",
+      "verified_date": "2026-09-14"
+    },
     "sso": {
       "domain_claiming": true,
       "jit_provisioning": true,
@@ -3872,6 +3977,13 @@
       ]
     },
     "name": "Xero",
+    "provenance": {
+      "evidence": "sso",
+      "source": "vendor documentation (auto)",
+      "source_url": "https://www.xero.com",
+      "verified_by": "auto-scan",
+      "verified_date": "2026-09-14"
+    },
     "sso": {
       "domain_claiming": false,
       "jit_provisioning": false,
@@ -4029,6 +4141,13 @@
       ]
     },
     "name": "Zoom",
+    "provenance": {
+      "evidence": "sso",
+      "source": "vendor documentation (auto)",
+      "source_url": "https://zoom.us",
+      "verified_by": "auto-scan",
+      "verified_date": "2026-09-14"
+    },
     "scim": {
       "supported": "full",
       "tier": "paid",
