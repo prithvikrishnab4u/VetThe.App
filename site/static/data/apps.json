@@ -369,7 +369,10 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "retention": "90 days",
+        "checked": "2026-09-14",
+        "notes": "Audit log API for service accounts; in-app view and retention not stated on this page",
+        "plan": "Enterprise+, or Enterprise with the Compliance Management add-on",
+        "source": "https://developers.asana.com/docs/audit-log-api",
         "support": "supported",
         "tier": "enterprise"
       },
@@ -1539,42 +1542,67 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Audit Trail: CSV download of up to 100K events and archiving to S3, GCS or Azure; 7-day retention when Audit Trail is off",
+        "retention": "90 days",
+        "source": "https://docs.datadoghq.com/account_management/audit_trail/",
+        "support": "supported"
       },
       "custom_roles": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Plan requirement not stated",
+        "source": "https://docs.datadoghq.com/account_management/rbac/",
+        "support": "supported"
       },
       "domain_verification": {
         "support": "supported"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "SAML identity attributes map to default and custom roles",
+        "source": "https://docs.datadoghq.com/account_management/rbac/",
+        "support": "supported"
       },
       "jit_provisioning": {
+        "checked": "2026-09-14",
+        "notes": "Creates the user on first SAML login",
+        "source": "https://docs.datadoghq.com/account_management/saml/",
         "support": "supported"
       },
       "mfa_enforcement": {
-        "support": "supported",
-        "tier": "paid"
-      },
-      "phishing_resistant_mfa": {
+        "checked": "2026-09-14",
+        "notes": "Applies to email and password logins; SSO users get MFA from their IdP",
+        "source": "https://docs.datadoghq.com/account_management/multi-factor_authentication/",
         "support": "supported"
       },
-      "scim": {
+      "phishing_resistant_mfa": {
         "support": "unknown"
+      },
+      "scim": {
+        "checked": "2026-09-14",
+        "notes": "Also Infrastructure Enterprise and Startup plans; Entra ID and Okta only; creates and removes users and syncs Datadog Teams from IdP groups",
+        "plan": "Infrastructure Pro",
+        "source": "https://docs.datadoghq.com/account_management/scim/",
+        "support": "supported",
+        "tier": "paid"
       },
       "session_controls": {
         "support": "unknown"
       },
       "sso": {
+        "checked": "2026-09-14",
+        "notes": "Plan requirement not stated in Datadog's SAML docs",
         "protocols": [
           "SAML"
         ],
-        "support": "supported",
-        "tier": "enterprise"
+        "source": "https://docs.datadoghq.com/account_management/saml/",
+        "support": "supported"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "SAML Strict disables other login methods; admins can exempt individual users",
+        "source": "https://docs.datadoghq.com/account_management/saml/",
+        "support": "supported"
       }
     },
     "category": "infrastructure",
@@ -2223,43 +2251,88 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "support": "unknown"
-      },
-      "custom_roles": {
-        "support": "unknown"
-      },
-      "domain_verification": {
-        "support": "supported"
-      },
-      "group_role_mapping": {
-        "support": "unknown"
-      },
-      "jit_provisioning": {
-        "support": "supported"
-      },
-      "mfa_enforcement": {
+        "checked": "2026-09-14",
+        "notes": "Group and project audit events need Premium; Free only records successful sign-ins",
+        "plan": "Premium",
+        "retention": "Indefinite",
+        "source": "https://docs.gitlab.com/user/compliance/audit_events/",
         "support": "supported",
         "tier": "paid"
       },
+      "custom_roles": {
+        "checked": "2026-09-14",
+        "plan": "Ultimate",
+        "source": "https://docs.gitlab.com/user/custom_roles/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "domain_verification": {
+        "checked": "2026-09-14",
+        "notes": "A verified custom domain auto-confirms accounts provisioned through SAML or SCIM",
+        "plan": "Premium",
+        "source": "https://docs.gitlab.com/user/group/saml_sso/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-14",
+        "notes": "SAML Group Sync assigns roles in GitLab groups from IdP groups; custom roles need Ultimate",
+        "plan": "Premium",
+        "source": "https://docs.gitlab.com/user/group/saml_sso/group_sync/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-14",
+        "notes": "Creates an account on first SAML sign-in when none exists with that email",
+        "plan": "Premium",
+        "source": "https://docs.gitlab.com/user/group/saml_sso/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-14",
+        "notes": "Group owners enforce 2FA for members on GitLab.com; administrators can enforce it instance-wide on self-managed; email OTP doesn't count",
+        "source": "https://docs.gitlab.com/security/two_factor_authentication/",
+        "support": "supported",
+        "tier": "free"
+      },
       "phishing_resistant_mfa": {
-        "support": "supported"
+        "checked": "2026-09-14",
+        "notes": "WebAuthn devices such as security keys, and passkeys as a 2FA option",
+        "source": "https://docs.gitlab.com/user/profile/account/two_factor_authentication/",
+        "support": "supported",
+        "tier": "free"
       },
       "scim": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Creates, deactivates and reactivates users; doesn't update users or provision groups",
+        "plan": "Premium",
+        "source": "https://docs.gitlab.com/user/group/saml_sso/scim_setup/",
+        "support": "partial",
+        "tier": "paid"
       },
       "session_controls": {
         "support": "unknown"
       },
       "sso": {
+        "checked": "2026-09-14",
+        "notes": "SAML SSO for GitLab.com groups",
+        "plan": "Premium",
         "protocols": [
-          "SAML",
-          "OIDC"
+          "SAML"
         ],
+        "source": "https://docs.gitlab.com/user/group/saml_sso/",
         "support": "supported",
         "tier": "paid"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Enforce SSO-only authentication separately for web activity and for Git and Dependency Proxy activity",
+        "plan": "Premium",
+        "source": "https://docs.gitlab.com/user/group/saml_sso/",
+        "support": "supported",
+        "tier": "paid"
       }
     },
     "category": "development",
@@ -2617,9 +2690,12 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "retention": "365 days",
+        "checked": "2026-09-14",
+        "notes": "Logins and security activity on Starter and above; Enterprise adds many more event types",
+        "plan": "Starter",
+        "source": "https://knowledge.hubspot.com/account-management/view-and-export-account-activity-history",
         "support": "supported",
-        "tier": "enterprise"
+        "tier": "paid"
       },
       "custom_roles": {
         "support": "unknown"
@@ -2634,28 +2710,48 @@
         "support": "unknown"
       },
       "mfa_enforcement": {
+        "checked": "2026-09-14",
+        "notes": "Always required for username/password logins on Starter and above; Super Admins can require it on free accounts; SSO logins aren't prompted",
+        "source": "https://knowledge.hubspot.com/account-security/set-up-two-factor-authentication-for-your-hubspot-login",
         "support": "supported",
-        "tier": "enterprise"
+        "tier": "free"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Passkey login on all plans; Super Admins can enforce passkeys as the login method",
+        "source": "https://knowledge.hubspot.com/account-management/set-up-and-log-in-with-passkeys",
+        "support": "supported",
+        "tier": "free"
       },
       "scim": {
+        "checked": "2026-09-14",
+        "notes": "Creates, updates and deactivates users; Okta roles can sync to permission sets; custom SCIM for Entra ID, PingFederate, OneLogin and JumpCloud",
+        "plan": "Professional",
+        "source": "https://knowledge.hubspot.com/account/provision-hubspot-users-with-scim-through-okta",
         "support": "supported",
-        "tier": "enterprise"
+        "tier": "paid"
       },
       "session_controls": {
         "support": "supported"
       },
       "sso": {
+        "checked": "2026-09-14",
+        "notes": "Professional or Enterprise tier of any Hub",
+        "plan": "Professional",
         "protocols": [
           "SAML"
         ],
+        "source": "https://knowledge.hubspot.com/account/can-i-use-single-sign-on-sso-with-hubspot",
         "support": "supported",
-        "tier": "enterprise"
+        "tier": "paid"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Require single sign-on is on by default; Super Admins can exclude specific users",
+        "plan": "Professional",
+        "source": "https://knowledge.hubspot.com/account/can-i-use-single-sign-on-sso-with-hubspot",
+        "support": "supported",
+        "tier": "paid"
       }
     },
     "category": "sales_marketing",

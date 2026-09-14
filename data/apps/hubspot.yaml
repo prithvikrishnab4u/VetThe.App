@@ -8,22 +8,45 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "enterprise"
+    tier: "paid"
+    plan: "Professional"
+    notes: "Professional or Enterprise tier of any Hub"
     protocols: ["SAML"]
+    source: "https://knowledge.hubspot.com/account/can-i-use-single-sign-on-sso-with-hubspot"
+    checked: "2026-09-14"
   sso_enforcement:
-    support: "unknown"
+    support: "supported"
+    tier: "paid"
+    plan: "Professional"
+    notes: "Require single sign-on is on by default; Super Admins can exclude specific users"
+    source: "https://knowledge.hubspot.com/account/can-i-use-single-sign-on-sso-with-hubspot"
+    checked: "2026-09-14"
   scim:
     support: "supported"
-    tier: "enterprise"
+    tier: "paid"
+    plan: "Professional"
+    notes: "Creates, updates and deactivates users; Okta roles can sync to permission sets; custom SCIM for Entra ID, PingFederate, OneLogin and JumpCloud"
+    source: "https://knowledge.hubspot.com/account/provision-hubspot-users-with-scim-through-okta"
+    checked: "2026-09-14"
   mfa_enforcement:
     support: "supported"
-    tier: "enterprise"
+    tier: "free"
+    notes: "Always required for username/password logins on Starter and above; Super Admins can require it on free accounts; SSO logins aren't prompted"
+    source: "https://knowledge.hubspot.com/account-security/set-up-two-factor-authentication-for-your-hubspot-login"
+    checked: "2026-09-14"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "supported"
+    tier: "free"
+    notes: "Passkey login on all plans; Super Admins can enforce passkeys as the login method"
+    source: "https://knowledge.hubspot.com/account-management/set-up-and-log-in-with-passkeys"
+    checked: "2026-09-14"
   audit_logs:
     support: "supported"
-    tier: "enterprise"
-    retention: "365 days"
+    tier: "paid"
+    plan: "Starter"
+    notes: "Logins and security activity on Starter and above; Enterprise adds many more event types"
+    source: "https://knowledge.hubspot.com/account-management/view-and-export-account-activity-history"
+    checked: "2026-09-14"
   jit_provisioning:
     support: "unknown"
   domain_verification:

@@ -8,27 +8,52 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "enterprise"
+    notes: "Plan requirement not stated in Datadog's SAML docs"
     protocols: ["SAML"]
+    source: "https://docs.datadoghq.com/account_management/saml/"
+    checked: "2026-09-14"
   sso_enforcement:
-    support: "unknown"
+    support: "supported"
+    notes: "SAML Strict disables other login methods; admins can exempt individual users"
+    source: "https://docs.datadoghq.com/account_management/saml/"
+    checked: "2026-09-14"
   scim:
-    support: "unknown"
-  mfa_enforcement:
     support: "supported"
     tier: "paid"
-  phishing_resistant_mfa:
+    plan: "Infrastructure Pro"
+    notes: "Also Infrastructure Enterprise and Startup plans; Entra ID and Okta only; creates and removes users and syncs Datadog Teams from IdP groups"
+    source: "https://docs.datadoghq.com/account_management/scim/"
+    checked: "2026-09-14"
+  mfa_enforcement:
     support: "supported"
-  audit_logs:
+    notes: "Applies to email and password logins; SSO users get MFA from their IdP"
+    source: "https://docs.datadoghq.com/account_management/multi-factor_authentication/"
+    checked: "2026-09-14"
+  phishing_resistant_mfa:
     support: "unknown"
+  audit_logs:
+    support: "supported"
+    notes: "Audit Trail: CSV download of up to 100K events and archiving to S3, GCS or Azure; 7-day retention when Audit Trail is off"
+    retention: "90 days"
+    source: "https://docs.datadoghq.com/account_management/audit_trail/"
+    checked: "2026-09-14"
   jit_provisioning:
     support: "supported"
+    notes: "Creates the user on first SAML login"
+    source: "https://docs.datadoghq.com/account_management/saml/"
+    checked: "2026-09-14"
   domain_verification:
     support: "supported"
   custom_roles:
-    support: "unknown"
+    support: "supported"
+    notes: "Plan requirement not stated"
+    source: "https://docs.datadoghq.com/account_management/rbac/"
+    checked: "2026-09-14"
   group_role_mapping:
-    support: "unknown"
+    support: "supported"
+    notes: "SAML identity attributes map to default and custom roles"
+    source: "https://docs.datadoghq.com/account_management/rbac/"
+    checked: "2026-09-14"
   session_controls:
     support: "unknown"
   api_token_controls:

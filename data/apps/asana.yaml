@@ -23,7 +23,10 @@ capabilities:
   audit_logs:
     support: "supported"
     tier: "enterprise"
-    retention: "90 days"
+    plan: "Enterprise+, or Enterprise with the Compliance Management add-on"
+    notes: "Audit log API for service accounts; in-app view and retention not stated on this page"
+    source: "https://developers.asana.com/docs/audit-log-api"
+    checked: "2026-09-14"
   jit_provisioning:
     support: "unknown"
   domain_verification:
