@@ -1,1 +1,109 @@
 @import "tailwindcss";
+
+@layer components {
+    /* Sticky header */
+    .sticky-header {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        background: white;
+    }
+
+    /* App favicon */
+    .app-favicon {
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        object-fit: cover;
+    }
+
+    /* Custom scrollbar */
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: #f9fafb;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #d1d5db;
+        border-radius: 3px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #9ca3af;
+    }
+
+    /* Flowbite-style dropdown */
+    .flowbite-dropdown {
+        position: fixed !important;
+        background: white;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        z-index: 9999 !important;
+        display: none;
+        max-height: 300px;
+        overflow-y: auto;
+        min-width: 180px;
+    }
+
+    .flowbite-dropdown.open {
+        display: block;
+    }
+
+    /* Dropdown trigger button */
+    .dropdown-button {
+        @apply w-full px-3 py-2 text-sm text-left bg-white border border-gray-300 rounded-lg hover:bg-gray-50 focus:ring-4 focus:ring-blue-300 focus:outline-none transition-all flex items-center justify-between;
+    }
+
+    .dropdown-button:hover {
+        border-color: #3b82f6;
+    }
+
+    /* Dropdown option styling */
+    .dropdown-option {
+        @apply flex items-center px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer transition-colors;
+    }
+
+    /* Checkbox styling (Flowbite style) */
+    .flowbite-checkbox {
+        @apply w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2;
+    }
+
+    /* Pagination */
+    .pagination-btn {
+        @apply px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:ring-4 focus:ring-blue-300 transition-all disabled:opacity-50 disabled:cursor-not-allowed;
+    }
+
+    .pagination-btn.active {
+        @apply bg-blue-700 text-white border-blue-700 hover:bg-blue-800;
+    }
+
+    /* Sort indicators */
+    .sort-indicator {
+        @apply ml-1 text-gray-400 text-xs;
+    }
+
+    .sort-indicator.active {
+        @apply text-blue-600 font-bold;
+    }
+
+    /* Minimum plan badge */
+    .tier-badge {
+        @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-white text-gray-700 border border-gray-200;
+    }
+
+    /* A value with no source yet */
+    .unverified {
+        opacity: 0.45;
+    }
+}
+
+/* Non-core capability columns, revealed by "Show all capabilities" */
+.cap-extended {
+    display: none;
+}
+
+.show-extended .cap-extended {
+    display: table-cell;
+}

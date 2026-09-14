@@ -1,42 +1,38 @@
-name: Microsoft 365
-category: productivity
-website: https://microsoft365.com
-description: Suite of productivity apps, cloud services, and security for businesses.
-sso:
-  supported: true
-  protocols:
-  - SAML
-  - OIDC
-  tier: free
-scim:
-  supported: full
-  version: '2.0'
-  tier: free
-mfa:
-  supported: true
-  types:
-  - TOTP
-  - SMS
-  - WebAuthn
-  - Push
-  enforcement: required
-  tier: free
-compliance:
-  soc2: true
-  iso27001: true
-meta:
-  last_verified: '2025-12-31'
-  ready_to_publish: true
-session:
-  timeout_configurable: true
-  max_duration: Configurable
-audit:
-  logs_available: true
-  retention_period: 90 days
-  tier: free
-provenance:
-  source: vendor documentation (auto)
-  source_url: https://microsoft365.com
-  verified_by: auto-scan
-  verified_date: '2026-09-14'
-  evidence: mfa,sso
+name: "Microsoft 365"
+category: "productivity"
+website: "https://microsoft365.com"
+description: "Suite of productivity apps, cloud services, and security for businesses."
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    tier: "free"
+    protocols: ["SAML", "OIDC"]
+  sso_enforcement:
+    support: "unknown"
+  scim:
+    support: "supported"
+    tier: "free"
+  mfa_enforcement:
+    support: "supported"
+    tier: "free"
+  phishing_resistant_mfa:
+    support: "supported"
+  audit_logs:
+    support: "supported"
+    tier: "free"
+    retention: "90 days"
+  jit_provisioning:
+    support: "unknown"
+  domain_verification:
+    support: "unknown"
+  custom_roles:
+    support: "unknown"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "supported"
+  api_token_controls:
+    support: "unknown"

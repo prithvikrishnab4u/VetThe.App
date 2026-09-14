@@ -1,10 +1,12 @@
 # Contributing to VetThe.App
 
-**No coding required!** You can add apps directly in your browser.
+**No coding required!** You can add or fix apps directly in your browser.
+
+The one rule: **only record what you can link to.** A value with a source beats a guess every time. If you're not sure, leave it as `"unknown"`.
 
 ---
 
-## 🎯 Quick Start (3 Minutes)
+## 🎯 Quick Start (5 Minutes)
 
 ### **Easy Way: Use GitHub's Web Editor**
 
@@ -12,57 +14,51 @@
 2. **Click**: Browse to `data/apps/` folder
 3. **Click**: "Add file" → "Create new file"
 4. **Name it**: `yourapp.yaml` (e.g., `zoom.yaml`)
-5. **Copy the template below** and fill it out
+5. **Copy the template below** and fill in what you can confirm
 6. **Click**: "Propose new file"
 7. **Click**: "Create pull request"
 
-**Done!** We'll review and merge it.
+**Done!** Validation runs automatically, and we'll review and merge it.
 
 ---
 
 ## 📋 App Template
 
-Copy this and fill in the blanks:
+Copy this. Every capability starts as `"unknown"`, so change only the ones you've checked.
 
 ```yaml
 name: "App Name Here"
 category: "collaboration"
 website: "https://example.com"
 description: "What does this app do? One sentence."
+status: "draft"
 
-sso:
-  supported: true
-  protocols: ["SAML"]
-  tier: "paid"
-
-scim:
-  supported: "none"
-  tier: "enterprise"
-
-mfa:
-  supported: true
-  types: ["TOTP", "SMS"]
-  enforcement: "admin_enforced"
-  tier: "paid"
-
-compliance:
-  soc2: true
-  iso27001: false
-
-meta:
-  last_verified: "2025-12-31"
-  ready_to_publish: true
-
-# Unused fields - tracked but not displayed in main table
-# Currently not using session and audit fields, but doing research on these fields.
-session:
-  timeout_configurable: true
-  max_duration: "X days"
-
-audit:
-  logs_available: true
-  retention_period: "X days"
-  tier: "enterprise"
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "unknown"
+  sso_enforcement:
+    support: "unknown"
+  scim:
+    support: "unknown"
+  mfa_enforcement:
+    support: "unknown"
+  phishing_resistant_mfa:
+    support: "unknown"
+  audit_logs:
+    support: "unknown"
+  jit_provisioning:
+    support: "unknown"
+  domain_verification:
+    support: "unknown"
+  custom_roles:
+    support: "unknown"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "unknown"
+  api_token_controls:
+    support: "unknown"
 ```
 
 ---
@@ -72,163 +68,124 @@ audit:
 ### **1. Basic Info**
 
 ```yaml
-name: "Zoom"  # Exact app name
-category: "collaboration"  # Pick from list below
+name: "Zoom"                 # Exact app name
+category: "collaboration"    # Pick from the list below
 website: "https://zoom.us"
 description: "Video conferencing platform"
+status: "draft"              # Leave as draft; maintainers publish
 ```
 
-**Valid categories:**
-- `collaboration` (Slack, Teams, Zoom)
-- `productivity` (Notion, Airtable, Google Workspace)
-- `development` (GitHub, Figma, Linear)
-- `sales_marketing` (HubSpot, Salesforce)
-- `support` (Zendesk, Intercom)
-- `design` (Figma, Canva)
-- `hr` (BambooHR, Workday)
-- `finance` (QuickBooks, Expensify)
-- `security` (Okta, CISCO, Ping)
+**Valid categories:** `collaboration`, `productivity`, `development`, `sales_marketing`, `support`, `design`, `hr`, `finance`, `security`, `infrastructure`
 
 ---
 
-### **2. SSO (Single Sign-On)**
+### **2. A Capability**
 
-Does the app let you login with your company's identity provider (Okta, Azure AD, Google)?
-
-```yaml
-sso:
-  supported: true                                            # true or false
-  protocols: ["SAML", "OIDC", "WS-Fed", "Kerberos", "LDAP"]  # Which protocols? SAML, OIDC, OAuth2
-  tier: "paid"                                               # Which plan? free, paid, or enterprise
-```
-
-**How to find this:**
-- Google: "[app name] SAML setup"
-- Check their pricing page
-- Look in Settings → Security → SSO
-
-**Tier guide:**
-- `free` = Available on free plan
-- `paid` = Available on Business/Pro/Plus plans (mid-tier)
-- `enterprise` = Only on Enterprise/Ultimate (top tier)
-
----
-
-### **3. SCIM (User Provisioning)**
-
-Can you automatically create/delete users in this app from your identity provider?
+Every capability uses the same fields:
 
 ```yaml
-scim:
-  supported: "full"      # full, partial, or none
-  version: "2.0"         # Only if full or partial
-  tier: "enterprise"     # Which plan?
+  scim:
+    support: "supported"                     # supported, partial, not_supported, or unknown
+    tier: "enterprise"                       # minimum plan: free, paid, enterprise, or add_on
+    plan: "Enterprise"                       # optional: the vendor's own plan name
+    notes: "Users only, no groups"           # optional: anything that needs explaining
+    source: "https://vendor.com/docs/scim"   # page that proves it
+    checked: "2026-09-14"                    # the day you checked that page (YYYY-MM-DD, in quotes)
 ```
+
+**Rules:**
+- `tier` only goes on `supported` or `partial`.
+- `source` and `checked` always go together.
+- `unknown` has nothing else: no tier, no source.
+- Put quotes around every value.
 
 **Support levels:**
-- `full` = Create, update, delete users AND groups automatically
-- `partial` = Limited (often read-only or users-only)
-- `none` = No SCIM support
+- `supported`: works as the question describes
+- `partial`: works with a real limitation; explain it in `notes`
+- `not_supported`: the vendor's docs or pricing show it isn't offered
+- `unknown`: not researched yet (the default)
 
-**How to find this:**
-- Google: "[app name] SCIM"
-- Check API documentation
-- Look for "User Provisioning" or "Directory Sync"
-
----
-
-### **4. MFA (Multi-Factor Authentication)**
-
-Does the app support 2FA/MFA?
-
-```yaml
-mfa:
-  supported: true                      # true or false
-  types: ["TOTP", "SMS", "WebAuthn"]  # Which methods?
-  enforcement: "admin_enforced"        # How is it enforced?
-  tier: "free"                         # Which plan?
-```
-
-**MFA types:**
-- `TOTP` = Authenticator apps (Google Authenticator, Authy)
-- `SMS` = Text message codes
-- `Email` = Email codes
-- `WebAuthn` = Hardware keys (YubiKey) or biometrics
-- `Push` = Mobile app push notifications
-
-**Enforcement options:**
-- `none` = Not supported
-- `optional` = Users can enable it themselves
-- `admin_enforced` = Admins can require it for everyone
-- `required` = Always mandatory
-
-**How to find this:**
-- Google: "[app name] two-factor authentication"
-- Check Settings → Security → 2FA
+**Tiers**, the **minimum** plan needed:
+- `free`: available on the free plan
+- `paid`: a paid self-serve plan (Pro, Business, Team)
+- `enterprise`: top plan only, usually through sales
+- `add_on`: sold separately on top of a plan
 
 ---
 
-### **5. Compliance**
+### **3. What Each Capability Means**
 
-Does the app have these certifications?
+| Key | The question to answer |
+|---|---|
+| `sso` | Can users sign in through the company identity provider (SAML or OIDC)? Also add `protocols: ["SAML", "OIDC"]` (allowed: `SAML`, `OIDC`, `WS-Fed`). |
+| `sso_enforcement` | Can admins require SSO and block password sign-in for all users? |
+| `scim` | Can an identity provider create, update and deactivate users over SCIM? Use `partial` for users only, or no deactivation. |
+| `mfa_enforcement` | Can admins require MFA for every user who signs in with the app's own login? |
+| `phishing_resistant_mfa` | Can users sign in with security keys or passkeys (WebAuthn / FIDO2)? |
+| `audit_logs` | Can admins view a log of user and admin activity? Optionally add `retention: "90 days"`. |
+| `jit_provisioning` | Are accounts created automatically on first SSO sign-in? |
+| `domain_verification` | Can the company verify its email domain and take control of accounts that use it? |
+| `custom_roles` | Can admins create roles with custom permissions beyond the built-in ones? |
+| `group_role_mapping` | Can roles or team membership be assigned from identity provider groups? |
+| `session_controls` | Can admins set session length or sign a user out of all sessions? |
+| `api_token_controls` | Can admins see, restrict or revoke API tokens that users create? |
 
-```yaml
-compliance:
-  soc2: true       # true or false
-  iso27001: false  # true or false
-```
-
-**How to find this:**
-- Check their website footer for "Security" or "Trust Center"
-- Google: "[app name] SOC 2" or "[app name] ISO 27001"
-
----
-
-### **6. Verification Date**
-
-```yaml
-meta:
-  last_verified: "2025-12-31"  # Today's date (YYYY-MM-DD)
-  ready_to_publish: true
-```
-
-**Always use today's date** so we know the data is current.
+The first six are **core**: they're shown by default, and an app can't be published until all six are researched.
 
 ---
 
 ## ✅ Complete Example
 
-Here's Zoom filled out:
-
 ```yaml
-name: "Zoom"
-category: "collaboration"
-website: "https://zoom.us"
-description: "Video conferencing and virtual meeting platform"
+name: "Example App"
+category: "development"
+website: "https://example.com"
+description: "Project tracking for software teams."
+status: "draft"
 
-sso:
-  supported: true
-  protocols: ["SAML"]
-  tier: "paid"
-
-scim:
-  supported: "full"
-  version: "2.0"
-  tier: "enterprise"
-
-mfa:
-  supported: true
-  types: ["TOTP", "SMS"]
-  enforcement: "admin_enforced"
-  tier: "free"
-
-compliance:
-  soc2: true
-  iso27001: true
-
-meta:
-  last_verified: "2025-12-31"
-  ready_to_publish: true
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML", "OIDC"]
+    source: "https://example.com/pricing"
+    checked: "2026-09-14"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    source: "https://example.com/docs/enforce-sso"
+    checked: "2026-09-14"
+  scim:
+    support: "partial"
+    tier: "enterprise"
+    notes: "Users only; groups are not synced"
+    source: "https://example.com/docs/scim"
+    checked: "2026-09-14"
+  mfa_enforcement:
+    support: "supported"
+    tier: "paid"
+    source: "https://example.com/docs/require-2fa"
+    checked: "2026-09-14"
+  phishing_resistant_mfa:
+    support: "not_supported"
+    source: "https://example.com/docs/2fa-methods"
+    checked: "2026-09-14"
+  audit_logs:
+    support: "unknown"
+  jit_provisioning:
+    support: "unknown"
+  domain_verification:
+    support: "unknown"
+  custom_roles:
+    support: "unknown"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "unknown"
+  api_token_controls:
+    support: "unknown"
 ```
 
 ---
@@ -237,15 +194,18 @@ meta:
 
 **Best sources (check in this order):**
 
-1. **Pricing page** - Look for feature comparison table
-2. **Documentation** - Search for "SAML", "SSO", "SCIM", "2FA"
-3. **Security page** - Often has compliance certifications
-4. **Admin settings** - If you have access, check Security settings
+1. **Pricing page**: the feature comparison table usually shows the plan for SSO, SCIM and audit logs
+2. **Admin or security documentation**: search for "SAML", "SCIM", "enforce", "2FA", "audit log", "roles"
+3. **Trust or security center**
+4. **Identity provider app catalogs** (Okta, Microsoft Entra), useful for protocols and SCIM
 
 **Avoid:**
 - Reddit posts (often outdated)
 - Review sites (unreliable)
 - Blog posts (may be old)
+- Marketing pages that don't say which plan
+
+**Not supported needs proof too.** Link the page that shows it's missing, such as a pricing table without the feature. If you simply can't find it, leave it `unknown`.
 
 ---
 
@@ -256,9 +216,8 @@ Found wrong info? Easy fix:
 1. **Go to**: `data/apps/` folder
 2. **Click** on the app file (e.g., `slack.yaml`)
 3. **Click**: ✏️ Edit button (top right)
-4. **Make your changes**
-5. **Update**: `last_verified` to today
-6. **Click**: "Propose changes"
+4. **Change the value**, and set `source` and `checked` to the page you checked today
+5. **Click**: "Propose changes"
 
 ---
 
@@ -266,36 +225,24 @@ Found wrong info? Easy fix:
 
 **That's okay!** Just:
 
-1. Fill out what you know
-2. Add a comment in your pull request: "Not sure about SCIM support"
-3. We'll help research it
+1. Fill out what you can link to
+2. Leave the rest as `"unknown"`
+3. Add a comment in your pull request: "Couldn't find SCIM docs"
 
 **Or open an issue first** to discuss before submitting.
 
 ---
 
-## 🚫 Don't Worry About
-
-- ❌ Installing software
-- ❌ Running scripts
-- ❌ Perfect formatting (we'll fix it)
-- ❌ Knowing everything (we'll help)
-
-**Just do your best!** We appreciate any contribution.
-
----
-
 ## 💡 Tips
 
-**Can't find SSO info?**
-- Try searching: "[app name] Okta integration"
-- Check their Azure AD gallery listing
-
-**Not sure about tier?**
-- When in doubt, use `enterprise` (we can correct it later)
+**Can't tell which plan?**
+- Leave `tier` out, and say so in your PR. Don't guess.
 
 **Found conflicting info?**
-- Note both sources in your PR comments
+- Use the vendor's own most recent page, and mention the other source in your PR.
+
+**Validation failed?**
+- The PR check lists each problem with the file and capability name. Most failures are a missing quote, or a `tier` on something that isn't supported.
 
 ---
 
@@ -309,4 +256,4 @@ Found wrong info? Easy fix:
 
 **Thank you for contributing!** 🎉
 
-Every app you add helps security teams make better decisions.
+Every value you verify helps identity teams make better decisions.

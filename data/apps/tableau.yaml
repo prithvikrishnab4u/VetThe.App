@@ -1,43 +1,35 @@
 name: "Tableau"
-
 category: "productivity"
-
 website: "https://www.tableau.com"
-
 description: "A business intelligence and data visualization platform used for analyzing and sharing data insights."
+status: "draft"
 
-sso:
-  supported: true
-
-  protocols: ["SAML", "OIDC"]
-
-  tier: "paid"
-
-  sp_initiated: true
-
-  jit_provisioning: true
-
-  domain_claiming: true
-
-mfa:
-  supported: true
-
-  types: ["TOTP", "WebAuthn"]
-
-  enforcement: "required"
-
-  tier: "paid"
-
-  adaptive_mfa: true
-
-  phishing_resistant: true
-
-compliance:
-  soc2: true
-
-  iso27001: true
-
-meta:
-  last_verified: "2026-01-02"
-
-  ready_to_publish: true
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    protocols: ["SAML", "OIDC"]
+  sso_enforcement:
+    support: "unknown"
+  scim:
+    support: "unknown"
+  mfa_enforcement:
+    support: "supported"
+    tier: "paid"
+  phishing_resistant_mfa:
+    support: "supported"
+  audit_logs:
+    support: "unknown"
+  jit_provisioning:
+    support: "supported"
+  domain_verification:
+    support: "supported"
+  custom_roles:
+    support: "unknown"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "unknown"
+  api_token_controls:
+    support: "unknown"

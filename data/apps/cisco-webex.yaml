@@ -2,38 +2,36 @@ name: "Cisco Webex"
 category: "collaboration"
 website: "https://webex.com"
 description: "Enterprise video conferencing, online meetings, and screen sharing platform with advanced security."
+status: "draft"
 
-sso:
-  supported: true
-  protocols: ["SAML"]
-  tier: "paid"
-  sp_initiated: true
-  jit_provisioning: true
-  domain_claiming: true
-
-mfa:
-  supported: true
-  types: ["TOTP", "Push", "SMS"]
-  enforcement: "admin_enforced"
-  tier: "paid"
-  adaptive_mfa: true
-  phishing_resistant: false
-
-compliance:
-  soc2: true
-  iso27001: true
-
-meta:
-  last_verified: "2026-01-02"
-  ready_to_publish: true
-
-# Unused fields - tracked but not displayed in main table
-# Currently not using session and audit fields, but doing research on these fields.
-session:
-  timeout_configurable: true
-  max_duration: "Configurable"
-
-audit:
-  logs_available: true
-  retention_period: "360 days"
-  tier: "paid"
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    protocols: ["SAML"]
+  sso_enforcement:
+    support: "unknown"
+  scim:
+    support: "unknown"
+  mfa_enforcement:
+    support: "supported"
+    tier: "paid"
+  phishing_resistant_mfa:
+    support: "unknown"
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    retention: "360 days"
+  jit_provisioning:
+    support: "supported"
+  domain_verification:
+    support: "supported"
+  custom_roles:
+    support: "unknown"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "supported"
+  api_token_controls:
+    support: "unknown"

@@ -2,23 +2,34 @@ name: "Marketo"
 category: "sales_marketing"
 website: "https://www.marketo.com"
 description: "Marketing automation software that helps marketers master the art and science of digital marketing."
-sso:
-  supported: true
-  protocols: ["SAML"]
-  tier: "enterprise"
-  sp_initiated: true
-  jit_provisioning: true
-  domain_claiming: false
-mfa:
-  supported: true
-  types: ["TOTP"]
-  enforcement: "admin_enforced"
-  tier: "enterprise"
-  adaptive_mfa: false
-  phishing_resistant: false
-compliance:
-  soc2: true
-  iso27001: true
-meta:
-  last_verified: "2026-01-03"
-  ready_to_publish: true
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    protocols: ["SAML"]
+  sso_enforcement:
+    support: "unknown"
+  scim:
+    support: "unknown"
+  mfa_enforcement:
+    support: "supported"
+    tier: "enterprise"
+  phishing_resistant_mfa:
+    support: "unknown"
+  audit_logs:
+    support: "unknown"
+  jit_provisioning:
+    support: "supported"
+  domain_verification:
+    support: "not_supported"
+  custom_roles:
+    support: "unknown"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "unknown"
+  api_token_controls:
+    support: "unknown"

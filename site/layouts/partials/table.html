@@ -1,110 +1,38 @@
-<script src="https://cdn.tailwindcss.com"></script>
+{{ $schema := hugo.Data.schema }}
+{{ $tierLabels := dict }}
+{{ range $schema.tiers }}{{ $tierLabels = merge $tierLabels (dict .id .label) }}{{ end }}
 
-<style type="text/tailwindcss">
-    @layer utilities {
-        /* Sticky header */
-        .sticky-header {
-            position: sticky;
-            top: 0;
-            z-index: 30;
-            background: white;
-        }
-
-        /* App favicon */
-        .app-favicon {
-            width: 20px;
-            height: 20px;
-            border-radius: 4px;
-            object-fit: cover;
-        }
-
-        /* Custom scrollbar */
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: #f9fafb;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #d1d5db;
-            border-radius: 3px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: #9ca3af;
-        }
-
-        /* Flowbite-style dropdown */
-        .flowbite-dropdown {
-    position: fixed !important;
-    background: white;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    z-index: 9999 !important;
-    display: none;
-    max-height: 300px;
-    overflow-y: auto;
-    min-width: 200px;
-}
-
-        .flowbite-dropdown.open {
-            display: block;
-        }
-
-        /* Dropdown trigger button */
-        .dropdown-button {
-            @apply w-full px-3 py-2 text-sm text-left bg-white border border-gray-300 rounded-lg hover:bg-gray-50 focus:ring-4 focus:ring-blue-300 focus:outline-none transition-all flex items-center justify-between;
-        }
-
-        .dropdown-button:hover {
-            border-color: #3b82f6;
-        }
-
-        /* Dropdown option styling */
-        .dropdown-option {
-            @apply flex items-center px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer transition-colors;
-        }
-
-        .dropdown-option:first-child {
-            @apply rounded-t-lg;
-        }
-
-        .dropdown-option:last-child {
-            @apply rounded-b-lg;
-        }
-
-        /* Checkbox styling (Flowbite style) */
-        .flowbite-checkbox {
-            @apply w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2;
-        }
-
-        /* Search in dropdown */
-        .dropdown-search-input {
-            @apply w-full px-3 py-2 text-sm border-b border-gray-200 focus:outline-none focus:ring-0 sticky top-0 bg-white z-10;
-        }
-
-        /* Pagination */
-        .pagination-btn {
-            @apply px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:ring-4 focus:ring-blue-300 transition-all disabled:opacity-50 disabled:cursor-not-allowed;
-        }
-
-        .pagination-btn.active {
-            @apply bg-blue-700 text-white border-blue-700 hover:bg-blue-800;
-        }
-
-        /* Sort indicators */
-        .sort-indicator {
-            @apply ml-1 text-gray-400 text-xs;
-        }
-
-        .sort-indicator.active {
-            @apply text-blue-600 font-bold;
-        }
-    }
-</style>
+{{/* Coverage: every app × capability is one data point */}}
+{{ $points := 0 }}{{ $verified := 0 }}{{ $unknown := 0 }}
+{{ range hugo.Data.apps }}
+    {{ $app := . }}
+    {{ range $schema.capabilities }}
+        {{ $cap := (index $app.capabilities .id) | default (dict) }}
+        {{ $points = add $points 1 }}
+        {{ if $cap.source }}{{ $verified = add $verified 1 }}{{ end }}
+        {{ if eq ($cap.support | default "unknown") "unknown" }}{{ $unknown = add $unknown 1 }}{{ end }}
+    {{ end }}
+{{ end }}
 
 <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col" style="min-height: calc(100vh - 200px);">
+
+    <!-- Toolbar -->
+    <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
+        <p class="text-xs text-gray-600">
+            <strong class="text-gray-900">{{ $verified }}</strong> of {{ $points }} data points verified against a source ·
+            <strong class="text-gray-900">{{ $unknown }}</strong> not researched yet · faded values are unverified
+        </p>
+        <div class="flex items-center gap-2">
+            <button id="toggleExtendedBtn" type="button"
+                class="px-3 py-2 text-xs font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 transition-colors">
+                Show all {{ len $schema.capabilities }} capabilities
+            </button>
+            <button id="clearAllBtn" type="button"
+                class="px-3 py-2 text-xs font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 transition-colors">
+                Clear filters
+            </button>
+        </div>
+    </div>
 
     <!-- Table Container -->
     <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden flex-1 flex flex-col">
@@ -116,11 +44,6 @@
                         <th class="px-4 py-3 text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
                             data-column="app">
                             <div class="flex items-center gap-2">
-                                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                                </svg>
                                 Application
                                 <span class="sort-indicator">⇅</span>
                             </div>
@@ -128,102 +51,26 @@
                         <th class="px-4 py-3 text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
                             data-column="category">
                             <div class="flex items-center gap-2">
-                                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-                                </svg>
                                 Category
                                 <span class="sort-indicator">⇅</span>
                             </div>
                         </th>
-                        <th class="px-4 py-3 text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
-                            data-column="sso">
+                        {{ range $schema.capabilities }}
+                        <th class="px-4 py-3 text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors whitespace-nowrap{{ if not .core }} cap-extended{{ end }}"
+                            data-column="{{ .id }}" title="{{ .question }}">
                             <div class="flex items-center gap-2">
-                                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                                </svg>
-                                SSO
+                                {{ .label }}
                                 <span class="sort-indicator">⇅</span>
                             </div>
                         </th>
-                        <th class="px-4 py-3 text-xs font-bold text-gray-700 uppercase tracking-wider">
-                            <div class="flex items-center gap-2">
-                                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                                </svg>
-                                Protocols
-                            </div>
-                        </th>
-                        <th class="px-4 py-3 text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
-                            data-column="scim">
-                            <div class="flex items-center gap-2">
-                                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                                </svg>
-                                SCIM
-                                <span class="sort-indicator">⇅</span>
-                            </div>
-                        </th>
-                        <th class="px-4 py-3 text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
-                            data-column="mfa">
-                            <div class="flex items-center gap-2">
-                                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                                </svg>
-                                MFA
-                                <span class="sort-indicator">⇅</span>
-                            </div>
-                        </th>
-                        <th class="px-4 py-3 text-xs font-bold text-gray-700 uppercase tracking-wider">
-                            <div class="flex items-center gap-2">
-                                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
-                                </svg>
-                                MFA Types
-                            </div>
-                        </th>
-                        <th class="px-4 py-3 text-xs font-bold text-gray-700 uppercase tracking-wider">
-                            <div class="flex items-center gap-2">
-                                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                                Compliance
-                            </div>
-                        </th>
-                        <th class="px-4 py-3 text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
-                            data-column="verified">
-                            <div class="flex items-center gap-2">
-                                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                </svg>
-                                Verified
-                                <span class="sort-indicator">⇅</span>
-                            </div>
-                        </th>
+                        {{ end }}
                     </tr>
 
                     <!-- Filter Row -->
                     <tr class="bg-white border-b border-gray-200">
                         <th class="px-4 py-2">
-                            <div class="relative">
-                                <input type="text" id="filterApp" placeholder="Filter apps..."
-                                    class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-4 focus:ring-blue-300 focus:border-blue-500 focus:outline-none transition-all">
-                            </div>
+                            <input type="text" id="filterApp" placeholder="Filter apps..."
+                                class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-4 focus:ring-blue-300 focus:border-blue-500 focus:outline-none transition-all">
                         </th>
                         <th class="px-4 py-2">
                             <div class="relative" id="filterCategoryContainer">
@@ -235,13 +82,12 @@
                                             clip-rule="evenodd"></path>
                                     </svg>
                                 </button>
-                                <div class="flowbite-dropdown custom-scrollbar">
-                                    <!-- Populated by JS -->
-                                </div>
+                                <div class="flowbite-dropdown custom-scrollbar"></div>
                             </div>
                         </th>
-                        <th class="px-4 py-2">
-                            <div class="relative" id="filterSSOContainer">
+                        {{ range $schema.capabilities }}
+                        <th class="px-4 py-2 min-w-[130px]{{ if not .core }} cap-extended{{ end }}">
+                            <div class="relative" id="filter-{{ .id }}" data-filter-cap="{{ .id }}">
                                 <button class="dropdown-button">
                                     <span>All</span>
                                     <svg class="w-4 h-4 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
@@ -250,120 +96,27 @@
                                             clip-rule="evenodd"></path>
                                     </svg>
                                 </button>
-                                <div class="flowbite-dropdown custom-scrollbar">
-                                    <!-- Populated by JS -->
-                                </div>
+                                <div class="flowbite-dropdown custom-scrollbar"></div>
                             </div>
                         </th>
-                        <th class="px-4 py-2">
-                            <div class="relative" id="filterProtocolsContainer">
-                                <button class="dropdown-button">
-                                    <span>All</span>
-                                    <svg class="w-4 h-4 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd"
-                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                </button>
-                                <div class="flowbite-dropdown custom-scrollbar">
-                                    <!-- Populated by JS -->
-                                </div>
-                            </div>
-                        </th>
-                        <th class="px-4 py-2">
-                            <div class="relative" id="filterSCIMContainer">
-                                <button class="dropdown-button">
-                                    <span>All</span>
-                                    <svg class="w-4 h-4 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd"
-                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                </button>
-                                <div class="flowbite-dropdown custom-scrollbar">
-                                    <!-- Populated by JS -->
-                                </div>
-                            </div>
-                        </th>
-                        <th class="px-4 py-2">
-                            <div class="relative" id="filterMFAContainer">
-                                <button class="dropdown-button">
-                                    <span>All</span>
-                                    <svg class="w-4 h-4 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd"
-                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                </button>
-                                <div class="flowbite-dropdown custom-scrollbar">
-                                    <!-- Populated by JS -->
-                                </div>
-                            </div>
-                        </th>
-                        <th class="px-4 py-2">
-                            <div class="relative" id="filterMFATypesContainer">
-                                <button class="dropdown-button">
-                                    <span>All</span>
-                                    <svg class="w-4 h-4 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd"
-                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                </button>
-                                <div class="flowbite-dropdown custom-scrollbar">
-                                    <!-- Populated by JS -->
-                                </div>
-                            </div>
-                        </th>
-                        <th class="px-4 py-2">
-                            <div class="relative" id="filterComplianceContainer">
-                                <button class="dropdown-button">
-                                    <span>All</span>
-                                    <svg class="w-4 h-4 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd"
-                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                </button>
-                                <div class="flowbite-dropdown custom-scrollbar">
-                                    <!-- Populated by JS -->
-                                </div>
-                            </div>
-                        </th>
-                        <th class="px-4 py-2">
-                            <button id="clearAllBtn"
-                                class="w-full px-3 py-2 text-xs font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 transition-colors">
-                                Clear Filters
-                            </button>
-                        </th>
+                        {{ end }}
                     </tr>
                 </thead>
 
                 <tbody id="tableBody" class="divide-y divide-gray-100 bg-white">
-                    {{ range $.Site.Data.apps }}
-                    <tr class="hover:bg-blue-50/40 transition-colors cursor-pointer group" data-app="{{ .name }}"
-                        data-category="{{ .category }}"
-                        data-sso="{{ if .sso.supported }}{{ .sso.tier }}{{ else }}none{{ end }}"
-                        data-protocols="{{ delimit .sso.protocols " ," }}"
-                        data-scim="{{ if .scim.supported }}{{ .scim.tier }}{{ else }}none{{ end }}"
-                        data-mfa="{{ if .mfa.supported }}{{ .mfa.enforcement }}{{ else }}none{{ end }}"
-                        data-mfa-types="{{ delimit .mfa.types " ," }}"
-                        data-compliance="{{ if .compliance.soc2 }}soc2{{ end }}{{ if and .compliance.soc2 .compliance.iso27001 }},{{ end }}{{ if .compliance.iso27001 }}iso27001{{ end }}"
-                        data-verified="{{ .meta.last_verified }}">
+                    {{ range hugo.Data.apps }}
+                    {{ $app := . }}
+                    <tr class="hover:bg-blue-50/40 transition-colors group" data-app="{{ $app.name }}"
+                        data-category="{{ $app.category }}">
 
                         <!-- App Name with Favicon -->
                         <td class="px-4 py-3">
                             <div class="flex items-center gap-3">
-                                <img src="https://www.google.com/s2/favicons?domain={{ .website }}&sz=32"
-                                    alt="{{ .name }} logo" class="app-favicon" onerror="this.style.display='none'">
-                                <a href="{{ .website }}" target="_blank" rel="noopener"
-                                    class="text-sm font-semibold text-gray-900 hover:text-blue-600 transition-colors flex items-center gap-1.5">
-                                    {{ .name }}
-                                    <svg class="w-3 h-3 text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity"
-                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                    </svg>
+                                <img src="https://www.google.com/s2/favicons?domain={{ $app.website }}&sz=32"
+                                    alt="{{ $app.name }} logo" class="app-favicon" onerror="this.style.display='none'">
+                                <a href="{{ $app.website }}" target="_blank" rel="noopener"
+                                    class="text-sm font-semibold text-gray-900 hover:text-blue-600 transition-colors whitespace-nowrap">
+                                    {{ $app.name }}
                                 </a>
                             </div>
                         </td>
@@ -371,135 +124,47 @@
                         <!-- Category -->
                         <td class="px-4 py-3">
                             <span
-                                class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-gray-100 text-gray-700 border border-gray-200 capitalize">
-                                {{ .category }}
+                                class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-gray-100 text-gray-700 border border-gray-200 capitalize whitespace-nowrap">
+                                {{ replace $app.category "_" " " }}
                             </span>
                         </td>
 
-                        <!-- SSO -->
-                        <td class="px-4 py-3">
-                            {{ if .sso.supported }}
-                            <div class="flex items-center gap-2">
-                                <span class="text-green-600 text-base font-bold">✓</span>
-                                <span
-                                    class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-white text-gray-700 border border-gray-200 capitalize">
-                                    {{ .sso.tier }}
-                                </span>
-                            </div>
-                            {{ else }}
-                            <div class="flex items-center gap-2">
-                                <span class="text-gray-400 text-base">✗</span>
-                                <span class="text-xs text-gray-500">Not Supported</span>
-                            </div>
-                            {{ end }}
-                        </td>
-
-                        <!-- Protocols -->
-                        <td class="px-4 py-3">
-                            {{ if .sso.supported }}
-                            <div class="flex flex-wrap gap-1">
-                                {{ range .sso.protocols }}
-                                <span
-                                    class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-white text-gray-700 border border-gray-200">
-                                    {{ . }}
-                                </span>
+                        <!-- Capabilities -->
+                        {{ range $schema.capabilities }}
+                        {{ $cap := (index $app.capabilities .id) | default (dict) }}
+                        {{ $support := $cap.support | default "unknown" }}
+                        {{ $tier := "" }}
+                        {{ with $cap.tier }}{{ $tier = index $tierLabels . }}{{ end }}
+                        {{ $value := "Unknown" }}
+                        {{ if eq $support "supported" }}{{ $value = $tier | default "Supported" }}
+                        {{ else if eq $support "partial" }}{{ $value = "Partial" }}
+                        {{ else if eq $support "not_supported" }}{{ $value = "No" }}{{ end }}
+                        {{ $unverified := and (ne $support "unknown") (not $cap.source) }}
+                        <td class="px-4 py-3 whitespace-nowrap{{ if not .core }} cap-extended{{ end }}"
+                            data-cap="{{ .id }}" data-value="{{ $value }}">
+                            <div class="flex items-center gap-1.5{{ if $unverified }} unverified{{ end }}"
+                                title="{{ with $cap.plan }}Plan: {{ . }}. {{ end }}{{ with $cap.notes }}{{ . }} {{ end }}{{ if $cap.source }}Checked {{ $cap.checked }}{{ else if $unverified }}Unverified: no source yet{{ end }}">
+                                {{ if eq $support "supported" }}
+                                <span class="text-green-600 font-bold">✓</span>
+                                {{ with $tier }}<span class="tier-badge">{{ . }}</span>{{ end }}
+                                {{ else if eq $support "partial" }}
+                                <span class="text-yellow-500 font-bold">~</span>
+                                {{ with $tier }}<span class="tier-badge">{{ . }}</span>{{ else }}<span class="text-xs text-gray-700">Partial</span>{{ end }}
+                                {{ else if eq $support "not_supported" }}
+                                <span class="text-gray-400">✗</span>
+                                <span class="text-xs text-gray-500">No</span>
+                                {{ else }}
+                                <span class="text-gray-300 text-xs">?</span>
+                                {{ end }}
+                                {{ with $cap.source }}
+                                <a href="{{ . }}" target="_blank" rel="noopener" class="text-xs text-blue-500 hover:text-blue-700"
+                                    aria-label="Source">↗</a>
                                 {{ end }}
                             </div>
-                            {{ else }}
-                            <span class="text-gray-300 text-xs">—</span>
-                            {{ end }}
+                            {{ with $cap.protocols }}<div class="mt-1 text-[11px] text-gray-500">{{ delimit . " · " }}</div>{{ end }}
+                            {{ with $cap.retention }}<div class="mt-1 text-[11px] text-gray-500">{{ . }} retention</div>{{ end }}
                         </td>
-
-                        <!-- SCIM -->
-                        <td class="px-4 py-3">
-                            {{ if eq .scim.supported "full" }}
-                            <div class="flex items-center gap-2">
-                                <span class="text-green-600 text-base font-bold">✓</span>
-                                <span
-                                    class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-white text-gray-700 border border-gray-200 capitalize">
-                                    {{ .scim.tier }}
-                                </span>
-                            </div>
-                            {{ else if eq .scim.supported "partial" }}
-                            <div class="flex items-center gap-2">
-                                <span class="text-yellow-500 text-base font-bold">~</span>
-                                <span
-                                    class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-white text-gray-700 border border-gray-200 capitalize">
-                                    {{ .scim.tier }}
-                                </span>
-                            </div>
-                            {{ else }}
-                            <div class="flex items-center gap-2">
-                                <span class="text-gray-400 text-base">✗</span>
-                                <span class="text-xs text-gray-500">Not Supported</span>
-                            </div>
-                            {{ end }}
-                        </td>
-
-                        <!-- MFA -->
-                        <td class="px-4 py-3">
-                            {{ if .mfa.supported }}
-                            <div class="flex items-center gap-2">
-                                <span class="text-green-600 text-base font-bold">✓</span>
-                                <span class="text-xs text-gray-700 font-medium capitalize">
-                                    {{ if eq .mfa.enforcement "admin_enforced" }}Admin
-                                    {{ else if eq .mfa.enforcement "optional" }}Optional
-                                    {{ else if eq .mfa.enforcement "required" }}Required
-                                    {{ else }}{{ .mfa.enforcement }}{{ end }}
-                                </span>
-                            </div>
-                            {{ else }}
-                            <div class="flex items-center gap-2">
-                                <span class="text-gray-400 text-base">✗</span>
-                                <span class="text-xs text-gray-500">Not Supported</span>
-                            </div>
-                            {{ end }}
-                        </td>
-
-                        <!-- MFA Types -->
-                        <td class="px-4 py-3">
-                            {{ if .mfa.supported }}
-                            <div class="flex flex-wrap gap-1">
-                                {{ range .mfa.types }}
-                                <span
-                                    class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-white text-gray-700 border border-gray-200">
-                                    {{ . }}
-                                </span>
-                                {{ end }}
-                            </div>
-                            {{ else }}
-                            <span class="text-gray-300 text-xs">—</span>
-                            {{ end }}
-                        </td>
-
-                        <!-- Compliance -->
-                        <td class="px-4 py-3">
-                            <div class="flex flex-wrap gap-1">
-                                {{ if .compliance.soc2 }}
-                                <span
-                                    class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700 border border-purple-100">
-                                    SOC2
-                                </span>
-                                {{ end }}
-                                {{ if .compliance.iso27001 }}
-                                <span
-                                    class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700 border border-purple-100">
-                                    ISO27001
-                                </span>
-                                {{ end }}
-                                {{ if and (not .compliance.soc2) (not .compliance.iso27001) }}
-                                <span class="text-gray-300 text-xs">—</span>
-                                {{ end }}
-                            </div>
-                        </td>
-
-                        <!-- Verified Date -->
-                        <td class="px-4 py-3">
-                            {{ $date := time .meta.last_verified }}
-                            <span class="text-xs text-gray-500 font-mono">
-                                {{ $date.Format "02-01-2006" }}
-                            </span>
-                        </td>
+                        {{ end }}
                     </tr>
                     {{ end }}
                 </tbody>
@@ -507,7 +172,7 @@
         </div>
 
         <!-- Pagination -->
-        <div class="px-4 py-3 border-t border-gray-200 flex items-center justify-between bg-white">
+        <div class="px-4 py-3 border-t border-gray-200 flex flex-wrap items-center justify-between gap-2 bg-white">
             <div class="flex items-center gap-4">
                 <div class="flex items-center gap-2 text-sm">
                     <strong id="resultCount" class="text-blue-600 font-bold text-base">0</strong>

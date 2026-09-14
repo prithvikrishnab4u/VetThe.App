@@ -1,45 +1,37 @@
-name: Microsoft Teams
-category: collaboration
-website: https://www.microsoft.com/en-us/microsoft-teams
-description: The hub for teamwork in Microsoft 365 that combines chat, meetings, calling,
-  and collaboration.
-sso:
-  supported: true
-  protocols:
-  - SAML
-  - OIDC
-  - WS-Fed
-  tier: free
-  sp_initiated: true
-  jit_provisioning: true
-  domain_claiming: true
-mfa:
-  supported: true
-  types:
-  - TOTP
-  - Push
-  - WebAuthn
-  - SMS
-  enforcement: required
-  tier: free
-  adaptive_mfa: true
-  phishing_resistant: true
-compliance:
-  soc2: true
-  iso27001: true
-meta:
-  last_verified: '2026-01-02'
-  ready_to_publish: true
-session:
-  timeout_configurable: true
-  max_duration: Configurable
-audit:
-  logs_available: true
-  retention_period: 90 days
-  tier: paid
-provenance:
-  source: vendor documentation (auto)
-  source_url: https://www.microsoft.com
-  verified_by: auto-scan
-  verified_date: '2026-09-14'
-  evidence: sso
+name: "Microsoft Teams"
+category: "collaboration"
+website: "https://www.microsoft.com/en-us/microsoft-teams"
+description: "The hub for teamwork in Microsoft 365 that combines chat, meetings, calling, and collaboration."
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    tier: "free"
+    protocols: ["SAML", "OIDC", "WS-Fed"]
+  sso_enforcement:
+    support: "unknown"
+  scim:
+    support: "unknown"
+  mfa_enforcement:
+    support: "supported"
+    tier: "free"
+  phishing_resistant_mfa:
+    support: "supported"
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    retention: "90 days"
+  jit_provisioning:
+    support: "supported"
+  domain_verification:
+    support: "supported"
+  custom_roles:
+    support: "unknown"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "supported"
+  api_token_controls:
+    support: "unknown"

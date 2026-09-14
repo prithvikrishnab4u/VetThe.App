@@ -1,3 +1,4 @@
+{{ $schema := hugo.Data.schema }}
 <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 mb-2">
     <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
 
@@ -24,119 +25,54 @@
             <div class="p-4 bg-gray-50">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
 
-                    <!-- Column 1: Columns Explained -->
-                    <div>
-                        <h3 class="flex items-center gap-2 text-sm font-bold text-gray-900 mb-3">
+                    <!-- Columns 1-2: what each capability means -->
+                    <div class="md:col-span-2">
+                        <h3 class="flex items-center gap-2 text-sm font-bold text-gray-900 mb-2">
                             <span class="w-1 h-4 bg-blue-600 rounded-full"></span>
-                            Columns Explained
+                            What Each Column Answers
                         </h3>
-                        <ul class="space-y-2 text-gray-700">
-                            <li class="flex items-start gap-2">
-                                <svg class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                <span class="text-xs"><strong class="text-gray-900">SSO:</strong> Single Sign-On support and which tier it's available on</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <svg class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                <span class="text-xs"><strong class="text-gray-900">Protocols:</strong> Supported authentication protocols (SAML, OIDC, OAuth2)</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <svg class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                <span class="text-xs"><strong class="text-gray-900">SCIM:</strong> Automated user provisioning support level</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <svg class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                <span class="text-xs"><strong class="text-gray-900">MFA:</strong> Multi-factor authentication and enforcement</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <svg class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                <span class="text-xs"><strong class="text-gray-900">MFA Types:</strong> Supported methods (TOTP, SMS, WebAuthn, Push, Email)</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <svg class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                <span class="text-xs"><strong class="text-gray-900">Compliance:</strong> Security certifications (SOC2, ISO27001)</span>
-                            </li>
-                        </ul>
+                        <p class="text-xs text-gray-600 mb-3">
+                            Core capabilities are shown by default. Use <strong>Show all capabilities</strong> for the rest.
+                        </p>
+                        <dl class="grid grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-2">
+                            {{ range $schema.capabilities }}
+                            <div class="text-xs">
+                                <dt class="font-semibold text-gray-900">
+                                    {{ .label }}
+                                    {{ if .core }}<span class="ml-1 px-1 text-[10px] font-medium text-blue-700 bg-blue-50 border border-blue-100 rounded">core</span>{{ end }}
+                                </dt>
+                                <dd class="text-gray-700">{{ .question }}</dd>
+                            </div>
+                            {{ end }}
+                        </dl>
                     </div>
 
-                    <!-- Column 2: Tiers & SCIM -->
+                    <!-- Column 3: tiers and symbols -->
                     <div>
-                        <h3 class="flex items-center gap-2 text-sm font-bold text-gray-900 mb-3">
+                        <h3 class="flex items-center gap-2 text-sm font-bold text-gray-900 mb-2">
                             <span class="w-1 h-4 bg-blue-600 rounded-full"></span>
-                            Tier Meanings
-                        </h3>
-                        <div class="mb-3 p-2.5 bg-blue-50 border border-blue-200 rounded-lg">
-                            <p class="text-xs text-blue-800 font-medium">
-                                💡 Tier badges show the <strong>MINIMUM</strong> plan level where a feature is available
-                            </p>
-                        </div>
-                        <ul class="space-y-2 text-gray-700 mb-4">
-                            <li class="flex items-center gap-2">
-                                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-white text-gray-700 border border-gray-200">Free</span>
-                                <span class="text-xs">Available on free tier</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-white text-gray-700 border border-gray-200">Paid</span>
-                                <span class="text-xs">Requires paid subscription</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-white text-gray-700 border border-gray-200">Enterprise</span>
-                                <span class="text-xs">Enterprise plans only</span>
-                            </li>
-                        </ul>
-
-                        <h3 class="flex items-center gap-2 text-sm font-bold text-gray-900 mb-2 mt-4">
-                            <span class="w-1 h-4 bg-blue-600 rounded-full"></span>
-                            SCIM Support Levels
-                        </h3>
-                        <ul class="space-y-1.5 text-gray-700">
-                            <li class="flex items-center gap-2">
-                                <span class="text-green-600 font-bold">✓</span>
-                                <span class="text-xs"><strong class="text-gray-900">Full:</strong> Complete SCIM 2.0</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <span class="text-yellow-500 font-bold">~</span>
-                                <span class="text-xs"><strong class="text-gray-900">Partial:</strong> Limited features</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <span class="text-gray-400 font-bold">✗</span>
-                                <span class="text-xs"><strong class="text-gray-900">None:</strong> No support</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Column 3: Symbols & MFA -->
-                    <div>
-                        <h3 class="flex items-center gap-2 text-sm font-bold text-gray-900 mb-3">
-                            <span class="w-1 h-4 bg-blue-600 rounded-full"></span>
-                            Symbols Used
+                            Minimum Plan
                         </h3>
                         <ul class="space-y-2 text-gray-700 mb-4">
+                            {{ range $schema.tiers }}
                             <li class="flex items-center gap-2">
-                                <span class="text-green-600 font-bold text-lg">✓</span>
-                                <span class="text-xs">Feature is available</span>
+                                <span class="tier-badge">{{ .label }}</span>
+                                <span class="text-xs">{{ .description }}</span>
                             </li>
-                            <li class="flex items-center gap-2">
-                                <span class="text-gray-400 font-bold text-lg">✗</span>
-                                <span class="text-xs">Not supported</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <span class="text-yellow-500 font-bold text-lg">~</span>
-                                <span class="text-xs">Partial support</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <span class="text-gray-400 font-bold text-lg">—</span>
-                                <span class="text-xs">Not applicable</span>
-                            </li>
+                            {{ end }}
                         </ul>
 
                         <h3 class="flex items-center gap-2 text-sm font-bold text-gray-900 mb-2">
                             <span class="w-1 h-4 bg-blue-600 rounded-full"></span>
-                            MFA Enforcement
+                            Symbols
                         </h3>
                         <ul class="space-y-1.5 text-gray-700">
-                            <li class="text-xs"><strong class="text-gray-900">Admin:</strong> Admins can require MFA</li>
-                            <li class="text-xs"><strong class="text-gray-900">Optional:</strong> User choice</li>
-                            <li class="text-xs"><strong class="text-gray-900">Required:</strong> Mandatory for all</li>
+                            <li class="flex items-center gap-2 text-xs"><span class="w-4 text-center text-green-600 font-bold">✓</span>Supported, from the plan shown</li>
+                            <li class="flex items-center gap-2 text-xs"><span class="w-4 text-center text-yellow-500 font-bold">~</span>Partial (hover for details)</li>
+                            <li class="flex items-center gap-2 text-xs"><span class="w-4 text-center text-gray-400">✗</span>Not supported</li>
+                            <li class="flex items-center gap-2 text-xs"><span class="w-4 text-center text-gray-300">?</span>Not researched yet</li>
+                            <li class="flex items-center gap-2 text-xs"><span class="w-4 text-center text-blue-500">↗</span>Link to the source it was checked against</li>
+                            <li class="flex items-center gap-2 text-xs"><span class="unverified w-4 text-center text-green-600 font-bold">✓</span>Faded: unverified, no source yet. Treat as a lead, not a fact</li>
                         </ul>
                     </div>
 
