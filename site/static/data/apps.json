@@ -2327,7 +2327,11 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "retention": "180 days",
+        "checked": "2026-09-14",
+        "notes": "Audit and investigation tool on all Business editions; the security investigation tool needs an Enterprise edition. Retention per Google's data retention page",
+        "plan": "Business Starter",
+        "retention": "6 months",
+        "source": "https://knowledge.workspace.google.com/admin/getting-started/editions/compare-business-editions",
         "support": "supported",
         "tier": "paid"
       },
@@ -2344,29 +2348,56 @@
         "support": "unknown"
       },
       "mfa_enforcement": {
+        "checked": "2026-09-14",
+        "notes": "For all users, organizational units or configuration groups; by default doesn't apply to sign-ins through third-party SSO",
+        "plan": "Business Starter",
+        "source": "https://knowledge.workspace.google.com/admin/security/deploy-2-step-verification?hl=en",
         "support": "supported",
-        "tier": "free"
+        "tier": "paid"
       },
       "phishing_resistant_mfa": {
-        "support": "supported"
+        "checked": "2026-09-14",
+        "notes": "Admins can enforce \"Only security key\", which accepts security keys and passkeys",
+        "plan": "Business Starter",
+        "source": "https://knowledge.workspace.google.com/admin/security/deploy-2-step-verification?hl=en",
+        "support": "supported",
+        "tier": "paid"
       },
       "scim": {
-        "support": "supported",
-        "tier": "free"
+        "checked": "2026-09-14",
+        "notes": "Identity providers such as Microsoft Entra create, update and suspend users and sync groups through Google's Directory API, not a SCIM endpoint",
+        "plan": "Business Starter",
+        "source": "https://learn.microsoft.com/en-us/entra/identity/saas-apps/g-suite-provisioning-tutorial",
+        "support": "partial",
+        "tier": "paid"
       },
       "session_controls": {
-        "support": "supported"
+        "checked": "2026-09-14",
+        "notes": "Set session length for Google services",
+        "plan": "Business Plus",
+        "source": "https://knowledge.workspace.google.com/admin/getting-started/editions/compare-business-editions",
+        "support": "supported",
+        "tier": "paid"
       },
       "sso": {
+        "checked": "2026-09-14",
+        "notes": "SSO with a third-party IdP on all Business editions; SAML and OIDC profiles, including a preconfigured Microsoft Entra OIDC profile",
+        "plan": "Business Starter",
         "protocols": [
           "SAML",
           "OIDC"
         ],
+        "source": "https://knowledge.workspace.google.com/admin/getting-started/editions/compare-business-editions",
         "support": "supported",
-        "tier": "free"
+        "tier": "paid"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "SSO profiles are assigned to organizational units or groups, not individual users",
+        "plan": "Business Starter",
+        "source": "https://knowledge.workspace.google.com/admin/apps/setting-up-sso?hl=en",
+        "support": "supported",
+        "tier": "paid"
       }
     },
     "category": "productivity",
@@ -2794,7 +2825,11 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "retention": "Indefinite",
+        "checked": "2026-09-14",
+        "notes": "Filter in the app, query through the GraphQL API, or stream to a webhook for SIEM",
+        "plan": "Enterprise",
+        "retention": "90 days",
+        "source": "https://linear.app/docs/audit-log",
         "support": "supported",
         "tier": "enterprise"
       },
@@ -2802,22 +2837,43 @@
         "support": "unknown"
       },
       "domain_verification": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Domains are claimed with a DNS TXT record as part of SAML setup",
+        "plan": "Enterprise",
+        "source": "https://linear.app/docs/saml-and-access-control",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "SCIM groups map to teams; linear-owners, linear-admins and linear-guests groups set roles",
+        "plan": "Enterprise",
+        "source": "https://linear.app/docs/scim",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Creates the account from IdP data on first SAML sign-in",
+        "plan": "Enterprise",
+        "source": "https://linear.app/docs/saml-and-access-control",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "mfa_enforcement": {
-        "support": "supported",
-        "tier": "free"
-      },
-      "phishing_resistant_mfa": {
         "support": "unknown"
       },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-14",
+        "notes": "Passkeys are a login method; plan availability not stated",
+        "source": "https://linear.app/changelog/2024-05-30-passkeys-a-fast-and-secure-way-to-log-in-to-linear",
+        "support": "supported"
+      },
       "scim": {
+        "checked": "2026-09-14",
+        "notes": "Creates, updates and suspends users; supports group push",
+        "plan": "Enterprise",
+        "source": "https://linear.app/docs/scim",
         "support": "supported",
         "tier": "enterprise"
       },
@@ -2825,14 +2881,23 @@
         "support": "supported"
       },
       "sso": {
+        "checked": "2026-09-14",
+        "notes": "Needs a domain claimed with a DNS TXT record",
+        "plan": "Enterprise",
         "protocols": [
           "SAML"
         ],
+        "source": "https://linear.app/docs/saml-and-access-control",
         "support": "supported",
-        "tier": "paid"
+        "tier": "enterprise"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Members on SAML-approved domains must sign in with SAML by default",
+        "plan": "Enterprise",
+        "source": "https://linear.app/docs/saml-and-access-control",
+        "support": "supported",
+        "tier": "enterprise"
       }
     },
     "category": "development",
