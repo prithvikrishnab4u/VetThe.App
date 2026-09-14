@@ -11,7 +11,7 @@ sso:
   domain_claiming: true
 mfa:
   supported: true
-  types: ["TOTP", "SMS", "Security Questions"]
+  types: ["TOTP", "SMS", "Email"]
   enforcement: "required"
   tier: "enterprise"
   adaptive_mfa: true

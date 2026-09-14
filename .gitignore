@@ -46,9 +46,11 @@ CLAUDE.md
 HANDOFF.md
 .claude/
 
+yarn.lock
 # Node
 node_modules/
-package-lock.json
+# Allow committing package-lock.json (we track lockfiles)
+# site/package-lock.json will be committed; global package-lock.json entries removed
 yarn.lock
 
 # Logs
@@ -74,6 +76,9 @@ yarn-error.log*
 /resources/_gen/
 /assets/jsconfig.json
 hugo_stats.json
+
+# Virtualenv created by init
+.venv/
 
 # Executable may be added to repository
 hugo.exe
