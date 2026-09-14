@@ -106,3 +106,11 @@ data_types:
   compliance.iso27001: boolean
   meta.last_verified: date # YYYY-MM-DD format
   meta.ready_to_publish: boolean
+
+# Provenance and verification metadata (optional)
+provenance:
+  source: string
+  source_url: url
+  verified_by: string
+  verified_date: date
+  evidence: string

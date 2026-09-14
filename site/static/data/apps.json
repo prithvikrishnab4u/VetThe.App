@@ -1,0 +1,4123 @@
+[
+  {
+    "_id": "1password",
+    "category": "security",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Password manager, digital vault, form filler and secure digital wallet.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": true,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP",
+        "WebAuthn"
+      ]
+    },
+    "name": "1Password",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "OIDC",
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://1password.com"
+  },
+  {
+    "_id": "activecampaign",
+    "category": "sales_marketing",
+    "compliance": {
+      "iso27001": false,
+      "soc2": true
+    },
+    "description": "Automation-first marketing and CRM platform helping businesses connect with customers.",
+    "meta": {
+      "last_verified": "2026-01-02",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "ActiveCampaign",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.activecampaign.com"
+  },
+  {
+    "_id": "adobe-creative-cloud",
+    "category": "productivity",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "A suite of 20+ apps and services for photography, design, video, web, UX, and more.",
+    "meta": {
+      "last_verified": "2026-01-02",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP",
+        "SMS",
+        "Email",
+        "Push"
+      ]
+    },
+    "name": "Adobe Creative Cloud",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.adobe.com/creativecloud.html"
+  },
+  {
+    "_id": "adp-workforce-now",
+    "category": "hr",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "All-in-one HR platform for payroll, benefits, talent, and time management.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": true,
+      "enforcement": "required",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP",
+        "SMS",
+        "Email"
+      ]
+    },
+    "name": "ADP Workforce Now",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.adp.com"
+  },
+  {
+    "_id": "airtable",
+    "audit": {
+      "logs_available": true,
+      "retention_period": "180 days",
+      "tier": "enterprise"
+    },
+    "category": "productivity",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "A platform for building collaborative apps and databases with powerful automation.",
+    "meta": {
+      "last_verified": "2025-12-31",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "enforcement": "admin_enforced",
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP",
+        "SMS"
+      ]
+    },
+    "name": "Airtable",
+    "scim": {
+      "supported": "full",
+      "tier": "enterprise",
+      "version": "2.0"
+    },
+    "session": {
+      "max_duration": "Unlimited",
+      "timeout_configurable": true
+    },
+    "sso": {
+      "protocols": [
+        "SAML"
+      ],
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://airtable.com"
+  },
+  {
+    "_id": "amazon-web-services-aws",
+    "category": "infrastructure",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Comprehensive cloud computing platform offering over 200 fully featured services from data centers globally.",
+    "meta": {
+      "last_verified": "2026-01-02",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": true,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": true,
+      "supported": true,
+      "tier": "free",
+      "types": [
+        "TOTP",
+        "WebAuthn"
+      ]
+    },
+    "name": "Amazon Web Services (AWS)",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "free"
+    },
+    "website": "https://aws.amazon.com"
+  },
+  {
+    "_id": "amplitude",
+    "category": "productivity",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Product analytics platform for building better digital products.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Amplitude",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://amplitude.com"
+  },
+  {
+    "_id": "asana",
+    "audit": {
+      "logs_available": true,
+      "retention_period": "90 days",
+      "tier": "enterprise"
+    },
+    "category": "productivity",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "A work management platform that helps teams orchestrate their work.",
+    "meta": {
+      "last_verified": "2025-12-31",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "enforcement": "admin_enforced",
+      "supported": true,
+      "tier": "free",
+      "types": [
+        "TOTP",
+        "SMS"
+      ]
+    },
+    "name": "Asana",
+    "scim": {
+      "supported": "full",
+      "tier": "enterprise",
+      "version": "2.0"
+    },
+    "session": {
+      "max_duration": "14 days",
+      "timeout_configurable": true
+    },
+    "sso": {
+      "protocols": [
+        "SAML"
+      ],
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://asana.com"
+  },
+  {
+    "_id": "atlassianconfluence",
+    "audit": {
+      "logs_available": true,
+      "retention_period": "180 days",
+      "tier": "paid"
+    },
+    "category": "collaboration",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Web-based corporate wiki and collaboration software for teams.",
+    "meta": {
+      "last_verified": "2025-12-31",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "enforcement": "admin_enforced",
+      "supported": true,
+      "tier": "free",
+      "types": [
+        "TOTP",
+        "SMS"
+      ]
+    },
+    "name": "Atlassian Confluence",
+    "scim": {
+      "supported": "full",
+      "tier": "paid",
+      "version": "2.0"
+    },
+    "session": {
+      "max_duration": "30 days",
+      "timeout_configurable": true
+    },
+    "sso": {
+      "protocols": [
+        "SAML"
+      ],
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://atlassian.com/software/confluence"
+  },
+  {
+    "_id": "atlassianjira",
+    "audit": {
+      "logs_available": true,
+      "retention_period": "180 days",
+      "tier": "paid"
+    },
+    "category": "development",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Issue tracking and project management software for software development teams.",
+    "meta": {
+      "last_verified": "2025-12-31",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "enforcement": "admin_enforced",
+      "supported": true,
+      "tier": "free",
+      "types": [
+        "TOTP",
+        "SMS"
+      ]
+    },
+    "name": "Atlassian Jira",
+    "scim": {
+      "supported": "full",
+      "tier": "paid",
+      "version": "2.0"
+    },
+    "session": {
+      "max_duration": "30 days",
+      "timeout_configurable": true
+    },
+    "sso": {
+      "protocols": [
+        "SAML"
+      ],
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://atlassian.com/software/jira"
+  },
+  {
+    "_id": "auth0",
+    "audit": {
+      "logs_available": true,
+      "retention_period": "5",
+      "tier": "free"
+    },
+    "category": "security",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Customer identity and access management platform for developers (acquired by Okta).",
+    "meta": {
+      "last_verified": "2026-01-02",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "enforcement": "admin_enforced",
+      "supported": true,
+      "tier": "free",
+      "types": [
+        "TOTP",
+        "SMS",
+        "WebAuthn",
+        "Push",
+        "Email"
+      ]
+    },
+    "name": "Auth0",
+    "scim": {
+      "supported": "full",
+      "tier": "paid",
+      "version": "2.0"
+    },
+    "session": {
+      "max_duration": "Configurable",
+      "timeout_configurable": true
+    },
+    "sso": {
+      "protocols": [
+        "SAML",
+        "OIDC",
+        "WS-Fed"
+      ],
+      "supported": true,
+      "tier": "free"
+    },
+    "website": "https://auth0.com"
+  },
+  {
+    "_id": "azure-devops",
+    "category": "development",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Services for teams to share code, track work, and ship software.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": true,
+      "enforcement": "required",
+      "phishing_resistant": true,
+      "supported": true,
+      "tier": "free",
+      "types": [
+        "TOTP",
+        "SMS",
+        "WebAuthn",
+        "Push"
+      ]
+    },
+    "name": "Azure DevOps",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "free"
+    },
+    "website": "https://azure.microsoft.com/en-us/products/devops"
+  },
+  {
+    "_id": "bamboohr",
+    "category": "hr",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "A comprehensive HR software solution for small and medium businesses to manage employee data, payroll, and benefits.",
+    "meta": {
+      "last_verified": "2026-01-02",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "BambooHR",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://www.bamboohr.com"
+  },
+  {
+    "_id": "basecamp",
+    "audit": {
+      "logs_available": true,
+      "retention_period": "90 days",
+      "tier": "paid"
+    },
+    "category": "collaboration",
+    "compliance": {
+      "iso27001": false,
+      "soc2": true
+    },
+    "description": "An all-in-one project management and team communication tool designed for simplicity and clarity.",
+    "meta": {
+      "last_verified": "2026-01-02",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "enforcement": "optional",
+      "supported": true,
+      "tier": "free",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Basecamp",
+    "session": {
+      "max_duration": "N/A",
+      "timeout_configurable": false
+    },
+    "sso": {
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://basecamp.com"
+  },
+  {
+    "_id": "bill-com",
+    "category": "finance",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Intelligent business payments platform for accounts payable and receivable.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": true,
+      "enforcement": "required",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP",
+        "SMS"
+      ]
+    },
+    "name": "Bill.com",
+    "sso": {
+      "domain_claiming": false,
+      "jit_provisioning": false,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.bill.com"
+  },
+  {
+    "_id": "bitbucket-cloud",
+    "category": "development",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Git repository management solution designed for professional teams.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": true,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP",
+        "WebAuthn"
+      ]
+    },
+    "name": "Bitbucket Cloud",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://bitbucket.org"
+  },
+  {
+    "_id": "box",
+    "audit": {
+      "logs_available": true,
+      "retention_period": "Unlimited",
+      "tier": "paid"
+    },
+    "category": "collaboration",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Cloud content management and file sharing service for businesses.",
+    "meta": {
+      "last_verified": "2025-12-31",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "enforcement": "admin_enforced",
+      "supported": true,
+      "tier": "free",
+      "types": [
+        "TOTP",
+        "SMS"
+      ]
+    },
+    "name": "Box",
+    "scim": {
+      "supported": "full",
+      "tier": "paid",
+      "version": "2.0"
+    },
+    "session": {
+      "max_duration": "Configurable",
+      "timeout_configurable": true
+    },
+    "sso": {
+      "protocols": [
+        "SAML"
+      ],
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://box.com"
+  },
+  {
+    "_id": "braze",
+    "category": "sales_marketing",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Customer engagement platform that powers real-time interactions.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Braze",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.braze.com"
+  },
+  {
+    "_id": "brex",
+    "category": "finance",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Financial stack designed for the next generation of business.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": true,
+      "enforcement": "required",
+      "phishing_resistant": true,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP",
+        "SMS",
+        "WebAuthn"
+      ]
+    },
+    "name": "Brex",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://www.brex.com"
+  },
+  {
+    "_id": "calendly",
+    "category": "productivity",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Scheduling automation platform for eliminating back-and-forth emails.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Calendly",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://calendly.com"
+  },
+  {
+    "_id": "canva",
+    "category": "productivity",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Online design and visual communication platform for creating presentations, social media graphics, and more.",
+    "meta": {
+      "last_verified": "2026-01-02",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP",
+        "SMS"
+      ]
+    },
+    "name": "Canva",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://canva.com"
+  },
+  {
+    "_id": "circleci",
+    "category": "development",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Continuous integration and delivery platform for DevOps teams.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": true,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP",
+        "WebAuthn"
+      ]
+    },
+    "name": "CircleCI",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://circleci.com"
+  },
+  {
+    "_id": "cisco-webex",
+    "audit": {
+      "logs_available": true,
+      "retention_period": "360 days",
+      "tier": "paid"
+    },
+    "category": "collaboration",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Enterprise video conferencing, online meetings, and screen sharing platform with advanced security.",
+    "meta": {
+      "last_verified": "2026-01-02",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": true,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP",
+        "Push",
+        "SMS"
+      ]
+    },
+    "name": "Cisco Webex",
+    "session": {
+      "max_duration": "Configurable",
+      "timeout_configurable": true
+    },
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://webex.com"
+  },
+  {
+    "_id": "citrix-sharefile",
+    "category": "collaboration",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Content collaboration platform for secure file sharing.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP",
+        "SMS"
+      ]
+    },
+    "name": "Citrix ShareFile",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.sharefile.com"
+  },
+  {
+    "_id": "clickup",
+    "category": "productivity",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "The all-in-one productivity platform where teams can come together to plan, organize, and collaborate.",
+    "meta": {
+      "last_verified": "2026-01-02",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP",
+        "SMS"
+      ]
+    },
+    "name": "ClickUp",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://clickup.com"
+  },
+  {
+    "_id": "coursera-for-business",
+    "category": "productivity",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Enterprise learning platform for skills development.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Coursera for Business",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.coursera.org/business"
+  },
+  {
+    "_id": "crowdstrike",
+    "category": "security",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Cybersecurity technology company that provides cloud workload and endpoint security, threat intelligence, and cyberattack response services.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": true,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP",
+        "Push"
+      ]
+    },
+    "name": "CrowdStrike",
+    "sso": {
+      "domain_claiming": false,
+      "jit_provisioning": false,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://www.crowdstrike.com"
+  },
+  {
+    "_id": "databricks",
+    "category": "infrastructure",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Data and AI company offering a unified lakehouse platform for data engineering, science, and analytics.",
+    "meta": {
+      "last_verified": "2026-01-02",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": true,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP",
+        "Push"
+      ]
+    },
+    "name": "Databricks",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://www.databricks.com"
+  },
+  {
+    "_id": "datadog",
+    "category": "infrastructure",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Observability and security platform for cloud-scale applications, providing monitoring of servers, databases, tools, and services.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": true,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP",
+        "WebAuthn"
+      ]
+    },
+    "name": "Datadog",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.datadoghq.com"
+  },
+  {
+    "_id": "deel",
+    "category": "hr",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Global payroll and compliance platform for international teams.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": true,
+      "enforcement": "required",
+      "phishing_resistant": true,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP",
+        "SMS",
+        "WebAuthn"
+      ]
+    },
+    "name": "Deel",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://www.deel.com"
+  },
+  {
+    "_id": "docker-hub",
+    "category": "development",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Container registry service for finding and sharing container images.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": true,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP",
+        "WebAuthn"
+      ]
+    },
+    "name": "Docker Hub",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://hub.docker.com"
+  },
+  {
+    "_id": "docusign",
+    "audit": {
+      "logs_available": true,
+      "retention_period": "Unlimited",
+      "tier": "enterprise"
+    },
+    "category": "productivity",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Electronic signature and agreement management platform.",
+    "meta": {
+      "last_verified": "2025-12-31",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "enforcement": "admin_enforced",
+      "supported": true,
+      "tier": "free",
+      "types": [
+        "TOTP",
+        "SMS",
+        "Email"
+      ]
+    },
+    "name": "DocuSign",
+    "scim": {
+      "supported": "full",
+      "tier": "enterprise",
+      "version": "2.0"
+    },
+    "session": {
+      "max_duration": "Configurable",
+      "timeout_configurable": true
+    },
+    "sso": {
+      "protocols": [
+        "SAML"
+      ],
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://docusign.com"
+  },
+  {
+    "_id": "dropbox",
+    "audit": {
+      "logs_available": true,
+      "retention_period": "180 days",
+      "tier": "enterprise"
+    },
+    "category": "collaboration",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Cloud storage, file synchronization, and client software service.",
+    "meta": {
+      "last_verified": "2025-12-31",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "enforcement": "admin_enforced",
+      "supported": true,
+      "tier": "free",
+      "types": [
+        "TOTP",
+        "SMS"
+      ]
+    },
+    "name": "Dropbox",
+    "scim": {
+      "supported": "full",
+      "tier": "enterprise",
+      "version": "2.0"
+    },
+    "session": {
+      "max_duration": "Configurable",
+      "timeout_configurable": true
+    },
+    "sso": {
+      "protocols": [
+        "SAML"
+      ],
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://dropbox.com"
+  },
+  {
+    "_id": "egnyte",
+    "category": "collaboration",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Cloud content security and governance platform.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP",
+        "SMS"
+      ]
+    },
+    "name": "Egnyte",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.egnyte.com"
+  },
+  {
+    "_id": "expensify",
+    "category": "finance",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Expense management software for receipt scanning and reimbursement.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP",
+        "SMS"
+      ]
+    },
+    "name": "Expensify",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://www.expensify.com"
+  },
+  {
+    "_id": "figma",
+    "audit": {
+      "logs_available": true,
+      "retention_period": "180 days",
+      "tier": "enterprise"
+    },
+    "category": "development",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Cloud-based design and prototyping tool for teams and individuals.",
+    "meta": {
+      "last_verified": "2025-12-31",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "enforcement": "admin_enforced",
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP",
+        "SMS",
+        "WebAuthn"
+      ]
+    },
+    "name": "Figma",
+    "scim": {
+      "supported": "full",
+      "tier": "enterprise",
+      "version": "2.0"
+    },
+    "session": {
+      "max_duration": "14 days",
+      "timeout_configurable": true
+    },
+    "sso": {
+      "protocols": [
+        "SAML"
+      ],
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://figma.com"
+  },
+  {
+    "_id": "freshdesk",
+    "category": "sales_marketing",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Online cloud-based customer service software providing help desk support with all smart automations.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Freshdesk",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://freshdesk.com"
+  },
+  {
+    "_id": "freshservice",
+    "category": "infrastructure",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "IT service management (ITSM) software for modern enterprises.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Freshservice",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://freshservice.com"
+  },
+  {
+    "_id": "front",
+    "category": "collaboration",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Customer operations platform that combines a help desk with the collaboration of email.",
+    "meta": {
+      "last_verified": "2026-01-02",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Front",
+    "sso": {
+      "domain_claiming": false,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://front.com"
+  },
+  {
+    "_id": "github",
+    "audit": {
+      "logs_available": true,
+      "retention_period": "180 days",
+      "tier": "enterprise"
+    },
+    "category": "development",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "AI-powered developer platform to build, scale, and deliver secure software.",
+    "meta": {
+      "last_verified": "2025-12-31",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "enforcement": "required",
+      "supported": true,
+      "tier": "free",
+      "types": [
+        "TOTP",
+        "SMS",
+        "WebAuthn",
+        "Push"
+      ]
+    },
+    "name": "GitHub",
+    "scim": {
+      "supported": "full",
+      "tier": "enterprise",
+      "version": "2.0"
+    },
+    "session": {
+      "max_duration": "14 days",
+      "timeout_configurable": true
+    },
+    "sso": {
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://github.com"
+  },
+  {
+    "_id": "gitlab",
+    "category": "development",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "The DevSecOps platform that brings development, operations, and security teams together in a single application.",
+    "meta": {
+      "last_verified": "2026-01-02",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": true,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP",
+        "SMS",
+        "WebAuthn"
+      ]
+    },
+    "name": "GitLab",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://about.gitlab.com"
+  },
+  {
+    "_id": "gong",
+    "category": "sales_marketing",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Revenue intelligence platform capturing customer interactions.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Gong",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.gong.io"
+  },
+  {
+    "_id": "googleworkspace",
+    "audit": {
+      "logs_available": true,
+      "retention_period": "180 days",
+      "tier": "paid"
+    },
+    "category": "productivity",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Cloud-based collaboration and productivity tools including Gmail, Drive, and Docs.",
+    "meta": {
+      "last_verified": "2025-12-31",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "enforcement": "admin_enforced",
+      "supported": true,
+      "tier": "free",
+      "types": [
+        "TOTP",
+        "SMS",
+        "WebAuthn",
+        "Push"
+      ]
+    },
+    "name": "Google Workspace",
+    "scim": {
+      "supported": "full",
+      "tier": "free",
+      "version": "2.0"
+    },
+    "session": {
+      "max_duration": "14 days",
+      "timeout_configurable": true
+    },
+    "sso": {
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "supported": true,
+      "tier": "free"
+    },
+    "website": "https://workspace.google.com"
+  },
+  {
+    "_id": "grammarly",
+    "category": "productivity",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "AI-powered writing assistant that helps individuals and teams communicate effectively.",
+    "meta": {
+      "last_verified": "2026-01-02",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Grammarly",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.grammarly.com"
+  },
+  {
+    "_id": "greenhouse",
+    "category": "hr",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Applicant tracking system and recruiting software.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Greenhouse",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.greenhouse.io"
+  },
+  {
+    "_id": "gusto",
+    "category": "hr",
+    "compliance": {
+      "iso27001": false,
+      "soc2": true
+    },
+    "description": "Modern HR platform for payroll, benefits, and management.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP",
+        "SMS"
+      ]
+    },
+    "name": "Gusto",
+    "sso": {
+      "domain_claiming": false,
+      "jit_provisioning": false,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://gusto.com"
+  },
+  {
+    "_id": "hootsuite",
+    "category": "sales_marketing",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Social media marketing and management dashboard.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Hootsuite",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.hootsuite.com"
+  },
+  {
+    "_id": "hubspot",
+    "audit": {
+      "logs_available": true,
+      "retention_period": "365 days",
+      "tier": "enterprise"
+    },
+    "category": "sales_marketing",
+    "compliance": {
+      "iso27001": false,
+      "soc2": true
+    },
+    "description": "Customer platform with software for marketing, sales, content management, and service.",
+    "meta": {
+      "last_verified": "2025-12-31",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "enforcement": "admin_enforced",
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP",
+        "SMS",
+        "Email",
+        "Push"
+      ]
+    },
+    "name": "HubSpot",
+    "scim": {
+      "supported": "full",
+      "tier": "enterprise",
+      "version": "2.0"
+    },
+    "session": {
+      "max_duration": "24 hours",
+      "timeout_configurable": true
+    },
+    "sso": {
+      "protocols": [
+        "SAML"
+      ],
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://hubspot.com"
+  },
+  {
+    "_id": "intercom",
+    "category": "sales_marketing",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "AI-first customer service platform that connects businesses with customers via messaging, bots, and help center.",
+    "meta": {
+      "last_verified": "2026-01-02",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP",
+        "SMS"
+      ]
+    },
+    "name": "Intercom",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://intercom.com"
+  },
+  {
+    "_id": "lark",
+    "category": "collaboration",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "A unified collaboration suite that combines chat, docs, meetings, and project management in one app.",
+    "meta": {
+      "last_verified": "2026-01-02",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "free",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Lark",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML",
+        "OIDC",
+        "OAuth2"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "free"
+    },
+    "website": "https://www.larksuite.com"
+  },
+  {
+    "_id": "lastpass",
+    "category": "security",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Password management solution for storing encrypted passwords online.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": true,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": true,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP",
+        "SMS",
+        "WebAuthn",
+        "Push"
+      ]
+    },
+    "name": "LastPass",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://www.lastpass.com"
+  },
+  {
+    "_id": "linear",
+    "audit": {
+      "logs_available": true,
+      "retention_period": "Indefinite",
+      "tier": "enterprise"
+    },
+    "category": "development",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Project management tool for high-performance software teams.",
+    "meta": {
+      "last_verified": "2025-12-31",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "enforcement": "admin_enforced",
+      "supported": true,
+      "tier": "free",
+      "types": [
+        "TOTP",
+        "SMS"
+      ]
+    },
+    "name": "Linear",
+    "scim": {
+      "supported": "full",
+      "tier": "enterprise",
+      "version": "2.0"
+    },
+    "session": {
+      "max_duration": "Configurable",
+      "timeout_configurable": true
+    },
+    "sso": {
+      "protocols": [
+        "SAML"
+      ],
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://linear.app"
+  },
+  {
+    "_id": "linkedin-learning",
+    "category": "productivity",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Online educational platform that helps you discover and develop business, technology-related, and creative skills.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP",
+        "SMS"
+      ]
+    },
+    "name": "LinkedIn Learning",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://learning.linkedin.com"
+  },
+  {
+    "_id": "loom",
+    "category": "collaboration",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Video messaging tool for work that allows you to record your screen and camera.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Loom",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.loom.com"
+  },
+  {
+    "_id": "lucidchart",
+    "category": "productivity",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Intelligent diagramming application that brings teams together to make better decisions and build the future.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Lucidchart",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.lucidchart.com"
+  },
+  {
+    "_id": "mailchimp",
+    "category": "sales_marketing",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Marketing, automation, and email marketing platform for growing businesses.",
+    "meta": {
+      "last_verified": "2026-01-02",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "optional",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP",
+        "SMS"
+      ]
+    },
+    "name": "Mailchimp",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": false,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://mailchimp.com"
+  },
+  {
+    "_id": "marketo",
+    "category": "sales_marketing",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Marketing automation software that helps marketers master the art and science of digital marketing.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Marketo",
+    "sso": {
+      "domain_claiming": false,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.marketo.com"
+  },
+  {
+    "_id": "microsoft-teams",
+    "audit": {
+      "logs_available": true,
+      "retention_period": "90 days",
+      "tier": "paid"
+    },
+    "category": "collaboration",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "The hub for teamwork in Microsoft 365 that combines chat, meetings, calling, and collaboration.",
+    "meta": {
+      "last_verified": "2026-01-02",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": true,
+      "enforcement": "required",
+      "phishing_resistant": true,
+      "supported": true,
+      "tier": "free",
+      "types": [
+        "TOTP",
+        "Push",
+        "WebAuthn",
+        "SMS"
+      ]
+    },
+    "name": "Microsoft Teams",
+    "session": {
+      "max_duration": "Configurable",
+      "timeout_configurable": true
+    },
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML",
+        "OIDC",
+        "WS-Fed"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "free"
+    },
+    "website": "https://www.microsoft.com/en-us/microsoft-teams"
+  },
+  {
+    "_id": "microsoft365",
+    "audit": {
+      "logs_available": true,
+      "retention_period": "90 days",
+      "tier": "free"
+    },
+    "category": "productivity",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Suite of productivity apps, cloud services, and security for businesses.",
+    "meta": {
+      "last_verified": "2025-12-31",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "enforcement": "required",
+      "supported": true,
+      "tier": "free",
+      "types": [
+        "TOTP",
+        "SMS",
+        "WebAuthn",
+        "Push"
+      ]
+    },
+    "name": "Microsoft 365",
+    "scim": {
+      "supported": "full",
+      "tier": "free",
+      "version": "2.0"
+    },
+    "session": {
+      "max_duration": "Configurable",
+      "timeout_configurable": true
+    },
+    "sso": {
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "supported": true,
+      "tier": "free"
+    },
+    "website": "https://microsoft365.com"
+  },
+  {
+    "_id": "miro",
+    "audit": {
+      "logs_available": true,
+      "retention_period": "180 days",
+      "tier": "enterprise"
+    },
+    "category": "collaboration",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Visual workspace for innovation where teams can dream, design, and build together.",
+    "meta": {
+      "last_verified": "2025-12-31",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "enforcement": "admin_enforced",
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP",
+        "SMS"
+      ]
+    },
+    "name": "Miro",
+    "scim": {
+      "supported": "full",
+      "tier": "enterprise",
+      "version": "2.0"
+    },
+    "session": {
+      "max_duration": "Configurable",
+      "timeout_configurable": true
+    },
+    "sso": {
+      "protocols": [
+        "SAML"
+      ],
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://miro.com"
+  },
+  {
+    "_id": "mixpanel",
+    "category": "productivity",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Self-serve product analytics to help you convert, engage, and retain more users.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Mixpanel",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://mixpanel.com"
+  },
+  {
+    "_id": "monday-com",
+    "category": "productivity",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "A work OS that powers teams to run projects and workflows with confidence.",
+    "meta": {
+      "last_verified": "2026-01-02",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": true,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP",
+        "SMS"
+      ]
+    },
+    "name": "monday.com",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://monday.com"
+  },
+  {
+    "_id": "mural",
+    "category": "collaboration",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Digital workspace for visual collaboration, enabling teams to understand and solve problems.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Mural",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://www.mural.co"
+  },
+  {
+    "_id": "navan",
+    "category": "finance",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Corporate travel and expense management solution.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Navan",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://navan.com"
+  },
+  {
+    "_id": "netsuite",
+    "category": "finance",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Unified business management suite for ERP, financials, CRM, and ecommerce.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": true,
+      "enforcement": "required",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP",
+        "SMS",
+        "Email"
+      ]
+    },
+    "name": "NetSuite",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.netsuite.com"
+  },
+  {
+    "_id": "new-relic",
+    "category": "infrastructure",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Observability platform that helps you build better software.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "New Relic",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://newrelic.com"
+  },
+  {
+    "_id": "notion",
+    "audit": {
+      "logs_available": true,
+      "retention_period": "Indefinite",
+      "tier": "enterprise"
+    },
+    "category": "productivity",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "An all-in-one workspace for notes, tasks, wikis, and databases.",
+    "meta": {
+      "last_verified": "2025-12-31",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "enforcement": "admin_enforced",
+      "supported": true,
+      "tier": "free",
+      "types": [
+        "TOTP",
+        "SMS",
+        "Email"
+      ]
+    },
+    "name": "Notion",
+    "scim": {
+      "supported": "full",
+      "tier": "enterprise",
+      "version": "2.0"
+    },
+    "session": {
+      "max_duration": "180 days",
+      "timeout_configurable": true
+    },
+    "sso": {
+      "protocols": [
+        "SAML"
+      ],
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://notion.so"
+  },
+  {
+    "_id": "outreach",
+    "category": "sales_marketing",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Sales execution platform helping teams create and close more pipeline.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Outreach",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.outreach.io"
+  },
+  {
+    "_id": "pagerduty",
+    "category": "infrastructure",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Incident management platform that provides reliable notifications, automatic escalations, and on-call scheduling.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": true,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP",
+        "SMS",
+        "WebAuthn",
+        "Push"
+      ]
+    },
+    "name": "PagerDuty",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://www.pagerduty.com"
+  },
+  {
+    "_id": "pandadoc",
+    "category": "productivity",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "All-in-one document automation software to create, approve, track, and eSign documents.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "PandaDoc",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.pandadoc.com"
+  },
+  {
+    "_id": "pipedrive",
+    "category": "sales_marketing",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Sales CRM and pipeline management software.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Pipedrive",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.pipedrive.com"
+  },
+  {
+    "_id": "pluralsight",
+    "category": "productivity",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Technology skills platform for IT and engineering teams.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Pluralsight",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.pluralsight.com"
+  },
+  {
+    "_id": "postman",
+    "category": "development",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "API platform for building and using APIs.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Postman",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.postman.com"
+  },
+  {
+    "_id": "qualtrics",
+    "category": "sales_marketing",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Experience management platform for collecting and analyzing data.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Qualtrics",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.qualtrics.com"
+  },
+  {
+    "_id": "quickbooks-online",
+    "category": "finance",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Accounting software for small businesses to track expenses and manage cash flow.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": true,
+      "enforcement": "required",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP",
+        "SMS"
+      ]
+    },
+    "name": "QuickBooks Online",
+    "sso": {
+      "domain_claiming": false,
+      "jit_provisioning": false,
+      "protocols": [
+        "OIDC"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://quickbooks.intuit.com"
+  },
+  {
+    "_id": "ramp",
+    "category": "finance",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Corporate card and spend management platform.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": true,
+      "enforcement": "required",
+      "phishing_resistant": true,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP",
+        "SMS",
+        "WebAuthn"
+      ]
+    },
+    "name": "Ramp",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://ramp.com"
+  },
+  {
+    "_id": "ringcentral",
+    "category": "collaboration",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Cloud-based communication and collaboration platform for businesses.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP",
+        "SMS"
+      ]
+    },
+    "name": "RingCentral",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://www.ringcentral.com"
+  },
+  {
+    "_id": "rippling",
+    "category": "hr",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Workforce management platform that manages HR, IT, and Finance in a single system.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": true,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": true,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP",
+        "SMS",
+        "WebAuthn",
+        "Push"
+      ]
+    },
+    "name": "Rippling",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://www.rippling.com"
+  },
+  {
+    "_id": "salesforce",
+    "audit": {
+      "logs_available": true,
+      "retention_period": "180 days",
+      "tier": "paid"
+    },
+    "category": "sales_marketing",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Cloud-based customer relationship management (CRM) platform.",
+    "meta": {
+      "last_verified": "2025-12-31",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "enforcement": "required",
+      "supported": true,
+      "tier": "free",
+      "types": [
+        "TOTP",
+        "SMS",
+        "WebAuthn",
+        "Push"
+      ]
+    },
+    "name": "Salesforce",
+    "scim": {
+      "supported": "full",
+      "tier": "enterprise",
+      "version": "2.0"
+    },
+    "session": {
+      "max_duration": "24 hours",
+      "timeout_configurable": true
+    },
+    "sso": {
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://salesforce.com"
+  },
+  {
+    "_id": "sap-concur",
+    "category": "finance",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Integrated travel, expense, and invoice management solution.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP",
+        "SMS"
+      ]
+    },
+    "name": "SAP Concur",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.concur.com"
+  },
+  {
+    "_id": "servicenow",
+    "category": "infrastructure",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Cloud-based platform for automating IT, employee, and customer workflows.",
+    "meta": {
+      "last_verified": "2026-01-02",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": true,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": true,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP",
+        "SMS",
+        "WebAuthn"
+      ]
+    },
+    "name": "ServiceNow",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.servicenow.com"
+  },
+  {
+    "_id": "shopify",
+    "category": "sales_marketing",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "E-commerce platform for businesses of all sizes to sell online, in-store, and everywhere in between.",
+    "meta": {
+      "last_verified": "2026-01-02",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP",
+        "SMS",
+        "Email"
+      ]
+    },
+    "name": "Shopify",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.shopify.com"
+  },
+  {
+    "_id": "shortcut",
+    "category": "development",
+    "compliance": {
+      "iso27001": false,
+      "soc2": true
+    },
+    "description": "Project management platform designed for software development teams to unify planning and development.",
+    "meta": {
+      "last_verified": "2026-01-02",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": true,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Shortcut",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://www.shortcut.com"
+  },
+  {
+    "_id": "slack",
+    "audit": {
+      "logs_available": true,
+      "retention_period": "Indefinite",
+      "tier": "enterprise"
+    },
+    "category": "collaboration",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "A messaging platform for teams that integrates with numerous tools and services.",
+    "meta": {
+      "last_verified": "2026-01-01",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "enforcement": "admin_enforced",
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP",
+        "SMS",
+        "Email"
+      ]
+    },
+    "name": "Slack",
+    "scim": {
+      "supported": "full",
+      "tier": "paid",
+      "version": "2.0"
+    },
+    "session": {
+      "max_duration": "14 days",
+      "timeout_configurable": true
+    },
+    "sso": {
+      "protocols": [
+        "SAML"
+      ],
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://slack.com"
+  },
+  {
+    "_id": "smartsheet",
+    "audit": {
+      "logs_available": true,
+      "retention_period": "Configurable",
+      "tier": "enterprise"
+    },
+    "category": "productivity",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "A spreadsheet-style platform for project management, data visualization, and automated business workflows.",
+    "meta": {
+      "last_verified": "2026-01-02",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Smartsheet",
+    "session": {
+      "max_duration": "Configurable",
+      "timeout_configurable": true
+    },
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://smartsheet.com"
+  },
+  {
+    "_id": "snowflake",
+    "category": "infrastructure",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Cloud-based data storage and analytics service known as the 'Data Cloud'.",
+    "meta": {
+      "last_verified": "2026-01-02",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": true,
+      "enforcement": "required",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "free",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Snowflake",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "free"
+    },
+    "website": "https://www.snowflake.com"
+  },
+  {
+    "_id": "snyk",
+    "category": "security",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Developer-first security platform for finding and fixing vulnerabilities in code, dependencies, containers, and IaC.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": true,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP",
+        "WebAuthn"
+      ]
+    },
+    "name": "Snyk",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://snyk.io"
+  },
+  {
+    "_id": "splunk",
+    "category": "infrastructure",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Data-to-Everything Platform to investigate, monitor, analyze and act on data.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Splunk",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://www.splunk.com"
+  },
+  {
+    "_id": "sprout-social",
+    "category": "sales_marketing",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Social media management platform for businesses.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Sprout Social",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://sproutsocial.com"
+  },
+  {
+    "_id": "stripe",
+    "category": "finance",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Financial infrastructure platform for the internet.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": true,
+      "enforcement": "required",
+      "phishing_resistant": true,
+      "supported": true,
+      "tier": "free",
+      "types": [
+        "TOTP",
+        "SMS",
+        "WebAuthn"
+      ]
+    },
+    "name": "Stripe",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://stripe.com"
+  },
+  {
+    "_id": "surveymonkey",
+    "category": "sales_marketing",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Online survey tool for capturing the voices and opinions of the people who matter most to you.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "SurveyMonkey",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.surveymonkey.com"
+  },
+  {
+    "_id": "tableau",
+    "category": "productivity",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "A business intelligence and data visualization platform used for analyzing and sharing data insights.",
+    "meta": {
+      "last_verified": "2026-01-02",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": true,
+      "enforcement": "required",
+      "phishing_resistant": true,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP",
+        "WebAuthn"
+      ]
+    },
+    "name": "Tableau",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://www.tableau.com"
+  },
+  {
+    "_id": "teamviewer",
+    "category": "infrastructure",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Remote connectivity platform for accessing and controlling devices.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "TeamViewer",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.teamviewer.com"
+  },
+  {
+    "_id": "trello",
+    "audit": {
+      "logs_available": true,
+      "retention_period": "Configurable",
+      "tier": "enterprise"
+    },
+    "category": "productivity",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "A visual tool that empowers your team to manage any type of project, workflow, or task tracking.",
+    "meta": {
+      "last_verified": "2026-01-02",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP",
+        "SMS"
+      ]
+    },
+    "name": "Trello",
+    "session": {
+      "max_duration": "Configurable",
+      "timeout_configurable": true
+    },
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://trello.com"
+  },
+  {
+    "_id": "twilio",
+    "category": "infrastructure",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Customer engagement platform used by developers and businesses to build unique, personalized experiences.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": true,
+      "enforcement": "required",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "free",
+      "types": [
+        "TOTP",
+        "SMS"
+      ]
+    },
+    "name": "Twilio",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.twilio.com"
+  },
+  {
+    "_id": "typeform",
+    "category": "sales_marketing",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "SaaS company that specializes in online form building and online surveys.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Typeform",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": false,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.typeform.com"
+  },
+  {
+    "_id": "uber-for-business",
+    "category": "finance",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Global mobility and delivery platform for enterprises.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP",
+        "SMS"
+      ]
+    },
+    "name": "Uber for Business",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.uber.com/business"
+  },
+  {
+    "_id": "udemy-business",
+    "category": "productivity",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Enterprise learning platform offering courses for professional development.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Udemy Business",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://business.udemy.com"
+  },
+  {
+    "_id": "workday",
+    "category": "hr",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Enterprise management cloud platform for finance, HR, planning, and spend management.",
+    "meta": {
+      "last_verified": "2026-01-02",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": true,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": true,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP",
+        "SMS",
+        "WebAuthn"
+      ]
+    },
+    "name": "Workday",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.workday.com"
+  },
+  {
+    "_id": "wrike",
+    "audit": {
+      "logs_available": true,
+      "retention_period": "Configurable",
+      "tier": "enterprise"
+    },
+    "category": "productivity",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "An enterprise-grade work management platform designed for teams to scale projects and automate workflows.",
+    "meta": {
+      "last_verified": "2026-01-02",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Wrike",
+    "session": {
+      "max_duration": "Configurable",
+      "timeout_configurable": true
+    },
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://wrike.com"
+  },
+  {
+    "_id": "xero",
+    "category": "finance",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Cloud-based accounting software for small businesses to manage finances, invoicing, and inventory.",
+    "meta": {
+      "last_verified": "2026-01-02",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": true,
+      "enforcement": "required",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "free",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Xero",
+    "sso": {
+      "domain_claiming": false,
+      "jit_provisioning": false,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": false,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.xero.com"
+  },
+  {
+    "_id": "zapier",
+    "category": "productivity",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Automation platform that connects your apps and services to automate workflows.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP"
+      ]
+    },
+    "name": "Zapier",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://zapier.com"
+  },
+  {
+    "_id": "zendesk",
+    "audit": {
+      "logs_available": true,
+      "retention_period": "90 days",
+      "tier": "enterprise"
+    },
+    "category": "sales_marketing",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Customer service software and support ticketing system.",
+    "meta": {
+      "last_verified": "2025-12-31",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "enforcement": "admin_enforced",
+      "supported": true,
+      "tier": "free",
+      "types": [
+        "TOTP",
+        "SMS"
+      ]
+    },
+    "name": "Zendesk",
+    "scim": {
+      "supported": "full",
+      "tier": "enterprise",
+      "version": "2.0"
+    },
+    "session": {
+      "max_duration": "Configurable",
+      "timeout_configurable": true
+    },
+    "sso": {
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://zendesk.com"
+  },
+  {
+    "_id": "zoho-crm",
+    "category": "sales_marketing",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Online CRM software for managing sales, marketing, and support.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP",
+        "SMS"
+      ]
+    },
+    "name": "Zoho CRM",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.zoho.com/crm"
+  },
+  {
+    "_id": "zoom",
+    "audit": {
+      "logs_available": true,
+      "retention_period": "180 days",
+      "tier": "paid"
+    },
+    "category": "collaboration",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Video conferencing and communication platform for teams and individuals.",
+    "meta": {
+      "last_verified": "2025-12-31",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "enforcement": "admin_enforced",
+      "supported": true,
+      "tier": "free",
+      "types": [
+        "TOTP",
+        "SMS",
+        "Email"
+      ]
+    },
+    "name": "Zoom",
+    "scim": {
+      "supported": "full",
+      "tier": "paid",
+      "version": "2.0"
+    },
+    "session": {
+      "max_duration": "Configurable",
+      "timeout_configurable": true
+    },
+    "sso": {
+      "protocols": [
+        "SAML"
+      ],
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://zoom.us"
+  },
+  {
+    "_id": "zoominfo",
+    "category": "sales_marketing",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "GTM software, data, and intelligence for more than 35,000 companies worldwide.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": false,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": false,
+      "supported": true,
+      "tier": "enterprise",
+      "types": [
+        "TOTP",
+        "SMS"
+      ]
+    },
+    "name": "ZoomInfo",
+    "sso": {
+      "domain_claiming": false,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML",
+        "OIDC"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "enterprise"
+    },
+    "website": "https://www.zoominfo.com"
+  },
+  {
+    "_id": "zscaler",
+    "category": "security",
+    "compliance": {
+      "iso27001": true,
+      "soc2": true
+    },
+    "description": "Cloud security company that provides services for securely transforming networks and applications.",
+    "meta": {
+      "last_verified": "2026-01-03",
+      "ready_to_publish": true
+    },
+    "mfa": {
+      "adaptive_mfa": true,
+      "enforcement": "admin_enforced",
+      "phishing_resistant": true,
+      "supported": true,
+      "tier": "paid",
+      "types": [
+        "TOTP",
+        "WebAuthn"
+      ]
+    },
+    "name": "Zscaler",
+    "sso": {
+      "domain_claiming": true,
+      "jit_provisioning": true,
+      "protocols": [
+        "SAML"
+      ],
+      "sp_initiated": true,
+      "supported": true,
+      "tier": "paid"
+    },
+    "website": "https://www.zscaler.com"
+  }
+]

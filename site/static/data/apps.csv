@@ -1,0 +1,108 @@
+id,name,category,website,sso_supported,sso_protocols,scim_supported,mfa_supported,mfa_types,compliance_soc2,compliance_iso27001,meta_last_verified,meta_ready_to_publish
+1password,1Password,security,https://1password.com,True,"OIDC,SAML",,True,"TOTP,WebAuthn",True,True,2026-01-03,True
+activecampaign,ActiveCampaign,sales_marketing,https://www.activecampaign.com,True,SAML,,True,TOTP,True,False,2026-01-02,True
+adobe-creative-cloud,Adobe Creative Cloud,productivity,https://www.adobe.com/creativecloud.html,True,SAML,,True,"TOTP,SMS,Email,Push",True,True,2026-01-02,True
+adp-workforce-now,ADP Workforce Now,hr,https://www.adp.com,True,"SAML,OIDC",,True,"TOTP,SMS,Email",True,True,2026-01-03,True
+airtable,Airtable,productivity,https://airtable.com,True,SAML,full,True,"TOTP,SMS",True,True,2025-12-31,True
+amazon-web-services-aws,Amazon Web Services (AWS),infrastructure,https://aws.amazon.com,True,"SAML,OIDC",,True,"TOTP,WebAuthn",True,True,2026-01-02,True
+amplitude,Amplitude,productivity,https://amplitude.com,True,SAML,,True,TOTP,True,True,2026-01-03,True
+asana,Asana,productivity,https://asana.com,True,SAML,full,True,"TOTP,SMS",True,True,2025-12-31,True
+atlassianconfluence,Atlassian Confluence,collaboration,https://atlassian.com/software/confluence,True,SAML,full,True,"TOTP,SMS",True,True,2025-12-31,True
+atlassianjira,Atlassian Jira,development,https://atlassian.com/software/jira,True,SAML,full,True,"TOTP,SMS",True,True,2025-12-31,True
+auth0,Auth0,security,https://auth0.com,True,"SAML,OIDC,WS-Fed",full,True,"TOTP,SMS,WebAuthn,Push,Email",True,True,2026-01-02,True
+azure-devops,Azure DevOps,development,https://azure.microsoft.com/en-us/products/devops,True,"SAML,OIDC",,True,"TOTP,SMS,WebAuthn,Push",True,True,2026-01-03,True
+bamboohr,BambooHR,hr,https://www.bamboohr.com,True,SAML,,True,TOTP,True,True,2026-01-02,True
+basecamp,Basecamp,collaboration,https://basecamp.com,True,"SAML,OIDC",,True,TOTP,True,False,2026-01-02,True
+bill-com,Bill.com,finance,https://www.bill.com,True,SAML,,True,"TOTP,SMS",True,True,2026-01-03,True
+bitbucket-cloud,Bitbucket Cloud,development,https://bitbucket.org,True,SAML,,True,"TOTP,WebAuthn",True,True,2026-01-03,True
+box,Box,collaboration,https://box.com,True,SAML,full,True,"TOTP,SMS",True,True,2025-12-31,True
+braze,Braze,sales_marketing,https://www.braze.com,True,SAML,,True,TOTP,True,True,2026-01-03,True
+brex,Brex,finance,https://www.brex.com,True,"SAML,OIDC",,True,"TOTP,SMS,WebAuthn",True,True,2026-01-03,True
+calendly,Calendly,productivity,https://calendly.com,True,SAML,,True,TOTP,True,True,2026-01-03,True
+canva,Canva,productivity,https://canva.com,True,SAML,,True,"TOTP,SMS",True,True,2026-01-02,True
+circleci,CircleCI,development,https://circleci.com,True,"SAML,OIDC",,True,"TOTP,WebAuthn",True,True,2026-01-03,True
+cisco-webex,Cisco Webex,collaboration,https://webex.com,True,SAML,,True,"TOTP,Push,SMS",True,True,2026-01-02,True
+citrix-sharefile,Citrix ShareFile,collaboration,https://www.sharefile.com,True,SAML,,True,"TOTP,SMS",True,True,2026-01-03,True
+clickup,ClickUp,productivity,https://clickup.com,True,SAML,,True,"TOTP,SMS",True,True,2026-01-02,True
+coursera-for-business,Coursera for Business,productivity,https://www.coursera.org/business,True,"SAML,OIDC",,True,TOTP,True,True,2026-01-03,True
+crowdstrike,CrowdStrike,security,https://www.crowdstrike.com,True,SAML,,True,"TOTP,Push",True,True,2026-01-03,True
+databricks,Databricks,infrastructure,https://www.databricks.com,True,"SAML,OIDC",,True,"TOTP,Push",True,True,2026-01-02,True
+datadog,Datadog,infrastructure,https://www.datadoghq.com,True,SAML,,True,"TOTP,WebAuthn",True,True,2026-01-03,True
+deel,Deel,hr,https://www.deel.com,True,"SAML,OIDC",,True,"TOTP,SMS,WebAuthn",True,True,2026-01-03,True
+docker-hub,Docker Hub,development,https://hub.docker.com,True,SAML,,True,"TOTP,WebAuthn",True,True,2026-01-03,True
+docusign,DocuSign,productivity,https://docusign.com,True,SAML,full,True,"TOTP,SMS,Email",True,True,2025-12-31,True
+dropbox,Dropbox,collaboration,https://dropbox.com,True,SAML,full,True,"TOTP,SMS",True,True,2025-12-31,True
+egnyte,Egnyte,collaboration,https://www.egnyte.com,True,SAML,,True,"TOTP,SMS",True,True,2026-01-03,True
+expensify,Expensify,finance,https://www.expensify.com,True,SAML,,True,"TOTP,SMS",True,True,2026-01-03,True
+figma,Figma,development,https://figma.com,True,SAML,full,True,"TOTP,SMS,WebAuthn",True,True,2025-12-31,True
+freshdesk,Freshdesk,sales_marketing,https://freshdesk.com,True,"SAML,OIDC",,True,TOTP,True,True,2026-01-03,True
+freshservice,Freshservice,infrastructure,https://freshservice.com,True,"SAML,OIDC",,True,TOTP,True,True,2026-01-03,True
+front,Front,collaboration,https://front.com,True,SAML,,True,TOTP,True,True,2026-01-02,True
+github,GitHub,development,https://github.com,True,"SAML,OIDC",full,True,"TOTP,SMS,WebAuthn,Push",True,True,2025-12-31,True
+gitlab,GitLab,development,https://about.gitlab.com,True,"SAML,OIDC",,True,"TOTP,SMS,WebAuthn",True,True,2026-01-02,True
+gong,Gong,sales_marketing,https://www.gong.io,True,"SAML,OIDC",,True,TOTP,True,True,2026-01-03,True
+googleworkspace,Google Workspace,productivity,https://workspace.google.com,True,"SAML,OIDC",full,True,"TOTP,SMS,WebAuthn,Push",True,True,2025-12-31,True
+grammarly,Grammarly,productivity,https://www.grammarly.com,True,SAML,,True,TOTP,True,True,2026-01-02,True
+greenhouse,Greenhouse,hr,https://www.greenhouse.io,True,SAML,,True,TOTP,True,True,2026-01-03,True
+gusto,Gusto,hr,https://gusto.com,True,SAML,,True,"TOTP,SMS",True,False,2026-01-03,True
+hootsuite,Hootsuite,sales_marketing,https://www.hootsuite.com,True,SAML,,True,TOTP,True,True,2026-01-03,True
+hubspot,HubSpot,sales_marketing,https://hubspot.com,True,SAML,full,True,"TOTP,SMS,Email,Push",True,False,2025-12-31,True
+intercom,Intercom,sales_marketing,https://intercom.com,True,SAML,,True,"TOTP,SMS",True,True,2026-01-02,True
+lark,Lark,collaboration,https://www.larksuite.com,True,"SAML,OIDC,OAuth2",,True,TOTP,True,True,2026-01-02,True
+lastpass,LastPass,security,https://www.lastpass.com,True,SAML,,True,"TOTP,SMS,WebAuthn,Push",True,True,2026-01-03,True
+linear,Linear,development,https://linear.app,True,SAML,full,True,"TOTP,SMS",True,True,2025-12-31,True
+linkedin-learning,LinkedIn Learning,productivity,https://learning.linkedin.com,True,SAML,,True,"TOTP,SMS",True,True,2026-01-03,True
+loom,Loom,collaboration,https://www.loom.com,True,"SAML,OIDC",,True,TOTP,True,True,2026-01-03,True
+lucidchart,Lucidchart,productivity,https://www.lucidchart.com,True,SAML,,True,TOTP,True,True,2026-01-03,True
+mailchimp,Mailchimp,sales_marketing,https://mailchimp.com,True,SAML,,True,"TOTP,SMS",True,True,2026-01-02,True
+marketo,Marketo,sales_marketing,https://www.marketo.com,True,SAML,,True,TOTP,True,True,2026-01-03,True
+microsoft-teams,Microsoft Teams,collaboration,https://www.microsoft.com/en-us/microsoft-teams,True,"SAML,OIDC,WS-Fed",,True,"TOTP,Push,WebAuthn,SMS",True,True,2026-01-02,True
+microsoft365,Microsoft 365,productivity,https://microsoft365.com,True,"SAML,OIDC",full,True,"TOTP,SMS,WebAuthn,Push",True,True,2025-12-31,True
+miro,Miro,collaboration,https://miro.com,True,SAML,full,True,"TOTP,SMS",True,True,2025-12-31,True
+mixpanel,Mixpanel,productivity,https://mixpanel.com,True,SAML,,True,TOTP,True,True,2026-01-03,True
+monday-com,monday.com,productivity,https://monday.com,True,"SAML,OIDC",,True,"TOTP,SMS",True,True,2026-01-02,True
+mural,Mural,collaboration,https://www.mural.co,True,SAML,,True,TOTP,True,True,2026-01-03,True
+navan,Navan,finance,https://navan.com,True,"SAML,OIDC",,True,TOTP,True,True,2026-01-03,True
+netsuite,NetSuite,finance,https://www.netsuite.com,True,"SAML,OIDC",,True,"TOTP,SMS,Email",True,True,2026-01-03,True
+new-relic,New Relic,infrastructure,https://newrelic.com,True,SAML,,True,TOTP,True,True,2026-01-03,True
+notion,Notion,productivity,https://notion.so,True,SAML,full,True,"TOTP,SMS,Email",True,True,2025-12-31,True
+outreach,Outreach,sales_marketing,https://www.outreach.io,True,SAML,,True,TOTP,True,True,2026-01-03,True
+pagerduty,PagerDuty,infrastructure,https://www.pagerduty.com,True,SAML,,True,"TOTP,SMS,WebAuthn,Push",True,True,2026-01-03,True
+pandadoc,PandaDoc,productivity,https://www.pandadoc.com,True,SAML,,True,TOTP,True,True,2026-01-03,True
+pipedrive,Pipedrive,sales_marketing,https://www.pipedrive.com,True,SAML,,True,TOTP,True,True,2026-01-03,True
+pluralsight,Pluralsight,productivity,https://www.pluralsight.com,True,SAML,,True,TOTP,True,True,2026-01-03,True
+postman,Postman,development,https://www.postman.com,True,SAML,,True,TOTP,True,True,2026-01-03,True
+qualtrics,Qualtrics,sales_marketing,https://www.qualtrics.com,True,SAML,,True,TOTP,True,True,2026-01-03,True
+quickbooks-online,QuickBooks Online,finance,https://quickbooks.intuit.com,True,OIDC,,True,"TOTP,SMS",True,True,2026-01-03,True
+ramp,Ramp,finance,https://ramp.com,True,"SAML,OIDC",,True,"TOTP,SMS,WebAuthn",True,True,2026-01-03,True
+ringcentral,RingCentral,collaboration,https://www.ringcentral.com,True,SAML,,True,"TOTP,SMS",True,True,2026-01-03,True
+rippling,Rippling,hr,https://www.rippling.com,True,"SAML,OIDC",,True,"TOTP,SMS,WebAuthn,Push",True,True,2026-01-03,True
+salesforce,Salesforce,sales_marketing,https://salesforce.com,True,"SAML,OIDC",full,True,"TOTP,SMS,WebAuthn,Push",True,True,2025-12-31,True
+sap-concur,SAP Concur,finance,https://www.concur.com,True,"SAML,OIDC",,True,"TOTP,SMS",True,True,2026-01-03,True
+servicenow,ServiceNow,infrastructure,https://www.servicenow.com,True,"SAML,OIDC",,True,"TOTP,SMS,WebAuthn",True,True,2026-01-02,True
+shopify,Shopify,sales_marketing,https://www.shopify.com,True,SAML,,True,"TOTP,SMS,Email",True,True,2026-01-02,True
+shortcut,Shortcut,development,https://www.shortcut.com,True,SAML,,True,TOTP,True,False,2026-01-02,True
+slack,Slack,collaboration,https://slack.com,True,SAML,full,True,"TOTP,SMS,Email",True,True,2026-01-01,True
+smartsheet,Smartsheet,productivity,https://smartsheet.com,True,SAML,,True,TOTP,True,True,2026-01-02,True
+snowflake,Snowflake,infrastructure,https://www.snowflake.com,True,SAML,,True,TOTP,True,True,2026-01-02,True
+snyk,Snyk,security,https://snyk.io,True,"SAML,OIDC",,True,"TOTP,WebAuthn",True,True,2026-01-03,True
+splunk,Splunk,infrastructure,https://www.splunk.com,True,SAML,,True,TOTP,True,True,2026-01-03,True
+sprout-social,Sprout Social,sales_marketing,https://sproutsocial.com,True,SAML,,True,TOTP,True,True,2026-01-03,True
+stripe,Stripe,finance,https://stripe.com,True,SAML,,True,"TOTP,SMS,WebAuthn",True,True,2026-01-03,True
+surveymonkey,SurveyMonkey,sales_marketing,https://www.surveymonkey.com,True,SAML,,True,TOTP,True,True,2026-01-03,True
+tableau,Tableau,productivity,https://www.tableau.com,True,"SAML,OIDC",,True,"TOTP,WebAuthn",True,True,2026-01-02,True
+teamviewer,TeamViewer,infrastructure,https://www.teamviewer.com,True,SAML,,True,TOTP,True,True,2026-01-03,True
+trello,Trello,productivity,https://trello.com,True,SAML,,True,"TOTP,SMS",True,True,2026-01-02,True
+twilio,Twilio,infrastructure,https://www.twilio.com,True,"SAML,OIDC",,True,"TOTP,SMS",True,True,2026-01-03,True
+typeform,Typeform,sales_marketing,https://www.typeform.com,True,SAML,,True,TOTP,True,True,2026-01-03,True
+uber-for-business,Uber for Business,finance,https://www.uber.com/business,True,SAML,,True,"TOTP,SMS",True,True,2026-01-03,True
+udemy-business,Udemy Business,productivity,https://business.udemy.com,True,"SAML,OIDC",,True,TOTP,True,True,2026-01-03,True
+workday,Workday,hr,https://www.workday.com,True,"SAML,OIDC",,True,"TOTP,SMS,WebAuthn",True,True,2026-01-02,True
+wrike,Wrike,productivity,https://wrike.com,True,SAML,,True,TOTP,True,True,2026-01-02,True
+xero,Xero,finance,https://www.xero.com,True,SAML,,True,TOTP,True,True,2026-01-02,True
+zapier,Zapier,productivity,https://zapier.com,True,SAML,,True,TOTP,True,True,2026-01-03,True
+zendesk,Zendesk,sales_marketing,https://zendesk.com,True,"SAML,OIDC",full,True,"TOTP,SMS",True,True,2025-12-31,True
+zoho-crm,Zoho CRM,sales_marketing,https://www.zoho.com/crm,True,SAML,,True,"TOTP,SMS",True,True,2026-01-03,True
+zoom,Zoom,collaboration,https://zoom.us,True,SAML,full,True,"TOTP,SMS,Email",True,True,2025-12-31,True
+zoominfo,ZoomInfo,sales_marketing,https://www.zoominfo.com,True,"SAML,OIDC",,True,"TOTP,SMS",True,True,2026-01-03,True
+zscaler,Zscaler,security,https://www.zscaler.com,True,SAML,,True,"TOTP,WebAuthn",True,True,2026-01-03,True
