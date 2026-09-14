@@ -420,48 +420,85 @@
     "_id": "atlassianconfluence",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "User API token management",
+        "plan": "Atlassian Guard Standard",
+        "source": "https://support.atlassian.com/security-and-access-policies/docs/understand-atlassian-guard/",
+        "support": "supported",
+        "tier": "add_on"
       },
       "audit_logs": {
+        "checked": "2026-09-14",
+        "notes": "Without Guard or an Enterprise plan no organization events are stored; 7 days shown by default",
+        "plan": "Atlassian Guard, or an Enterprise plan",
         "retention": "180 days",
+        "source": "https://support.atlassian.com/security-and-access-policies/docs/view-audit-log-activities/",
         "support": "supported",
-        "tier": "paid"
+        "tier": "add_on"
       },
       "custom_roles": {
         "support": "unknown"
       },
       "domain_verification": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Accounts on a verified domain become managed accounts the organization can edit, deactivate or delete",
+        "source": "https://support.atlassian.com/user-management/docs/verify-a-domain-to-manage-accounts/",
+        "support": "supported",
+        "tier": "free"
       },
       "group_role_mapping": {
         "support": "unknown"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Needs SAML enforced on the default authentication policy and domains linked to the IdP directory",
+        "plan": "Atlassian Guard Standard",
+        "source": "https://support.atlassian.com/security-and-access-policies/docs/configure-saml-single-sign-on-with-an-identity-provider/",
+        "support": "supported",
+        "tier": "add_on"
       },
       "mfa_enforcement": {
+        "checked": "2026-09-14",
+        "notes": "Enforced per authentication policy for managed accounts, and through external user security policies",
+        "source": "https://support.atlassian.com/security-and-access-policies/docs/enforce-two-step-verification/",
         "support": "supported",
         "tier": "free"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Security keys work as a 2-step verification factor; passkeys aren't available for organization-managed accounts",
+        "source": "https://www.atlassian.com/blog/announcements/introducing-passkeys-and-multiple-2-step-verification-factors",
+        "support": "partial"
       },
       "scim": {
+        "checked": "2026-09-14",
+        "notes": "Creates, updates and deactivates accounts on verified domains; syncs groups for Jira and Confluence",
+        "plan": "Atlassian Guard Standard",
+        "source": "https://support.atlassian.com/provisioning-users/docs/configure-user-provisioning-with-an-identity-provider/",
         "support": "supported",
-        "tier": "paid"
+        "tier": "add_on"
       },
       "session_controls": {
         "support": "supported"
       },
       "sso": {
+        "checked": "2026-09-14",
+        "notes": "Applies only to accounts on verified domains",
+        "plan": "Atlassian Guard Standard",
         "protocols": [
           "SAML"
         ],
+        "source": "https://support.atlassian.com/security-and-access-policies/docs/configure-saml-single-sign-on-with-an-identity-provider/",
         "support": "supported",
-        "tier": "paid"
+        "tier": "add_on"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Set per authentication policy with \"Enforce single sign-on\"",
+        "plan": "Atlassian Guard Standard",
+        "source": "https://support.atlassian.com/security-and-access-policies/docs/configure-saml-single-sign-on-with-an-identity-provider/",
+        "support": "supported",
+        "tier": "add_on"
       }
     },
     "category": "collaboration",
@@ -474,48 +511,85 @@
     "_id": "atlassianjira",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "User API token management",
+        "plan": "Atlassian Guard Standard",
+        "source": "https://support.atlassian.com/security-and-access-policies/docs/understand-atlassian-guard/",
+        "support": "supported",
+        "tier": "add_on"
       },
       "audit_logs": {
+        "checked": "2026-09-14",
+        "notes": "Without Guard or an Enterprise plan no organization events are stored; 7 days shown by default",
+        "plan": "Atlassian Guard, or an Enterprise plan",
         "retention": "180 days",
+        "source": "https://support.atlassian.com/security-and-access-policies/docs/view-audit-log-activities/",
         "support": "supported",
-        "tier": "paid"
+        "tier": "add_on"
       },
       "custom_roles": {
         "support": "unknown"
       },
       "domain_verification": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Accounts on a verified domain become managed accounts the organization can edit, deactivate or delete",
+        "source": "https://support.atlassian.com/user-management/docs/verify-a-domain-to-manage-accounts/",
+        "support": "supported",
+        "tier": "free"
       },
       "group_role_mapping": {
         "support": "unknown"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Needs SAML enforced on the default authentication policy and domains linked to the IdP directory",
+        "plan": "Atlassian Guard Standard",
+        "source": "https://support.atlassian.com/security-and-access-policies/docs/configure-saml-single-sign-on-with-an-identity-provider/",
+        "support": "supported",
+        "tier": "add_on"
       },
       "mfa_enforcement": {
+        "checked": "2026-09-14",
+        "notes": "Enforced per authentication policy for managed accounts, and through external user security policies",
+        "source": "https://support.atlassian.com/security-and-access-policies/docs/enforce-two-step-verification/",
         "support": "supported",
         "tier": "free"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Security keys work as a 2-step verification factor; passkeys aren't available for organization-managed accounts",
+        "source": "https://www.atlassian.com/blog/announcements/introducing-passkeys-and-multiple-2-step-verification-factors",
+        "support": "partial"
       },
       "scim": {
+        "checked": "2026-09-14",
+        "notes": "Creates, updates and deactivates accounts on verified domains; syncs groups for Jira and Confluence",
+        "plan": "Atlassian Guard Standard",
+        "source": "https://support.atlassian.com/provisioning-users/docs/configure-user-provisioning-with-an-identity-provider/",
         "support": "supported",
-        "tier": "paid"
+        "tier": "add_on"
       },
       "session_controls": {
         "support": "supported"
       },
       "sso": {
+        "checked": "2026-09-14",
+        "notes": "Applies only to accounts on verified domains",
+        "plan": "Atlassian Guard Standard",
         "protocols": [
           "SAML"
         ],
+        "source": "https://support.atlassian.com/security-and-access-policies/docs/configure-saml-single-sign-on-with-an-identity-provider/",
         "support": "supported",
-        "tier": "paid"
+        "tier": "add_on"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Set per authentication policy with \"Enforce single sign-on\"",
+        "plan": "Atlassian Guard Standard",
+        "source": "https://support.atlassian.com/security-and-access-policies/docs/configure-saml-single-sign-on-with-an-identity-provider/",
+        "support": "supported",
+        "tier": "add_on"
       }
     },
     "category": "development",
