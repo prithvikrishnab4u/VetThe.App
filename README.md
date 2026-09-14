@@ -28,6 +28,21 @@ hugo server
 # Open http://localhost:1313
 ```
 
+## Development & Data commands
+
+Generate machine-readable exports and validate data locally:
+
+```bash
+python -m venv .venv
+.venv/bin/python -m pip install --upgrade pip setuptools wheel
+.venv/bin/pip install pyyaml
+.venv/bin/python scripts/generate_data.py
+.venv/bin/python scripts/validate.py
+```
+
+The generated exports appear under `site/static/data/apps.json` and `site/static/data/apps.csv`.
+
+
 ---
 
 ## 🤝 Contributing
