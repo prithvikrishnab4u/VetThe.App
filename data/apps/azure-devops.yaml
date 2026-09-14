@@ -1,35 +1,41 @@
-name: "Azure DevOps"
-category: "development"
-website: "https://azure.microsoft.com/en-us/products/devops"
-description: "Services for teams to share code, track work, and ship software."
-status: "draft"
-
-# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+name: Azure DevOps
+category: development
+website: https://azure.microsoft.com/en-us/products/devops
+description: Services for teams to share code, track work, and ship software.
+status: draft
 capabilities:
   sso:
-    support: "supported"
-    tier: "free"
-    protocols: ["SAML", "OIDC"]
+    support: supported
+    tier: free
+    protocols:
+    - SAML
+    - OIDC
   sso_enforcement:
-    support: "unknown"
+    support: unknown
   scim:
-    support: "unknown"
+    support: unknown
   mfa_enforcement:
-    support: "supported"
-    tier: "free"
+    support: supported
+    tier: free
   phishing_resistant_mfa:
-    support: "supported"
+    support: supported
   audit_logs:
-    support: "unknown"
+    support: unknown
   jit_provisioning:
-    support: "supported"
+    support: supported
   domain_verification:
-    support: "supported"
+    support: supported
   custom_roles:
-    support: "unknown"
+    support: unknown
   group_role_mapping:
-    support: "unknown"
+    support: unknown
   session_controls:
-    support: "unknown"
+    support: unknown
   api_token_controls:
-    support: "unknown"
+    support: unknown
+provenance:
+  source: auto-verified
+  source_url: https://azure.microsoft.com/en-us/products/devops
+  verified_by: auto-verified
+  verified_date: '2026-09-14'
+  evidence: sso,mfa
