@@ -8,27 +8,50 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "free"
-    protocols: ["SAML"]
+    notes: "SAML 2.0 and OIDC security integrations; edition requirement not stated"
+    protocols: ["SAML", "OIDC"]
+    source: "https://docs.snowflake.com/en/user-guide/admin-security-fed-auth-overview"
+    checked: "2026-09-14"
   sso_enforcement:
-    support: "unknown"
+    support: "supported"
+    notes: "An authentication policy whose AUTHENTICATION_METHODS contains only SAML, set on the account or on specific users"
+    source: "https://docs.snowflake.com/en/user-guide/authentication-policies"
+    checked: "2026-09-14"
   scim:
-    support: "unknown"
+    support: "supported"
+    notes: "Okta, Microsoft Entra ID and custom IdPs; creates, updates and disables users"
+    source: "https://docs.snowflake.com/en/user-guide/scim-okta"
+    checked: "2026-09-14"
   mfa_enforcement:
     support: "supported"
-    tier: "free"
+    notes: "Authentication policy with MFA_ENROLLMENT = REQUIRED, for password and SSO users"
+    source: "https://docs.snowflake.com/en/user-guide/authentication-policies"
+    checked: "2026-09-14"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "supported"
+    notes: "Passkeys as a second factor; authentication policies can limit the allowed methods"
+    source: "https://docs.snowflake.com/en/user-guide/security-mfa"
+    checked: "2026-09-14"
   audit_logs:
-    support: "unknown"
+    support: "supported"
+    notes: "LOGIN_HISTORY view records successful and failed logins with authentication method"
+    retention: "365 days"
+    source: "https://docs.snowflake.com/en/sql-reference/account-usage/login_history"
+    checked: "2026-09-14"
   jit_provisioning:
     support: "supported"
   domain_verification:
     support: "supported"
   custom_roles:
-    support: "unknown"
+    support: "supported"
+    notes: "Custom account roles and role hierarchies"
+    source: "https://docs.snowflake.com/en/user-guide/security-access-control-overview"
+    checked: "2026-09-14"
   group_role_mapping:
-    support: "unknown"
+    support: "supported"
+    notes: "Okta Push Groups create Snowflake roles with the same names"
+    source: "https://docs.snowflake.com/en/user-guide/scim-okta"
+    checked: "2026-09-14"
   session_controls:
     support: "unknown"
   api_token_controls:

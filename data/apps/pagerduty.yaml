@@ -9,20 +9,43 @@ capabilities:
   sso:
     support: "supported"
     tier: "paid"
+    plan: "Professional"
+    notes: "SAML 2.0 for external IdPs; Google sign-in uses OAuth 2.0"
     protocols: ["SAML"]
+    source: "https://support.pagerduty.com/main/docs/sso"
+    checked: "2026-09-14"
   sso_enforcement:
-    support: "unknown"
-  scim:
-    support: "unknown"
-  mfa_enforcement:
     support: "supported"
     tier: "paid"
-  phishing_resistant_mfa:
+    plan: "Professional"
+    notes: "Turn off \"Allow username/password login\"; the Account Owner always keeps email and password login"
+    source: "https://support.pagerduty.com/main/docs/sso"
+    checked: "2026-09-14"
+  scim:
     support: "supported"
-  audit_logs:
+    tier: "free"
+    notes: "All plans; Entra ID, Okta and OneLogin; creates and updates users, and setting active to false deletes the user; roles can be set through SCIM"
+    source: "https://support.pagerduty.com/main/docs/scim-user-provisioning"
+    checked: "2026-09-14"
+  mfa_enforcement:
     support: "unknown"
+  phishing_resistant_mfa:
+    support: "unknown"
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "Changes to users, teams, escalation policies, schedules, services and incident workflows; also available through the API"
+    retention: "12 months"
+    source: "https://support.pagerduty.com/main/docs/audit-trail-reporting"
+    checked: "2026-09-14"
   jit_provisioning:
     support: "supported"
+    tier: "paid"
+    plan: "Professional"
+    notes: "Optional \"Auto-provision users on first login\" setting"
+    source: "https://support.pagerduty.com/main/docs/sso"
+    checked: "2026-09-14"
   domain_verification:
     support: "supported"
   custom_roles:

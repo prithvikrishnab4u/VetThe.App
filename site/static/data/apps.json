@@ -3873,7 +3873,13 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Changes to users, teams, escalation policies, schedules, services and incident workflows; also available through the API",
+        "plan": "Business",
+        "retention": "12 months",
+        "source": "https://support.pagerduty.com/main/docs/audit-trail-reporting",
+        "support": "supported",
+        "tier": "paid"
       },
       "custom_roles": {
         "support": "unknown"
@@ -3885,30 +3891,47 @@
         "support": "unknown"
       },
       "jit_provisioning": {
-        "support": "supported"
-      },
-      "mfa_enforcement": {
+        "checked": "2026-09-14",
+        "notes": "Optional \"Auto-provision users on first login\" setting",
+        "plan": "Professional",
+        "source": "https://support.pagerduty.com/main/docs/sso",
         "support": "supported",
         "tier": "paid"
       },
+      "mfa_enforcement": {
+        "support": "unknown"
+      },
       "phishing_resistant_mfa": {
-        "support": "supported"
+        "support": "unknown"
       },
       "scim": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "All plans; Entra ID, Okta and OneLogin; creates and updates users, and setting active to false deletes the user; roles can be set through SCIM",
+        "source": "https://support.pagerduty.com/main/docs/scim-user-provisioning",
+        "support": "supported",
+        "tier": "free"
       },
       "session_controls": {
         "support": "unknown"
       },
       "sso": {
+        "checked": "2026-09-14",
+        "notes": "SAML 2.0 for external IdPs; Google sign-in uses OAuth 2.0",
+        "plan": "Professional",
         "protocols": [
           "SAML"
         ],
+        "source": "https://support.pagerduty.com/main/docs/sso",
         "support": "supported",
         "tier": "paid"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Turn off \"Allow username/password login\"; the Account Owner always keeps email and password login",
+        "plan": "Professional",
+        "source": "https://support.pagerduty.com/main/docs/sso",
+        "support": "supported",
+        "tier": "paid"
       }
     },
     "category": "infrastructure",
@@ -4772,42 +4795,66 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "LOGIN_HISTORY view records successful and failed logins with authentication method",
+        "retention": "365 days",
+        "source": "https://docs.snowflake.com/en/sql-reference/account-usage/login_history",
+        "support": "supported"
       },
       "custom_roles": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Custom account roles and role hierarchies",
+        "source": "https://docs.snowflake.com/en/user-guide/security-access-control-overview",
+        "support": "supported"
       },
       "domain_verification": {
         "support": "supported"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Okta Push Groups create Snowflake roles with the same names",
+        "source": "https://docs.snowflake.com/en/user-guide/scim-okta",
+        "support": "supported"
       },
       "jit_provisioning": {
         "support": "supported"
       },
       "mfa_enforcement": {
-        "support": "supported",
-        "tier": "free"
+        "checked": "2026-09-14",
+        "notes": "Authentication policy with MFA_ENROLLMENT = REQUIRED, for password and SSO users",
+        "source": "https://docs.snowflake.com/en/user-guide/authentication-policies",
+        "support": "supported"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Passkeys as a second factor; authentication policies can limit the allowed methods",
+        "source": "https://docs.snowflake.com/en/user-guide/security-mfa",
+        "support": "supported"
       },
       "scim": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Okta, Microsoft Entra ID and custom IdPs; creates, updates and disables users",
+        "source": "https://docs.snowflake.com/en/user-guide/scim-okta",
+        "support": "supported"
       },
       "session_controls": {
         "support": "unknown"
       },
       "sso": {
+        "checked": "2026-09-14",
+        "notes": "SAML 2.0 and OIDC security integrations; edition requirement not stated",
         "protocols": [
-          "SAML"
+          "SAML",
+          "OIDC"
         ],
-        "support": "supported",
-        "tier": "free"
+        "source": "https://docs.snowflake.com/en/user-guide/admin-security-fed-auth-overview",
+        "support": "supported"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "An authentication policy whose AUTHENTICATION_METHODS contains only SAML, set on the account or on specific users",
+        "source": "https://docs.snowflake.com/en/user-guide/authentication-policies",
+        "support": "supported"
       }
     },
     "category": "infrastructure",
@@ -4974,45 +5021,74 @@
     "_id": "stripe",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Restricted API keys with limited permissions and access policies that block use from unauthorized locations",
+        "source": "https://docs.stripe.com/security",
+        "support": "supported"
       },
       "audit_logs": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Security history in the Dashboard with export; Activity Logs API (public preview) covers API keys, invitations and role changes",
+        "retention": "6 months",
+        "source": "https://docs.stripe.com/activity-logs",
+        "support": "supported"
       },
       "custom_roles": {
         "support": "unknown"
       },
       "domain_verification": {
+        "checked": "2026-09-14",
+        "notes": "DNS TXT record for each email domain, required to set up SSO",
+        "source": "https://docs.stripe.com/get-started/account/sso/other",
         "support": "supported"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Assign Dashboard roles to SCIM-synced groups, or send roles in SAML attribute statements",
+        "source": "https://docs.stripe.com/get-started/account/sso/group-role-assignments?locale=en-GB",
+        "support": "supported"
       },
       "jit_provisioning": {
+        "checked": "2026-09-14",
+        "notes": "Creates accounts for new users on their first SSO sign-in",
+        "source": "https://docs.stripe.com/get-started/account/sso",
         "support": "supported"
       },
       "mfa_enforcement": {
-        "support": "supported",
-        "tier": "free"
+        "checked": "2026-09-14",
+        "notes": "Team administrators can require two-step authentication for everyone on the Team settings page",
+        "source": "https://support.stripe.com/questions/enable-two-step-authentication",
+        "support": "supported"
       },
       "phishing_resistant_mfa": {
+        "checked": "2026-09-14",
+        "notes": "Passkeys and hardware security keys",
+        "source": "https://support.stripe.com/questions/enable-two-step-authentication",
         "support": "supported"
       },
       "scim": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Needs SSO; creates, updates and deprovisions users and groups; deactivating a user deletes them; email and group name updates aren't supported",
+        "source": "https://docs.stripe.com/get-started/account/sso/scim",
+        "support": "supported"
       },
       "session_controls": {
         "support": "unknown"
       },
       "sso": {
+        "checked": "2026-09-14",
+        "notes": "Dashboard SSO for any SAML 2.0 IdP; plan requirement not stated; can be configured centrally for an organization",
         "protocols": [
           "SAML"
         ],
-        "support": "supported",
-        "tier": "enterprise"
+        "source": "https://docs.stripe.com/get-started/account/sso",
+        "support": "supported"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "checked": "2026-09-14",
+        "notes": "Enforcement mode Off, Optional or Required; the account owner's access can't be revoked",
+        "source": "https://docs.stripe.com/get-started/account/sso/other",
+        "support": "supported"
       }
     },
     "category": "finance",

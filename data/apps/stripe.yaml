@@ -8,28 +8,57 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "enterprise"
+    notes: "Dashboard SSO for any SAML 2.0 IdP; plan requirement not stated; can be configured centrally for an organization"
     protocols: ["SAML"]
+    source: "https://docs.stripe.com/get-started/account/sso"
+    checked: "2026-09-14"
   sso_enforcement:
-    support: "unknown"
+    support: "supported"
+    notes: "Enforcement mode Off, Optional or Required; the account owner's access can't be revoked"
+    source: "https://docs.stripe.com/get-started/account/sso/other"
+    checked: "2026-09-14"
   scim:
-    support: "unknown"
+    support: "supported"
+    notes: "Needs SSO; creates, updates and deprovisions users and groups; deactivating a user deletes them; email and group name updates aren't supported"
+    source: "https://docs.stripe.com/get-started/account/sso/scim"
+    checked: "2026-09-14"
   mfa_enforcement:
     support: "supported"
-    tier: "free"
+    notes: "Team administrators can require two-step authentication for everyone on the Team settings page"
+    source: "https://support.stripe.com/questions/enable-two-step-authentication"
+    checked: "2026-09-14"
   phishing_resistant_mfa:
     support: "supported"
+    notes: "Passkeys and hardware security keys"
+    source: "https://support.stripe.com/questions/enable-two-step-authentication"
+    checked: "2026-09-14"
   audit_logs:
-    support: "unknown"
+    support: "supported"
+    notes: "Security history in the Dashboard with export; Activity Logs API (public preview) covers API keys, invitations and role changes"
+    retention: "6 months"
+    source: "https://docs.stripe.com/activity-logs"
+    checked: "2026-09-14"
   jit_provisioning:
     support: "supported"
+    notes: "Creates accounts for new users on their first SSO sign-in"
+    source: "https://docs.stripe.com/get-started/account/sso"
+    checked: "2026-09-14"
   domain_verification:
     support: "supported"
+    notes: "DNS TXT record for each email domain, required to set up SSO"
+    source: "https://docs.stripe.com/get-started/account/sso/other"
+    checked: "2026-09-14"
   custom_roles:
     support: "unknown"
   group_role_mapping:
-    support: "unknown"
+    support: "supported"
+    notes: "Assign Dashboard roles to SCIM-synced groups, or send roles in SAML attribute statements"
+    source: "https://docs.stripe.com/get-started/account/sso/group-role-assignments?locale=en-GB"
+    checked: "2026-09-14"
   session_controls:
     support: "unknown"
   api_token_controls:
-    support: "unknown"
+    support: "supported"
+    notes: "Restricted API keys with limited permissions and access policies that block use from unauthorized locations"
+    source: "https://docs.stripe.com/security"
+    checked: "2026-09-14"
