@@ -1,0 +1,1462 @@
+[
+  {
+    "id": "airtable",
+    "name": "Airtable",
+    "issues": [
+      "sso_not_found",
+      "scim_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 6,
+    "website": "https://airtable.com",
+    "auto_status": null
+  },
+  {
+    "id": "asana",
+    "name": "Asana",
+    "issues": [
+      "sso_not_found",
+      "scim_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 6,
+    "website": "https://asana.com",
+    "auto_status": null
+  },
+  {
+    "id": "atlassianconfluence",
+    "name": "Atlassian Confluence",
+    "issues": [
+      "sso_not_found",
+      "scim_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 6,
+    "website": "https://atlassian.com/software/confluence",
+    "auto_status": null
+  },
+  {
+    "id": "atlassianjira",
+    "name": "Atlassian Jira",
+    "issues": [
+      "sso_not_found",
+      "scim_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 6,
+    "website": "https://atlassian.com/software/jira",
+    "auto_status": null
+  },
+  {
+    "id": "auth0",
+    "name": "Auth0",
+    "issues": [
+      "sso_not_found",
+      "scim_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 6,
+    "website": "https://auth0.com",
+    "auto_status": null
+  },
+  {
+    "id": "box",
+    "name": "Box",
+    "issues": [
+      "sso_not_found",
+      "scim_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 6,
+    "website": "https://box.com",
+    "auto_status": null
+  },
+  {
+    "id": "docusign",
+    "name": "DocuSign",
+    "issues": [
+      "sso_not_found",
+      "scim_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 6,
+    "website": "https://docusign.com",
+    "auto_status": null
+  },
+  {
+    "id": "dropbox",
+    "name": "Dropbox",
+    "issues": [
+      "sso_not_found",
+      "scim_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 6,
+    "website": "https://dropbox.com",
+    "auto_status": null
+  },
+  {
+    "id": "figma",
+    "name": "Figma",
+    "issues": [
+      "sso_not_found",
+      "scim_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 6,
+    "website": "https://figma.com",
+    "auto_status": null
+  },
+  {
+    "id": "github",
+    "name": "GitHub",
+    "issues": [
+      "sso_not_found",
+      "scim_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 6,
+    "website": "https://github.com",
+    "auto_status": null
+  },
+  {
+    "id": "googleworkspace",
+    "name": "Google Workspace",
+    "issues": [
+      "sso_not_found",
+      "scim_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 6,
+    "website": "https://workspace.google.com",
+    "auto_status": null
+  },
+  {
+    "id": "linear",
+    "name": "Linear",
+    "issues": [
+      "sso_not_found",
+      "scim_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 6,
+    "website": "https://linear.app",
+    "auto_status": null
+  },
+  {
+    "id": "miro",
+    "name": "Miro",
+    "issues": [
+      "sso_not_found",
+      "scim_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 6,
+    "website": "https://miro.com",
+    "auto_status": null
+  },
+  {
+    "id": "notion",
+    "name": "Notion",
+    "issues": [
+      "sso_not_found",
+      "scim_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 6,
+    "website": "https://notion.so",
+    "auto_status": null
+  },
+  {
+    "id": "salesforce",
+    "name": "Salesforce",
+    "issues": [
+      "sso_not_found",
+      "scim_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 6,
+    "website": "https://salesforce.com",
+    "auto_status": null
+  },
+  {
+    "id": "slack",
+    "name": "Slack",
+    "issues": [
+      "sso_not_found",
+      "scim_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 6,
+    "website": "https://slack.com",
+    "auto_status": null
+  },
+  {
+    "id": "zendesk",
+    "name": "Zendesk",
+    "issues": [
+      "sso_not_found",
+      "scim_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 6,
+    "website": "https://zendesk.com",
+    "auto_status": null
+  },
+  {
+    "id": "1password",
+    "name": "1Password",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://1password.com",
+    "auto_status": null
+  },
+  {
+    "id": "adobe-creative-cloud",
+    "name": "Adobe Creative Cloud",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.adobe.com/creativecloud.html",
+    "auto_status": null
+  },
+  {
+    "id": "amazon-web-services-aws",
+    "name": "Amazon Web Services (AWS)",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://aws.amazon.com",
+    "auto_status": null
+  },
+  {
+    "id": "amplitude",
+    "name": "Amplitude",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://amplitude.com",
+    "auto_status": null
+  },
+  {
+    "id": "bamboohr",
+    "name": "BambooHR",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.bamboohr.com",
+    "auto_status": null
+  },
+  {
+    "id": "bitbucket-cloud",
+    "name": "Bitbucket Cloud",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://bitbucket.org",
+    "auto_status": null
+  },
+  {
+    "id": "braze",
+    "name": "Braze",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.braze.com",
+    "auto_status": null
+  },
+  {
+    "id": "calendly",
+    "name": "Calendly",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://calendly.com",
+    "auto_status": null
+  },
+  {
+    "id": "canva",
+    "name": "Canva",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://canva.com",
+    "auto_status": null
+  },
+  {
+    "id": "circleci",
+    "name": "CircleCI",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://circleci.com",
+    "auto_status": null
+  },
+  {
+    "id": "cisco-webex",
+    "name": "Cisco Webex",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://webex.com",
+    "auto_status": null
+  },
+  {
+    "id": "citrix-sharefile",
+    "name": "Citrix ShareFile",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.sharefile.com",
+    "auto_status": null
+  },
+  {
+    "id": "clickup",
+    "name": "ClickUp",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://clickup.com",
+    "auto_status": null
+  },
+  {
+    "id": "coursera-for-business",
+    "name": "Coursera for Business",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.coursera.org/business",
+    "auto_status": null
+  },
+  {
+    "id": "crowdstrike",
+    "name": "CrowdStrike",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.crowdstrike.com",
+    "auto_status": null
+  },
+  {
+    "id": "databricks",
+    "name": "Databricks",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.databricks.com",
+    "auto_status": null
+  },
+  {
+    "id": "datadog",
+    "name": "Datadog",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.datadoghq.com",
+    "auto_status": null
+  },
+  {
+    "id": "deel",
+    "name": "Deel",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.deel.com",
+    "auto_status": null
+  },
+  {
+    "id": "docker-hub",
+    "name": "Docker Hub",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://hub.docker.com",
+    "auto_status": null
+  },
+  {
+    "id": "freshdesk",
+    "name": "Freshdesk",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://freshdesk.com",
+    "auto_status": null
+  },
+  {
+    "id": "freshservice",
+    "name": "Freshservice",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://freshservice.com",
+    "auto_status": null
+  },
+  {
+    "id": "gitlab",
+    "name": "GitLab",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://about.gitlab.com",
+    "auto_status": null
+  },
+  {
+    "id": "gong",
+    "name": "Gong",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.gong.io",
+    "auto_status": null
+  },
+  {
+    "id": "grammarly",
+    "name": "Grammarly",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.grammarly.com",
+    "auto_status": null
+  },
+  {
+    "id": "greenhouse",
+    "name": "Greenhouse",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.greenhouse.io",
+    "auto_status": null
+  },
+  {
+    "id": "hootsuite",
+    "name": "Hootsuite",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.hootsuite.com",
+    "auto_status": null
+  },
+  {
+    "id": "hubspot",
+    "name": "HubSpot",
+    "issues": [
+      "sso_not_found",
+      "scim_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://hubspot.com",
+    "auto_status": null
+  },
+  {
+    "id": "lastpass",
+    "name": "LastPass",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.lastpass.com",
+    "auto_status": null
+  },
+  {
+    "id": "linkedin-learning",
+    "name": "LinkedIn Learning",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://learning.linkedin.com",
+    "auto_status": null
+  },
+  {
+    "id": "loom",
+    "name": "Loom",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.loom.com",
+    "auto_status": null
+  },
+  {
+    "id": "lucidchart",
+    "name": "Lucidchart",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.lucidchart.com",
+    "auto_status": null
+  },
+  {
+    "id": "mailchimp",
+    "name": "Mailchimp",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://mailchimp.com",
+    "auto_status": null
+  },
+  {
+    "id": "marketo",
+    "name": "Marketo",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.marketo.com",
+    "auto_status": null
+  },
+  {
+    "id": "microsoft-teams",
+    "name": "Microsoft Teams",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.microsoft.com/en-us/microsoft-teams",
+    "auto_status": null
+  },
+  {
+    "id": "mixpanel",
+    "name": "Mixpanel",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://mixpanel.com",
+    "auto_status": null
+  },
+  {
+    "id": "navan",
+    "name": "Navan",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://navan.com",
+    "auto_status": null
+  },
+  {
+    "id": "new-relic",
+    "name": "New Relic",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://newrelic.com",
+    "auto_status": null
+  },
+  {
+    "id": "outreach",
+    "name": "Outreach",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.outreach.io",
+    "auto_status": null
+  },
+  {
+    "id": "pagerduty",
+    "name": "PagerDuty",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.pagerduty.com",
+    "auto_status": null
+  },
+  {
+    "id": "pandadoc",
+    "name": "PandaDoc",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.pandadoc.com",
+    "auto_status": null
+  },
+  {
+    "id": "pipedrive",
+    "name": "Pipedrive",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.pipedrive.com",
+    "auto_status": null
+  },
+  {
+    "id": "pluralsight",
+    "name": "Pluralsight",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.pluralsight.com",
+    "auto_status": null
+  },
+  {
+    "id": "postman",
+    "name": "Postman",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.postman.com",
+    "auto_status": null
+  },
+  {
+    "id": "ramp",
+    "name": "Ramp",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://ramp.com",
+    "auto_status": null
+  },
+  {
+    "id": "ringcentral",
+    "name": "RingCentral",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.ringcentral.com",
+    "auto_status": null
+  },
+  {
+    "id": "rippling",
+    "name": "Rippling",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.rippling.com",
+    "auto_status": null
+  },
+  {
+    "id": "servicenow",
+    "name": "ServiceNow",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.servicenow.com",
+    "auto_status": null
+  },
+  {
+    "id": "smartsheet",
+    "name": "Smartsheet",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://smartsheet.com",
+    "auto_status": null
+  },
+  {
+    "id": "snowflake",
+    "name": "Snowflake",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.snowflake.com",
+    "auto_status": null
+  },
+  {
+    "id": "sprout-social",
+    "name": "Sprout Social",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://sproutsocial.com",
+    "auto_status": null
+  },
+  {
+    "id": "surveymonkey",
+    "name": "SurveyMonkey",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.surveymonkey.com",
+    "auto_status": null
+  },
+  {
+    "id": "tableau",
+    "name": "Tableau",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.tableau.com",
+    "auto_status": null
+  },
+  {
+    "id": "teamviewer",
+    "name": "TeamViewer",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.teamviewer.com",
+    "auto_status": null
+  },
+  {
+    "id": "trello",
+    "name": "Trello",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://trello.com",
+    "auto_status": null
+  },
+  {
+    "id": "twilio",
+    "name": "Twilio",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.twilio.com",
+    "auto_status": null
+  },
+  {
+    "id": "typeform",
+    "name": "Typeform",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.typeform.com",
+    "auto_status": null
+  },
+  {
+    "id": "uber-for-business",
+    "name": "Uber for Business",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.uber.com/business",
+    "auto_status": null
+  },
+  {
+    "id": "udemy-business",
+    "name": "Udemy Business",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://business.udemy.com",
+    "auto_status": null
+  },
+  {
+    "id": "workday",
+    "name": "Workday",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.workday.com",
+    "auto_status": null
+  },
+  {
+    "id": "wrike",
+    "name": "Wrike",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://wrike.com",
+    "auto_status": null
+  },
+  {
+    "id": "zapier",
+    "name": "Zapier",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://zapier.com",
+    "auto_status": null
+  },
+  {
+    "id": "zoho-crm",
+    "name": "Zoho CRM",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.zoho.com/crm",
+    "auto_status": null
+  },
+  {
+    "id": "zoominfo",
+    "name": "ZoomInfo",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.zoominfo.com",
+    "auto_status": null
+  },
+  {
+    "id": "zscaler",
+    "name": "Zscaler",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://www.zscaler.com",
+    "auto_status": null
+  },
+  {
+    "id": "monday-com",
+    "name": "monday.com",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 5,
+    "website": "https://monday.com",
+    "auto_status": null
+  },
+  {
+    "id": "activecampaign",
+    "name": "ActiveCampaign",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 4,
+    "website": "https://www.activecampaign.com",
+    "auto_status": null
+  },
+  {
+    "id": "basecamp",
+    "name": "Basecamp",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 4,
+    "website": "https://basecamp.com",
+    "auto_status": null
+  },
+  {
+    "id": "gusto",
+    "name": "Gusto",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 4,
+    "website": "https://gusto.com",
+    "auto_status": null
+  },
+  {
+    "id": "netsuite",
+    "name": "NetSuite",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found"
+    ],
+    "issue_count": 4,
+    "website": "https://www.netsuite.com",
+    "auto_status": 403
+  },
+  {
+    "id": "sap-concur",
+    "name": "SAP Concur",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found"
+    ],
+    "issue_count": 4,
+    "website": "https://www.concur.com",
+    "auto_status": 200
+  },
+  {
+    "id": "shortcut",
+    "name": "Shortcut",
+    "issues": [
+      "sso_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "site_unreachable"
+    ],
+    "issue_count": 4,
+    "website": "https://www.shortcut.com",
+    "auto_status": null
+  },
+  {
+    "id": "zoom",
+    "name": "Zoom",
+    "issues": [
+      "scim_not_found",
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found"
+    ],
+    "issue_count": 4,
+    "website": "https://zoom.us",
+    "auto_status": 200
+  },
+  {
+    "id": "bill-com",
+    "name": "Bill.com",
+    "issues": [
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found"
+    ],
+    "issue_count": 3,
+    "website": "https://www.bill.com",
+    "auto_status": 200
+  },
+  {
+    "id": "egnyte",
+    "name": "Egnyte",
+    "issues": [
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found"
+    ],
+    "issue_count": 3,
+    "website": "https://www.egnyte.com",
+    "auto_status": 200
+  },
+  {
+    "id": "microsoft365",
+    "name": "Microsoft 365",
+    "issues": [
+      "scim_not_found",
+      "soc2_not_found",
+      "iso27001_not_found"
+    ],
+    "issue_count": 3,
+    "website": "https://microsoft365.com",
+    "auto_status": 200
+  },
+  {
+    "id": "qualtrics",
+    "name": "Qualtrics",
+    "issues": [
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found"
+    ],
+    "issue_count": 3,
+    "website": "https://www.qualtrics.com",
+    "auto_status": 200
+  },
+  {
+    "id": "splunk",
+    "name": "Splunk",
+    "issues": [
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found"
+    ],
+    "issue_count": 3,
+    "website": "https://www.splunk.com",
+    "auto_status": 200
+  },
+  {
+    "id": "stripe",
+    "name": "Stripe",
+    "issues": [
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found"
+    ],
+    "issue_count": 3,
+    "website": "https://stripe.com",
+    "auto_status": 200
+  },
+  {
+    "id": "xero",
+    "name": "Xero",
+    "issues": [
+      "mfa_not_found",
+      "soc2_not_found",
+      "iso27001_not_found"
+    ],
+    "issue_count": 3,
+    "website": "https://www.xero.com",
+    "auto_status": 200
+  },
+  {
+    "id": "adp-workforce-now",
+    "name": "ADP Workforce Now",
+    "issues": [
+      "soc2_not_found",
+      "iso27001_not_found"
+    ],
+    "issue_count": 2,
+    "website": "https://www.adp.com",
+    "auto_status": 200
+  },
+  {
+    "id": "azure-devops",
+    "name": "Azure DevOps",
+    "issues": [
+      "soc2_not_found",
+      "iso27001_not_found"
+    ],
+    "issue_count": 2,
+    "website": "https://azure.microsoft.com/en-us/products/devops",
+    "auto_status": 200
+  },
+  {
+    "id": "brex",
+    "name": "Brex",
+    "issues": [
+      "soc2_not_found",
+      "iso27001_not_found"
+    ],
+    "issue_count": 2,
+    "website": "https://www.brex.com",
+    "auto_status": 200
+  },
+  {
+    "id": "expensify",
+    "name": "Expensify",
+    "issues": [
+      "soc2_not_found",
+      "iso27001_not_found"
+    ],
+    "issue_count": 2,
+    "website": "https://www.expensify.com",
+    "auto_status": 403
+  },
+  {
+    "id": "front",
+    "name": "Front",
+    "issues": [
+      "soc2_not_found",
+      "iso27001_not_found"
+    ],
+    "issue_count": 2,
+    "website": "https://front.com",
+    "auto_status": 200
+  },
+  {
+    "id": "lark",
+    "name": "Lark",
+    "issues": [
+      "soc2_not_found",
+      "iso27001_not_found"
+    ],
+    "issue_count": 2,
+    "website": "https://www.larksuite.com",
+    "auto_status": 200
+  },
+  {
+    "id": "mural",
+    "name": "Mural",
+    "issues": [
+      "soc2_not_found",
+      "iso27001_not_found"
+    ],
+    "issue_count": 2,
+    "website": "https://www.mural.co",
+    "auto_status": 200
+  },
+  {
+    "id": "quickbooks-online",
+    "name": "QuickBooks Online",
+    "issues": [
+      "soc2_not_found",
+      "iso27001_not_found"
+    ],
+    "issue_count": 2,
+    "website": "https://quickbooks.intuit.com",
+    "auto_status": 200
+  },
+  {
+    "id": "shopify",
+    "name": "Shopify",
+    "issues": [
+      "soc2_not_found",
+      "iso27001_not_found"
+    ],
+    "issue_count": 2,
+    "website": "https://www.shopify.com",
+    "auto_status": 200
+  },
+  {
+    "id": "snyk",
+    "name": "Snyk",
+    "issues": [
+      "soc2_not_found",
+      "iso27001_not_found"
+    ],
+    "issue_count": 2,
+    "website": "https://snyk.io",
+    "auto_status": 200
+  },
+  {
+    "id": "intercom",
+    "name": "Intercom",
+    "issues": [
+      "iso27001_not_found"
+    ],
+    "issue_count": 1,
+    "website": "https://intercom.com",
+    "auto_status": 200
+  }
+]
