@@ -4,13 +4,6 @@ website: "https://www.netsuite.com"
 description: "Unified business management suite for ERP, financials, CRM, and ecommerce."
 status: "draft"
 
-provenance:
-  source: "auto-scan"
-  source_url: "https://www.netsuite.com/developer"
-  verified_by: "auto-scan"
-  checked: "2026-09-14"
-  evidence: "developer/docs page reachable"
-
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:

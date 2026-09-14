@@ -79,13 +79,6 @@
     "category": "security",
     "description": "Password manager, digital vault, form filler and secure digital wallet.",
     "name": "1Password",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,scim,mfa,soc2,iso27001",
-      "source": "auto-scan",
-      "source_url": "https://1password.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://1password.com"
   },
@@ -137,13 +130,6 @@
     "category": "sales_marketing",
     "description": "Automation-first marketing and CRM platform helping businesses connect with customers.",
     "name": "ActiveCampaign",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa",
-      "source": "auto-scan",
-      "source_url": "https://www.activecampaign.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.activecampaign.com"
   },
@@ -195,13 +181,6 @@
     "category": "productivity",
     "description": "A suite of 20+ apps and services for photography, design, video, web, UX, and more.",
     "name": "Adobe Creative Cloud",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "site-reachable",
-      "source": "auto-scan",
-      "source_url": "https://www.adobe.com/creativecloud.html",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.adobe.com/creativecloud.html"
   },
@@ -315,13 +294,6 @@
     "category": "productivity",
     "description": "A platform for building collaborative apps and databases with powerful automation.",
     "name": "Airtable",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,scim,mfa,soc2",
-      "source": "auto-scan",
-      "source_url": "https://airtable.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://airtable.com"
   },
@@ -374,13 +346,6 @@
     "category": "infrastructure",
     "description": "Comprehensive cloud computing platform offering over 200 fully featured services from data centers globally.",
     "name": "Amazon Web Services (AWS)",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,scim,mfa",
-      "source": "auto-scan",
-      "source_url": "https://aws.amazon.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://aws.amazon.com"
   },
@@ -432,13 +397,6 @@
     "category": "productivity",
     "description": "Product analytics platform for building better digital products.",
     "name": "Amplitude",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa",
-      "source": "auto-scan",
-      "source_url": "https://amplitude.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://amplitude.com"
   },
@@ -496,13 +454,6 @@
     "category": "productivity",
     "description": "A work management platform that helps teams orchestrate their work.",
     "name": "Asana",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,scim",
-      "source": "auto-scan",
-      "source_url": "https://asana.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://asana.com"
   },
@@ -594,13 +545,6 @@
     "category": "collaboration",
     "description": "Web-based corporate wiki and collaboration software for teams.",
     "name": "Atlassian Confluence",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,scim,mfa",
-      "source": "auto-scan",
-      "source_url": "https://atlassian.com/software/confluence",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://atlassian.com/software/confluence"
   },
@@ -692,13 +636,6 @@
     "category": "development",
     "description": "Issue tracking and project management software for software development teams.",
     "name": "Atlassian Jira",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,scim,mfa",
-      "source": "auto-scan",
-      "source_url": "https://atlassian.com/software/jira",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://atlassian.com/software/jira"
   },
@@ -754,13 +691,6 @@
     "category": "security",
     "description": "Customer identity and access management platform for developers (acquired by Okta).",
     "name": "Auth0",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,scim,mfa",
-      "source": "auto-scan",
-      "source_url": "https://auth0.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://auth0.com"
   },
@@ -871,13 +801,6 @@
     "category": "hr",
     "description": "A comprehensive HR software solution for small and medium businesses to manage employee data, payroll, and benefits.",
     "name": "BambooHR",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso",
-      "source": "auto-scan",
-      "source_url": "https://www.bamboohr.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.bamboohr.com"
   },
@@ -931,13 +854,6 @@
     "category": "collaboration",
     "description": "An all-in-one project management and team communication tool designed for simplicity and clarity.",
     "name": "Basecamp",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "site-reachable",
-      "source": "auto-scan",
-      "source_url": "https://basecamp.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://basecamp.com"
   },
@@ -1047,13 +963,6 @@
     "category": "development",
     "description": "Git repository management solution designed for professional teams.",
     "name": "Bitbucket Cloud",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa,soc2",
-      "source": "auto-scan",
-      "source_url": "https://bitbucket.org",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://bitbucket.org"
   },
@@ -1159,13 +1068,6 @@
     "category": "sales_marketing",
     "description": "Customer engagement platform that powers real-time interactions.",
     "name": "Braze",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa,iso27001",
-      "source": "auto-scan",
-      "source_url": "https://www.braze.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.braze.com"
   },
@@ -1276,13 +1178,6 @@
     "category": "productivity",
     "description": "Scheduling automation platform for eliminating back-and-forth emails.",
     "name": "Calendly",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso",
-      "source": "auto-scan",
-      "source_url": "https://calendly.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://calendly.com"
   },
@@ -1334,13 +1229,6 @@
     "category": "productivity",
     "description": "Online design and visual communication platform for creating presentations, social media graphics, and more.",
     "name": "Canva",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "site-reachable",
-      "source": "auto-scan",
-      "source_url": "https://canva.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://canva.com"
   },
@@ -1393,13 +1281,6 @@
     "category": "development",
     "description": "Continuous integration and delivery platform for DevOps teams.",
     "name": "CircleCI",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso",
-      "source": "auto-scan",
-      "source_url": "https://circleci.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://circleci.com"
   },
@@ -1504,13 +1385,6 @@
     "category": "collaboration",
     "description": "Content collaboration platform for secure file sharing.",
     "name": "Citrix ShareFile",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa",
-      "source": "auto-scan",
-      "source_url": "https://www.sharefile.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.sharefile.com"
   },
@@ -1562,13 +1436,6 @@
     "category": "productivity",
     "description": "The all-in-one productivity platform where teams can come together to plan, organize, and collaborate.",
     "name": "ClickUp",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,soc2,iso27001",
-      "source": "auto-scan",
-      "source_url": "https://clickup.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://clickup.com"
   },
@@ -1621,13 +1488,6 @@
     "category": "productivity",
     "description": "Enterprise learning platform for skills development.",
     "name": "Coursera for Business",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa",
-      "source": "auto-scan",
-      "source_url": "https://www.coursera.org/business",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.coursera.org/business"
   },
@@ -1679,13 +1539,6 @@
     "category": "security",
     "description": "Cybersecurity technology company that provides cloud workload and endpoint security, threat intelligence, and cyberattack response services.",
     "name": "CrowdStrike",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "site-reachable",
-      "source": "auto-scan",
-      "source_url": "https://www.crowdstrike.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.crowdstrike.com"
   },
@@ -1738,13 +1591,6 @@
     "category": "infrastructure",
     "description": "Data and AI company offering a unified lakehouse platform for data engineering, science, and analytics.",
     "name": "Databricks",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso",
-      "source": "auto-scan",
-      "source_url": "https://www.databricks.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.databricks.com"
   },
@@ -1821,13 +1667,6 @@
     "category": "infrastructure",
     "description": "Observability and security platform for cloud-scale applications, providing monitoring of servers, databases, tools, and services.",
     "name": "Datadog",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa",
-      "source": "auto-scan",
-      "source_url": "https://www.datadoghq.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.datadoghq.com"
   },
@@ -1880,13 +1719,6 @@
     "category": "hr",
     "description": "Global payroll and compliance platform for international teams.",
     "name": "Deel",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa",
-      "source": "auto-scan",
-      "source_url": "https://www.deel.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.deel.com"
   },
@@ -1938,13 +1770,6 @@
     "category": "development",
     "description": "Container registry service for finding and sharing container images.",
     "name": "Docker Hub",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa",
-      "source": "auto-scan",
-      "source_url": "https://hub.docker.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://hub.docker.com"
   },
@@ -1999,13 +1824,6 @@
     "category": "productivity",
     "description": "Electronic signature and agreement management platform.",
     "name": "DocuSign",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa,iso27001",
-      "source": "auto-scan",
-      "source_url": "https://docusign.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://docusign.com"
   },
@@ -2264,13 +2082,6 @@
     "category": "development",
     "description": "Cloud-based design and prototyping tool for teams and individuals.",
     "name": "Figma",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa",
-      "source": "auto-scan",
-      "source_url": "https://figma.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://figma.com"
   },
@@ -2323,13 +2134,6 @@
     "category": "sales_marketing",
     "description": "Online cloud-based customer service software providing help desk support with all smart automations.",
     "name": "Freshdesk",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa",
-      "source": "auto-scan",
-      "source_url": "https://freshdesk.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://freshdesk.com"
   },
@@ -2382,13 +2186,6 @@
     "category": "infrastructure",
     "description": "IT service management (ITSM) software for modern enterprises.",
     "name": "Freshservice",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,scim,mfa",
-      "source": "auto-scan",
-      "source_url": "https://freshservice.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://freshservice.com"
   },
@@ -2524,13 +2321,6 @@
     "category": "development",
     "description": "AI-powered developer platform to build, scale, and deliver secure software.",
     "name": "GitHub",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso",
-      "source": "auto-scan",
-      "source_url": "https://github.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://github.com"
   },
@@ -2628,13 +2418,6 @@
     "category": "development",
     "description": "The DevSecOps platform that brings development, operations, and security teams together in a single application.",
     "name": "GitLab",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso",
-      "source": "auto-scan",
-      "source_url": "https://about.gitlab.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://about.gitlab.com"
   },
@@ -2687,13 +2470,6 @@
     "category": "sales_marketing",
     "description": "Revenue intelligence platform capturing customer interactions.",
     "name": "Gong",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa",
-      "source": "auto-scan",
-      "source_url": "https://www.gong.io",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.gong.io"
   },
@@ -2780,13 +2556,6 @@
     "category": "productivity",
     "description": "Cloud-based collaboration and productivity tools including Gmail, Drive, and Docs.",
     "name": "Google Workspace",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso",
-      "source": "auto-scan",
-      "source_url": "https://workspace.google.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://workspace.google.com"
   },
@@ -2838,13 +2607,6 @@
     "category": "productivity",
     "description": "AI-powered writing assistant that helps individuals and teams communicate effectively.",
     "name": "Grammarly",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa",
-      "source": "auto-scan",
-      "source_url": "https://www.grammarly.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.grammarly.com"
   },
@@ -2896,13 +2658,6 @@
     "category": "hr",
     "description": "Applicant tracking system and recruiting software.",
     "name": "Greenhouse",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso",
-      "source": "auto-scan",
-      "source_url": "https://www.greenhouse.io",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.greenhouse.io"
   },
@@ -2954,13 +2709,6 @@
     "category": "hr",
     "description": "Modern HR platform for payroll, benefits, and management.",
     "name": "Gusto",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "support page reachable",
-      "source": "auto-scan",
-      "source_url": "https://gusto.com/support",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://gusto.com"
   },
@@ -3012,13 +2760,6 @@
     "category": "sales_marketing",
     "description": "Social media marketing and management dashboard.",
     "name": "Hootsuite",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa",
-      "source": "auto-scan",
-      "source_url": "https://www.hootsuite.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.hootsuite.com"
   },
@@ -3096,13 +2837,6 @@
     "category": "sales_marketing",
     "description": "Customer platform with software for marketing, sales, content management, and service.",
     "name": "HubSpot",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso",
-      "source": "auto-scan",
-      "source_url": "https://hubspot.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://hubspot.com"
   },
@@ -3213,13 +2947,6 @@
     "category": "collaboration",
     "description": "A unified collaboration suite that combines chat, docs, meetings, and project management in one app.",
     "name": "Lark",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa",
-      "source": "auto-scan",
-      "source_url": "https://www.larksuite.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.larksuite.com"
   },
@@ -3366,13 +3093,6 @@
     "category": "development",
     "description": "Project management tool for high-performance software teams.",
     "name": "Linear",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso",
-      "source": "auto-scan",
-      "source_url": "https://linear.app",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://linear.app"
   },
@@ -3424,13 +3144,6 @@
     "category": "productivity",
     "description": "Online educational platform that helps you discover and develop business, technology-related, and creative skills.",
     "name": "LinkedIn Learning",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "mfa",
-      "source": "auto-scan",
-      "source_url": "https://learning.linkedin.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://learning.linkedin.com"
   },
@@ -3483,13 +3196,6 @@
     "category": "collaboration",
     "description": "Video messaging tool for work that allows you to record your screen and camera.",
     "name": "Loom",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,scim,mfa",
-      "source": "auto-scan",
-      "source_url": "https://www.loom.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.loom.com"
   },
@@ -3711,13 +3417,6 @@
     "category": "collaboration",
     "description": "The hub for teamwork in Microsoft 365 that combines chat, meetings, calling, and collaboration.",
     "name": "Microsoft Teams",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "security page reachable",
-      "source": "auto-scan",
-      "source_url": "https://www.microsoft.com/en-us/microsoft-teams/security",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.microsoft.com/en-us/microsoft-teams"
   },
@@ -3834,13 +3533,6 @@
     "category": "collaboration",
     "description": "Visual workspace for innovation where teams can dream, design, and build together.",
     "name": "Miro",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa,soc2,iso27001",
-      "source": "auto-scan",
-      "source_url": "https://miro.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://miro.com"
   },
@@ -3892,13 +3584,6 @@
     "category": "productivity",
     "description": "Self-serve product analytics to help you convert, engage, and retain more users.",
     "name": "Mixpanel",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso",
-      "source": "auto-scan",
-      "source_url": "https://mixpanel.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://mixpanel.com"
   },
@@ -3951,13 +3636,6 @@
     "category": "productivity",
     "description": "A work OS that powers teams to run projects and workflows with confidence.",
     "name": "monday.com",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa,soc2",
-      "source": "auto-scan",
-      "source_url": "https://monday.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://monday.com"
   },
@@ -4068,13 +3746,6 @@
     "category": "finance",
     "description": "Corporate travel and expense management solution.",
     "name": "Navan",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso",
-      "source": "auto-scan",
-      "source_url": "https://navan.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://navan.com"
   },
@@ -4127,13 +3798,6 @@
     "category": "finance",
     "description": "Unified business management suite for ERP, financials, CRM, and ecommerce.",
     "name": "NetSuite",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "developer/docs page reachable",
-      "source": "auto-scan",
-      "source_url": "https://www.netsuite.com/developer",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.netsuite.com"
   },
@@ -4185,13 +3849,6 @@
     "category": "infrastructure",
     "description": "Observability platform that helps you build better software.",
     "name": "New Relic",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso",
-      "source": "auto-scan",
-      "source_url": "https://newrelic.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://newrelic.com"
   },
@@ -4277,13 +3934,6 @@
     "category": "productivity",
     "description": "An all-in-one workspace for notes, tasks, wikis, and databases.",
     "name": "Notion",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa",
-      "source": "auto-scan",
-      "source_url": "https://notion.so",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://notion.so"
   },
@@ -4335,13 +3985,6 @@
     "category": "sales_marketing",
     "description": "Sales execution platform helping teams create and close more pipeline.",
     "name": "Outreach",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso",
-      "source": "auto-scan",
-      "source_url": "https://www.outreach.io",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.outreach.io"
   },
@@ -4416,13 +4059,6 @@
     "category": "infrastructure",
     "description": "Incident management platform that provides reliable notifications, automatic escalations, and on-call scheduling.",
     "name": "PagerDuty",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso",
-      "source": "auto-scan",
-      "source_url": "https://www.pagerduty.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.pagerduty.com"
   },
@@ -4525,13 +4161,6 @@
     "category": "sales_marketing",
     "description": "Sales CRM and pipeline management software.",
     "name": "Pipedrive",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa,soc2",
-      "source": "auto-scan",
-      "source_url": "https://www.pipedrive.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.pipedrive.com"
   },
@@ -4583,13 +4212,6 @@
     "category": "productivity",
     "description": "Technology skills platform for IT and engineering teams.",
     "name": "Pluralsight",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "site-reachable",
-      "source": "auto-scan",
-      "source_url": "https://www.pluralsight.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.pluralsight.com"
   },
@@ -4641,13 +4263,6 @@
     "category": "development",
     "description": "API platform for building and using APIs.",
     "name": "Postman",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso",
-      "source": "auto-scan",
-      "source_url": "https://www.postman.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.postman.com"
   },
@@ -4699,13 +4314,6 @@
     "category": "sales_marketing",
     "description": "Experience management platform for collecting and analyzing data.",
     "name": "Qualtrics",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso",
-      "source": "auto-scan",
-      "source_url": "https://www.qualtrics.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.qualtrics.com"
   },
@@ -4816,13 +4424,6 @@
     "category": "finance",
     "description": "Corporate card and spend management platform.",
     "name": "Ramp",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso",
-      "source": "auto-scan",
-      "source_url": "https://ramp.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://ramp.com"
   },
@@ -4874,13 +4475,6 @@
     "category": "collaboration",
     "description": "Cloud-based communication and collaboration platform for businesses.",
     "name": "RingCentral",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa,soc2",
-      "source": "auto-scan",
-      "source_url": "https://www.ringcentral.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.ringcentral.com"
   },
@@ -4933,13 +4527,6 @@
     "category": "hr",
     "description": "Workforce management platform that manages HR, IT, and Finance in a single system.",
     "name": "Rippling",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa,soc2",
-      "source": "auto-scan",
-      "source_url": "https://www.rippling.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.rippling.com"
   },
@@ -4995,13 +4582,6 @@
     "category": "sales_marketing",
     "description": "Cloud-based customer relationship management (CRM) platform.",
     "name": "Salesforce",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa",
-      "source": "auto-scan",
-      "source_url": "https://salesforce.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://salesforce.com"
   },
@@ -5113,13 +4693,6 @@
     "category": "infrastructure",
     "description": "Cloud-based platform for automating IT, employee, and customer workflows.",
     "name": "ServiceNow",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "docs page reachable",
-      "source": "auto-scan",
-      "source_url": "https://www.servicenow.com/docs",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.servicenow.com"
   },
@@ -5229,13 +4802,6 @@
     "category": "development",
     "description": "Project management platform designed for software development teams to unify planning and development.",
     "name": "Shortcut",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,scim,soc2",
-      "source": "auto-scan",
-      "source_url": "https://www.shortcut.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.shortcut.com"
   },
@@ -5309,13 +4875,6 @@
     "category": "collaboration",
     "description": "A messaging platform for teams that integrates with numerous tools and services.",
     "name": "Slack",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso",
-      "source": "auto-scan",
-      "source_url": "https://slack.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://slack.com"
   },
@@ -5369,13 +4928,6 @@
     "category": "productivity",
     "description": "A spreadsheet-style platform for project management, data visualization, and automated business workflows.",
     "name": "Smartsheet",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso",
-      "source": "auto-scan",
-      "source_url": "https://smartsheet.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://smartsheet.com"
   },
@@ -5451,13 +5003,6 @@
     "category": "infrastructure",
     "description": "Cloud-based data storage and analytics service known as the 'Data Cloud'.",
     "name": "Snowflake",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa",
-      "source": "auto-scan",
-      "source_url": "https://www.snowflake.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.snowflake.com"
   },
@@ -5510,13 +5055,6 @@
     "category": "security",
     "description": "Developer-first security platform for finding and fixing vulnerabilities in code, dependencies, containers, and IaC.",
     "name": "Snyk",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa",
-      "source": "auto-scan",
-      "source_url": "https://snyk.io",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://snyk.io"
   },
@@ -5568,13 +5106,6 @@
     "category": "infrastructure",
     "description": "Data-to-Everything Platform to investigate, monitor, analyze and act on data.",
     "name": "Splunk",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso",
-      "source": "auto-scan",
-      "source_url": "https://www.splunk.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.splunk.com"
   },
@@ -5626,13 +5157,6 @@
     "category": "sales_marketing",
     "description": "Social media management platform for businesses.",
     "name": "Sprout Social",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa",
-      "source": "auto-scan",
-      "source_url": "https://sproutsocial.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://sproutsocial.com"
   },
@@ -5771,13 +5295,6 @@
     "category": "sales_marketing",
     "description": "Online survey tool for capturing the voices and opinions of the people who matter most to you.",
     "name": "SurveyMonkey",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa",
-      "source": "auto-scan",
-      "source_url": "https://www.surveymonkey.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.surveymonkey.com"
   },
@@ -5830,13 +5347,6 @@
     "category": "productivity",
     "description": "A business intelligence and data visualization platform used for analyzing and sharing data insights.",
     "name": "Tableau",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "trust page reachable",
-      "source": "auto-scan",
-      "source_url": "https://www.tableau.com/trust",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.tableau.com"
   },
@@ -5941,13 +5451,6 @@
     "category": "productivity",
     "description": "A visual tool that empowers your team to manage any type of project, workflow, or task tracking.",
     "name": "Trello",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa",
-      "source": "auto-scan",
-      "source_url": "https://trello.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://trello.com"
   },
@@ -6027,13 +5530,6 @@
     "category": "infrastructure",
     "description": "Customer engagement platform used by developers and businesses to build unique, personalized experiences.",
     "name": "Twilio",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "mfa",
-      "source": "auto-scan",
-      "source_url": "https://www.twilio.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.twilio.com"
   },
@@ -6085,13 +5581,6 @@
     "category": "sales_marketing",
     "description": "SaaS company that specializes in online form building and online surveys.",
     "name": "Typeform",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso",
-      "source": "auto-scan",
-      "source_url": "https://www.typeform.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.typeform.com"
   },
@@ -6247,13 +5736,6 @@
     "category": "hr",
     "description": "Enterprise management cloud platform for finance, HR, planning, and spend management.",
     "name": "Workday",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa",
-      "source": "auto-scan",
-      "source_url": "https://www.workday.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.workday.com"
   },
@@ -6307,13 +5789,6 @@
     "category": "productivity",
     "description": "An enterprise-grade work management platform designed for teams to scale projects and automate workflows.",
     "name": "Wrike",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa",
-      "source": "auto-scan",
-      "source_url": "https://wrike.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://wrike.com"
   },
@@ -6478,13 +5953,6 @@
     "category": "sales_marketing",
     "description": "Customer service software and support ticketing system.",
     "name": "Zendesk",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso",
-      "source": "auto-scan",
-      "source_url": "https://zendesk.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://zendesk.com"
   },
@@ -6536,13 +6004,6 @@
     "category": "sales_marketing",
     "description": "Online CRM software for managing sales, marketing, and support.",
     "name": "Zoho CRM",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso",
-      "source": "auto-scan",
-      "source_url": "https://www.zoho.com/crm",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.zoho.com/crm"
   },
@@ -6691,13 +6152,6 @@
     "category": "sales_marketing",
     "description": "GTM software, data, and intelligence for more than 35,000 companies worldwide.",
     "name": "ZoomInfo",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,scim,mfa",
-      "source": "auto-scan",
-      "source_url": "https://www.zoominfo.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.zoominfo.com"
   },
@@ -6749,13 +6203,6 @@
     "category": "security",
     "description": "Cloud security company that provides services for securely transforming networks and applications.",
     "name": "Zscaler",
-    "provenance": {
-      "checked": "2026-09-14",
-      "evidence": "sso,mfa",
-      "source": "auto-scan",
-      "source_url": "https://www.zscaler.com",
-      "verified_by": "auto-scan"
-    },
     "status": "draft",
     "website": "https://www.zscaler.com"
   }

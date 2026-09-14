@@ -4,13 +4,6 @@ website: "https://www.tableau.com"
 description: "A business intelligence and data visualization platform used for analyzing and sharing data insights."
 status: "draft"
 
-provenance:
-  source: "auto-scan"
-  source_url: "https://www.tableau.com/trust"
-  verified_by: "auto-scan"
-  checked: "2026-09-14"
-  evidence: "trust page reachable"
-
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:

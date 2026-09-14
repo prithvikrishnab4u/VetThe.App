@@ -4,13 +4,6 @@ website: "https://www.servicenow.com"
 description: "Cloud-based platform for automating IT, employee, and customer workflows."
 status: "draft"
 
-provenance:
-  source: "auto-scan"
-  source_url: "https://www.servicenow.com/docs"
-  verified_by: "auto-scan"
-  checked: "2026-09-14"
-  evidence: "docs page reachable"
-
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
