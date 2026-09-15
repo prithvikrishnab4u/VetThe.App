@@ -8,23 +8,39 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "enterprise"
-    protocols: ["SAML", "OIDC"]
+    notes: "SAML 2.0 instance login via Multi-Provider SSO; plan requirement not stated"
+    protocols: ["SAML"]
+    source: "https://www.servicenow.com/docs/r/washingtondc/platform-security/authentication/t_CreateASAML2Upd1SSOConfigMultiSSO.html"
+    checked: "2026-09-15"
   sso_enforcement:
     support: "unknown"
   scim:
-    support: "unknown"
+    support: "supported"
+    notes: "Inbound SCIM v2 user and group provisioning via the com.snc.integration.scim2 plugin; plan requirement not stated"
+    source: "https://www.servicenow.com/docs/r/platform-security/identity/scim-provider.html"
+    checked: "2026-09-15"
   mfa_enforcement:
     support: "supported"
-    tier: "enterprise"
+    notes: "Administrators can enable MFA on user profiles, enforced at login; plan requirement not stated"
+    source: "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/integrate/authentication/task/t_SetUpMultiFactorAuthUponLogin.html"
+    checked: "2026-09-15"
   phishing_resistant_mfa:
     support: "supported"
+    notes: "MFA setup offers biometric authentication, passkey or hardware security key; plan requirement not stated"
+    source: "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/integrate/authentication/task/t_SetUpMultiFactorAuthUponLogin.html"
+    checked: "2026-09-15"
   audit_logs:
-    support: "unknown"
+    support: "supported"
+    notes: "sys_audit tracks inserts and updates to audited records (user, field, old/new values); plan requirement not stated"
+    source: "https://www.servicenow.com/docs/r/platform-security/c_UnderstandingTheSysAuditTable.html"
+    checked: "2026-09-15"
   jit_provisioning:
     support: "supported"
+    notes: "Multi-Provider SSO option to auto-create users missing from the User table from IdP data; plan requirement not stated"
+    source: "https://www.servicenow.com/docs/r/washingtondc/platform-security/authentication/t_CreateASAML2Upd1SSOConfigMultiSSO.html"
+    checked: "2026-09-15"
   domain_verification:
-    support: "supported"
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:

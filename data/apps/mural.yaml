@@ -9,22 +9,40 @@ capabilities:
   sso:
     support: "supported"
     tier: "paid"
+    plan: "Business"
+    notes: "Pricing lists Single sign-on (SSO) (SAML 2.0) from Business"
     protocols: ["SAML"]
+    source: "https://www.mural.co/pricing"
+    checked: "2026-09-15"
   sso_enforcement:
     support: "unknown"
   scim:
-    support: "unknown"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM user and group management"
+    source: "https://www.mural.co/pricing"
+    checked: "2026-09-15"
   mfa_enforcement:
     support: "supported"
-    tier: "paid"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Require 2FA (members and guests)"
+    source: "https://www.mural.co/pricing"
+    checked: "2026-09-15"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
-    support: "unknown"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Audit logs, downloadable reports, and reporting APIs"
+    source: "https://www.mural.co/pricing"
+    checked: "2026-09-15"
   jit_provisioning:
-    support: "supported"
+    support: "unknown"
   domain_verification:
-    support: "supported"
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:

@@ -8,23 +8,45 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "enterprise"
+    tier: "add_on"
+    plan: "Teams with SSO add-on"
+    notes: "Any SAML 2.0 IdP; available on Teams and Teams Plus with SSO add-on, and included on Enterprise"
     protocols: ["SAML"]
+    source: "https://calendly.com/help/saml-single-sign-on-sso-overview"
+    checked: "2026-09-15"
   sso_enforcement:
-    support: "unknown"
+    support: "supported"
+    tier: "add_on"
+    plan: "Teams with SSO add-on"
+    notes: "'Enforce SAML SSO for my organization' signs everyone out and requires SAML sign-in; owners/admins keep a fallback login"
+    source: "https://calendly.com/help/how-to-set-up-saml-sso-with-your-identity-provider"
+    checked: "2026-09-15"
   scim:
-    support: "unknown"
-  mfa_enforcement:
     support: "supported"
     tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Add, update and remove users and group membership from the IdP; roles still managed in Calendly"
+    source: "https://calendly.com/help/scim-user-provisioning-overview"
+    checked: "2026-09-15"
+  mfa_enforcement:
+    support: "unknown"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
-    support: "unknown"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Activity log for owners and admins; CSV export up to 10,000 events"
+    retention: "90 days"
+    source: "https://calendly.com/help/the-activity-log"
+    checked: "2026-09-15"
   jit_provisioning:
-    support: "supported"
+    support: "not_supported"
+    notes: "Calendly states JIT provisioning is not supported; use SCIM instead"
+    source: "https://calendly.com/help/saml-single-sign-on-sso-overview"
+    checked: "2026-09-15"
   domain_verification:
-    support: "supported"
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:

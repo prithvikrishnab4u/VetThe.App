@@ -9,22 +9,33 @@ capabilities:
   sso:
     support: "supported"
     tier: "paid"
+    plan: "Growth"
+    notes: "Pricing page lists SSO on Growth, Pro and Enterprise; Freshworks SSO supports SAML, OAuth2, OIDC and JWT"
     protocols: ["SAML", "OIDC"]
+    source: "https://www.freshworks.com/freshservice/pricing/"
+    checked: "2026-09-15"
   sso_enforcement:
     support: "unknown"
   scim:
     support: "unknown"
   mfa_enforcement:
     support: "supported"
-    tier: "paid"
+    notes: "Freshworks org admins can mandate 2FA as a policy for all users (with exemptions); requires Freshworks login; plan requirement not stated"
+    source: "https://support.freshworks.com/support/solutions/articles/50000003252-how-can-an-organization-admin-enforce-2fa-as-a-policy-for-all-or-some-users-in-the-organization-"
+    checked: "2026-09-15"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
-    support: "unknown"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Audit logs only available to Enterprise customers and viewable by admins; retention not stated"
+    source: "https://support.freshservice.com/support/solutions/articles/232444-how-to-access-audit-log-in-freshservice-"
+    checked: "2026-09-15"
   jit_provisioning:
-    support: "supported"
+    support: "unknown"
   domain_verification:
-    support: "supported"
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:

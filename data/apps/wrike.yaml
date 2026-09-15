@@ -8,30 +8,61 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "enterprise"
+    tier: "paid"
+    plan: "Pinnacle"
+    notes: "SAML SSO on Pinnacle, Apex and Legacy Enterprise; not on Free, Team, Business"
     protocols: ["SAML"]
+    source: "https://help.wrike.com/hc/en-us/articles/209605769-SAML-SSO-Implementation-Guide"
+    checked: "2026-09-15"
   sso_enforcement:
-    support: "unknown"
+    support: "supported"
+    tier: "paid"
+    plan: "Pinnacle"
+    notes: "SSO can be optional (testing) or enabled for all users on the account"
+    source: "https://help.wrike.com/hc/en-us/articles/209605769-SAML-SSO-Implementation-Guide"
+    checked: "2026-09-15"
   scim:
-    support: "unknown"
+    support: "supported"
+    tier: "paid"
+    plan: "Pinnacle"
+    notes: "SCIM user and group provisioning (Okta, Entra ID) on Pinnacle, Apex, Legacy Enterprise; provisioned users are billable"
+    source: "https://help.wrike.com/hc/en-us/articles/360000254229-SAML-SSO-Okta-User-Provisioning"
+    checked: "2026-09-15"
   mfa_enforcement:
     support: "supported"
-    tier: "enterprise"
+    tier: "paid"
+    plan: "Pinnacle"
+    notes: "Admins can make 2-step verification obligatory for all users; TOTP apps; no SMS"
+    source: "https://help.wrike.com/hc/en-us/articles/210324445-2-Step-Verification"
+    checked: "2026-09-15"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
     support: "supported"
-    tier: "enterprise"
-    retention: "Configurable"
+    tier: "paid"
+    plan: "Pinnacle"
+    notes: "Activity Reports (logins, security, user/role changes); CSV/XLS export; recording starts at Pinnacle/Apex/Legacy Enterprise subscription start"
+    source: "https://help.wrike.com/hc/en-us/articles/209606309-Audit-Log-Reports"
+    checked: "2026-09-15"
   jit_provisioning:
     support: "supported"
+    tier: "paid"
+    plan: "Pinnacle"
+    notes: "Wrike creates a user profile when a new directory user first logs in via SSO"
+    source: "https://help.wrike.com/hc/en-us/articles/209605769-SAML-SSO-Implementation-Guide"
+    checked: "2026-09-15"
   domain_verification:
     support: "supported"
+    tier: "paid"
+    plan: "Pinnacle"
+    notes: "Email domains must be company-owned and approved via DNS record update as part of SSO setup"
+    source: "https://help.wrike.com/hc/en-us/articles/209605769-SAML-SSO-Implementation-Guide"
+    checked: "2026-09-15"
   custom_roles:
     support: "unknown"
   group_role_mapping:
     support: "unknown"
   session_controls:
-    support: "supported"
+    support: "unknown"
   api_token_controls:
     support: "unknown"

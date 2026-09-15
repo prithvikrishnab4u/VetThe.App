@@ -9,24 +9,43 @@ capabilities:
   sso:
     support: "supported"
     tier: "paid"
+    plan: "Professional"
+    notes: "Any SAML-based IdP; SAML is the only option; latest Professional plan or above"
     protocols: ["SAML"]
+    source: "https://help.front.com/en/articles/2280"
+    checked: "2026-09-15"
   sso_enforcement:
     support: "unknown"
   scim:
-    support: "unknown"
-  mfa_enforcement:
     support: "supported"
     tier: "paid"
+    plan: "Professional"
+    notes: "SCIM 2.0 API; Entra ID, Okta, Google Workspace, OneLogin, Rippling, Gusto; supports teammate group sync"
+    source: "https://help.front.com/en/articles/2207"
+    checked: "2026-09-15"
+  mfa_enforcement:
+    support: "unknown"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
-    support: "unknown"
-  jit_provisioning:
     support: "supported"
-  domain_verification:
-    support: "not_supported"
-  custom_roles:
+    tier: "paid"
+    plan: "All plans"
+    notes: "Admins can see who changed settings and resources, what changed and when"
+    retention: "365 days"
+    source: "https://help.front.com/en/articles/2925696"
+    checked: "2026-09-15"
+  jit_provisioning:
     support: "unknown"
+  domain_verification:
+    support: "unknown"
+  custom_roles:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Pricing page lists custom roles on Enterprise"
+    source: "https://front.com/pricing"
+    checked: "2026-09-15"
   group_role_mapping:
     support: "unknown"
   session_controls:

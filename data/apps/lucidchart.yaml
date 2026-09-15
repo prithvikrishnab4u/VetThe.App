@@ -9,27 +9,55 @@ capabilities:
   sso:
     support: "supported"
     tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SAML 2.0, Enterprise only; pre-built Entra ID and Okta apps"
     protocols: ["SAML"]
+    source: "https://help.lucid.co/hc/en-us/articles/360049898191-SAML-overview"
+    checked: "2026-09-15"
   sso_enforcement:
     support: "unknown"
   scim:
-    support: "unknown"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Users and groups (admin management groups, content access groups)"
+    source: "https://help.lucid.co/hc/en-us/articles/360049427352-SCIM-overview-for-Lucid"
+    checked: "2026-09-15"
   mfa_enforcement:
     support: "supported"
     tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Enterprise admins can enforce 2FA (authenticator app) for email/password logins"
+    source: "https://help.lucid.co/hc/en-us/articles/360049421752-Lucid-admin-panel-Security-settings"
+    checked: "2026-09-15"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
-    support: "unknown"
+    support: "supported"
+    tier: "add_on"
+    plan: "Enterprise Shield (Enterprise add-on)"
+    notes: "Export in JSON or CSV, up to 50,000 events"
+    source: "https://help.lucid.co/hc/en-us/articles/4424978583444-Lucid-admin-panel-Compliance-settings"
+    checked: "2026-09-15"
   jit_provisioning:
     support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Users are created on first SAML sign-in after IdP app assignment"
+    source: "https://help.lucid.co/hc/en-us/articles/360049898191-SAML-overview"
+    checked: "2026-09-15"
   domain_verification:
-    support: "supported"
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:
     support: "unknown"
   session_controls:
-    support: "unknown"
+    support: "supported"
+    tier: "add_on"
+    plan: "Enterprise Shield (Enterprise add-on)"
+    notes: "Max session time-out (2 hours to 365 days), idle timeout (15 minutes to 14 days), IP allowlist"
+    source: "https://help.lucid.co/hc/en-us/articles/28014192205076-Enterprise-Shield-add-on-overview"
+    checked: "2026-09-15"
   api_token_controls:
     support: "unknown"

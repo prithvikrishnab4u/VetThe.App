@@ -8,27 +8,57 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "paid"
+    tier: "enterprise"
+    plan: "Expert"
+    notes: "SAML SSO only available on the Expert plan"
     protocols: ["SAML"]
+    source: "https://www.intercom.com/help/en/articles/3974587-integrate-with-an-identity-provider-and-log-in-with-saml-sso"
+    checked: "2026-09-15"
   sso_enforcement:
-    support: "unknown"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Expert"
+    notes: "Other login methods (email/password, Google) can be disabled so SAML is the only method"
+    source: "https://www.intercom.com/help/en/articles/3974587-integrate-with-an-identity-provider-and-log-in-with-saml-sso"
+    checked: "2026-09-15"
   scim:
-    support: "unknown"
+    support: "supported"
+    notes: "Requires SAML SSO enabled; help article says only available on certain plans; plan requirement not stated"
+    source: "https://www.intercom.com/help/en/articles/5798401-system-for-cross-domain-identity-management-scim-provisioning"
+    checked: "2026-09-15"
   mfa_enforcement:
     support: "supported"
     tier: "paid"
+    plan: "All plans"
+    notes: "2FA can be enforced workspace-wide; authenticator app (TOTP)"
+    source: "https://www.intercom.com/help/en/articles/181-protect-your-account-with-2fa-google-sign-on-or-saml-sso"
+    checked: "2026-09-15"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
-    support: "unknown"
+    support: "supported"
+    tier: "paid"
+    plan: "All plans"
+    notes: "Teammate activity logs (settings changes, exports, logins, permission changes); also via REST API"
+    retention: "1 year in UI; older data via REST API"
+    source: "https://www.intercom.com/help/en/articles/4667982-review-actions-taken-in-your-workspace-with-teammate-activity-logs"
+    checked: "2026-09-15"
   jit_provisioning:
     support: "supported"
+    tier: "enterprise"
+    plan: "Expert"
+    notes: "Teammates auto-added on first SAML login if seats are available"
+    source: "https://www.intercom.com/help/en/articles/3974587-integrate-with-an-identity-provider-and-log-in-with-saml-sso"
+    checked: "2026-09-15"
   domain_verification:
-    support: "supported"
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:
-    support: "unknown"
+    support: "supported"
+    notes: "IdP groups pushed via SCIM can be mapped to teammate roles; plan requirement not stated"
+    source: "https://www.intercom.com/help/en/articles/5798401-system-for-cross-domain-identity-management-scim-provisioning"
+    checked: "2026-09-15"
   session_controls:
     support: "unknown"
   api_token_controls:

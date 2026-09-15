@@ -270,9 +270,7 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "retention": "180 days",
-        "support": "supported",
-        "tier": "enterprise"
+        "support": "unknown"
       },
       "custom_roles": {
         "support": "unknown"
@@ -287,25 +285,19 @@
         "support": "unknown"
       },
       "mfa_enforcement": {
-        "support": "supported",
-        "tier": "paid"
+        "support": "unknown"
       },
       "phishing_resistant_mfa": {
         "support": "unknown"
       },
       "scim": {
-        "support": "supported",
-        "tier": "enterprise"
+        "support": "unknown"
       },
       "session_controls": {
-        "support": "supported"
+        "support": "unknown"
       },
       "sso": {
-        "protocols": [
-          "SAML"
-        ],
-        "support": "supported",
-        "tier": "paid"
+        "support": "unknown"
       },
       "sso_enforcement": {
         "support": "unknown"
@@ -869,9 +861,7 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "retention": "90 days",
-        "support": "supported",
-        "tier": "paid"
+        "support": "unknown"
       },
       "custom_roles": {
         "support": "unknown"
@@ -886,7 +876,7 @@
         "support": "unknown"
       },
       "mfa_enforcement": {
-        "support": "not_supported"
+        "support": "unknown"
       },
       "phishing_resistant_mfa": {
         "support": "unknown"
@@ -895,15 +885,10 @@
         "support": "unknown"
       },
       "session_controls": {
-        "support": "not_supported"
+        "support": "unknown"
       },
       "sso": {
-        "protocols": [
-          "SAML",
-          "OIDC"
-        ],
-        "support": "supported",
-        "tier": "enterprise"
+        "support": "unknown"
       },
       "sso_enforcement": {
         "support": "unknown"
@@ -1270,42 +1255,64 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "Activity log for owners and admins; CSV export up to 10,000 events",
+        "plan": "Enterprise",
+        "retention": "90 days",
+        "source": "https://calendly.com/help/the-activity-log",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "custom_roles": {
         "support": "unknown"
       },
       "domain_verification": {
-        "support": "supported"
+        "support": "unknown"
       },
       "group_role_mapping": {
         "support": "unknown"
       },
       "jit_provisioning": {
-        "support": "supported"
+        "checked": "2026-09-15",
+        "notes": "Calendly states JIT provisioning is not supported; use SCIM instead",
+        "source": "https://calendly.com/help/saml-single-sign-on-sso-overview",
+        "support": "not_supported"
       },
       "mfa_enforcement": {
-        "support": "supported",
-        "tier": "enterprise"
+        "support": "unknown"
       },
       "phishing_resistant_mfa": {
         "support": "unknown"
       },
       "scim": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "Add, update and remove users and group membership from the IdP; roles still managed in Calendly",
+        "plan": "Enterprise",
+        "source": "https://calendly.com/help/scim-user-provisioning-overview",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "session_controls": {
         "support": "unknown"
       },
       "sso": {
+        "checked": "2026-09-15",
+        "notes": "Any SAML 2.0 IdP; available on Teams and Teams Plus with SSO add-on, and included on Enterprise",
+        "plan": "Teams with SSO add-on",
         "protocols": [
           "SAML"
         ],
+        "source": "https://calendly.com/help/saml-single-sign-on-sso-overview",
         "support": "supported",
-        "tier": "enterprise"
+        "tier": "add_on"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "'Enforce SAML SSO for my organization' signs everyone out and requires SAML sign-in; owners/admins keep a fallback login",
+        "plan": "Teams with SSO add-on",
+        "source": "https://calendly.com/help/how-to-set-up-saml-sso-with-your-identity-provider",
+        "support": "supported",
+        "tier": "add_on"
       }
     },
     "category": "productivity",
@@ -1437,41 +1444,52 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "retention": "360 days",
-        "support": "supported",
-        "tier": "paid"
+        "checked": "2026-09-15",
+        "notes": "Administrator activity log in Control Hub, exportable to CSV or via admin audit events API; plan requirement not stated",
+        "retention": "1 year (3 years in the India audit cluster)",
+        "source": "https://help.webex.com/en-us/article/2tc9yx/Review-Your-Administrator-Activity-Logs-in-Cisco-Webex-Control-Hub",
+        "support": "supported"
       },
       "custom_roles": {
         "support": "unknown"
       },
       "domain_verification": {
-        "support": "supported"
+        "support": "unknown"
       },
       "group_role_mapping": {
         "support": "unknown"
       },
       "jit_provisioning": {
-        "support": "supported"
+        "support": "unknown"
       },
       "mfa_enforcement": {
-        "support": "supported",
-        "tier": "paid"
+        "checked": "2026-09-15",
+        "notes": "Control Hub option to enforce mandatory MFA for all users across all applications; TOTP authenticator app; plan requirement not stated",
+        "source": "https://help.webex.com/en-us/article/52szeq/Enable-Multi-Factor-Authentication-Integration-in-Webex-Control-Hub",
+        "support": "supported"
       },
       "phishing_resistant_mfa": {
         "support": "unknown"
       },
       "scim": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "SCIM 2.0 user and group sync into Control Hub (e.g. Okta); requires Okta SSO configured first",
+        "plan": "Paid Webex subscription",
+        "source": "https://help.webex.com/en-US/article/nmm9pzdb/Synchronize-Okta-Users-into-Cisco-Webex-Control-Hub",
+        "support": "supported",
+        "tier": "paid"
       },
       "session_controls": {
-        "support": "supported"
+        "support": "unknown"
       },
       "sso": {
+        "checked": "2026-09-15",
+        "notes": "Control Hub SSO with any SAML 2.0 IdP; plan requirement not stated",
         "protocols": [
           "SAML"
         ],
-        "support": "supported",
-        "tier": "paid"
+        "source": "https://help.webex.com/en-us/article/lfu88u/Single-Sign-On-Integration-in-Cisco-Webex-Control-Hub",
+        "support": "supported"
       },
       "sso_enforcement": {
         "support": "unknown"
@@ -1541,21 +1559,30 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "Pricing lists Audit Log on Enterprise; Workspace audit logs cover user auth events, tasks, fields, hierarchy; API export",
+        "plan": "Enterprise",
+        "source": "https://clickup.com/pricing",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "custom_roles": {
         "support": "unknown"
       },
       "domain_verification": {
-        "support": "supported"
+        "support": "unknown"
       },
       "group_role_mapping": {
         "support": "unknown"
       },
       "jit_provisioning": {
-        "support": "supported"
+        "support": "unknown"
       },
       "mfa_enforcement": {
+        "checked": "2026-09-15",
+        "notes": "Owners/admins can require 2FA for the Workspace on Business and above; SMS or authenticator app",
+        "plan": "Business",
+        "source": "https://help.clickup.com/hc/en-us/articles/6327741965591-Activate-and-manage-two-factor-authentication",
         "support": "supported",
         "tier": "paid"
       },
@@ -1563,20 +1590,34 @@
         "support": "unknown"
       },
       "scim": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "SCIM base URL and token issued after Custom SAML is configured; Okta full automatic provisioning",
+        "plan": "Enterprise",
+        "source": "https://help.clickup.com/hc/en-us/articles/6305027039767-Configure-custom-SAML-single-sign-on",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "session_controls": {
         "support": "unknown"
       },
       "sso": {
+        "checked": "2026-09-15",
+        "notes": "Custom SAML is Enterprise only; Google and Microsoft SSO are listed from the Unlimited plan",
+        "plan": "Enterprise",
         "protocols": [
           "SAML"
         ],
+        "source": "https://help.clickup.com/hc/en-us/articles/6305027039767-Configure-custom-SAML-single-sign-on",
         "support": "supported",
         "tier": "enterprise"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "SAML login policy: required for all users, all except guests, all except limited members and guests, or optional",
+        "plan": "Enterprise",
+        "source": "https://help.clickup.com/hc/en-us/articles/6305027039767-Configure-custom-SAML-single-sign-on",
+        "support": "supported",
+        "tier": "enterprise"
       }
     },
     "category": "productivity",
@@ -2293,23 +2334,30 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "Tracks admin changes (who, when, IP, what changed); retention not stated",
+        "plan": "Enterprise",
+        "source": "https://support.freshdesk.com/support/solutions/articles/235745-track-changes-using-audit-log",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "custom_roles": {
         "support": "unknown"
       },
       "domain_verification": {
-        "support": "supported"
+        "support": "unknown"
       },
       "group_role_mapping": {
         "support": "unknown"
       },
       "jit_provisioning": {
-        "support": "supported"
+        "support": "unknown"
       },
       "mfa_enforcement": {
-        "support": "supported",
-        "tier": "paid"
+        "checked": "2026-09-15",
+        "notes": "Freshworks org admins can mandate 2FA as a policy for all users (with exemptions); requires Freshworks login; plan requirement not stated",
+        "source": "https://support.freshworks.com/support/solutions/articles/50000003252-how-can-an-organization-admin-enforce-2fa-as-a-policy-for-all-or-some-users-in-the-organization-",
+        "support": "supported"
       },
       "phishing_resistant_mfa": {
         "support": "unknown"
@@ -2321,10 +2369,14 @@
         "support": "unknown"
       },
       "sso": {
+        "checked": "2026-09-15",
+        "notes": "Pricing page lists SSO on Pro and Enterprise; the SSO help article lists Free through Enterprise. Freshworks supports SAML, OAuth2, OIDC and JWT",
+        "plan": "Pro",
         "protocols": [
           "SAML",
           "OIDC"
         ],
+        "source": "https://www.freshworks.com/freshdesk/pricing/",
         "support": "supported",
         "tier": "paid"
       },
@@ -2345,23 +2397,30 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "Audit logs only available to Enterprise customers and viewable by admins; retention not stated",
+        "plan": "Enterprise",
+        "source": "https://support.freshservice.com/support/solutions/articles/232444-how-to-access-audit-log-in-freshservice-",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "custom_roles": {
         "support": "unknown"
       },
       "domain_verification": {
-        "support": "supported"
+        "support": "unknown"
       },
       "group_role_mapping": {
         "support": "unknown"
       },
       "jit_provisioning": {
-        "support": "supported"
+        "support": "unknown"
       },
       "mfa_enforcement": {
-        "support": "supported",
-        "tier": "paid"
+        "checked": "2026-09-15",
+        "notes": "Freshworks org admins can mandate 2FA as a policy for all users (with exemptions); requires Freshworks login; plan requirement not stated",
+        "source": "https://support.freshworks.com/support/solutions/articles/50000003252-how-can-an-organization-admin-enforce-2fa-as-a-policy-for-all-or-some-users-in-the-organization-",
+        "support": "supported"
       },
       "phishing_resistant_mfa": {
         "support": "unknown"
@@ -2373,10 +2432,14 @@
         "support": "unknown"
       },
       "sso": {
+        "checked": "2026-09-15",
+        "notes": "Pricing page lists SSO on Growth, Pro and Enterprise; Freshworks SSO supports SAML, OAuth2, OIDC and JWT",
+        "plan": "Growth",
         "protocols": [
           "SAML",
           "OIDC"
         ],
+        "source": "https://www.freshworks.com/freshservice/pricing/",
         "support": "supported",
         "tier": "paid"
       },
@@ -2397,37 +2460,56 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "Admins can see who changed settings and resources, what changed and when",
+        "plan": "All plans",
+        "retention": "365 days",
+        "source": "https://help.front.com/en/articles/2925696",
+        "support": "supported",
+        "tier": "paid"
       },
       "custom_roles": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "Pricing page lists custom roles on Enterprise",
+        "plan": "Enterprise",
+        "source": "https://front.com/pricing",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "domain_verification": {
-        "support": "not_supported"
+        "support": "unknown"
       },
       "group_role_mapping": {
         "support": "unknown"
       },
       "jit_provisioning": {
-        "support": "supported"
+        "support": "unknown"
       },
       "mfa_enforcement": {
-        "support": "supported",
-        "tier": "paid"
+        "support": "unknown"
       },
       "phishing_resistant_mfa": {
         "support": "unknown"
       },
       "scim": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "SCIM 2.0 API; Entra ID, Okta, Google Workspace, OneLogin, Rippling, Gusto; supports teammate group sync",
+        "plan": "Professional",
+        "source": "https://help.front.com/en/articles/2207",
+        "support": "supported",
+        "tier": "paid"
       },
       "session_controls": {
         "support": "unknown"
       },
       "sso": {
+        "checked": "2026-09-15",
+        "notes": "Any SAML-based IdP; SAML is the only option; latest Professional plan or above",
+        "plan": "Professional",
         "protocols": [
           "SAML"
         ],
+        "source": "https://help.front.com/en/articles/2280",
         "support": "supported",
         "tier": "paid"
       },
@@ -3086,21 +3168,39 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "Teammate activity logs (settings changes, exports, logins, permission changes); also via REST API",
+        "plan": "All plans",
+        "retention": "1 year in UI; older data via REST API",
+        "source": "https://www.intercom.com/help/en/articles/4667982-review-actions-taken-in-your-workspace-with-teammate-activity-logs",
+        "support": "supported",
+        "tier": "paid"
       },
       "custom_roles": {
         "support": "unknown"
       },
       "domain_verification": {
-        "support": "supported"
-      },
-      "group_role_mapping": {
         "support": "unknown"
       },
-      "jit_provisioning": {
+      "group_role_mapping": {
+        "checked": "2026-09-15",
+        "notes": "IdP groups pushed via SCIM can be mapped to teammate roles; plan requirement not stated",
+        "source": "https://www.intercom.com/help/en/articles/5798401-system-for-cross-domain-identity-management-scim-provisioning",
         "support": "supported"
       },
+      "jit_provisioning": {
+        "checked": "2026-09-15",
+        "notes": "Teammates auto-added on first SAML login if seats are available",
+        "plan": "Expert",
+        "source": "https://www.intercom.com/help/en/articles/3974587-integrate-with-an-identity-provider-and-log-in-with-saml-sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
       "mfa_enforcement": {
+        "checked": "2026-09-15",
+        "notes": "2FA can be enforced workspace-wide; authenticator app (TOTP)",
+        "plan": "All plans",
+        "source": "https://www.intercom.com/help/en/articles/181-protect-your-account-with-2fa-google-sign-on-or-saml-sso",
         "support": "supported",
         "tier": "paid"
       },
@@ -3108,20 +3208,32 @@
         "support": "unknown"
       },
       "scim": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "Requires SAML SSO enabled; help article says only available on certain plans; plan requirement not stated",
+        "source": "https://www.intercom.com/help/en/articles/5798401-system-for-cross-domain-identity-management-scim-provisioning",
+        "support": "supported"
       },
       "session_controls": {
         "support": "unknown"
       },
       "sso": {
+        "checked": "2026-09-15",
+        "notes": "SAML SSO only available on the Expert plan",
+        "plan": "Expert",
         "protocols": [
           "SAML"
         ],
+        "source": "https://www.intercom.com/help/en/articles/3974587-integrate-with-an-identity-provider-and-log-in-with-saml-sso",
         "support": "supported",
-        "tier": "paid"
+        "tier": "enterprise"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "Other login methods (email/password, Google) can be disabled so SAML is the only method",
+        "plan": "Expert",
+        "source": "https://www.intercom.com/help/en/articles/3974587-integrate-with-an-identity-provider-and-log-in-with-saml-sso",
+        "support": "supported",
+        "tier": "enterprise"
       }
     },
     "category": "sales_marketing",
@@ -3143,17 +3255,16 @@
         "support": "unknown"
       },
       "domain_verification": {
-        "support": "supported"
+        "support": "unknown"
       },
       "group_role_mapping": {
         "support": "unknown"
       },
       "jit_provisioning": {
-        "support": "supported"
+        "support": "unknown"
       },
       "mfa_enforcement": {
-        "support": "supported",
-        "tier": "free"
+        "support": "unknown"
       },
       "phishing_resistant_mfa": {
         "support": "unknown"
@@ -3165,12 +3276,7 @@
         "support": "unknown"
       },
       "sso": {
-        "protocols": [
-          "SAML",
-          "OIDC"
-        ],
-        "support": "supported",
-        "tier": "free"
+        "support": "unknown"
       },
       "sso_enforcement": {
         "support": "unknown"
@@ -3379,43 +3485,65 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "Pricing lists Activity log and content activity report on Enterprise",
+        "plan": "Enterprise",
+        "source": "https://www.loom.com/pricing",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "custom_roles": {
         "support": "unknown"
       },
       "domain_verification": {
-        "support": "supported"
+        "checked": "2026-09-15",
+        "notes": "Domain verification by email or DNS TXT record precedes Loom SSO setup",
+        "plan": "Enterprise",
+        "source": "https://support.atlassian.com/loom/docs/configure-sso-and-directory-sync-scim",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "group_role_mapping": {
         "support": "unknown"
       },
       "jit_provisioning": {
-        "support": "supported"
+        "support": "unknown"
       },
       "mfa_enforcement": {
-        "support": "supported",
-        "tier": "enterprise"
+        "support": "unknown"
       },
       "phishing_resistant_mfa": {
         "support": "unknown"
       },
       "scim": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "Directory Sync (SCIM) for Loom Enterprise workspaces; via Atlassian Guard Standard for Atlassian.com purchases",
+        "plan": "Enterprise",
+        "source": "https://support.atlassian.com/loom/docs/configure-sso-and-directory-sync-scim",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "session_controls": {
         "support": "unknown"
       },
       "sso": {
+        "checked": "2026-09-15",
+        "notes": "Loom workspace SSO requires Enterprise; Atlassian.com Enterprise includes Atlassian Guard Standard, Business plans may buy Guard separately",
+        "plan": "Enterprise",
         "protocols": [
-          "SAML",
-          "OIDC"
+          "SAML"
         ],
+        "source": "https://support.atlassian.com/loom/docs/configure-sso-and-directory-sync-scim",
         "support": "supported",
         "tier": "enterprise"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "'Enforce SSO' workspace setting in Loom Security settings",
+        "plan": "Enterprise",
+        "source": "https://support.atlassian.com/loom/docs/configure-sso-and-directory-sync-scim",
+        "support": "supported",
+        "tier": "enterprise"
       }
     },
     "category": "collaboration",
@@ -3431,21 +3559,35 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "Export in JSON or CSV, up to 50,000 events",
+        "plan": "Enterprise Shield (Enterprise add-on)",
+        "source": "https://help.lucid.co/hc/en-us/articles/4424978583444-Lucid-admin-panel-Compliance-settings",
+        "support": "supported",
+        "tier": "add_on"
       },
       "custom_roles": {
         "support": "unknown"
       },
       "domain_verification": {
-        "support": "supported"
+        "support": "unknown"
       },
       "group_role_mapping": {
         "support": "unknown"
       },
       "jit_provisioning": {
-        "support": "supported"
+        "checked": "2026-09-15",
+        "notes": "Users are created on first SAML sign-in after IdP app assignment",
+        "plan": "Enterprise",
+        "source": "https://help.lucid.co/hc/en-us/articles/360049898191-SAML-overview",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "mfa_enforcement": {
+        "checked": "2026-09-15",
+        "notes": "Enterprise admins can enforce 2FA (authenticator app) for email/password logins",
+        "plan": "Enterprise",
+        "source": "https://help.lucid.co/hc/en-us/articles/360049421752-Lucid-admin-panel-Security-settings",
         "support": "supported",
         "tier": "enterprise"
       },
@@ -3453,15 +3595,29 @@
         "support": "unknown"
       },
       "scim": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "Users and groups (admin management groups, content access groups)",
+        "plan": "Enterprise",
+        "source": "https://help.lucid.co/hc/en-us/articles/360049427352-SCIM-overview-for-Lucid",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "session_controls": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "Max session time-out (2 hours to 365 days), idle timeout (15 minutes to 14 days), IP allowlist",
+        "plan": "Enterprise Shield (Enterprise add-on)",
+        "source": "https://help.lucid.co/hc/en-us/articles/28014192205076-Enterprise-Shield-add-on-overview",
+        "support": "supported",
+        "tier": "add_on"
       },
       "sso": {
+        "checked": "2026-09-15",
+        "notes": "SAML 2.0, Enterprise only; pre-built Entra ID and Okta apps",
+        "plan": "Enterprise",
         "protocols": [
           "SAML"
         ],
+        "source": "https://help.lucid.co/hc/en-us/articles/360049898191-SAML-overview",
         "support": "supported",
         "tier": "enterprise"
       },
@@ -3735,7 +3891,11 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "retention": "180 days",
+        "checked": "2026-09-15",
+        "notes": "CSV export, Audit Log API and SIEM integrations",
+        "plan": "Enterprise",
+        "retention": "180 days default; configurable 30, 90, 180 or 365 days",
+        "source": "https://help.miro.com/hc/en-us/articles/360017571434-Audit-logs",
         "support": "supported",
         "tier": "enterprise"
       },
@@ -3743,15 +3903,27 @@
         "support": "unknown"
       },
       "domain_verification": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "Domains must be claimed and verified in Managed Domains before adding to SSO; plan requirement not stated",
+        "source": "https://help.miro.com/hc/en-us/articles/360017571414-Single-sign-on-SSO",
+        "support": "supported"
       },
       "group_role_mapping": {
         "support": "unknown"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "JIT adds newly registered users from specified domains to the Enterprise account and a preset team; requires SSO",
+        "plan": "Enterprise",
+        "source": "https://help.miro.com/hc/en-us/articles/360017571414-Single-sign-on-SSO",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "mfa_enforcement": {
+        "checked": "2026-09-15",
+        "notes": "Admins can require 2FA (authenticator app) on Starter, Business, Education, Enterprise; applies to email/magic-link sign-in, not SSO or Google/Microsoft/Slack login",
+        "plan": "Starter",
+        "source": "https://help.miro.com/hc/en-us/articles/27356474050834-Two-factor-authentication-2FA",
         "support": "supported",
         "tier": "paid"
       },
@@ -3759,21 +3931,34 @@
         "support": "unknown"
       },
       "scim": {
+        "checked": "2026-09-15",
+        "notes": "Requires working SAML SSO; optional IdP group to team sync",
+        "plan": "Enterprise",
+        "source": "https://help.miro.com/hc/en-us/articles/360036827513-SCIM",
         "support": "supported",
         "tier": "enterprise"
       },
       "session_controls": {
-        "support": "supported"
+        "support": "unknown"
       },
       "sso": {
+        "checked": "2026-09-15",
+        "notes": "SAML 2.0 SSO available on Business and Enterprise plans",
+        "plan": "Business",
         "protocols": [
           "SAML"
         ],
+        "source": "https://help.miro.com/hc/en-us/articles/360017571414-Single-sign-on-SSO",
         "support": "supported",
         "tier": "paid"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "SSO is required for active Enterprise users whose domain is listed in SSO settings; other domains can use other login methods",
+        "plan": "Enterprise",
+        "source": "https://help.miro.com/hc/en-us/articles/360017571414-Single-sign-on-SSO",
+        "support": "supported",
+        "tier": "enterprise"
       }
     },
     "category": "collaboration",
@@ -3840,43 +4025,71 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "Security activity: logins/logouts, device, IP, failed logins, exports; Audit Log API available",
+        "plan": "Enterprise",
+        "retention": "Not deleted after a set period (vendor says this may change)",
+        "source": "https://support.monday.com/hc/en-us/articles/360001259429-The-Audit-Log",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "custom_roles": {
         "support": "unknown"
       },
       "domain_verification": {
-        "support": "supported"
+        "support": "unknown"
       },
       "group_role_mapping": {
         "support": "unknown"
       },
       "jit_provisioning": {
-        "support": "supported"
-      },
-      "mfa_enforcement": {
+        "checked": "2026-09-15",
+        "notes": "With SAML SSO, accounts are created on first login by default",
+        "plan": "Enterprise",
+        "source": "https://support.monday.com/hc/en-us/articles/360000460605-SAML-Single-Sign-on",
         "support": "supported",
         "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-15",
+        "notes": "Admins enable 2FA and choose to require it for members, guests, or both; authenticator app or SMS (SMS not on free/trial); applies to email/password logins",
+        "plan": "All plans",
+        "source": "https://support.monday.com/hc/en-us/articles/360000787745-Two-Factor-Authentication",
+        "support": "supported",
+        "tier": "free"
       },
       "phishing_resistant_mfa": {
         "support": "unknown"
       },
       "scim": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "SCIM provisioning available on Enterprise plans only",
+        "plan": "Enterprise",
+        "source": "https://support.monday.com/hc/en-us/articles/360000460605-SAML-Single-Sign-on",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "session_controls": {
         "support": "unknown"
       },
       "sso": {
+        "checked": "2026-09-15",
+        "notes": "SAML SSO (Okta, Entra ID, OneLogin, custom SAML 2.0) is Enterprise only; Google SSO on Pro and Enterprise",
+        "plan": "Enterprise",
         "protocols": [
-          "SAML",
-          "OIDC"
+          "SAML"
         ],
+        "source": "https://support.monday.com/hc/en-us/articles/360000460605-SAML-Single-Sign-on",
         "support": "supported",
         "tier": "enterprise"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "Email/password login can be restricted to guests and/or a single break-glass user; everyone else must use SSO",
+        "plan": "Enterprise",
+        "source": "https://support.monday.com/hc/en-us/articles/360000460605-SAML-Single-Sign-on",
+        "support": "supported",
+        "tier": "enterprise"
       }
     },
     "category": "productivity",
@@ -3892,37 +4105,55 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "Audit logs, downloadable reports, and reporting APIs",
+        "plan": "Enterprise",
+        "source": "https://www.mural.co/pricing",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "custom_roles": {
         "support": "unknown"
       },
       "domain_verification": {
-        "support": "supported"
+        "support": "unknown"
       },
       "group_role_mapping": {
         "support": "unknown"
       },
       "jit_provisioning": {
-        "support": "supported"
+        "support": "unknown"
       },
       "mfa_enforcement": {
+        "checked": "2026-09-15",
+        "notes": "Require 2FA (members and guests)",
+        "plan": "Enterprise",
+        "source": "https://www.mural.co/pricing",
         "support": "supported",
-        "tier": "paid"
+        "tier": "enterprise"
       },
       "phishing_resistant_mfa": {
         "support": "unknown"
       },
       "scim": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "SCIM user and group management",
+        "plan": "Enterprise",
+        "source": "https://www.mural.co/pricing",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "session_controls": {
         "support": "unknown"
       },
       "sso": {
+        "checked": "2026-09-15",
+        "notes": "Pricing lists Single sign-on (SSO) (SAML 2.0) from Business",
+        "plan": "Business",
         "protocols": [
           "SAML"
         ],
+        "source": "https://www.mural.co/pricing",
         "support": "supported",
         "tier": "paid"
       },
@@ -4835,23 +5066,31 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "Audit Trail tracks Admin Portal configuration changes, failed logins and locked accounts; on by default",
+        "plan": "All RingEX and Video Pro+ accounts",
+        "retention": "180 days",
+        "source": "https://support.ringcentral.com/article-v2/10268-Audit-Trail-Overview-Administrators-RingCentral.html?brand=RingCentral&product=RingEX&language=en_US",
+        "support": "supported",
+        "tier": "paid"
       },
       "custom_roles": {
         "support": "unknown"
       },
       "domain_verification": {
-        "support": "supported"
+        "support": "unknown"
       },
       "group_role_mapping": {
         "support": "unknown"
       },
       "jit_provisioning": {
-        "support": "supported"
+        "support": "unknown"
       },
       "mfa_enforcement": {
-        "support": "supported",
-        "tier": "paid"
+        "checked": "2026-09-15",
+        "notes": "Super admins can set up MFA for all users or selected roles; authenticator app (TOTP); plan requirement not stated",
+        "source": "https://support.ringcentral.com/article-v2/Setting-up-multi-factor-authentication-MFA.html?brand=RingCentral&product=RingEX&language=en_US&pills-nav=users",
+        "support": "supported"
       },
       "phishing_resistant_mfa": {
         "support": "unknown"
@@ -4863,14 +5102,19 @@
         "support": "unknown"
       },
       "sso": {
+        "checked": "2026-09-15",
+        "notes": "SAML 2.0 SSO configured in the Admin Portal; plan requirement not stated",
         "protocols": [
           "SAML"
         ],
-        "support": "supported",
-        "tier": "paid"
+        "source": "https://support.ringcentral.com/article-v2/1149.html?brand=RingCentral&product=RingEX&language=en_US",
+        "support": "supported"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "'Enforce SSO login only' blocks phone number and password sign-in; plan requirement not stated",
+        "source": "https://support.ringcentral.com/article-v2/1149.html?brand=RingCentral&product=RingEX&language=en_US",
+        "support": "supported"
       }
     },
     "category": "collaboration",
@@ -5055,40 +5299,55 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "sys_audit tracks inserts and updates to audited records (user, field, old/new values); plan requirement not stated",
+        "source": "https://www.servicenow.com/docs/r/platform-security/c_UnderstandingTheSysAuditTable.html",
+        "support": "supported"
       },
       "custom_roles": {
         "support": "unknown"
       },
       "domain_verification": {
-        "support": "supported"
+        "support": "unknown"
       },
       "group_role_mapping": {
         "support": "unknown"
       },
       "jit_provisioning": {
+        "checked": "2026-09-15",
+        "notes": "Multi-Provider SSO option to auto-create users missing from the User table from IdP data; plan requirement not stated",
+        "source": "https://www.servicenow.com/docs/r/washingtondc/platform-security/authentication/t_CreateASAML2Upd1SSOConfigMultiSSO.html",
         "support": "supported"
       },
       "mfa_enforcement": {
-        "support": "supported",
-        "tier": "enterprise"
+        "checked": "2026-09-15",
+        "notes": "Administrators can enable MFA on user profiles, enforced at login; plan requirement not stated",
+        "source": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/integrate/authentication/task/t_SetUpMultiFactorAuthUponLogin.html",
+        "support": "supported"
       },
       "phishing_resistant_mfa": {
+        "checked": "2026-09-15",
+        "notes": "MFA setup offers biometric authentication, passkey or hardware security key; plan requirement not stated",
+        "source": "https://www.servicenow.com/docs/bundle/zurich-platform-security/page/integrate/authentication/task/t_SetUpMultiFactorAuthUponLogin.html",
         "support": "supported"
       },
       "scim": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "Inbound SCIM v2 user and group provisioning via the com.snc.integration.scim2 plugin; plan requirement not stated",
+        "source": "https://www.servicenow.com/docs/r/platform-security/identity/scim-provider.html",
+        "support": "supported"
       },
       "session_controls": {
         "support": "unknown"
       },
       "sso": {
+        "checked": "2026-09-15",
+        "notes": "SAML 2.0 instance login via Multi-Provider SSO; plan requirement not stated",
         "protocols": [
-          "SAML",
-          "OIDC"
+          "SAML"
         ],
-        "support": "supported",
-        "tier": "enterprise"
+        "source": "https://www.servicenow.com/docs/r/washingtondc/platform-security/authentication/t_CreateASAML2Upd1SSOConfigMultiSSO.html",
+        "support": "supported"
       },
       "sso_enforcement": {
         "support": "unknown"
@@ -5198,33 +5457,38 @@
         "support": "unknown"
       },
       "domain_verification": {
-        "support": "supported"
+        "support": "unknown"
       },
       "group_role_mapping": {
         "support": "unknown"
       },
       "jit_provisioning": {
-        "support": "supported"
+        "support": "unknown"
       },
       "mfa_enforcement": {
-        "support": "supported",
-        "tier": "paid"
+        "support": "unknown"
       },
       "phishing_resistant_mfa": {
         "support": "unknown"
       },
       "scim": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "SCIM for customers using SAML SSO and Okta",
+        "plan": "Business (add-on); included in Enterprise",
+        "source": "https://www.shortcut.com/pricing/",
+        "support": "supported",
+        "tier": "add_on"
       },
       "session_controls": {
         "support": "unknown"
       },
       "sso": {
-        "protocols": [
-          "SAML"
-        ],
+        "checked": "2026-09-15",
+        "notes": "Pricing lists Single sign-on (SSO) on Enterprise ('Contact our Support Team for details'); protocol not stated on page",
+        "plan": "Enterprise",
+        "source": "https://www.shortcut.com/pricing/",
         "support": "supported",
-        "tier": "paid"
+        "tier": "enterprise"
       },
       "sso_enforcement": {
         "support": "unknown"
@@ -5316,7 +5580,11 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "retention": "Configurable",
+        "checked": "2026-09-15",
+        "notes": "Event Reporting via Events API; includes logins/auth events, views, downloads, shares, API calls",
+        "plan": "Enterprise",
+        "retention": "6 months",
+        "source": "https://help.smartsheet.com/articles/2479296-event-reporting-monitor-how-your-organization-uses-data",
         "support": "supported",
         "tier": "enterprise"
       },
@@ -5324,31 +5592,49 @@
         "support": "unknown"
       },
       "domain_verification": {
-        "support": "supported"
+        "checked": "2026-09-15",
+        "notes": "Pricing lists Domain validation on Business and above",
+        "plan": "Business",
+        "source": "https://www.smartsheet.com/pricing",
+        "support": "supported",
+        "tier": "paid"
       },
       "group_role_mapping": {
         "support": "unknown"
       },
       "jit_provisioning": {
-        "support": "supported"
+        "support": "unknown"
       },
       "mfa_enforcement": {
-        "support": "supported",
-        "tier": "paid"
+        "checked": "2026-09-15",
+        "notes": "Require MFA applies to external collaborators (users outside validated domains), not internal users",
+        "plan": "Enterprise",
+        "source": "https://help.smartsheet.com/articles/2483523-admin-center-configure-require-mfa",
+        "support": "partial",
+        "tier": "enterprise"
       },
       "phishing_resistant_mfa": {
         "support": "unknown"
       },
       "scim": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "Okta SCIM; must contact support to enable and have a validated domain; Okta groups map to seat types",
+        "plan": "Enterprise",
+        "source": "https://help.smartsheet.com/articles/2482731-configure-Okta-SCIM",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "session_controls": {
-        "support": "supported"
+        "support": "unknown"
       },
       "sso": {
+        "checked": "2026-09-15",
+        "notes": "Plan-level SAML SSO on Enterprise; domain-level SAML overrides plan-level; Google/Microsoft/Apple sign-in on Pro",
+        "plan": "Enterprise",
         "protocols": [
           "SAML"
         ],
+        "source": "https://help.smartsheet.com/articles/2476141-configure-saml-sso",
         "support": "supported",
         "tier": "enterprise"
       },
@@ -5797,17 +6083,16 @@
         "support": "unknown"
       },
       "domain_verification": {
-        "support": "supported"
+        "support": "unknown"
       },
       "group_role_mapping": {
         "support": "unknown"
       },
       "jit_provisioning": {
-        "support": "supported"
+        "support": "unknown"
       },
       "mfa_enforcement": {
-        "support": "supported",
-        "tier": "enterprise"
+        "support": "unknown"
       },
       "phishing_resistant_mfa": {
         "support": "unknown"
@@ -5819,11 +6104,7 @@
         "support": "unknown"
       },
       "sso": {
-        "protocols": [
-          "SAML"
-        ],
-        "support": "supported",
-        "tier": "enterprise"
+        "support": "unknown"
       },
       "sso_enforcement": {
         "support": "unknown"
@@ -6229,44 +6510,75 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "retention": "Configurable",
+        "checked": "2026-09-15",
+        "notes": "Activity Reports (logins, security, user/role changes); CSV/XLS export; recording starts at Pinnacle/Apex/Legacy Enterprise subscription start",
+        "plan": "Pinnacle",
+        "source": "https://help.wrike.com/hc/en-us/articles/209606309-Audit-Log-Reports",
         "support": "supported",
-        "tier": "enterprise"
+        "tier": "paid"
       },
       "custom_roles": {
         "support": "unknown"
       },
       "domain_verification": {
-        "support": "supported"
+        "checked": "2026-09-15",
+        "notes": "Email domains must be company-owned and approved via DNS record update as part of SSO setup",
+        "plan": "Pinnacle",
+        "source": "https://help.wrike.com/hc/en-us/articles/209605769-SAML-SSO-Implementation-Guide",
+        "support": "supported",
+        "tier": "paid"
       },
       "group_role_mapping": {
         "support": "unknown"
       },
       "jit_provisioning": {
-        "support": "supported"
+        "checked": "2026-09-15",
+        "notes": "Wrike creates a user profile when a new directory user first logs in via SSO",
+        "plan": "Pinnacle",
+        "source": "https://help.wrike.com/hc/en-us/articles/209605769-SAML-SSO-Implementation-Guide",
+        "support": "supported",
+        "tier": "paid"
       },
       "mfa_enforcement": {
+        "checked": "2026-09-15",
+        "notes": "Admins can make 2-step verification obligatory for all users; TOTP apps; no SMS",
+        "plan": "Pinnacle",
+        "source": "https://help.wrike.com/hc/en-us/articles/210324445-2-Step-Verification",
         "support": "supported",
-        "tier": "enterprise"
+        "tier": "paid"
       },
       "phishing_resistant_mfa": {
         "support": "unknown"
       },
       "scim": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "SCIM user and group provisioning (Okta, Entra ID) on Pinnacle, Apex, Legacy Enterprise; provisioned users are billable",
+        "plan": "Pinnacle",
+        "source": "https://help.wrike.com/hc/en-us/articles/360000254229-SAML-SSO-Okta-User-Provisioning",
+        "support": "supported",
+        "tier": "paid"
       },
       "session_controls": {
-        "support": "supported"
+        "support": "unknown"
       },
       "sso": {
+        "checked": "2026-09-15",
+        "notes": "SAML SSO on Pinnacle, Apex and Legacy Enterprise; not on Free, Team, Business",
+        "plan": "Pinnacle",
         "protocols": [
           "SAML"
         ],
+        "source": "https://help.wrike.com/hc/en-us/articles/209605769-SAML-SSO-Implementation-Guide",
         "support": "supported",
-        "tier": "enterprise"
+        "tier": "paid"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "SSO can be optional (testing) or enabled for all users on the account",
+        "plan": "Pinnacle",
+        "source": "https://help.wrike.com/hc/en-us/articles/209605769-SAML-SSO-Implementation-Guide",
+        "support": "supported",
+        "tier": "paid"
       }
     },
     "category": "productivity",
@@ -6382,7 +6694,11 @@
         "support": "unknown"
       },
       "audit_logs": {
-        "retention": "90 days",
+        "checked": "2026-09-15",
+        "notes": "Records agent and admin changes to account settings; end-user activity not captured",
+        "plan": "Suite Enterprise / Support Enterprise",
+        "retention": "Indefinite",
+        "source": "https://support.zendesk.com/hc/en-us/articles/4408828001434-Viewing-the-audit-log-for-changes-to-your-account",
         "support": "supported",
         "tier": "enterprise"
       },
@@ -6399,29 +6715,43 @@
         "support": "unknown"
       },
       "mfa_enforcement": {
+        "checked": "2026-09-15",
+        "notes": "Admins can require 2FA for all team members, end users, or both; methods are authenticator app, email, SMS; applies to Zendesk authentication only",
+        "plan": "Suite Team / Support Team",
+        "source": "https://support.zendesk.com/hc/en-us/articles/4408826974874-Managing-two-factor-authentication",
         "support": "supported",
-        "tier": "free"
+        "tier": "paid"
       },
       "phishing_resistant_mfa": {
         "support": "unknown"
       },
       "scim": {
-        "support": "supported",
-        "tier": "enterprise"
+        "checked": "2026-09-15",
+        "notes": "Zendesk states it does not currently support any official SCIM connections; IdPs use Zendesk API endpoints instead",
+        "source": "https://support.zendesk.com/hc/en-us/articles/8966513066138-Does-Zendesk-support-SCIM",
+        "support": "not_supported"
       },
       "session_controls": {
-        "support": "supported"
+        "support": "unknown"
       },
       "sso": {
+        "checked": "2026-09-15",
+        "notes": "Enterprise SSO via SAML or JWT; available on all Suite and Support plans (no free plan)",
+        "plan": "Suite Team / Support Team",
         "protocols": [
-          "SAML",
-          "OIDC"
+          "SAML"
         ],
+        "source": "https://support.zendesk.com/hc/en-us/articles/4408883587226-Enabling-SAML-single-sign-on",
         "support": "supported",
         "tier": "paid"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "checked": "2026-09-15",
+        "notes": "Admins can require users to sign in using enterprise SSO instead of offering multiple sign-in options",
+        "plan": "Suite Team / Support Team",
+        "source": "https://support.zendesk.com/hc/en-us/articles/4408883587226-Enabling-SAML-single-sign-on",
+        "support": "supported",
+        "tier": "paid"
       }
     },
     "category": "sales_marketing",

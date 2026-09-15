@@ -9,22 +9,45 @@ capabilities:
   sso:
     support: "supported"
     tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Custom SAML is Enterprise only; Google and Microsoft SSO are listed from the Unlimited plan"
     protocols: ["SAML"]
+    source: "https://help.clickup.com/hc/en-us/articles/6305027039767-Configure-custom-SAML-single-sign-on"
+    checked: "2026-09-15"
   sso_enforcement:
-    support: "unknown"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SAML login policy: required for all users, all except guests, all except limited members and guests, or optional"
+    source: "https://help.clickup.com/hc/en-us/articles/6305027039767-Configure-custom-SAML-single-sign-on"
+    checked: "2026-09-15"
   scim:
-    support: "unknown"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM base URL and token issued after Custom SAML is configured; Okta full automatic provisioning"
+    source: "https://help.clickup.com/hc/en-us/articles/6305027039767-Configure-custom-SAML-single-sign-on"
+    checked: "2026-09-15"
   mfa_enforcement:
     support: "supported"
     tier: "paid"
+    plan: "Business"
+    notes: "Owners/admins can require 2FA for the Workspace on Business and above; SMS or authenticator app"
+    source: "https://help.clickup.com/hc/en-us/articles/6327741965591-Activate-and-manage-two-factor-authentication"
+    checked: "2026-09-15"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
-    support: "unknown"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Pricing lists Audit Log on Enterprise; Workspace audit logs cover user auth events, tasks, fields, hierarchy; API export"
+    source: "https://clickup.com/pricing"
+    checked: "2026-09-15"
   jit_provisioning:
-    support: "supported"
+    support: "unknown"
   domain_verification:
-    support: "supported"
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:

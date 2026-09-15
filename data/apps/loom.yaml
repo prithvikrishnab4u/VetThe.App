@@ -9,22 +9,45 @@ capabilities:
   sso:
     support: "supported"
     tier: "enterprise"
-    protocols: ["SAML", "OIDC"]
+    plan: "Enterprise"
+    notes: "Loom workspace SSO requires Enterprise; Atlassian.com Enterprise includes Atlassian Guard Standard, Business plans may buy Guard separately"
+    protocols: ["SAML"]
+    source: "https://support.atlassian.com/loom/docs/configure-sso-and-directory-sync-scim"
+    checked: "2026-09-15"
   sso_enforcement:
-    support: "unknown"
-  scim:
-    support: "unknown"
-  mfa_enforcement:
     support: "supported"
     tier: "enterprise"
+    plan: "Enterprise"
+    notes: "'Enforce SSO' workspace setting in Loom Security settings"
+    source: "https://support.atlassian.com/loom/docs/configure-sso-and-directory-sync-scim"
+    checked: "2026-09-15"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Directory Sync (SCIM) for Loom Enterprise workspaces; via Atlassian Guard Standard for Atlassian.com purchases"
+    source: "https://support.atlassian.com/loom/docs/configure-sso-and-directory-sync-scim"
+    checked: "2026-09-15"
+  mfa_enforcement:
+    support: "unknown"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
-    support: "unknown"
-  jit_provisioning:
     support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Pricing lists Activity log and content activity report on Enterprise"
+    source: "https://www.loom.com/pricing"
+    checked: "2026-09-15"
+  jit_provisioning:
+    support: "unknown"
   domain_verification:
     support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Domain verification by email or DNS TXT record precedes Loom SSO setup"
+    source: "https://support.atlassian.com/loom/docs/configure-sso-and-directory-sync-scim"
+    checked: "2026-09-15"
   custom_roles:
     support: "unknown"
   group_role_mapping:

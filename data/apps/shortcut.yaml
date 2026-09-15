@@ -8,23 +8,30 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "paid"
-    protocols: ["SAML"]
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Pricing lists Single sign-on (SSO) on Enterprise ('Contact our Support Team for details'); protocol not stated on page"
+    source: "https://www.shortcut.com/pricing/"
+    checked: "2026-09-15"
   sso_enforcement:
     support: "unknown"
   scim:
-    support: "unknown"
-  mfa_enforcement:
     support: "supported"
-    tier: "paid"
+    tier: "add_on"
+    plan: "Business (add-on); included in Enterprise"
+    notes: "SCIM for customers using SAML SSO and Okta"
+    source: "https://www.shortcut.com/pricing/"
+    checked: "2026-09-15"
+  mfa_enforcement:
+    support: "unknown"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
     support: "unknown"
   jit_provisioning:
-    support: "supported"
+    support: "unknown"
   domain_verification:
-    support: "supported"
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:

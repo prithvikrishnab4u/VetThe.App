@@ -8,30 +8,41 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "paid"
+    notes: "Control Hub SSO with any SAML 2.0 IdP; plan requirement not stated"
     protocols: ["SAML"]
+    source: "https://help.webex.com/en-us/article/lfu88u/Single-Sign-On-Integration-in-Cisco-Webex-Control-Hub"
+    checked: "2026-09-15"
   sso_enforcement:
     support: "unknown"
   scim:
-    support: "unknown"
-  mfa_enforcement:
     support: "supported"
     tier: "paid"
+    plan: "Paid Webex subscription"
+    notes: "SCIM 2.0 user and group sync into Control Hub (e.g. Okta); requires Okta SSO configured first"
+    source: "https://help.webex.com/en-US/article/nmm9pzdb/Synchronize-Okta-Users-into-Cisco-Webex-Control-Hub"
+    checked: "2026-09-15"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Control Hub option to enforce mandatory MFA for all users across all applications; TOTP authenticator app; plan requirement not stated"
+    source: "https://help.webex.com/en-us/article/52szeq/Enable-Multi-Factor-Authentication-Integration-in-Webex-Control-Hub"
+    checked: "2026-09-15"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
     support: "supported"
-    tier: "paid"
-    retention: "360 days"
+    notes: "Administrator activity log in Control Hub, exportable to CSV or via admin audit events API; plan requirement not stated"
+    retention: "1 year (3 years in the India audit cluster)"
+    source: "https://help.webex.com/en-us/article/2tc9yx/Review-Your-Administrator-Activity-Logs-in-Cisco-Webex-Control-Hub"
+    checked: "2026-09-15"
   jit_provisioning:
-    support: "supported"
+    support: "unknown"
   domain_verification:
-    support: "supported"
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:
     support: "unknown"
   session_controls:
-    support: "supported"
+    support: "unknown"
   api_token_controls:
     support: "unknown"

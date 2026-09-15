@@ -9,22 +9,51 @@ capabilities:
   sso:
     support: "supported"
     tier: "enterprise"
-    protocols: ["SAML", "OIDC"]
+    plan: "Enterprise"
+    notes: "SAML SSO (Okta, Entra ID, OneLogin, custom SAML 2.0) is Enterprise only; Google SSO on Pro and Enterprise"
+    protocols: ["SAML"]
+    source: "https://support.monday.com/hc/en-us/articles/360000460605-SAML-Single-Sign-on"
+    checked: "2026-09-15"
   sso_enforcement:
-    support: "unknown"
-  scim:
-    support: "unknown"
-  mfa_enforcement:
     support: "supported"
     tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Email/password login can be restricted to guests and/or a single break-glass user; everyone else must use SSO"
+    source: "https://support.monday.com/hc/en-us/articles/360000460605-SAML-Single-Sign-on"
+    checked: "2026-09-15"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM provisioning available on Enterprise plans only"
+    source: "https://support.monday.com/hc/en-us/articles/360000460605-SAML-Single-Sign-on"
+    checked: "2026-09-15"
+  mfa_enforcement:
+    support: "supported"
+    tier: "free"
+    plan: "All plans"
+    notes: "Admins enable 2FA and choose to require it for members, guests, or both; authenticator app or SMS (SMS not on free/trial); applies to email/password logins"
+    source: "https://support.monday.com/hc/en-us/articles/360000787745-Two-Factor-Authentication"
+    checked: "2026-09-15"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
-    support: "unknown"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Security activity: logins/logouts, device, IP, failed logins, exports; Audit Log API available"
+    retention: "Not deleted after a set period (vendor says this may change)"
+    source: "https://support.monday.com/hc/en-us/articles/360001259429-The-Audit-Log"
+    checked: "2026-09-15"
   jit_provisioning:
     support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "With SAML SSO, accounts are created on first login by default"
+    source: "https://support.monday.com/hc/en-us/articles/360000460605-SAML-Single-Sign-on"
+    checked: "2026-09-15"
   domain_verification:
-    support: "supported"
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:

@@ -9,30 +9,59 @@ capabilities:
   sso:
     support: "supported"
     tier: "paid"
+    plan: "Business"
+    notes: "SAML 2.0 SSO available on Business and Enterprise plans"
     protocols: ["SAML"]
+    source: "https://help.miro.com/hc/en-us/articles/360017571414-Single-sign-on-SSO"
+    checked: "2026-09-15"
   sso_enforcement:
-    support: "unknown"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SSO is required for active Enterprise users whose domain is listed in SSO settings; other domains can use other login methods"
+    source: "https://help.miro.com/hc/en-us/articles/360017571414-Single-sign-on-SSO"
+    checked: "2026-09-15"
   scim:
     support: "supported"
     tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Requires working SAML SSO; optional IdP group to team sync"
+    source: "https://help.miro.com/hc/en-us/articles/360036827513-SCIM"
+    checked: "2026-09-15"
   mfa_enforcement:
     support: "supported"
     tier: "paid"
+    plan: "Starter"
+    notes: "Admins can require 2FA (authenticator app) on Starter, Business, Education, Enterprise; applies to email/magic-link sign-in, not SSO or Google/Microsoft/Slack login"
+    source: "https://help.miro.com/hc/en-us/articles/27356474050834-Two-factor-authentication-2FA"
+    checked: "2026-09-15"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
     support: "supported"
     tier: "enterprise"
-    retention: "180 days"
+    plan: "Enterprise"
+    notes: "CSV export, Audit Log API and SIEM integrations"
+    retention: "180 days default; configurable 30, 90, 180 or 365 days"
+    source: "https://help.miro.com/hc/en-us/articles/360017571434-Audit-logs"
+    checked: "2026-09-15"
   jit_provisioning:
-    support: "unknown"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "JIT adds newly registered users from specified domains to the Enterprise account and a preset team; requires SSO"
+    source: "https://help.miro.com/hc/en-us/articles/360017571414-Single-sign-on-SSO"
+    checked: "2026-09-15"
   domain_verification:
-    support: "unknown"
+    support: "supported"
+    notes: "Domains must be claimed and verified in Managed Domains before adding to SSO; plan requirement not stated"
+    source: "https://help.miro.com/hc/en-us/articles/360017571414-Single-sign-on-SSO"
+    checked: "2026-09-15"
   custom_roles:
     support: "unknown"
   group_role_mapping:
     support: "unknown"
   session_controls:
-    support: "supported"
+    support: "unknown"
   api_token_controls:
     support: "unknown"
