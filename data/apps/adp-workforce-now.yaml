@@ -8,23 +8,26 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "enterprise"
-    protocols: ["SAML", "OIDC"]
+    tier: "add_on"
+    plan: "ADP Federated Single Sign On"
+    notes: "SAML 2.0 federation purchased as an ADP Marketplace app; confirm your ADP service supports it"
+    protocols: ["SAML"]
+    source: "https://support.adp.com/netsecure/pages/pub/docs/fed/en_US/ADP_Federation_Overview.pdf"
+    checked: "2026-09-15"
   sso_enforcement:
     support: "unknown"
   scim:
     support: "unknown"
   mfa_enforcement:
-    support: "supported"
-    tier: "enterprise"
+    support: "unknown"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
     support: "unknown"
   jit_provisioning:
-    support: "supported"
+    support: "unknown"
   domain_verification:
-    support: "supported"
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:

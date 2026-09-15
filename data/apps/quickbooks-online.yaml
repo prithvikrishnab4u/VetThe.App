@@ -7,24 +7,41 @@ status: "draft"
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
-    support: "supported"
-    tier: "paid"
-    protocols: ["OIDC"]
+    support: "partial"
+    tier: "enterprise"
+    plan: "Intuit Enterprise Suite"
+    notes: "Only QuickBooks Online Accountant, Intuit Accountant Suite and Intuit Enterprise Suite; Entra ID, Google Workspace, Okta; no extra fee"
+    source: "https://quickbooks.intuit.com/learn-support/en-us/help-article/offboarding/set-single-sign-organization/L4IlUaXB5_US_en_US"
+    checked: "2026-09-15"
   sso_enforcement:
     support: "unknown"
   scim:
-    support: "unknown"
+    support: "partial"
+    tier: "enterprise"
+    plan: "Intuit Enterprise Suite"
+    notes: "SCIM provisioning and deprovisioning for the same SSO-eligible products only"
+    source: "https://quickbooks.intuit.com/learn-support/en-us/help-article/offboarding/set-single-sign-organization/L4IlUaXB5_US_en_US"
+    checked: "2026-09-15"
   mfa_enforcement:
     support: "supported"
-    tier: "paid"
+    notes: "MFA is mandatory for Intuit accounts and cannot be turned off; not admin-configurable; plan requirement not stated"
+    source: "https://quickbooks.intuit.com/learn-support/en-us/help-article/security-risk/verify-account-multi-factor-authentication/L2Xp0GNiT_US_en_US"
+    checked: "2026-09-15"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "supported"
+    notes: "Passkeys available as a sign-in method; plan requirement not stated"
+    source: "https://quickbooks.intuit.com/learn-support/en-us/help-article/security-risk/verify-account-multi-factor-authentication/L2Xp0GNiT_US_en_US"
+    checked: "2026-09-15"
   audit_logs:
-    support: "unknown"
+    support: "supported"
+    notes: "Records sign-ins, settings and data changes; admin access required; cannot be disabled; plan requirement not stated"
+    retention: "2 years"
+    source: "https://quickbooks.intuit.com/learn-support/en-us/help-article/audit-log/use-audit-log-quickbooks-online/L2WoVnW6I_US_en_US"
+    checked: "2026-09-15"
   jit_provisioning:
-    support: "not_supported"
+    support: "unknown"
   domain_verification:
-    support: "not_supported"
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:

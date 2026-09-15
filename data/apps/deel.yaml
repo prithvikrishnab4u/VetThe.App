@@ -8,23 +8,33 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "paid"
+    notes: "SAML 2.0 and OpenID Connect via the App Store; Okta, Azure, OneLogin, Google, PingFederate; plan requirement not stated"
     protocols: ["SAML", "OIDC"]
+    source: "https://help.letsdeel.com/hc/en-gb/articles/20955980375313-How-to-Configure-Single-Sign-On"
+    checked: "2026-09-15"
   sso_enforcement:
-    support: "unknown"
+    support: "supported"
+    notes: "Enforce per worker type; organization admins can still use password login; plan requirement not stated"
+    source: "https://help.letsdeel.com/hc/en-gb/articles/20955980375313-How-to-Configure-Single-Sign-On"
+    checked: "2026-09-15"
   scim:
-    support: "unknown"
+    support: "supported"
+    notes: "SCIM API for users only, no groups; plan requirement not stated"
+    source: "https://developer.deel.com/api/scim-api/overview"
+    checked: "2026-09-15"
   mfa_enforcement:
     support: "supported"
-    tier: "paid"
+    notes: "Admins set mandatory 2FA separately for Admins and Workers; Deel app push, authenticator app or email OTP; plan requirement not stated"
+    source: "https://help.letsdeel.com/hc/en-gb/articles/20543682195729-Two-Factor-Authentication-2FA-for-a-Deel-Account"
+    checked: "2026-09-15"
   phishing_resistant_mfa:
-    support: "supported"
+    support: "unknown"
   audit_logs:
     support: "unknown"
   jit_provisioning:
-    support: "supported"
+    support: "unknown"
   domain_verification:
-    support: "supported"
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:

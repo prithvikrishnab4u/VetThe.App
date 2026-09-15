@@ -8,23 +8,30 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "paid"
+    notes: "SAML app in the BambooHR Marketplace; plan requirement not stated"
     protocols: ["SAML"]
+    source: "https://www.bamboohr.com/integrations/listings/saml"
+    checked: "2026-09-15"
   sso_enforcement:
-    support: "unknown"
+    support: "supported"
+    notes: "Email and password login is only offered when admins check Allow optional email & password login; plan requirement not stated"
+    source: "https://www.bamboohr.com/product-updates/samloptional-email-and-password-login"
+    checked: "2026-09-15"
   scim:
     support: "unknown"
   mfa_enforcement:
     support: "supported"
-    tier: "paid"
+    notes: "Account Owners and Admins can require 2-step login for all users or selected access levels; SMS option available; plan requirement not stated"
+    source: "https://www.bamboohr.com/product-updates/2-step-login-enablement-for-all-users"
+    checked: "2026-09-15"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
     support: "unknown"
   jit_provisioning:
-    support: "supported"
+    support: "unknown"
   domain_verification:
-    support: "supported"
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:

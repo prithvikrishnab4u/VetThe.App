@@ -8,23 +8,28 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "enterprise"
-    protocols: ["SAML", "OIDC"]
+    tier: "paid"
+    plan: "Standard"
+    notes: "Self-service SSO at no fee for Expense, Invoice and Travel Standard and Professional; assisted setup costs extra"
+    source: "https://www.concur.com/app-center/listings/6009d2e312660c00150b2a41"
+    checked: "2026-09-15"
   sso_enforcement:
-    support: "unknown"
+    support: "supported"
+    notes: "SSO Required blocks username and password sign-in for all users incl. admins and web services; plan requirement not stated"
+    source: "https://learning.sap.com/courses/exploring-company-administration-settings-in-legacy-concur-travel/managing-single-sign-on"
+    checked: "2026-09-15"
   scim:
     support: "unknown"
   mfa_enforcement:
-    support: "supported"
-    tier: "enterprise"
+    support: "unknown"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
     support: "unknown"
   jit_provisioning:
-    support: "supported"
+    support: "unknown"
   domain_verification:
-    support: "supported"
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:

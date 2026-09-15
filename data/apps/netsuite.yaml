@@ -8,23 +8,31 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "enterprise"
-    protocols: ["SAML", "OIDC"]
+    notes: "SAML Single Sign-on feature enabled under SuiteCloud features; plan requirement not stated"
+    protocols: ["SAML"]
+    source: "https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/subsect_1520718734.html"
+    checked: "2026-09-15"
   sso_enforcement:
     support: "unknown"
   scim:
     support: "unknown"
   mfa_enforcement:
     support: "supported"
-    tier: "enterprise"
+    tier: "paid"
+    notes: "Admins designate 2FA-required roles; mandatory for Administrator and highly privileged roles; no special licensing"
+    source: "https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_N327688.html"
+    checked: "2026-09-15"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
-    support: "unknown"
+    support: "supported"
+    notes: "Login Audit Trail records user, time, IP and session transactions; plan requirement not stated"
+    source: "https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_N324233.html"
+    checked: "2026-09-15"
   jit_provisioning:
-    support: "supported"
+    support: "unknown"
   domain_verification:
-    support: "supported"
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:

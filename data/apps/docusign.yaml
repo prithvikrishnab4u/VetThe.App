@@ -8,31 +8,39 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "enterprise"
-    protocols: ["SAML"]
+    tier: "add_on"
+    plan: "Access Management with SSO"
+    notes: "SSO via Docusign Admin with Access Management with SSO or Organization Management; included in eSignature Enterprise Pro"
+    source: "https://www.docusign.com/products/admin"
+    checked: "2026-09-15"
   sso_enforcement:
     support: "unknown"
   scim:
     support: "supported"
-    tier: "enterprise"
+    tier: "add_on"
+    plan: "Organization Management"
+    notes: "SCIM provisioning and deprovisioning included in Organization Management"
+    source: "https://www.docusign.com/products/admin"
+    checked: "2026-09-15"
   mfa_enforcement:
-    support: "supported"
-    tier: "free"
+    support: "unknown"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
-    support: "supported"
-    tier: "enterprise"
-    retention: "Unlimited"
+    support: "unknown"
   jit_provisioning:
     support: "unknown"
   domain_verification:
-    support: "unknown"
+    support: "supported"
+    tier: "add_on"
+    notes: "Domain claiming in Docusign Admin; admin capabilities are IAM plans or eSignature add-ons; exact plan not stated"
+    source: "https://www.docusign.com/products/admin"
+    checked: "2026-09-15"
   custom_roles:
     support: "unknown"
   group_role_mapping:
     support: "unknown"
   session_controls:
-    support: "supported"
+    support: "unknown"
   api_token_controls:
     support: "unknown"

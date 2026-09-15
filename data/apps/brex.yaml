@@ -9,24 +9,49 @@ capabilities:
   sso:
     support: "supported"
     tier: "paid"
+    plan: "Premium"
+    notes: "SSO via SAML or OIDC on Premium, Enterprise and Smart card plans; OIDC not supported with Entra ID"
     protocols: ["SAML", "OIDC"]
+    source: "https://www.brex.com/support/signing-into-brex"
+    checked: "2026-09-15"
   sso_enforcement:
     support: "unknown"
   scim:
-    support: "unknown"
-  mfa_enforcement:
     support: "supported"
     tier: "paid"
+    plan: "Premium"
+    notes: "SCIM provisioning with Okta and Entra ID on Premium, Enterprise and Smart card plans"
+    source: "https://www.brex.com/support/scim-integration"
+    checked: "2026-09-15"
+  mfa_enforcement:
+    support: "supported"
+    notes: "2FA is mandatory for all Brex users (authenticator app or SMS); SSO users are not prompted for Brex MFA; plan requirement not stated"
+    source: "https://www.brex.com/support/two-factor-authentication"
+    checked: "2026-09-15"
   phishing_resistant_mfa:
     support: "supported"
+    notes: "Passkey sign-in available as an alternative to passwords; plan requirement not stated"
+    source: "https://www.brex.com/support/signing-into-brex"
+    checked: "2026-09-15"
   audit_logs:
-    support: "unknown"
+    support: "supported"
+    tier: "paid"
+    plan: "Premium"
+    notes: "Audit trail under Security with filtering and CSV export; Premium and Enterprise plans"
+    retention: "At least 90 days per event type"
+    source: "https://www.brex.com/support/brex-security-measures"
+    checked: "2026-09-15"
   jit_provisioning:
-    support: "supported"
-  domain_verification:
-    support: "supported"
-  custom_roles:
     support: "unknown"
+  domain_verification:
+    support: "unknown"
+  custom_roles:
+    support: "supported"
+    tier: "paid"
+    plan: "Premium"
+    notes: "Custom roles with granular capabilities on Premium and Enterprise plans"
+    source: "https://www.brex.com/support/custom-roles"
+    checked: "2026-09-15"
   group_role_mapping:
     support: "unknown"
   session_controls:

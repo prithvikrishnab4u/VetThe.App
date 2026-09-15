@@ -9,26 +9,62 @@ capabilities:
   sso:
     support: "supported"
     tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SAML 2.0 SSO on Enterprise; paid add-on for Business plan"
     protocols: ["SAML"]
+    source: "https://support.pandadoc.com/en/articles/9715050-sso-implementation"
+    checked: "2026-09-15"
   sso_enforcement:
-    support: "unknown"
-  scim:
-    support: "unknown"
-  mfa_enforcement:
     support: "supported"
     tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Admins can restrict password login to specific members and enforce SSO for everyone else"
+    source: "https://support.pandadoc.com/en/articles/9715050-sso-implementation"
+    checked: "2026-09-15"
+  scim:
+    support: "supported"
+    notes: "SCIM 1.1 and 2.0 documented alongside SSO; plan requirement not stated"
+    source: "https://support.pandadoc.com/en/articles/9715050-sso-implementation"
+    checked: "2026-09-15"
+  mfa_enforcement:
+    support: "not_supported"
+    notes: "2FA can only be enabled individually by each user; enforce via SSO IdP instead"
+    source: "https://support.pandadoc.com/en/articles/9715012-two-factor-authentication-2fa"
+    checked: "2026-09-15"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "not_supported"
+    notes: "Only authenticator app and SMS; physical security keys not supported"
+    source: "https://support.pandadoc.com/en/articles/9715012-two-factor-authentication-2fa"
+    checked: "2026-09-15"
   audit_logs:
-    support: "unknown"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "CSV download of account activity; owner-only access; 10 event types"
+    retention: "30 days"
+    source: "https://support.pandadoc.com/en/articles/9715049-audit-log"
+    checked: "2026-09-15"
   jit_provisioning:
     support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "JIT creates users on first SSO login when enabled"
+    source: "https://support.pandadoc.com/en/articles/9715050-sso-implementation"
+    checked: "2026-09-15"
   domain_verification:
     support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "DNS TXT record verification after SSO configuration"
+    source: "https://support.pandadoc.com/en/articles/9715050-sso-implementation"
+    checked: "2026-09-15"
   custom_roles:
     support: "unknown"
   group_role_mapping:
-    support: "unknown"
+    support: "supported"
+    notes: "SCIM 2.0 group-based provisioning maps IdP group membership to role, license and workspace; plan requirement not stated"
+    source: "https://support.pandadoc.com/en/articles/9715050-sso-implementation"
+    checked: "2026-09-15"
   session_controls:
     support: "unknown"
   api_token_controls:

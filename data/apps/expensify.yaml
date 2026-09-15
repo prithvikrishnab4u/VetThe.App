@@ -8,23 +8,36 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "paid"
+    notes: "SAML SSO configured by Domain Admins on a verified domain; plan requirement not stated"
     protocols: ["SAML"]
+    source: "https://help.expensify.com/articles/expensify-classic/domains/Set-Up-SAML-SSO"
+    checked: "2026-09-15"
   sso_enforcement:
-    support: "unknown"
+    support: "supported"
+    notes: "Required for login setting forces members to sign in via SSO only; plan requirement not stated"
+    source: "https://help.expensify.com/articles/expensify-classic/domains/Set-Up-SAML-SSO"
+    checked: "2026-09-15"
   scim:
-    support: "unknown"
+    support: "partial"
+    notes: "SCIM only for Okta, requested via concierge@expensify.com after SAML setup; plan requirement not stated"
+    source: "https://help.expensify.com/articles/expensify-classic/domains/Set-Up-SAML-SSO"
+    checked: "2026-09-15"
   mfa_enforcement:
     support: "supported"
-    tier: "paid"
+    notes: "Domain Admins can require 2FA for all domain members; not available on SAML domains; plan requirement not stated"
+    source: "https://help.expensify.com/articles/expensify-classic/settings/Enable-two-factor-authentication"
+    checked: "2026-09-15"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
     support: "unknown"
   jit_provisioning:
-    support: "supported"
+    support: "unknown"
   domain_verification:
     support: "supported"
+    notes: "Domain must be claimed and verified before SAML can be configured; plan requirement not stated"
+    source: "https://help.expensify.com/articles/expensify-classic/domains/Set-Up-SAML-SSO"
+    checked: "2026-09-15"
   custom_roles:
     support: "unknown"
   group_role_mapping:

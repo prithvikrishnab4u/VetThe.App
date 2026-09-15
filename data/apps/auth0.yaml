@@ -8,21 +8,33 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "free"
-    protocols: ["SAML", "OIDC", "WS-Fed"]
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Dashboard SSO for tenant members via enterprise IdP, set up with Auth0 Support; no IdP-initiated flows"
+    protocols: ["SAML", "OIDC"]
+    source: "https://auth0.com/docs/get-started/manage-dashboard-access/configure-single-sign-on-for-auth0-dashboard"
+    checked: "2026-09-15"
   sso_enforcement:
-    support: "unknown"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Auth0 Teams security policies enforce SSO for team tenants; Early Access on Public Cloud Enterprise"
+    source: "https://auth0.com/docs/get-started/tenant-settings/auth0-teams/configure-security-policies"
+    checked: "2026-09-15"
   scim:
-    support: "supported"
-    tier: "paid"
+    support: "unknown"
   mfa_enforcement:
-    support: "supported"
-    tier: "free"
+    support: "not_supported"
+    notes: "MFA cannot be enforced for all members of a tenant; dashboard users self-enroll"
+    source: "https://auth0.com/docs/get-started/manage-dashboard-access/configure-single-sign-on-for-auth0-dashboard"
+    checked: "2026-09-15"
   phishing_resistant_mfa:
     support: "supported"
+    notes: "Dashboard users can enroll WebAuthn security keys or device biometrics; plan requirement not stated"
+    source: "https://auth0.com/docs/get-started/manage-dashboard-access/add-change-remove-mfa"
+    checked: "2026-09-15"
   audit_logs:
-    support: "supported"
-    tier: "free"
+    support: "unknown"
   jit_provisioning:
     support: "unknown"
   domain_verification:
@@ -32,6 +44,6 @@ capabilities:
   group_role_mapping:
     support: "unknown"
   session_controls:
-    support: "supported"
+    support: "unknown"
   api_token_controls:
     support: "unknown"

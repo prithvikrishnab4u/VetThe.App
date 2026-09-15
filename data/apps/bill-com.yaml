@@ -9,24 +9,31 @@ capabilities:
   sso:
     support: "supported"
     tier: "enterprise"
-    protocols: ["SAML"]
+    plan: "Enterprise"
+    notes: "Single Sign-On listed only on the Enterprise plan"
+    source: "https://www.bill.com/pricing"
+    checked: "2026-09-15"
   sso_enforcement:
     support: "unknown"
   scim:
     support: "unknown"
   mfa_enforcement:
-    support: "supported"
-    tier: "enterprise"
+    support: "unknown"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
     support: "unknown"
   jit_provisioning:
-    support: "not_supported"
-  domain_verification:
-    support: "not_supported"
-  custom_roles:
     support: "unknown"
+  domain_verification:
+    support: "unknown"
+  custom_roles:
+    support: "supported"
+    tier: "paid"
+    plan: "Corporate"
+    notes: "Custom user roles on Corporate and Enterprise plans"
+    source: "https://www.bill.com/pricing"
+    checked: "2026-09-15"
   group_role_mapping:
     support: "unknown"
   session_controls:

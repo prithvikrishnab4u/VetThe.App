@@ -9,26 +9,60 @@ capabilities:
   sso:
     support: "supported"
     tier: "enterprise"
+    plan: "Shopify Plus"
+    notes: "SAML authentication for organization users; auto-config for Okta, OneLogin and Entra"
     protocols: ["SAML"]
+    source: "https://help.shopify.com/en/manual/your-account/users/security/advanced-security-features/saml"
+    checked: "2026-09-15"
   sso_enforcement:
-    support: "unknown"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Shopify Plus"
+    notes: "SAML setting can be Required for all domain users or set for specific users"
+    source: "https://help.shopify.com/en/manual/your-account/users/security/advanced-security-features/saml"
+    checked: "2026-09-15"
   scim:
-    support: "unknown"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Shopify Plus"
+    notes: "SCIM API token after domain verification and SAML setup; create, assign groups and deactivate users"
+    source: "https://help.shopify.com/en/manual/your-account/users/security/advanced-security-features/scim"
+    checked: "2026-09-15"
   mfa_enforcement:
     support: "supported"
     tier: "enterprise"
+    plan: "Shopify Plus"
+    notes: "Organization can require a secure sign-in method (passkey or two-step authentication) for all users; some user types exempt"
+    source: "https://help.shopify.com/en/manual/organization-settings/security/two-step-authentication"
+    checked: "2026-09-15"
   phishing_resistant_mfa:
-    support: "unknown"
-  audit_logs:
-    support: "unknown"
-  jit_provisioning:
     support: "supported"
+    notes: "Passkey login for Shopify accounts; plan requirement not stated"
+    source: "https://help.shopify.com/en/manual/your-account/logging-in/passkeys"
+    checked: "2026-09-15"
+  audit_logs:
+    support: "partial"
+    notes: "User management activity log and last five login sessions per user; retention and export not stated; plan requirement not stated"
+    source: "https://help.shopify.com/en/manual/your-account/users/security/user-management-activity-log"
+    checked: "2026-09-15"
+  jit_provisioning:
+    support: "unknown"
   domain_verification:
     support: "supported"
+    tier: "enterprise"
+    plan: "Shopify Plus"
+    notes: "Organization domain must be verified before enabling SAML"
+    source: "https://help.shopify.com/en/manual/your-account/users/security/advanced-security-features/saml"
+    checked: "2026-09-15"
   custom_roles:
     support: "unknown"
   group_role_mapping:
-    support: "unknown"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Shopify Plus"
+    notes: "SCIM group assignment for Okta, OneLogin and Entra; IdP group names must match Shopify groups"
+    source: "https://help.shopify.com/en/manual/your-account/users/security/advanced-security-features/scim"
+    checked: "2026-09-15"
   session_controls:
     support: "unknown"
   api_token_controls:
