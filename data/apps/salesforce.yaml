@@ -8,22 +8,36 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "paid"
+    notes: "SAML SSO with Salesforce as service provider; OpenID Connect auth providers also documented; plan requirement not stated"
     protocols: ["SAML", "OIDC"]
+    source: "https://help.salesforce.com/apex/HTViewHelpDoc?id=sf.sso_saml.htm&language=en_us"
+    checked: "2026-09-15"
   sso_enforcement:
-    support: "unknown"
+    support: "supported"
+    notes: "Disable login with Salesforce credentials in Single Sign-On Settings plus Is Single Sign-On Enabled profile permission; plan requirement not stated"
+    source: "https://help.salesforce.com/s/articleView?id=005228875&language=en_US&type=1"
+    checked: "2026-09-15"
   scim:
     support: "supported"
-    tier: "enterprise"
+    tier: "paid"
+    plan: "All editions"
+    notes: "SCIM 2.0 REST endpoints for user provisioning"
+    source: "https://help.salesforce.com/apex/HTViewHelpDoc?id=sf.identity_scim_overview.htm&language=en_us"
+    checked: "2026-09-15"
   mfa_enforcement:
     support: "supported"
-    tier: "free"
+    tier: "paid"
+    plan: "Paid production and sandbox orgs"
+    notes: "Org-wide MFA for direct UI logins is enforced and cannot be disabled from July 2026 rollout; not enforced on Developer or trial orgs"
+    source: "https://help.salesforce.com/s/articleView?id=005321561&language=en_US&type=1"
+    checked: "2026-09-15"
   phishing_resistant_mfa:
     support: "supported"
+    notes: "Passkeys and WebAuthn/U2F security keys; phishing-resistant MFA required for privileged users; plan requirement not stated"
+    source: "https://help.salesforce.com/apex/HTViewHelpDoc?id=sf.mfa_supported_verification_methods.htm&language=en_us"
+    checked: "2026-09-15"
   audit_logs:
-    support: "supported"
-    tier: "paid"
-    retention: "180 days"
+    support: "unknown"
   jit_provisioning:
     support: "unknown"
   domain_verification:
@@ -33,6 +47,6 @@ capabilities:
   group_role_mapping:
     support: "unknown"
   session_controls:
-    support: "supported"
+    support: "unknown"
   api_token_controls:
     support: "unknown"

@@ -8,22 +8,42 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "free"
-    protocols: ["SAML", "OIDC"]
+    notes: "Microsoft 365 sign-in is handled by Microsoft Entra ID; custom domains can be federated to a third-party SAML 2.0 SP-Lite IdP, with a limited set of supported clients; plan requirement not stated"
+    protocols: ["SAML"]
+    source: "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-fed-saml-idp"
+    checked: "2026-09-15"
   sso_enforcement:
-    support: "unknown"
-  scim:
     support: "supported"
-    tier: "free"
+    notes: "Entra ID control: converting a custom domain to federated sends that domain's sign-ins to the external IdP; the default onmicrosoft.com domain can't be federated; plan requirement not stated"
+    source: "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-fed-saml-idp"
+    checked: "2026-09-15"
+  scim:
+    support: "partial"
+    tier: "paid"
+    plan: "Microsoft Entra ID P1"
+    notes: "Entra ID control, not M365: API-driven inbound provisioning accepts SCIM-schema bulk payloads via Graph /bulkUpload; not a standard SCIM endpoint for an external IdP"
+    source: "https://learn.microsoft.com/en-us/entra/identity/app-provisioning/inbound-provisioning-api-concepts"
+    checked: "2026-09-15"
   mfa_enforcement:
     support: "supported"
     tier: "free"
+    plan: "Microsoft Entra ID Free (security defaults)"
+    notes: "Entra ID control: security defaults require MFA registration for all users at no extra cost; customizable Conditional Access MFA policies need Entra ID P1"
+    source: "https://learn.microsoft.com/en-us/entra/fundamentals/security-defaults"
+    checked: "2026-09-15"
   phishing_resistant_mfa:
     support: "supported"
+    tier: "free"
+    plan: "Microsoft Entra ID Free"
+    notes: "Entra ID control: passkeys (FIDO2) in all Entra editions; requiring them via Conditional Access authentication strength needs Entra ID P1"
+    source: "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2"
+    checked: "2026-09-15"
   audit_logs:
     support: "supported"
-    tier: "free"
-    retention: "90 days"
+    notes: "Microsoft Purview unified audit log; Audit (Premium) adds retention policies up to 1 year, and up to 10 years with an add-on; licensing depends on M365 subscription, plan requirement not stated on page"
+    retention: "180 days (Audit Standard)"
+    source: "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
+    checked: "2026-09-15"
   jit_provisioning:
     support: "unknown"
   domain_verification:
@@ -33,6 +53,6 @@ capabilities:
   group_role_mapping:
     support: "unknown"
   session_controls:
-    support: "supported"
+    support: "unknown"
   api_token_controls:
     support: "unknown"

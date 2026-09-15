@@ -8,23 +8,58 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "enterprise"
+    tier: "add_on"
+    plan: "Atlassian Guard Standard"
+    notes: "SAML SSO configured on the Atlassian organization; Guard Standard covers Bitbucket; requires verified domains"
     protocols: ["SAML"]
+    source: "https://support.atlassian.com/security-and-access-policies/docs/configure-saml-single-sign-on-with-an-identity-provider/"
+    checked: "2026-09-15"
   sso_enforcement:
-    support: "unknown"
+    support: "supported"
+    tier: "add_on"
+    plan: "Atlassian Guard Standard"
+    notes: "SSO enforced per authentication policy for managed accounts"
+    source: "https://support.atlassian.com/security-and-access-policies/docs/configure-saml-single-sign-on-with-an-identity-provider/"
+    checked: "2026-09-15"
   scim:
-    support: "unknown"
+    support: "partial"
+    tier: "add_on"
+    plan: "Atlassian Guard Standard"
+    notes: "SCIM 2.0 user provisioning; group sync not yet available for Bitbucket"
+    source: "https://support.atlassian.com/provisioning-users/docs/understand-user-provisioning/"
+    checked: "2026-09-15"
   mfa_enforcement:
     support: "supported"
-    tier: "enterprise"
+    tier: "free"
+    plan: "All plans"
+    notes: "Org admins enforce two-step verification for managed accounts via authentication policies; methods are authenticator app or SMS"
+    source: "https://support.atlassian.com/security-and-access-policies/docs/enforce-two-step-verification/"
+    checked: "2026-09-15"
   phishing_resistant_mfa:
-    support: "supported"
+    support: "partial"
+    tier: "free"
+    notes: "Passkeys only for non-managed Atlassian accounts; org-managed accounts can't enable them"
+    source: "https://support.atlassian.com/atlassian-account/docs/access-your-atlassian-account-with-a-passkey/"
+    checked: "2026-09-15"
   audit_logs:
-    support: "unknown"
+    support: "supported"
+    tier: "add_on"
+    plan: "Atlassian Guard Standard"
+    notes: "Organization audit log listed in Guard Standard, which covers Bitbucket"
+    source: "https://www.atlassian.com/software/guard/pricing"
+    checked: "2026-09-15"
   jit_provisioning:
     support: "supported"
+    tier: "add_on"
+    plan: "Atlassian Guard Standard"
+    notes: "Accounts created at first SAML login when verified domains are linked to the IdP directory and SSO is enforced on the default policy"
+    source: "https://support.atlassian.com/security-and-access-policies/docs/configure-saml-single-sign-on-with-an-identity-provider/"
+    checked: "2026-09-15"
   domain_verification:
     support: "supported"
+    notes: "Domain verification required before SAML SSO; plan requirement not stated"
+    source: "https://support.atlassian.com/security-and-access-policies/docs/configure-saml-single-sign-on-with-an-identity-provider/"
+    checked: "2026-09-15"
   custom_roles:
     support: "unknown"
   group_role_mapping:
@@ -32,4 +67,9 @@ capabilities:
   session_controls:
     support: "unknown"
   api_token_controls:
-    support: "unknown"
+    support: "supported"
+    tier: "add_on"
+    plan: "Atlassian Guard Standard"
+    notes: "API token controls listed in Guard Standard"
+    source: "https://www.atlassian.com/software/guard/pricing"
+    checked: "2026-09-15"

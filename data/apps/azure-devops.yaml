@@ -8,23 +8,36 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "free"
-    protocols: ["SAML", "OIDC"]
+    notes: "Organizations connected to Microsoft Entra ID sign in with Entra work credentials; unconnected orgs use Microsoft accounts; plan requirement not stated"
+    source: "https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/connect-organization-to-azure-ad"
+    checked: "2026-09-15"
   sso_enforcement:
-    support: "unknown"
+    support: "supported"
+    notes: "Entra-backed orgs only admit members or guests of the connected tenant; disabled or removed Entra users lose access, including via PATs and SSH; plan requirement not stated"
+    source: "https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/access-with-azure-ad"
+    checked: "2026-09-15"
   scim:
     support: "unknown"
   mfa_enforcement:
     support: "supported"
-    tier: "free"
+    notes: "Enforced by Entra Conditional Access policies targeting the Azure DevOps resource, not an Azure DevOps setting; Conditional Access is an Entra ID P1 feature; plan requirement not stated on this page"
+    source: "https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/conditional-access-policies"
+    checked: "2026-09-15"
   phishing_resistant_mfa:
     support: "supported"
+    notes: "Entra Conditional Access for Azure DevOps can require a phishing-resistant authentication strength; plan requirement not stated"
+    source: "https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/conditional-access-policies"
+    checked: "2026-09-15"
   audit_logs:
-    support: "unknown"
+    support: "supported"
+    notes: "Public preview; Entra-backed orgs only; off by default; CSV/JSON export and audit streaming; sign-in events are not tracked (see Entra logs); plan requirement not stated"
+    retention: "90 days"
+    source: "https://learn.microsoft.com/en-us/azure/devops/organizations/audit/azure-devops-auditing"
+    checked: "2026-09-15"
   jit_provisioning:
-    support: "supported"
+    support: "unknown"
   domain_verification:
-    support: "supported"
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:
@@ -32,4 +45,7 @@ capabilities:
   session_controls:
     support: "unknown"
   api_token_controls:
-    support: "unknown"
+    support: "supported"
+    notes: "Org policy restricts PAT creation; Entra tenant policies restrict global and full-scoped PATs and enforce maximum PAT lifespan; SSH and OAuth app access can be disabled; plan requirement not stated"
+    source: "https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/change-application-access-policies"
+    checked: "2026-09-15"

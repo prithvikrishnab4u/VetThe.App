@@ -8,28 +8,50 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "enterprise"
+    tier: "paid"
+    plan: "All plans"
+    notes: "SAML SSO configured in Company settings"
     protocols: ["SAML"]
+    source: "https://support.pipedrive.com/en/article/single-sign-on"
+    checked: "2026-09-15"
   sso_enforcement:
-    support: "unknown"
+    support: "supported"
+    tier: "paid"
+    plan: "All plans"
+    notes: "Enforce SSO login disables password access"
+    source: "https://support.pipedrive.com/en/article/single-sign-on"
+    checked: "2026-09-15"
   scim:
     support: "unknown"
   mfa_enforcement:
     support: "supported"
-    tier: "enterprise"
+    notes: "Admins can enforce 2FA (authenticator app or email) for all users; cannot be combined with SSO; plan requirement not stated"
+    source: "https://support.pipedrive.com/en/article/2fa-two-factor-authentication"
+    checked: "2026-09-15"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
-    support: "unknown"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Ultimate"
+    notes: "Security dashboard audit log of security-related events"
+    retention: "2 months"
+    source: "https://support.pipedrive.com/en/article/security-dashboard"
+    checked: "2026-09-15"
   jit_provisioning:
-    support: "supported"
+    support: "unknown"
   domain_verification:
-    support: "supported"
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:
     support: "unknown"
   session_controls:
-    support: "unknown"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Ultimate"
+    notes: "Security dashboard lets admins view devices and force log out sessions"
+    source: "https://support.pipedrive.com/en/article/security-dashboard"
+    checked: "2026-09-15"
   api_token_controls:
     support: "unknown"

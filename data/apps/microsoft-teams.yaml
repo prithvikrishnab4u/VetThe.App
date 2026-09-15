@@ -8,30 +8,41 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "free"
-    protocols: ["SAML", "OIDC", "WS-Fed"]
+    notes: "Teams uses Microsoft 365 identity models in Entra ID, including hybrid identity with a federated IdP such as AD FS; plan requirement not stated"
+    source: "https://learn.microsoft.com/en-us/microsoftteams/identify-models-authentication"
+    checked: "2026-09-15"
   sso_enforcement:
     support: "unknown"
   scim:
     support: "unknown"
   mfa_enforcement:
     support: "supported"
-    tier: "free"
+    tier: "paid"
+    plan: "Any Microsoft 365 or Office 365 plan that includes Teams"
+    notes: "Entra ID control, not a Teams setting; Microsoft recommends requiring MFA at least for admin roles"
+    source: "https://learn.microsoft.com/en-us/microsoftteams/identify-models-authentication"
+    checked: "2026-09-15"
   phishing_resistant_mfa:
     support: "supported"
+    tier: "free"
+    plan: "Microsoft Entra ID Free"
+    notes: "Entra ID control: passkeys (FIDO2) in all Entra editions; requiring them via Conditional Access authentication strength needs Entra ID P1"
+    source: "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2"
+    checked: "2026-09-15"
   audit_logs:
     support: "supported"
-    tier: "paid"
-    retention: "90 days"
+    notes: "Teams activities (teams, channels, settings) recorded in the Microsoft Purview audit log; retention depends on the M365 subscription and user license, plan requirement not stated"
+    source: "https://learn.microsoft.com/en-us/purview/audit-teams-audit-log-events"
+    checked: "2026-09-15"
   jit_provisioning:
-    support: "supported"
+    support: "unknown"
   domain_verification:
-    support: "supported"
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:
     support: "unknown"
   session_controls:
-    support: "supported"
+    support: "unknown"
   api_token_controls:
     support: "unknown"

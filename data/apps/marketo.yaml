@@ -8,25 +8,41 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "enterprise"
+    notes: "SAML 2.0, IdP-initiated only; subscriptions on Adobe Identity configure SSO in Adobe Admin Console; plan requirement not stated"
     protocols: ["SAML"]
+    source: "https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/additional-integrations/add-single-sign-on-to-a-portal"
+    checked: "2026-09-15"
   sso_enforcement:
-    support: "unknown"
+    support: "supported"
+    notes: "Require SSO setting per user, with Bypass Single Sign-On role option; not for Adobe IMS subscriptions; plan requirement not stated"
+    source: "https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/additional-integrations/restrict-user-login-to-sso-only"
+    checked: "2026-09-15"
   scim:
     support: "unknown"
   mfa_enforcement:
-    support: "supported"
-    tier: "enterprise"
+    support: "unknown"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
-    support: "unknown"
-  jit_provisioning:
     support: "supported"
-  domain_verification:
+    tier: "paid"
+    plan: "All customers"
+    notes: "Audit Trail of asset, program, admin and login events"
+    retention: "30 days in UI, six months via export"
+    source: "https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/audit-trail/audit-trail-overview"
+    checked: "2026-09-15"
+  jit_provisioning:
     support: "not_supported"
-  custom_roles:
+    notes: "Users are provisioned manually; first SAML login does not create users"
+    source: "https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/additional-integrations/add-single-sign-on-to-a-portal"
+    checked: "2026-09-15"
+  domain_verification:
     support: "unknown"
+  custom_roles:
+    support: "supported"
+    notes: "Admins create roles by selecting individual permissions; plan requirement not stated"
+    source: "https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions"
+    checked: "2026-09-15"
   group_role_mapping:
     support: "unknown"
   session_controls:

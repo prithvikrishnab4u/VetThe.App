@@ -9,22 +9,36 @@ capabilities:
   sso:
     support: "supported"
     tier: "enterprise"
-    protocols: ["SAML", "OIDC"]
+    plan: "Scale"
+    notes: "SAML 2.0 SSO per organization; one domain per organization"
+    protocols: ["SAML"]
+    source: "https://circleci.com/docs/guides/permissions-authentication/sso-overview/"
+    checked: "2026-09-15"
   sso_enforcement:
-    support: "unknown"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Scale"
+    notes: "With SSO enabled, users accessing org resources without IdP authentication are redirected to the IdP; personal API tokens must be SSO-authorized for the org"
+    source: "https://circleci.com/docs/guides/permissions-authentication/sso-overview/"
+    checked: "2026-09-15"
   scim:
     support: "unknown"
   mfa_enforcement:
-    support: "supported"
-    tier: "enterprise"
-  phishing_resistant_mfa:
-    support: "supported"
-  audit_logs:
     support: "unknown"
+  phishing_resistant_mfa:
+    support: "unknown"
+  audit_logs:
+    support: "supported"
+    tier: "free"
+    plan: "All plans"
+    notes: "Org admins request audit logs (30-day window per request; 1 request/day on Free, 3 on paid); streaming to S3 is Scale plan only"
+    retention: "Up to 12 months"
+    source: "https://circleci.com/docs/guides/security/audit-logs/"
+    checked: "2026-09-15"
   jit_provisioning:
-    support: "supported"
+    support: "unknown"
   domain_verification:
-    support: "supported"
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:

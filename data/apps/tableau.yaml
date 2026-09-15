@@ -8,23 +8,38 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "paid"
+    notes: "Tableau Cloud supports SAML, OIDC, Google and Salesforce authentication; plan requirement not stated"
     protocols: ["SAML", "OIDC"]
+    source: "https://help.tableau.com/current/online/en-us/security_auth.htm"
+    checked: "2026-09-15"
   sso_enforcement:
     support: "unknown"
   scim:
-    support: "unknown"
+    support: "supported"
+    notes: "Tableau Cloud SCIM for users and groups; requires SAML, OIDC or Google SSO on the site; plan requirement not stated"
+    source: "https://help.tableau.com/current/online/en-us/scim_config_online.htm"
+    checked: "2026-09-15"
   mfa_enforcement:
     support: "supported"
-    tier: "paid"
+    notes: "MFA is required for Tableau Cloud access since February 2022 when using Tableau credentials; plan requirement not stated"
+    source: "https://help.tableau.com/current/online/en-us/security_auth.htm"
+    checked: "2026-09-15"
   phishing_resistant_mfa:
     support: "supported"
+    notes: "Security keys listed as a Tableau with MFA verification method; plan requirement not stated"
+    source: "https://help.tableau.com/current/online/en-us/security_auth.htm"
+    checked: "2026-09-15"
   audit_logs:
-    support: "unknown"
+    support: "supported"
+    tier: "add_on"
+    plan: "Tableau Advanced Management"
+    notes: "Activity Log delivers site event logs to an Amazon S3 bucket"
+    source: "https://help.tableau.com/current/online/en-us/activity_log_setup.htm"
+    checked: "2026-09-15"
   jit_provisioning:
-    support: "supported"
+    support: "unknown"
   domain_verification:
-    support: "supported"
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:

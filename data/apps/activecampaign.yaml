@@ -8,23 +8,41 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "enterprise"
+    tier: "paid"
+    plan: "Starter, Plus, Pro, Enterprise"
+    notes: "Works with any SAML provider"
     protocols: ["SAML"]
+    source: "https://help.activecampaign.com/hc/en-us/articles/4404715700892-Set-up-single-sign-on-SSO-for-your-ActiveCampaign-account"
+    checked: "2026-09-15"
   sso_enforcement:
-    support: "unknown"
+    support: "supported"
+    tier: "paid"
+    plan: "Starter, Plus, Pro, Enterprise"
+    notes: "Enforce Single Sign-on removes email and password login"
+    source: "https://help.activecampaign.com/hc/en-us/articles/4404715700892-Set-up-single-sign-on-SSO-for-your-ActiveCampaign-account"
+    checked: "2026-09-15"
   scim:
     support: "unknown"
   mfa_enforcement:
     support: "supported"
-    tier: "enterprise"
+    tier: "paid"
+    plan: "Starter, Plus, Pro, Enterprise"
+    notes: "Admins can enforce account-wide MFA via authenticator app or SMS"
+    source: "https://help.activecampaign.com/hc/en-us/articles/360008574740-Set-up-multi-factor-authentication-for-your-ActiveCampaign-account"
+    checked: "2026-09-15"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
     support: "unknown"
   jit_provisioning:
     support: "supported"
+    tier: "paid"
+    plan: "Starter, Plus, Pro, Enterprise"
+    notes: "Unknown emails are created on first SSO login in an SSO Users group"
+    source: "https://help.activecampaign.com/hc/en-us/articles/4404715700892-Set-up-single-sign-on-SSO-for-your-ActiveCampaign-account"
+    checked: "2026-09-15"
   domain_verification:
-    support: "supported"
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:
