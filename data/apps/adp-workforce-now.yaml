@@ -25,9 +25,11 @@ capabilities:
   audit_logs:
     support: "undocumented"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "ADP's public federation overview does not say whether accounts are created on first SSO sign-in."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "No public ADP doc mentions verifying an email domain."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

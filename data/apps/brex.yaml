@@ -42,9 +42,11 @@ capabilities:
     source: "https://www.brex.com/support/brex-security-measures"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Brex docs cover SSO and SCIM provisioning but do not say whether accounts are created on first SSO sign-in."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Brex SSO and user management docs do not mention verifying email domain ownership."
   custom_roles:
     support: "supported"
     tier: "paid"

@@ -227,13 +227,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "No public ADP doc mentions verifying an email domain.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "ADP's public federation overview does not say whether accounts are created on first SSO sign-in.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "support": "undocumented"
@@ -332,13 +334,17 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "IAM Identity Center docs do not describe verifying an email domain.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Users and groups from an external IdP must be provisioned via SCIM or manually before SAML sign-in; SAML does not create them.",
+        "source": "https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-identity-source-idp.html",
+        "support": "not_supported"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -397,7 +403,8 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "Amplitude's SSO and user management docs do not mention verifying or claiming email domains.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
@@ -1244,13 +1251,15 @@
         "tier": "paid"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "Brex SSO and user management docs do not mention verifying email domain ownership.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "Brex docs cover SSO and SCIM provisioning but do not say whether accounts are created on first SSO sign-in.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -1316,7 +1325,12 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Domain control verifies the domain via a TXT or CNAME record and gates new sign-ups, but existing users on the domain keep their accounts and are only reported or invited; SSO is required.",
+        "plan": "Enterprise",
+        "source": "https://calendly.com/help/how-to-set-up-domain-control",
+        "support": "partial",
+        "tier": "enterprise"
       },
       "group_role_mapping": {
         "support": "not_researched"
@@ -1435,13 +1449,21 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "A DNS TXT record proves domain ownership before the SSO connection activates, but the docs don't say it lets the org claim accounts that use the domain.",
+        "plan": "Scale",
+        "source": "https://circleci.com/docs/guides/permissions-authentication/set-up-sso/",
+        "support": "partial",
+        "tier": "enterprise"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Users need an existing CircleCI email/password account, and once SSO is enforced new members must be invited to the organization.",
+        "source": "https://circleci.com/docs/guides/permissions-authentication/set-up-sso/",
+        "support": "not_supported"
       },
       "mfa_enforcement": {
         "support": "undocumented"
@@ -1498,13 +1520,19 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Domains are verified with a DNS TXT token in Control Hub and can then be claimed so users with that domain can't be created in other orgs; plan requirement not stated.",
+        "source": "https://help.webex.com/en-us/article/cd6d84/manage-your-domains",
+        "support": "supported"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "SAML JIT creates and updates users from the IdP assertion; requires SSO, claimed domains and self-registration, and does not work with DirSync/Entra ID sync; plan requirement not stated.",
+        "source": "https://help.webex.com/en-us/article/nsjpi6h/SAML-Auto-Account-Creation-and-Update-for-Control-Hub",
+        "support": "supported"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -1562,13 +1590,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "No domain ownership verification found in ShareFile docs.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "SSO docs don't mention creating users on first sign-in; ShareFile points to the User Management Tool or API for provisioning.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-16",
@@ -1636,13 +1666,19 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "No domain ownership verification found in ClickUp help center.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "With Google SSO, new people can sign up through the SSO link and be added to the Workspace automatically; custom SAML requires invited users to link accounts.",
+        "plan": "Business",
+        "source": "https://help.clickup.com/hc/en-us/articles/6305105918615-Google-single-sign-on",
+        "support": "partial",
+        "tier": "paid"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -1705,13 +1741,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "No vendor page found describing email domain verification for Coursera for Business.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "A learner help article appears to say an account is created on first SSO login, but the page is JavaScript-rendered and could not be fetched to confirm; SSO is listed only on the Enterprise plan.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "support": "undocumented"
@@ -1808,7 +1846,8 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "Databricks SSO docs cover SAML/OIDC setup and JIT provisioning but do not mention verifying email domain ownership.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
@@ -1949,13 +1988,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "Deel's SSO article mentions a custom login domain, not verification of an email domain.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "Deel's SSO article does not mention creating accounts on first SSO login; users come from contracts or HRIS sync.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",

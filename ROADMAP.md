@@ -10,7 +10,7 @@ _Last updated: 2026-09-16_
 
 ## In progress
 
-_Nothing right now._
+- **2026-09-16, batch 2:** JIT provisioning + domain verification for 30 apps (1password … gong, alphabetical, SSO-supported only). 10 parallel research agents, 3 apps each; they write findings to JSON, the main session applies edits.
 
 ## Where the data stands
 

@@ -46,7 +46,12 @@ capabilities:
     source: "https://calendly.com/help/saml-single-sign-on-sso-overview"
     checked: "2026-09-15"
   domain_verification:
-    support: "not_researched"
+    support: "partial"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Domain control verifies the domain via a TXT or CNAME record and gates new sign-ups, but existing users on the domain keep their accounts and are only reported or invited; SSO is required."
+    source: "https://calendly.com/help/how-to-set-up-domain-control"
+    checked: "2026-09-16"
   custom_roles:
     support: "not_researched"
   group_role_mapping:

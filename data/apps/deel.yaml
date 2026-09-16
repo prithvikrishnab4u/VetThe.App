@@ -32,9 +32,11 @@ capabilities:
   audit_logs:
     support: "undocumented"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Deel's SSO article does not mention creating accounts on first SSO login; users come from contracts or HRIS sync."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Deel's SSO article mentions a custom login domain, not verification of an email domain."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

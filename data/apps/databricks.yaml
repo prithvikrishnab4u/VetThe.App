@@ -39,7 +39,8 @@ capabilities:
     source: "https://docs.databricks.com/aws/en/security/auth/single-sign-on/"
     checked: "2026-09-15"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Databricks SSO docs cover SAML/OIDC setup and JIT provisioning but do not mention verifying email domain ownership."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

@@ -25,9 +25,11 @@ capabilities:
   audit_logs:
     support: "undocumented"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "A learner help article appears to say an account is created on first SSO login, but the page is JavaScript-rendered and could not be fetched to confirm; SSO is listed only on the Enterprise plan."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "No vendor page found describing email domain verification for Coursera for Business."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

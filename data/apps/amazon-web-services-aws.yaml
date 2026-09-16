@@ -37,9 +37,13 @@ capabilities:
     source: "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "not_researched"
+    support: "not_supported"
+    notes: "Users and groups from an external IdP must be provisioned via SCIM or manually before SAML sign-in; SAML does not create them."
+    source: "https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-identity-source-idp.html"
+    checked: "2026-09-16"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "IAM Identity Center docs do not describe verifying an email domain."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

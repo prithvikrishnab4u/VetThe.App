@@ -44,9 +44,11 @@ capabilities:
     source: "https://docs.sharefile.com/en-us/sharefile/configure/admin-settings/reports.html"
     checked: "2026-09-16"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "SSO docs don't mention creating users on first sign-in; ShareFile points to the User Management Tool or API for provisioning."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "No domain ownership verification found in ShareFile docs."
   custom_roles:
     support: "not_researched"
   group_role_mapping:
