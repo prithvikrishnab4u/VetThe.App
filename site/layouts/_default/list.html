@@ -2,11 +2,14 @@
 <html lang="en" class="scroll-smooth">
 {{ partial "head.html" . }}
 
-<body class="bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen">
+<body class="min-h-screen">
+    <a href="#explore" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] btn btn-primary">Skip to the table</a>
     {{ partial "header.html" . }}
-
-    {{ partial "guide.html" . }}
-    {{ partial "table.html" . }}
+    <main>
+        {{ partial "hero.html" . }}
+        {{ partial "guide.html" . }}
+        {{ partial "table.html" . }}
+    </main>
     {{ partial "footer.html" . }}
     {{ partial "scripts.html" . }}
 </body>

@@ -1,104 +1,70 @@
 {{ $schema := site.Data.schema }}
 {{ $tierLabels := dict }}
 {{ range $schema.tiers }}{{ $tierLabels = merge $tierLabels (dict .id .label) }}{{ end }}
+{{ $chevron := `<svg class="w-3.5 h-3.5 shrink-0 text-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></svg>` | safeHTML }}
 
-{{/* Coverage: every app × capability is one data point */}}
-{{ $points := 0 }}{{ $verified := 0 }}{{ $undocumented := 0 }}{{ $notResearched := 0 }}
-{{ range site.Data.apps }}
-    {{ $app := . }}
-    {{ range $schema.capabilities }}
-        {{ $cap := (index $app.capabilities .id) | default (dict) }}
-        {{ $points = add $points 1 }}
-        {{ if $cap.source }}{{ $verified = add $verified 1 }}{{ end }}
-        {{ $s := $cap.support | default "not_researched" }}
-        {{ if eq $s "undocumented" }}{{ $undocumented = add $undocumented 1 }}
-        {{ else if eq $s "not_researched" }}{{ $notResearched = add $notResearched 1 }}{{ end }}
-    {{ end }}
-{{ end }}
+<section id="explore" class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-6 scroll-mt-16">
+    <div class="rounded-2xl border border-line bg-surface shadow-sm overflow-hidden flex flex-col">
 
-<div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col" style="min-height: calc(100vh - 200px);">
+        <!-- Toolbar -->
+        <div class="flex flex-wrap items-center gap-3 border-b border-line px-4 py-3">
+            <div class="relative flex-1 min-w-[200px] max-w-sm">
+                <label for="filterApp" class="sr-only">Filter apps</label>
+                <svg class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="m20 20-3.5-3.5"/></svg>
+                <input type="search" id="filterApp" placeholder="Filter apps…" autocomplete="off"
+                    class="w-full rounded-lg border border-line bg-surface py-2 pl-9 pr-3 text-sm text-ink placeholder:text-muted focus:border-accent focus:outline-none focus:ring-4 focus:ring-accent/15">
+            </div>
 
-    <!-- Toolbar -->
-    <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
-        <p class="text-xs text-gray-600">
-            <strong class="text-gray-900">{{ $verified }}</strong> of {{ $points }} data points verified against a source ·
-            <strong class="text-gray-900">{{ $undocumented }}</strong> checked, vendor doesn't document ·
-            <strong class="text-gray-900">{{ $notResearched }}</strong> not researched yet · faded values are unverified
-        </p>
-        <div class="flex items-center gap-2">
-            <button id="toggleExtendedBtn" type="button"
-                class="px-3 py-2 text-xs font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 transition-colors">
-                Show all {{ len $schema.capabilities }} capabilities
-            </button>
-            <button id="clearAllBtn" type="button"
-                class="px-3 py-2 text-xs font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 transition-colors">
-                Clear filters
-            </button>
+            <p class="text-sm text-muted" aria-live="polite"><strong id="resultCount" class="font-semibold text-ink">0</strong> apps</p>
+
+            <div class="ml-auto flex flex-wrap items-center gap-2">
+                <button id="clearAllBtn" type="button" class="btn text-accent hover:bg-accent-soft" hidden>
+                    <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></svg>
+                    Clear filters
+                </button>
+                <label class="btn btn-ghost cursor-pointer select-none">
+                    <input id="toggleExtendedBtn" type="checkbox" class="peer sr-only">
+                    <span class="relative h-5 w-9 rounded-full bg-line transition-colors peer-checked:bg-accent after:absolute after:left-0.5 after:top-0.5 after:h-4 after:w-4 after:rounded-full after:bg-white after:shadow after:transition-transform peer-checked:after:translate-x-4" aria-hidden="true"></span>
+                    All {{ len $schema.capabilities }} capabilities
+                </label>
+                <a href="/data/apps.csv" download class="btn btn-ghost" title="Download all data as CSV">
+                    <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg>
+                    CSV
+                </a>
+                <a href="/data/apps.json" class="btn btn-ghost hidden sm:inline-flex" title="All data as JSON">JSON</a>
+            </div>
         </div>
-    </div>
 
-    <!-- Table Container -->
-    <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden flex-1 flex flex-col">
-        <div class="overflow-x-auto custom-scrollbar" style="flex: 1; overflow-y: auto;">
-            <table id="appsTable" class="w-full text-left border-collapse">
+        <!-- Table -->
+        <div class="overflow-auto custom-scrollbar max-h-[75vh]">
+            <table id="appsTable" class="w-full text-left border-separate border-spacing-0">
                 <thead class="sticky-header">
-                    <!-- Column Headers -->
-                    <tr class="border-b-2 border-gray-200 bg-gray-50">
-                        <th class="px-4 py-3 text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
-                            data-column="app">
-                            <div class="flex items-center gap-2">
-                                Application
-                                <span class="sort-indicator">⇅</span>
-                            </div>
+                    <tr>
+                        <th scope="col" class="sticky-col px-4 pt-3 pb-1 text-xs font-semibold text-muted cursor-pointer hover:text-ink transition-colors" data-column="app">
+                            <span class="inline-flex items-center gap-1">Application <span class="sort-indicator">⇅</span></span>
                         </th>
-                        <th class="px-4 py-3 text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
-                            data-column="category">
-                            <div class="flex items-center gap-2">
-                                Category
-                                <span class="sort-indicator">⇅</span>
-                            </div>
+                        <th scope="col" class="px-4 pt-3 pb-1 text-xs font-semibold text-muted cursor-pointer hover:text-ink transition-colors" data-column="category">
+                            <span class="inline-flex items-center gap-1">Category <span class="sort-indicator">⇅</span></span>
                         </th>
                         {{ range $schema.capabilities }}
-                        <th class="px-4 py-3 text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors whitespace-nowrap{{ if not .core }} cap-extended{{ end }}"
+                        <th scope="col" class="px-3 pt-3 pb-1 text-xs font-semibold text-muted cursor-pointer hover:text-ink transition-colors whitespace-nowrap{{ if not .core }} cap-extended{{ end }}"
                             data-column="{{ .id }}" title="{{ .question }}">
-                            <div class="flex items-center gap-2">
-                                {{ .label }}
-                                <span class="sort-indicator">⇅</span>
-                            </div>
+                            <span class="inline-flex items-center gap-1">{{ .label }} <span class="sort-indicator">⇅</span></span>
                         </th>
                         {{ end }}
                     </tr>
-
-                    <!-- Filter Row -->
-                    <tr class="bg-white border-b border-gray-200">
-                        <th class="px-4 py-2">
-                            <input type="text" id="filterApp" placeholder="Filter apps..."
-                                class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-4 focus:ring-blue-300 focus:border-blue-500 focus:outline-none transition-all">
-                        </th>
-                        <th class="px-4 py-2">
+                    <tr>
+                        <th class="sticky-col px-4 pb-2.5 pt-1 border-b border-line"><span class="sr-only">No filter</span></th>
+                        <th class="px-4 pb-2.5 pt-1 border-b border-line min-w-[140px]">
                             <div class="relative" id="filterCategoryContainer">
-                                <button class="dropdown-button">
-                                    <span>All</span>
-                                    <svg class="w-4 h-4 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd"
-                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                </button>
+                                <button class="dropdown-button" aria-label="Filter by category"><span class="text-muted">All</span>{{ $chevron }}</button>
                                 <div class="flowbite-dropdown custom-scrollbar"></div>
                             </div>
                         </th>
                         {{ range $schema.capabilities }}
-                        <th class="px-4 py-2 min-w-[130px]{{ if not .core }} cap-extended{{ end }}">
+                        <th class="px-3 pb-2.5 pt-1 border-b border-line min-w-[130px]{{ if not .core }} cap-extended{{ end }}">
                             <div class="relative" id="filter-{{ .id }}" data-filter-cap="{{ .id }}">
-                                <button class="dropdown-button">
-                                    <span>All</span>
-                                    <svg class="w-4 h-4 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd"
-                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                </button>
+                                <button class="dropdown-button" aria-label="Filter by {{ .label }}"><span class="text-muted">All</span>{{ $chevron }}</button>
                                 <div class="flowbite-dropdown custom-scrollbar"></div>
                             </div>
                         </th>
@@ -106,95 +72,74 @@
                     </tr>
                 </thead>
 
-                <tbody id="tableBody" class="divide-y divide-gray-100 bg-white">
+                <tbody id="tableBody">
                     {{ range site.Data.apps }}
                     {{ $app := . }}
-                    <tr class="hover:bg-blue-50/40 transition-colors group" data-app="{{ $app.name }}"
-                        data-category="{{ $app.category }}">
-
-                        <!-- App Name with Favicon -->
-                        <td class="px-4 py-3">
+                    <tr class="group" data-app="{{ $app.name }}" data-category="{{ $app.category }}">
+                        <th scope="row" class="sticky-col px-4 py-3 border-b border-line font-normal group-hover:bg-subtle">
                             <div class="flex items-center gap-3">
-                                <img src="https://www.google.com/s2/favicons?domain={{ $app.website }}&sz=32"
-                                    alt="{{ $app.name }} logo" class="app-favicon" onerror="this.style.display='none'">
-                                <a href="{{ $app.website }}" target="_blank" rel="noopener"
-                                    class="text-sm font-semibold text-gray-900 hover:text-blue-600 transition-colors whitespace-nowrap">
-                                    {{ $app.name }}
-                                </a>
+                                <img src="https://www.google.com/s2/favicons?domain={{ $app.website }}&sz=64" alt="" loading="lazy"
+                                    class="app-favicon" onerror="this.style.visibility='hidden'">
+                                <div class="min-w-0">
+                                    <a href="{{ $app.website }}" target="_blank" rel="noopener"
+                                        class="block text-sm font-semibold text-ink hover:text-accent transition-colors whitespace-nowrap">{{ $app.name }}</a>
+                                </div>
                             </div>
+                        </th>
+
+                        <td class="px-4 py-3 border-b border-line group-hover:bg-subtle">
+                            <span class="text-xs text-muted whitespace-nowrap">{{ index (dict "hr" "HR" "sales_marketing" "Sales & marketing") $app.category | default (replace $app.category "_" " " | humanize) }}</span>
                         </td>
 
-                        <!-- Category -->
-                        <td class="px-4 py-3">
-                            <span
-                                class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-gray-100 text-gray-700 border border-gray-200 capitalize whitespace-nowrap">
-                                {{ replace $app.category "_" " " }}
-                            </span>
-                        </td>
-
-                        <!-- Capabilities -->
                         {{ range $schema.capabilities }}
                         {{ $cap := (index $app.capabilities .id) | default (dict) }}
                         {{ $support := $cap.support | default "not_researched" }}
-                        {{ $tier := "" }}
-                        {{ with $cap.tier }}{{ $tier = index $tierLabels . }}{{ end }}
+                        {{ $tierLabel := "" }}
+                        {{ with $cap.tier }}{{ $tierLabel = index $tierLabels . }}{{ end }}
                         {{ $value := "Not researched" }}
-                        {{ if eq $support "supported" }}{{ $value = $tier | default "Supported" }}
+                        {{ if eq $support "supported" }}{{ $value = $tierLabel | default "Supported" }}
                         {{ else if eq $support "partial" }}{{ $value = "Partial" }}
                         {{ else if eq $support "not_supported" }}{{ $value = "No" }}
                         {{ else if eq $support "undocumented" }}{{ $value = "Not documented" }}{{ end }}
                         {{ $unverified := and (not (in (slice "undocumented" "not_researched") $support)) (not $cap.source) }}
-                        <td class="px-4 py-3 whitespace-nowrap{{ if not .core }} cap-extended{{ end }}"
+                        <td class="px-3 py-3 border-b border-line whitespace-nowrap group-hover:bg-subtle{{ if not .core }} cap-extended{{ end }}"
                             data-cap="{{ .id }}" data-value="{{ $value }}">
-                            <div class="flex items-center gap-1.5{{ if $unverified }} unverified{{ end }}"
-                                title="{{ with $cap.plan }}Plan: {{ . }}. {{ end }}{{ with $cap.notes }}{{ . }} {{ end }}{{ if $cap.source }}Checked {{ $cap.checked }}{{ else if $unverified }}Unverified: no source yet{{ end }}">
-                                {{ if eq $support "supported" }}
-                                <span class="text-green-600 font-bold">✓</span>
-                                {{ with $tier }}<span class="tier-badge">{{ . }}</span>{{ end }}
-                                {{ else if eq $support "partial" }}
-                                <span class="text-yellow-500 font-bold">~</span>
-                                {{ with $tier }}<span class="tier-badge">{{ . }}</span>{{ else }}<span class="text-xs text-gray-700">Partial</span>{{ end }}
-                                {{ else if eq $support "not_supported" }}
-                                <span class="text-gray-400">✗</span>
-                                <span class="text-xs text-gray-500">No</span>
-                                {{ else if eq $support "undocumented" }}
-                                <span class="text-gray-400 text-xs">–</span>
-                                <span class="text-xs text-gray-500">Not documented</span>
-                                {{ else }}
-                                <span class="text-gray-300 text-xs">?</span>
-                                {{ end }}
+                            <div class="flex items-center gap-1{{ if $unverified }} unverified{{ end }}"
+                                title="{{ .label }}: {{ $value }}{{ with $cap.plan }} · Plan: {{ . }}{{ end }}{{ with $cap.notes }} · {{ . }}{{ end }}{{ if $cap.source }} · Checked {{ $cap.checked }}{{ else if $unverified }} · Unverified: no source yet{{ end }}">
+                                {{ partial "badge.html" (dict "cap" $cap "tierLabel" $tierLabel) }}
                                 {{ with $cap.source }}
-                                <a href="{{ . }}" target="_blank" rel="noopener" class="text-xs text-blue-500 hover:text-blue-700"
-                                    aria-label="Source">↗</a>
+                                <a href="{{ . }}" target="_blank" rel="noopener" class="source-link" aria-label="Source">
+                                    <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7m0 0H9m8 0v8"/></svg>
+                                </a>
                                 {{ end }}
                             </div>
-                            {{ with $cap.protocols }}<div class="mt-1 text-[11px] text-gray-500">{{ delimit . " · " }}</div>{{ end }}
-                            {{ with $cap.retention }}<div class="mt-1 text-[11px] text-gray-500">{{ . }} retention</div>{{ end }}
+                            {{ with $cap.protocols }}<div class="mt-1 text-[11px] text-muted">{{ delimit . " · " }}</div>{{ end }}
+                            {{ with $cap.retention }}<div class="mt-1 text-[11px] text-muted">{{ . }} retention</div>{{ end }}
                         </td>
                         {{ end }}
                     </tr>
                     {{ end }}
                 </tbody>
             </table>
+
+            <!-- Empty state -->
+            <div id="emptyState" class="px-4 py-16 text-center" hidden>
+                <p class="text-base font-medium text-ink">No apps match these filters</p>
+                <p class="mt-1 text-sm text-muted">Try fewer filters, or ask for the app to be added.</p>
+                <div class="mt-4 flex justify-center gap-2">
+                    <button type="button" id="emptyClearBtn" class="btn btn-ghost">Clear filters</button>
+                    <a href="https://github.com/prithvikrishnab4u/VetThe.App/issues/new?template=app-request.md" target="_blank" rel="noopener" class="btn btn-primary">Request an app</a>
+                </div>
+            </div>
         </div>
 
         <!-- Pagination -->
-        <div class="px-4 py-3 border-t border-gray-200 flex flex-wrap items-center justify-between gap-2 bg-white">
-            <div class="flex items-center gap-4">
-                <div class="flex items-center gap-2 text-sm">
-                    <strong id="resultCount" class="text-blue-600 font-bold text-base">0</strong>
-                    <span class="text-gray-600">apps</span>
-                </div>
-                <div class="h-4 w-px bg-gray-300"></div>
-                <div class="flex items-center text-sm text-gray-700">
-                    Showing <span id="pageStart" class="font-medium text-gray-900 mx-1">1</span> to <span id="pageEnd"
-                        class="font-medium text-gray-900 mx-1">25</span> of <span id="totalRows"
-                        class="font-medium text-gray-900 mx-1">0</span>
-                </div>
-            </div>
-            <div class="flex items-center gap-2" id="paginationControls">
-                <!-- Populated by JS -->
-            </div>
+        <div class="flex flex-wrap items-center justify-between gap-3 border-t border-line px-4 py-3">
+            <p class="text-sm text-muted">
+                Showing <span id="pageStart" class="font-medium text-ink">1</span>–<span id="pageEnd" class="font-medium text-ink">25</span>
+                of <span id="totalRows" class="font-medium text-ink">0</span>
+            </p>
+            <div class="flex items-center gap-1.5" id="paginationControls"></div>
         </div>
     </div>
-</div>
+</section>

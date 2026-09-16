@@ -1,0 +1,163 @@
+{{ $schema := site.Data.schema }}
+{{ $tierLabels := dict }}
+{{ range $schema.tiers }}{{ $tierLabels = merge $tierLabels (dict .id .label) }}{{ end }}
+
+{{/* Coverage: every app × capability is one data point */}}
+{{ $points := 0 }}{{ $verified := 0 }}{{ $unverified := 0 }}{{ $undocumented := 0 }}{{ $notResearched := 0 }}
+{{ $corePoints := 0 }}{{ $coreVerified := 0 }}
+{{ range site.Data.apps }}
+    {{ $app := . }}
+    {{ range $schema.capabilities }}
+        {{ $cap := (index $app.capabilities .id) | default (dict) }}
+        {{ $s := $cap.support | default "not_researched" }}
+        {{ $points = add $points 1 }}
+        {{ if .core }}{{ $corePoints = add $corePoints 1 }}{{ end }}
+        {{ if eq $s "undocumented" }}{{ $undocumented = add $undocumented 1 }}
+        {{ else if eq $s "not_researched" }}{{ $notResearched = add $notResearched 1 }}
+        {{ else if $cap.source }}{{ $verified = add $verified 1 }}{{ if .core }}{{ $coreVerified = add $coreVerified 1 }}{{ end }}
+        {{ else }}{{ $unverified = add $unverified 1 }}{{ end }}
+    {{ end }}
+{{ end }}
+{{ $available := slice "Free" "Paid" "Enterprise" "Add-on" "Supported" }}
+{{ $preview := index site.Data.apps "github" }}
+
+<!-- ============ Hero: always dark, like a product launch page ============ -->
+<section class="hero relative isolate overflow-hidden bg-[#070a14] text-white">
+    <div class="hero-grid absolute inset-0 -z-10" aria-hidden="true"></div>
+    <div class="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+        <div class="aurora aurora-1"></div>
+        <div class="aurora aurora-2"></div>
+        <div class="aurora aurora-3"></div>
+    </div>
+
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-10 sm:pt-24 lg:pt-28 grid lg:grid-cols-[1.15fr_1fr] gap-14 items-center">
+        <!-- Copy + search -->
+        <div class="fade-up text-center lg:text-left">
+            <p class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium text-white/80 backdrop-blur">
+                <span class="relative flex h-2 w-2"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60"></span><span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span></span>
+                {{ $verified }} values checked against vendor docs
+            </p>
+
+            <h1 class="mt-6 text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.05] text-balance">
+                Vet the app<br>
+                <span class="gradient-text">before you sign.</span>
+            </h1>
+            <p class="mt-6 max-w-xl mx-auto lg:mx-0 text-base sm:text-lg text-white/65 text-pretty">
+                See which of {{ len site.Data.apps }} SaaS apps support SSO, SCIM, enforced MFA, passkeys and audit logs, and the cheapest plan that unlocks each one. Every answer links to the vendor's own page.
+            </p>
+
+            <form id="heroSearchForm" class="mt-9 max-w-xl mx-auto lg:mx-0" role="search">
+                <label for="heroSearch" class="sr-only">Search apps</label>
+                <div class="search-glow relative rounded-2xl p-px">
+                    <div class="relative rounded-2xl bg-[#0d1224]/90 backdrop-blur">
+                        <svg class="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-white/50" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="m20 20-3.5-3.5"/></svg>
+                        <input id="heroSearch" type="search" autocomplete="off" placeholder="Search Slack, Figma, Salesforce…"
+                            class="w-full rounded-2xl bg-transparent py-4 pl-12 pr-28 text-base text-white placeholder:text-white/40 focus:outline-none">
+                        <button type="submit" class="absolute right-2 top-1/2 -translate-y-1/2 rounded-xl bg-white px-4 py-2 text-sm font-semibold text-[#0d1224] hover:bg-white/90 transition-colors">Compare</button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="mt-5 flex flex-wrap items-center justify-center lg:justify-start gap-2">
+                {{ range slice
+                    (dict "label" "🔑 SSO without Enterprise" "preset" (dict "sso" (slice "Free" "Paid")))
+                    (dict "label" "🔄 Supports SCIM" "preset" (dict "scim" $available))
+                    (dict "label" "🛡️ Passkeys" "preset" (dict "phishing_resistant_mfa" $available))
+                    (dict "label" "📜 Audit logs below Enterprise" "preset" (dict "audit_logs" (slice "Free" "Paid")))
+                }}
+                <button type="button" class="chip" data-preset="{{ .preset | jsonify }}">{{ .label }}</button>
+                {{ end }}
+            </div>
+        </div>
+
+        <!-- Floating preview card built from real data -->
+        {{ with $preview }}
+        <div class="relative mx-auto w-full max-w-md fade-up [animation-delay:150ms]" aria-hidden="true">
+            <div class="absolute -inset-6 rounded-[2rem] bg-gradient-to-tr from-indigo-500/30 via-fuchsia-500/20 to-cyan-400/30 blur-2xl"></div>
+            <div class="float relative rounded-3xl border border-white/10 bg-white/[0.06] p-5 shadow-2xl backdrop-blur-xl">
+                <div class="flex items-center gap-3">
+                    <img src="https://www.google.com/s2/favicons?domain={{ .website }}&sz=64" alt="" class="h-10 w-10 rounded-xl bg-white p-1.5">
+                    <div class="min-w-0 flex-1">
+                        <p class="font-semibold">{{ .name }}</p>
+                        <p class="text-xs text-white/50 capitalize">{{ replace .category "_" " " }}</p>
+                    </div>
+                    <span class="rounded-full bg-emerald-400/15 px-2.5 py-1 text-[11px] font-semibold text-emerald-300">Sourced</span>
+                </div>
+                <ul class="mt-5 divide-y divide-white/10 rounded-2xl border border-white/10 bg-[#0b1020]/70 dark">
+                    {{ $app := . }}
+                    {{ range $schema.capabilities }}{{ if .core }}
+                    {{ $cap := index $app.capabilities .id }}
+                    {{ $tierLabel := "" }}{{ with $cap.tier }}{{ $tierLabel = index $tierLabels . }}{{ end }}
+                    <li class="flex items-center justify-between gap-3 px-4 py-2.5 text-sm">
+                        <span class="text-white/75">{{ .label }}</span>
+                        <span class="flex items-center gap-1">{{ partial "badge.html" (dict "cap" $cap "tierLabel" $tierLabel) }}<span class="text-white/40 text-xs">↗</span></span>
+                    </li>
+                    {{ end }}{{ end }}
+                </ul>
+                <p class="mt-4 text-center text-[11px] text-white/40">Live from the dataset · minimum plan shown</p>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+
+    <!-- Logo marquee -->
+    <div class="marquee relative mt-6 border-t border-white/10 py-6" aria-hidden="true">
+        <div class="marquee-track flex w-max gap-10">
+            {{ range seq 2 }}
+            {{ range site.Data.apps }}
+            <span class="flex items-center gap-2 text-sm font-medium text-white/45 whitespace-nowrap">
+                <img src="https://www.google.com/s2/favicons?domain={{ .website }}&sz=32" alt="" loading="lazy" class="h-5 w-5 rounded grayscale opacity-70">{{ .name }}
+            </span>
+            {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<!-- ============ Bento: what's inside and how solid it is ============ -->
+<section class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 -mt-px pt-14">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bento col-span-2 lg:row-span-2 flex flex-col justify-between">
+            <div>
+                <p class="bento-kicker">Data you can defend</p>
+                <h2 class="mt-2 text-2xl sm:text-3xl font-bold tracking-tight text-ink text-balance">No guesses shown as facts. Every gap is labelled.</h2>
+                <p class="mt-3 text-sm text-muted">A value only counts when it links to the vendor's pricing page, docs or trust center. If we checked and the vendor is silent, we say so.</p>
+            </div>
+            <div class="mt-8">
+                <div class="flex h-3 w-full overflow-hidden rounded-full bg-subtle" role="img"
+                    aria-label="{{ $verified }} verified, {{ $unverified }} unverified, {{ $undocumented }} not documented, {{ $notResearched }} not researched">
+                    {{ range slice (slice "verified" $verified) (slice "unverified" $unverified) (slice "undocumented" $undocumented) (slice "not_researched" $notResearched) }}
+                    <div class="seg-{{ index . 0 }}" style="width: {{ div (mul (float (index . 1)) 100) $points }}%"></div>
+                    {{ end }}
+                </div>
+                <ul class="mt-4 grid grid-cols-2 gap-3 text-xs text-muted">
+                    <li><span class="flex items-center gap-1.5"><span class="h-2 w-2 rounded-full seg-verified"></span>Checked against a source</span><strong class="mt-0.5 block text-lg font-semibold text-ink">{{ $verified }}</strong></li>
+                    <li><span class="flex items-center gap-1.5"><span class="h-2 w-2 rounded-full seg-undocumented"></span>Vendor doesn't document</span><strong class="mt-0.5 block text-lg font-semibold text-ink">{{ $undocumented }}</strong></li>
+                    <li><span class="flex items-center gap-1.5"><span class="h-2 w-2 rounded-full seg-not_researched ring-1 ring-muted/40"></span>Not researched yet</span><strong class="mt-0.5 block text-lg font-semibold text-ink">{{ $notResearched }}</strong></li>
+                    {{ if $unverified }}<li><span class="flex items-center gap-1.5"><span class="h-2 w-2 rounded-full seg-unverified"></span>Unverified</span><strong class="mt-0.5 block text-lg font-semibold text-ink">{{ $unverified }}</strong></li>{{ end }}
+                </ul>
+            </div>
+        </div>
+
+        <div class="bento">
+            <div class="bento-icon bg-gradient-to-br from-indigo-500 to-violet-500">📦</div>
+            <p class="mt-4 text-3xl font-bold text-ink">{{ len site.Data.apps }}</p>
+            <p class="text-sm text-muted">SaaS apps catalogued</p>
+        </div>
+        <div class="bento">
+            <div class="bento-icon bg-gradient-to-br from-emerald-500 to-teal-500">✅</div>
+            <p class="mt-4 text-3xl font-bold text-ink">{{ div (mul $coreVerified 100) $corePoints }}%</p>
+            <p class="text-sm text-muted">of core values sourced</p>
+        </div>
+        <div class="bento">
+            <div class="bento-icon bg-gradient-to-br from-fuchsia-500 to-pink-500">🧩</div>
+            <p class="mt-4 text-3xl font-bold text-ink">{{ len $schema.capabilities }}</p>
+            <p class="text-sm text-muted">IAM capabilities per app</p>
+        </div>
+        <a href="https://github.com/prithvikrishnab4u/VetThe.App/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener" class="bento group bg-gradient-to-br from-accent-soft to-surface">
+            <div class="bento-icon bg-gradient-to-br from-amber-500 to-orange-500">🤝</div>
+            <p class="mt-4 font-semibold text-ink">Spot a gap?</p>
+            <p class="text-sm text-muted">Add a source in your browser. <span class="text-accent group-hover:underline">Contribute →</span></p>
+        </a>
+    </div>
+</section>

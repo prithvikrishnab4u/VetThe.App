@@ -1,0 +1,16 @@
+{{/* One capability value as a badge. Context: dict "cap" (capability map) "tierLabel" (display label or "") */}}
+{{ $cap := .cap }}{{ $tierLabel := .tierLabel }}
+{{ $support := $cap.support | default "not_researched" }}
+{{ if eq $support "supported" }}
+<span class="badge badge-{{ $cap.tier | default "supported" }}">
+    <svg class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m5 12 5 5L20 7"/></svg>{{ $tierLabel | default "Supported" }}
+</span>
+{{ else if eq $support "partial" }}
+<span class="badge badge-partial">~ {{ with $tierLabel }}{{ . }}{{ else }}Partial{{ end }}</span>
+{{ else if eq $support "not_supported" }}
+<span class="badge badge-no">✕ No</span>
+{{ else if eq $support "undocumented" }}
+<span class="badge badge-undocumented">Not documented</span>
+{{ else }}
+<span class="badge badge-not_researched" aria-label="Not researched">?</span>
+{{ end }}

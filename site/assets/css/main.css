@@ -1,101 +1,328 @@
 @import "tailwindcss";
 
+/* Dark mode follows the .dark class on <html>, set in head.html from the
+   saved choice or the system preference. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Semantic colours. Templates use these (bg-surface, text-ink, border-line...)
+   so light and dark only differ here. */
+@theme inline {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --color-page: var(--page);
+    --color-surface: var(--surface);
+    --color-subtle: var(--subtle);
+    --color-line: var(--line);
+    --color-ink: var(--ink);
+    --color-body: var(--body);
+    --color-muted: var(--muted);
+    --color-accent: var(--accent);
+    --color-accent-strong: var(--accent-strong);
+    --color-accent-soft: var(--accent-soft);
+}
+
+:root {
+    --page: #f6f7fb;
+    --surface: #ffffff;
+    --subtle: #f1f3f8;
+    --line: #e3e6ee;
+    --ink: #0f172a;
+    --body: #334155;
+    --muted: #64748b;
+    --accent: #4f46e5;
+    --accent-strong: #4338ca;
+    --accent-soft: #eef2ff;
+
+    /* Cell badges: background / text / border */
+    --free-bg: #ecfdf5;  --free-fg: #047857;  --free-bd: #a7f3d0;
+    --paid-bg: #eff6ff;  --paid-fg: #1d4ed8;  --paid-bd: #bfdbfe;
+    --ent-bg: #f5f3ff;   --ent-fg: #6d28d9;   --ent-bd: #ddd6fe;
+    --addon-bg: #fffbeb; --addon-fg: #b45309; --addon-bd: #fde68a;
+    --partial-bg: #fff7ed; --partial-fg: #c2410c; --partial-bd: #fed7aa;
+    --no-bg: #fef2f2;    --no-fg: #b91c1c;    --no-bd: #fecaca;
+    color-scheme: light;
+}
+
+.dark {
+    --page: #0b0f1a;
+    --surface: #121829;
+    --subtle: #1a2135;
+    --line: #262f47;
+    --ink: #f1f5f9;
+    --body: #cbd5e1;
+    --muted: #8b97ad;
+    --accent: #818cf8;
+    --accent-strong: #a5b4fc;
+    --accent-soft: #1e2345;
+
+    --free-bg: #06281d;  --free-fg: #6ee7b7;  --free-bd: #0f4a36;
+    --paid-bg: #0b2140;  --paid-fg: #93c5fd;  --paid-bd: #1e3a66;
+    --ent-bg: #1f1640;   --ent-fg: #c4b5fd;   --ent-bd: #3b2a73;
+    --addon-bg: #2a1d05; --addon-fg: #fcd34d; --addon-bd: #4d3710;
+    --partial-bg: #2b1606; --partial-fg: #fdba74; --partial-bd: #55300f;
+    --no-bg: #2a0f12;    --no-fg: #fca5a5;    --no-bd: #5a1e24;
+    color-scheme: dark;
+}
+
+@layer base {
+    body {
+        @apply bg-page text-body font-sans antialiased;
+    }
+    ::selection {
+        background: var(--accent-soft);
+    }
+}
+
 @layer components {
-    /* Sticky header */
+    /* Buttons */
+    .btn {
+        @apply inline-flex items-center justify-center gap-2 rounded-lg px-3.5 py-2 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
+    }
+    .btn-primary {
+        @apply bg-accent text-white hover:bg-accent-strong dark:text-page;
+    }
+    .btn-ghost {
+        @apply border border-line bg-surface text-ink hover:bg-subtle;
+    }
+
+    /* Table header row sticks while the table body scrolls */
     .sticky-header {
         position: sticky;
         top: 0;
         z-index: 30;
+        background: var(--surface);
+    }
+
+    /* First column stays visible when scrolling sideways */
+    .sticky-col {
+        position: sticky;
+        left: 0;
+        z-index: 10;
+        background: var(--surface);
+        box-shadow: 1px 0 0 var(--line);
+    }
+    .sticky-header .sticky-col {
+        z-index: 40;
+    }
+    tbody tr:hover .sticky-col {
+        background: var(--subtle);
+    }
+
+    .app-favicon {
+        width: 22px;
+        height: 22px;
+        border-radius: 6px;
+        object-fit: cover;
         background: white;
     }
 
-    /* App favicon */
-    .app-favicon {
-        width: 20px;
-        height: 20px;
-        border-radius: 4px;
-        object-fit: cover;
-    }
-
-    /* Custom scrollbar */
     .custom-scrollbar::-webkit-scrollbar {
-        width: 6px;
-        height: 6px;
+        width: 8px;
+        height: 8px;
     }
     .custom-scrollbar::-webkit-scrollbar-track {
-        background: #f9fafb;
+        background: transparent;
     }
     .custom-scrollbar::-webkit-scrollbar-thumb {
-        background: #d1d5db;
-        border-radius: 3px;
-    }
-    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-        background: #9ca3af;
+        background: var(--line);
+        border-radius: 4px;
     }
 
-    /* Flowbite-style dropdown */
+    /* Filter dropdown */
     .flowbite-dropdown {
         position: fixed !important;
-        background: white;
-        border: 1px solid #e5e7eb;
-        border-radius: 8px;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        box-shadow: 0 16px 40px -12px rgba(15, 23, 42, 0.25);
         z-index: 9999 !important;
         display: none;
-        max-height: 300px;
+        max-height: 320px;
         overflow-y: auto;
         min-width: 180px;
+        padding: 4px 0;
     }
-
     .flowbite-dropdown.open {
         display: block;
     }
-
-    /* Dropdown trigger button */
     .dropdown-button {
-        @apply w-full px-3 py-2 text-sm text-left bg-white border border-gray-300 rounded-lg hover:bg-gray-50 focus:ring-4 focus:ring-blue-300 focus:outline-none transition-all flex items-center justify-between;
+        @apply w-full px-2.5 py-1.5 text-xs text-left bg-surface border border-line rounded-md hover:border-accent focus-visible:outline-2 focus-visible:outline-accent transition-colors flex items-center justify-between gap-1 font-normal normal-case tracking-normal;
     }
-
-    .dropdown-button:hover {
-        border-color: #3b82f6;
-    }
-
-    /* Dropdown option styling */
     .dropdown-option {
-        @apply flex items-center px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer transition-colors;
+        @apply flex items-center px-3 py-2 text-sm text-body hover:bg-subtle cursor-pointer transition-colors;
     }
-
-    /* Checkbox styling (Flowbite style) */
     .flowbite-checkbox {
-        @apply w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2;
+        @apply w-4 h-4 rounded border-line accent-[var(--accent)];
     }
 
     /* Pagination */
     .pagination-btn {
-        @apply px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:ring-4 focus:ring-blue-300 transition-all disabled:opacity-50 disabled:cursor-not-allowed;
+        @apply min-w-9 px-2.5 py-1.5 text-sm font-medium text-body bg-surface border border-line rounded-lg hover:bg-subtle transition-colors disabled:opacity-40 disabled:cursor-not-allowed inline-flex items-center justify-center;
     }
-
     .pagination-btn.active {
-        @apply bg-blue-700 text-white border-blue-700 hover:bg-blue-800;
+        @apply bg-accent text-white border-accent dark:text-page;
     }
 
-    /* Sort indicators */
     .sort-indicator {
-        @apply ml-1 text-gray-400 text-xs;
+        @apply text-muted/60 text-[10px];
     }
-
     .sort-indicator.active {
-        @apply text-blue-600 font-bold;
+        @apply text-accent;
     }
 
-    /* Minimum plan badge */
-    .tier-badge {
-        @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-white text-gray-700 border border-gray-200;
+    /* Value badges in table cells and the legend */
+    .badge {
+        @apply inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-xs font-medium whitespace-nowrap;
+    }
+    .badge-free    { background: var(--free-bg);    color: var(--free-fg);    border-color: var(--free-bd); }
+    .badge-paid    { background: var(--paid-bg);    color: var(--paid-fg);    border-color: var(--paid-bd); }
+    .badge-enterprise { background: var(--ent-bg);  color: var(--ent-fg);     border-color: var(--ent-bd); }
+    .badge-add_on  { background: var(--addon-bg);   color: var(--addon-fg);   border-color: var(--addon-bd); }
+    .badge-partial { background: var(--partial-bg); color: var(--partial-fg); border-color: var(--partial-bd); }
+    .badge-no      { background: var(--no-bg);      color: var(--no-fg);      border-color: var(--no-bd); }
+    .badge-supported { background: var(--free-bg);  color: var(--free-fg);    border-color: var(--free-bd); }
+    .badge-undocumented {
+        @apply text-muted border-line bg-subtle;
+    }
+    .badge-not_researched {
+        @apply text-muted/70 border-dashed border-line bg-transparent;
     }
 
     /* A value with no source yet */
     .unverified {
-        opacity: 0.45;
+        opacity: 0.5;
+    }
+    .unverified .badge {
+        border-style: dashed;
+    }
+
+    .source-link {
+        @apply inline-flex h-5 w-5 items-center justify-center rounded text-muted hover:text-accent hover:bg-accent-soft transition-colors;
+    }
+
+    /* Coverage bar segments */
+    .seg-verified { background: #10b981; }
+    .seg-unverified { background: #f59e0b; }
+    .seg-undocumented { background: #94a3b8; }
+    .seg-not_researched { background: var(--line); }
+}
+
+/* ---------- Hero ---------- */
+.hero-grid {
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, black 30%, transparent 75%);
+}
+
+.aurora {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(90px);
+    opacity: 0.55;
+    animation: drift 18s ease-in-out infinite alternate;
+}
+.aurora-1 { width: 620px; height: 620px; left: -160px; top: -220px; background: #4f46e5; }
+.aurora-2 { width: 520px; height: 520px; right: -140px; top: -80px; background: #c026d3; opacity: 0.35; animation-delay: -6s; }
+.aurora-3 { width: 560px; height: 420px; left: 35%; bottom: -260px; background: #0891b2; opacity: 0.4; animation-delay: -12s; }
+
+@keyframes drift {
+    from { transform: translate3d(0, 0, 0) scale(1); }
+    to   { transform: translate3d(60px, 40px, 0) scale(1.15); }
+}
+
+.gradient-text {
+    background: linear-gradient(100deg, #a5b4fc 0%, #f0abfc 45%, #67e8f9 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.search-glow {
+    background: linear-gradient(120deg, rgba(129, 140, 248, 0.7), rgba(232, 121, 249, 0.5), rgba(103, 232, 249, 0.7));
+    box-shadow: 0 20px 60px -20px rgba(99, 102, 241, 0.6);
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.4rem 0.85rem;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+.chip:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+.float {
+    animation: float 7s ease-in-out infinite;
+}
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-1.5deg); }
+    50%      { transform: translateY(-14px) rotate(0.5deg); }
+}
+
+.marquee {
+    mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
+}
+.marquee-track {
+    animation: marquee 90s linear infinite;
+}
+.marquee:hover .marquee-track {
+    animation-play-state: paused;
+}
+@keyframes marquee {
+    to { transform: translateX(-50%); }
+}
+
+.fade-up {
+    animation: fade-up 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+@keyframes fade-up {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: none; }
+}
+
+/* ---------- Bento cards ---------- */
+.bento {
+    border: 1px solid var(--line);
+    background-color: var(--surface);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+.bento:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 24px 50px -28px rgba(79, 70, 229, 0.45);
+}
+.bento-kicker {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+}
+.bento-icon {
+    display: inline-flex;
+    height: 2.5rem;
+    width: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.8rem;
+    font-size: 1.15rem;
+    box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .aurora, .float, .marquee-track, .fade-up, .animate-ping {
+        animation: none !important;
     }
 }
 
@@ -103,7 +330,6 @@
 .cap-extended {
     display: none;
 }
-
 .show-extended .cap-extended {
     display: table-cell;
 }
