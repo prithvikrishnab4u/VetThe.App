@@ -22,14 +22,14 @@ capabilities:
     source: "https://support.pipedrive.com/en/article/single-sign-on"
     checked: "2026-09-15"
   scim:
-    support: "unknown"
+    support: "undocumented"
   mfa_enforcement:
     support: "supported"
     notes: "Admins can enforce 2FA (authenticator app or email) for all users; cannot be combined with SSO; plan requirement not stated"
     source: "https://support.pipedrive.com/en/article/2fa-two-factor-authentication"
     checked: "2026-09-15"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "undocumented"
   audit_logs:
     support: "supported"
     tier: "enterprise"
@@ -39,13 +39,13 @@ capabilities:
     source: "https://support.pipedrive.com/en/article/security-dashboard"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "unknown"
+    support: "not_researched"
   domain_verification:
-    support: "unknown"
+    support: "not_researched"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
     support: "supported"
     tier: "enterprise"
@@ -54,4 +54,4 @@ capabilities:
     source: "https://support.pipedrive.com/en/article/security-dashboard"
     checked: "2026-09-15"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

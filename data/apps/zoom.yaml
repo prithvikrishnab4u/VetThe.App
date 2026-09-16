@@ -57,11 +57,11 @@ capabilities:
     source: "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0060673"
     checked: "2026-09-14"
   domain_verification:
-    support: "unknown"
+    support: "not_researched"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
     support: "supported"
     tier: "paid"
@@ -70,4 +70,4 @@ capabilities:
     source: "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0064901"
     checked: "2026-09-14"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

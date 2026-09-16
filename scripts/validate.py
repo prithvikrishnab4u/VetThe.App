@@ -30,6 +30,10 @@ ROOT_FIELDS = ['name', 'category', 'website', 'description', 'status', 'capabili
 CAPABILITY_FIELDS = {'support', 'tier', 'plan', 'notes', 'source', 'checked'}
 # Support levels that describe a working feature, so a tier makes sense
 TIERED_SUPPORT = {'supported', 'partial'}
+# Levels that record no value yet: undocumented (the vendor's own pages were
+# checked and say nothing) and not_researched (nobody has looked). Neither can
+# carry a source, because there is nothing to cite.
+NO_VALUE = {'undocumented', 'not_researched'}
 
 
 def ids(entries):
@@ -84,8 +88,8 @@ def validate_capability(cid, definition, cap, schema, published):
             errors.append(f"{cid}: checked {problem}")
     if (source is None) != (checked is None):
         errors.append(f"{cid}: source and checked must be set together")
-    if support == 'unknown' and source is not None:
-        errors.append(f"{cid}: an unknown capability can't have a source")
+    if support in NO_VALUE and source is not None:
+        errors.append(f"{cid}: a capability with no recorded value can't have a source")
 
     if 'protocols' in cap:
         protocols = cap['protocols']
@@ -101,9 +105,9 @@ def validate_capability(cid, definition, cap, schema, published):
         errors.append(f"{cid}: retention must be quoted text, e.g. \"90 days\"")
 
     if published:
-        if definition.get('core') and support == 'unknown':
+        if definition.get('core') and support == 'not_researched':
             errors.append(f"{cid}: core capability must be researched before publishing")
-        if support != 'unknown' and source is None:
+        if support not in NO_VALUE and source is None:
             errors.append(f"{cid}: needs a source and checked date before publishing")
         if support in TIERED_SUPPORT and tier is None:
             errors.append(f"{cid}: needs a tier before publishing")
@@ -186,8 +190,8 @@ def main():
             for cap in (data.get('capabilities') or {}).values():
                 if not isinstance(cap, dict):
                     continue
-                if cap.get('support') == 'unknown':
-                    points['unknown'] += 1
+                if cap.get('support') in NO_VALUE:
+                    points[cap['support']] += 1
                 elif cap.get('source'):
                     points['verified'] += 1
                 else:
@@ -198,7 +202,8 @@ def main():
     print(f"Data points: {sum(points.values())} "
           f"({GREEN}{points['verified']} verified{RESET}, "
           f"{YELLOW}{points['unverified']} unverified{RESET}, "
-          f"{points['unknown']} unknown)")
+          f"{points['undocumented']} not documented, "
+          f"{points['not_researched']} not researched)")
     print(f"{'=' * 60}\n")
 
     if failed:

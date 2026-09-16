@@ -3,14 +3,16 @@
 {{ range $schema.tiers }}{{ $tierLabels = merge $tierLabels (dict .id .label) }}{{ end }}
 
 {{/* Coverage: every app × capability is one data point */}}
-{{ $points := 0 }}{{ $verified := 0 }}{{ $unknown := 0 }}
+{{ $points := 0 }}{{ $verified := 0 }}{{ $undocumented := 0 }}{{ $notResearched := 0 }}
 {{ range site.Data.apps }}
     {{ $app := . }}
     {{ range $schema.capabilities }}
         {{ $cap := (index $app.capabilities .id) | default (dict) }}
         {{ $points = add $points 1 }}
         {{ if $cap.source }}{{ $verified = add $verified 1 }}{{ end }}
-        {{ if eq ($cap.support | default "unknown") "unknown" }}{{ $unknown = add $unknown 1 }}{{ end }}
+        {{ $s := $cap.support | default "not_researched" }}
+        {{ if eq $s "undocumented" }}{{ $undocumented = add $undocumented 1 }}
+        {{ else if eq $s "not_researched" }}{{ $notResearched = add $notResearched 1 }}{{ end }}
     {{ end }}
 {{ end }}
 
@@ -20,7 +22,8 @@
     <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
         <p class="text-xs text-gray-600">
             <strong class="text-gray-900">{{ $verified }}</strong> of {{ $points }} data points verified against a source ·
-            <strong class="text-gray-900">{{ $unknown }}</strong> not researched yet · faded values are unverified
+            <strong class="text-gray-900">{{ $undocumented }}</strong> checked, vendor doesn't document ·
+            <strong class="text-gray-900">{{ $notResearched }}</strong> not researched yet · faded values are unverified
         </p>
         <div class="flex items-center gap-2">
             <button id="toggleExtendedBtn" type="button"
@@ -132,14 +135,15 @@
                         <!-- Capabilities -->
                         {{ range $schema.capabilities }}
                         {{ $cap := (index $app.capabilities .id) | default (dict) }}
-                        {{ $support := $cap.support | default "unknown" }}
+                        {{ $support := $cap.support | default "not_researched" }}
                         {{ $tier := "" }}
                         {{ with $cap.tier }}{{ $tier = index $tierLabels . }}{{ end }}
-                        {{ $value := "Unknown" }}
+                        {{ $value := "Not researched" }}
                         {{ if eq $support "supported" }}{{ $value = $tier | default "Supported" }}
                         {{ else if eq $support "partial" }}{{ $value = "Partial" }}
-                        {{ else if eq $support "not_supported" }}{{ $value = "No" }}{{ end }}
-                        {{ $unverified := and (ne $support "unknown") (not $cap.source) }}
+                        {{ else if eq $support "not_supported" }}{{ $value = "No" }}
+                        {{ else if eq $support "undocumented" }}{{ $value = "Not documented" }}{{ end }}
+                        {{ $unverified := and (not (in (slice "undocumented" "not_researched") $support)) (not $cap.source) }}
                         <td class="px-4 py-3 whitespace-nowrap{{ if not .core }} cap-extended{{ end }}"
                             data-cap="{{ .id }}" data-value="{{ $value }}">
                             <div class="flex items-center gap-1.5{{ if $unverified }} unverified{{ end }}"
@@ -153,6 +157,9 @@
                                 {{ else if eq $support "not_supported" }}
                                 <span class="text-gray-400">✗</span>
                                 <span class="text-xs text-gray-500">No</span>
+                                {{ else if eq $support "undocumented" }}
+                                <span class="text-gray-400 text-xs">–</span>
+                                <span class="text-xs text-gray-500">Not documented</span>
                                 {{ else }}
                                 <span class="text-gray-300 text-xs">?</span>
                                 {{ end }}

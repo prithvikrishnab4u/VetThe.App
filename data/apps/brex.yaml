@@ -15,7 +15,7 @@ capabilities:
     source: "https://www.brex.com/support/signing-into-brex"
     checked: "2026-09-15"
   sso_enforcement:
-    support: "unknown"
+    support: "undocumented"
   scim:
     support: "supported"
     tier: "paid"
@@ -42,9 +42,9 @@ capabilities:
     source: "https://www.brex.com/support/brex-security-measures"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "unknown"
+    support: "not_researched"
   domain_verification:
-    support: "unknown"
+    support: "not_researched"
   custom_roles:
     support: "supported"
     tier: "paid"
@@ -53,8 +53,8 @@ capabilities:
     source: "https://www.brex.com/support/custom-roles"
     checked: "2026-09-15"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

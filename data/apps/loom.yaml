@@ -29,9 +29,9 @@ capabilities:
     source: "https://support.atlassian.com/loom/docs/configure-sso-and-directory-sync-scim"
     checked: "2026-09-15"
   mfa_enforcement:
-    support: "unknown"
+    support: "undocumented"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "undocumented"
   audit_logs:
     support: "supported"
     tier: "enterprise"
@@ -40,7 +40,7 @@ capabilities:
     source: "https://www.loom.com/pricing"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "unknown"
+    support: "not_researched"
   domain_verification:
     support: "supported"
     tier: "enterprise"
@@ -49,10 +49,10 @@ capabilities:
     source: "https://support.atlassian.com/loom/docs/configure-sso-and-directory-sync-scim"
     checked: "2026-09-15"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

@@ -34,11 +34,11 @@ Adding a capability to the schema therefore adds it to the site, the CSV and val
 **App files** (`data/apps/<id>.yaml`, the filename stem is the ID) have root `name, category, website, description, status, capabilities`. Each capability is `support` plus optional `tier, plan, notes, source, checked`, plus schema-listed extras (`sso.protocols`, `audit_logs.retention`). Validator rules:
 - `tier` only on `supported`/`partial`.
 - `source` and `checked` must appear together; `checked` must be a quoted `YYYY-MM-DD`.
-- `unknown` can't have a source.
+- `undocumented` (checked, vendor silent) and `not_researched` (never looked) can't have a source.
 - Unknown root, capability or field keys are errors.
-- `status: published` also requires every core capability ≠ unknown, a source on every known value, and a tier on every supported/partial value.
+- `status: published` also requires every core capability ≠ not_researched, a source on every value other than undocumented/not_researched, and a tier on every supported/partial value.
 
-**Rendering:** `table.html` turns each cell into a `data-value` label (tier label, "Supported", "Partial", "No", "Unknown"). `scripts.html` filters and sorts on those labels using `VALUE_ORDER`, so if you add a tier, update that list too. Styling:
+**Rendering:** `table.html` turns each cell into a `data-value` label (tier label, "Supported", "Partial", "No", "Not documented", "Not researched"). `scripts.html` filters and sorts on those labels using `VALUE_ORDER`, so if you add a tier, update that list too. Styling:
 - Values without a `source` get the `.unverified` class (faded).
 - Non-core columns get `.cap-extended`, hidden until the "Show all capabilities" toggle adds `.show-extended` to the table.
 - All custom CSS lives in `site/assets/css/main.css` (Tailwind v4, no config file).
@@ -46,5 +46,5 @@ Adding a capability to the schema therefore adds it to the site, the CSV and val
 ## Data state and working rules
 
 - All 107 apps are `draft`. Their values were carried over from an earlier dataset (probably generated in bulk, not researched) and have **no sources**, so treat every existing value as unverified.
-- Accuracy work means checking each value against the vendor's own pricing page, docs, or trust center, and adding `source` + `checked`. Don't use auto-scanning, homepage keyword matches, Reddit, review sites, or blogs. When a value can't be confirmed, set it to `unknown` instead of guessing, and don't carry old values forward.
+- Accuracy work means checking each value against the vendor's own pricing page, docs, or trust center, and adding `source` + `checked`. Don't use auto-scanning, homepage keyword matches, Reddit, review sites, or blogs. When a value can't be confirmed, set it to `undocumented` instead of guessing, and don't carry old values forward.
 - Keep the double-quoted YAML style from the `CONTRIBUTING.md` template; contributors edit these files in the GitHub web UI.

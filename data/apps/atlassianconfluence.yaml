@@ -61,9 +61,9 @@ capabilities:
     source: "https://support.atlassian.com/user-management/docs/verify-a-domain-to-manage-accounts/"
     checked: "2026-09-14"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
     support: "supported"
   api_token_controls:

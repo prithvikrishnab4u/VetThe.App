@@ -13,7 +13,7 @@ capabilities:
     source: "https://help.tableau.com/current/online/en-us/security_auth.htm"
     checked: "2026-09-15"
   sso_enforcement:
-    support: "unknown"
+    support: "undocumented"
   scim:
     support: "supported"
     notes: "Tableau Cloud SCIM for users and groups; requires SAML, OIDC or Google SSO on the site; plan requirement not stated"
@@ -37,14 +37,14 @@ capabilities:
     source: "https://help.tableau.com/current/online/en-us/activity_log_setup.htm"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "unknown"
+    support: "not_researched"
   domain_verification:
-    support: "unknown"
+    support: "not_researched"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

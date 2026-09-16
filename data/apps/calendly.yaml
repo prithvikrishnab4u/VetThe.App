@@ -29,9 +29,9 @@ capabilities:
     source: "https://calendly.com/help/scim-user-provisioning-overview"
     checked: "2026-09-15"
   mfa_enforcement:
-    support: "unknown"
+    support: "undocumented"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "undocumented"
   audit_logs:
     support: "supported"
     tier: "enterprise"
@@ -46,12 +46,12 @@ capabilities:
     source: "https://calendly.com/help/saml-single-sign-on-sso-overview"
     checked: "2026-09-15"
   domain_verification:
-    support: "unknown"
+    support: "not_researched"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

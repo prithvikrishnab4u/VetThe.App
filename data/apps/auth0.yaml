@@ -22,7 +22,7 @@ capabilities:
     source: "https://auth0.com/docs/get-started/tenant-settings/auth0-teams/configure-security-policies"
     checked: "2026-09-15"
   scim:
-    support: "unknown"
+    support: "undocumented"
   mfa_enforcement:
     support: "not_supported"
     notes: "MFA cannot be enforced for all members of a tenant; dashboard users self-enroll"
@@ -34,16 +34,16 @@ capabilities:
     source: "https://auth0.com/docs/get-started/manage-dashboard-access/add-change-remove-mfa"
     checked: "2026-09-15"
   audit_logs:
-    support: "unknown"
+    support: "undocumented"
   jit_provisioning:
-    support: "unknown"
+    support: "not_researched"
   domain_verification:
-    support: "unknown"
+    support: "not_researched"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

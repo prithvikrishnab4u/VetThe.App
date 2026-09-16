@@ -76,6 +76,6 @@ capabilities:
     source: "https://docs.gitlab.com/user/group/saml_sso/group_sync/"
     checked: "2026-09-14"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

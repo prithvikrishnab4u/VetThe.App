@@ -20,14 +20,14 @@ capabilities:
     source: "https://www.qualtrics.com/support/survey-platform/sp-administration/brand-customization-services/sso/configuring-organization-sso-settings/"
     checked: "2026-09-16"
   scim:
-    support: "unknown"
+    support: "undocumented"
   mfa_enforcement:
     support: "supported"
     notes: "Brand administrators can enable two-factor authentication for the Qualtrics login type; it does not apply to participant user types. Plan requirement not stated."
     source: "https://www.qualtrics.com/support/survey-platform/sp-administration/organization-settings/"
     checked: "2026-09-16"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "undocumented"
   audit_logs:
     support: "supported"
     notes: "Security tab Activity Logs record actions across the organization including regular, proxy, SSO and failed logins, session and password events, with username, IP address and timestamp. Retention and plan requirement not stated."
@@ -39,9 +39,9 @@ capabilities:
     source: "https://www.qualtrics.com/support/survey-platform/sp-administration/brand-customization-services/sso/managing-users-brands-with-sso/"
     checked: "2026-09-16"
   domain_verification:
-    support: "unknown"
+    support: "not_researched"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
     support: "partial"
     notes: "SSO attributes can be mapped to assign users to Groups and permissions, but CAS and Google OAuth 2.0 cannot pass the extra attributes. Plan requirement not stated."
@@ -53,4 +53,4 @@ capabilities:
     source: "https://www.qualtrics.com/support/survey-platform/sp-administration/security-tab/"
     checked: "2026-09-16"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

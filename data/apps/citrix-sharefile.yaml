@@ -36,7 +36,7 @@ capabilities:
     source: "https://docs.sharefile.com/en-us/sharefile/configure/admin-settings/two-step-verification.html"
     checked: "2026-09-16"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "undocumented"
   audit_logs:
     support: "supported"
     notes: "Admin reports include Usage and Access reports covering login and failed login events; plan requirement not stated"
@@ -44,14 +44,14 @@ capabilities:
     source: "https://docs.sharefile.com/en-us/sharefile/configure/admin-settings/reports.html"
     checked: "2026-09-16"
   jit_provisioning:
-    support: "unknown"
+    support: "not_researched"
   domain_verification:
-    support: "unknown"
+    support: "not_researched"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

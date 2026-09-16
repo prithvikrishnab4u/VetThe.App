@@ -13,30 +13,30 @@ capabilities:
     source: "https://doc.workday.com/admin-guide/en-us/manage-workday/tenant-configuration/tenant-setup/dan1370796470031.html"
     checked: "2026-09-15"
   sso_enforcement:
-    support: "unknown"
+    support: "undocumented"
   scim:
-    support: "unknown"
+    support: "undocumented"
   mfa_enforcement:
     support: "supported"
     notes: "Maximum Grace Signin Count forces MFA enrollment; authenticator app, backup codes, Duo, email or SMS OTP; plan requirement not stated"
     source: "https://doc.workday.com/admin-guide/en-us/manage-workday/tenant-configuration/tenant-setup/dan1370796470031.html"
     checked: "2026-09-15"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "undocumented"
   audit_logs:
     support: "supported"
     notes: "Audit trail, user activity logs and sign-on reports; plan requirement not stated"
     source: "https://www.workday.com/en-ca/why-workday/trust/security.html"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "unknown"
+    support: "not_researched"
   domain_verification:
-    support: "unknown"
+    support: "not_researched"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

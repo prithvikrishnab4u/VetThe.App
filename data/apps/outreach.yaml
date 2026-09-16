@@ -23,23 +23,23 @@ capabilities:
     source: "https://support.outreach.io/support/solutions/articles/159000426344-outreach-scim-protocol"
     checked: "2026-09-15"
   mfa_enforcement:
-    support: "unknown"
+    support: "undocumented"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "undocumented"
   audit_logs:
-    support: "unknown"
+    support: "undocumented"
   jit_provisioning:
     support: "supported"
     notes: "Advanced SSO setting to enable just-in-time new user provision; plan requirement not stated"
     source: "https://support.outreach.io/hc/en-us/articles/115001156694-Setting-up-other-SAML-IdP-SSO"
     checked: "2026-09-15"
   domain_verification:
-    support: "unknown"
+    support: "not_researched"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

@@ -30,7 +30,7 @@ capabilities:
     source: "https://docs.datadoghq.com/account_management/multi-factor_authentication/"
     checked: "2026-09-14"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "undocumented"
   audit_logs:
     support: "supported"
     notes: "Audit Trail: CSV download of up to 100K events and archiving to S3, GCS or Azure; 7-day retention when Audit Trail is off"
@@ -55,6 +55,6 @@ capabilities:
     source: "https://docs.datadoghq.com/account_management/rbac/"
     checked: "2026-09-14"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

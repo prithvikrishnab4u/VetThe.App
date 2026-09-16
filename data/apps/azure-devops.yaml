@@ -17,7 +17,7 @@ capabilities:
     source: "https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/access-with-azure-ad"
     checked: "2026-09-15"
   scim:
-    support: "unknown"
+    support: "undocumented"
   mfa_enforcement:
     support: "supported"
     notes: "Enforced by Entra Conditional Access policies targeting the Azure DevOps resource, not an Azure DevOps setting; Conditional Access is an Entra ID P1 feature; plan requirement not stated on this page"
@@ -35,15 +35,15 @@ capabilities:
     source: "https://learn.microsoft.com/en-us/azure/devops/organizations/audit/azure-devops-auditing"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "unknown"
+    support: "not_researched"
   domain_verification:
-    support: "unknown"
+    support: "not_researched"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
     support: "supported"
     notes: "Org policy restricts PAT creation; Entra tenant policies restrict global and full-scoped PATs and enforce maximum PAT lifespan; SSH and OAuth app access can be disabled; plan requirement not stated"

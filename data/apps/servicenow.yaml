@@ -13,7 +13,7 @@ capabilities:
     source: "https://www.servicenow.com/docs/r/washingtondc/platform-security/authentication/t_CreateASAML2Upd1SSOConfigMultiSSO.html"
     checked: "2026-09-15"
   sso_enforcement:
-    support: "unknown"
+    support: "undocumented"
   scim:
     support: "supported"
     notes: "Inbound SCIM v2 user and group provisioning via the com.snc.integration.scim2 plugin; plan requirement not stated"
@@ -40,12 +40,12 @@ capabilities:
     source: "https://www.servicenow.com/docs/r/washingtondc/platform-security/authentication/t_CreateASAML2Upd1SSOConfigMultiSSO.html"
     checked: "2026-09-15"
   domain_verification:
-    support: "unknown"
+    support: "not_researched"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

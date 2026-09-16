@@ -25,18 +25,18 @@ capabilities:
     source: "https://help.gong.io/docs/provision-team-members-from-a-custom-source-scim"
     checked: "2026-09-15"
   mfa_enforcement:
-    support: "unknown"
+    support: "undocumented"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "undocumented"
   audit_logs:
     support: "supported"
     notes: "Audit API returns platform usage data in JSON; plan requirement not stated"
     source: "https://help.gong.io/docs/summary-of-security-features"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "unknown"
+    support: "not_researched"
   domain_verification:
-    support: "unknown"
+    support: "not_researched"
   custom_roles:
     support: "supported"
     notes: "Granular permission profiles in addition to built-in roles; plan requirement not stated"
@@ -55,4 +55,4 @@ capabilities:
     source: "https://help.gong.io/docs/authentication-faqs"
     checked: "2026-09-15"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

@@ -15,7 +15,7 @@ capabilities:
     source: "https://help.smartsheet.com/articles/2476141-configure-saml-sso"
     checked: "2026-09-15"
   sso_enforcement:
-    support: "unknown"
+    support: "undocumented"
   scim:
     support: "supported"
     tier: "enterprise"
@@ -31,7 +31,7 @@ capabilities:
     source: "https://help.smartsheet.com/articles/2483523-admin-center-configure-require-mfa"
     checked: "2026-09-15"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "undocumented"
   audit_logs:
     support: "supported"
     tier: "enterprise"
@@ -41,7 +41,7 @@ capabilities:
     source: "https://help.smartsheet.com/articles/2479296-event-reporting-monitor-how-your-organization-uses-data"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "unknown"
+    support: "not_researched"
   domain_verification:
     support: "supported"
     tier: "paid"
@@ -50,10 +50,10 @@ capabilities:
     source: "https://www.smartsheet.com/pricing"
     checked: "2026-09-15"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

@@ -7,26 +7,26 @@ status: "draft"
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
-    support: "unknown"
+    support: "not_researched"
   sso_enforcement:
-    support: "unknown"
+    support: "not_researched"
   scim:
-    support: "unknown"
+    support: "not_researched"
   mfa_enforcement:
-    support: "unknown"
+    support: "not_researched"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "not_researched"
   audit_logs:
-    support: "unknown"
+    support: "not_researched"
   jit_provisioning:
-    support: "unknown"
+    support: "not_researched"
   domain_verification:
-    support: "unknown"
+    support: "not_researched"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

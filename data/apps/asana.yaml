@@ -15,7 +15,7 @@ capabilities:
     source: "https://asana.com/pricing"
     checked: "2026-09-16"
   sso_enforcement:
-    support: "unknown"
+    support: "undocumented"
   scim:
     support: "supported"
     tier: "enterprise"
@@ -31,7 +31,7 @@ capabilities:
     source: "https://asana.com/pricing"
     checked: "2026-09-16"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "undocumented"
   audit_logs:
     support: "supported"
     tier: "enterprise"
@@ -40,13 +40,13 @@ capabilities:
     source: "https://developers.asana.com/docs/audit-log-api"
     checked: "2026-09-14"
   jit_provisioning:
-    support: "unknown"
+    support: "not_researched"
   domain_verification:
-    support: "unknown"
+    support: "not_researched"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
     support: "supported"
     notes: "\"Session duration limits\" listed among admin console controls; plan requirement not stated"

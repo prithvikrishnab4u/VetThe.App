@@ -28,9 +28,9 @@ capabilities:
     source: "https://support.pagerduty.com/main/docs/scim-user-provisioning"
     checked: "2026-09-14"
   mfa_enforcement:
-    support: "unknown"
+    support: "undocumented"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "undocumented"
   audit_logs:
     support: "supported"
     tier: "paid"
@@ -49,10 +49,10 @@ capabilities:
   domain_verification:
     support: "supported"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

@@ -11,25 +11,25 @@ capabilities:
     tier: "enterprise"
     protocols: ["SAML", "OIDC"]
   sso_enforcement:
-    support: "unknown"
+    support: "undocumented"
   scim:
-    support: "unknown"
+    support: "undocumented"
   mfa_enforcement:
     support: "supported"
     tier: "enterprise"
   phishing_resistant_mfa:
     support: "supported"
   audit_logs:
-    support: "unknown"
+    support: "undocumented"
   jit_provisioning:
     support: "supported"
   domain_verification:
     support: "supported"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

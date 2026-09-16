@@ -36,7 +36,7 @@ capabilities:
     source: "https://help.miro.com/hc/en-us/articles/27356474050834-Two-factor-authentication-2FA"
     checked: "2026-09-15"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "undocumented"
   audit_logs:
     support: "supported"
     tier: "enterprise"
@@ -58,10 +58,10 @@ capabilities:
     source: "https://help.miro.com/hc/en-us/articles/360017571414-Single-sign-on-SSO"
     checked: "2026-09-15"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

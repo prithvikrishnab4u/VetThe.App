@@ -29,7 +29,7 @@ capabilities:
     source: "https://linear.app/docs/scim"
     checked: "2026-09-14"
   mfa_enforcement:
-    support: "unknown"
+    support: "undocumented"
   phishing_resistant_mfa:
     support: "supported"
     notes: "Passkeys are a login method; plan availability not stated"
@@ -58,7 +58,7 @@ capabilities:
     source: "https://linear.app/docs/saml-and-access-control"
     checked: "2026-09-14"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
     support: "supported"
     tier: "enterprise"
@@ -69,4 +69,4 @@ capabilities:
   session_controls:
     support: "supported"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

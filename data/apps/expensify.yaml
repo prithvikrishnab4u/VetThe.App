@@ -28,21 +28,21 @@ capabilities:
     source: "https://help.expensify.com/articles/expensify-classic/settings/Enable-two-factor-authentication"
     checked: "2026-09-15"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "undocumented"
   audit_logs:
-    support: "unknown"
+    support: "undocumented"
   jit_provisioning:
-    support: "unknown"
+    support: "not_researched"
   domain_verification:
     support: "supported"
     notes: "Domain must be claimed and verified before SAML can be configured; plan requirement not stated"
     source: "https://help.expensify.com/articles/expensify-classic/domains/Set-Up-SAML-SSO"
     checked: "2026-09-15"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

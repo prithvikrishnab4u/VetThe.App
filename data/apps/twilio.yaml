@@ -33,7 +33,7 @@ capabilities:
     source: "https://www.twilio.com/en-us/blog/mandatory-2fa-account-login"
     checked: "2026-09-14"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "undocumented"
   audit_logs:
     support: "supported"
     tier: "free"
@@ -54,10 +54,10 @@ capabilities:
     source: "https://www.twilio.com/docs/iam/single-sign-on"
     checked: "2026-09-14"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

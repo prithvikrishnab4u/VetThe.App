@@ -35,7 +35,7 @@ capabilities:
     source: "https://help.figma.com/hc/en-us/articles/31825370509591-Governance-for-Figma-Enterprise"
     checked: "2026-09-14"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "undocumented"
   audit_logs:
     support: "supported"
     tier: "paid"
@@ -58,9 +58,9 @@ capabilities:
     source: "https://help.figma.com/hc/en-us/articles/360040532333-Guide-to-SAML-SSO"
     checked: "2026-09-14"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
     support: "supported"
     tier: "add_on"
@@ -69,4 +69,4 @@ capabilities:
     source: "https://help.figma.com/hc/en-us/articles/31825370509591-Governance-for-Figma-Enterprise"
     checked: "2026-09-14"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

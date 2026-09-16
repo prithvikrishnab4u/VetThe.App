@@ -15,7 +15,7 @@ capabilities:
     source: "https://help.surveymonkey.com/en/surveymonkey/teams/single-sign-on/"
     checked: "2026-09-16"
   sso_enforcement:
-    support: "unknown"
+    support: "undocumented"
   scim:
     support: "supported"
     tier: "enterprise"
@@ -24,9 +24,9 @@ capabilities:
     source: "https://help.surveymonkey.com/en/surveymonkey/teams/scim/"
     checked: "2026-09-16"
   mfa_enforcement:
-    support: "unknown"
+    support: "undocumented"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "undocumented"
   audit_logs:
     support: "supported"
     tier: "enterprise"
@@ -36,7 +36,7 @@ capabilities:
     source: "https://help.surveymonkey.com/en/surveymonkey/teams/team-activity/"
     checked: "2026-09-16"
   jit_provisioning:
-    support: "unknown"
+    support: "not_researched"
   domain_verification:
     support: "supported"
     tier: "enterprise"
@@ -45,10 +45,10 @@ capabilities:
     source: "https://www.surveymonkey.com/product/enterprise/admin-security-features/"
     checked: "2026-09-16"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

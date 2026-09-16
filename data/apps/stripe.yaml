@@ -49,14 +49,14 @@ capabilities:
     source: "https://docs.stripe.com/get-started/account/sso/other"
     checked: "2026-09-14"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
     support: "supported"
     notes: "Assign Dashboard roles to SCIM-synced groups, or send roles in SAML attribute statements"
     source: "https://docs.stripe.com/get-started/account/sso/group-role-assignments?locale=en-GB"
     checked: "2026-09-14"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
     support: "supported"
     notes: "Restricted API keys with limited permissions and access policies that block use from unauthorized locations"

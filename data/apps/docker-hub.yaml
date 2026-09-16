@@ -29,9 +29,9 @@ capabilities:
     source: "https://www.docker.com/pricing/"
     checked: "2026-09-15"
   mfa_enforcement:
-    support: "unknown"
+    support: "undocumented"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "undocumented"
   audit_logs:
     support: "supported"
     tier: "paid"
@@ -41,7 +41,7 @@ capabilities:
     source: "https://docs.docker.com/admin/organization/activity-logs/"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "unknown"
+    support: "not_researched"
   domain_verification:
     support: "supported"
     tier: "enterprise"
@@ -50,10 +50,10 @@ capabilities:
     source: "https://docs.docker.com/enterprise/security/single-sign-on/connect/"
     checked: "2026-09-15"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

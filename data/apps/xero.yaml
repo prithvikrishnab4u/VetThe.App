@@ -7,29 +7,29 @@ status: "draft"
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
-    support: "unknown"
+    support: "undocumented"
   sso_enforcement:
-    support: "unknown"
+    support: "undocumented"
   scim:
-    support: "unknown"
+    support: "undocumented"
   mfa_enforcement:
     support: "supported"
     notes: "MFA mandatory for all users invited to an organisation; Xero Verify or authenticator app; plan requirement not stated"
     source: "https://www.xero.com/us/security/multi-factor-authentication/faq/"
     checked: "2026-09-15"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "undocumented"
   audit_logs:
-    support: "unknown"
+    support: "undocumented"
   jit_provisioning:
-    support: "unknown"
+    support: "not_researched"
   domain_verification:
-    support: "unknown"
+    support: "not_researched"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

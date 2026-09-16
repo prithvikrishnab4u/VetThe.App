@@ -2,7 +2,7 @@
 
 **No coding required!** You can add or fix apps directly in your browser.
 
-The one rule: **only record what you can link to.** A value with a source beats a guess every time. If you're not sure, leave it as `"unknown"`.
+The one rule: **only record what you can link to.** A value with a source beats a guess every time. If you haven't checked, leave it as `"not_researched"`.
 
 ---
 
@@ -24,7 +24,7 @@ The one rule: **only record what you can link to.** A value with a source beats 
 
 ## 📋 App Template
 
-Copy this. Every capability starts as `"unknown"`, so change only the ones you've checked.
+Copy this. Every capability starts as `"not_researched"`, so change only the ones you've checked.
 
 ```yaml
 name: "App Name Here"
@@ -36,29 +36,29 @@ status: "draft"
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
-    support: "unknown"
+    support: "not_researched"
   sso_enforcement:
-    support: "unknown"
+    support: "not_researched"
   scim:
-    support: "unknown"
+    support: "not_researched"
   mfa_enforcement:
-    support: "unknown"
+    support: "not_researched"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "not_researched"
   audit_logs:
-    support: "unknown"
+    support: "not_researched"
   jit_provisioning:
-    support: "unknown"
+    support: "not_researched"
   domain_verification:
-    support: "unknown"
+    support: "not_researched"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"
 ```
 
 ---
@@ -85,7 +85,7 @@ Every capability uses the same fields:
 
 ```yaml
   scim:
-    support: "supported"                     # supported, partial, not_supported, or unknown
+    support: "supported"                     # supported, partial, not_supported, undocumented, or not_researched
     tier: "enterprise"                       # minimum plan: free, paid, enterprise, or add_on
     plan: "Enterprise"                       # optional: the vendor's own plan name
     notes: "Users only, no groups"           # optional: anything that needs explaining
@@ -96,14 +96,15 @@ Every capability uses the same fields:
 **Rules:**
 - `tier` only goes on `supported` or `partial`.
 - `source` and `checked` always go together.
-- `unknown` has nothing else: no tier, no source.
+- `undocumented` and `not_researched` have nothing else: no tier, no source.
 - Put quotes around every value.
 
 **Support levels:**
 - `supported`: works as the question describes
 - `partial`: works with a real limitation; explain it in `notes`
 - `not_supported`: the vendor's docs or pricing show it isn't offered
-- `unknown`: not researched yet (the default)
+- `undocumented`: you checked the vendor's own pages and they say nothing either way
+- `not_researched`: nobody has looked yet (the default)
 
 **Tiers**, the **minimum** plan needed:
 - `free`: available on the free plan
@@ -173,19 +174,19 @@ capabilities:
     source: "https://example.com/docs/2fa-methods"
     checked: "2026-09-14"
   audit_logs:
-    support: "unknown"
+    support: "not_researched"
   jit_provisioning:
-    support: "unknown"
+    support: "not_researched"
   domain_verification:
-    support: "unknown"
+    support: "not_researched"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"
 ```
 
 ---
@@ -205,7 +206,7 @@ capabilities:
 - Blog posts (may be old)
 - Marketing pages that don't say which plan
 
-**Not supported needs proof too.** Link the page that shows it's missing, such as a pricing table without the feature. If you simply can't find it, leave it `unknown`.
+**Not supported needs proof too.** Link the page that shows it's missing, such as a pricing table without the feature. If you checked and the vendor doesn't say, use `undocumented`.
 
 ---
 
@@ -226,7 +227,7 @@ Found wrong info? Easy fix:
 **That's okay!** Just:
 
 1. Fill out what you can link to
-2. Leave the rest as `"unknown"`
+2. Leave the rest as `"not_researched"`
 3. Add a comment in your pull request: "Couldn't find SCIM docs"
 
 **Or open an issue first** to discuss before submitting.

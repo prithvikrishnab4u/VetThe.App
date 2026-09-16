@@ -14,7 +14,7 @@ capabilities:
     source: "https://www.lastpass.com/features/federated-login"
     checked: "2026-09-16"
   sso_enforcement:
-    support: "unknown"
+    support: "undocumented"
   scim:
     support: "supported"
     tier: "paid"
@@ -43,14 +43,14 @@ capabilities:
     source: "https://www.lastpass.com/products/business"
     checked: "2026-09-16"
   jit_provisioning:
-    support: "unknown"
+    support: "not_researched"
   domain_verification:
-    support: "unknown"
+    support: "not_researched"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

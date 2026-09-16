@@ -51,13 +51,13 @@ capabilities:
     source: "https://knowledge.workspace.google.com/admin/getting-started/editions/compare-business-editions"
     checked: "2026-09-14"
   jit_provisioning:
-    support: "unknown"
+    support: "not_researched"
   domain_verification:
-    support: "unknown"
+    support: "not_researched"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
     support: "supported"
     tier: "paid"
@@ -66,4 +66,4 @@ capabilities:
     source: "https://knowledge.workspace.google.com/admin/getting-started/editions/compare-business-editions"
     checked: "2026-09-14"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

@@ -53,6 +53,6 @@ capabilities:
     source: "https://docs.snowflake.com/en/user-guide/scim-okta"
     checked: "2026-09-14"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

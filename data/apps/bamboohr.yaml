@@ -18,25 +18,25 @@ capabilities:
     source: "https://www.bamboohr.com/product-updates/samloptional-email-and-password-login"
     checked: "2026-09-15"
   scim:
-    support: "unknown"
+    support: "undocumented"
   mfa_enforcement:
     support: "supported"
     notes: "Account Owners and Admins can require 2-step login for all users or selected access levels; SMS option available; plan requirement not stated"
     source: "https://www.bamboohr.com/product-updates/2-step-login-enablement-for-all-users"
     checked: "2026-09-15"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "undocumented"
   audit_logs:
-    support: "unknown"
+    support: "undocumented"
   jit_provisioning:
-    support: "unknown"
+    support: "not_researched"
   domain_verification:
-    support: "unknown"
+    support: "not_researched"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

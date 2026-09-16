@@ -15,27 +15,27 @@ capabilities:
     source: "https://www.pluralsight.com/businesses/pricing"
     checked: "2026-09-16"
   sso_enforcement:
-    support: "unknown"
+    support: "undocumented"
   scim:
-    support: "unknown"
+    support: "undocumented"
   mfa_enforcement:
-    support: "unknown"
+    support: "undocumented"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "undocumented"
   audit_logs:
-    support: "unknown"
+    support: "undocumented"
   jit_provisioning:
     support: "supported"
     notes: "Just-in-time provisioning allocates licenses to learners as they log in for the first time; plan requirement not stated"
     source: "https://www.pluralsight.com/product/professional-services/resources/sso"
     checked: "2026-09-16"
   domain_verification:
-    support: "unknown"
+    support: "not_researched"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

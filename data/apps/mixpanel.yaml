@@ -34,7 +34,7 @@ capabilities:
     source: "https://docs.mixpanel.com/docs/access-security/two-factor-authentication"
     checked: "2026-09-16"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "undocumented"
   audit_logs:
     support: "supported"
     tier: "free"
@@ -65,8 +65,8 @@ capabilities:
     source: "https://docs.mixpanel.com/docs/orgs-and-projects/roles-and-permissions"
     checked: "2026-09-16"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

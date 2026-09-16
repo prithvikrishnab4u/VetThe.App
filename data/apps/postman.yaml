@@ -29,9 +29,9 @@ capabilities:
     source: "https://learning.postman.com/docs/administration/scim-provisioning/scim-provisioning-overview/"
     checked: "2026-09-15"
   mfa_enforcement:
-    support: "unknown"
+    support: "undocumented"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "undocumented"
   audit_logs:
     support: "supported"
     tier: "enterprise"
@@ -41,11 +41,11 @@ capabilities:
     source: "https://learning.postman.com/docs/administration/managing-your-team/audit-logs"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "unknown"
+    support: "not_researched"
   domain_verification:
-    support: "unknown"
+    support: "not_researched"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
     support: "supported"
     tier: "enterprise"
@@ -54,6 +54,6 @@ capabilities:
     source: "https://learning.postman.com/docs/administration/scim-provisioning/scim-provisioning-overview/"
     checked: "2026-09-15"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

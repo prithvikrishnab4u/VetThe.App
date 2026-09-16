@@ -15,7 +15,7 @@ capabilities:
     source: "https://help.front.com/en/articles/2280"
     checked: "2026-09-15"
   sso_enforcement:
-    support: "unknown"
+    support: "undocumented"
   scim:
     support: "supported"
     tier: "paid"
@@ -24,9 +24,9 @@ capabilities:
     source: "https://help.front.com/en/articles/2207"
     checked: "2026-09-15"
   mfa_enforcement:
-    support: "unknown"
+    support: "undocumented"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "undocumented"
   audit_logs:
     support: "supported"
     tier: "paid"
@@ -36,9 +36,9 @@ capabilities:
     source: "https://help.front.com/en/articles/2925696"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "unknown"
+    support: "not_researched"
   domain_verification:
-    support: "unknown"
+    support: "not_researched"
   custom_roles:
     support: "supported"
     tier: "enterprise"
@@ -47,8 +47,8 @@ capabilities:
     source: "https://front.com/pricing"
     checked: "2026-09-15"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

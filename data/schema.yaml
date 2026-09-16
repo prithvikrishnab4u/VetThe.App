@@ -26,8 +26,12 @@ support_levels:
     label: Partial
   - id: not_supported
     label: Not supported
-  - id: unknown
-    label: Unknown
+  # Checked against the vendor's own pages, which say nothing either way.
+  - id: undocumented
+    label: Not documented
+  # Nobody has researched this capability yet. The default for a new app.
+  - id: not_researched
+    label: Not researched
 
 # Minimum plan needed for a capability. Only set when support is supported or partial.
 tiers:

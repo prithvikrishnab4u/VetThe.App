@@ -34,7 +34,7 @@ capabilities:
     source: "https://www.intercom.com/help/en/articles/181-protect-your-account-with-2fa-google-sign-on-or-saml-sso"
     checked: "2026-09-15"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "undocumented"
   audit_logs:
     support: "supported"
     tier: "paid"
@@ -51,15 +51,15 @@ capabilities:
     source: "https://www.intercom.com/help/en/articles/3974587-integrate-with-an-identity-provider-and-log-in-with-saml-sso"
     checked: "2026-09-15"
   domain_verification:
-    support: "unknown"
+    support: "not_researched"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
     support: "supported"
     notes: "IdP groups pushed via SCIM can be mapped to teammate roles; plan requirement not stated"
     source: "https://www.intercom.com/help/en/articles/5798401-system-for-cross-domain-identity-management-scim-provisioning"
     checked: "2026-09-15"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

@@ -46,7 +46,7 @@ capabilities:
     source: "https://help.shopify.com/en/manual/your-account/users/security/user-management-activity-log"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "unknown"
+    support: "not_researched"
   domain_verification:
     support: "supported"
     tier: "enterprise"
@@ -55,7 +55,7 @@ capabilities:
     source: "https://help.shopify.com/en/manual/your-account/users/security/advanced-security-features/saml"
     checked: "2026-09-15"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
     support: "supported"
     tier: "enterprise"
@@ -64,6 +64,6 @@ capabilities:
     source: "https://help.shopify.com/en/manual/your-account/users/security/advanced-security-features/scim"
     checked: "2026-09-15"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

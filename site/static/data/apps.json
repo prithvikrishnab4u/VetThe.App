@@ -3,7 +3,7 @@
     "_id": "1password",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-14",
@@ -15,7 +15,7 @@
         "tier": "paid"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
         "support": "supported"
@@ -29,7 +29,7 @@
         "tier": "paid"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-14",
@@ -54,7 +54,7 @@
         "tier": "paid"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-14",
@@ -86,19 +86,19 @@
     "_id": "activecampaign",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
         "checked": "2026-09-15",
@@ -117,13 +117,13 @@
         "tier": "paid"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -155,7 +155,7 @@
     "_id": "adobe-creative-cloud",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -167,28 +167,28 @@
         "tier": "enterprise"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -200,7 +200,7 @@
         "support": "supported"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "productivity",
@@ -213,34 +213,34 @@
     "_id": "adp-workforce-now",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -254,7 +254,7 @@
         "tier": "add_on"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "hr",
@@ -267,40 +267,40 @@
     "_id": "airtable",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "scim": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "not_researched"
       }
     },
     "category": "productivity",
@@ -313,7 +313,7 @@
     "_id": "amazon-web-services-aws",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -324,16 +324,16 @@
         "tier": "free"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -354,7 +354,7 @@
         "support": "supported"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -366,7 +366,7 @@
         "support": "supported"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "infrastructure",
@@ -379,7 +379,7 @@
     "_id": "amplitude",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-16",
@@ -389,13 +389,13 @@
         "support": "supported"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
         "checked": "2026-09-16",
@@ -406,10 +406,10 @@
         "tier": "paid"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-16",
@@ -420,7 +420,7 @@
         "tier": "paid"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-16",
@@ -468,16 +468,16 @@
         "tier": "enterprise"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-16",
@@ -488,7 +488,7 @@
         "tier": "paid"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-16",
@@ -516,7 +516,7 @@
         "tier": "enterprise"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "productivity",
@@ -546,7 +546,7 @@
         "tier": "add_on"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
         "checked": "2026-09-14",
@@ -556,7 +556,7 @@
         "tier": "free"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
         "checked": "2026-09-14",
@@ -637,7 +637,7 @@
         "tier": "add_on"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
         "checked": "2026-09-14",
@@ -647,7 +647,7 @@
         "tier": "free"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
         "checked": "2026-09-14",
@@ -711,22 +711,22 @@
     "_id": "auth0",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -741,10 +741,10 @@
         "support": "supported"
       },
       "scim": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -790,16 +790,16 @@
         "support": "supported"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -814,10 +814,10 @@
         "support": "supported"
       },
       "scim": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -842,22 +842,22 @@
     "_id": "bamboohr",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -866,13 +866,13 @@
         "support": "supported"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -900,40 +900,40 @@
     "_id": "basecamp",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "scim": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "not_researched"
       }
     },
     "category": "collaboration",
@@ -946,10 +946,10 @@
     "_id": "bill-com",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "custom_roles": {
         "checked": "2026-09-15",
@@ -960,25 +960,25 @@
         "tier": "paid"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -989,7 +989,7 @@
         "tier": "enterprise"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "finance",
@@ -1018,7 +1018,7 @@
         "tier": "add_on"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
         "checked": "2026-09-15",
@@ -1027,7 +1027,7 @@
         "support": "supported"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
         "checked": "2026-09-15",
@@ -1061,7 +1061,7 @@
         "tier": "add_on"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -1093,40 +1093,40 @@
     "_id": "box",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "scim": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "not_researched"
       }
     },
     "category": "collaboration",
@@ -1139,7 +1139,7 @@
     "_id": "braze",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -1148,13 +1148,13 @@
         "support": "supported"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
         "checked": "2026-09-15",
@@ -1169,7 +1169,7 @@
         "support": "supported"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-15",
@@ -1209,7 +1209,7 @@
     "_id": "brex",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -1229,13 +1229,13 @@
         "tier": "paid"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -1258,7 +1258,7 @@
         "tier": "paid"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -1273,7 +1273,7 @@
         "tier": "paid"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "finance",
@@ -1286,7 +1286,7 @@
     "_id": "calendly",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -1298,13 +1298,13 @@
         "tier": "enterprise"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
         "checked": "2026-09-15",
@@ -1313,10 +1313,10 @@
         "support": "not_supported"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-15",
@@ -1327,7 +1327,7 @@
         "tier": "enterprise"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -1359,40 +1359,40 @@
     "_id": "canva",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "scim": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "not_researched"
       }
     },
     "category": "productivity",
@@ -1405,7 +1405,7 @@
     "_id": "circleci",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -1417,28 +1417,28 @@
         "tier": "free"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -1470,7 +1470,7 @@
     "_id": "cisco-webex",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -1480,16 +1480,16 @@
         "support": "supported"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -1498,7 +1498,7 @@
         "support": "supported"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-15",
@@ -1509,7 +1509,7 @@
         "tier": "paid"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -1521,7 +1521,7 @@
         "support": "supported"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "collaboration",
@@ -1534,7 +1534,7 @@
     "_id": "citrix-sharefile",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-16",
@@ -1544,16 +1544,16 @@
         "support": "supported"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-16",
@@ -1564,7 +1564,7 @@
         "tier": "paid"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-16",
@@ -1575,7 +1575,7 @@
         "tier": "enterprise"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-16",
@@ -1607,7 +1607,7 @@
     "_id": "clickup",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -1618,16 +1618,16 @@
         "tier": "enterprise"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -1638,7 +1638,7 @@
         "tier": "paid"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-15",
@@ -1649,7 +1649,7 @@
         "tier": "enterprise"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -1681,34 +1681,34 @@
     "_id": "coursera-for-business",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-16",
@@ -1722,7 +1722,7 @@
         "tier": "enterprise"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "productivity",
@@ -1735,40 +1735,40 @@
     "_id": "crowdstrike",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "scim": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "not_researched"
       }
     },
     "category": "security",
@@ -1781,7 +1781,7 @@
     "_id": "databricks",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -1790,13 +1790,13 @@
         "support": "supported"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
         "checked": "2026-09-15",
@@ -1805,10 +1805,10 @@
         "support": "supported"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-15",
@@ -1819,7 +1819,7 @@
         "tier": "paid"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -1848,7 +1848,7 @@
     "_id": "datadog",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-14",
@@ -1885,7 +1885,7 @@
         "support": "supported"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-14",
@@ -1896,7 +1896,7 @@
         "tier": "paid"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-14",
@@ -1924,22 +1924,22 @@
     "_id": "deel",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -1948,7 +1948,7 @@
         "support": "supported"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-15",
@@ -1957,7 +1957,7 @@
         "support": "supported"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -1986,7 +1986,7 @@
     "_id": "docker-hub",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -1998,7 +1998,7 @@
         "tier": "paid"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
         "checked": "2026-09-15",
@@ -2009,16 +2009,16 @@
         "tier": "enterprise"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-15",
@@ -2029,7 +2029,7 @@
         "tier": "enterprise"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -2062,13 +2062,13 @@
     "_id": "docusign",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
         "checked": "2026-09-15",
@@ -2078,16 +2078,16 @@
         "tier": "add_on"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-15",
@@ -2098,7 +2098,7 @@
         "tier": "add_on"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -2109,7 +2109,7 @@
         "tier": "add_on"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "productivity",
@@ -2122,40 +2122,40 @@
     "_id": "dropbox",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "scim": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "not_researched"
       }
     },
     "category": "collaboration",
@@ -2168,34 +2168,34 @@
     "_id": "egnyte",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-16",
@@ -2209,7 +2209,7 @@
         "tier": "paid"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "collaboration",
@@ -2222,13 +2222,13 @@
     "_id": "expensify",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
         "checked": "2026-09-15",
@@ -2237,10 +2237,10 @@
         "support": "supported"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -2249,7 +2249,7 @@
         "support": "supported"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-15",
@@ -2258,7 +2258,7 @@
         "support": "partial"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -2286,7 +2286,7 @@
     "_id": "figma",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-14",
@@ -2297,7 +2297,7 @@
         "tier": "paid"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
         "checked": "2026-09-14",
@@ -2308,7 +2308,7 @@
         "tier": "paid"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
         "checked": "2026-09-14",
@@ -2327,7 +2327,7 @@
         "tier": "add_on"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-14",
@@ -2374,7 +2374,7 @@
     "_id": "freshdesk",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -2385,16 +2385,16 @@
         "tier": "enterprise"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -2403,13 +2403,13 @@
         "support": "supported"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -2424,7 +2424,7 @@
         "tier": "paid"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "sales_marketing",
@@ -2437,7 +2437,7 @@
     "_id": "freshservice",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -2448,16 +2448,16 @@
         "tier": "enterprise"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -2466,13 +2466,13 @@
         "support": "supported"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -2487,7 +2487,7 @@
         "tier": "paid"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "infrastructure",
@@ -2500,7 +2500,7 @@
     "_id": "front",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -2520,19 +2520,19 @@
         "tier": "enterprise"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-15",
@@ -2543,7 +2543,7 @@
         "tier": "paid"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -2557,7 +2557,7 @@
         "tier": "paid"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "collaboration",
@@ -2570,7 +2570,7 @@
     "_id": "github",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-14",
@@ -2580,16 +2580,16 @@
         "support": "supported"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-14",
@@ -2647,7 +2647,7 @@
     "_id": "gitlab",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-14",
@@ -2712,7 +2712,7 @@
         "tier": "paid"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-14",
@@ -2744,7 +2744,7 @@
     "_id": "gong",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -2759,7 +2759,7 @@
         "support": "supported"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
         "checked": "2026-09-15",
@@ -2770,13 +2770,13 @@
         "tier": "paid"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-15",
@@ -2819,7 +2819,7 @@
     "_id": "googleworkspace",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-14",
@@ -2831,16 +2831,16 @@
         "tier": "paid"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-14",
@@ -2905,19 +2905,19 @@
     "_id": "grammarly",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
         "checked": "2026-09-16",
@@ -2928,10 +2928,10 @@
         "tier": "paid"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-16",
@@ -2959,7 +2959,7 @@
         "tier": "paid"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "productivity",
@@ -2972,7 +2972,7 @@
     "_id": "greenhouse",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -2984,13 +2984,13 @@
         "tier": "paid"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
         "checked": "2026-09-15",
@@ -3007,7 +3007,7 @@
         "tier": "paid"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-15",
@@ -3018,7 +3018,7 @@
         "tier": "paid"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -3050,40 +3050,40 @@
     "_id": "gusto",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "scim": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "not_researched"
       }
     },
     "category": "hr",
@@ -3096,28 +3096,28 @@
     "_id": "hootsuite",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-16",
@@ -3126,7 +3126,7 @@
         "support": "partial"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-16",
@@ -3158,7 +3158,7 @@
     "_id": "hubspot",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-14",
@@ -3169,16 +3169,16 @@
         "tier": "paid"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-14",
@@ -3235,7 +3235,7 @@
     "_id": "intercom",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -3247,10 +3247,10 @@
         "tier": "paid"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
         "checked": "2026-09-15",
@@ -3275,7 +3275,7 @@
         "tier": "paid"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-15",
@@ -3284,7 +3284,7 @@
         "support": "supported"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -3316,40 +3316,40 @@
     "_id": "lark",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "scim": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "not_researched"
       }
     },
     "category": "collaboration",
@@ -3362,7 +3362,7 @@
     "_id": "lastpass",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-16",
@@ -3373,16 +3373,16 @@
         "tier": "paid"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-16",
@@ -3408,7 +3408,7 @@
         "tier": "paid"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-16",
@@ -3419,7 +3419,7 @@
         "tier": "paid"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "security",
@@ -3432,7 +3432,7 @@
     "_id": "linear",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-14",
@@ -3444,7 +3444,7 @@
         "tier": "enterprise"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
         "checked": "2026-09-14",
@@ -3471,7 +3471,7 @@
         "tier": "enterprise"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
         "checked": "2026-09-14",
@@ -3520,19 +3520,19 @@
     "_id": "linkedin-learning",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
         "checked": "2026-09-16",
@@ -3541,10 +3541,10 @@
         "support": "supported"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-16",
@@ -3553,7 +3553,7 @@
         "support": "supported"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-16",
@@ -3565,7 +3565,7 @@
         "support": "supported"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "productivity",
@@ -3578,7 +3578,7 @@
     "_id": "loom",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -3589,7 +3589,7 @@
         "tier": "enterprise"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
         "checked": "2026-09-15",
@@ -3600,16 +3600,16 @@
         "tier": "enterprise"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-15",
@@ -3620,7 +3620,7 @@
         "tier": "enterprise"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -3652,7 +3652,7 @@
     "_id": "lucidchart",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -3663,13 +3663,13 @@
         "tier": "add_on"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
         "checked": "2026-09-15",
@@ -3688,7 +3688,7 @@
         "tier": "enterprise"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-15",
@@ -3718,7 +3718,7 @@
         "tier": "enterprise"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "productivity",
@@ -3737,19 +3737,19 @@
         "support": "supported"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-16",
@@ -3758,19 +3758,19 @@
         "support": "supported"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "sales_marketing",
@@ -3783,7 +3783,7 @@
     "_id": "marketo",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -3801,10 +3801,10 @@
         "support": "supported"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
         "checked": "2026-09-15",
@@ -3813,16 +3813,16 @@
         "support": "not_supported"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -3850,7 +3850,7 @@
     "_id": "microsoft-teams",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -3859,16 +3859,16 @@
         "support": "supported"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -3887,10 +3887,10 @@
         "tier": "free"
       },
       "scim": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -3899,7 +3899,7 @@
         "support": "supported"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "collaboration",
@@ -3912,7 +3912,7 @@
     "_id": "microsoft365",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -3922,16 +3922,16 @@
         "support": "supported"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -3958,7 +3958,7 @@
         "tier": "paid"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -3986,7 +3986,7 @@
     "_id": "miro",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -3998,7 +3998,7 @@
         "tier": "enterprise"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
         "checked": "2026-09-15",
@@ -4007,7 +4007,7 @@
         "support": "supported"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
         "checked": "2026-09-15",
@@ -4026,7 +4026,7 @@
         "tier": "paid"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-15",
@@ -4037,7 +4037,7 @@
         "tier": "enterprise"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -4069,7 +4069,7 @@
     "_id": "mixpanel",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-16",
@@ -4097,7 +4097,7 @@
         "tier": "paid"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
         "checked": "2026-09-16",
@@ -4114,7 +4114,7 @@
         "support": "supported"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-16",
@@ -4125,7 +4125,7 @@
         "tier": "enterprise"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-16",
@@ -4157,7 +4157,7 @@
     "_id": "monday-com",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -4169,13 +4169,13 @@
         "tier": "enterprise"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
         "checked": "2026-09-15",
@@ -4194,7 +4194,7 @@
         "tier": "free"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-15",
@@ -4205,7 +4205,7 @@
         "tier": "enterprise"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -4237,7 +4237,7 @@
     "_id": "mural",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -4248,16 +4248,16 @@
         "tier": "enterprise"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -4268,7 +4268,7 @@
         "tier": "enterprise"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-15",
@@ -4279,7 +4279,7 @@
         "tier": "enterprise"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -4293,7 +4293,7 @@
         "tier": "paid"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "collaboration",
@@ -4306,28 +4306,28 @@
     "_id": "navan",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-15",
@@ -4336,7 +4336,7 @@
         "support": "supported"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -4349,7 +4349,7 @@
         "support": "supported"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "finance",
@@ -4362,7 +4362,7 @@
     "_id": "netsuite",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -4371,16 +4371,16 @@
         "support": "supported"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -4390,13 +4390,13 @@
         "tier": "paid"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -4408,7 +4408,7 @@
         "support": "supported"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "finance",
@@ -4421,7 +4421,7 @@
     "_id": "new-relic",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -4433,16 +4433,16 @@
         "tier": "free"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -4451,7 +4451,7 @@
         "support": "supported"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-15",
@@ -4497,7 +4497,7 @@
     "_id": "notion",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-14",
@@ -4509,7 +4509,7 @@
         "tier": "enterprise"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
         "checked": "2026-09-14",
@@ -4520,7 +4520,7 @@
         "tier": "paid"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
         "checked": "2026-09-14",
@@ -4539,7 +4539,7 @@
         "tier": "enterprise"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-14",
@@ -4582,19 +4582,19 @@
     "_id": "outreach",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
         "checked": "2026-09-15",
@@ -4603,10 +4603,10 @@
         "support": "supported"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-15",
@@ -4615,7 +4615,7 @@
         "support": "supported"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -4643,7 +4643,7 @@
     "_id": "pagerduty",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-14",
@@ -4655,13 +4655,13 @@
         "tier": "paid"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
         "support": "supported"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
         "checked": "2026-09-14",
@@ -4672,10 +4672,10 @@
         "tier": "paid"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-14",
@@ -4685,7 +4685,7 @@
         "tier": "free"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-14",
@@ -4717,7 +4717,7 @@
     "_id": "pandadoc",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -4729,7 +4729,7 @@
         "tier": "enterprise"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
         "checked": "2026-09-15",
@@ -4772,7 +4772,7 @@
         "support": "supported"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -4804,7 +4804,7 @@
     "_id": "pipedrive",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -4816,16 +4816,16 @@
         "tier": "enterprise"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -4834,10 +4834,10 @@
         "support": "supported"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "session_controls": {
         "checked": "2026-09-15",
@@ -4877,19 +4877,19 @@
     "_id": "pluralsight",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
         "checked": "2026-09-16",
@@ -4898,16 +4898,16 @@
         "support": "supported"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-16",
@@ -4921,7 +4921,7 @@
         "tier": "enterprise"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "productivity",
@@ -4934,7 +4934,7 @@
     "_id": "postman",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -4946,10 +4946,10 @@
         "tier": "enterprise"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
         "checked": "2026-09-15",
@@ -4960,13 +4960,13 @@
         "tier": "enterprise"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-15",
@@ -4977,7 +4977,7 @@
         "tier": "enterprise"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -5009,7 +5009,7 @@
     "_id": "qualtrics",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-16",
@@ -5018,10 +5018,10 @@
         "support": "supported"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
         "checked": "2026-09-16",
@@ -5042,10 +5042,10 @@
         "support": "supported"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "session_controls": {
         "checked": "2026-09-16",
@@ -5081,7 +5081,7 @@
     "_id": "quickbooks-online",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -5091,16 +5091,16 @@
         "support": "supported"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -5123,7 +5123,7 @@
         "tier": "enterprise"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -5134,7 +5134,7 @@
         "tier": "enterprise"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "finance",
@@ -5147,7 +5147,7 @@
     "_id": "ramp",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -5166,13 +5166,13 @@
         "tier": "paid"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -5195,7 +5195,7 @@
         "tier": "paid"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -5225,7 +5225,7 @@
     "_id": "ringcentral",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -5237,16 +5237,16 @@
         "tier": "paid"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -5255,13 +5255,13 @@
         "support": "supported"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -5289,40 +5289,40 @@
     "_id": "rippling",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "scim": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "not_researched"
       }
     },
     "category": "hr",
@@ -5335,22 +5335,22 @@
     "_id": "salesforce",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -5375,7 +5375,7 @@
         "tier": "paid"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -5404,34 +5404,34 @@
     "_id": "sap-concur",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -5458,7 +5458,7 @@
     "_id": "servicenow",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -5467,13 +5467,13 @@
         "support": "supported"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
         "checked": "2026-09-15",
@@ -5500,7 +5500,7 @@
         "support": "supported"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -5512,7 +5512,7 @@
         "support": "supported"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "infrastructure",
@@ -5525,7 +5525,7 @@
     "_id": "shopify",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -5534,7 +5534,7 @@
         "support": "partial"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
         "checked": "2026-09-15",
@@ -5553,7 +5553,7 @@
         "tier": "enterprise"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -5578,7 +5578,7 @@
         "tier": "enterprise"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -5610,28 +5610,28 @@
     "_id": "shortcut",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-15",
@@ -5642,7 +5642,7 @@
         "tier": "add_on"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -5653,7 +5653,7 @@
         "tier": "enterprise"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "development",
@@ -5666,7 +5666,7 @@
     "_id": "slack",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-14",
@@ -5677,16 +5677,16 @@
         "tier": "enterprise"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-14",
@@ -5696,7 +5696,7 @@
         "tier": "free"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-14",
@@ -5739,7 +5739,7 @@
     "_id": "smartsheet",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -5751,7 +5751,7 @@
         "tier": "enterprise"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
         "checked": "2026-09-15",
@@ -5762,10 +5762,10 @@
         "tier": "paid"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -5776,7 +5776,7 @@
         "tier": "enterprise"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-15",
@@ -5787,7 +5787,7 @@
         "tier": "enterprise"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -5801,7 +5801,7 @@
         "tier": "enterprise"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "productivity",
@@ -5814,7 +5814,7 @@
     "_id": "snowflake",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-14",
@@ -5860,7 +5860,7 @@
         "support": "supported"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-14",
@@ -5889,19 +5889,19 @@
     "_id": "snyk",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
         "support": "supported"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
         "support": "supported"
@@ -5914,10 +5914,10 @@
         "support": "supported"
       },
       "scim": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "protocols": [
@@ -5928,7 +5928,7 @@
         "tier": "enterprise"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "security",
@@ -5941,40 +5941,40 @@
     "_id": "splunk",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "scim": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "not_researched"
       }
     },
     "category": "infrastructure",
@@ -5987,7 +5987,7 @@
     "_id": "sprout-social",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-16",
@@ -5996,13 +5996,13 @@
         "support": "supported"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
         "checked": "2026-09-16",
@@ -6017,13 +6017,13 @@
         "support": "supported"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-16",
@@ -6035,7 +6035,7 @@
         "support": "supported"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "sales_marketing",
@@ -6061,7 +6061,7 @@
         "support": "supported"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
         "checked": "2026-09-14",
@@ -6100,7 +6100,7 @@
         "support": "supported"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-14",
@@ -6128,7 +6128,7 @@
     "_id": "surveymonkey",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-16",
@@ -6140,7 +6140,7 @@
         "tier": "enterprise"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
         "checked": "2026-09-16",
@@ -6151,16 +6151,16 @@
         "tier": "enterprise"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-16",
@@ -6171,7 +6171,7 @@
         "tier": "enterprise"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-16",
@@ -6185,7 +6185,7 @@
         "tier": "enterprise"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "sales_marketing",
@@ -6198,7 +6198,7 @@
     "_id": "tableau",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -6209,16 +6209,16 @@
         "tier": "add_on"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -6239,7 +6239,7 @@
         "support": "supported"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -6252,7 +6252,7 @@
         "support": "supported"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "productivity",
@@ -6265,40 +6265,40 @@
     "_id": "teamviewer",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "scim": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "not_researched"
       }
     },
     "category": "infrastructure",
@@ -6327,7 +6327,7 @@
         "tier": "add_on"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
         "checked": "2026-09-15",
@@ -6336,7 +6336,7 @@
         "support": "supported"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
         "checked": "2026-09-15",
@@ -6370,7 +6370,7 @@
         "tier": "add_on"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -6402,7 +6402,7 @@
     "_id": "twilio",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-14",
@@ -6413,7 +6413,7 @@
         "tier": "free"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
         "checked": "2026-09-14",
@@ -6424,7 +6424,7 @@
         "tier": "add_on"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
         "checked": "2026-09-14",
@@ -6440,7 +6440,7 @@
         "tier": "paid"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-14",
@@ -6449,7 +6449,7 @@
         "support": "supported"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-14",
@@ -6481,7 +6481,7 @@
     "_id": "typeform",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-16",
@@ -6492,28 +6492,28 @@
         "tier": "enterprise"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-16",
@@ -6528,7 +6528,7 @@
         "tier": "enterprise"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "sales_marketing",
@@ -6541,28 +6541,28 @@
     "_id": "uber-for-business",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-15",
@@ -6571,7 +6571,7 @@
         "support": "supported"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -6583,7 +6583,7 @@
         "support": "partial"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "finance",
@@ -6596,40 +6596,40 @@
     "_id": "udemy-business",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "scim": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "not_researched"
       }
     },
     "category": "productivity",
@@ -6642,7 +6642,7 @@
     "_id": "workday",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -6651,16 +6651,16 @@
         "support": "supported"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -6669,13 +6669,13 @@
         "support": "supported"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -6688,7 +6688,7 @@
         "support": "supported"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "hr",
@@ -6701,7 +6701,7 @@
     "_id": "wrike",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -6712,7 +6712,7 @@
         "tier": "paid"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
         "checked": "2026-09-15",
@@ -6723,7 +6723,7 @@
         "tier": "paid"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
         "checked": "2026-09-15",
@@ -6742,7 +6742,7 @@
         "tier": "paid"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-15",
@@ -6753,7 +6753,7 @@
         "tier": "paid"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -6785,22 +6785,22 @@
     "_id": "xero",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -6809,19 +6809,19 @@
         "support": "supported"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "finance",
@@ -6834,34 +6834,34 @@
     "_id": "zapier",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-16",
@@ -6875,7 +6875,7 @@
         "tier": "enterprise"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "productivity",
@@ -6888,7 +6888,7 @@
     "_id": "zendesk",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -6900,16 +6900,16 @@
         "tier": "enterprise"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -6920,7 +6920,7 @@
         "tier": "paid"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "scim": {
         "checked": "2026-09-15",
@@ -6929,7 +6929,7 @@
         "support": "not_supported"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -6961,7 +6961,7 @@
     "_id": "zoho-crm",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-15",
@@ -6971,13 +6971,13 @@
         "support": "supported"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
         "checked": "2026-09-15",
@@ -6998,10 +6998,10 @@
         "support": "supported"
       },
       "scim": {
-        "support": "unknown"
+        "support": "undocumented"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -7013,7 +7013,7 @@
         "support": "supported"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "undocumented"
       }
     },
     "category": "sales_marketing",
@@ -7026,7 +7026,7 @@
     "_id": "zoom",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
         "checked": "2026-09-14",
@@ -7037,13 +7037,13 @@
         "tier": "paid"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
         "checked": "2026-09-14",
@@ -7115,40 +7115,40 @@
     "_id": "zoominfo",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "scim": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "not_researched"
       }
     },
     "category": "sales_marketing",
@@ -7161,40 +7161,40 @@
     "_id": "zscaler",
     "capabilities": {
       "api_token_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "audit_logs": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "custom_roles": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "domain_verification": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "phishing_resistant_mfa": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "scim": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "session_controls": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso": {
-        "support": "unknown"
+        "support": "not_researched"
       },
       "sso_enforcement": {
-        "support": "unknown"
+        "support": "not_researched"
       }
     },
     "category": "security",

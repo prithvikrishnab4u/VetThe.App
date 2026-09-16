@@ -36,7 +36,7 @@ capabilities:
     source: "https://www.notion.com/help/mfa-enforcement"
     checked: "2026-09-14"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "undocumented"
   audit_logs:
     support: "supported"
     tier: "enterprise"
@@ -60,10 +60,10 @@ capabilities:
     source: "https://www.notion.com/help/saml-sso-configuration"
     checked: "2026-09-14"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
     support: "supported"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

@@ -36,7 +36,7 @@ capabilities:
     source: "https://help.wrike.com/hc/en-us/articles/210324445-2-Step-Verification"
     checked: "2026-09-15"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "undocumented"
   audit_logs:
     support: "supported"
     tier: "paid"
@@ -59,10 +59,10 @@ capabilities:
     source: "https://help.wrike.com/hc/en-us/articles/209605769-SAML-SSO-Implementation-Guide"
     checked: "2026-09-15"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

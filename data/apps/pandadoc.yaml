@@ -59,13 +59,13 @@ capabilities:
     source: "https://support.pandadoc.com/en/articles/9715050-sso-implementation"
     checked: "2026-09-15"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
     support: "supported"
     notes: "SCIM 2.0 group-based provisioning maps IdP group membership to role, license and workspace; plan requirement not stated"
     source: "https://support.pandadoc.com/en/articles/9715050-sso-implementation"
     checked: "2026-09-15"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

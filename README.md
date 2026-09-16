@@ -77,7 +77,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ## 📋 Data Standards
 
-**Support:** `supported`, `partial`, `not_supported`, or `unknown`. Unknown is shown as unknown, never as "no".
+**Support:** `supported`, `partial`, `not_supported`, `undocumented`, or `not_researched`. `undocumented` means the vendor's own pages were checked and say nothing either way; `not_researched` means nobody has looked yet. Neither is ever shown as "no".
 
 **Tiers** are the **minimum** plan where a capability is available:
 - `free`: available without payment

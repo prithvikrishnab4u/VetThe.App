@@ -15,7 +15,7 @@ capabilities:
     source: "https://support.grammarly.com/hc/en-us/articles/360048683092-Set-up-SAML-single-sign-on"
     checked: "2026-09-16"
   sso_enforcement:
-    support: "unknown"
+    support: "undocumented"
   scim:
     support: "supported"
     tier: "enterprise"
@@ -24,11 +24,11 @@ capabilities:
     source: "https://support.grammarly.com/hc/en-us/articles/4403054674829-Configure-SCIM-provisioning"
     checked: "2026-09-16"
   mfa_enforcement:
-    support: "unknown"
+    support: "undocumented"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "undocumented"
   audit_logs:
-    support: "unknown"
+    support: "undocumented"
   jit_provisioning:
     support: "supported"
     tier: "paid"
@@ -37,15 +37,15 @@ capabilities:
     source: "https://support.grammarly.com/hc/en-us/articles/360048683092-Set-up-SAML-single-sign-on"
     checked: "2026-09-16"
   domain_verification:
-    support: "unknown"
+    support: "not_researched"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
     support: "supported"
     notes: "Admins can choose how long employees stay logged in before reauthenticating. Plan requirement not stated."
     source: "https://www.grammarly.com/security"
     checked: "2026-09-16"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

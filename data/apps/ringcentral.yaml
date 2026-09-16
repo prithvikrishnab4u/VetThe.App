@@ -18,14 +18,14 @@ capabilities:
     source: "https://support.ringcentral.com/article-v2/1149.html?brand=RingCentral&product=RingEX&language=en_US"
     checked: "2026-09-15"
   scim:
-    support: "unknown"
+    support: "undocumented"
   mfa_enforcement:
     support: "supported"
     notes: "Super admins can set up MFA for all users or selected roles; authenticator app (TOTP); plan requirement not stated"
     source: "https://support.ringcentral.com/article-v2/Setting-up-multi-factor-authentication-MFA.html?brand=RingCentral&product=RingEX&language=en_US&pills-nav=users"
     checked: "2026-09-15"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "undocumented"
   audit_logs:
     support: "supported"
     tier: "paid"
@@ -35,14 +35,14 @@ capabilities:
     source: "https://support.ringcentral.com/article-v2/10268-Audit-Trail-Overview-Administrators-RingCentral.html?brand=RingCentral&product=RingEX&language=en_US"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "unknown"
+    support: "not_researched"
   domain_verification:
-    support: "unknown"
+    support: "not_researched"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

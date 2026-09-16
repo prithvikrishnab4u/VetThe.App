@@ -12,9 +12,9 @@ capabilities:
     source: "https://learn.microsoft.com/en-us/microsoftteams/identify-models-authentication"
     checked: "2026-09-15"
   sso_enforcement:
-    support: "unknown"
+    support: "undocumented"
   scim:
-    support: "unknown"
+    support: "undocumented"
   mfa_enforcement:
     support: "supported"
     tier: "paid"
@@ -35,14 +35,14 @@ capabilities:
     source: "https://learn.microsoft.com/en-us/purview/audit-teams-audit-log-events"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "unknown"
+    support: "not_researched"
   domain_verification:
-    support: "unknown"
+    support: "not_researched"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

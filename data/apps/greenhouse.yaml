@@ -36,7 +36,7 @@ capabilities:
     source: "https://support.greenhouse.io/hc/en-us/articles/207083546-Set-up-two-factor-authentication"
     checked: "2026-09-15"
   phishing_resistant_mfa:
-    support: "unknown"
+    support: "undocumented"
   audit_logs:
     support: "supported"
     tier: "paid"
@@ -51,12 +51,12 @@ capabilities:
     source: "https://support.greenhouse.io/hc/en-us/articles/210259723-Single-sign-on-SSO-overview"
     checked: "2026-09-15"
   domain_verification:
-    support: "unknown"
+    support: "not_researched"
   custom_roles:
-    support: "unknown"
+    support: "not_researched"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"

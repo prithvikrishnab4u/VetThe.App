@@ -44,9 +44,9 @@ capabilities:
     source: "https://support.ramp.com/hc/en-us/articles/42279450714259-Ramp-Audit-Log"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "unknown"
+    support: "not_researched"
   domain_verification:
-    support: "unknown"
+    support: "not_researched"
   custom_roles:
     support: "supported"
     tier: "paid"
@@ -55,8 +55,8 @@ capabilities:
     source: "https://ramp.com/pricing"
     checked: "2026-09-15"
   group_role_mapping:
-    support: "unknown"
+    support: "not_researched"
   session_controls:
-    support: "unknown"
+    support: "not_researched"
   api_token_controls:
-    support: "unknown"
+    support: "not_researched"
