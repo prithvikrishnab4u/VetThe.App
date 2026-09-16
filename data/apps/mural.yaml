@@ -40,9 +40,14 @@ capabilities:
     source: "https://www.mural.co/pricing"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "not_researched"
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "Accounts are created on first SSO sign-in by default."
+    source: "https://support.mural.co/s/article/faq-sso"
+    checked: "2026-09-16"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
   custom_roles:
     support: "not_researched"
   group_role_mapping:

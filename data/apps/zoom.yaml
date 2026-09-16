@@ -57,7 +57,12 @@ capabilities:
     source: "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0060673"
     checked: "2026-09-14"
   domain_verification:
-    support: "not_researched"
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "Verify an associated domain by DNS TXT, HTML file or meta tag, then existing users on it must join the account."
+    source: "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0066259"
+    checked: "2026-09-16"
   custom_roles:
     support: "not_researched"
   group_role_mapping:

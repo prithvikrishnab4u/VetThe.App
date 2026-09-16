@@ -3041,13 +3041,18 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Domain ownership must be verified with a DNS TXT record to use Google Workspace.",
+        "plan": "All editions",
+        "source": "https://knowledge.workspace.google.com/admin/domains/verify-your-domain-for-google-workspace",
+        "support": "supported",
+        "tier": "paid"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-14",
@@ -4464,13 +4469,18 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Accounts are created on first SSO sign-in by default.",
+        "plan": "Business",
+        "source": "https://support.mural.co/s/article/faq-sso",
+        "support": "supported",
+        "tier": "paid"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -5689,7 +5699,7 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
@@ -7322,7 +7332,12 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Verify an associated domain by DNS TXT, HTML file or meta tag, then existing users on it must join the account.",
+        "plan": "Business",
+        "source": "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0066259",
+        "support": "supported",
+        "tier": "paid"
       },
       "group_role_mapping": {
         "support": "not_researched"

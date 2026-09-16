@@ -51,9 +51,14 @@ capabilities:
     source: "https://knowledge.workspace.google.com/admin/getting-started/editions/compare-business-editions"
     checked: "2026-09-14"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
   domain_verification:
-    support: "not_researched"
+    support: "supported"
+    tier: "paid"
+    plan: "All editions"
+    notes: "Domain ownership must be verified with a DNS TXT record to use Google Workspace."
+    source: "https://knowledge.workspace.google.com/admin/domains/verify-your-domain-for-google-workspace"
+    checked: "2026-09-16"
   custom_roles:
     support: "not_researched"
   group_role_mapping:
