@@ -10,7 +10,7 @@ _Last updated: 2026-09-16_
 
 ## In progress
 
-- **2026-09-16, batch 2:** JIT provisioning + domain verification for 30 apps (1password … gong, alphabetical, SSO-supported only). 10 parallel research agents, 3 apps each; they write findings to JSON, the main session applies edits.
+- Nothing running.
 
 ## Where the data stands
 
@@ -18,10 +18,10 @@ _Last updated: 2026-09-16_
 
 | | Count |
 |---|---|
-| Verified (has `source` + `checked`) | 476 |
+| Verified (has `source` + `checked`) | 583 |
 | Unverified (a value with no source, carried over from the old dataset) | 0 |
-| Not documented (checked, the vendor says nothing) | 193 |
-| Not researched | 615 |
+| Not documented (checked, the vendor says nothing) | 308 |
+| Not researched | 393 |
 
 ## Done
 
@@ -37,6 +37,10 @@ _Last updated: 2026-09-16_
   - Snyk: SSO and JIT are Enterprise (SAML/OIDC). MFA enforcement, passkeys and domain verification are not documented; 2FA enforcement and domain checks exist only for Snyk API & Web.
   - Session controls: Slack and Atlassian (Confluence, Jira) are free; Atlassian Guard adds more. HubSpot is free (idle timeout). GitHub and Notion are Enterprise. Linear is not documented.
   - Domain verification: 1Password Teams. Datadog, PagerDuty and Snowflake are not documented. Snowflake JIT is not documented.
+- [x] **Batches 2–4 (2026-09-16):** first pass on core capabilities for the 14 apps that still had none: Airtable, Basecamp, Box, Canva, CrowdStrike, Dropbox, Gusto, Lark, Rippling, Splunk, TeamViewer, Udemy Business, ZoomInfo and Zscaler. Also checked JIT provisioning and domain verification for every app that supports SSO. About 20 parallel agents wrote JSON, and the main session applied and committed each result.
+  - Many values are "not documented" because the help pages need JavaScript or a login, or returned errors: Salesforce, SAP Concur, BambooHR, BILL, LastPass, Hootsuite, Sprout Social and CrowdStrike. A manual check in a browser could turn these into real values.
+  - Some supported values from ZoomInfo, Zscaler, CrowdStrike and Dropbox have no tier yet. They need one before publishing.
+- [x] **BACKLOG.md:** 299 widely used apps not yet in the data, ranked P1/P2/P3. The agent wrote the websites from memory, so confirm them while researching.
 
 ## To do: setup (one-off, needed before website suggestions work; user will do this)
 
@@ -53,15 +57,15 @@ _Last updated: 2026-09-16_
 2. [ ] **Non-core capabilities**, most still not researched:
    | Capability | Not researched |
    |---|---|
-   | JIT provisioning | 70 |
-   | Domain verification | 81 |
-   | Group → role mapping | 95 |
-   | Custom roles | 97 |
-   | Session controls | 89 |
-   | API token controls | 99 |
+   | JIT provisioning | 10 (apps without SSO) |
+   | Domain verification | 13 |
+   | Group → role mapping | 92 |
+   | Custom roles | 95 |
+   | Session controls | 85 |
+   | API token controls | 98 |
    Suggested order (run as parallel agents, about 10 apps per agent, report-only, the main session edits): JIT and domain verification first (usually on the same SSO docs page), then roles, then sessions and tokens.
 3. [ ] Recheck values older than about 6 months (vendors change plans); `checked` dates make this a simple query
-4. [ ] Add more apps. Many requests will arrive through the website's "Add an app"
+4. [ ] Add more apps from [BACKLOG.md](BACKLOG.md), P1 first (core capabilities for each). Requests will also arrive through the website's "Add an app"
 
 ## To do: site
 
