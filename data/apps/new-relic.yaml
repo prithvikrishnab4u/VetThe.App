@@ -44,9 +44,17 @@ capabilities:
     source: "https://docs.newrelic.com/docs/accounts/accounts/account-maintenance/query-account-audit-logs-nrauditevent/"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "not_researched"
+    support: "not_supported"
+    notes: "Authentication domains offer only SCIM or manual user provisioning."
+    source: "https://docs.newrelic.com/docs/accounts/accounts-billing/new-relic-one-user-management/authentication-domains-saml-sso-scim-more/"
+    checked: "2026-09-16"
   domain_verification:
-    support: "not_researched"
+    support: "supported"
+    tier: "paid"
+    plan: "Pro"
+    notes: "Domain capture verifies domains with a DNS TXT record and routes new sign-ups into your organization."
+    source: "https://docs.newrelic.com/docs/accounts/accounts-billing/account-setup/domain-capture/"
+    checked: "2026-09-16"
   custom_roles:
     support: "not_researched"
   group_role_mapping:

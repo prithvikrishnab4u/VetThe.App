@@ -3322,13 +3322,13 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "support": "undocumented"
@@ -4690,13 +4690,21 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Domain capture verifies domains with a DNS TXT record and routes new sign-ups into your organization.",
+        "plan": "Pro",
+        "source": "https://docs.newrelic.com/docs/accounts/accounts-billing/account-setup/domain-capture/",
+        "support": "supported",
+        "tier": "paid"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Authentication domains offer only SCIM or manual user provisioning.",
+        "source": "https://docs.newrelic.com/docs/accounts/accounts-billing/new-relic-one-user-management/authentication-domains-saml-sso-scim-more/",
+        "support": "not_supported"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -5953,13 +5961,23 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Domains are claimed through Slack support and block unsanctioned workspaces on them; Pro and Business+ DNS verification only covers Slack Connect.",
+        "plan": "Enterprise",
+        "source": "https://slack.com/help/articles/115001379947-Claim-domains-on-Enterprise-Grid",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Custom SAML SSO supports Just In Time provisioning.",
+        "plan": "Business+",
+        "source": "https://slack.com/help/articles/205168057-Custom-SAML-single-sign-on",
+        "support": "supported",
+        "tier": "paid"
       },
       "mfa_enforcement": {
         "checked": "2026-09-14",
