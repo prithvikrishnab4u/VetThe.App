@@ -2077,7 +2077,12 @@
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "JIT is on by default with an SSO connection and creates accounts on first SSO sign-in; SSO requires Docker Business.",
+        "plan": "Business",
+        "source": "https://docs.docker.com/enterprise/security/provisioning/",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "mfa_enforcement": {
         "support": "undocumented"
@@ -2146,7 +2151,12 @@
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Users signing in with a reserved-domain email are created in the org's default account (or a SAML-specified account); requires the Access Management with SSO add-on.",
+        "plan": "Access Management with SSO",
+        "source": "https://support.docusign.com/s/document-item?language=en_US&bundleId=rrf1583359212854&topicId=ybc1583359179365.html&_LANG=enus",
+        "support": "supported",
+        "tier": "add_on"
       },
       "mfa_enforcement": {
         "support": "undocumented"
@@ -2242,13 +2252,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "Help center only documents email-domain allow lists for sharing and invitations, with no ownership proof or account takeover.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "Egnyte's Entra SSO guide says users must already be provisioned in Egnyte (manually, CSV, or SCIM); no JIT on first sign-in is documented.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "support": "undocumented"

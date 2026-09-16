@@ -25,9 +25,11 @@ capabilities:
   audit_logs:
     support: "undocumented"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Egnyte's Entra SSO guide says users must already be provisioned in Egnyte (manually, CSV, or SCIM); no JIT on first sign-in is documented."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Help center only documents email-domain allow lists for sharing and invitations, with no ownership proof or account takeover."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

@@ -29,7 +29,12 @@ capabilities:
   audit_logs:
     support: "undocumented"
   jit_provisioning:
-    support: "not_researched"
+    support: "supported"
+    tier: "add_on"
+    plan: "Access Management with SSO"
+    notes: "Users signing in with a reserved-domain email are created in the org's default account (or a SAML-specified account); requires the Access Management with SSO add-on."
+    source: "https://support.docusign.com/s/document-item?language=en_US&bundleId=rrf1583359212854&topicId=ybc1583359179365.html&_LANG=enus"
+    checked: "2026-09-16"
   domain_verification:
     support: "supported"
     tier: "add_on"
