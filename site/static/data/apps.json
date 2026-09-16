@@ -3832,7 +3832,12 @@
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Without SCIM, users are provisioned just in time when they first sign in with SSO.",
+        "plan": "Enterprise",
+        "source": "https://support.atlassian.com/loom/docs/configure-sso-and-directory-sync-scim",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "mfa_enforcement": {
         "support": "undocumented"
@@ -5271,7 +5276,7 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "checked": "2026-09-16",
@@ -6781,13 +6786,13 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "support": "undocumented"

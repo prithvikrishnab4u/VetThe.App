@@ -40,7 +40,12 @@ capabilities:
     source: "https://www.loom.com/pricing"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "not_researched"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Without SCIM, users are provisioned just in time when they first sign in with SSO."
+    source: "https://support.atlassian.com/loom/docs/configure-sso-and-directory-sync-scim"
+    checked: "2026-09-16"
   domain_verification:
     support: "supported"
     tier: "enterprise"
