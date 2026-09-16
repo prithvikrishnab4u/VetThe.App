@@ -29,9 +29,9 @@ capabilities:
     source: "https://www.workday.com/en-ca/why-workday/trust/security.html"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
   custom_roles:
     support: "not_researched"
   group_role_mapping:

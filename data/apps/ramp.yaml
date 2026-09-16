@@ -44,9 +44,9 @@ capabilities:
     source: "https://support.ramp.com/hc/en-us/articles/42279450714259-Ramp-Audit-Log"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
   custom_roles:
     support: "supported"
     tier: "paid"

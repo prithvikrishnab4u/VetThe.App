@@ -37,7 +37,7 @@ capabilities:
     source: "https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/additional-integrations/add-single-sign-on-to-a-portal"
     checked: "2026-09-15"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
   custom_roles:
     support: "supported"
     notes: "Admins create roles by selecting individual permissions; plan requirement not stated"
