@@ -38,7 +38,8 @@ capabilities:
     source: "https://help.zoho.com/portal/en/kb/accounts/manage-your-organization/saml/articles/configure-saml-in-zoho-accounts"
     checked: "2026-09-15"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Zoho Accounts lets org admins verify domains by TXT/CNAME/HTML, but the docs do not say this takes control of accounts or which plan is needed."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

@@ -53,7 +53,12 @@ capabilities:
     source: "https://support.monday.com/hc/en-us/articles/360000460605-SAML-Single-Sign-on"
     checked: "2026-09-15"
   domain_verification:
-    support: "not_researched"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Admins verify domains with a DNS TXT record and can block new accounts on those domains."
+    source: "https://support.monday.com/hc/en-us/articles/18705654232466-Claim-your-business-domain-on-monday-com"
+    checked: "2026-09-16"
   custom_roles:
     support: "not_researched"
   group_role_mapping:

@@ -4411,7 +4411,12 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Admins verify domains with a DNS TXT record and can block new accounts on those domains.",
+        "plan": "Enterprise",
+        "source": "https://support.monday.com/hc/en-us/articles/18705654232466-Claim-your-business-domain-on-monday-com",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "group_role_mapping": {
         "support": "not_researched"
@@ -5673,13 +5678,13 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "support": "undocumented"
@@ -7321,7 +7326,8 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "Zoho Accounts lets org admins verify domains by TXT/CNAME/HTML, but the docs do not say this takes control of accounts or which plan is needed.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
