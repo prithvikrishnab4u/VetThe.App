@@ -537,13 +537,13 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-16",
@@ -796,13 +796,16 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Dashboard SSO lets any IdP user sign in, but only invited tenant members can access a tenant.",
+        "source": "https://auth0.com/docs/get-started/manage-dashboard-access/configure-single-sign-on-for-auth0-dashboard",
+        "support": "not_supported"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -869,13 +872,18 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Members of Entra groups with group rules are added to the organization on first sign-in.",
+        "plan": "Free",
+        "source": "https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/assign-access-levels-by-group-membership?view=azure-devops",
+        "support": "supported",
+        "tier": "free"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",

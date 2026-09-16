@@ -35,9 +35,14 @@ capabilities:
     source: "https://learn.microsoft.com/en-us/azure/devops/organizations/audit/azure-devops-auditing"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "not_researched"
+    support: "supported"
+    tier: "free"
+    plan: "Free"
+    notes: "Members of Entra groups with group rules are added to the organization on first sign-in."
+    source: "https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/assign-access-levels-by-group-membership?view=azure-devops"
+    checked: "2026-09-16"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
   custom_roles:
     support: "not_researched"
   group_role_mapping:
