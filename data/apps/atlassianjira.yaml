@@ -66,6 +66,11 @@ capabilities:
     support: "not_researched"
   session_controls:
     support: "supported"
+    tier: "free"
+    plan: "All plans"
+    notes: "Admins set an idle session duration in authentication policies. Different durations per policy and forced session expiration need the Atlassian Guard Standard add-on."
+    source: "https://support.atlassian.com/security-and-access-policies/docs/update-idle-session-duration/"
+    checked: "2026-09-16"
   api_token_controls:
     support: "supported"
     tier: "add_on"

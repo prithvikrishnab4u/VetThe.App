@@ -47,7 +47,8 @@ capabilities:
     source: "https://support.pagerduty.com/main/docs/sso"
     checked: "2026-09-14"
   domain_verification:
-    support: "supported"
+    support: "undocumented"
+    notes: "SSO docs don't mention claiming a domain. DNS checks only cover custom status page URLs."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

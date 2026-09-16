@@ -43,7 +43,8 @@ capabilities:
     source: "https://docs.datadoghq.com/account_management/saml/"
     checked: "2026-09-14"
   domain_verification:
-    support: "supported"
+    support: "undocumented"
+    notes: "SAML docs don't mention verifying or claiming a domain."
   custom_roles:
     support: "supported"
     notes: "Plan requirement not stated"

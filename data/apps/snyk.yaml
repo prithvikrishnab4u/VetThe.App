@@ -9,22 +9,31 @@ capabilities:
   sso:
     support: "supported"
     tier: "enterprise"
+    plan: "Enterprise"
     protocols: ["SAML", "OIDC"]
+    source: "https://docs.snyk.io/platform-administration/user-management/single-sign-on-sso-for-authentication-to-snyk"
+    checked: "2026-09-16"
   sso_enforcement:
     support: "undocumented"
   scim:
     support: "undocumented"
   mfa_enforcement:
-    support: "supported"
-    tier: "enterprise"
+    support: "undocumented"
+    notes: "Docs only show 2FA enforcement for Snyk API & Web accounts. For the main platform, MFA is left to the login provider or SSO IdP."
   phishing_resistant_mfa:
-    support: "supported"
+    support: "undocumented"
   audit_logs:
     support: "undocumented"
   jit_provisioning:
     support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Users are created on first SSO login."
+    source: "https://docs.snyk.io/platform-administration/user-management/single-sign-on-sso-for-authentication-to-snyk"
+    checked: "2026-09-16"
   domain_verification:
-    support: "supported"
+    support: "undocumented"
+    notes: "Snyk API & Web verifies domains of scan targets only, not for account or login claiming."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

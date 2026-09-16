@@ -18,7 +18,12 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Owners verify a domain by email code or DNS TXT record. On Business it can also block new accounts made with that domain.",
+        "plan": "Teams",
+        "source": "https://support.1password.com/breach-report/",
+        "support": "supported",
+        "tier": "paid"
       },
       "group_role_mapping": {
         "checked": "2026-09-14",
@@ -588,7 +593,12 @@
         "tier": "add_on"
       },
       "session_controls": {
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Admins set an idle session duration in authentication policies. Different durations per policy and forced session expiration need the Atlassian Guard Standard add-on.",
+        "plan": "All plans",
+        "source": "https://support.atlassian.com/security-and-access-policies/docs/update-idle-session-duration/",
+        "support": "supported",
+        "tier": "free"
       },
       "sso": {
         "checked": "2026-09-14",
@@ -679,7 +689,12 @@
         "tier": "add_on"
       },
       "session_controls": {
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Admins set an idle session duration in authentication policies. Different durations per policy and forced session expiration need the Atlassian Guard Standard add-on.",
+        "plan": "All plans",
+        "source": "https://support.atlassian.com/security-and-access-policies/docs/update-idle-session-duration/",
+        "support": "supported",
+        "tier": "free"
       },
       "sso": {
         "checked": "2026-09-14",
@@ -1864,7 +1879,8 @@
         "support": "supported"
       },
       "domain_verification": {
-        "support": "supported"
+        "notes": "SAML docs don't mention verifying or claiming a domain.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "checked": "2026-09-14",
@@ -2614,7 +2630,12 @@
         "tier": "enterprise"
       },
       "session_controls": {
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Org owners can view and revoke members' SAML sessions. Needs SAML SSO, which is an Enterprise feature.",
+        "plan": "Enterprise Cloud",
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/organizations/granting-access-to-your-organization-with-saml-single-sign-on/viewing-and-managing-a-members-saml-access-to-your-organization",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "sso": {
         "checked": "2026-09-14",
@@ -3203,7 +3224,12 @@
         "tier": "paid"
       },
       "session_controls": {
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Super Admins set the idle session timeout (default 24 hours). Admins can't log out other users' sessions.",
+        "plan": "All products and plans",
+        "source": "https://knowledge.hubspot.com/account-management/log-out-of-hubspot#customize-inactive-session-timeout",
+        "support": "supported",
+        "tier": "free"
       },
       "sso": {
         "checked": "2026-09-14",
@@ -3488,7 +3514,8 @@
         "tier": "enterprise"
       },
       "session_controls": {
-        "support": "supported"
+        "notes": "Docs only cover users revoking their own sessions. Nothing on admin-set session length or revoking members' sessions.",
+        "support": "undocumented"
       },
       "sso": {
         "checked": "2026-09-14",
@@ -4550,7 +4577,12 @@
         "tier": "enterprise"
       },
       "session_controls": {
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Workspace owners set session duration from 1 hour to 180 days.",
+        "plan": "Enterprise",
+        "source": "https://www.notion.com/help/managed-users-dashboard",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "sso": {
         "checked": "2026-09-14",
@@ -4658,7 +4690,8 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "supported"
+        "notes": "SSO docs don't mention claiming a domain. DNS checks only cover custom status page URLs.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
@@ -5707,7 +5740,12 @@
         "tier": "paid"
       },
       "session_controls": {
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Admins set session duration for desktop and mobile. Enterprise can also set it for subsets of users.",
+        "plan": "All plans",
+        "source": "https://slack.com/help/articles/115005223763-Manage-session-duration-",
+        "support": "supported",
+        "tier": "free"
       },
       "sso": {
         "checked": "2026-09-14",
@@ -5830,7 +5868,8 @@
         "support": "supported"
       },
       "domain_verification": {
-        "support": "supported"
+        "notes": "No domain verification. ALLOWED_USER_DOMAINS on the SAML integration limits login domains but doesn't prove ownership.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "checked": "2026-09-14",
@@ -5839,7 +5878,8 @@
         "support": "supported"
       },
       "jit_provisioning": {
-        "support": "supported"
+        "notes": "SAML docs expect users to already exist in Snowflake (created by hand or through SCIM).",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-14",
@@ -5898,20 +5938,26 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "supported"
+        "notes": "Snyk API & Web verifies domains of scan targets only, not for account or login claiming.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "supported"
-      },
-      "mfa_enforcement": {
+        "checked": "2026-09-16",
+        "notes": "Users are created on first SSO login.",
+        "plan": "Enterprise",
+        "source": "https://docs.snyk.io/platform-administration/user-management/single-sign-on-sso-for-authentication-to-snyk",
         "support": "supported",
         "tier": "enterprise"
       },
+      "mfa_enforcement": {
+        "notes": "Docs only show 2FA enforcement for Snyk API & Web accounts. For the main platform, MFA is left to the login provider or SSO IdP.",
+        "support": "undocumented"
+      },
       "phishing_resistant_mfa": {
-        "support": "supported"
+        "support": "undocumented"
       },
       "scim": {
         "support": "undocumented"
@@ -5920,10 +5966,13 @@
         "support": "not_researched"
       },
       "sso": {
+        "checked": "2026-09-16",
+        "plan": "Enterprise",
         "protocols": [
           "SAML",
           "OIDC"
         ],
+        "source": "https://docs.snyk.io/platform-administration/user-management/single-sign-on-sso-for-authentication-to-snyk",
         "support": "supported",
         "tier": "enterprise"
       },

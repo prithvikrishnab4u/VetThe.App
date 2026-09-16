@@ -53,5 +53,10 @@ capabilities:
     support: "not_researched"
   session_controls:
     support: "supported"
+    tier: "free"
+    plan: "All plans"
+    notes: "Admins set session duration for desktop and mobile. Enterprise can also set it for subsets of users."
+    source: "https://slack.com/help/articles/115005223763-Manage-session-duration-"
+    checked: "2026-09-16"
   api_token_controls:
     support: "not_researched"

@@ -39,9 +39,11 @@ capabilities:
     source: "https://docs.snowflake.com/en/sql-reference/account-usage/login_history"
     checked: "2026-09-14"
   jit_provisioning:
-    support: "supported"
+    support: "undocumented"
+    notes: "SAML docs expect users to already exist in Snowflake (created by hand or through SCIM)."
   domain_verification:
-    support: "supported"
+    support: "undocumented"
+    notes: "No domain verification. ALLOWED_USER_DOMAINS on the SAML integration limits login domains but doesn't prove ownership."
   custom_roles:
     support: "supported"
     notes: "Custom account roles and role hierarchies"

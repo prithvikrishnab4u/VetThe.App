@@ -65,5 +65,10 @@ capabilities:
     support: "not_researched"
   session_controls:
     support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Workspace owners set session duration from 1 hour to 180 days."
+    source: "https://www.notion.com/help/managed-users-dashboard"
+    checked: "2026-09-16"
   api_token_controls:
     support: "not_researched"

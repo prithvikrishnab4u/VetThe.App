@@ -56,5 +56,10 @@ capabilities:
     support: "not_researched"
   session_controls:
     support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise Cloud"
+    notes: "Org owners can view and revoke members' SAML sessions. Needs SAML SSO, which is an Enterprise feature."
+    source: "https://docs.github.com/en/enterprise-cloud@latest/organizations/granting-access-to-your-organization-with-saml-single-sign-on/viewing-and-managing-a-members-saml-access-to-your-organization"
+    checked: "2026-09-16"
   api_token_controls:
     support: "not_researched"

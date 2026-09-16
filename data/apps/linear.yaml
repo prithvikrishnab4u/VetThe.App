@@ -67,6 +67,7 @@ capabilities:
     source: "https://linear.app/docs/scim"
     checked: "2026-09-14"
   session_controls:
-    support: "supported"
+    support: "undocumented"
+    notes: "Docs only cover users revoking their own sessions. Nothing on admin-set session length or revoking members' sessions."
   api_token_controls:
     support: "not_researched"

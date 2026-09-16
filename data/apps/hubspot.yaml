@@ -57,5 +57,10 @@ capabilities:
     support: "not_researched"
   session_controls:
     support: "supported"
+    tier: "free"
+    plan: "All products and plans"
+    notes: "Super Admins set the idle session timeout (default 24 hours). Admins can't log out other users' sessions."
+    source: "https://knowledge.hubspot.com/account-management/log-out-of-hubspot#customize-inactive-session-timeout"
+    checked: "2026-09-16"
   api_token_controls:
     support: "not_researched"
