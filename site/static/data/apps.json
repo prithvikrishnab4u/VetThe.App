@@ -3905,7 +3905,12 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Domain Control requires verifying the domain (DNS, form, hosting or email) and routes sign-ups into the Enterprise account.",
+        "plan": "Enterprise",
+        "source": "https://help.lucid.co/hc/en-us/articles/360049421752-Lucid-admin-panel-Security-settings",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "group_role_mapping": {
         "support": "not_researched"
@@ -5372,13 +5377,13 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -6874,13 +6879,16 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "DNS verification lets only your organization provision business accounts on the domain; taking over existing accounts is not described.",
+        "source": "https://developer.uber.com/docs/businesses/sso/configure/domain-ownership-verification",
+        "support": "partial"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "support": "undocumented"

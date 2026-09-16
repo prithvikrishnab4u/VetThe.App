@@ -26,9 +26,12 @@ capabilities:
   audit_logs:
     support: "undocumented"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
   domain_verification:
-    support: "not_researched"
+    support: "partial"
+    notes: "DNS verification lets only your organization provision business accounts on the domain; taking over existing accounts is not described."
+    source: "https://developer.uber.com/docs/businesses/sso/configure/domain-ownership-verification"
+    checked: "2026-09-16"
   custom_roles:
     support: "not_researched"
   group_role_mapping:

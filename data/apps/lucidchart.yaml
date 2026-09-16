@@ -47,7 +47,12 @@ capabilities:
     source: "https://help.lucid.co/hc/en-us/articles/360049898191-SAML-overview"
     checked: "2026-09-15"
   domain_verification:
-    support: "not_researched"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Domain Control requires verifying the domain (DNS, form, hosting or email) and routes sign-ups into the Enterprise account."
+    source: "https://help.lucid.co/hc/en-us/articles/360049421752-Lucid-admin-panel-Security-settings"
+    checked: "2026-09-16"
   custom_roles:
     support: "not_researched"
   group_role_mapping:
