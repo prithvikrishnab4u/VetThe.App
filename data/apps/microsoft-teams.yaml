@@ -35,9 +35,14 @@ capabilities:
     source: "https://learn.microsoft.com/en-us/purview/audit-teams-audit-log-events"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
   domain_verification:
-    support: "not_researched"
+    support: "supported"
+    tier: "paid"
+    plan: "Microsoft 365 Business"
+    notes: "Custom domains are verified with a DNS TXT record in the Microsoft 365 admin center."
+    source: "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/add-domain"
+    checked: "2026-09-16"
   custom_roles:
     support: "not_researched"
   group_role_mapping:

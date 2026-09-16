@@ -35,9 +35,9 @@ capabilities:
     source: "https://support.ringcentral.com/article-v2/10268-Audit-Trail-Overview-Administrators-RingCentral.html?brand=RingCentral&product=RingEX&language=en_US"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
   custom_roles:
     support: "not_researched"
   group_role_mapping:

@@ -4096,13 +4096,18 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Custom domains are verified with a DNS TXT record in the Microsoft 365 admin center.",
+        "plan": "Microsoft 365 Business",
+        "source": "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/add-domain",
+        "support": "supported",
+        "tier": "paid"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -5495,13 +5500,13 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -7175,13 +7180,23 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Verify by DNS TXT, meta tag or HTML file; enables SSO and domain capture.",
+        "plan": "Team",
+        "source": "https://help.zapier.com/hc/en-us/articles/34976125153677-Verify-ownership-of-your-domain-in-Zapier",
+        "support": "supported",
+        "tier": "paid"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "SAML SSO supports Just-in-Time provisioning.",
+        "plan": "Team",
+        "source": "https://help.zapier.com/hc/en-us/articles/8496279747085-Set-up-single-sign-on-with-SAML",
+        "support": "supported",
+        "tier": "paid"
       },
       "mfa_enforcement": {
         "support": "undocumented"
