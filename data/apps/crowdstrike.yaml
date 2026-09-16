@@ -7,17 +7,25 @@ status: "draft"
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
-    support: "not_researched"
+    support: "supported"
+    notes: "Vendor API docs reference customer accounts with single sign-on enabled; public docs do not state the protocol or plan."
+    source: "https://developer.crowdstrike.com/cac/terraform/provider/user-management/resources/user/"
+    checked: "2026-09-16"
   sso_enforcement:
-    support: "not_researched"
+    support: "undocumented"
   scim:
-    support: "not_researched"
+    support: "undocumented"
   mfa_enforcement:
-    support: "not_researched"
+    support: "supported"
+    tier: "paid"
+    plan: "Falcon Go"
+    notes: "2FA/MFA is required for every Falcon console login with a password."
+    source: "https://go.crowdstrike.com/buy-falcon-customer-resources-mv.html"
+    checked: "2026-09-16"
   phishing_resistant_mfa:
-    support: "not_researched"
+    support: "undocumented"
   audit_logs:
-    support: "not_researched"
+    support: "undocumented"
   jit_provisioning:
     support: "not_researched"
   domain_verification:

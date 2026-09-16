@@ -1901,7 +1901,7 @@
         "support": "not_researched"
       },
       "audit_logs": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "custom_roles": {
         "support": "not_researched"
@@ -1916,22 +1916,30 @@
         "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "2FA/MFA is required for every Falcon console login with a password.",
+        "plan": "Falcon Go",
+        "source": "https://go.crowdstrike.com/buy-falcon-customer-resources-mv.html",
+        "support": "supported",
+        "tier": "paid"
       },
       "phishing_resistant_mfa": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "scim": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "session_controls": {
         "support": "not_researched"
       },
       "sso": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Vendor API docs reference customer accounts with single sign-on enabled; public docs do not state the protocol or plan.",
+        "source": "https://developer.crowdstrike.com/cac/terraform/provider/user-management/resources/user/",
+        "support": "supported"
       },
       "sso_enforcement": {
-        "support": "not_researched"
+        "support": "undocumented"
       }
     },
     "category": "security",
@@ -2302,7 +2310,12 @@
         "support": "not_researched"
       },
       "audit_logs": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Admin console Activity reports on team plans; file-level events need Advanced or higher.",
+        "plan": "Standard",
+        "source": "https://help.dropbox.com/account-access/view-activity",
+        "support": "supported",
+        "tier": "paid"
       },
       "custom_roles": {
         "support": "not_researched"
@@ -2317,22 +2330,53 @@
         "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Team admins can require 2-step verification for all members, with an exception list.",
+        "plan": "Standard",
+        "source": "https://help.dropbox.com/security/2-factor-authentication",
+        "support": "supported",
+        "tier": "paid"
       },
       "phishing_resistant_mfa": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "WebAuthn/U2F security keys and passkeys are supported for 2-factor authentication.",
+        "plan": "Basic",
+        "source": "https://help.dropbox.com/account-access/enable-2-factor-authentication",
+        "support": "supported",
+        "tier": "free"
       },
       "scim": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Vendor docs describe provisioning and deprovisioning from Microsoft Entra ID; SCIM is not named and the required plan is not stated.",
+        "source": "https://help.dropbox.com/integrations/microsoft-entra-id",
+        "support": "supported"
       },
       "session_controls": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Admins set fixed and idle web session lengths and can log members out of sessions.",
+        "plan": "Standard",
+        "source": "https://help.dropbox.com/security/web-session-control",
+        "support": "supported",
+        "tier": "paid"
       },
       "sso": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Available on Advanced, Business Plus and Enterprise.",
+        "plan": "Advanced",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://help.dropbox.com/security/supported-identity-providers",
+        "support": "supported",
+        "tier": "paid"
       },
       "sso_enforcement": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "SSO can be set to Required, which disables Dropbox passwords; admins keep their Dropbox credentials.",
+        "plan": "Advanced",
+        "source": "https://help.dropbox.com/security/sso-admin",
+        "support": "supported",
+        "tier": "paid"
       }
     },
     "category": "collaboration",

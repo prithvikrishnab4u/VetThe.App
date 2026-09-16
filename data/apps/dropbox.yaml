@@ -7,17 +7,46 @@ status: "draft"
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
-    support: "not_researched"
+    support: "supported"
+    tier: "paid"
+    plan: "Advanced"
+    protocols: ["SAML"]
+    notes: "Available on Advanced, Business Plus and Enterprise."
+    source: "https://help.dropbox.com/security/supported-identity-providers"
+    checked: "2026-09-16"
   sso_enforcement:
-    support: "not_researched"
+    support: "supported"
+    tier: "paid"
+    plan: "Advanced"
+    notes: "SSO can be set to Required, which disables Dropbox passwords; admins keep their Dropbox credentials."
+    source: "https://help.dropbox.com/security/sso-admin"
+    checked: "2026-09-16"
   scim:
-    support: "not_researched"
+    support: "supported"
+    notes: "Vendor docs describe provisioning and deprovisioning from Microsoft Entra ID; SCIM is not named and the required plan is not stated."
+    source: "https://help.dropbox.com/integrations/microsoft-entra-id"
+    checked: "2026-09-16"
   mfa_enforcement:
-    support: "not_researched"
+    support: "supported"
+    tier: "paid"
+    plan: "Standard"
+    notes: "Team admins can require 2-step verification for all members, with an exception list."
+    source: "https://help.dropbox.com/security/2-factor-authentication"
+    checked: "2026-09-16"
   phishing_resistant_mfa:
-    support: "not_researched"
+    support: "supported"
+    tier: "free"
+    plan: "Basic"
+    notes: "WebAuthn/U2F security keys and passkeys are supported for 2-factor authentication."
+    source: "https://help.dropbox.com/account-access/enable-2-factor-authentication"
+    checked: "2026-09-16"
   audit_logs:
-    support: "not_researched"
+    support: "supported"
+    tier: "paid"
+    plan: "Standard"
+    notes: "Admin console Activity reports on team plans; file-level events need Advanced or higher."
+    source: "https://help.dropbox.com/account-access/view-activity"
+    checked: "2026-09-16"
   jit_provisioning:
     support: "not_researched"
   domain_verification:
@@ -27,6 +56,11 @@ capabilities:
   group_role_mapping:
     support: "not_researched"
   session_controls:
-    support: "not_researched"
+    support: "supported"
+    tier: "paid"
+    plan: "Standard"
+    notes: "Admins set fixed and idle web session lengths and can log members out of sessions."
+    source: "https://help.dropbox.com/security/web-session-control"
+    checked: "2026-09-16"
   api_token_controls:
     support: "not_researched"
