@@ -40,7 +40,7 @@ capabilities:
     source: "https://www.braze.com/docs/user_guide/administrative/access_braze/single_sign_on/saml_jit"
     checked: "2026-09-15"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
   custom_roles:
     support: "not_researched"
   group_role_mapping:
