@@ -1,10 +1,10 @@
-{{ $schema := hugo.Data.schema }}
+{{ $schema := site.Data.schema }}
 {{ $tierLabels := dict }}
 {{ range $schema.tiers }}{{ $tierLabels = merge $tierLabels (dict .id .label) }}{{ end }}
 
 {{/* Coverage: every app × capability is one data point */}}
 {{ $points := 0 }}{{ $verified := 0 }}{{ $unknown := 0 }}
-{{ range hugo.Data.apps }}
+{{ range site.Data.apps }}
     {{ $app := . }}
     {{ range $schema.capabilities }}
         {{ $cap := (index $app.capabilities .id) | default (dict) }}
@@ -104,7 +104,7 @@
                 </thead>
 
                 <tbody id="tableBody" class="divide-y divide-gray-100 bg-white">
-                    {{ range hugo.Data.apps }}
+                    {{ range site.Data.apps }}
                     {{ $app := . }}
                     <tr class="hover:bg-blue-50/40 transition-colors group" data-app="{{ $app.name }}"
                         data-category="{{ $app.category }}">
