@@ -2,38 +2,60 @@ name: "Asana"
 category: "productivity"
 website: "https://asana.com"
 description: "A work management platform that helps teams orchestrate their work."
+status: "draft"
 
-sso:
-  supported: true
-  protocols: ["SAML"]
-  tier: "enterprise"
-
-scim:
-  supported: "full"
-  version: "2.0"
-  tier: "enterprise"
-
-mfa:
-  supported: true
-  types: ["TOTP", "SMS"]
-  enforcement: "admin_enforced"
-  tier: "free"
-
-compliance:
-  soc2: true
-  iso27001: true
-
-meta:
-  last_verified: "2025-12-31"
-  ready_to_publish: true
-
-# Unused fields - tracked but not displayed in main table
-# Currently not using session and audit fields, but doing research on these fields.
-session:
-  timeout_configurable: true
-  max_duration: "14 days"
-
-audit:
-  logs_available: true
-  retention_period: "90 days"
-  tier: "enterprise"
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "\"SAML authentication\" listed on Enterprise per pricing page; Google SSO is available from Starter"
+    protocols: ["SAML"]
+    source: "https://asana.com/pricing"
+    checked: "2026-09-16"
+  sso_enforcement:
+    support: "unknown"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "\"User provisioning (SCIM)\" listed on Enterprise per pricing page"
+    source: "https://asana.com/pricing"
+    checked: "2026-09-16"
+  mfa_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Starter"
+    notes: "\"Enforce two-factor authentication for domain members and guests\" listed from Starter upward per pricing page"
+    source: "https://asana.com/pricing"
+    checked: "2026-09-16"
+  phishing_resistant_mfa:
+    support: "unknown"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise+, or Enterprise with the Compliance Management add-on"
+    notes: "Audit log API for service accounts; in-app view and retention not stated on this page"
+    source: "https://developers.asana.com/docs/audit-log-api"
+    checked: "2026-09-14"
+  jit_provisioning:
+    support: "unknown"
+  domain_verification:
+    support: "unknown"
+  custom_roles:
+    support: "unknown"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "supported"
+    notes: "\"Session duration limits\" listed among admin console controls; plan requirement not stated"
+    source: "https://asana.com/features/admin-security"
+    checked: "2026-09-16"
+  api_token_controls:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise+"
+    notes: "Personal access tokens are persistent by default; Enterprise+ adds admin controls over how PATs are handled via the Manage apps panel"
+    source: "https://developers.asana.com/docs/personal-access-token"
+    checked: "2026-09-16"

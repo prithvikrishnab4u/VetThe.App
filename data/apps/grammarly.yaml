@@ -2,23 +2,50 @@ name: "Grammarly"
 category: "productivity"
 website: "https://www.grammarly.com"
 description: "AI-powered writing assistant that helps individuals and teams communicate effectively."
-sso:
-  supported: true
-  protocols: ["SAML"]
-  tier: "enterprise"
-  sp_initiated: true
-  jit_provisioning: true
-  domain_claiming: true
-mfa:
-  supported: true
-  types: ["TOTP"]
-  enforcement: "admin_enforced"
-  tier: "enterprise"
-  adaptive_mfa: false
-  phishing_resistant: false
-compliance:
-  soc2: true
-  iso27001: true
-meta:
-  last_verified: "2026-01-02"
-  ready_to_publish: true
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "Included in Grammarly Business, Enterprise and Grammarly for Education plans."
+    protocols: ["SAML"]
+    source: "https://support.grammarly.com/hc/en-us/articles/360048683092-Set-up-SAML-single-sign-on"
+    checked: "2026-09-16"
+  sso_enforcement:
+    support: "unknown"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Assigning the app in the IdP creates the member account; unassigning deactivates the account and invalidates sessions. Group provisioning available on request."
+    source: "https://support.grammarly.com/hc/en-us/articles/4403054674829-Configure-SCIM-provisioning"
+    checked: "2026-09-16"
+  mfa_enforcement:
+    support: "unknown"
+  phishing_resistant_mfa:
+    support: "unknown"
+  audit_logs:
+    support: "unknown"
+  jit_provisioning:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "A user without an existing Grammarly account has one created when they sign in via SSO."
+    source: "https://support.grammarly.com/hc/en-us/articles/360048683092-Set-up-SAML-single-sign-on"
+    checked: "2026-09-16"
+  domain_verification:
+    support: "unknown"
+  custom_roles:
+    support: "unknown"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "supported"
+    notes: "Admins can choose how long employees stay logged in before reauthenticating. Plan requirement not stated."
+    source: "https://www.grammarly.com/security"
+    checked: "2026-09-16"
+  api_token_controls:
+    support: "unknown"

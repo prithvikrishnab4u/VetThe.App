@@ -2,38 +2,68 @@ name: "Notion"
 category: "productivity"
 website: "https://notion.so"
 description: "An all-in-one workspace for notes, tasks, wikis, and databases."
+status: "draft"
 
-sso:
-  supported: true
-  protocols: ["SAML"]
-  tier: "enterprise"
-
-scim:
-  supported: "full"
-  version: "2.0"
-  tier: "enterprise"
-
-mfa:
-  supported: true
-  types: ["TOTP", "SMS", "Email"]
-  enforcement: "admin_enforced"
-  tier: "free"
-
-compliance:
-  soc2: true
-  iso27001: true
-
-meta:
-  last_verified: "2025-12-31"
-  ready_to_publish: true
-
-# Unused fields - tracked but not displayed in main table
-# Currently not using session and audit fields, but doing research on these fields.
-session:
-  timeout_configurable: true
-  max_duration: "180 days"
-
-audit:
-  logs_available: true
-  retention_period: "Indefinite"
-  tier: "enterprise"
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "Requires at least one verified domain"
+    protocols: ["SAML"]
+    source: "https://www.notion.com/help/saml-sso-configuration"
+    checked: "2026-09-14"
+  sso_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "\"Only SAML SSO\" login method requires members to sign in with SAML"
+    source: "https://www.notion.com/help/saml-sso-configuration"
+    checked: "2026-09-14"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Creates, updates and removes users; manages groups"
+    source: "https://www.notion.com/help/provision-users-and-groups-with-scim"
+    checked: "2026-09-14"
+  mfa_enforcement:
+    support: "partial"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Organization owners can require MFA for guests only, not workspace members"
+    source: "https://www.notion.com/help/mfa-enforcement"
+    checked: "2026-09-14"
+  phishing_resistant_mfa:
+    support: "unknown"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "In-app view, CSV export, and SIEM streaming"
+    retention: "365 days"
+    source: "https://www.notion.com/help/audit-log"
+    checked: "2026-09-14"
+  jit_provisioning:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "\"Automatic account creation\" when signing in with SAML SSO"
+    source: "https://www.notion.com/help/saml-sso-configuration"
+    checked: "2026-09-14"
+  domain_verification:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "Workspace owners verify domains; required to turn on SAML SSO"
+    source: "https://www.notion.com/help/saml-sso-configuration"
+    checked: "2026-09-14"
+  custom_roles:
+    support: "unknown"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "supported"
+  api_token_controls:
+    support: "unknown"

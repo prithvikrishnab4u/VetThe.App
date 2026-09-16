@@ -2,23 +2,55 @@ name: "LastPass"
 category: "security"
 website: "https://www.lastpass.com"
 description: "Password management solution for storing encrypted passwords online."
-sso:
-  supported: true
-  protocols: ["SAML"]
-  tier: "paid"
-  sp_initiated: true
-  jit_provisioning: true
-  domain_claiming: true
-mfa:
-  supported: true
-  types: ["TOTP", "SMS", "WebAuthn", "Push"]
-  enforcement: "admin_enforced"
-  tier: "paid"
-  adaptive_mfa: true
-  phishing_resistant: true
-compliance:
-  soc2: true
-  iso27001: true
-meta:
-  last_verified: "2026-01-03"
-  ready_to_publish: true
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "Federated login lets employees unlock the LastPass vault with directory credentials from Entra ID, AD, Google Workspace, Okta, PingOne, PingFederate or OneLogin; featured on Business and Business Max"
+    source: "https://www.lastpass.com/features/federated-login"
+    checked: "2026-09-16"
+  sso_enforcement:
+    support: "unknown"
+  scim:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "SCIM API provisioning and deprovisioning with Microsoft Entra ID, Okta and OneLogin; directory integrations on Business and Business Max per pricing page"
+    source: "https://www.lastpass.com/features/directory-integration"
+    checked: "2026-09-16"
+  mfa_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "Admins can require MFA for vault access as part of the LastPass security policy set"
+    source: "https://www.lastpass.com/products/multifactor-authentication"
+    checked: "2026-09-16"
+  phishing_resistant_mfa:
+    support: "supported"
+    tier: "paid"
+    notes: "FIDO2-certified hardware security keys (YubiKey, Feitian); hardware MFA methods are stated as paid plans only, specific plan not named"
+    source: "https://www.lastpass.com/products/multifactor-authentication"
+    checked: "2026-09-16"
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "Advanced reporting gives automated reports on user activity, policies, security and SSO apps with SIEM integration; retention not stated"
+    source: "https://www.lastpass.com/products/business"
+    checked: "2026-09-16"
+  jit_provisioning:
+    support: "unknown"
+  domain_verification:
+    support: "unknown"
+  custom_roles:
+    support: "unknown"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "unknown"
+  api_token_controls:
+    support: "unknown"

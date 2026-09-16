@@ -1,72 +1,65 @@
 # VetThe.App
 
-**Community-driven comparison of identity security features across SaaS applications**
+**Community-driven catalogue of the IAM capabilities of SaaS apps**
 
-Quickly compare SSO, SCIM, MFA, and compliance capabilities across popular SaaS apps. Built for security teams, IT admins, and procurement professionals who need to make informed decisions.
+Before you roll out a SaaS app, your identity team needs to know: can we connect it to our identity provider, manage accounts automatically, enforce our policies, and see who did what? And which plan do we have to buy to get each of those? VetThe.App answers that for every app, with a link to the source behind each answer.
 
 ---
 
 ## 🎯 What We Track
 
-- **SSO**: Support, protocols (SAML, OIDC, OAuth2), and pricing tier
-- **SCIM**: User provisioning capabilities (full, partial, or none)
-- **MFA**: Support, methods (TOTP, SMS, WebAuthn, etc.), and enforcement options
-- **Compliance**: SOC 2 and ISO 27001 certifications
-- **Pricing Tiers**: Which features require free, paid, or enterprise plans
+Every app has the same 12 capabilities. Six are **core** and shown by default:
+
+| Capability | The question it answers |
+|---|---|
+| **SSO** | Can users sign in through the company identity provider (SAML or OIDC)? |
+| **Enforce SSO** | Can admins require SSO and block password sign-in? |
+| **SCIM** | Can an identity provider create, update and deactivate users? |
+| **Enforce MFA** | Can admins require MFA for everyone using the app's own login? |
+| **Passkeys / keys** | Can users sign in with security keys or passkeys (WebAuthn / FIDO2)? |
+| **Audit logs** | Can admins view a log of user and admin activity? |
+
+The rest: JIT provisioning, domain verification, custom roles, group → role mapping, session controls, and API token controls.
+
+For each one we record whether it's supported, the **minimum plan** needed, and the **source** it was checked against. The full definitions live in [`data/schema.yaml`](data/schema.yaml).
 
 ---
 
 ## 🚀 Quick Start
 
-**View the site:** [vetthe.app](https://vetthe.app) 
+**View the site:** [vetthe.app](https://vetthe.app)
 
 **Run locally:**
 ```bash
 git clone https://github.com/prithvikrishnab4u/VetThe.App.git
 cd VetThe.App/site
+npm ci
 hugo server
 # Open http://localhost:1313
 ```
 
 ## Development & Data commands
 
-Generate machine-readable exports and validate data locally:
-
 ```bash
 python -m venv .venv
-.venv/bin/python -m pip install --upgrade pip setuptools wheel
-.venv/bin/pip install pyyaml
-.venv/bin/python scripts/generate_data.py
-.venv/bin/python scripts/validate.py
+.venv/bin/pip install -r requirements.txt
+.venv/bin/python scripts/validate.py        # check every app file against the schema
+.venv/bin/python scripts/generate_data.py   # write site/static/data/apps.json and apps.csv
 ```
-
-The generated exports appear under `site/static/data/apps.json` and `site/static/data/apps.csv`.
-
 
 ---
 
 ## 🤝 Contributing
 
-**No technical knowledge required.** Add apps directly in your browser:
+**No technical knowledge required.** Add or fix apps directly in your browser:
 
 1. Go to [`data/apps/`](data/apps)
 2. Click "Add file" → "Create new file"
 3. Name it `yourapp.yaml`
-4. Copy template from [CONTRIBUTING.md](CONTRIBUTING.md) and fill in
+4. Copy the template from [CONTRIBUTING.md](CONTRIBUTING.md) and fill in what you can confirm
 5. Submit → automated validation runs → done!
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
-
----
-
-## 📊 Coverage
-
-Apps tracked across categories:
-- **Collaboration** (Slack, Zoom, Miro)
-- **Productivity** (Notion, Airtable, Google Workspace)
-- **Development** (GitHub, Figma, Linear)
-- **Sales & Marketing** (HubSpot, Salesforce)
-- **Support** (Zendesk)
 
 [Request an app](https://github.com/prithvikrishnab4u/VetThe.App/issues/new?template=app-request.md) or add it yourself!
 
@@ -74,27 +67,25 @@ Apps tracked across categories:
 
 ## 🎨 Features
 
-- Excel-style filtering on any column
-- Interactive tooltips on headers
-- Mobile responsive
+- Filter and sort on every capability
+- Core capabilities by default, all 12 on demand
+- Every verified value links to its source
 - Auto-validation on every contribution
-- Fast static site (no database)
+- Fast static site (no database), with JSON and CSV exports
 
 ---
 
 ## 📋 Data Standards
 
-**Tiers** indicate the **minimum** plan level where features are available:
-- `free` - Available without payment
-- `paid` - Available on mid-tier plans (Business, Pro, etc.)
-- `enterprise` - Top tier only (usually requires sales contact)
+**Support:** `supported`, `partial`, `not_supported`, or `unknown`. Unknown is shown as unknown, never as "no".
 
-**SCIM levels:**
-- `full` - Complete SCIM 2.0 (users + groups)
-- `partial` - Limited (often read-only or users-only)
-- `none` - No SCIM support
+**Tiers** are the **minimum** plan where a capability is available:
+- `free`: available without payment
+- `paid`: a paid self-serve plan (Pro, Business, Team)
+- `enterprise`: top plan only, usually through sales
+- `add_on`: sold separately on top of a plan
 
-All data is verified from official sources and includes a `last_verified` date.
+**Sources:** a value only counts as verified when it has a `source` URL and a `checked` date. Values without a source are shown faded on the site. An app is `published` only when all six core capabilities are researched and every known value has a source.
 
 ---
 
@@ -102,12 +93,13 @@ All data is verified from official sources and includes a `last_verified` date.
 
 ```
 VetThe.App/
-├── .github/workflows/     # Auto-validation
-├── data/apps/             # App YAML files
-├── schemas/               # Validation schema
-├── scripts/               # Validation script
+├── .github/workflows/     # CI and PR validation
+├── data/
+│   ├── schema.yaml        # capabilities, allowed values, publishing rules
+│   └── apps/              # one YAML file per app
+├── scripts/               # validate.py, generate_data.py
 └── site/                  # Hugo site
-    └── layouts/partials/  # Modular templates
+    └── layouts/partials/  # table, filters, guide
 ```
 
 ---
@@ -115,16 +107,16 @@ VetThe.App/
 ## ❓ FAQ
 
 **Why this project?**
-Identity features are often hidden behind enterprise pricing. This makes budgeting and comparison difficult.
+IAM capabilities are often locked behind enterprise plans and scattered across docs and pricing pages. That makes vendor reviews slow and budgeting hard.
 
 **How is data verified?**
-From official documentation, pricing pages, and security pages. Each app has a `last_verified` date.
+Each value is checked against the vendor's own pricing page, documentation, or trust center, and the link is stored with it. Faded values on the site don't have a source yet.
 
 **Can I use this for procurement?**
-Yes. Compare features, identify required tiers, verify vendor claims, and budget accordingly.
+Yes. Compare capabilities, see which plan you need, and follow the source links to confirm with the vendor.
 
 **Found wrong data?**
-[Open an issue](https://github.com/prithvikrishnab4u/VetThe.App/issues/new) or submit a PR with corrections.
+[Open an issue](https://github.com/prithvikrishnab4u/VetThe.App/issues/new) or submit a PR with the correct value and its source.
 
 ---
 

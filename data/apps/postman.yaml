@@ -2,23 +2,58 @@ name: "Postman"
 category: "development"
 website: "https://www.postman.com"
 description: "API platform for building and using APIs."
-sso:
-  supported: true
-  protocols: ["SAML"]
-  tier: "enterprise"
-  sp_initiated: true
-  jit_provisioning: true
-  domain_claiming: true
-mfa:
-  supported: true
-  types: ["TOTP"]
-  enforcement: "admin_enforced"
-  tier: "enterprise"
-  adaptive_mfa: false
-  phishing_resistant: false
-compliance:
-  soc2: true
-  iso27001: true
-meta:
-  last_verified: "2026-01-03"
-  ready_to_publish: true
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    tier: "add_on"
+    plan: "Team with Simple Security add-on, or Enterprise"
+    notes: "SAML 2.0 identity providers"
+    protocols: ["SAML"]
+    source: "https://learning.postman.com/docs/administration/sso/intro-sso"
+    checked: "2026-09-15"
+  sso_enforcement:
+    support: "supported"
+    tier: "add_on"
+    plan: "Team with Simple Security add-on, or Enterprise"
+    notes: "Password, Google and GitHub sign-in stay enabled after SSO setup until admins turn them off"
+    source: "https://learning.postman.com/docs/administration/sso/intro-sso"
+    checked: "2026-09-15"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Requires SSO; user and group provisioning; only name attribute updates sync"
+    source: "https://learning.postman.com/docs/administration/scim-provisioning/scim-provisioning-overview/"
+    checked: "2026-09-15"
+  mfa_enforcement:
+    support: "unknown"
+  phishing_resistant_mfa:
+    support: "unknown"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Also available via Postman API for SIEM integration"
+    retention: "180 days"
+    source: "https://learning.postman.com/docs/administration/managing-your-team/audit-logs"
+    checked: "2026-09-15"
+  jit_provisioning:
+    support: "unknown"
+  domain_verification:
+    support: "unknown"
+  custom_roles:
+    support: "unknown"
+  group_role_mapping:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM-provisioned groups get the Developer role by default; admins can update team roles per group"
+    source: "https://learning.postman.com/docs/administration/scim-provisioning/scim-provisioning-overview/"
+    checked: "2026-09-15"
+  session_controls:
+    support: "unknown"
+  api_token_controls:
+    support: "unknown"

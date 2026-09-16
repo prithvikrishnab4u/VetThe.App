@@ -2,23 +2,45 @@ name: "Freshservice"
 category: "infrastructure"
 website: "https://freshservice.com"
 description: "IT service management (ITSM) software for modern enterprises."
-sso:
-  supported: true
-  protocols: ["SAML", "OIDC"]
-  tier: "paid"
-  sp_initiated: true
-  jit_provisioning: true
-  domain_claiming: true
-mfa:
-  supported: true
-  types: ["TOTP"]
-  enforcement: "admin_enforced"
-  tier: "paid"
-  adaptive_mfa: false
-  phishing_resistant: false
-compliance:
-  soc2: true
-  iso27001: true
-meta:
-  last_verified: "2026-01-03"
-  ready_to_publish: true
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Growth"
+    notes: "Pricing page lists SSO on Growth, Pro and Enterprise; Freshworks SSO supports SAML, OAuth2, OIDC and JWT"
+    protocols: ["SAML", "OIDC"]
+    source: "https://www.freshworks.com/freshservice/pricing/"
+    checked: "2026-09-15"
+  sso_enforcement:
+    support: "unknown"
+  scim:
+    support: "unknown"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Freshworks org admins can mandate 2FA as a policy for all users (with exemptions); requires Freshworks login; plan requirement not stated"
+    source: "https://support.freshworks.com/support/solutions/articles/50000003252-how-can-an-organization-admin-enforce-2fa-as-a-policy-for-all-or-some-users-in-the-organization-"
+    checked: "2026-09-15"
+  phishing_resistant_mfa:
+    support: "unknown"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Audit logs only available to Enterprise customers and viewable by admins; retention not stated"
+    source: "https://support.freshservice.com/support/solutions/articles/232444-how-to-access-audit-log-in-freshservice-"
+    checked: "2026-09-15"
+  jit_provisioning:
+    support: "unknown"
+  domain_verification:
+    support: "unknown"
+  custom_roles:
+    support: "unknown"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "unknown"
+  api_token_controls:
+    support: "unknown"

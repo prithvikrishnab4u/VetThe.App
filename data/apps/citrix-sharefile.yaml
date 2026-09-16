@@ -2,23 +2,56 @@ name: "Citrix ShareFile"
 category: "collaboration"
 website: "https://www.sharefile.com"
 description: "Content collaboration platform for secure file sharing."
-sso:
-  supported: true
-  protocols: ["SAML"]
-  tier: "enterprise"
-  sp_initiated: true
-  jit_provisioning: true
-  domain_claiming: true
-mfa:
-  supported: true
-  types: ["TOTP", "SMS"]
-  enforcement: "admin_enforced"
-  tier: "enterprise"
-  adaptive_mfa: false
-  phishing_resistant: false
-compliance:
-  soc2: true
-  iso27001: true
-meta:
-  last_verified: "2026-01-03"
-  ready_to_publish: true
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Standard"
+    notes: "Available for Standard, Advanced, Premium, Industry Advantage and Virtual Data Room; SAML 2.0 identity providers"
+    protocols: ["SAML"]
+    source: "https://docs.sharefile.com/en-us/sharefile/configure/account-settings/single-sign-on.html"
+    checked: "2026-09-16"
+  sso_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Standard"
+    notes: "\"Require SSO sign in\" forces non-administrative Employees to log in through the identity provider; admins keep ShareFile credentials"
+    source: "https://docs.sharefile.com/en-us/sharefile/configure/account-settings/single-sign-on.html"
+    checked: "2026-09-16"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise accounts"
+    notes: "SCIM provisioning of users and groups, Enterprise accounts only; Microsoft Entra ID is the only supported IdP and nested groups are not supported"
+    source: "https://docs.sharefile.com/en-us/sharefile/account_settings/user_provisioning"
+    checked: "2026-09-16"
+  mfa_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "All plans"
+    notes: "Two-step verification is enforced for all Employee users on all ShareFile accounts by default; admins can opt out via waiver"
+    source: "https://docs.sharefile.com/en-us/sharefile/configure/admin-settings/two-step-verification.html"
+    checked: "2026-09-16"
+  phishing_resistant_mfa:
+    support: "unknown"
+  audit_logs:
+    support: "supported"
+    notes: "Admin reports include Usage and Access reports covering login and failed login events; plan requirement not stated"
+    retention: "Account lifetime, but reports can only be run in 90-day increments"
+    source: "https://docs.sharefile.com/en-us/sharefile/configure/admin-settings/reports.html"
+    checked: "2026-09-16"
+  jit_provisioning:
+    support: "unknown"
+  domain_verification:
+    support: "unknown"
+  custom_roles:
+    support: "unknown"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "unknown"
+  api_token_controls:
+    support: "unknown"

@@ -42,7 +42,6 @@ wheels/
 *.egg
 
 # Claude Code (AI assistant)
-CLAUDE.md
 HANDOFF.md
 .claude/
 

@@ -2,38 +2,58 @@ name: "Smartsheet"
 category: "productivity"
 website: "https://smartsheet.com"
 description: "A spreadsheet-style platform for project management, data visualization, and automated business workflows."
+status: "draft"
 
-sso:
-  supported: true
-  protocols: ["SAML"]
-  tier: "enterprise"
-  sp_initiated: true
-  jit_provisioning: true
-  domain_claiming: true
-
-mfa:
-  supported: true
-  types: ["TOTP"]
-  enforcement: "admin_enforced"
-  tier: "paid"
-  adaptive_mfa: false
-  phishing_resistant: false
-
-compliance:
-  soc2: true
-  iso27001: true
-
-meta:
-  last_verified: "2026-01-02"
-  ready_to_publish: true
-
-# Unused fields - tracked but not displayed in main table
-# Currently not using session and audit fields, but doing research on these fields.
-session:
-  timeout_configurable: true
-  max_duration: "Configurable"
-
-audit:
-  logs_available: true
-  retention_period: "Configurable"
-  tier: "enterprise"
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Plan-level SAML SSO on Enterprise; domain-level SAML overrides plan-level; Google/Microsoft/Apple sign-in on Pro"
+    protocols: ["SAML"]
+    source: "https://help.smartsheet.com/articles/2476141-configure-saml-sso"
+    checked: "2026-09-15"
+  sso_enforcement:
+    support: "unknown"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Okta SCIM; must contact support to enable and have a validated domain; Okta groups map to seat types"
+    source: "https://help.smartsheet.com/articles/2482731-configure-Okta-SCIM"
+    checked: "2026-09-15"
+  mfa_enforcement:
+    support: "partial"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Require MFA applies to external collaborators (users outside validated domains), not internal users"
+    source: "https://help.smartsheet.com/articles/2483523-admin-center-configure-require-mfa"
+    checked: "2026-09-15"
+  phishing_resistant_mfa:
+    support: "unknown"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Event Reporting via Events API; includes logins/auth events, views, downloads, shares, API calls"
+    retention: "6 months"
+    source: "https://help.smartsheet.com/articles/2479296-event-reporting-monitor-how-your-organization-uses-data"
+    checked: "2026-09-15"
+  jit_provisioning:
+    support: "unknown"
+  domain_verification:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "Pricing lists Domain validation on Business and above"
+    source: "https://www.smartsheet.com/pricing"
+    checked: "2026-09-15"
+  custom_roles:
+    support: "unknown"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "unknown"
+  api_token_controls:
+    support: "unknown"

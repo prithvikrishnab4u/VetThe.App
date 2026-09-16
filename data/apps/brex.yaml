@@ -1,35 +1,60 @@
-name: Brex
-category: finance
-website: https://www.brex.com
-description: Financial stack designed for the next generation of business.
-sso:
-  supported: true
-  protocols:
-  - SAML
-  - OIDC
-  tier: paid
-  sp_initiated: true
-  jit_provisioning: true
-  domain_claiming: true
-mfa:
-  supported: true
-  types:
-  - TOTP
-  - SMS
-  - WebAuthn
-  enforcement: required
-  tier: paid
-  adaptive_mfa: true
-  phishing_resistant: true
-compliance:
-  soc2: true
-  iso27001: true
-meta:
-  last_verified: '2026-01-03'
-  ready_to_publish: true
-provenance:
-  source: vendor documentation (auto)
-  source_url: https://www.brex.com
-  verified_by: auto-scan
-  verified_date: '2026-09-14'
-  evidence: 2fa,sso
+name: "Brex"
+category: "finance"
+website: "https://www.brex.com"
+description: "Financial stack designed for the next generation of business."
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Premium"
+    notes: "SSO via SAML or OIDC on Premium, Enterprise and Smart card plans; OIDC not supported with Entra ID"
+    protocols: ["SAML", "OIDC"]
+    source: "https://www.brex.com/support/signing-into-brex"
+    checked: "2026-09-15"
+  sso_enforcement:
+    support: "unknown"
+  scim:
+    support: "supported"
+    tier: "paid"
+    plan: "Premium"
+    notes: "SCIM provisioning with Okta and Entra ID on Premium, Enterprise and Smart card plans"
+    source: "https://www.brex.com/support/scim-integration"
+    checked: "2026-09-15"
+  mfa_enforcement:
+    support: "supported"
+    notes: "2FA is mandatory for all Brex users (authenticator app or SMS); SSO users are not prompted for Brex MFA; plan requirement not stated"
+    source: "https://www.brex.com/support/two-factor-authentication"
+    checked: "2026-09-15"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Passkey sign-in available as an alternative to passwords; plan requirement not stated"
+    source: "https://www.brex.com/support/signing-into-brex"
+    checked: "2026-09-15"
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "Premium"
+    notes: "Audit trail under Security with filtering and CSV export; Premium and Enterprise plans"
+    retention: "At least 90 days per event type"
+    source: "https://www.brex.com/support/brex-security-measures"
+    checked: "2026-09-15"
+  jit_provisioning:
+    support: "unknown"
+  domain_verification:
+    support: "unknown"
+  custom_roles:
+    support: "supported"
+    tier: "paid"
+    plan: "Premium"
+    notes: "Custom roles with granular capabilities on Premium and Enterprise plans"
+    source: "https://www.brex.com/support/custom-roles"
+    checked: "2026-09-15"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "unknown"
+  api_token_controls:
+    support: "unknown"

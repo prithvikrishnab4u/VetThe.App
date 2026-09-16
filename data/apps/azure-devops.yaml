@@ -1,36 +1,51 @@
-name: Azure DevOps
-category: development
-website: https://azure.microsoft.com/en-us/products/devops
-description: Services for teams to share code, track work, and ship software.
-sso:
-  supported: true
-  protocols:
-  - SAML
-  - OIDC
-  tier: free
-  sp_initiated: true
-  jit_provisioning: true
-  domain_claiming: true
-mfa:
-  supported: true
-  types:
-  - TOTP
-  - SMS
-  - WebAuthn
-  - Push
-  enforcement: required
-  tier: free
-  adaptive_mfa: true
-  phishing_resistant: true
-compliance:
-  soc2: true
-  iso27001: true
-meta:
-  last_verified: '2026-01-03'
-  ready_to_publish: true
-provenance:
-  source: vendor documentation (auto)
-  source_url: https://azure.microsoft.com
-  verified_by: auto-scan
-  verified_date: '2026-09-14'
-  evidence: 2fa,sso
+name: "Azure DevOps"
+category: "development"
+website: "https://azure.microsoft.com/en-us/products/devops"
+description: "Services for teams to share code, track work, and ship software."
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    notes: "Organizations connected to Microsoft Entra ID sign in with Entra work credentials; unconnected orgs use Microsoft accounts; plan requirement not stated"
+    source: "https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/connect-organization-to-azure-ad"
+    checked: "2026-09-15"
+  sso_enforcement:
+    support: "supported"
+    notes: "Entra-backed orgs only admit members or guests of the connected tenant; disabled or removed Entra users lose access, including via PATs and SSH; plan requirement not stated"
+    source: "https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/access-with-azure-ad"
+    checked: "2026-09-15"
+  scim:
+    support: "unknown"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Enforced by Entra Conditional Access policies targeting the Azure DevOps resource, not an Azure DevOps setting; Conditional Access is an Entra ID P1 feature; plan requirement not stated on this page"
+    source: "https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/conditional-access-policies"
+    checked: "2026-09-15"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Entra Conditional Access for Azure DevOps can require a phishing-resistant authentication strength; plan requirement not stated"
+    source: "https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/conditional-access-policies"
+    checked: "2026-09-15"
+  audit_logs:
+    support: "supported"
+    notes: "Public preview; Entra-backed orgs only; off by default; CSV/JSON export and audit streaming; sign-in events are not tracked (see Entra logs); plan requirement not stated"
+    retention: "90 days"
+    source: "https://learn.microsoft.com/en-us/azure/devops/organizations/audit/azure-devops-auditing"
+    checked: "2026-09-15"
+  jit_provisioning:
+    support: "unknown"
+  domain_verification:
+    support: "unknown"
+  custom_roles:
+    support: "unknown"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "unknown"
+  api_token_controls:
+    support: "supported"
+    notes: "Org policy restricts PAT creation; Entra tenant policies restrict global and full-scoped PATs and enforce maximum PAT lifespan; SSH and OAuth app access can be disabled; plan requirement not stated"
+    source: "https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/change-application-access-policies"
+    checked: "2026-09-15"

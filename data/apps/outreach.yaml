@@ -2,23 +2,44 @@ name: "Outreach"
 category: "sales_marketing"
 website: "https://www.outreach.io"
 description: "Sales execution platform helping teams create and close more pipeline."
-sso:
-  supported: true
-  protocols: ["SAML"]
-  tier: "enterprise"
-  sp_initiated: true
-  jit_provisioning: true
-  domain_claiming: true
-mfa:
-  supported: true
-  types: ["TOTP"]
-  enforcement: "admin_enforced"
-  tier: "enterprise"
-  adaptive_mfa: false
-  phishing_resistant: false
-compliance:
-  soc2: true
-  iso27001: true
-meta:
-  last_verified: "2026-01-03"
-  ready_to_publish: true
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    notes: "SAML SSO with Okta, Salesforce, OneLogin and other SAML IdPs; plan requirement not stated"
+    protocols: ["SAML"]
+    source: "https://support.outreach.io/hc/en-us/articles/115001156694-Setting-up-other-SAML-IdP-SSO"
+    checked: "2026-09-15"
+  sso_enforcement:
+    support: "supported"
+    notes: "Once enabled, SSO becomes the only way to access the org's seats; plan requirement not stated"
+    source: "https://support.outreach.io/support/solutions/articles/159000426332-outreach-single-sign-on-sso-faq"
+    checked: "2026-09-15"
+  scim:
+    support: "supported"
+    notes: "SCIM 2.0 API via OAuth for users and teams, documented as beta; plan requirement not stated"
+    source: "https://support.outreach.io/support/solutions/articles/159000426344-outreach-scim-protocol"
+    checked: "2026-09-15"
+  mfa_enforcement:
+    support: "unknown"
+  phishing_resistant_mfa:
+    support: "unknown"
+  audit_logs:
+    support: "unknown"
+  jit_provisioning:
+    support: "supported"
+    notes: "Advanced SSO setting to enable just-in-time new user provision; plan requirement not stated"
+    source: "https://support.outreach.io/hc/en-us/articles/115001156694-Setting-up-other-SAML-IdP-SSO"
+    checked: "2026-09-15"
+  domain_verification:
+    support: "unknown"
+  custom_roles:
+    support: "unknown"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "unknown"
+  api_token_controls:
+    support: "unknown"

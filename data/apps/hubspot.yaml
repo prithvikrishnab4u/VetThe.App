@@ -2,38 +2,60 @@ name: "HubSpot"
 category: "sales_marketing"
 website: "https://hubspot.com"
 description: "Customer platform with software for marketing, sales, content management, and service."
+status: "draft"
 
-sso:
-  supported: true
-  protocols: ["SAML"]
-  tier: "enterprise"
-
-scim:
-  supported: "full"
-  version: "2.0"
-  tier: "enterprise"
-
-mfa:
-  supported: true
-  types: ["TOTP", "SMS", "Email", "Push"]
-  enforcement: "admin_enforced"
-  tier: "enterprise"
-
-compliance:
-  soc2: true
-  iso27001: false
-
-meta:
-  last_verified: "2025-12-31"
-  ready_to_publish: true
-
-# Unused fields - tracked but not displayed in main table
-# Currently not using session and audit fields, but doing research on these fields.
-session:
-  timeout_configurable: true
-  max_duration: "24 hours"
-
-audit:
-  logs_available: true
-  retention_period: "365 days"
-  tier: "enterprise"
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Professional"
+    notes: "Professional or Enterprise tier of any Hub"
+    protocols: ["SAML"]
+    source: "https://knowledge.hubspot.com/account/can-i-use-single-sign-on-sso-with-hubspot"
+    checked: "2026-09-14"
+  sso_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Professional"
+    notes: "Require single sign-on is on by default; Super Admins can exclude specific users"
+    source: "https://knowledge.hubspot.com/account/can-i-use-single-sign-on-sso-with-hubspot"
+    checked: "2026-09-14"
+  scim:
+    support: "supported"
+    tier: "paid"
+    plan: "Professional"
+    notes: "Creates, updates and deactivates users; Okta roles can sync to permission sets; custom SCIM for Entra ID, PingFederate, OneLogin and JumpCloud"
+    source: "https://knowledge.hubspot.com/account/provision-hubspot-users-with-scim-through-okta"
+    checked: "2026-09-14"
+  mfa_enforcement:
+    support: "supported"
+    tier: "free"
+    notes: "Always required for username/password logins on Starter and above; Super Admins can require it on free accounts; SSO logins aren't prompted"
+    source: "https://knowledge.hubspot.com/account-security/set-up-two-factor-authentication-for-your-hubspot-login"
+    checked: "2026-09-14"
+  phishing_resistant_mfa:
+    support: "supported"
+    tier: "free"
+    notes: "Passkey login on all plans; Super Admins can enforce passkeys as the login method"
+    source: "https://knowledge.hubspot.com/account-management/set-up-and-log-in-with-passkeys"
+    checked: "2026-09-14"
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "Starter"
+    notes: "Logins and security activity on Starter and above; Enterprise adds many more event types"
+    source: "https://knowledge.hubspot.com/account-management/view-and-export-account-activity-history"
+    checked: "2026-09-14"
+  jit_provisioning:
+    support: "unknown"
+  domain_verification:
+    support: "unknown"
+  custom_roles:
+    support: "unknown"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "supported"
+  api_token_controls:
+    support: "unknown"

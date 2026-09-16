@@ -2,23 +2,58 @@ name: "Docker Hub"
 category: "development"
 website: "https://hub.docker.com"
 description: "Container registry service for finding and sharing container images."
-sso:
-  supported: true
-  protocols: ["SAML"]
-  tier: "paid"
-  sp_initiated: true
-  jit_provisioning: true
-  domain_claiming: true
-mfa:
-  supported: true
-  types: ["TOTP", "WebAuthn"]
-  enforcement: "admin_enforced"
-  tier: "paid"
-  adaptive_mfa: false
-  phishing_resistant: true
-compliance:
-  soc2: true
-  iso27001: true
-meta:
-  last_verified: "2026-01-03"
-  ready_to_publish: true
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Docker Business"
+    notes: "Any SAML 2.0 or OIDC IdP, with guides for Okta and Entra ID; multiple IdPs per domain allowed"
+    protocols: ["SAML", "OIDC"]
+    source: "https://docs.docker.com/enterprise/security/single-sign-on/connect/"
+    checked: "2026-09-15"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Docker Business"
+    notes: "Enforced SSO requires SSO sign-in; CLI then needs personal access tokens instead of passwords"
+    source: "https://docs.docker.com/enterprise/security/single-sign-on/connect/"
+    checked: "2026-09-15"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Docker Business"
+    notes: "SCIM user provisioning is Business-only on the pricing page; SSO is a prerequisite"
+    source: "https://www.docker.com/pricing/"
+    checked: "2026-09-15"
+  mfa_enforcement:
+    support: "unknown"
+  phishing_resistant_mfa:
+    support: "unknown"
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "Docker Team"
+    notes: "Organization activity logs on Team and Business"
+    retention: "30 days in Docker Home; older events via Docker Hub API"
+    source: "https://docs.docker.com/admin/organization/activity-logs/"
+    checked: "2026-09-15"
+  jit_provisioning:
+    support: "unknown"
+  domain_verification:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Docker Business"
+    notes: "DNS TXT domain verification required before configuring SSO"
+    source: "https://docs.docker.com/enterprise/security/single-sign-on/connect/"
+    checked: "2026-09-15"
+  custom_roles:
+    support: "unknown"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "unknown"
+  api_token_controls:
+    support: "unknown"

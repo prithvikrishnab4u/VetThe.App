@@ -2,23 +2,71 @@ name: "Mixpanel"
 category: "productivity"
 website: "https://mixpanel.com"
 description: "Self-serve product analytics to help you convert, engage, and retain more users."
-sso:
-  supported: true
-  protocols: ["SAML"]
-  tier: "enterprise"
-  sp_initiated: true
-  jit_provisioning: true
-  domain_claiming: true
-mfa:
-  supported: true
-  types: ["TOTP"]
-  enforcement: "admin_enforced"
-  tier: "enterprise"
-  adaptive_mfa: false
-  phishing_resistant: false
-compliance:
-  soc2: true
-  iso27001: true
-meta:
-  last_verified: "2026-01-03"
-  ready_to_publish: true
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Growth"
+    notes: "Users on a Growth plan or above can enable SSO with any SAML 2.0-compliant provider."
+    protocols: ["SAML"]
+    source: "https://docs.mixpanel.com/docs/access-security/single-sign-on"
+    checked: "2026-09-16"
+  sso_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Growth"
+    notes: "A Require Single Sign-On toggle prevents username and password login, with a separate toggle to require SSO for admins and owners."
+    source: "https://docs.mixpanel.com/docs/access-security/single-sign-on"
+    checked: "2026-09-16"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Only Enterprise accounts have SCIM. A token is generated in Access Security; Okta, OneLogin and Azure provision users and can optionally deprovision them."
+    source: "https://docs.mixpanel.com/docs/access-security/single-sign-on"
+    checked: "2026-09-16"
+  mfa_enforcement:
+    support: "supported"
+    notes: "An organization admin can enable 2FA, after which all users are prompted for a code at login; users required to use SSO authenticate through the IdP instead. Plan requirement not stated."
+    source: "https://docs.mixpanel.com/docs/access-security/two-factor-authentication"
+    checked: "2026-09-16"
+  phishing_resistant_mfa:
+    support: "unknown"
+  audit_logs:
+    support: "supported"
+    tier: "free"
+    plan: "Free"
+    notes: "Audit log is available on all plans and tracks authentication, service account management, project and report changes and data exports."
+    retention: "90 days on Free and Growth, 2 years on Enterprise"
+    source: "https://docs.mixpanel.com/docs/access-security/audit-log"
+    checked: "2026-09-16"
+  jit_provisioning:
+    support: "supported"
+    tier: "paid"
+    plan: "Growth"
+    notes: "Just-in-time provisioning over SAML signs users in automatically on the initial login event."
+    source: "https://docs.mixpanel.com/docs/access-security/single-sign-on"
+    checked: "2026-09-16"
+  domain_verification:
+    support: "supported"
+    tier: "paid"
+    plan: "Growth"
+    notes: "A domain is claimed with a DNS TXT verification record; SSO only works on claimed domains and a domain can be claimed by one organization."
+    source: "https://docs.mixpanel.com/docs/access-security/single-sign-on"
+    checked: "2026-09-16"
+  custom_roles:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Up to five custom roles per project, with permissions across analysis, feature flags, data management, data access, data sources and settings."
+    source: "https://docs.mixpanel.com/docs/orgs-and-projects/roles-and-permissions"
+    checked: "2026-09-16"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "unknown"
+  api_token_controls:
+    support: "unknown"

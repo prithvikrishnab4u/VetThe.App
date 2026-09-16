@@ -1,47 +1,81 @@
 name: "GitLab"
-
 category: "development"
-
 website: "https://about.gitlab.com"
-
 description: "The DevSecOps platform that brings development, operations, and security teams together in a single application."
+status: "draft"
 
-sso:
-
-  supported: true
-
-  protocols: ["SAML", "OIDC"]
-
-  tier: "paid"
-
-  sp_initiated: true
-
-  jit_provisioning: true
-
-  domain_claiming: true
-
-mfa:
-
-  supported: true
-
-  types: ["TOTP", "SMS", "WebAuthn"]
-
-  enforcement: "admin_enforced"
-
-  tier: "paid"
-
-  adaptive_mfa: false
-
-  phishing_resistant: true
-
-compliance:
-
-  soc2: true
-
-  iso27001: true
-
-meta:
-
-  last_verified: "2026-01-02"
-
-  ready_to_publish: true
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Premium"
+    notes: "SAML SSO for GitLab.com groups"
+    protocols: ["SAML"]
+    source: "https://docs.gitlab.com/user/group/saml_sso/"
+    checked: "2026-09-14"
+  sso_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Premium"
+    notes: "Enforce SSO-only authentication separately for web activity and for Git and Dependency Proxy activity"
+    source: "https://docs.gitlab.com/user/group/saml_sso/"
+    checked: "2026-09-14"
+  scim:
+    support: "partial"
+    tier: "paid"
+    plan: "Premium"
+    notes: "Creates, deactivates and reactivates users; doesn't update users or provision groups"
+    source: "https://docs.gitlab.com/user/group/saml_sso/scim_setup/"
+    checked: "2026-09-14"
+  mfa_enforcement:
+    support: "supported"
+    tier: "free"
+    notes: "Group owners enforce 2FA for members on GitLab.com; administrators can enforce it instance-wide on self-managed; email OTP doesn't count"
+    source: "https://docs.gitlab.com/security/two_factor_authentication/"
+    checked: "2026-09-14"
+  phishing_resistant_mfa:
+    support: "supported"
+    tier: "free"
+    notes: "WebAuthn devices such as security keys, and passkeys as a 2FA option"
+    source: "https://docs.gitlab.com/user/profile/account/two_factor_authentication/"
+    checked: "2026-09-14"
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "Premium"
+    notes: "Group and project audit events need Premium; Free only records successful sign-ins"
+    retention: "Indefinite"
+    source: "https://docs.gitlab.com/user/compliance/audit_events/"
+    checked: "2026-09-14"
+  jit_provisioning:
+    support: "supported"
+    tier: "paid"
+    plan: "Premium"
+    notes: "Creates an account on first SAML sign-in when none exists with that email"
+    source: "https://docs.gitlab.com/user/group/saml_sso/"
+    checked: "2026-09-14"
+  domain_verification:
+    support: "supported"
+    tier: "paid"
+    plan: "Premium"
+    notes: "A verified custom domain auto-confirms accounts provisioned through SAML or SCIM"
+    source: "https://docs.gitlab.com/user/group/saml_sso/"
+    checked: "2026-09-14"
+  custom_roles:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Ultimate"
+    source: "https://docs.gitlab.com/user/custom_roles/"
+    checked: "2026-09-14"
+  group_role_mapping:
+    support: "supported"
+    tier: "paid"
+    plan: "Premium"
+    notes: "SAML Group Sync assigns roles in GitLab groups from IdP groups; custom roles need Ultimate"
+    source: "https://docs.gitlab.com/user/group/saml_sso/group_sync/"
+    checked: "2026-09-14"
+  session_controls:
+    support: "unknown"
+  api_token_controls:
+    support: "unknown"

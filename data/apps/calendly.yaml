@@ -2,23 +2,56 @@ name: "Calendly"
 category: "productivity"
 website: "https://calendly.com"
 description: "Scheduling automation platform for eliminating back-and-forth emails."
-sso:
-  supported: true
-  protocols: ["SAML"]
-  tier: "enterprise"
-  sp_initiated: true
-  jit_provisioning: true
-  domain_claiming: true
-mfa:
-  supported: true
-  types: ["TOTP"]
-  enforcement: "admin_enforced"
-  tier: "enterprise"
-  adaptive_mfa: false
-  phishing_resistant: false
-compliance:
-  soc2: true
-  iso27001: true
-meta:
-  last_verified: "2026-01-03"
-  ready_to_publish: true
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    tier: "add_on"
+    plan: "Teams with SSO add-on"
+    notes: "Any SAML 2.0 IdP; available on Teams and Teams Plus with SSO add-on, and included on Enterprise"
+    protocols: ["SAML"]
+    source: "https://calendly.com/help/saml-single-sign-on-sso-overview"
+    checked: "2026-09-15"
+  sso_enforcement:
+    support: "supported"
+    tier: "add_on"
+    plan: "Teams with SSO add-on"
+    notes: "'Enforce SAML SSO for my organization' signs everyone out and requires SAML sign-in; owners/admins keep a fallback login"
+    source: "https://calendly.com/help/how-to-set-up-saml-sso-with-your-identity-provider"
+    checked: "2026-09-15"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Add, update and remove users and group membership from the IdP; roles still managed in Calendly"
+    source: "https://calendly.com/help/scim-user-provisioning-overview"
+    checked: "2026-09-15"
+  mfa_enforcement:
+    support: "unknown"
+  phishing_resistant_mfa:
+    support: "unknown"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Activity log for owners and admins; CSV export up to 10,000 events"
+    retention: "90 days"
+    source: "https://calendly.com/help/the-activity-log"
+    checked: "2026-09-15"
+  jit_provisioning:
+    support: "not_supported"
+    notes: "Calendly states JIT provisioning is not supported; use SCIM instead"
+    source: "https://calendly.com/help/saml-single-sign-on-sso-overview"
+    checked: "2026-09-15"
+  domain_verification:
+    support: "unknown"
+  custom_roles:
+    support: "unknown"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "unknown"
+  api_token_controls:
+    support: "unknown"

@@ -2,38 +2,51 @@ name: "Salesforce"
 category: "sales_marketing"
 website: "https://salesforce.com"
 description: "Cloud-based customer relationship management (CRM) platform."
+status: "draft"
 
-sso:
-  supported: true
-  protocols: ["SAML", "OIDC"]
-  tier: "paid"
-
-scim:
-  supported: "full"
-  version: "2.0"
-  tier: "enterprise"
-
-mfa:
-  supported: true
-  types: ["TOTP", "SMS", "WebAuthn", "Push"]
-  enforcement: "required"
-  tier: "free"
-
-compliance:
-  soc2: true
-  iso27001: true
-
-meta:
-  last_verified: "2025-12-31"
-  ready_to_publish: true
-
-# Unused fields - tracked but not displayed in main table
-# Currently not using session and audit fields, but doing research on these fields.
-session:
-  timeout_configurable: true
-  max_duration: "24 hours"
-
-audit:
-  logs_available: true
-  retention_period: "180 days"
-  tier: "paid"
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    notes: "SAML SSO with Salesforce as service provider; OpenID Connect auth providers also documented; plan requirement not stated"
+    protocols: ["SAML", "OIDC"]
+    source: "https://help.salesforce.com/apex/HTViewHelpDoc?id=sf.sso_saml.htm&language=en_us"
+    checked: "2026-09-15"
+  sso_enforcement:
+    support: "supported"
+    notes: "Disable login with Salesforce credentials in Single Sign-On Settings plus Is Single Sign-On Enabled profile permission; plan requirement not stated"
+    source: "https://help.salesforce.com/s/articleView?id=005228875&language=en_US&type=1"
+    checked: "2026-09-15"
+  scim:
+    support: "supported"
+    tier: "paid"
+    plan: "All editions"
+    notes: "SCIM 2.0 REST endpoints for user provisioning"
+    source: "https://help.salesforce.com/apex/HTViewHelpDoc?id=sf.identity_scim_overview.htm&language=en_us"
+    checked: "2026-09-15"
+  mfa_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Paid production and sandbox orgs"
+    notes: "Org-wide MFA for direct UI logins is enforced and cannot be disabled from July 2026 rollout; not enforced on Developer or trial orgs"
+    source: "https://help.salesforce.com/s/articleView?id=005321561&language=en_US&type=1"
+    checked: "2026-09-15"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Passkeys and WebAuthn/U2F security keys; phishing-resistant MFA required for privileged users; plan requirement not stated"
+    source: "https://help.salesforce.com/apex/HTViewHelpDoc?id=sf.mfa_supported_verification_methods.htm&language=en_us"
+    checked: "2026-09-15"
+  audit_logs:
+    support: "unknown"
+  jit_provisioning:
+    support: "unknown"
+  domain_verification:
+    support: "unknown"
+  custom_roles:
+    support: "unknown"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "unknown"
+  api_token_controls:
+    support: "unknown"

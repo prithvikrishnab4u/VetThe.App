@@ -1,33 +1,54 @@
-name: Front
-category: collaboration
-website: https://front.com
-description: Customer operations platform that combines a help desk with the collaboration
-  of email.
-sso:
-  supported: true
-  protocols:
-  - SAML
-  tier: paid
-  sp_initiated: true
-  jit_provisioning: true
-  domain_claiming: false
-mfa:
-  supported: true
-  types:
-  - TOTP
-  enforcement: admin_enforced
-  tier: paid
-  adaptive_mfa: false
-  phishing_resistant: false
-compliance:
-  soc2: true
-  iso27001: true
-meta:
-  last_verified: '2026-01-02'
-  ready_to_publish: true
-provenance:
-  source: vendor documentation (auto)
-  source_url: https://front.com
-  verified_by: auto-scan
-  verified_date: '2026-09-14'
-  evidence: 2fa,sso
+name: "Front"
+category: "collaboration"
+website: "https://front.com"
+description: "Customer operations platform that combines a help desk with the collaboration of email."
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Professional"
+    notes: "Any SAML-based IdP; SAML is the only option; latest Professional plan or above"
+    protocols: ["SAML"]
+    source: "https://help.front.com/en/articles/2280"
+    checked: "2026-09-15"
+  sso_enforcement:
+    support: "unknown"
+  scim:
+    support: "supported"
+    tier: "paid"
+    plan: "Professional"
+    notes: "SCIM 2.0 API; Entra ID, Okta, Google Workspace, OneLogin, Rippling, Gusto; supports teammate group sync"
+    source: "https://help.front.com/en/articles/2207"
+    checked: "2026-09-15"
+  mfa_enforcement:
+    support: "unknown"
+  phishing_resistant_mfa:
+    support: "unknown"
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "All plans"
+    notes: "Admins can see who changed settings and resources, what changed and when"
+    retention: "365 days"
+    source: "https://help.front.com/en/articles/2925696"
+    checked: "2026-09-15"
+  jit_provisioning:
+    support: "unknown"
+  domain_verification:
+    support: "unknown"
+  custom_roles:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Pricing page lists custom roles on Enterprise"
+    source: "https://front.com/pricing"
+    checked: "2026-09-15"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "unknown"
+  api_token_controls:
+    support: "unknown"

@@ -2,23 +2,57 @@ name: "ClickUp"
 category: "productivity"
 website: "https://clickup.com"
 description: "The all-in-one productivity platform where teams can come together to plan, organize, and collaborate."
-sso:
-  supported: true
-  protocols: ["SAML"]
-  tier: "enterprise"
-  sp_initiated: true
-  jit_provisioning: true
-  domain_claiming: true
-mfa:
-  supported: true
-  types: ["TOTP", "SMS"]
-  enforcement: "admin_enforced"
-  tier: "paid"
-  adaptive_mfa: false
-  phishing_resistant: false
-compliance:
-  soc2: true
-  iso27001: true
-meta:
-  last_verified: "2026-01-02"
-  ready_to_publish: true
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Custom SAML is Enterprise only; Google and Microsoft SSO are listed from the Unlimited plan"
+    protocols: ["SAML"]
+    source: "https://help.clickup.com/hc/en-us/articles/6305027039767-Configure-custom-SAML-single-sign-on"
+    checked: "2026-09-15"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SAML login policy: required for all users, all except guests, all except limited members and guests, or optional"
+    source: "https://help.clickup.com/hc/en-us/articles/6305027039767-Configure-custom-SAML-single-sign-on"
+    checked: "2026-09-15"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM base URL and token issued after Custom SAML is configured; Okta full automatic provisioning"
+    source: "https://help.clickup.com/hc/en-us/articles/6305027039767-Configure-custom-SAML-single-sign-on"
+    checked: "2026-09-15"
+  mfa_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "Owners/admins can require 2FA for the Workspace on Business and above; SMS or authenticator app"
+    source: "https://help.clickup.com/hc/en-us/articles/6327741965591-Activate-and-manage-two-factor-authentication"
+    checked: "2026-09-15"
+  phishing_resistant_mfa:
+    support: "unknown"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Pricing lists Audit Log on Enterprise; Workspace audit logs cover user auth events, tasks, fields, hierarchy; API export"
+    source: "https://clickup.com/pricing"
+    checked: "2026-09-15"
+  jit_provisioning:
+    support: "unknown"
+  domain_verification:
+    support: "unknown"
+  custom_roles:
+    support: "unknown"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "unknown"
+  api_token_controls:
+    support: "unknown"

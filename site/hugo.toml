@@ -1,6 +1,6 @@
 baseURL = 'https://vettheapp.com/'
-languageCode = 'en-us'
-title = 'VetThe.App - SaaS Identity Security Comparison'
+locale = 'en-us'
+title = 'VetThe.App - IAM Capabilities of SaaS Apps'
 dataDir = "../data"
 
 [build]

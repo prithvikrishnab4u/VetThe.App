@@ -2,31 +2,40 @@
 (function() {
     const table = document.getElementById('appsTable');
     const tbody = document.getElementById('tableBody');
-    // Global search removed
     const filterApp = document.getElementById('filterApp');
     const clearAllBtn = document.getElementById('clearAllBtn');
-    // exportCSVBtn removed
+    const toggleExtendedBtn = document.getElementById('toggleExtendedBtn');
     const resultCount = document.getElementById('resultCount');
-    
-    let allRows = Array.from(tbody.querySelectorAll('tr'));
+
+    // Capability cell values set by table.html (data-value), in sort/filter order
+    const VALUE_ORDER = ['Free', 'Paid', 'Enterprise', 'Add-on', 'Supported', 'Partial', 'No', 'Unknown'];
+
+    const allRows = Array.from(tbody.querySelectorAll('tr'));
+    allRows.forEach(row => {
+        row.values = { app: row.dataset.app, category: row.dataset.category };
+        row.querySelectorAll('td[data-cap]').forEach(td => {
+            row.values[td.dataset.cap] = td.dataset.value;
+        });
+    });
+
     let filteredRows = [...allRows];
     let currentPage = 1;
     let rowsPerPage = 25;
     let sortColumn = null;
     let sortDirection = 'asc';
-    
+
     // Flowbite-style Dropdown Class
     class FlowbiteDropdown {
         constructor(containerId, isMulti = false) {
             this.container = document.getElementById(containerId);
             if (!this.container) return;
-            
+
             this.button = this.container.querySelector('.dropdown-button');
             this.buttonText = this.button.querySelector('span');
             this.dropdown = this.container.querySelector('.flowbite-dropdown');
             this.isMulti = isMulti;
             this.selected = new Set();
-            
+
             this.init();
         }
 
@@ -44,7 +53,7 @@
                     this.close();
                 }
             });
-            
+
             // Prevent dropdown from closing when clicking inside
             this.dropdown.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -53,18 +62,18 @@
 
         setOptions(options) {
             this.dropdown.innerHTML = '';
-            
+
             // Add search for long lists
             if (options.length > 8) {
                 const searchDiv = document.createElement('div');
                 searchDiv.className = 'sticky top-0 bg-white border-b border-gray-200 p-2';
                 searchDiv.innerHTML = `
-                    <input type="text" 
-                           placeholder="Search..." 
+                    <input type="text"
+                           placeholder="Search..."
                            class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none">
                 `;
                 this.dropdown.appendChild(searchDiv);
-                
+
                 const searchInput = searchDiv.querySelector('input');
                 searchInput.addEventListener('input', (e) => {
                     e.stopPropagation();
@@ -82,21 +91,21 @@
             options.forEach(opt => {
                 const div = document.createElement('div');
                 div.className = 'dropdown-option';
-                
+
                 if (this.isMulti) {
                     const checkboxId = `${this.container.id}_${opt.replace(/\s+/g, '_')}`;
                     div.innerHTML = `
-                        <input type="checkbox" 
+                        <input type="checkbox"
                                id="${checkboxId}"
-                               value="${opt}" 
+                               value="${opt}"
                                class="flowbite-checkbox"
                                ${this.selected.has(opt) ? 'checked' : ''}>
-                        <label for="${checkboxId}" class="ml-2 text-sm font-medium text-gray-900 cursor-pointer capitalize flex-1">${opt}</label>
+                        <label for="${checkboxId}" class="ml-2 text-sm font-medium text-gray-900 cursor-pointer capitalize flex-1">${opt.replace(/_/g, ' ')}</label>
                     `;
-                    
+
                     const checkbox = div.querySelector('input');
                     const label = div.querySelector('label');
-                    
+
                     const handleChange = (e) => {
                         e.stopPropagation();
                         if (checkbox.checked) {
@@ -107,7 +116,7 @@
                         this.updateButtonText();
                         applyFilters();
                     };
-                    
+
                     checkbox.addEventListener('change', handleChange);
                     checkbox.addEventListener('click', (e) => e.stopPropagation());
                     label.addEventListener('click', (e) => {
@@ -127,7 +136,7 @@
                         this.close();
                     });
                 }
-                
+
                 this.dropdown.appendChild(div);
             });
 
@@ -146,7 +155,6 @@
             }
         }
 
-
         toggle() {
             const isOpen = this.dropdown.classList.contains('open');
 
@@ -162,7 +170,7 @@
                 const rect = this.button.getBoundingClientRect();
                 this.dropdown.style.top = `${rect.bottom + 4}px`;
                 this.dropdown.style.left = `${rect.left}px`;
-                this.dropdown.style.width = `${rect.width}px`;
+                this.dropdown.style.width = `${Math.max(rect.width, 180)}px`;
                 this.dropdown.classList.add('open');
             }
         }
@@ -183,7 +191,7 @@
                 this.buttonText.textContent = 'All';
                 this.buttonText.className = 'text-gray-500';
             } else if (this.selected.size === 1) {
-                const value = Array.from(this.selected)[0];
+                const value = Array.from(this.selected)[0].replace(/_/g, ' ');
                 this.buttonText.textContent = value.charAt(0).toUpperCase() + value.slice(1);
                 this.buttonText.className = 'text-gray-900 font-medium';
             } else {
@@ -197,59 +205,23 @@
         }
     }
 
-    // Initialize dropdowns
-    const dropdowns = {
-        category: new FlowbiteDropdown('filterCategoryContainer', true),
-        sso: new FlowbiteDropdown('filterSSOContainer', false),
-        protocols: new FlowbiteDropdown('filterProtocolsContainer', true),
-        scim: new FlowbiteDropdown('filterSCIMContainer', false),
-        mfa: new FlowbiteDropdown('filterMFAContainer', false),
-        mfaTypes: new FlowbiteDropdown('filterMFATypesContainer', true),
-        compliance: new FlowbiteDropdown('filterComplianceContainer', true)
-    };
+    // One multi-select dropdown for category and for every capability column
+    const dropdowns = { category: new FlowbiteDropdown('filterCategoryContainer', true) };
+    document.querySelectorAll('[data-filter-cap]').forEach(el => {
+        dropdowns[el.dataset.filterCap] = new FlowbiteDropdown(el.id, true);
+    });
 
-    // Populate filter options
+    function compareValues(column, a, b) {
+        if (column === 'app' || column === 'category') return a.localeCompare(b);
+        return VALUE_ORDER.indexOf(a) - VALUE_ORDER.indexOf(b);
+    }
+
+    // Populate filter options from the values present in the table
     function populateFilters() {
-        const values = {
-            category: new Set(),
-            sso: new Set(),
-            protocols: new Set(),
-            scim: new Set(),
-            mfa: new Set(),
-            mfaTypes: new Set(),
-            compliance: new Set()
-        };
-
-        allRows.forEach(row => {
-            values.category.add(row.dataset.category);
-            
-            const ssoValue = row.dataset.sso;
-            if (ssoValue && ssoValue !== 'none') {
-                values.sso.add(ssoValue);
-            }
-            
-            const scimValue = row.dataset.scim;
-            if (scimValue && scimValue !== 'none') {
-                values.scim.add(scimValue);
-            }
-            
-            const mfaValue = row.dataset.mfa;
-            if (mfaValue && mfaValue !== 'none') {
-                values.mfa.add(mfaValue);
-            }
-            
-            row.dataset.protocols.split(',').forEach(p => p.trim() && values.protocols.add(p.trim()));
-            row.dataset.mfaTypes.split(',').forEach(m => m.trim() && values.mfaTypes.add(m.trim()));
-            row.dataset.compliance.split(',').forEach(c => c.trim() && values.compliance.add(c.trim().toUpperCase()));
+        Object.entries(dropdowns).forEach(([column, dropdown]) => {
+            const values = Array.from(new Set(allRows.map(row => row.values[column]).filter(Boolean)));
+            dropdown.setOptions(values.sort((a, b) => compareValues(column, a, b)));
         });
-
-        dropdowns.category.setOptions(Array.from(values.category).filter(v => v).sort());
-        dropdowns.sso.setOptions(Array.from(values.sso).sort());
-        dropdowns.protocols.setOptions(Array.from(values.protocols).sort());
-        dropdowns.scim.setOptions(Array.from(values.scim).sort());
-        dropdowns.mfa.setOptions(Array.from(values.mfa).sort());
-        dropdowns.mfaTypes.setOptions(Array.from(values.mfaTypes).sort());
-        dropdowns.compliance.setOptions(Array.from(values.compliance).sort());
     }
 
     // Apply all filters
@@ -257,65 +229,16 @@
         const appQuery = filterApp.value.toLowerCase();
 
         filteredRows = allRows.filter(row => {
-            // App name filter
-            if (appQuery && !row.dataset.app.toLowerCase().includes(appQuery)) {
+            if (appQuery && !row.values.app.toLowerCase().includes(appQuery)) {
                 return false;
             }
-
-            // Category
-            const selectedCats = dropdowns.category.getSelected();
-            if (selectedCats.size > 0 && !selectedCats.has(row.dataset.category)) {
-                return false;
-            }
-
-            // SSO
-            const selectedSSO = dropdowns.sso.getSelected();
-            if (selectedSSO.size > 0 && !selectedSSO.has(row.dataset.sso)) {
-                return false;
-            }
-
-            // Protocols
-            const selectedProtos = dropdowns.protocols.getSelected();
-            if (selectedProtos.size > 0) {
-                const protocols = row.dataset.protocols.split(',').map(p => p.trim());
-                if (!Array.from(selectedProtos).some(sp => protocols.includes(sp))) {
-                    return false;
-                }
-            }
-
-            // SCIM
-            const selectedSCIM = dropdowns.scim.getSelected();
-            if (selectedSCIM.size > 0 && !selectedSCIM.has(row.dataset.scim)) {
-                return false;
-            }
-
-            // MFA
-            const selectedMFA = dropdowns.mfa.getSelected();
-            if (selectedMFA.size > 0 && !selectedMFA.has(row.dataset.mfa)) {
-                return false;
-            }
-
-            // MFA Types
-            const selectedMFATypes = dropdowns.mfaTypes.getSelected();
-            if (selectedMFATypes.size > 0) {
-                const types = row.dataset.mfaTypes.split(',').map(t => t.trim());
-                if (!Array.from(selectedMFATypes).some(st => types.includes(st))) {
-                    return false;
-                }
-            }
-
-            // Compliance
-            const selectedCompliance = dropdowns.compliance.getSelected();
-            if (selectedCompliance.size > 0) {
-                const compliance = row.dataset.compliance.split(',').map(c => c.trim().toUpperCase());
-                if (!Array.from(selectedCompliance).some(sc => compliance.includes(sc))) {
-                    return false;
-                }
-            }
-
-            return true;
+            return Object.entries(dropdowns).every(([column, dropdown]) => {
+                const selected = dropdown.getSelected();
+                return selected.size === 0 || selected.has(row.values[column]);
+            });
         });
 
+        if (sortColumn) sortRows();
         currentPage = 1;
         renderTable();
     }
@@ -329,22 +252,16 @@
             sortDirection = 'asc';
         }
 
-        filteredRows.sort((a, b) => {
-            let valA = a.dataset[column] || '';
-            let valB = b.dataset[column] || '';
-            
-            if (column === 'verified') {
-                valA = new Date(valA);
-                valB = new Date(valB);
-            }
-            
-            if (valA < valB) return sortDirection === 'asc' ? -1 : 1;
-            if (valA > valB) return sortDirection === 'asc' ? 1 : -1;
-            return 0;
-        });
-
+        sortRows();
         updateSortIndicators();
         renderTable();
+    }
+
+    function sortRows() {
+        filteredRows.sort((a, b) => {
+            const result = compareValues(sortColumn, a.values[sortColumn] || '', b.values[sortColumn] || '');
+            return sortDirection === 'asc' ? result : -result;
+        });
     }
 
     function updateSortIndicators() {
@@ -367,11 +284,12 @@
         const end = start + rowsPerPage;
         const pageRows = filteredRows.slice(start, end);
 
-        // Hide all rows
+        // Hide all rows, then show the current page in sorted order
         allRows.forEach(row => row.style.display = 'none');
-        
-        // Show current page rows
-        pageRows.forEach(row => row.style.display = '');
+        pageRows.forEach(row => {
+            row.style.display = '';
+            tbody.appendChild(row);
+        });
 
         // Update counts
         resultCount.textContent = filteredRows.length;
@@ -410,7 +328,7 @@
         const maxButtons = 5;
         let startPage = Math.max(1, currentPage - Math.floor(maxButtons / 2));
         let endPage = Math.min(totalPages, startPage + maxButtons - 1);
-        
+
         if (endPage - startPage < maxButtons - 1) {
             startPage = Math.max(1, endPage - maxButtons + 1);
         }
@@ -446,17 +364,21 @@
 
     // Clear all filters
     function clearAll() {
-        // globalSearch removed
         filterApp.value = '';
         Object.values(dropdowns).forEach(d => d.clear());
         applyFilters();
     }
 
+    // Show or hide the non-core capability columns
+    const extendedLabel = toggleExtendedBtn.textContent.trim();
+    toggleExtendedBtn.addEventListener('click', () => {
+        const showing = table.classList.toggle('show-extended');
+        toggleExtendedBtn.textContent = showing ? 'Show core capabilities only' : extendedLabel;
+    });
+
     // Event listeners
-    // globalSearch removed
     filterApp.addEventListener('input', applyFilters);
     clearAllBtn.addEventListener('click', clearAll);
-    // exportCSVBtn removed
 
     // Sortable headers
     document.querySelectorAll('th[data-column]').forEach(th => {

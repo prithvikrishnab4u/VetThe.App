@@ -1,308 +1,210 @@
 #!/usr/bin/env python3
 """
-VetThe.App - YAML Validation Script
+VetThe.App - app data validator
 
-This script validates all app YAML files against the schema.
+Checks every data/apps/*.yaml against data/schema.yaml and reports how much of the
+data has been verified against a source. Exits 1 if any file has errors.
+
 Run: python scripts/validate.py
 """
 
-import os
+import re
 import sys
-import yaml
+from collections import Counter
+from datetime import date, datetime
 from pathlib import Path
-from datetime import datetime
-from typing import Dict, List, Any, Tuple
 
-# Color codes for terminal output
+import yaml
+
 RED = '\033[91m'
 GREEN = '\033[92m'
 YELLOW = '\033[93m'
 BLUE = '\033[94m'
 RESET = '\033[0m'
 
-class AppValidator:
-    def __init__(self, schema_path: str, data_dir: str):
-        """Initialize validator with schema and data directory."""
-        self.schema_path = Path(schema_path)
-        self.data_dir = Path(data_dir)
-        self.schema = self._load_schema()
-        self.errors = []
-        self.warnings = []
+REPO = Path(__file__).resolve().parent.parent
+SCHEMA_PATH = REPO / 'data' / 'schema.yaml'
+APPS_DIR = REPO / 'data' / 'apps'
 
-    def _load_schema(self) -> Dict:
-        """Load the schema file."""
-        try:
-            with open(self.schema_path, 'r') as f:
-                return yaml.safe_load(f)
-        except Exception as e:
-            print(f"{RED}Error loading schema: {e}{RESET}")
-            sys.exit(1)
+ROOT_FIELDS = ['name', 'category', 'website', 'description', 'status', 'capabilities']
+CAPABILITY_FIELDS = {'support', 'tier', 'plan', 'notes', 'source', 'checked'}
+# Support levels that describe a working feature, so a tier makes sense
+TIERED_SUPPORT = {'supported', 'partial'}
 
-    def _load_app_file(self, filepath: Path) -> Tuple[Dict, str]:
-        """Load an app YAML file."""
-        try:
-            with open(filepath, 'r') as f:
-                data = yaml.safe_load(f)
-            return data, None
-        except Exception as e:
-            return None, f"Failed to parse YAML: {e}"
 
-    def validate_category(self, app_name: str, category: str) -> None:
-        """Validate category value."""
-        valid_categories = self.schema['categories']
-        if category not in valid_categories:
-            self.errors.append(
-                f"{app_name}: Invalid category '{category}'. "
-                f"Must be one of: {', '.join(valid_categories)}"
-            )
+def ids(entries):
+    return [e['id'] if isinstance(e, dict) else e for e in entries]
 
-    def validate_tier(self, app_name: str, field: str, tier: str) -> None:
-        """Validate tier value."""
-        valid_tiers = self.schema['tiers']
-        if tier not in valid_tiers:
-            self.errors.append(
-                f"{app_name}: Invalid {field} tier '{tier}'. "
-                f"Must be one of: {', '.join(valid_tiers)}"
-            )
 
-    def validate_sso_protocols(self, app_name: str, protocols: List[str]) -> None:
-        """Validate SSO protocols."""
-        valid_protocols = self.schema['sso_protocols']
-        for protocol in protocols:
-            if protocol not in valid_protocols:
-                self.errors.append(
-                    f"{app_name}: Invalid SSO protocol '{protocol}'. "
-                    f"Must be one of: {', '.join(valid_protocols)}"
-                )
+def is_url(value):
+    return isinstance(value, str) and re.fullmatch(r'https?://\S+', value) is not None
 
-    def validate_scim_support(self, app_name: str, support_level: str) -> None:
-        """Validate SCIM support level."""
-        valid_levels = self.schema['scim_support_levels']
-        if support_level not in valid_levels:
-            self.errors.append(
-                f"{app_name}: Invalid SCIM support '{support_level}'. "
-                f"Must be one of: {', '.join(valid_levels)}"
-            )
 
-    def validate_mfa_types(self, app_name: str, types: List[str]) -> None:
-        """Validate MFA types."""
-        valid_types = self.schema['mfa_types']
-        for mfa_type in types:
-            if mfa_type not in valid_types:
-                self.errors.append(
-                    f"{app_name}: Invalid MFA type '{mfa_type}'. "
-                    f"Must be one of: {', '.join(valid_types)}"
-                )
+def date_problem(value):
+    """Return an error message, or None if value is a quoted YYYY-MM-DD string."""
+    if isinstance(value, date):
+        return 'must be quoted, e.g. "2026-01-31"'
+    try:
+        datetime.strptime(str(value), '%Y-%m-%d')
+    except ValueError:
+        return f"'{value}' must be YYYY-MM-DD"
+    return None
 
-    def validate_mfa_enforcement(self, app_name: str, enforcement: str) -> None:
-        """Validate MFA enforcement."""
-        valid_enforcement = self.schema['mfa_enforcement']
-        if enforcement not in valid_enforcement:
-            self.errors.append(
-                f"{app_name}: Invalid MFA enforcement '{enforcement}'. "
-                f"Must be one of: {', '.join(valid_enforcement)}"
-            )
 
-    def validate_date(self, app_name: str, date_str: str) -> None:
-        """Validate date format (YYYY-MM-DD)."""
-        try:
-            datetime.strptime(date_str, '%Y-%m-%d')
-        except ValueError:
-            self.errors.append(
-                f"{app_name}: Invalid date format '{date_str}'. "
-                f"Must be YYYY-MM-DD"
-            )
+def validate_capability(cid, definition, cap, schema, published):
+    if not isinstance(cap, dict):
+        return [f"{cid}: must be a mapping with at least 'support'"]
 
-    def validate_url(self, app_name: str, url: str) -> None:
-        """Validate URL format."""
-        if not url.startswith('http://') and not url.startswith('https://'):
-            self.errors.append(
-                f"{app_name}: Invalid URL '{url}'. Must start with http:// or https://"
-            )
+    errors = []
+    allowed = CAPABILITY_FIELDS | set(definition.get('fields', []))
+    for key in cap:
+        if key not in allowed:
+            errors.append(f"{cid}: unknown field '{key}'")
 
-    def check_required_fields(self, app_name: str, data: Dict, section: str, fields: List[str]) -> None:
-        """Check if required fields exist."""
-        if section == 'root':
-            section_data = data
+    support = cap.get('support')
+    support_levels = ids(schema['support_levels'])
+    if support not in support_levels:
+        errors.append(f"{cid}: support '{support}' must be one of: {', '.join(support_levels)}")
+        return errors
+
+    tier = cap.get('tier')
+    if tier is not None:
+        tiers = ids(schema['tiers'])
+        if support not in TIERED_SUPPORT:
+            errors.append(f"{cid}: tier only applies when support is supported or partial")
+        elif tier not in tiers:
+            errors.append(f"{cid}: tier '{tier}' must be one of: {', '.join(tiers)}")
+
+    source, checked = cap.get('source'), cap.get('checked')
+    if source is not None and not is_url(source):
+        errors.append(f"{cid}: source '{source}' must be an http(s) URL")
+    if checked is not None:
+        problem = date_problem(checked)
+        if problem:
+            errors.append(f"{cid}: checked {problem}")
+    if (source is None) != (checked is None):
+        errors.append(f"{cid}: source and checked must be set together")
+    if support == 'unknown' and source is not None:
+        errors.append(f"{cid}: an unknown capability can't have a source")
+
+    if 'protocols' in cap:
+        protocols = cap['protocols']
+        if not isinstance(protocols, list) or not protocols:
+            errors.append(f"{cid}: protocols must be a non-empty list")
         else:
-            section_data = data.get(section, {})
-            if not section_data:
-                self.errors.append(f"{app_name}: Missing '{section}' section")
-                return
+            for protocol in protocols:
+                if protocol not in schema['sso_protocols']:
+                    errors.append(f"{cid}: protocol '{protocol}' must be one of: {', '.join(schema['sso_protocols'])}")
+        if support not in TIERED_SUPPORT:
+            errors.append(f"{cid}: protocols only apply when support is supported or partial")
+    if 'retention' in cap and not isinstance(cap['retention'], str):
+        errors.append(f"{cid}: retention must be quoted text, e.g. \"90 days\"")
 
-        for field in fields:
-            if field not in section_data:
-                self.errors.append(
-                    f"{app_name}: Missing required field '{section}.{field}'"
-                )
+    if published:
+        if definition.get('core') and support == 'unknown':
+            errors.append(f"{cid}: core capability must be researched before publishing")
+        if support != 'unknown' and source is None:
+            errors.append(f"{cid}: needs a source and checked date before publishing")
+        if support in TIERED_SUPPORT and tier is None:
+            errors.append(f"{cid}: needs a tier before publishing")
 
-    def validate_app(self, filepath: Path) -> bool:
-        """Validate a single app file."""
-        app_name = filepath.stem
+    return errors
 
-        # Load file
-        data, error = self._load_app_file(filepath)
-        if error:
-            self.errors.append(f"{app_name}: {error}")
-            return False
 
-        # Check required root fields
-        root_fields = self.schema['required_fields']['root']
-        self.check_required_fields(app_name, data, 'root', root_fields)
+def validate_app(path, schema):
+    """Return (data, errors). data is None when the file can't be parsed."""
+    try:
+        data = yaml.safe_load(path.read_text())
+    except yaml.YAMLError as e:
+        return None, [f"invalid YAML: {e}"]
+    if not isinstance(data, dict):
+        return None, ['file must be a YAML mapping']
 
-        # Validate basic fields
-        if 'category' in data:
-            self.validate_category(app_name, data['category'])
+    errors = []
+    for field in ROOT_FIELDS:
+        if field not in data:
+            errors.append(f"missing '{field}'")
+    for field in data:
+        if field not in ROOT_FIELDS:
+            errors.append(f"unknown field '{field}'")
 
-        if 'website' in data:
-            self.validate_url(app_name, data['website'])
+    if 'category' in data and data['category'] not in schema['categories']:
+        errors.append(f"category '{data['category']}' must be one of: {', '.join(schema['categories'])}")
+    if 'website' in data and not is_url(data['website']):
+        errors.append(f"website '{data['website']}' must be an http(s) URL")
+    if 'status' in data and data['status'] not in schema['statuses']:
+        errors.append(f"status '{data['status']}' must be one of: {', '.join(schema['statuses'])}")
 
-        # Validate SSO section
-        if 'sso' in data:
-            sso = data['sso']
-            sso_fields = self.schema['required_fields']['sso']
-            self.check_required_fields(app_name, data, 'sso', sso_fields)
+    caps = data.get('capabilities')
+    if not isinstance(caps, dict):
+        if 'capabilities' in data:
+            errors.append('capabilities must be a mapping')
+        return data, errors
 
-            if sso.get('supported'):
-                if 'protocols' not in sso or not sso['protocols']:
-                    self.errors.append(f"{app_name}: SSO is supported but no protocols specified")
-                elif sso.get('protocols'):
-                    self.validate_sso_protocols(app_name, sso['protocols'])
+    definitions = {c['id']: c for c in schema['capabilities']}
+    for cid in caps:
+        if cid not in definitions:
+            errors.append(f"unknown capability '{cid}'")
 
-                if 'tier' in sso:
-                    self.validate_tier(app_name, 'SSO', sso['tier'])
+    published = data.get('status') == 'published'
+    for cid, definition in definitions.items():
+        if cid not in caps:
+            errors.append(f"missing capability '{cid}'")
+            continue
+        errors.extend(validate_capability(cid, definition, caps[cid], schema, published))
 
-        # Validate SCIM section
-        if 'scim' in data:
-            scim = data['scim']
-            scim_fields = self.schema['required_fields']['scim']
-            self.check_required_fields(app_name, data, 'scim', scim_fields)
-
-            if 'supported' in scim:
-                self.validate_scim_support(app_name, scim['supported'])
-
-                if scim['supported'] in ['full', 'partial']:
-                    if 'version' not in scim:
-                        self.errors.append(f"{app_name}: SCIM is {scim['supported']} but no version specified")
-
-                if 'tier' in scim:
-                    self.validate_tier(app_name, 'SCIM', scim['tier'])
-
-        # Validate MFA section
-        if 'mfa' in data:
-            mfa = data['mfa']
-            mfa_fields = self.schema['required_fields']['mfa']
-            self.check_required_fields(app_name, data, 'mfa', mfa_fields)
-
-            if mfa.get('supported'):
-                if 'types' not in mfa or not mfa['types']:
-                    self.errors.append(f"{app_name}: MFA is supported but no types specified")
-                elif mfa.get('types'):
-                    self.validate_mfa_types(app_name, mfa['types'])
-
-                if 'enforcement' in mfa:
-                    self.validate_mfa_enforcement(app_name, mfa['enforcement'])
-
-                if 'tier' in mfa:
-                    self.validate_tier(app_name, 'MFA', mfa['tier'])
-
-        # Validate compliance section
-        if 'compliance' in data:
-            comp_fields = self.schema['required_fields']['compliance']
-            self.check_required_fields(app_name, data, 'compliance', comp_fields)
-
-        # Validate meta section
-        if 'meta' in data:
-            meta = data['meta']
-            meta_fields = self.schema['required_fields']['meta']
-            self.check_required_fields(app_name, data, 'meta', meta_fields)
-
-            if 'last_verified' in meta:
-                self.validate_date(app_name, meta['last_verified'])
-
-            # Warning if not ready to publish
-            if meta.get('ready_to_publish') is False:
-                self.warnings.append(f"{app_name}: Marked as not ready to publish")
-
-        return len(self.errors) == 0
-
-    def validate_all(self) -> Tuple[int, int]:
-        """Validate all app files in the data directory."""
-        app_files = sorted(self.data_dir.glob('*.yaml'))
-
-        if not app_files:
-            print(f"{RED}No YAML files found in {self.data_dir}{RESET}")
-            return 0, 0
-
-        print(f"{BLUE}Validating {len(app_files)} app files...{RESET}\n")
-
-        valid_count = 0
-        invalid_count = 0
-
-        for filepath in app_files:
-            initial_error_count = len(self.errors)
-            self.validate_app(filepath)
-
-            if len(self.errors) == initial_error_count:
-                valid_count += 1
-                print(f"{GREEN}✓{RESET} {filepath.stem}")
-            else:
-                invalid_count += 1
-                print(f"{RED}✗{RESET} {filepath.stem}")
-
-        return valid_count, invalid_count
-
-    def print_results(self, valid_count: int, invalid_count: int) -> None:
-        """Print validation results."""
-        print(f"\n{'='*60}")
-        print(f"{BLUE}Validation Results{RESET}")
-        print(f"{'='*60}\n")
-
-        total = valid_count + invalid_count
-        print(f"Total files: {total}")
-        print(f"{GREEN}Valid: {valid_count}{RESET}")
-        print(f"{RED}Invalid: {invalid_count}{RESET}")
-
-        if self.warnings:
-            print(f"\n{YELLOW}Warnings ({len(self.warnings)}):{RESET}")
-            for warning in self.warnings:
-                print(f"  {YELLOW}⚠{RESET}  {warning}")
-
-        if self.errors:
-            print(f"\n{RED}Errors ({len(self.errors)}):{RESET}")
-            for error in self.errors:
-                print(f"  {RED}✗{RESET} {error}")
-
-        print(f"\n{'='*60}\n")
-
-        if invalid_count > 0:
-            print(f"{RED}Validation failed. Please fix the errors above.{RESET}")
-            sys.exit(1)
-        else:
-            print(f"{GREEN}All files valid! ✓{RESET}")
-            sys.exit(0)
+    return data, errors
 
 
 def main():
-    """Main function."""
-    # Get project root (script is in scripts/, project root is parent)
-    script_dir = Path(__file__).parent
-    project_root = script_dir.parent
+    if not SCHEMA_PATH.exists():
+        print(f"{RED}Schema file not found: {SCHEMA_PATH}{RESET}")
+        sys.exit(1)
+    schema = yaml.safe_load(SCHEMA_PATH.read_text())
 
-    schema_path = project_root / 'schemas' / 'app-schema.yaml'
-    data_dir = project_root / 'data' / 'apps'
-
-    if not schema_path.exists():
-        print(f"{RED}Schema file not found: {schema_path}{RESET}")
+    files = sorted(APPS_DIR.glob('*.yaml'))
+    if not files:
+        print(f"{RED}No YAML files found in {APPS_DIR}{RESET}")
         sys.exit(1)
 
-    if not data_dir.exists():
-        print(f"{RED}Data directory not found: {data_dir}{RESET}")
-        sys.exit(1)
+    print(f"{BLUE}Validating {len(files)} app files...{RESET}\n")
 
-    validator = AppValidator(schema_path, data_dir)
-    valid_count, invalid_count = validator.validate_all()
-    validator.print_results(valid_count, invalid_count)
+    failed = 0
+    statuses = Counter()
+    points = Counter()
+
+    for path in files:
+        data, errors = validate_app(path, schema)
+        if errors:
+            failed += 1
+            print(f"{RED}✗ {path.stem}{RESET}")
+            for error in errors:
+                print(f"    {error}")
+
+        if data:
+            statuses[data.get('status')] += 1
+            for cap in (data.get('capabilities') or {}).values():
+                if not isinstance(cap, dict):
+                    continue
+                if cap.get('support') == 'unknown':
+                    points['unknown'] += 1
+                elif cap.get('source'):
+                    points['verified'] += 1
+                else:
+                    points['unverified'] += 1
+
+    print(f"\n{'=' * 60}")
+    print(f"Apps:        {len(files)} ({statuses['published']} published, {statuses['draft']} draft)")
+    print(f"Data points: {sum(points.values())} "
+          f"({GREEN}{points['verified']} verified{RESET}, "
+          f"{YELLOW}{points['unverified']} unverified{RESET}, "
+          f"{points['unknown']} unknown)")
+    print(f"{'=' * 60}\n")
+
+    if failed:
+        print(f"{RED}{failed} file(s) failed validation.{RESET}")
+        sys.exit(1)
+    print(f"{GREEN}All files valid ✓{RESET}")
 
 
 if __name__ == '__main__':

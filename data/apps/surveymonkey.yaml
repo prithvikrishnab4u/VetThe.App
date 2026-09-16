@@ -2,23 +2,53 @@ name: "SurveyMonkey"
 category: "sales_marketing"
 website: "https://www.surveymonkey.com"
 description: "Online survey tool for capturing the voices and opinions of the people who matter most to you."
-sso:
-  supported: true
-  protocols: ["SAML"]
-  tier: "enterprise"
-  sp_initiated: true
-  jit_provisioning: true
-  domain_claiming: true
-mfa:
-  supported: true
-  types: ["TOTP"]
-  enforcement: "admin_enforced"
-  tier: "enterprise"
-  adaptive_mfa: false
-  phishing_resistant: false
-compliance:
-  soc2: true
-  iso27001: true
-meta:
-  last_verified: "2026-01-03"
-  ready_to_publish: true
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SAML 2.0, service provider initiated; Enterprise teams only."
+    protocols: ["SAML"]
+    source: "https://help.surveymonkey.com/en/surveymonkey/teams/single-sign-on/"
+    checked: "2026-09-16"
+  sso_enforcement:
+    support: "unknown"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "In beta and requires SSO. Creates accounts, syncs names and email, and deactivates members from the IdP; role and seat assignment stays with admins."
+    source: "https://help.surveymonkey.com/en/surveymonkey/teams/scim/"
+    checked: "2026-09-16"
+  mfa_enforcement:
+    support: "unknown"
+  phishing_resistant_mfa:
+    support: "unknown"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Team Activity records logins, collaboration, survey, app install and SCIM events with member, date and location."
+    retention: "3 years"
+    source: "https://help.surveymonkey.com/en/surveymonkey/teams/team-activity/"
+    checked: "2026-09-16"
+  jit_provisioning:
+    support: "unknown"
+  domain_verification:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Enterprise admin controls include locking down the organization's email domain."
+    source: "https://www.surveymonkey.com/product/enterprise/admin-security-features/"
+    checked: "2026-09-16"
+  custom_roles:
+    support: "unknown"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "unknown"
+  api_token_controls:
+    support: "unknown"

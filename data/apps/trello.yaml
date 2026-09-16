@@ -2,38 +2,74 @@ name: "Trello"
 category: "productivity"
 website: "https://trello.com"
 description: "A visual tool that empowers your team to manage any type of project, workflow, or task tracking."
+status: "draft"
 
-sso:
-  supported: true
-  protocols: ["SAML"]
-  tier: "enterprise"
-  sp_initiated: true
-  jit_provisioning: true
-  domain_claiming: true
-
-mfa:
-  supported: true
-  types: ["TOTP", "SMS"]
-  enforcement: "admin_enforced"
-  tier: "paid"
-  adaptive_mfa: false
-  phishing_resistant: false
-
-compliance:
-  soc2: true
-  iso27001: true
-
-meta:
-  last_verified: "2026-01-02"
-  ready_to_publish: true
-
-# Unused fields - tracked but not displayed in main table
-# Currently not using session and audit fields, but doing research on these fields.
-session:
-  timeout_configurable: true
-  max_duration: "Configurable"
-
-audit:
-  logs_available: true
-  retention_period: "Configurable"
-  tier: "enterprise"
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    tier: "add_on"
+    plan: "Atlassian Guard Standard"
+    notes: "SAML SSO configured through an Atlassian organization; can be configured and enforced without Trello Enterprise"
+    protocols: ["SAML"]
+    source: "https://support.atlassian.com/trello/docs/configure-sso-for-trello-with-atlassian-guard/"
+    checked: "2026-09-15"
+  sso_enforcement:
+    support: "supported"
+    tier: "add_on"
+    plan: "Atlassian Guard Standard"
+    notes: "SSO enforced per authentication policy for managed accounts"
+    source: "https://support.atlassian.com/trello/docs/configure-sso-for-trello-with-atlassian-guard/"
+    checked: "2026-09-15"
+  scim:
+    support: "supported"
+    tier: "add_on"
+    plan: "Atlassian Guard Standard"
+    notes: "Atlassian SCIM 2.0 provisioning with group sync for Trello; Trello's own SCIM API is being retired"
+    source: "https://support.atlassian.com/provisioning-users/docs/understand-user-provisioning/"
+    checked: "2026-09-15"
+  mfa_enforcement:
+    support: "supported"
+    tier: "free"
+    plan: "All plans"
+    notes: "Org admins enforce two-step verification for managed accounts via authentication policies; methods are authenticator app or SMS"
+    source: "https://support.atlassian.com/security-and-access-policies/docs/enforce-two-step-verification/"
+    checked: "2026-09-15"
+  phishing_resistant_mfa:
+    support: "partial"
+    tier: "free"
+    notes: "Passkeys only for non-managed Atlassian accounts; org-managed accounts can't enable them"
+    source: "https://support.atlassian.com/atlassian-account/docs/access-your-atlassian-account-with-a-passkey/"
+    checked: "2026-09-15"
+  audit_logs:
+    support: "supported"
+    tier: "add_on"
+    plan: "Atlassian Guard Standard"
+    notes: "Organization audit log listed in Guard Standard, which covers Trello"
+    source: "https://www.atlassian.com/software/guard/pricing"
+    checked: "2026-09-15"
+  jit_provisioning:
+    support: "supported"
+    tier: "add_on"
+    plan: "Atlassian Guard Standard"
+    notes: "Accounts created at first SAML login when verified domains are linked to the IdP directory and SSO is enforced on the default policy"
+    source: "https://support.atlassian.com/security-and-access-policies/docs/configure-saml-single-sign-on-with-an-identity-provider/"
+    checked: "2026-09-15"
+  domain_verification:
+    support: "supported"
+    notes: "Domain verification via DNS TXT or HTML file is a setup step for Trello SSO; plan requirement not stated"
+    source: "https://support.atlassian.com/trello/docs/configure-sso-for-trello-with-atlassian-guard/"
+    checked: "2026-09-15"
+  custom_roles:
+    support: "unknown"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "unknown"
+  api_token_controls:
+    support: "supported"
+    tier: "add_on"
+    plan: "Atlassian Guard Standard"
+    notes: "API token controls listed in Guard Standard"
+    source: "https://www.atlassian.com/software/guard/pricing"
+    checked: "2026-09-15"

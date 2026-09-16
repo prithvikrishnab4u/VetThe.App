@@ -2,37 +2,48 @@ name: "Auth0"
 category: "security"
 website: "https://auth0.com"
 description: "Customer identity and access management platform for developers (acquired by Okta)."
+status: "draft"
 
-sso:
-  supported: true
-  protocols: ["SAML", "OIDC", "WS-Fed"]
-  tier: "free"
-
-scim:
-  supported: "full"
-  version: "2.0"
-  tier: "paid"
-
-mfa:
-  supported: true
-  types: ["TOTP", "SMS", "WebAuthn", "Push", "Email"]
-  enforcement: "admin_enforced"
-  tier: "free"
-
-compliance:
-  soc2: true
-  iso27001: true
-
-meta:
-  last_verified: "2026-01-02"
-  ready_to_publish: true
-
-# Unused fields - tracked but not displayed in main table
-session:
-  timeout_configurable: true
-  max_duration: "Configurable"
-
-audit:
-  logs_available: true
-  retention_period: "5"
-  tier: "free"
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Dashboard SSO for tenant members via enterprise IdP, set up with Auth0 Support; no IdP-initiated flows"
+    protocols: ["SAML", "OIDC"]
+    source: "https://auth0.com/docs/get-started/manage-dashboard-access/configure-single-sign-on-for-auth0-dashboard"
+    checked: "2026-09-15"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Auth0 Teams security policies enforce SSO for team tenants; Early Access on Public Cloud Enterprise"
+    source: "https://auth0.com/docs/get-started/tenant-settings/auth0-teams/configure-security-policies"
+    checked: "2026-09-15"
+  scim:
+    support: "unknown"
+  mfa_enforcement:
+    support: "not_supported"
+    notes: "MFA cannot be enforced for all members of a tenant; dashboard users self-enroll"
+    source: "https://auth0.com/docs/get-started/manage-dashboard-access/configure-single-sign-on-for-auth0-dashboard"
+    checked: "2026-09-15"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Dashboard users can enroll WebAuthn security keys or device biometrics; plan requirement not stated"
+    source: "https://auth0.com/docs/get-started/manage-dashboard-access/add-change-remove-mfa"
+    checked: "2026-09-15"
+  audit_logs:
+    support: "unknown"
+  jit_provisioning:
+    support: "unknown"
+  domain_verification:
+    support: "unknown"
+  custom_roles:
+    support: "unknown"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "unknown"
+  api_token_controls:
+    support: "unknown"

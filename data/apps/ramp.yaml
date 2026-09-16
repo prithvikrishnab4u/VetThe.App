@@ -2,23 +2,61 @@ name: "Ramp"
 category: "finance"
 website: "https://ramp.com"
 description: "Corporate card and spend management platform."
-sso:
-  supported: true
-  protocols: ["SAML", "OIDC"]
-  tier: "enterprise"
-  sp_initiated: true
-  jit_provisioning: true
-  domain_claiming: true
-mfa:
-  supported: true
-  types: ["TOTP", "SMS", "WebAuthn"]
-  enforcement: "required"
-  tier: "enterprise"
-  adaptive_mfa: true
-  phishing_resistant: true
-compliance:
-  soc2: true
-  iso27001: true
-meta:
-  last_verified: "2026-01-03"
-  ready_to_publish: true
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Ramp Plus"
+    notes: "Secure logins with SCIM, SSO and SAML listed on Plus and Enterprise; Google SSO also available"
+    protocols: ["SAML"]
+    source: "https://ramp.com/pricing"
+    checked: "2026-09-15"
+  sso_enforcement:
+    support: "supported"
+    notes: "Sign-in controls enable or disable password, Google SSO and SAML per role, with a per-user exception list; guests always keep password sign-in; plan requirement not stated"
+    source: "https://support.ramp.com/setting-up-single-sign-on-sso-and-login-controls-in-ramp"
+    checked: "2026-09-15"
+  scim:
+    support: "supported"
+    tier: "paid"
+    plan: "Ramp Plus"
+    notes: "SCIM with Okta, Microsoft Entra and Rippling; listed on Plus and Enterprise"
+    source: "https://ramp.com/pricing"
+    checked: "2026-09-15"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Ramp always requires MFA for password sign-in from new or untrusted devices; admins can set strict MFA to limit fallback methods; plan requirement not stated"
+    source: "https://support.ramp.com/multi-factor-authentication-mfa-overview"
+    checked: "2026-09-15"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Users can sign in with a registered passkey; passkeys are not configurable per role; plan requirement not stated"
+    source: "https://support.ramp.com/setting-up-single-sign-on-sso-and-login-controls-in-ramp"
+    checked: "2026-09-15"
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "Ramp Plus"
+    notes: "Audit log for admins and owners covering logins and team actions; not all admin actions are tracked"
+    source: "https://support.ramp.com/hc/en-us/articles/42279450714259-Ramp-Audit-Log"
+    checked: "2026-09-15"
+  jit_provisioning:
+    support: "unknown"
+  domain_verification:
+    support: "unknown"
+  custom_roles:
+    support: "supported"
+    tier: "paid"
+    plan: "Ramp Plus"
+    notes: "Custom user roles listed on Plus and Enterprise"
+    source: "https://ramp.com/pricing"
+    checked: "2026-09-15"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "unknown"
+  api_token_controls:
+    support: "unknown"

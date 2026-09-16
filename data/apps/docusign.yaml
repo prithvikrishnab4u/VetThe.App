@@ -2,38 +2,45 @@ name: "DocuSign"
 category: "productivity"
 website: "https://docusign.com"
 description: "Electronic signature and agreement management platform."
+status: "draft"
 
-sso:
-  supported: true
-  protocols: ["SAML"]
-  tier: "enterprise"
-
-scim:
-  supported: "full"
-  version: "2.0"
-  tier: "enterprise"
-
-mfa:
-  supported: true
-  types: ["TOTP", "SMS", "Email"]
-  enforcement: "admin_enforced"
-  tier: "free"
-
-compliance:
-  soc2: true
-  iso27001: true
-
-meta:
-  last_verified: "2025-12-31"
-  ready_to_publish: true
-
-# Unused fields - tracked but not displayed in main table
-# Currently not using session and audit fields, but doing research on these fields.
-session:
-  timeout_configurable: true
-  max_duration: "Configurable"
-
-audit:
-  logs_available: true
-  retention_period: "Unlimited"
-  tier: "enterprise"
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    tier: "add_on"
+    plan: "Access Management with SSO"
+    notes: "SSO via Docusign Admin with Access Management with SSO or Organization Management; included in eSignature Enterprise Pro"
+    source: "https://www.docusign.com/products/admin"
+    checked: "2026-09-15"
+  sso_enforcement:
+    support: "unknown"
+  scim:
+    support: "supported"
+    tier: "add_on"
+    plan: "Organization Management"
+    notes: "SCIM provisioning and deprovisioning included in Organization Management"
+    source: "https://www.docusign.com/products/admin"
+    checked: "2026-09-15"
+  mfa_enforcement:
+    support: "unknown"
+  phishing_resistant_mfa:
+    support: "unknown"
+  audit_logs:
+    support: "unknown"
+  jit_provisioning:
+    support: "unknown"
+  domain_verification:
+    support: "supported"
+    tier: "add_on"
+    notes: "Domain claiming in Docusign Admin; admin capabilities are IAM plans or eSignature add-ons; exact plan not stated"
+    source: "https://www.docusign.com/products/admin"
+    checked: "2026-09-15"
+  custom_roles:
+    support: "unknown"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "unknown"
+  api_token_controls:
+    support: "unknown"

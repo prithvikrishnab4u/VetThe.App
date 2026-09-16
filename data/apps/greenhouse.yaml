@@ -2,23 +2,61 @@ name: "Greenhouse"
 category: "hr"
 website: "https://www.greenhouse.io"
 description: "Applicant tracking system and recruiting software."
-sso:
-  supported: true
-  protocols: ["SAML"]
-  tier: "enterprise"
-  sp_initiated: true
-  jit_provisioning: true
-  domain_claiming: true
-mfa:
-  supported: true
-  types: ["TOTP"]
-  enforcement: "admin_enforced"
-  tier: "enterprise"
-  adaptive_mfa: false
-  phishing_resistant: false
-compliance:
-  soc2: true
-  iso27001: true
-meta:
-  last_verified: "2026-01-03"
-  ready_to_publish: true
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Core"
+    notes: "Any SAML 2.0 IdP; available on Core, Plus and Pro tiers"
+    protocols: ["SAML"]
+    source: "https://support.greenhouse.io/hc/en-us/articles/360040753811-Configure-single-sign-on-SSO-for-Greenhouse-Recruiting"
+    checked: "2026-09-15"
+  sso_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Core"
+    notes: "Hard-enabling SSO blocks password login and deletes stored passwords"
+    source: "https://support.greenhouse.io/hc/en-us/articles/360040753811-Configure-single-sign-on-SSO-for-Greenhouse-Recruiting"
+    checked: "2026-09-15"
+  scim:
+    support: "supported"
+    tier: "paid"
+    plan: "Plus"
+    notes: "Okta SCIM on Plus and Pro tiers; requires Okta SSO first"
+    source: "https://support.greenhouse.io/hc/en-us/articles/9825388563483-Configure-SCIM-for-Okta"
+    checked: "2026-09-15"
+  mfa_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Core"
+    notes: "Email two-step verification required for all non-SSO users; SMS optional"
+    source: "https://support.greenhouse.io/hc/en-us/articles/207083546-Set-up-two-factor-authentication"
+    checked: "2026-09-15"
+  phishing_resistant_mfa:
+    support: "unknown"
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "Pro"
+    notes: "Via Greenhouse API or BI Connector; must be enabled by account manager"
+    retention: "30 days"
+    source: "https://support.greenhouse.io/hc/en-us/articles/15074318933275-Audit-log-overview"
+    checked: "2026-09-15"
+  jit_provisioning:
+    support: "supported"
+    notes: "New user created on first SSO login; plan requirement not stated"
+    source: "https://support.greenhouse.io/hc/en-us/articles/210259723-Single-sign-on-SSO-overview"
+    checked: "2026-09-15"
+  domain_verification:
+    support: "unknown"
+  custom_roles:
+    support: "unknown"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "unknown"
+  api_token_controls:
+    support: "unknown"

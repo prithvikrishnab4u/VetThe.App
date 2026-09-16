@@ -2,23 +2,59 @@ name: "Datadog"
 category: "infrastructure"
 website: "https://www.datadoghq.com"
 description: "Observability and security platform for cloud-scale applications, providing monitoring of servers, databases, tools, and services."
-sso:
-  supported: true
-  protocols: ["SAML"]
-  tier: "enterprise"
-  sp_initiated: true
-  jit_provisioning: true
-  domain_claiming: true
-mfa:
-  supported: true
-  types: ["TOTP", "WebAuthn"]
-  enforcement: "admin_enforced"
-  tier: "paid"
-  adaptive_mfa: false
-  phishing_resistant: true
-compliance:
-  soc2: true
-  iso27001: true
-meta:
-  last_verified: "2026-01-03"
-  ready_to_publish: true
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    notes: "Plan requirement not stated in Datadog's SAML docs"
+    protocols: ["SAML"]
+    source: "https://docs.datadoghq.com/account_management/saml/"
+    checked: "2026-09-14"
+  sso_enforcement:
+    support: "supported"
+    notes: "SAML Strict disables other login methods; admins can exempt individual users"
+    source: "https://docs.datadoghq.com/account_management/saml/"
+    checked: "2026-09-14"
+  scim:
+    support: "supported"
+    tier: "paid"
+    plan: "Infrastructure Pro"
+    notes: "Also Infrastructure Enterprise and Startup plans; Entra ID and Okta only; creates and removes users and syncs Datadog Teams from IdP groups"
+    source: "https://docs.datadoghq.com/account_management/scim/"
+    checked: "2026-09-14"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Applies to email and password logins; SSO users get MFA from their IdP"
+    source: "https://docs.datadoghq.com/account_management/multi-factor_authentication/"
+    checked: "2026-09-14"
+  phishing_resistant_mfa:
+    support: "unknown"
+  audit_logs:
+    support: "supported"
+    notes: "Audit Trail: CSV download of up to 100K events and archiving to S3, GCS or Azure; 7-day retention when Audit Trail is off"
+    retention: "90 days"
+    source: "https://docs.datadoghq.com/account_management/audit_trail/"
+    checked: "2026-09-14"
+  jit_provisioning:
+    support: "supported"
+    notes: "Creates the user on first SAML login"
+    source: "https://docs.datadoghq.com/account_management/saml/"
+    checked: "2026-09-14"
+  domain_verification:
+    support: "supported"
+  custom_roles:
+    support: "supported"
+    notes: "Plan requirement not stated"
+    source: "https://docs.datadoghq.com/account_management/rbac/"
+    checked: "2026-09-14"
+  group_role_mapping:
+    support: "supported"
+    notes: "SAML identity attributes map to default and custom roles"
+    source: "https://docs.datadoghq.com/account_management/rbac/"
+    checked: "2026-09-14"
+  session_controls:
+    support: "unknown"
+  api_token_controls:
+    support: "unknown"

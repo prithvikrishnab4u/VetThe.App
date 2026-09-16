@@ -4,11 +4,15 @@ on:
   pull_request:
     paths:
       - "data/apps/*.yaml"
+      - "data/schema.yaml"
+      - "scripts/validate.py"
   push:
     branches:
       - main
     paths:
       - "data/apps/*.yaml"
+      - "data/schema.yaml"
+      - "scripts/validate.py"
 
 jobs:
   validate:

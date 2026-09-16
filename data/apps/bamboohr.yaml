@@ -2,23 +2,41 @@ name: "BambooHR"
 category: "hr"
 website: "https://www.bamboohr.com"
 description: "A comprehensive HR software solution for small and medium businesses to manage employee data, payroll, and benefits."
-sso:
-  supported: true
-  protocols: ["SAML"]
-  tier: "paid"
-  sp_initiated: true
-  jit_provisioning: true
-  domain_claiming: true
-mfa:
-  supported: true
-  types: ["TOTP"]
-  enforcement: "admin_enforced"
-  tier: "paid"
-  adaptive_mfa: false
-  phishing_resistant: false
-compliance:
-  soc2: true
-  iso27001: true
-meta:
-  last_verified: "2026-01-02"
-  ready_to_publish: true
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    notes: "SAML app in the BambooHR Marketplace; plan requirement not stated"
+    protocols: ["SAML"]
+    source: "https://www.bamboohr.com/integrations/listings/saml"
+    checked: "2026-09-15"
+  sso_enforcement:
+    support: "supported"
+    notes: "Email and password login is only offered when admins check Allow optional email & password login; plan requirement not stated"
+    source: "https://www.bamboohr.com/product-updates/samloptional-email-and-password-login"
+    checked: "2026-09-15"
+  scim:
+    support: "unknown"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Account Owners and Admins can require 2-step login for all users or selected access levels; SMS option available; plan requirement not stated"
+    source: "https://www.bamboohr.com/product-updates/2-step-login-enablement-for-all-users"
+    checked: "2026-09-15"
+  phishing_resistant_mfa:
+    support: "unknown"
+  audit_logs:
+    support: "unknown"
+  jit_provisioning:
+    support: "unknown"
+  domain_verification:
+    support: "unknown"
+  custom_roles:
+    support: "unknown"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "unknown"
+  api_token_controls:
+    support: "unknown"

@@ -2,23 +2,40 @@ name: "Pluralsight"
 category: "productivity"
 website: "https://www.pluralsight.com"
 description: "Technology skills platform for IT and engineering teams."
-sso:
-  supported: true
-  protocols: ["SAML"]
-  tier: "enterprise"
-  sp_initiated: true
-  jit_provisioning: true
-  domain_claiming: true
-mfa:
-  supported: true
-  types: ["TOTP"]
-  enforcement: "admin_enforced"
-  tier: "enterprise"
-  adaptive_mfa: false
-  phishing_resistant: false
-compliance:
-  soc2: true
-  iso27001: true
-meta:
-  last_verified: "2026-01-03"
-  ready_to_publish: true
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SAML 2.0 SSO with IdP- and SP-initiated flows; \"Single sign-on (SSO)\" is listed under the Enterprise plan per pricing page and set up via Professional Services"
+    protocols: ["SAML"]
+    source: "https://www.pluralsight.com/businesses/pricing"
+    checked: "2026-09-16"
+  sso_enforcement:
+    support: "unknown"
+  scim:
+    support: "unknown"
+  mfa_enforcement:
+    support: "unknown"
+  phishing_resistant_mfa:
+    support: "unknown"
+  audit_logs:
+    support: "unknown"
+  jit_provisioning:
+    support: "supported"
+    notes: "Just-in-time provisioning allocates licenses to learners as they log in for the first time; plan requirement not stated"
+    source: "https://www.pluralsight.com/product/professional-services/resources/sso"
+    checked: "2026-09-16"
+  domain_verification:
+    support: "unknown"
+  custom_roles:
+    support: "unknown"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "unknown"
+  api_token_controls:
+    support: "unknown"

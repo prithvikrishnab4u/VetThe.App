@@ -2,23 +2,56 @@ name: "Pipedrive"
 category: "sales_marketing"
 website: "https://www.pipedrive.com"
 description: "Sales CRM and pipeline management software."
-sso:
-  supported: true
-  protocols: ["SAML"]
-  tier: "enterprise"
-  sp_initiated: true
-  jit_provisioning: true
-  domain_claiming: true
-mfa:
-  supported: true
-  types: ["TOTP"]
-  enforcement: "admin_enforced"
-  tier: "enterprise"
-  adaptive_mfa: false
-  phishing_resistant: false
-compliance:
-  soc2: true
-  iso27001: true
-meta:
-  last_verified: "2026-01-03"
-  ready_to_publish: true
+status: "draft"
+
+# One block per capability. Field meanings and allowed values: CONTRIBUTING.md
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "All plans"
+    notes: "SAML SSO configured in Company settings"
+    protocols: ["SAML"]
+    source: "https://support.pipedrive.com/en/article/single-sign-on"
+    checked: "2026-09-15"
+  sso_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "All plans"
+    notes: "Enforce SSO login disables password access"
+    source: "https://support.pipedrive.com/en/article/single-sign-on"
+    checked: "2026-09-15"
+  scim:
+    support: "unknown"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Admins can enforce 2FA (authenticator app or email) for all users; cannot be combined with SSO; plan requirement not stated"
+    source: "https://support.pipedrive.com/en/article/2fa-two-factor-authentication"
+    checked: "2026-09-15"
+  phishing_resistant_mfa:
+    support: "unknown"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Ultimate"
+    notes: "Security dashboard audit log of security-related events"
+    retention: "2 months"
+    source: "https://support.pipedrive.com/en/article/security-dashboard"
+    checked: "2026-09-15"
+  jit_provisioning:
+    support: "unknown"
+  domain_verification:
+    support: "unknown"
+  custom_roles:
+    support: "unknown"
+  group_role_mapping:
+    support: "unknown"
+  session_controls:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Ultimate"
+    notes: "Security dashboard lets admins view devices and force log out sessions"
+    source: "https://support.pipedrive.com/en/article/security-dashboard"
+    checked: "2026-09-15"
+  api_token_controls:
+    support: "unknown"
