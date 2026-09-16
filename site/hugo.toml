@@ -1,4 +1,4 @@
-baseURL = 'https://vettheapp.com/'
+baseURL = 'https://vetthe.app/'
 locale = 'en-us'
 title = 'VetThe.App - IAM Capabilities of SaaS Apps'
 dataDir = "../data"
