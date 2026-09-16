@@ -44,9 +44,14 @@ capabilities:
     source: "https://support.zendesk.com/hc/en-us/articles/4408828001434-Viewing-the-audit-log-for-changes-to-your-account"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "not_researched"
+    support: "supported"
+    tier: "paid"
+    plan: "Suite Team"
+    notes: "A Zendesk profile is created for any new user who signs in through SAML, JWT or OIDC SSO."
+    source: "https://support.zendesk.com/hc/en-us/articles/4408887505690-Enabling-SAML-single-sign-on"
+    checked: "2026-09-16"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
   custom_roles:
     support: "not_researched"
   group_role_mapping:

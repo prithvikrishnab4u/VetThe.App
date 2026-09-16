@@ -45,9 +45,17 @@ capabilities:
     source: "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "not_researched"
+    support: "not_supported"
+    notes: "Users must already exist in Microsoft Entra ID before federated sign-in."
+    source: "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-fed-saml-idp"
+    checked: "2026-09-16"
   domain_verification:
-    support: "not_researched"
+    support: "supported"
+    tier: "paid"
+    plan: "Business Basic"
+    notes: "Custom domains are verified with a DNS TXT/MX record or a file on the website."
+    source: "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/add-domain"
+    checked: "2026-09-16"
   custom_roles:
     support: "not_researched"
   group_role_mapping:

@@ -4174,13 +4174,21 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Custom domains are verified with a DNS TXT/MX record or a file on the website.",
+        "plan": "Business Basic",
+        "source": "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/add-domain",
+        "support": "supported",
+        "tier": "paid"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Users must already exist in Microsoft Entra ID before federated sign-in.",
+        "source": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-fed-saml-idp",
+        "support": "not_supported"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -5627,13 +5635,14 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "Vendor help pages could not be fetched (JS-only/403), so not confirmed.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -7286,13 +7295,18 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "A Zendesk profile is created for any new user who signs in through SAML, JWT or OIDC SSO.",
+        "plan": "Suite Team",
+        "source": "https://support.zendesk.com/hc/en-us/articles/4408887505690-Enabling-SAML-single-sign-on",
+        "support": "supported",
+        "tier": "paid"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
