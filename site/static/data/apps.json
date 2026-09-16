@@ -3472,7 +3472,12 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Domain ownership is verified with a DNS TXT record before SAML can be enforced.",
+        "plan": "Expert",
+        "source": "https://www.intercom.com/help/en/articles/3974587-integrate-with-an-identity-provider-and-log-in-with-saml-sso",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "group_role_mapping": {
         "checked": "2026-09-15",
@@ -5053,13 +5058,13 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -6257,7 +6262,7 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"

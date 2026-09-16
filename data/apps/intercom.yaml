@@ -51,7 +51,12 @@ capabilities:
     source: "https://www.intercom.com/help/en/articles/3974587-integrate-with-an-identity-provider-and-log-in-with-saml-sso"
     checked: "2026-09-15"
   domain_verification:
-    support: "not_researched"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Expert"
+    notes: "Domain ownership is verified with a DNS TXT record before SAML can be enforced."
+    source: "https://www.intercom.com/help/en/articles/3974587-integrate-with-an-identity-provider-and-log-in-with-saml-sso"
+    checked: "2026-09-16"
   custom_roles:
     support: "not_researched"
   group_role_mapping:

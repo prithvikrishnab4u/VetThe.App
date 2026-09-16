@@ -39,9 +39,9 @@ capabilities:
     source: "https://support.pipedrive.com/en/article/security-dashboard"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
   custom_roles:
     support: "not_researched"
   group_role_mapping:
