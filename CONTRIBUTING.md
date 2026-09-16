@@ -6,9 +6,18 @@ The one rule: **only record what you can link to.** A value with a source beats 
 
 ---
 
-## 🎯 Quick Start (5 Minutes)
+## 🎯 Quick Start
 
-### **Easy Way: Use GitHub's Web Editor**
+### **Easiest: on the website (no GitHub account)**
+
+1. Open [vetthe.app](https://vetthe.app)
+2. Hover a table cell and click **✎** to fix a value, or click **Add an app**
+3. Fill in the form, including the link to the vendor page
+4. Click **Send suggestion**
+
+A pull request is opened for you, and a maintainer checks the source before merging.
+
+### **On GitHub: use the web editor**
 
 1. **Go to**: https://github.com/prithvikrishnab4u/VetThe.App
 2. **Click**: Browse to `data/apps/` folder

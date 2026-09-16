@@ -1,0 +1,153 @@
+{
+  "categories": [
+    "collaboration",
+    "productivity",
+    "development",
+    "sales_marketing",
+    "support",
+    "design",
+    "hr",
+    "finance",
+    "security",
+    "infrastructure"
+  ],
+  "statuses": [
+    "draft",
+    "published"
+  ],
+  "support_levels": [
+    {
+      "id": "supported",
+      "label": "Supported"
+    },
+    {
+      "id": "partial",
+      "label": "Partial"
+    },
+    {
+      "id": "not_supported",
+      "label": "Not supported"
+    },
+    {
+      "id": "undocumented",
+      "label": "Not documented"
+    },
+    {
+      "id": "not_researched",
+      "label": "Not researched"
+    }
+  ],
+  "tiers": [
+    {
+      "id": "free",
+      "label": "Free",
+      "description": "Available on the free plan"
+    },
+    {
+      "id": "paid",
+      "label": "Paid",
+      "description": "Needs a paid self-serve plan (Pro, Business, Team)"
+    },
+    {
+      "id": "enterprise",
+      "label": "Enterprise",
+      "description": "Top plan only, usually through sales"
+    },
+    {
+      "id": "add_on",
+      "label": "Add-on",
+      "description": "Sold separately on top of a plan"
+    }
+  ],
+  "sso_protocols": [
+    "SAML",
+    "OIDC",
+    "WS-Fed"
+  ],
+  "capabilities": [
+    {
+      "id": "sso",
+      "label": "SSO",
+      "group": "Access",
+      "core": true,
+      "question": "Can users sign in through the company identity provider (SAML or OIDC)?",
+      "fields": [
+        "protocols"
+      ]
+    },
+    {
+      "id": "sso_enforcement",
+      "label": "Enforce SSO",
+      "group": "Access",
+      "core": true,
+      "question": "Can admins require SSO and block password sign-in for all users?"
+    },
+    {
+      "id": "scim",
+      "label": "SCIM",
+      "group": "Lifecycle",
+      "core": true,
+      "question": "Can an identity provider create, update and deactivate users over SCIM? Partial means users only, or no deactivation."
+    },
+    {
+      "id": "mfa_enforcement",
+      "label": "Enforce MFA",
+      "group": "Access",
+      "core": true,
+      "question": "Can admins require MFA for every user who signs in with the app's own login?"
+    },
+    {
+      "id": "phishing_resistant_mfa",
+      "label": "Passkeys / keys",
+      "group": "Access",
+      "core": true,
+      "question": "Can users sign in with security keys or passkeys (WebAuthn / FIDO2)?"
+    },
+    {
+      "id": "audit_logs",
+      "label": "Audit logs",
+      "group": "Visibility",
+      "core": true,
+      "question": "Can admins view a log of user and admin activity?",
+      "fields": [
+        "retention"
+      ]
+    },
+    {
+      "id": "jit_provisioning",
+      "label": "JIT provisioning",
+      "group": "Lifecycle",
+      "question": "Are accounts created automatically on first SSO sign-in?"
+    },
+    {
+      "id": "domain_verification",
+      "label": "Domain verification",
+      "group": "Lifecycle",
+      "question": "Can the company verify its email domain and take control of accounts that use it?"
+    },
+    {
+      "id": "custom_roles",
+      "label": "Custom roles",
+      "group": "Authorization",
+      "question": "Can admins create roles with custom permissions beyond the built-in ones?"
+    },
+    {
+      "id": "group_role_mapping",
+      "label": "Group \u2192 role mapping",
+      "group": "Authorization",
+      "question": "Can roles or team membership be assigned from identity provider groups?"
+    },
+    {
+      "id": "session_controls",
+      "label": "Session controls",
+      "group": "Access",
+      "question": "Can admins set session length or sign a user out of all sessions?"
+    },
+    {
+      "id": "api_token_controls",
+      "label": "API token controls",
+      "group": "Visibility",
+      "question": "Can admins see, restrict or revoke API tokens that users create?"
+    }
+  ]
+}

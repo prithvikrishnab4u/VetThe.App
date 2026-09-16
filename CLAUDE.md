@@ -4,7 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-VetThe.App is a static Hugo site that catalogues the **IAM capabilities** of SaaS apps. For each app it records whether a capability is supported, the minimum plan needed, and the source it was checked against. Covered: SSO, enforcing SSO, SCIM, enforcing MFA, passkeys, audit logs, JIT provisioning, domain verification, custom roles, group → role mapping, session controls, and API token controls. It deliberately goes beyond sso.tax, which only covers SSO pricing. Target users are identity engineers, procurement, and security auditors, so a sourced value is worth more than wide coverage. No backend; the site deploys to Cloudflare Pages (no deploy config in the repo).
+VetThe.App is a static Hugo site that catalogues the **IAM capabilities** of SaaS apps. For each app it records whether a capability is supported, the minimum plan needed, and the source it was checked against. Covered: SSO, enforcing SSO, SCIM, enforcing MFA, passkeys, audit logs, JIT provisioning, domain verification, custom roles, group → role mapping, session controls, and API token controls. It deliberately goes beyond sso.tax, which only covers SSO pricing. Target users are identity engineers, procurement, and security auditors, so a sourced value is worth more than wide coverage. The site deploys to Cloudflare Pages (no deploy config in the repo). The only server code is one Pages Function for website suggestions (see below).
+
+**Start here:** read [ROADMAP.md](ROADMAP.md) for what's done and what's next, and update it at the end of every work session.
 
 ## Commands
 
@@ -12,7 +14,7 @@ VetThe.App is a static Hugo site that catalogues the **IAM capabilities** of Saa
 python -m venv .venv && .venv/bin/pip install -r requirements.txt   # PyYAML only
 
 .venv/bin/python scripts/validate.py        # schema check of data/apps/*.yaml; prints only failures + coverage summary; exits 1 on error (CI gate)
-.venv/bin/python scripts/generate_data.py   # writes site/static/data/apps.json + apps.csv (committed; rerun after editing YAML)
+.venv/bin/python scripts/generate_data.py   # writes site/static/data/apps.json, apps.csv + schema.json (committed; rerun after editing YAML)
 
 # Site (run in site/). npm deps are required: Hugo's css.TailwindCSS calls the Tailwind v4 CLI
 npm ci
@@ -20,7 +22,7 @@ hugo server     # http://localhost:1313
 hugo --minify   # production build -> site/public/
 ```
 
-No test suite or linter. CI (`.github/workflows/ci.yml`) runs generate_data → validate → `npm ci` → `hugo --minify`. `validate-pr.yml` runs the validator on data/schema changes and comments on the PR.
+No test suite or linter. CI (`.github/workflows/ci.yml`) runs generate_data → validate → `npm ci` → `hugo --minify`. `validate-pr.yml` runs the validator on data/schema changes and keeps one PR comment updated with its output.
 
 ## Architecture
 
@@ -43,8 +45,13 @@ Adding a capability to the schema therefore adds it to the site, the CSV and val
 - Non-core columns get `.cap-extended`, hidden until the "Show all capabilities" toggle adds `.show-extended` to the table.
 - All custom CSS lives in `site/assets/css/main.css` (Tailwind v4, no config file).
 
+## Website suggestions
+
+`partials/suggest.html` is a dialog opened by the ✎ button in each cell (`[data-suggest]`) or any `[data-suggest-open="new"]` link. It POSTs to `/api/suggest`, which is `site/functions/api/suggest.js`, a Cloudflare Pages Function. That function checks Turnstile, validates the suggestion against `/data/schema.json` (a mirror of validate.py's rules, so **change both together**), rewrites just that capability block in the YAML, and opens a PR through the GitHub API. Env: `GITHUB_TOKEN`, `TURNSTILE_SECRET`, optional `GITHUB_REPO`; the public site key is `params.turnstileSiteKey` (override with `HUGO_PARAMS_TURNSTILESITEKEY`). Without the secrets the endpoint returns 503, and the form tells people to use GitHub.
+
 ## Data state and working rules
 
-- All 107 apps are `draft`. Their values were carried over from an earlier dataset (probably generated in bulk, not researched) and have **no sources**, so treat every existing value as unverified.
+- All 107 apps are `draft`. Core capabilities have been checked against vendor docs (with a few leftovers); most non-core values are `not_researched`. Current numbers and the to-do list are in ROADMAP.md.
+- A value without a `source` is unverified, even if it looks right.
 - Accuracy work means checking each value against the vendor's own pricing page, docs, or trust center, and adding `source` + `checked`. Don't use auto-scanning, homepage keyword matches, Reddit, review sites, or blogs. When a value can't be confirmed, set it to `undocumented` instead of guessing, and don't carry old values forward.
 - Keep the double-quoted YAML style from the `CONTRIBUTING.md` template; contributors edit these files in the GitHub web UI.

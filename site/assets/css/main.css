@@ -199,6 +199,47 @@
         @apply inline-flex h-5 w-5 items-center justify-center rounded text-muted hover:text-accent hover:bg-accent-soft transition-colors;
     }
 
+    /* ✎ button in each capability cell; opens the suggestion panel */
+    .cell-edit {
+        @apply absolute right-1.5 top-2.5 h-6 w-6 rounded-md text-muted opacity-0 transition hover:bg-accent-soft hover:text-accent focus-visible:opacity-100 focus-visible:outline-2 focus-visible:outline-accent;
+    }
+    .cell-edit::before {
+        content: "";
+        position: absolute;
+        inset: 5px;
+        background-color: currentColor;
+        mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 20h9'/%3E%3Cpath d='M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z'/%3E%3C/svg%3E") center / contain no-repeat;
+    }
+    td:hover > .cell-edit {
+        opacity: 1;
+    }
+    @media (hover: none) {
+        .cell-edit { opacity: 0.45; }
+    }
+
+    /* Suggestion panel form controls */
+    .field {
+        @apply flex flex-col gap-1.5;
+    }
+    .field-label {
+        @apply text-sm font-medium text-ink;
+    }
+    .field-hint {
+        @apply font-normal text-muted;
+    }
+    .input {
+        @apply w-full rounded-lg border border-line bg-surface px-3 py-2 text-sm text-ink placeholder:text-muted focus:border-accent focus:outline-none focus:ring-4 focus:ring-accent/15;
+    }
+    .choice {
+        @apply inline-flex cursor-pointer select-none items-center gap-2 rounded-lg border border-line bg-surface px-3 py-2 text-sm text-body transition-colors hover:border-accent;
+    }
+    .choice:has(input:checked) {
+        @apply border-accent bg-accent-soft font-medium text-ink;
+    }
+    .choice:has(input:focus-visible) {
+        @apply outline-2 outline-offset-2 outline-accent;
+    }
+
     /* Coverage bar segments */
     .seg-verified { background: #10b981; }
     .seg-unverified { background: #f59e0b; }
@@ -332,4 +373,45 @@
 }
 .show-extended .cap-extended {
     display: table-cell;
+}
+
+/* ---------- Suggestion panel: side drawer, bottom sheet on phones ---------- */
+.suggest-dialog {
+    margin: 0 0 0 auto;
+    height: 100dvh;
+    max-height: 100dvh;
+    width: min(34rem, 100vw);
+    max-width: 100vw;
+    padding: 0;
+    border: 0;
+    border-left: 1px solid var(--line);
+    background-color: var(--surface);
+    color: var(--body);
+    box-shadow: -30px 0 60px -30px rgba(15, 23, 42, 0.45);
+}
+.suggest-dialog[open] {
+    animation: drawer-in 0.22s ease-out;
+}
+.suggest-dialog::backdrop {
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(3px);
+}
+@keyframes drawer-in {
+    from { transform: translateX(2rem); opacity: 0; }
+}
+@media (max-width: 639px) {
+    .suggest-dialog {
+        margin: auto 0 0;
+        width: 100vw;
+        height: 92dvh;
+        border-left: 0;
+        border-top: 1px solid var(--line);
+        border-radius: 1.25rem 1.25rem 0 0;
+    }
+    @keyframes drawer-in {
+        from { transform: translateY(2rem); opacity: 0; }
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .suggest-dialog[open] { animation: none; }
 }

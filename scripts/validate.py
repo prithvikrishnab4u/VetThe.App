@@ -16,11 +16,13 @@ from pathlib import Path
 
 import yaml
 
-RED = '\033[91m'
-GREEN = '\033[92m'
-YELLOW = '\033[93m'
-BLUE = '\033[94m'
-RESET = '\033[0m'
+# No colour codes when output is captured (e.g. into the PR comment)
+COLOR = sys.stdout.isatty()
+RED = '\033[91m' if COLOR else ''
+GREEN = '\033[92m' if COLOR else ''
+YELLOW = '\033[93m' if COLOR else ''
+BLUE = '\033[94m' if COLOR else ''
+RESET = '\033[0m' if COLOR else ''
 
 REPO = Path(__file__).resolve().parent.parent
 SCHEMA_PATH = REPO / 'data' / 'schema.yaml'

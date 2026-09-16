@@ -4,6 +4,7 @@ Generate JSON and CSV exports from `data/apps/*.yaml` into `site/static/data/`.
 
 apps.json keeps the full records plus `_id` (the filename). apps.csv has one row per app
 with support/tier/source/checked columns for every capability in data/schema.yaml.
+schema.json is data/schema.yaml as JSON.
 
 Run: python scripts/generate_data.py
 """
@@ -31,6 +32,10 @@ def main():
 
     with open(out_dir / 'apps.json', 'w') as f:
         json.dump(apps, f, indent=2, sort_keys=True, default=str)
+
+    # The suggestion endpoint (site/functions/api/suggest.js) validates against this copy
+    with open(out_dir / 'schema.json', 'w') as f:
+        json.dump(schema, f, indent=2)
 
     fieldnames = ['id', 'name', 'category', 'website', 'status']
     fieldnames += [f'{cid}_{column}' for cid in capability_ids for column in CAPABILITY_COLUMNS]

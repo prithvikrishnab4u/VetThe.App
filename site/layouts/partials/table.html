@@ -73,9 +73,8 @@
                 </thead>
 
                 <tbody id="tableBody">
-                    {{ range site.Data.apps }}
-                    {{ $app := . }}
-                    <tr class="group" data-app="{{ $app.name }}" data-category="{{ $app.category }}">
+                    {{ range $id, $app := site.Data.apps }}
+                    <tr class="group" data-id="{{ $id }}" data-app="{{ $app.name }}" data-category="{{ $app.category }}">
                         <th scope="row" class="sticky-col px-4 py-3 border-b border-line font-normal group-hover:bg-subtle">
                             <div class="flex items-center gap-3">
                                 <img src="https://www.google.com/s2/favicons?domain={{ $app.website }}&sz=64" alt="" loading="lazy"
@@ -102,7 +101,7 @@
                         {{ else if eq $support "not_supported" }}{{ $value = "No" }}
                         {{ else if eq $support "undocumented" }}{{ $value = "Not documented" }}{{ end }}
                         {{ $unverified := and (not (in (slice "undocumented" "not_researched") $support)) (not $cap.source) }}
-                        <td class="px-3 py-3 border-b border-line whitespace-nowrap group-hover:bg-subtle{{ if not .core }} cap-extended{{ end }}"
+                        <td class="relative pl-3 pr-8 py-3 border-b border-line whitespace-nowrap group-hover:bg-subtle{{ if not .core }} cap-extended{{ end }}"
                             data-cap="{{ .id }}" data-value="{{ $value }}">
                             <div class="flex items-center gap-1{{ if $unverified }} unverified{{ end }}"
                                 title="{{ .label }}: {{ $value }}{{ with $cap.plan }} · Plan: {{ . }}{{ end }}{{ with $cap.notes }} · {{ . }}{{ end }}{{ if $cap.source }} · Checked {{ $cap.checked }}{{ else if $unverified }} · Unverified: no source yet{{ end }}">
@@ -115,6 +114,7 @@
                             </div>
                             {{ with $cap.protocols }}<div class="mt-1 text-[11px] text-muted">{{ delimit . " · " }}</div>{{ end }}
                             {{ with $cap.retention }}<div class="mt-1 text-[11px] text-muted">{{ . }} retention</div>{{ end }}
+                            <button type="button" class="cell-edit" data-suggest aria-label="Suggest a fix: {{ $app.name }} {{ .label }}" title="Suggest a fix"></button>
                         </td>
                         {{ end }}
                     </tr>
@@ -125,10 +125,10 @@
             <!-- Empty state -->
             <div id="emptyState" class="px-4 py-16 text-center" hidden>
                 <p class="text-base font-medium text-ink">No apps match these filters</p>
-                <p class="mt-1 text-sm text-muted">Try fewer filters, or ask for the app to be added.</p>
+                <p class="mt-1 text-sm text-muted">Try fewer filters, or add the app yourself. It takes a minute.</p>
                 <div class="mt-4 flex justify-center gap-2">
                     <button type="button" id="emptyClearBtn" class="btn btn-ghost">Clear filters</button>
-                    <a href="https://github.com/prithvikrishnab4u/VetThe.App/issues/new?template=app-request.md" target="_blank" rel="noopener" class="btn btn-primary">Request an app</a>
+                    <a href="https://github.com/prithvikrishnab4u/VetThe.App/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener" data-suggest-open="new" class="btn btn-primary">Add this app</a>
                 </div>
             </div>
         </div>

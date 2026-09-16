@@ -1,0 +1,38 @@
+name: Request an app
+description: Ask for an app to be added. Adding it yourself on vetthe.app ("Add an app") is faster.
+title: "[App] <App name>"
+labels: ["app-request"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: App name
+    validations:
+      required: true
+  - type: input
+    id: website
+    attributes:
+      label: Website
+      placeholder: https://example.com
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Collaboration
+        - Productivity
+        - Development
+        - Sales & marketing
+        - Support
+        - Design
+        - HR
+        - Finance
+        - Security
+        - Infrastructure
+  - type: textarea
+    id: why
+    attributes:
+      label: What would you like to know about it?
+      description: For example "does SSO need Enterprise?" Links to vendor pages are welcome.

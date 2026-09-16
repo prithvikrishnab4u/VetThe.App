@@ -1,0 +1,65 @@
+{{ $schema := site.Data.schema }}
+
+{{/* Coverage: every app × capability is one data point */}}
+{{ $points := 0 }}{{ $verified := 0 }}{{ $unverified := 0 }}{{ $undocumented := 0 }}{{ $notResearched := 0 }}
+{{ $corePoints := 0 }}{{ $coreVerified := 0 }}
+{{ range site.Data.apps }}
+    {{ $app := . }}
+    {{ range $schema.capabilities }}
+        {{ $cap := (index $app.capabilities .id) | default (dict) }}
+        {{ $s := $cap.support | default "not_researched" }}
+        {{ $points = add $points 1 }}
+        {{ if .core }}{{ $corePoints = add $corePoints 1 }}{{ end }}
+        {{ if eq $s "undocumented" }}{{ $undocumented = add $undocumented 1 }}
+        {{ else if eq $s "not_researched" }}{{ $notResearched = add $notResearched 1 }}
+        {{ else if $cap.source }}{{ $verified = add $verified 1 }}{{ if .core }}{{ $coreVerified = add $coreVerified 1 }}{{ end }}
+        {{ else }}{{ $unverified = add $unverified 1 }}{{ end }}
+    {{ end }}
+{{ end }}
+<!-- What's inside and how solid it is. Sits below the table. -->
+<section id="about" class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-6 scroll-mt-16">
+    <div class="grid grid-cols-2 lg:grid-cols-6 gap-4">
+        <div class="bento col-span-2 flex flex-col justify-between">
+            <div>
+                <p class="bento-kicker">Data you can defend</p>
+                <h2 class="mt-1.5 text-lg sm:text-xl font-bold tracking-tight text-ink text-balance">No guesses shown as facts. Every gap is labelled.</h2>
+                <p class="mt-1.5 text-sm text-muted">A value only counts when it links to the vendor's pricing page, docs or trust center. If we checked and the vendor is silent, we say so.</p>
+            </div>
+            <div class="mt-4">
+                <div class="flex h-3 w-full overflow-hidden rounded-full bg-subtle" role="img"
+                    aria-label="{{ $verified }} verified, {{ $unverified }} unverified, {{ $undocumented }} not documented, {{ $notResearched }} not researched">
+                    {{ range slice (slice "verified" $verified) (slice "unverified" $unverified) (slice "undocumented" $undocumented) (slice "not_researched" $notResearched) }}
+                    <div class="seg-{{ index . 0 }}" style="width: {{ div (mul (float (index . 1)) 100) $points }}%"></div>
+                    {{ end }}
+                </div>
+                <ul class="mt-3 grid grid-cols-2 gap-x-3 gap-y-2 text-xs text-muted">
+                    <li><span class="flex items-center gap-1.5"><span class="h-2 w-2 rounded-full seg-verified"></span>Checked against a source</span><strong class="mt-0.5 block text-base font-semibold text-ink">{{ $verified }}</strong></li>
+                    <li><span class="flex items-center gap-1.5"><span class="h-2 w-2 rounded-full seg-undocumented"></span>Vendor doesn't document</span><strong class="mt-0.5 block text-base font-semibold text-ink">{{ $undocumented }}</strong></li>
+                    <li><span class="flex items-center gap-1.5"><span class="h-2 w-2 rounded-full seg-not_researched ring-1 ring-muted/40"></span>Not researched yet</span><strong class="mt-0.5 block text-base font-semibold text-ink">{{ $notResearched }}</strong></li>
+                    {{ if $unverified }}<li><span class="flex items-center gap-1.5"><span class="h-2 w-2 rounded-full seg-unverified"></span>Unverified</span><strong class="mt-0.5 block text-base font-semibold text-ink">{{ $unverified }}</strong></li>{{ end }}
+                </ul>
+            </div>
+        </div>
+
+        <div class="bento">
+            <div class="bento-icon bg-gradient-to-br from-indigo-500 to-violet-500">📦</div>
+            <p class="mt-4 text-3xl font-bold text-ink">{{ len site.Data.apps }}</p>
+            <p class="text-sm text-muted">SaaS apps catalogued</p>
+        </div>
+        <div class="bento">
+            <div class="bento-icon bg-gradient-to-br from-emerald-500 to-teal-500">✅</div>
+            <p class="mt-4 text-3xl font-bold text-ink">{{ div (mul $coreVerified 100) $corePoints }}%</p>
+            <p class="text-sm text-muted">of core values sourced</p>
+        </div>
+        <div class="bento">
+            <div class="bento-icon bg-gradient-to-br from-fuchsia-500 to-pink-500">🧩</div>
+            <p class="mt-4 text-3xl font-bold text-ink">{{ len $schema.capabilities }}</p>
+            <p class="text-sm text-muted">IAM capabilities per app</p>
+        </div>
+        <a href="https://github.com/prithvikrishnab4u/VetThe.App/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener" data-suggest-open="new" class="bento group bg-gradient-to-br from-accent-soft to-surface">
+            <div class="bento-icon bg-gradient-to-br from-amber-500 to-orange-500">🤝</div>
+            <p class="mt-4 font-semibold text-ink">Spot a gap?</p>
+            <p class="text-sm text-muted">Click ✎ on any cell, or <span class="text-accent group-hover:underline">add an app →</span></p>
+        </a>
+    </div>
+</section>

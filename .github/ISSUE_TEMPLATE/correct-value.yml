@@ -1,0 +1,69 @@
+name: Correct a value
+description: A capability value in the table is wrong, outdated or missing.
+title: "[Fix] <App>: <capability>"
+labels: ["data-fix"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping. The quickest way is the ✎ button in the table cell on [vetthe.app](https://vetthe.app), which opens the pull request for you.
+        Only the vendor's own pricing page, docs or trust center count as a source. Blogs, Reddit and review sites don't.
+  - type: input
+    id: app
+    attributes:
+      label: App
+      placeholder: e.g. Slack
+    validations:
+      required: true
+  - type: dropdown
+    id: capability
+    attributes:
+      label: Capability
+      options:
+        - SSO
+        - Enforce SSO
+        - SCIM
+        - Enforce MFA
+        - Passkeys / keys
+        - Audit logs
+        - JIT provisioning
+        - Domain verification
+        - Custom roles
+        - Group → role mapping
+        - Session controls
+        - API token controls
+    validations:
+      required: true
+  - type: dropdown
+    id: support
+    attributes:
+      label: What does the vendor's page say?
+      options:
+        - Supported
+        - Partial
+        - Not supported
+        - Not documented (I checked and the vendor's pages don't say)
+    validations:
+      required: true
+  - type: dropdown
+    id: tier
+    attributes:
+      label: Cheapest plan that includes it
+      options:
+        - Free
+        - Paid
+        - Enterprise
+        - Add-on
+        - Not sure
+        - Doesn't apply
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: Link to the vendor page that shows this.
+      placeholder: https://vendor.com/pricing
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Plan name, limitations (required for Partial), which pages you checked.

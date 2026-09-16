@@ -1,0 +1,479 @@
+{{/* "Suggest a fix" / "Add an app" panel. Submits to site/functions/api/suggest.js, which opens a pull request. */}}
+{{ $schema := site.Data.schema }}
+{{ $repo := "https://github.com/prithvikrishnab4u/VetThe.App" }}
+{{ $suggestable := slice "supported" "partial" "not_supported" "undocumented" }}
+{{ $supportIcons := dict "supported" "✓" "partial" "~" "not_supported" "✕" "undocumented" "∅" }}
+{{ $close := `<svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></svg>` | safeHTML }}
+
+<script type="application/json" id="vetSchema">{{ $schema | jsonify | safeJS }}</script>
+
+<dialog id="suggestDialog" class="suggest-dialog" aria-labelledby="suggestTitle"
+    data-sitekey="{{ site.Params.turnstileSiteKey }}" data-repo="{{ $repo }}">
+
+    <form id="suggestForm" class="flex h-full flex-col" novalidate>
+        <header class="flex items-start justify-between gap-4 border-b border-line px-5 py-4">
+            <div class="min-w-0">
+                <p id="suggestKicker" class="bento-kicker">Suggest a fix</p>
+                <h2 id="suggestTitle" tabindex="-1" autofocus class="focus:outline-none mt-1 text-lg font-semibold text-ink truncate">Suggest a fix</h2>
+                <p class="mt-0.5 text-sm text-muted">No account needed. A maintainer checks your source before it goes live.</p>
+            </div>
+            <button type="button" data-close class="btn px-2 text-muted hover:bg-subtle hover:text-ink" aria-label="Close">{{ $close }}</button>
+        </header>
+
+        <div class="flex-1 space-y-6 overflow-y-auto px-5 py-5 custom-scrollbar">
+
+            <!-- Fix: which cell -->
+            <div data-show="fix" class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                <label class="field">
+                    <span class="field-label">App</span>
+                    <select id="sfApp" class="input">
+                        {{ range $id, $app := site.Data.apps }}<option value="{{ $id }}">{{ $app.name }}</option>{{ end }}
+                    </select>
+                </label>
+                <label class="field">
+                    <span class="field-label">Capability</span>
+                    <select id="sfCap" class="input">
+                        {{ range $schema.capabilities }}<option value="{{ .id }}">{{ .label }}</option>{{ end }}
+                    </select>
+                </label>
+                <p id="sfQuestion" class="text-sm text-body sm:col-span-2"></p>
+                <div id="sfCurrent" class="rounded-xl border border-dashed border-line bg-subtle px-3.5 py-3 text-sm sm:col-span-2"></div>
+            </div>
+
+            <!-- Fix: the new value -->
+            <fieldset data-show="fix" class="space-y-4">
+                <legend class="field-label mb-2">What does the vendor's own page say?</legend>
+                <div class="grid grid-cols-2 gap-2">
+                    {{ range $schema.support_levels }}{{ if in $suggestable .id }}
+                    <label class="choice"><input type="radio" name="support" value="{{ .id }}" class="sr-only"><span aria-hidden="true">{{ index $supportIcons .id }}</span>{{ .label }}</label>
+                    {{ end }}{{ end }}
+                </div>
+
+                <div id="sfTiered" class="space-y-4" hidden>
+                    <div>
+                        <p class="field-label">Cheapest plan that includes it</p>
+                        <div class="mt-2 flex flex-wrap gap-2">
+                            {{ range $schema.tiers }}
+                            <label class="choice" title="{{ .description }}"><input type="radio" name="tier" value="{{ .id }}" class="sr-only">{{ .label }}</label>
+                            {{ end }}
+                            <label class="choice"><input type="radio" name="tier" value="" class="sr-only">Not sure</label>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                        <label class="field">
+                            <span class="field-label">Plan name <span class="field-hint">optional</span></span>
+                            <input id="sfPlan" class="input" maxlength="60" placeholder="e.g. Business Plus">
+                        </label>
+                        <label class="field" data-field="retention">
+                            <span class="field-label">Log retention <span class="field-hint">optional</span></span>
+                            <input id="sfRetention" class="input" maxlength="40" placeholder="e.g. 90 days">
+                        </label>
+                    </div>
+                    <div data-field="protocols">
+                        <p class="field-label">Protocols</p>
+                        <div class="mt-2 flex flex-wrap gap-2">
+                            {{ range $schema.sso_protocols }}
+                            <label class="choice"><input type="checkbox" name="protocols" value="{{ . }}" class="sr-only">{{ . }}</label>
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
+
+                <label id="sfSourceWrap" class="field">
+                    <span class="field-label">Source <span class="field-hint">required</span></span>
+                    <input id="sfSource" type="url" class="input" maxlength="500" placeholder="https://vendor.com/pricing">
+                    <span class="text-xs text-muted">The vendor's own pricing page, docs or trust center. Not blogs, Reddit or review sites.</span>
+                </label>
+
+                <label class="field">
+                    <span class="field-label"><span id="sfNotesLabel">Notes</span> <span id="sfNotesHint" class="field-hint">optional</span></span>
+                    <textarea id="sfNotes" class="input min-h-[4.5rem]" maxlength="400" placeholder="Limits, plan quirks, anything the table can't show"></textarea>
+                </label>
+            </fieldset>
+
+            <!-- New app -->
+            <div data-show="new" class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                <label class="field">
+                    <span class="field-label">App name <span class="field-hint">required</span></span>
+                    <input id="sfName" class="input" maxlength="80" placeholder="e.g. Vanta" autocomplete="off">
+                </label>
+                <label class="field">
+                    <span class="field-label">Website <span class="field-hint">required</span></span>
+                    <input id="sfWebsite" type="url" class="input" maxlength="500" placeholder="https://vanta.com">
+                </label>
+                <label class="field">
+                    <span class="field-label">Category</span>
+                    <select id="sfCategory" class="input">
+                        {{ range $schema.categories }}<option value="{{ . }}">{{ index (dict "hr" "HR" "sales_marketing" "Sales & marketing") . | default (replace . "_" " " | humanize) }}</option>{{ end }}
+                    </select>
+                </label>
+                <label class="field sm:col-span-2">
+                    <span class="field-label">What it does <span class="field-hint">one sentence</span></span>
+                    <input id="sfDescription" class="input" maxlength="200" placeholder="Compliance automation for SOC 2 and ISO 27001">
+                </label>
+            </div>
+
+            <fieldset data-show="new">
+                <legend class="field-label">What have you checked? <span class="field-hint">optional, skip anything you haven't</span></legend>
+                <div class="mt-2 space-y-2">
+                    {{ range $schema.capabilities }}{{ if .core }}
+                    <div class="rounded-xl border border-line p-3" data-core="{{ .id }}">
+                        <div class="flex items-center justify-between gap-3">
+                            <span class="text-sm font-medium text-ink" title="{{ .question }}">{{ .label }}</span>
+                            <select class="input !w-auto !py-1.5" data-k="support" aria-label="{{ .label }}">
+                                <option value="">Not researched</option>
+                                {{ range $schema.support_levels }}{{ if in $suggestable .id }}<option value="{{ .id }}">{{ .label }}</option>{{ end }}{{ end }}
+                            </select>
+                        </div>
+                        <div class="mt-2.5 grid grid-cols-1 gap-2 sm:grid-cols-[9rem_1fr]" data-extra hidden>
+                            <select class="input" data-k="tier" data-tiered aria-label="{{ .label }} plan">
+                                <option value="">Plan: not sure</option>
+                                {{ range $schema.tiers }}<option value="{{ .id }}">{{ .label }}</option>{{ end }}
+                            </select>
+                            <input type="url" class="input" data-k="source" maxlength="500" placeholder="Source link" aria-label="{{ .label }} source">
+                            <input class="input sm:col-span-2" data-k="notes" maxlength="400" placeholder="Notes" aria-label="{{ .label }} notes">
+                        </div>
+                    </div>
+                    {{ end }}{{ end }}
+                </div>
+            </fieldset>
+
+            <!-- About you -->
+            <div class="grid grid-cols-1 gap-3 border-t border-line pt-5">
+                <label class="field">
+                    <span class="field-label">Your name <span class="field-hint">optional, credited on the pull request, which is public</span></span>
+                    <input id="sfContributor" class="input" maxlength="60" autocomplete="name">
+                </label>
+                <label class="field">
+                    <span class="field-label">Anything the reviewer should know? <span class="field-hint">optional</span></span>
+                    <textarea id="sfComment" class="input min-h-[3.5rem]" maxlength="1000"></textarea>
+                </label>
+                <div class="hidden" aria-hidden="true">
+                    <label>Company URL <input name="company_url" tabindex="-1" autocomplete="off"></label>
+                </div>
+                <div id="sfTurnstile" class="min-h-[65px]"></div>
+            </div>
+
+            <p id="sfError" role="alert" class="rounded-xl border px-3.5 py-2.5 text-sm badge-no" hidden></p>
+        </div>
+
+        <footer class="flex items-center justify-between gap-3 border-t border-line px-5 py-3">
+            <a id="sfGithubLink" href="{{ $repo }}/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener" class="text-sm text-muted hover:text-accent">Prefer GitHub?</a>
+            <div class="flex gap-2">
+                <button type="button" data-close class="btn btn-ghost">Cancel</button>
+                <button type="submit" id="sfSubmit" class="btn btn-primary">Send suggestion</button>
+            </div>
+        </footer>
+    </form>
+
+    <div id="suggestDone" class="flex h-full flex-col items-center justify-center px-8 text-center" hidden>
+        <div class="flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-500">
+            <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m5 12 5 5L20 7"/></svg>
+        </div>
+        <h2 class="mt-4 text-xl font-semibold text-ink">Thanks, it's in review</h2>
+        <p class="mt-2 max-w-xs text-sm text-muted">We opened <span id="sfDoneRef">a pull request</span>. It goes live once a maintainer has checked the source.</p>
+        <a id="sfDoneLink" href="#" target="_blank" rel="noopener" class="mt-4 text-sm font-medium text-accent hover:underline">Follow it on GitHub ↗</a>
+        <div class="mt-8 flex gap-2">
+            <button type="button" id="sfAnother" class="btn btn-ghost">Suggest another</button>
+            <button type="button" data-close class="btn btn-primary">Done</button>
+        </div>
+    </div>
+</dialog>
+
+<script>
+(function () {
+    const dialog = document.getElementById('suggestDialog');
+    const form = document.getElementById('suggestForm');
+    const done = document.getElementById('suggestDone');
+    const schema = JSON.parse(document.getElementById('vetSchema').textContent);
+    const $ = id => document.getElementById(id);
+    const TIERED = ['supported', 'partial'];
+    const repo = dialog.dataset.repo;
+    const labelOf = (list, id) => (list.find(x => x.id === id) || {}).label || id;
+
+    let mode = 'fix';
+    let appsPromise = null;
+    let widgetId = null;
+    let token = '';
+
+    function loadApps() {
+        appsPromise = appsPromise || fetch('/data/apps.json')
+            .then(r => r.json())
+            .then(list => Object.fromEntries(list.map(a => [a._id, a])))
+            .catch(() => ({}));
+        return appsPromise;
+    }
+
+    // ---- Spam check (Cloudflare Turnstile), loaded the first time the panel opens ----
+    let turnstileScript = null;
+    function renderTurnstile() {
+        if (!dialog.dataset.sitekey) return;
+        turnstileScript = turnstileScript || new Promise((resolve, reject) => {
+            const s = document.createElement('script');
+            s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+            s.async = true;
+            s.onload = resolve;
+            s.onerror = reject;
+            document.head.appendChild(s);
+        });
+        turnstileScript.then(() => {
+            if (widgetId !== null) return;
+            widgetId = window.turnstile.render('#sfTurnstile', {
+                sitekey: dialog.dataset.sitekey,
+                theme: document.documentElement.classList.contains('dark') ? 'dark' : 'light',
+                size: 'flexible',
+                callback: t => { token = t; },
+                'expired-callback': () => { token = ''; },
+                'error-callback': () => { token = ''; },
+            });
+        }).catch(() => {});
+    }
+    function resetTurnstile() {
+        token = '';
+        if (widgetId !== null && window.turnstile) window.turnstile.reset(widgetId);
+    }
+
+    // ---- Radios ----
+    const radioValue = name => (form.querySelector(`input[name="${name}"]:checked`) || {}).value;
+    function setRadio(name, value) {
+        form.querySelectorAll(`input[name="${name}"]`).forEach(r => { r.checked = r.value === value; });
+    }
+
+    // ---- Open / close ----
+    function open(nextMode, opts = {}) {
+        mode = nextMode;
+        form.hidden = false;
+        done.hidden = true;
+        form.querySelectorAll('[data-show]').forEach(el => { el.hidden = el.dataset.show !== mode; });
+        hideError();
+        if (mode === 'fix') {
+            $('suggestKicker').textContent = 'Suggest a fix';
+            if (opts.app) $('sfApp').value = opts.app;
+            if (opts.cap) $('sfCap').value = opts.cap;
+            prefill();
+        } else {
+            $('suggestKicker').textContent = 'Add an app';
+            $('suggestTitle').textContent = 'Add an app to the list';
+            if (opts.name && !$('sfName').value) $('sfName').value = opts.name;
+            $('sfGithubLink').href = `${repo}/blob/main/CONTRIBUTING.md`;
+        }
+        if (!dialog.open) dialog.showModal();
+        renderTurnstile();
+    }
+
+    async function prefill() {
+        const appId = $('sfApp').value;
+        const capId = $('sfCap').value;
+        const def = schema.capabilities.find(c => c.id === capId);
+        $('suggestTitle').textContent = `${$('sfApp').selectedOptions[0].text} · ${def.label}`;
+        $('sfQuestion').textContent = def.question;
+        $('sfGithubLink').href = `${repo}/edit/main/data/apps/${appId}.yaml`;
+        form.querySelectorAll('[data-field]').forEach(el => { el.hidden = !(def.fields || []).includes(el.dataset.field); });
+
+        const app = (await loadApps())[appId];
+        if ($('sfApp').value !== appId || $('sfCap').value !== capId) return;
+        const current = (app && app.capabilities && app.capabilities[capId]) || { support: 'not_researched' };
+        renderCurrent(current);
+
+        // Start from what's recorded, so a small correction is a small edit
+        setRadio('support', current.support);
+        setRadio('tier', current.tier || '');
+        $('sfPlan').value = current.plan || '';
+        $('sfNotes').value = current.notes || '';
+        $('sfRetention').value = current.retention || '';
+        form.querySelectorAll('input[name="protocols"]').forEach(cb => { cb.checked = (current.protocols || []).includes(cb.value); });
+        $('sfSource').value = '';
+        syncSupport();
+    }
+
+    function renderCurrent(current) {
+        const box = $('sfCurrent');
+        box.replaceChildren();
+        const line = document.createElement('p');
+        line.className = 'text-muted';
+        let value = labelOf(schema.support_levels, current.support);
+        if (current.tier) value += ` · ${labelOf(schema.tiers, current.tier)}`;
+        if (current.plan) value += ` (${current.plan})`;
+        const strong = document.createElement('strong');
+        strong.className = 'font-medium text-ink';
+        strong.textContent = value;
+        line.append('Recorded now: ', strong);
+        box.append(line);
+
+        const detail = document.createElement('p');
+        detail.className = 'mt-1 text-xs text-muted break-words';
+        if (current.source) {
+            const a = document.createElement('a');
+            a.href = current.source;
+            a.target = '_blank';
+            a.rel = 'noopener';
+            a.className = 'text-accent hover:underline';
+            a.textContent = 'current source ↗';
+            detail.append(`Checked ${current.checked} · `, a);
+        } else if (!['undocumented', 'not_researched'].includes(current.support)) {
+            detail.textContent = 'No source yet, so this value is unverified.';
+        } else {
+            detail.textContent = current.support === 'undocumented' ? "Someone checked and the vendor's pages were silent." : 'Nobody has checked this yet.';
+        }
+        box.append(detail);
+    }
+
+    function syncSupport() {
+        const support = radioValue('support');
+        $('sfTiered').hidden = !TIERED.includes(support);
+        $('sfSourceWrap').hidden = support === 'undocumented';
+        $('sfNotesLabel').textContent = support === 'partial' ? "What's the limitation?"
+            : support === 'undocumented' ? 'Which pages did you check?' : 'Notes';
+        $('sfNotesHint').textContent = support === 'partial' ? 'required' : 'optional';
+    }
+
+    function syncCoreRow(row) {
+        const support = row.querySelector('[data-k="support"]').value;
+        row.querySelector('[data-extra]').hidden = !support;
+        row.querySelector('[data-k="tier"]').hidden = !TIERED.includes(support);
+        row.querySelector('[data-k="source"]').hidden = support === 'undocumented';
+    }
+
+    // ---- Validate and collect ----
+    const isUrl = v => /^https?:\/\/\S+\.\S+/.test(v);
+    function fail(message, field) {
+        showError(message);
+        if (field) field.focus();
+        return null;
+    }
+
+    function collect() {
+        const body = {
+            kind: mode === 'fix' ? 'fix' : 'new_app',
+            contributor: $('sfContributor').value,
+            comment: $('sfComment').value,
+            company_url: form.company_url.value,
+            turnstileToken: token,
+        };
+
+        if (mode === 'fix') {
+            const support = radioValue('support');
+            if (!support || support === 'not_researched') return fail('Choose what the vendor page says.', form.querySelector('input[name="support"]'));
+            const value = { support, notes: $('sfNotes').value.trim() };
+            if (TIERED.includes(support)) {
+                value.tier = radioValue('tier') || '';
+                value.plan = $('sfPlan').value;
+                value.retention = $('sfRetention').value;
+                value.protocols = [...form.querySelectorAll('input[name="protocols"]:checked')].map(cb => cb.value);
+            }
+            if (support !== 'undocumented') {
+                value.source = $('sfSource').value.trim();
+                if (!isUrl(value.source)) return fail('Add a link to the vendor page that shows this.', $('sfSource'));
+            }
+            if (support === 'partial' && !value.notes) return fail('Describe the limitation in the notes.', $('sfNotes'));
+            Object.assign(body, { app: $('sfApp').value, capability: $('sfCap').value, value });
+        } else {
+            const name = $('sfName').value.trim();
+            const website = $('sfWebsite').value.trim();
+            const description = $('sfDescription').value.trim();
+            if (!name) return fail('Add the app name.', $('sfName'));
+            if (!isUrl(website)) return fail('Add the website, starting with https://', $('sfWebsite'));
+            if (!description) return fail('Add a one-sentence description.', $('sfDescription'));
+            Object.assign(body, { name, website, description, category: $('sfCategory').value, capabilities: {} });
+
+            for (const row of form.querySelectorAll('[data-core]')) {
+                const get = k => row.querySelector(`[data-k="${k}"]`);
+                const support = get('support').value;
+                if (!support) continue;
+                const label = row.querySelector('span').textContent;
+                const value = { support, notes: get('notes').value.trim() };
+                if (TIERED.includes(support)) value.tier = get('tier').value;
+                if (support !== 'undocumented') {
+                    value.source = get('source').value.trim();
+                    if (!isUrl(value.source)) return fail(`${label}: add a source link, or set it back to Not researched.`, get('source'));
+                }
+                if (support === 'partial' && !value.notes) return fail(`${label}: describe the limitation in the notes.`, get('notes'));
+                body.capabilities[row.dataset.core] = value;
+            }
+        }
+
+        if (!token) return fail(dialog.dataset.sitekey ? 'Please wait a moment for the spam check to finish.' : 'Suggestions are not switched on yet. Please use GitHub for now.');
+        return body;
+    }
+
+    function showError(message) {
+        $('sfError').textContent = message;
+        $('sfError').hidden = false;
+        $('sfError').scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+    function hideError() {
+        $('sfError').hidden = true;
+    }
+
+    function resetFields() {
+        form.querySelectorAll('[data-show="new"] input, [data-core] input, #sfComment').forEach(el => { el.value = ''; });
+        form.querySelectorAll('[data-core] select').forEach(el => { el.selectedIndex = 0; });
+        form.querySelectorAll('[data-core]').forEach(syncCoreRow);
+    }
+
+    // ---- Submit ----
+    form.addEventListener('submit', async e => {
+        e.preventDefault();
+        hideError();
+        const body = collect();
+        if (!body) return;
+
+        const button = $('sfSubmit');
+        button.disabled = true;
+        button.textContent = 'Sending…';
+        try {
+            const res = await fetch('/api/suggest', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(body),
+            });
+            const data = await res.json().catch(() => ({
+                ok: false,
+                error: 'Suggestions are not available on this site yet. Please use GitHub for now.',
+            }));
+            if (!data.ok) throw new Error(data.error);
+
+            $('sfDoneRef').textContent = `pull request #${data.number}`;
+            $('sfDoneLink').href = data.url;
+            form.hidden = true;
+            done.hidden = false;
+            resetFields();
+        } catch (err) {
+            showError(err.message && err.message !== 'Failed to fetch' ? err.message : 'Network error. Please try again.');
+        } finally {
+            button.disabled = false;
+            button.textContent = 'Send suggestion';
+            resetTurnstile();
+        }
+    });
+
+    // ---- Wiring ----
+    $('sfApp').addEventListener('change', prefill);
+    $('sfCap').addEventListener('change', prefill);
+    form.querySelectorAll('input[name="support"]').forEach(r => r.addEventListener('change', syncSupport));
+    form.querySelectorAll('[data-core]').forEach(row => {
+        row.querySelector('[data-k="support"]').addEventListener('change', () => syncCoreRow(row));
+        syncCoreRow(row);
+    });
+    dialog.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', () => dialog.close()));
+    $('sfAnother').addEventListener('click', () => open(mode));
+    // Click on the backdrop closes
+    dialog.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
+
+    // ✎ buttons in table cells, and any [data-suggest-open] link. Links keep a GitHub
+    // href so they still work without JavaScript.
+    document.addEventListener('click', e => {
+        const cellButton = e.target.closest('[data-suggest]');
+        if (cellButton) {
+            open('fix', { app: cellButton.closest('tr').dataset.id, cap: cellButton.closest('td').dataset.cap });
+            return;
+        }
+        const opener = e.target.closest('[data-suggest-open]');
+        if (opener) {
+            e.preventDefault();
+            const filter = document.getElementById('filterApp');
+            open(opener.dataset.suggestOpen, { name: filter ? filter.value.trim() : '' });
+        }
+    });
+})();
+</script>
