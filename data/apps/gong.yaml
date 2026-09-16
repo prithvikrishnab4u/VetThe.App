@@ -34,9 +34,11 @@ capabilities:
     source: "https://help.gong.io/docs/summary-of-security-features"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Gong documents SSO and SCIM or Salesforce provisioning but doesn't say whether accounts are created on first SSO sign-in."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Gong only imports users whose email is on the primary company domain, and documents no DNS or ownership proof for it."
   custom_roles:
     support: "supported"
     notes: "Granular permission profiles in addition to built-in roles; plan requirement not stated"

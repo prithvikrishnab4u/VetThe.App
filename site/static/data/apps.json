@@ -2598,13 +2598,15 @@
         "tier": "enterprise"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "Front only documents SPF/DKIM setup for email deliverability, not domain ownership verification that controls accounts.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "Front's SSO and user provisioning docs cover SAML login and SCIM via IdPs but don't say whether accounts are created on first SSO sign-in.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "support": "undocumented"
@@ -2661,13 +2663,19 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Orgs can verify domains with a DNS TXT record for a Verified badge and email notification controls (the email controls need Enterprise Cloud), but this doesn't give control of accounts.",
+        "plan": "Free",
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-organization-settings/verifying-or-approving-a-domain-for-your-organization",
+        "support": "partial",
+        "tier": "free"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "Docs describe inviting members and linking accounts (org SAML) or SCIM (Enterprise Managed Users); first-sign-in creation isn't described.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-14",
@@ -2842,7 +2850,8 @@
         "support": "supported"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "Gong only imports users whose email is on the primary company domain, and documents no DNS or ownership proof for it.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "checked": "2026-09-15",
@@ -2853,7 +2862,8 @@
         "tier": "paid"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "Gong documents SSO and SCIM or Salesforce provisioning but doesn't say whether accounts are created on first SSO sign-in.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "support": "undocumented"

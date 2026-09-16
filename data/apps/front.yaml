@@ -36,9 +36,11 @@ capabilities:
     source: "https://help.front.com/en/articles/2925696"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Front's SSO and user provisioning docs cover SAML login and SCIM via IdPs but don't say whether accounts are created on first SSO sign-in."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Front only documents SPF/DKIM setup for email deliverability, not domain ownership verification that controls accounts."
   custom_roles:
     support: "supported"
     tier: "enterprise"
