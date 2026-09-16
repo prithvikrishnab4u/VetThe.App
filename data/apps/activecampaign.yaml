@@ -42,7 +42,8 @@ capabilities:
     source: "https://help.activecampaign.com/hc/en-us/articles/4404715700892-Set-up-single-sign-on-SSO-for-your-ActiveCampaign-account"
     checked: "2026-09-15"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The SSO setup article has no domain verification or domain claim step."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

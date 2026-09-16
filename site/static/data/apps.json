@@ -34,7 +34,8 @@
         "tier": "paid"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "SSO docs say Unlock with SSO is authentication only and point to automated provisioning; account creation on first SSO sign-in is not described.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-14",
@@ -100,7 +101,8 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "The SSO setup article has no domain verification or domain claim step.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
@@ -175,13 +177,19 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Enterprise ID and Federated ID need a claimed domain (DNS token), and the org gets exclusive rights to create accounts on verified domains.",
+        "plan": "Creative Cloud for teams",
+        "source": "https://experienceleague.adobe.com/en/docs/support-resources/adobe-support-tools-guide/adobe-admin-console/adobe-identity-overview",
+        "support": "supported",
+        "tier": "paid"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "Adobe's helpx 'automatic account creation' pages for federated directories exist but blocked fetching (403), so this couldn't be confirmed.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "support": "undocumented"

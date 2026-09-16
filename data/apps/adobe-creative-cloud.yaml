@@ -29,9 +29,15 @@ capabilities:
     source: "https://experienceleague.adobe.com/en/docs/support-resources/adobe-support-tools-guide/adobe-admin-console/download-audit-logs-and-export-reports"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Adobe's helpx 'automatic account creation' pages for federated directories exist but blocked fetching (403), so this couldn't be confirmed."
   domain_verification:
-    support: "not_researched"
+    support: "supported"
+    tier: "paid"
+    plan: "Creative Cloud for teams"
+    notes: "Enterprise ID and Federated ID need a claimed domain (DNS token), and the org gets exclusive rights to create accounts on verified domains."
+    source: "https://experienceleague.adobe.com/en/docs/support-resources/adobe-support-tools-guide/adobe-admin-console/adobe-identity-overview"
+    checked: "2026-09-16"
   custom_roles:
     support: "not_researched"
   group_role_mapping:
