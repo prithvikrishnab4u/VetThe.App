@@ -48,9 +48,14 @@ capabilities:
     source: "https://knowledge.hubspot.com/account-management/view-and-export-account-activity-history"
     checked: "2026-09-14"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
   domain_verification:
-    support: "not_researched"
+    support: "partial"
+    tier: "paid"
+    plan: "Professional"
+    notes: "A DNS TXT domain verification is required when setting up SCIM, but taking control of accounts on that domain is not described."
+    source: "https://knowledge.hubspot.com/user-management/provision-hubspot-users-with-scim-through-okta"
+    checked: "2026-09-16"
   custom_roles:
     support: "not_researched"
   group_role_mapping:

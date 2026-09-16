@@ -41,7 +41,12 @@ capabilities:
     source: "https://help.smartsheet.com/articles/2479296-event-reporting-monitor-how-your-organization-uses-data"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "not_researched"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "With User Auto-Provisioning on, users from a verified domain are added to the plan when they sign in."
+    source: "https://help.smartsheet.com/learning-track/sso-and-saml-best-practices/uap-setup-and-maintenance"
+    checked: "2026-09-16"
   domain_verification:
     support: "supported"
     tier: "paid"

@@ -3384,13 +3384,18 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "A DNS TXT domain verification is required when setting up SCIM, but taking control of accounts on that domain is not described.",
+        "plan": "Professional",
+        "source": "https://knowledge.hubspot.com/user-management/provision-hubspot-users-with-scim-through-okta",
+        "support": "partial",
+        "tier": "paid"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-14",
@@ -4819,7 +4824,7 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
@@ -6002,7 +6007,12 @@
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "With User Auto-Provisioning on, users from a verified domain are added to the plan when they sign in.",
+        "plan": "Enterprise",
+        "source": "https://help.smartsheet.com/learning-track/sso-and-saml-best-practices/uap-setup-and-maintenance",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
