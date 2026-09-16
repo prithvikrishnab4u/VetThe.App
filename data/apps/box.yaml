@@ -7,17 +7,18 @@ status: "draft"
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "All box.com domains were blocked from this network; nothing could be confirmed."
   sso_enforcement:
-    support: "not_researched"
+    support: "undocumented"
   scim:
-    support: "not_researched"
+    support: "undocumented"
   mfa_enforcement:
-    support: "not_researched"
+    support: "undocumented"
   phishing_resistant_mfa:
-    support: "not_researched"
+    support: "undocumented"
   audit_logs:
-    support: "not_researched"
+    support: "undocumented"
   jit_provisioning:
     support: "not_researched"
   domain_verification:

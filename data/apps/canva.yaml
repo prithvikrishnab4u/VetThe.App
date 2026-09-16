@@ -7,26 +7,66 @@ status: "draft"
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
-    support: "not_researched"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML"]
+    notes: "Requires an IdP that supports SAML 2.0; also on Education plans."
+    source: "https://www.canva.com/help/set-up-sso/"
+    checked: "2026-09-16"
   sso_enforcement:
-    support: "not_researched"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Admins can set SSO required for everyone on the team or for everyone on the verified domain."
+    source: "https://www.canva.com/help/sso-login-controls/"
+    checked: "2026-09-16"
   scim:
-    support: "not_researched"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Creates, updates and locks users and pushes groups; users cannot be deleted over SCIM."
+    source: "https://www.canva.com/help/scim-provisioning-azuread-entraid/"
+    checked: "2026-09-16"
   mfa_enforcement:
-    support: "not_researched"
+    support: "undocumented"
   phishing_resistant_mfa:
-    support: "not_researched"
+    support: "supported"
+    tier: "free"
+    plan: "Free"
+    notes: "Users can add a passkey per device; no plan restriction is stated."
+    source: "https://www.canva.com/help/passkey-log-in/"
+    checked: "2026-09-16"
   audit_logs:
-    support: "not_researched"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    retention: "90 days"
+    source: "https://www.canva.com/help/view-audit-logs/"
+    checked: "2026-09-16"
   jit_provisioning:
-    support: "not_researched"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    source: "https://www.canva.com/help/sso-login-controls/"
+    checked: "2026-09-16"
   domain_verification:
-    support: "not_researched"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "DNS TXT verification with a domain capture setting."
+    source: "https://www.canva.com/help/set-up-sso/"
+    checked: "2026-09-16"
   custom_roles:
     support: "not_researched"
   group_role_mapping:
     support: "not_researched"
   session_controls:
-    support: "not_researched"
+    support: "partial"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Org admins can force logout all users on verified domains; no documented session length setting."
+    source: "https://www.canva.com/help/set-up-sso/"
+    checked: "2026-09-16"
   api_token_controls:
     support: "not_researched"

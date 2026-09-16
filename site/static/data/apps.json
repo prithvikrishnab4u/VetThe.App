@@ -282,40 +282,86 @@
     "_id": "airtable",
     "capabilities": {
       "api_token_controls": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Admins can block API access to organization-owned bases and workspaces, but per-token revocation is not described.",
+        "plan": "Enterprise Scale",
+        "source": "https://support.airtable.com/articles/9656884884-settings-airtable-admin-panel",
+        "support": "partial",
+        "tier": "enterprise"
       },
       "audit_logs": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "plan": "Enterprise Scale",
+        "retention": "180 days",
+        "source": "https://support.airtable.com/articles/1665450173-accessing-enterprise-audit-logs-in-airtable",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "custom_roles": {
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Admins verify domains, giving control over the associated user accounts.",
+        "plan": "Business",
+        "source": "https://support.airtable.com/articles/9656884884-settings-airtable-admin-panel",
+        "support": "supported",
+        "tier": "paid"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "plan": "Business",
+        "source": "https://support.airtable.com/articles/8571088137-configuring-sso-in-the-admin-panel",
+        "support": "supported",
+        "tier": "paid"
       },
       "mfa_enforcement": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Admins can require 2FA for enterprise members or all users accessing enterprise content.",
+        "plan": "Enterprise Scale",
+        "source": "https://support.airtable.com/articles/9656884884-settings-airtable-admin-panel",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "phishing_resistant_mfa": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "scim": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "SCIM creates, updates and deactivates users; SSO is a prerequisite.",
+        "plan": "Business",
+        "source": "https://support.airtable.com/articles/1437991116-managing-users-via-idp-sync",
+        "support": "supported",
+        "tier": "paid"
       },
       "session_controls": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Admins set a fixed web session length from 4 hours to 1 year.",
+        "plan": "Business",
+        "source": "https://support.airtable.com/articles/9656884884-settings-airtable-admin-panel",
+        "support": "supported",
+        "tier": "paid"
       },
       "sso": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "plan": "Business",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://support.airtable.com/articles/8571088137-configuring-sso-in-the-admin-panel",
+        "support": "supported",
+        "tier": "paid"
       },
       "sso_enforcement": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Admins can set the SSO login requirement to required for all users in a verified domain.",
+        "plan": "Business",
+        "source": "https://support.airtable.com/articles/9656884884-settings-airtable-admin-panel",
+        "support": "supported",
+        "tier": "paid"
       }
     },
     "category": "productivity",
@@ -933,7 +979,7 @@
         "support": "not_researched"
       },
       "audit_logs": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "custom_roles": {
         "support": "not_researched"
@@ -948,22 +994,27 @@
         "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Account owners can require 2FA for all account members except clients; included with Pro Unlimited.",
+        "plan": "Admin Pro Pack",
+        "source": "https://5.basecamp-help.com/article/1140-admin-pro-pack",
+        "support": "supported",
+        "tier": "add_on"
       },
       "phishing_resistant_mfa": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "scim": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "session_controls": {
         "support": "not_researched"
       },
       "sso": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "sso_enforcement": {
-        "support": "not_researched"
+        "support": "undocumented"
       }
     },
     "category": "collaboration",
@@ -1126,7 +1177,7 @@
         "support": "not_researched"
       },
       "audit_logs": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "custom_roles": {
         "support": "not_researched"
@@ -1141,22 +1192,23 @@
         "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "scim": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "session_controls": {
         "support": "not_researched"
       },
       "sso": {
-        "support": "not_researched"
+        "notes": "All box.com domains were blocked from this network; nothing could be confirmed.",
+        "support": "undocumented"
       },
       "sso_enforcement": {
-        "support": "not_researched"
+        "support": "undocumented"
       }
     },
     "category": "collaboration",
@@ -1399,37 +1451,79 @@
         "support": "not_researched"
       },
       "audit_logs": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "plan": "Enterprise",
+        "retention": "90 days",
+        "source": "https://www.canva.com/help/view-audit-logs/",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "custom_roles": {
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "DNS TXT verification with a domain capture setting.",
+        "plan": "Enterprise",
+        "source": "https://www.canva.com/help/set-up-sso/",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "plan": "Enterprise",
+        "source": "https://www.canva.com/help/sso-login-controls/",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "mfa_enforcement": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Users can add a passkey per device; no plan restriction is stated.",
+        "plan": "Free",
+        "source": "https://www.canva.com/help/passkey-log-in/",
+        "support": "supported",
+        "tier": "free"
       },
       "scim": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Creates, updates and locks users and pushes groups; users cannot be deleted over SCIM.",
+        "plan": "Enterprise",
+        "source": "https://www.canva.com/help/scim-provisioning-azuread-entraid/",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "session_controls": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Org admins can force logout all users on verified domains; no documented session length setting.",
+        "plan": "Enterprise",
+        "source": "https://www.canva.com/help/set-up-sso/",
+        "support": "partial",
+        "tier": "enterprise"
       },
       "sso": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Requires an IdP that supports SAML 2.0; also on Education plans.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://www.canva.com/help/set-up-sso/",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "sso_enforcement": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Admins can set SSO required for everyone on the team or for everyone on the verified domain.",
+        "plan": "Enterprise",
+        "source": "https://www.canva.com/help/sso-login-controls/",
+        "support": "supported",
+        "tier": "enterprise"
       }
     },
     "category": "productivity",
@@ -6401,7 +6495,8 @@
         "support": "not_researched"
       },
       "audit_logs": {
-        "support": "not_researched"
+        "notes": "TeamViewer site returned 503 to every fetch; could not confirm.",
+        "support": "undocumented"
       },
       "custom_roles": {
         "support": "not_researched"
@@ -6416,22 +6511,27 @@
         "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "not_researched"
+        "notes": "TeamViewer site returned 503 to every fetch; could not confirm.",
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "not_researched"
+        "notes": "TeamViewer site returned 503 to every fetch; could not confirm.",
+        "support": "undocumented"
       },
       "scim": {
-        "support": "not_researched"
+        "notes": "TeamViewer site returned 503 to every fetch; could not confirm.",
+        "support": "undocumented"
       },
       "session_controls": {
         "support": "not_researched"
       },
       "sso": {
-        "support": "not_researched"
+        "notes": "TeamViewer site returned 503 to every fetch; could not confirm.",
+        "support": "undocumented"
       },
       "sso_enforcement": {
-        "support": "not_researched"
+        "notes": "TeamViewer site returned 503 to every fetch; could not confirm.",
+        "support": "undocumented"
       }
     },
     "category": "infrastructure",
@@ -6732,37 +6832,78 @@
         "support": "not_researched"
       },
       "audit_logs": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Only a Group Membership Log of group adds and removals is documented.",
+        "source": "https://business-support.udemy.com/hc/en-us/articles/360052222154-How-to-Access-And-Review-The-Group-Membership-Log",
+        "support": "partial"
       },
       "custom_roles": {
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Approved email domains allow self-serve joining without DNS proof.",
+        "source": "https://business-support.udemy.com/hc/en-us/articles/360022594313-Using-approved-email-domains-to-give-users-self-serve-access-to-Udemy-Business",
+        "support": "not_supported"
       },
       "group_role_mapping": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "SAML groups attribute assigns users to existing Udemy groups; roles cannot be managed this way.",
+        "plan": "Enterprise",
+        "source": "https://business-support.udemy.com/hc/en-us/articles/38792614019095-Overview-of-Udemy-Business-SSO-core-features-standard-experience",
+        "support": "partial",
+        "tier": "enterprise"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "plan": "Enterprise",
+        "source": "https://business-support.udemy.com/hc/en-us/articles/38792614019095-Overview-of-Udemy-Business-SSO-core-features-standard-experience",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "mfa_enforcement": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Admins toggle MFA for the whole organization; unavailable when SSO is forced. Plan not stated.",
+        "source": "https://business-support.udemy.com/hc/en-us/articles/32953860178967-How-to-enable-multi-factor-authentication-for-your-organization",
+        "support": "supported"
       },
       "phishing_resistant_mfa": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "scim": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Provisions, updates, deactivates users and manages groups; cannot manage roles.",
+        "plan": "Enterprise",
+        "source": "https://business-support.udemy.com/hc/en-us/articles/360035200594-Automating-user-and-group-management-with-SCIM",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "session_controls": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "SSO optional settings include an inactivity session timeout.",
+        "plan": "Enterprise",
+        "source": "https://business-support.udemy.com/hc/en-us/articles/38792614019095-Overview-of-Udemy-Business-SSO-core-features-standard-experience",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "sso": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://business-support.udemy.com/hc/en-us/articles/38792420345367-How-to-configure-SSO-in-Okta-for-Udemy-Business-standard-experience",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "sso_enforcement": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "The 'Log in via SSO Provider only' setting forces all users to sign in via SSO.",
+        "plan": "Enterprise",
+        "source": "https://business-support.udemy.com/hc/en-us/articles/38792614019095-Overview-of-Udemy-Business-SSO-core-features-standard-experience",
+        "support": "supported",
+        "tier": "enterprise"
       }
     },
     "category": "productivity",

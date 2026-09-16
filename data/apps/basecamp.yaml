@@ -7,17 +7,22 @@ status: "draft"
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
-    support: "not_researched"
+    support: "undocumented"
   sso_enforcement:
-    support: "not_researched"
+    support: "undocumented"
   scim:
-    support: "not_researched"
+    support: "undocumented"
   mfa_enforcement:
-    support: "not_researched"
+    support: "supported"
+    tier: "add_on"
+    plan: "Admin Pro Pack"
+    notes: "Account owners can require 2FA for all account members except clients; included with Pro Unlimited."
+    source: "https://5.basecamp-help.com/article/1140-admin-pro-pack"
+    checked: "2026-09-16"
   phishing_resistant_mfa:
-    support: "not_researched"
+    support: "undocumented"
   audit_logs:
-    support: "not_researched"
+    support: "undocumented"
   jit_provisioning:
     support: "not_researched"
   domain_verification:
