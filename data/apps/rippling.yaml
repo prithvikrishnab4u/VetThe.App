@@ -7,23 +7,38 @@ status: "draft"
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
-    support: "not_researched"
+    support: "undocumented"
   sso_enforcement:
-    support: "not_researched"
+    support: "undocumented"
   scim:
-    support: "not_researched"
+    support: "undocumented"
   mfa_enforcement:
-    support: "not_researched"
+    support: "supported"
+    tier: "add_on"
+    plan: "Rippling IT"
+    notes: "Authentication policies can require MFA for groups or individual employees."
+    source: "https://www.rippling.com/products/it/identity-access-management"
+    checked: "2026-09-16"
   phishing_resistant_mfa:
-    support: "not_researched"
+    support: "supported"
+    tier: "add_on"
+    plan: "Rippling IT"
+    notes: "Policies can require YubiKeys, for example for admins."
+    source: "https://www.rippling.com/products/it/identity-access-management"
+    checked: "2026-09-16"
   audit_logs:
-    support: "not_researched"
+    support: "undocumented"
   jit_provisioning:
     support: "not_researched"
   domain_verification:
     support: "not_researched"
   custom_roles:
-    support: "not_researched"
+    support: "supported"
+    tier: "paid"
+    plan: "Rippling Platform"
+    notes: "Permission profiles define scope, data access and actions."
+    source: "https://www.rippling.com/platform/permissions"
+    checked: "2026-09-16"
   group_role_mapping:
     support: "not_researched"
   session_controls:

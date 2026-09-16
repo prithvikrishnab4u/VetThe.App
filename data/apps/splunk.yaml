@@ -7,25 +7,49 @@ status: "draft"
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
-    support: "not_researched"
+    support: "supported"
+    tier: "paid"
+    plan: "All Splunk Cloud Platform subscriptions"
+    protocols: ["SAML"]
+    source: "https://help.splunk.com/en/splunk-cloud-platform/administer/manage-users-and-security/10.5.2605/use-saml-as-an-authentication-scheme-for-single-sign-on/configure-single-sign-on-with-saml"
+    checked: "2026-09-16"
   sso_enforcement:
-    support: "not_researched"
+    support: "undocumented"
   scim:
-    support: "not_researched"
+    support: "partial"
+    tier: "paid"
+    plan: "All Splunk Cloud Platform subscriptions"
+    notes: "SCIM only syncs user deletions from the IdP; users are created at SAML login."
+    source: "https://help.splunk.com/en/splunk-cloud-platform/administer/manage-users-and-security/10.3.2512/use-saml-as-an-authentication-scheme-for-single-sign-on/configure-sso-with-okta-as-your-identity-provider"
+    checked: "2026-09-16"
   mfa_enforcement:
-    support: "not_researched"
+    support: "undocumented"
   phishing_resistant_mfa:
-    support: "not_researched"
+    support: "undocumented"
   audit_logs:
-    support: "not_researched"
+    support: "supported"
+    tier: "paid"
+    plan: "All Splunk Cloud Platform subscriptions"
+    notes: "Logins, searches, user and config changes are logged to the _audit index."
+    source: "https://help.splunk.com/en/splunk-cloud-platform/administer/manage-users-and-security/10.3.2512/audit-activity-in-the-splunk-platform/auditing-activities-in-a-splunk-platform-instance"
+    checked: "2026-09-16"
   jit_provisioning:
-    support: "not_researched"
+    support: "supported"
+    tier: "paid"
+    plan: "All Splunk Cloud Platform subscriptions"
+    source: "https://help.splunk.com/en/splunk-cloud-platform/administer/manage-users-and-security/10.5.2605/use-saml-as-an-authentication-scheme-for-single-sign-on/configure-single-sign-on-with-saml"
+    checked: "2026-09-16"
   domain_verification:
     support: "not_researched"
   custom_roles:
     support: "not_researched"
   group_role_mapping:
-    support: "not_researched"
+    support: "supported"
+    tier: "paid"
+    plan: "All Splunk Cloud Platform subscriptions"
+    notes: "SAML IdP groups map to Splunk roles."
+    source: "https://help.splunk.com/en/splunk-cloud-platform/administer/manage-users-and-security/10.5.2605/use-saml-as-an-authentication-scheme-for-single-sign-on/configure-single-sign-on-with-saml"
+    checked: "2026-09-16"
   session_controls:
     support: "not_researched"
   api_token_controls:
