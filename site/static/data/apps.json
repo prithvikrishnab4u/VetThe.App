@@ -7562,7 +7562,7 @@
         "support": "not_researched"
       },
       "audit_logs": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "custom_roles": {
         "support": "not_researched"
@@ -7571,28 +7571,43 @@
         "support": "not_researched"
       },
       "group_role_mapping": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Okta SCIM app maps role and products per assigned IdP group.",
+        "source": "https://tech-docs-library.zoominfo.com/zoominfo-sso-scim-provisioning-implementation-guide.pdf",
+        "support": "supported"
       },
       "jit_provisioning": {
         "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "scim": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "SCIM 2.0 create, update and deactivate users; requires SSO to be configured first.",
+        "source": "https://tech-docs-library.zoominfo.com/zoominfo-sso-scim-provisioning-implementation-guide.pdf",
+        "support": "supported"
       },
       "session_controls": {
         "support": "not_researched"
       },
       "sso": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "SAML 2.0 configured in Admin Portal > User Management > Single Sign-On; IdP- and SP-initiated.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://tech-docs-library.zoominfo.com/zoominfo-sso-idp-config-examples.pdf",
+        "support": "supported"
       },
       "sso_enforcement": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Require SSO toggle limits sign-in to the SSO identity provider.",
+        "source": "https://tech-docs-library.zoominfo.com/zoominfo-sso-idp-config-examples.pdf",
+        "support": "supported"
       }
     },
     "category": "sales_marketing",
@@ -7608,7 +7623,11 @@
         "support": "not_researched"
       },
       "audit_logs": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Admin and API actions logged with filtering and CSV export.",
+        "retention": "6 months",
+        "source": "https://help.zscaler.com/zia/about-audit-logs",
+        "support": "supported"
       },
       "custom_roles": {
         "support": "not_researched"
@@ -7620,25 +7639,44 @@
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Users can be added via SSO just-in-time provisioning.",
+        "source": "https://help.zscaler.com/zia/adding-admins",
+        "support": "supported"
       },
       "mfa_enforcement": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "MFA is required by default for all admins in Authentication Service.",
+        "source": "https://help.zscaler.com/zidentity/configuring-authentication-methods",
+        "support": "supported"
       },
       "phishing_resistant_mfa": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "FIDO2 security keys or biometrics as second factor or passwordless primary authenticator.",
+        "source": "https://help.zscaler.com/zidentity/configuring-authentication-methods",
+        "support": "supported"
       },
       "scim": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "External IdPs provision users over SCIM, including deactivate requests.",
+        "source": "https://help.zscaler.com/zidentity/about-external-identity-providers",
+        "support": "supported"
       },
       "session_controls": {
         "support": "not_researched"
       },
       "sso": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Admins sign in through Authentication Service (ZIdentity) with external SAML or OIDC IdPs.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://help.zscaler.com/zidentity/about-external-identity-providers",
+        "support": "supported"
       },
       "sso_enforcement": {
-        "support": "not_researched"
+        "support": "undocumented"
       }
     },
     "category": "security",

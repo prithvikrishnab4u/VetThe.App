@@ -7,19 +7,39 @@ status: "draft"
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
-    support: "not_researched"
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "Admins sign in through Authentication Service (ZIdentity) with external SAML or OIDC IdPs."
+    source: "https://help.zscaler.com/zidentity/about-external-identity-providers"
+    checked: "2026-09-16"
   sso_enforcement:
-    support: "not_researched"
+    support: "undocumented"
   scim:
-    support: "not_researched"
+    support: "supported"
+    notes: "External IdPs provision users over SCIM, including deactivate requests."
+    source: "https://help.zscaler.com/zidentity/about-external-identity-providers"
+    checked: "2026-09-16"
   mfa_enforcement:
-    support: "not_researched"
+    support: "supported"
+    notes: "MFA is required by default for all admins in Authentication Service."
+    source: "https://help.zscaler.com/zidentity/configuring-authentication-methods"
+    checked: "2026-09-16"
   phishing_resistant_mfa:
-    support: "not_researched"
+    support: "supported"
+    notes: "FIDO2 security keys or biometrics as second factor or passwordless primary authenticator."
+    source: "https://help.zscaler.com/zidentity/configuring-authentication-methods"
+    checked: "2026-09-16"
   audit_logs:
-    support: "not_researched"
+    support: "supported"
+    retention: "6 months"
+    notes: "Admin and API actions logged with filtering and CSV export."
+    source: "https://help.zscaler.com/zia/about-audit-logs"
+    checked: "2026-09-16"
   jit_provisioning:
-    support: "not_researched"
+    support: "supported"
+    notes: "Users can be added via SSO just-in-time provisioning."
+    source: "https://help.zscaler.com/zia/adding-admins"
+    checked: "2026-09-16"
   domain_verification:
     support: "not_researched"
   custom_roles:

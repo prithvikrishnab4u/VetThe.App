@@ -7,17 +7,27 @@ status: "draft"
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
-    support: "not_researched"
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "SAML 2.0 configured in Admin Portal > User Management > Single Sign-On; IdP- and SP-initiated."
+    source: "https://tech-docs-library.zoominfo.com/zoominfo-sso-idp-config-examples.pdf"
+    checked: "2026-09-16"
   sso_enforcement:
-    support: "not_researched"
+    support: "supported"
+    notes: "Require SSO toggle limits sign-in to the SSO identity provider."
+    source: "https://tech-docs-library.zoominfo.com/zoominfo-sso-idp-config-examples.pdf"
+    checked: "2026-09-16"
   scim:
-    support: "not_researched"
+    support: "supported"
+    notes: "SCIM 2.0 create, update and deactivate users; requires SSO to be configured first."
+    source: "https://tech-docs-library.zoominfo.com/zoominfo-sso-scim-provisioning-implementation-guide.pdf"
+    checked: "2026-09-16"
   mfa_enforcement:
-    support: "not_researched"
+    support: "undocumented"
   phishing_resistant_mfa:
-    support: "not_researched"
+    support: "undocumented"
   audit_logs:
-    support: "not_researched"
+    support: "undocumented"
   jit_provisioning:
     support: "not_researched"
   domain_verification:
@@ -25,7 +35,10 @@ capabilities:
   custom_roles:
     support: "not_researched"
   group_role_mapping:
-    support: "not_researched"
+    support: "supported"
+    notes: "Okta SCIM app maps role and products per assigned IdP group."
+    source: "https://tech-docs-library.zoominfo.com/zoominfo-sso-scim-provisioning-implementation-guide.pdf"
+    checked: "2026-09-16"
   session_controls:
     support: "not_researched"
   api_token_controls:
