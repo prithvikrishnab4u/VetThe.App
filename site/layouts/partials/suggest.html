@@ -2,13 +2,15 @@
 {{ $schema := site.Data.schema }}
 {{ $repo := "https://github.com/prithvikrishnab4u/VetThe.App" }}
 {{ $suggestable := slice "supported" "partial" "not_supported" "undocumented" }}
+{{/* Cloudflare's always-pass test key, only for local `hugo server` */}}
+{{ $sitekey := site.Params.turnstileSiteKey | default (cond hugo.IsServer "1x00000000000000000000AA" "") }}
 {{ $supportIcons := dict "supported" "✓" "partial" "~" "not_supported" "✕" "undocumented" "∅" }}
 {{ $close := `<svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></svg>` | safeHTML }}
 
 <script type="application/json" id="vetSchema">{{ $schema | jsonify | safeJS }}</script>
 
 <dialog id="suggestDialog" class="suggest-dialog" aria-labelledby="suggestTitle"
-    data-sitekey="{{ site.Params.turnstileSiteKey }}" data-repo="{{ $repo }}">
+    data-sitekey="{{ $sitekey }}" data-repo="{{ $repo }}">
 
     <form id="suggestForm" class="flex h-full flex-col" novalidate>
         <header class="flex items-start justify-between gap-4 border-b border-line px-5 py-4">
@@ -151,7 +153,14 @@
                 <div class="hidden" aria-hidden="true">
                     <label>Company URL <input name="company_url" tabindex="-1" autocomplete="off"></label>
                 </div>
+                {{ if $sitekey }}
                 <div id="sfTurnstile" class="min-h-[65px]"></div>
+                {{ else }}
+                <p class="rounded-xl border border-line bg-subtle px-3.5 py-2.5 text-sm text-muted">
+                    Sending from the website isn't switched on yet. Please use
+                    <a href="{{ $repo }}/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener" class="font-medium text-accent hover:underline">GitHub</a> for now.
+                </p>
+                {{ end }}
             </div>
 
             <p id="sfError" role="alert" class="rounded-xl border px-3.5 py-2.5 text-sm badge-no" hidden></p>
