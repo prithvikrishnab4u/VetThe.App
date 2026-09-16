@@ -3199,7 +3199,7 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
@@ -4597,13 +4597,13 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -5848,13 +5848,16 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Users must already have a Shortcut account (invite, domain auto-join, or Okta SCIM) before signing in with SSO.",
+        "source": "https://www.shortcut.com/help/admin/saml-sso-single-sign-on/",
+        "support": "not_supported"
       },
       "mfa_enforcement": {
         "support": "undocumented"
