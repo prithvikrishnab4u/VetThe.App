@@ -8,23 +8,45 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "enterprise"
+    tier: "paid"
+    plan: "Plus"
+    notes: "Any SAML 2.0-compliant provider, with guides for Okta, Entra ID, Auth0, OneLogin and AWS IAM Identity Center. SSO is listed on Plus, Growth and Enterprise per the pricing page."
     protocols: ["SAML"]
+    source: "https://amplitude.com/docs/admin/single-sign-on/sso"
+    checked: "2026-09-16"
   sso_enforcement:
-    support: "unknown"
-  scim:
-    support: "unknown"
-  mfa_enforcement:
     support: "supported"
-    tier: "enterprise"
+    tier: "paid"
+    plan: "Plus"
+    notes: "Organizations can require members to sign in with SSO, which prevents signing in with email and password."
+    source: "https://amplitude.com/docs/admin/single-sign-on/sso"
+    checked: "2026-09-16"
+  scim:
+    support: "supported"
+    tier: "paid"
+    plan: "Growth"
+    notes: "SCIM API supports create, retrieve, update and delete for users, pending users and permission groups; Okta deactivates users on removal. Listed on Growth and Enterprise per the pricing page."
+    source: "https://amplitude.com/docs/admin/account-management/scim-provision"
+    checked: "2026-09-16"
+  mfa_enforcement:
+    support: "unknown"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
-    support: "unknown"
+    support: "supported"
+    notes: "Logs project creation and deletion, data exports, user management and access control changes, SSO configuration and authentication events; CSV export from Organization Settings and a REST API. Plan requirement not stated."
+    retention: "90 days"
+    source: "https://amplitude.com/docs/admin/audit-log"
+    checked: "2026-09-16"
   jit_provisioning:
     support: "supported"
+    tier: "paid"
+    plan: "Plus"
+    notes: "New users are granted access automatically on first successful authentication with the identity provider; roles and default projects can be configured."
+    source: "https://amplitude.com/docs/admin/single-sign-on/sso"
+    checked: "2026-09-16"
   domain_verification:
-    support: "supported"
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:

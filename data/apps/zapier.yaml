@@ -8,23 +8,26 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "paid"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Zapier documentation states Enterprise account SSO (SAML) is supported."
     protocols: ["SAML"]
+    source: "https://docs.zapier.com/mcp/manage/security"
+    checked: "2026-09-16"
   sso_enforcement:
     support: "unknown"
   scim:
     support: "unknown"
   mfa_enforcement:
-    support: "supported"
-    tier: "paid"
+    support: "unknown"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
     support: "unknown"
   jit_provisioning:
-    support: "supported"
+    support: "unknown"
   domain_verification:
-    support: "supported"
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:

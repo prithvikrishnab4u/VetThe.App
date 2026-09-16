@@ -9,22 +9,33 @@ capabilities:
   sso:
     support: "supported"
     tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SAML 2.0 on both the web version and the mobile app."
     protocols: ["SAML"]
+    source: "https://help.hootsuite.com/hc/en-us/articles/1260804308009-Single-sign-on-set-up-guide"
+    checked: "2026-09-16"
   sso_enforcement:
-    support: "unknown"
-  scim:
-    support: "unknown"
-  mfa_enforcement:
     support: "supported"
     tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SSO applies organization-wide once enabled; letting specific members sign in with a Hootsuite password requires a request to the customer account manager."
+    source: "https://help.hootsuite.com/hc/en-us/articles/1260804308009-Single-sign-on-set-up-guide"
+    checked: "2026-09-16"
+  scim:
+    support: "partial"
+    notes: "The User Management API onboards users into a Hootsuite instance using the SCIM provisioning standard; update and deactivation behaviour and plan requirement not stated."
+    source: "https://developer.hootsuite.com/docs/api-overview"
+    checked: "2026-09-16"
+  mfa_enforcement:
+    support: "unknown"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
     support: "unknown"
   jit_provisioning:
-    support: "supported"
+    support: "unknown"
   domain_verification:
-    support: "supported"
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:

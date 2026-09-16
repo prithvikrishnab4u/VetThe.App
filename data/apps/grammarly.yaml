@@ -8,28 +8,44 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "enterprise"
+    tier: "paid"
+    plan: "Business"
+    notes: "Included in Grammarly Business, Enterprise and Grammarly for Education plans."
     protocols: ["SAML"]
+    source: "https://support.grammarly.com/hc/en-us/articles/360048683092-Set-up-SAML-single-sign-on"
+    checked: "2026-09-16"
   sso_enforcement:
     support: "unknown"
   scim:
-    support: "unknown"
-  mfa_enforcement:
     support: "supported"
     tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Assigning the app in the IdP creates the member account; unassigning deactivates the account and invalidates sessions. Group provisioning available on request."
+    source: "https://support.grammarly.com/hc/en-us/articles/4403054674829-Configure-SCIM-provisioning"
+    checked: "2026-09-16"
+  mfa_enforcement:
+    support: "unknown"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
     support: "unknown"
   jit_provisioning:
     support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "A user without an existing Grammarly account has one created when they sign in via SSO."
+    source: "https://support.grammarly.com/hc/en-us/articles/360048683092-Set-up-SAML-single-sign-on"
+    checked: "2026-09-16"
   domain_verification:
-    support: "supported"
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:
     support: "unknown"
   session_controls:
-    support: "unknown"
+    support: "supported"
+    notes: "Admins can choose how long employees stay logged in before reauthenticating. Plan requirement not stated."
+    source: "https://www.grammarly.com/security"
+    checked: "2026-09-16"
   api_token_controls:
     support: "unknown"

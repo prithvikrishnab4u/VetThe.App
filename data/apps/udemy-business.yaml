@@ -7,24 +7,21 @@ status: "draft"
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
-    support: "supported"
-    tier: "enterprise"
-    protocols: ["SAML", "OIDC"]
+    support: "unknown"
   sso_enforcement:
     support: "unknown"
   scim:
     support: "unknown"
   mfa_enforcement:
-    support: "supported"
-    tier: "enterprise"
+    support: "unknown"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
     support: "unknown"
   jit_provisioning:
-    support: "supported"
+    support: "unknown"
   domain_verification:
-    support: "supported"
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:

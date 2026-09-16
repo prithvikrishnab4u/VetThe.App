@@ -9,22 +9,28 @@ capabilities:
   sso:
     support: "supported"
     tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SAML 2.0 SSO with IdP- and SP-initiated flows; \"Single sign-on (SSO)\" is listed under the Enterprise plan per pricing page and set up via Professional Services"
     protocols: ["SAML"]
+    source: "https://www.pluralsight.com/businesses/pricing"
+    checked: "2026-09-16"
   sso_enforcement:
     support: "unknown"
   scim:
     support: "unknown"
   mfa_enforcement:
-    support: "supported"
-    tier: "enterprise"
+    support: "unknown"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
     support: "unknown"
   jit_provisioning:
     support: "supported"
+    notes: "Just-in-time provisioning allocates licenses to learners as they log in for the first time; plan requirement not stated"
+    source: "https://www.pluralsight.com/product/professional-services/resources/sso"
+    checked: "2026-09-16"
   domain_verification:
-    support: "supported"
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:

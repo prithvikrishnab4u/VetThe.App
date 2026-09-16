@@ -9,22 +9,25 @@ capabilities:
   sso:
     support: "supported"
     tier: "enterprise"
-    protocols: ["SAML", "OIDC"]
+    plan: "Enterprise"
+    notes: "Single sign-on for learner access is listed only on the Enterprise plan (per plan comparison page); Coursera's integrations page states SSO uses SAML 2.0."
+    protocols: ["SAML"]
+    source: "https://www.coursera.org/business/compare-plans"
+    checked: "2026-09-16"
   sso_enforcement:
     support: "unknown"
   scim:
     support: "unknown"
   mfa_enforcement:
-    support: "supported"
-    tier: "enterprise"
+    support: "unknown"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
     support: "unknown"
   jit_provisioning:
-    support: "supported"
+    support: "unknown"
   domain_verification:
-    support: "supported"
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:

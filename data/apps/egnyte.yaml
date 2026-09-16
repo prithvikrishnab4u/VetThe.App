@@ -8,23 +8,26 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "enterprise"
+    tier: "paid"
+    plan: "Business"
+    notes: "\"User Authentication (AD and SSO/SAML)\" listed on all four plans (Business, Enterprise Lite, Elite, Ultimate), per pricing page; no free plan"
     protocols: ["SAML"]
+    source: "https://www.egnyte.com/pricing"
+    checked: "2026-09-16"
   sso_enforcement:
     support: "unknown"
   scim:
     support: "unknown"
   mfa_enforcement:
-    support: "supported"
-    tier: "enterprise"
+    support: "unknown"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
     support: "unknown"
   jit_provisioning:
-    support: "supported"
+    support: "unknown"
   domain_verification:
-    support: "supported"
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:

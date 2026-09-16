@@ -9,15 +9,27 @@ capabilities:
   sso:
     support: "supported"
     tier: "enterprise"
+    plan: "Enterprise"
+    notes: "\"SAML authentication\" listed on Enterprise per pricing page; Google SSO is available from Starter"
     protocols: ["SAML"]
+    source: "https://asana.com/pricing"
+    checked: "2026-09-16"
   sso_enforcement:
     support: "unknown"
   scim:
     support: "supported"
     tier: "enterprise"
+    plan: "Enterprise"
+    notes: "\"User provisioning (SCIM)\" listed on Enterprise per pricing page"
+    source: "https://asana.com/pricing"
+    checked: "2026-09-16"
   mfa_enforcement:
     support: "supported"
-    tier: "free"
+    tier: "paid"
+    plan: "Starter"
+    notes: "\"Enforce two-factor authentication for domain members and guests\" listed from Starter upward per pricing page"
+    source: "https://asana.com/pricing"
+    checked: "2026-09-16"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
@@ -37,5 +49,13 @@ capabilities:
     support: "unknown"
   session_controls:
     support: "supported"
+    notes: "\"Session duration limits\" listed among admin console controls; plan requirement not stated"
+    source: "https://asana.com/features/admin-security"
+    checked: "2026-09-16"
   api_token_controls:
-    support: "unknown"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise+"
+    notes: "Personal access tokens are persistent by default; Enterprise+ adds admin controls over how PATs are handled via the Manage apps panel"
+    source: "https://developers.asana.com/docs/personal-access-token"
+    checked: "2026-09-16"

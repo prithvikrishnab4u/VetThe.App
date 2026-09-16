@@ -9,22 +9,30 @@ capabilities:
   sso:
     support: "supported"
     tier: "enterprise"
-    protocols: ["SAML"]
+    plan: "Enterprise"
+    notes: "Listed as an Enterprise-only feature, with identity providers such as Okta, OneLogin, Azure and PingFederate that support SAML, OAuth or OpenID (per pricing page)."
+    protocols: ["SAML", "OIDC"]
+    source: "https://www.typeform.com/pricing"
+    checked: "2026-09-16"
   sso_enforcement:
     support: "unknown"
   scim:
     support: "unknown"
   mfa_enforcement:
-    support: "supported"
-    tier: "enterprise"
+    support: "unknown"
   phishing_resistant_mfa:
     support: "unknown"
   audit_logs:
-    support: "unknown"
-  jit_provisioning:
-    support: "not_supported"
-  domain_verification:
     support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Downloadable team activity is listed as an Enterprise feature (per pricing page)."
+    source: "https://www.typeform.com/pricing"
+    checked: "2026-09-16"
+  jit_provisioning:
+    support: "unknown"
+  domain_verification:
+    support: "unknown"
   custom_roles:
     support: "unknown"
   group_role_mapping:
