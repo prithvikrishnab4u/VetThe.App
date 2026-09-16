@@ -31,7 +31,8 @@ capabilities:
     source: "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation"
     checked: "2026-09-16"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The \"email domain verification\" feature only activates learners by email at a shared URL; no DNS proof or account takeover is documented."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

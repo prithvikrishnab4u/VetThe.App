@@ -37,9 +37,10 @@ capabilities:
     source: "https://help.tableau.com/current/online/en-us/activity_log_setup.htm"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "SAML docs say users must already be added to the site; SCIM is the documented automatic provisioning path."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
   custom_roles:
     support: "not_researched"
   group_role_mapping:

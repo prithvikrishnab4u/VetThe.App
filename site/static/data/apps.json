@@ -3757,7 +3757,8 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "The \"email domain verification\" feature only activates learners by email at a shared URL; no DNS proof or account takeover is documented.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
@@ -5188,7 +5189,12 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "DNS TXT verification is on Team and Enterprise; capturing accounts on the domain needs the Enterprise add-on.",
+        "plan": "Enterprise + Advanced Security Administration",
+        "source": "https://learning.postman.com/docs/administration/domain-verification-and-capture/domain-capture-overview",
+        "support": "supported",
+        "tier": "add_on"
       },
       "group_role_mapping": {
         "checked": "2026-09-15",
@@ -5199,7 +5205,12 @@
         "tier": "enterprise"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "New users are added to the team on first SSO sign-in when \"Automatically add new users\" is enabled.",
+        "plan": "Team + Simple Security add-on, or Enterprise",
+        "source": "https://learning.postman.com/docs/administration/sso/admin-sso/",
+        "support": "supported",
+        "tier": "add_on"
       },
       "mfa_enforcement": {
         "support": "undocumented"
@@ -6480,13 +6491,14 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "SAML docs say users must already be added to the site; SCIM is the documented automatic provisioning path.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
