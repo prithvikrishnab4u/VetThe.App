@@ -37,7 +37,12 @@ capabilities:
     source: "https://support.grammarly.com/hc/en-us/articles/360048683092-Set-up-SAML-single-sign-on"
     checked: "2026-09-16"
   domain_verification:
-    support: "not_researched"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Verified domains route signups to SSO and domain capture moves existing users onto the license; enabled via Customer Success Manager."
+    source: "https://support.grammarly.com/hc/en-us/articles/33885668963469-Enterprise-domain-controls-for-new-signups-and-existing-users"
+    checked: "2026-09-16"
   custom_roles:
     support: "not_researched"
   group_role_mapping:

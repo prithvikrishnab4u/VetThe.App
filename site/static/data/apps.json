@@ -3126,7 +3126,12 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Verified domains route signups to SSO and domain capture moves existing users onto the license; enabled via Customer Success Manager.",
+        "plan": "Enterprise",
+        "source": "https://support.grammarly.com/hc/en-us/articles/33885668963469-Enterprise-domain-controls-for-new-signups-and-existing-users",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "group_role_mapping": {
         "support": "not_researched"
@@ -4564,13 +4569,13 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "support": "undocumented"
@@ -5818,7 +5823,7 @@
         "tier": "enterprise"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
