@@ -7,19 +7,54 @@ status: "draft"
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
-    support: "not_researched"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML"]
+    source: "https://www.larksuite.com/hc/en-US/articles/360048487935-admin-configure-saml-2.0-sso-login-okta-or-google"
+    checked: "2026-09-16"
   sso_enforcement:
-    support: "not_researched"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Members in the SSO scope who are not exceptions must log in with the IdP account."
+    source: "https://www.larksuite.com/hc/en-US/articles/639199964238-admin-configure-saml-2.0-sso-login-microsoft-entra-id"
+    checked: "2026-09-16"
   scim:
-    support: "not_researched"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM 2.0 creates, updates and deactivates users."
+    source: "https://www.larksuite.com/hc/en-US/articles/197178577922-admin-sync-user-data-through-scim-2.0"
+    checked: "2026-09-16"
   mfa_enforcement:
-    support: "not_researched"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Admins can turn on two-step verification for the whole organization and members cannot disable it."
+    source: "https://www.larksuite.com/hc/en-US/articles/338760728523-admin-turn-on-two-step-verification-for-organization-members"
+    checked: "2026-09-16"
   phishing_resistant_mfa:
-    support: "not_researched"
+    support: "supported"
+    tier: "free"
+    plan: "All plans"
+    notes: "Users can add passkeys, including USB security keys."
+    source: "https://www.larksuite.com/hc/en-US/articles/701640811546-add-passkey"
+    checked: "2026-09-16"
   audit_logs:
-    support: "not_researched"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    retention: "180 days"
+    source: "https://www.larksuite.com/hc/en-US/articles/048989932690-admin-audit-member-activity"
+    checked: "2026-09-16"
   jit_provisioning:
-    support: "not_researched"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Auto join via SSO creates Lark accounts on first IdP login."
+    source: "https://www.larksuite.com/hc/en-US/articles/639199964238-admin-configure-saml-2.0-sso-login-microsoft-entra-id"
+    checked: "2026-09-16"
   domain_verification:
     support: "not_researched"
   custom_roles:

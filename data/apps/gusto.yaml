@@ -7,23 +7,49 @@ status: "draft"
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
-    support: "not_researched"
+    support: "not_supported"
+    notes: "Gusto's Okta integration page says it does not support SSO and asks interested customers to fill out a survey."
+    source: "https://gusto.com/product/integrations/okta"
+    checked: "2026-09-16"
   sso_enforcement:
-    support: "not_researched"
+    support: "not_supported"
+    notes: "No SSO is offered, so SSO cannot be enforced."
+    source: "https://gusto.com/product/integrations/okta"
+    checked: "2026-09-16"
   scim:
-    support: "not_researched"
+    support: "undocumented"
   mfa_enforcement:
-    support: "not_researched"
+    support: "partial"
+    tier: "paid"
+    plan: "All plans"
+    notes: "Gusto requires 2-step verification for most users, and the Primary admin can require it for all admins."
+    source: "https://support.gusto.com/article/106622317100000/set-up-manage-and-troubleshoot-2-step-verification"
+    checked: "2026-09-16"
   phishing_resistant_mfa:
-    support: "not_researched"
+    support: "supported"
+    tier: "paid"
+    plan: "All plans"
+    notes: "Users can sign in with passkeys, including security keys."
+    source: "https://support.gusto.com/article/106622317100000/set-up-manage-and-troubleshoot-2-step-verification"
+    checked: "2026-09-16"
   audit_logs:
-    support: "not_researched"
+    support: "partial"
+    tier: "paid"
+    plan: "All plans"
+    notes: "Only a payroll activity log exists; Gusto says there is no audit log for role or permission changes."
+    source: "https://support.gusto.com/article/102787011100000/view-employee-or-contractor-pay-history-for-admins"
+    checked: "2026-09-16"
   jit_provisioning:
     support: "not_researched"
   domain_verification:
     support: "not_researched"
   custom_roles:
-    support: "not_researched"
+    support: "supported"
+    tier: "paid"
+    plan: "Plus"
+    notes: "Plus includes 1 Custom admin role; Premium includes unlimited."
+    source: "https://support.gusto.com/article/114138050100000/manage-roles-and-permissions-in-gusto-for-primary-admins"
+    checked: "2026-09-16"
   group_role_mapping:
     support: "not_researched"
   session_controls:

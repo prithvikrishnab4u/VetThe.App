@@ -3270,10 +3270,20 @@
         "support": "not_researched"
       },
       "audit_logs": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Only a payroll activity log exists; Gusto says there is no audit log for role or permission changes.",
+        "plan": "All plans",
+        "source": "https://support.gusto.com/article/102787011100000/view-employee-or-contractor-pay-history-for-admins",
+        "support": "partial",
+        "tier": "paid"
       },
       "custom_roles": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Plus includes 1 Custom admin role; Premium includes unlimited.",
+        "plan": "Plus",
+        "source": "https://support.gusto.com/article/114138050100000/manage-roles-and-permissions-in-gusto-for-primary-admins",
+        "support": "supported",
+        "tier": "paid"
       },
       "domain_verification": {
         "support": "not_researched"
@@ -3285,22 +3295,38 @@
         "support": "not_researched"
       },
       "mfa_enforcement": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Gusto requires 2-step verification for most users, and the Primary admin can require it for all admins.",
+        "plan": "All plans",
+        "source": "https://support.gusto.com/article/106622317100000/set-up-manage-and-troubleshoot-2-step-verification",
+        "support": "partial",
+        "tier": "paid"
       },
       "phishing_resistant_mfa": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Users can sign in with passkeys, including security keys.",
+        "plan": "All plans",
+        "source": "https://support.gusto.com/article/106622317100000/set-up-manage-and-troubleshoot-2-step-verification",
+        "support": "supported",
+        "tier": "paid"
       },
       "scim": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "session_controls": {
         "support": "not_researched"
       },
       "sso": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Gusto's Okta integration page says it does not support SSO and asks interested customers to fill out a survey.",
+        "source": "https://gusto.com/product/integrations/okta",
+        "support": "not_supported"
       },
       "sso_enforcement": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "No SSO is offered, so SSO cannot be enforced.",
+        "source": "https://gusto.com/product/integrations/okta",
+        "support": "not_supported"
       }
     },
     "category": "hr",
@@ -3551,7 +3577,12 @@
         "support": "not_researched"
       },
       "audit_logs": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "plan": "Enterprise",
+        "retention": "180 days",
+        "source": "https://www.larksuite.com/hc/en-US/articles/048989932690-admin-audit-member-activity",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "custom_roles": {
         "support": "not_researched"
@@ -3563,25 +3594,57 @@
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Auto join via SSO creates Lark accounts on first IdP login.",
+        "plan": "Enterprise",
+        "source": "https://www.larksuite.com/hc/en-US/articles/639199964238-admin-configure-saml-2.0-sso-login-microsoft-entra-id",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "mfa_enforcement": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Admins can turn on two-step verification for the whole organization and members cannot disable it.",
+        "plan": "Enterprise",
+        "source": "https://www.larksuite.com/hc/en-US/articles/338760728523-admin-turn-on-two-step-verification-for-organization-members",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "phishing_resistant_mfa": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Users can add passkeys, including USB security keys.",
+        "plan": "All plans",
+        "source": "https://www.larksuite.com/hc/en-US/articles/701640811546-add-passkey",
+        "support": "supported",
+        "tier": "free"
       },
       "scim": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "SCIM 2.0 creates, updates and deactivates users.",
+        "plan": "Enterprise",
+        "source": "https://www.larksuite.com/hc/en-US/articles/197178577922-admin-sync-user-data-through-scim-2.0",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "session_controls": {
         "support": "not_researched"
       },
       "sso": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://www.larksuite.com/hc/en-US/articles/360048487935-admin-configure-saml-2.0-sso-login-okta-or-google",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "sso_enforcement": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Members in the SSO scope who are not exceptions must log in with the IdP account.",
+        "plan": "Enterprise",
+        "source": "https://www.larksuite.com/hc/en-US/articles/639199964238-admin-configure-saml-2.0-sso-login-microsoft-entra-id",
+        "support": "supported",
+        "tier": "enterprise"
       }
     },
     "category": "collaboration",
