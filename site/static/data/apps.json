@@ -3603,13 +3603,13 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-16",
@@ -5125,7 +5125,7 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
@@ -6417,7 +6417,12 @@
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "On first SSO sign-in a user can create a new account on the team; access is gated by IdP claims.",
+        "plan": "Enterprise",
+        "source": "https://help.surveymonkey.com/en/surveymonkey/teams/single-sign-on/",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "mfa_enforcement": {
         "support": "undocumented"

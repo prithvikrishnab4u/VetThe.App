@@ -36,7 +36,12 @@ capabilities:
     source: "https://help.surveymonkey.com/en/surveymonkey/teams/team-activity/"
     checked: "2026-09-16"
   jit_provisioning:
-    support: "not_researched"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "On first SSO sign-in a user can create a new account on the team; access is gated by IdP claims."
+    source: "https://help.surveymonkey.com/en/surveymonkey/teams/single-sign-on/"
+    checked: "2026-09-16"
   domain_verification:
     support: "supported"
     tier: "enterprise"

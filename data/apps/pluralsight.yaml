@@ -30,7 +30,7 @@ capabilities:
     source: "https://www.pluralsight.com/product/professional-services/resources/sso"
     checked: "2026-09-16"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
   custom_roles:
     support: "not_researched"
   group_role_mapping:

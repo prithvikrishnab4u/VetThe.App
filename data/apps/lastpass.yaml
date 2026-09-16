@@ -43,9 +43,9 @@ capabilities:
     source: "https://www.lastpass.com/products/business"
     checked: "2026-09-16"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
   custom_roles:
     support: "not_researched"
   group_role_mapping:
