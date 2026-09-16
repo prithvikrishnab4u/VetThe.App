@@ -2305,7 +2305,8 @@
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "SAML SSO docs require a verified domain but don't say whether accounts are created on first SSO sign-in.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -2453,13 +2454,19 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "Only DNS checks for custom portal URLs and email (DKIM) and an Enterprise allowed-domains list are documented; no domain ownership claim for accounts.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Contacts are auto-created on first SSO login, but agents must be added before their first login.",
+        "plan": "Growth",
+        "source": "https://support.freshworks.com/support/solutions/articles/50000002354-how-to-configure-saml-2-0-for-freshworks-using-azure-active-directory-updated-with-video-tutorial-",
+        "support": "partial",
+        "tier": "paid"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -2516,13 +2523,19 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "Only custom-domain/email DNS setup and a Domain Restriction login feature are documented; no domain ownership claim for accounts.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-16",
+        "notes": "Requesters are auto-created on first SSO login, but agents must be added before their first login.",
+        "plan": "Starter",
+        "source": "https://support.freshworks.com/support/solutions/articles/50000002354-how-to-configure-saml-2-0-for-freshworks-using-azure-active-directory-updated-with-video-tutorial-",
+        "support": "partial",
+        "tier": "paid"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",

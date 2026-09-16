@@ -33,9 +33,15 @@ capabilities:
     source: "https://support.freshservice.com/support/solutions/articles/232444-how-to-access-audit-log-in-freshservice-"
     checked: "2026-09-15"
   jit_provisioning:
-    support: "not_researched"
+    support: "partial"
+    tier: "paid"
+    plan: "Starter"
+    notes: "Requesters are auto-created on first SSO login, but agents must be added before their first login."
+    source: "https://support.freshworks.com/support/solutions/articles/50000002354-how-to-configure-saml-2-0-for-freshworks-using-azure-active-directory-updated-with-video-tutorial-"
+    checked: "2026-09-16"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Only custom-domain/email DNS setup and a Domain Restriction login feature are documented; no domain ownership claim for accounts."
   custom_roles:
     support: "not_researched"
   group_role_mapping:
