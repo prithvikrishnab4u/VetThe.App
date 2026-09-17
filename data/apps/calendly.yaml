@@ -2,7 +2,7 @@ name: "Calendly"
 category: "productivity"
 website: "https://calendly.com"
 description: "Scheduling automation platform for eliminating back-and-forth emails."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:

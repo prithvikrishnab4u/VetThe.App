@@ -2,7 +2,7 @@ name: "GitLab"
 category: "development"
 website: "https://about.gitlab.com"
 description: "The DevSecOps platform that brings development, operations, and security teams together in a single application."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:

@@ -2,7 +2,7 @@ name: "Figma"
 category: "development"
 website: "https://figma.com"
 description: "Cloud-based design and prototyping tool for teams and individuals."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:

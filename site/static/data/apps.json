@@ -155,7 +155,7 @@
     "category": "sales_marketing",
     "description": "Automation-first marketing and CRM platform helping businesses connect with customers.",
     "name": "ActiveCampaign",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.activecampaign.com"
   },
   {
@@ -275,7 +275,7 @@
     "category": "hr",
     "description": "All-in-one HR platform for payroll, benefits, talent, and time management.",
     "name": "ADP Workforce Now",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.adp.com"
   },
   {
@@ -367,7 +367,7 @@
     "category": "productivity",
     "description": "A platform for building collaborative apps and databases with powerful automation.",
     "name": "Airtable",
-    "status": "draft",
+    "status": "published",
     "website": "https://airtable.com"
   },
   {
@@ -1028,7 +1028,7 @@
     "category": "collaboration",
     "description": "An all-in-one project management and team communication tool designed for simplicity and clarity.",
     "name": "Basecamp",
-    "status": "draft",
+    "status": "published",
     "website": "https://basecamp.com"
   },
   {
@@ -1084,7 +1084,7 @@
     "category": "finance",
     "description": "Intelligent business payments platform for accounts payable and receivable.",
     "name": "Bill.com",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.bill.com"
   },
   {
@@ -1222,7 +1222,7 @@
     "category": "collaboration",
     "description": "Cloud content management and file sharing service for businesses.",
     "name": "Box",
-    "status": "draft",
+    "status": "published",
     "website": "https://box.com"
   },
   {
@@ -1449,7 +1449,7 @@
     "category": "productivity",
     "description": "Scheduling automation platform for eliminating back-and-forth emails.",
     "name": "Calendly",
-    "status": "draft",
+    "status": "published",
     "website": "https://calendly.com"
   },
   {
@@ -1537,7 +1537,7 @@
     "category": "productivity",
     "description": "Online design and visual communication platform for creating presentations, social media graphics, and more.",
     "name": "Canva",
-    "status": "draft",
+    "status": "published",
     "website": "https://canva.com"
   },
   {
@@ -1610,7 +1610,7 @@
     "category": "development",
     "description": "Continuous integration and delivery platform for DevOps teams.",
     "name": "CircleCI",
-    "status": "draft",
+    "status": "published",
     "website": "https://circleci.com"
   },
   {
@@ -1835,7 +1835,7 @@
     "category": "productivity",
     "description": "The all-in-one productivity platform where teams can come together to plan, organize, and collaborate.",
     "name": "ClickUp",
-    "status": "draft",
+    "status": "published",
     "website": "https://clickup.com"
   },
   {
@@ -1891,7 +1891,7 @@
     "category": "productivity",
     "description": "Enterprise learning platform for skills development.",
     "name": "Coursera for Business",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.coursera.org/business"
   },
   {
@@ -2235,7 +2235,7 @@
     "category": "development",
     "description": "Container registry service for finding and sharing container images.",
     "name": "Docker Hub",
-    "status": "draft",
+    "status": "published",
     "website": "https://hub.docker.com"
   },
   {
@@ -2300,7 +2300,7 @@
     "category": "productivity",
     "description": "Electronic signature and agreement management platform.",
     "name": "DocuSign",
-    "status": "draft",
+    "status": "published",
     "website": "https://docusign.com"
   },
   {
@@ -2438,7 +2438,7 @@
     "category": "collaboration",
     "description": "Cloud content security and governance platform.",
     "name": "Egnyte",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.egnyte.com"
   },
   {
@@ -2591,7 +2591,7 @@
     "category": "development",
     "description": "Cloud-based design and prototyping tool for teams and individuals.",
     "name": "Figma",
-    "status": "draft",
+    "status": "published",
     "website": "https://figma.com"
   },
   {
@@ -2801,7 +2801,7 @@
     "category": "collaboration",
     "description": "Customer operations platform that combines a help desk with the collaboration of email.",
     "name": "Front",
-    "status": "draft",
+    "status": "published",
     "website": "https://front.com"
   },
   {
@@ -2986,7 +2986,7 @@
     "category": "development",
     "description": "The DevSecOps platform that brings development, operations, and security teams together in a single application.",
     "name": "GitLab",
-    "status": "draft",
+    "status": "published",
     "website": "https://about.gitlab.com"
   },
   {
@@ -3154,7 +3154,7 @@
     "category": "productivity",
     "description": "Cloud-based collaboration and productivity tools including Gmail, Drive, and Docs.",
     "name": "Google Workspace",
-    "status": "draft",
+    "status": "published",
     "website": "https://workspace.google.com"
   },
   {
@@ -3376,7 +3376,7 @@
     "category": "hr",
     "description": "Modern HR platform for payroll, benefits, and management.",
     "name": "Gusto",
-    "status": "draft",
+    "status": "published",
     "website": "https://gusto.com"
   },
   {
@@ -3525,7 +3525,7 @@
     "category": "sales_marketing",
     "description": "Customer platform with software for marketing, sales, content management, and service.",
     "name": "HubSpot",
-    "status": "draft",
+    "status": "published",
     "website": "https://hubspot.com"
   },
   {
@@ -3694,7 +3694,7 @@
     "category": "collaboration",
     "description": "A unified collaboration suite that combines chat, docs, meetings, and project management in one app.",
     "name": "Lark",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.larksuite.com"
   },
   {
@@ -3764,7 +3764,7 @@
     "category": "security",
     "description": "Password management solution for storing encrypted passwords online.",
     "name": "LastPass",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.lastpass.com"
   },
   {
@@ -3991,7 +3991,7 @@
     "category": "collaboration",
     "description": "Video messaging tool for work that allows you to record your screen and camera.",
     "name": "Loom",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.loom.com"
   },
   {
@@ -4075,7 +4075,7 @@
     "category": "productivity",
     "description": "Intelligent diagramming application that brings teams together to make better decisions and build the future.",
     "name": "Lucidchart",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.lucidchart.com"
   },
   {
@@ -4599,7 +4599,7 @@
     "category": "productivity",
     "description": "A work OS that powers teams to run projects and workflows with confidence.",
     "name": "monday.com",
-    "status": "draft",
+    "status": "published",
     "website": "https://monday.com"
   },
   {
@@ -4673,7 +4673,7 @@
     "category": "collaboration",
     "description": "Digital workspace for visual collaboration, enabling teams to understand and solve problems.",
     "name": "Mural",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.mural.co"
   },
   {
@@ -4962,7 +4962,7 @@
     "category": "productivity",
     "description": "An all-in-one workspace for notes, tasks, wikis, and databases.",
     "name": "Notion",
-    "status": "draft",
+    "status": "published",
     "website": "https://notion.so"
   },
   {
@@ -5098,7 +5098,7 @@
     "category": "infrastructure",
     "description": "Incident management platform that provides reliable notifications, automatic escalations, and on-call scheduling.",
     "name": "PagerDuty",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.pagerduty.com"
   },
   {
@@ -5400,7 +5400,7 @@
     "category": "development",
     "description": "API platform for building and using APIs.",
     "name": "Postman",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.postman.com"
   },
   {
@@ -5741,7 +5741,7 @@
     "category": "hr",
     "description": "Workforce management platform that manages HR, IT, and Finance in a single system.",
     "name": "Rippling",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.rippling.com"
   },
   {
@@ -6076,7 +6076,7 @@
     "category": "development",
     "description": "Project management platform designed for software development teams to unify planning and development.",
     "name": "Shortcut",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.shortcut.com"
   },
   {
@@ -6164,7 +6164,7 @@
     "category": "collaboration",
     "description": "A messaging platform for teams that integrates with numerous tools and services.",
     "name": "Slack",
-    "status": "draft",
+    "status": "published",
     "website": "https://slack.com"
   },
   {
@@ -6244,7 +6244,7 @@
     "category": "productivity",
     "description": "A spreadsheet-style platform for project management, data visualization, and automated business workflows.",
     "name": "Smartsheet",
-    "status": "draft",
+    "status": "published",
     "website": "https://smartsheet.com"
   },
   {
@@ -6382,7 +6382,7 @@
     "category": "security",
     "description": "Developer-first security platform for finding and fixing vulnerabilities in code, dependencies, containers, and IaC.",
     "name": "Snyk",
-    "status": "draft",
+    "status": "published",
     "website": "https://snyk.io"
   },
   {
@@ -6454,7 +6454,7 @@
     "category": "infrastructure",
     "description": "Data-to-Everything Platform to investigate, monitor, analyze and act on data.",
     "name": "Splunk",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.splunk.com"
   },
   {
@@ -6670,7 +6670,7 @@
     "category": "sales_marketing",
     "description": "Online survey tool for capturing the voices and opinions of the people who matter most to you.",
     "name": "SurveyMonkey",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.surveymonkey.com"
   },
   {
@@ -6790,7 +6790,7 @@
     "category": "infrastructure",
     "description": "Remote connectivity platform for accessing and controlling devices.",
     "name": "TeamViewer",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.teamviewer.com"
   },
   {
@@ -7020,7 +7020,7 @@
     "category": "sales_marketing",
     "description": "SaaS company that specializes in online form building and online surveys.",
     "name": "Typeform",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.typeform.com"
   },
   {
@@ -7308,7 +7308,7 @@
     "category": "productivity",
     "description": "An enterprise-grade work management platform designed for teams to scale projects and automate workflows.",
     "name": "Wrike",
-    "status": "draft",
+    "status": "published",
     "website": "https://wrike.com"
   },
   {
@@ -7421,7 +7421,7 @@
     "category": "productivity",
     "description": "Automation platform that connects your apps and services to automate workflows.",
     "name": "Zapier",
-    "status": "draft",
+    "status": "published",
     "website": "https://zapier.com"
   },
   {
@@ -7499,7 +7499,7 @@
     "category": "sales_marketing",
     "description": "Customer service software and support ticketing system.",
     "name": "Zendesk",
-    "status": "draft",
+    "status": "published",
     "website": "https://zendesk.com"
   },
   {
@@ -7659,7 +7659,7 @@
     "category": "collaboration",
     "description": "Video conferencing and communication platform for teams and individuals.",
     "name": "Zoom",
-    "status": "draft",
+    "status": "published",
     "website": "https://zoom.us"
   },
   {

@@ -2,7 +2,7 @@ name: "Basecamp"
 category: "collaboration"
 website: "https://basecamp.com"
 description: "An all-in-one project management and team communication tool designed for simplicity and clarity."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:

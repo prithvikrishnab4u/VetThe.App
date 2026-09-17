@@ -2,7 +2,7 @@ name: "HubSpot"
 category: "sales_marketing"
 website: "https://hubspot.com"
 description: "Customer platform with software for marketing, sales, content management, and service."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:

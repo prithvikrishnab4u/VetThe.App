@@ -2,7 +2,7 @@ name: "Google Workspace"
 category: "productivity"
 website: "https://workspace.google.com"
 description: "Cloud-based collaboration and productivity tools including Gmail, Drive, and Docs."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:

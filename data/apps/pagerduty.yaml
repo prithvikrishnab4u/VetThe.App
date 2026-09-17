@@ -2,7 +2,7 @@ name: "PagerDuty"
 category: "infrastructure"
 website: "https://www.pagerduty.com"
 description: "Incident management platform that provides reliable notifications, automatic escalations, and on-call scheduling."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:

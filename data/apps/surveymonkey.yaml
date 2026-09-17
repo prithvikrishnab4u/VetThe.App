@@ -2,7 +2,7 @@ name: "SurveyMonkey"
 category: "sales_marketing"
 website: "https://www.surveymonkey.com"
 description: "Online survey tool for capturing the voices and opinions of the people who matter most to you."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:

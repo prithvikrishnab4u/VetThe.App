@@ -2,7 +2,7 @@ name: "Lark"
 category: "collaboration"
 website: "https://www.larksuite.com"
 description: "A unified collaboration suite that combines chat, docs, meetings, and project management in one app."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:

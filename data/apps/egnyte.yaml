@@ -2,7 +2,7 @@ name: "Egnyte"
 category: "collaboration"
 website: "https://www.egnyte.com"
 description: "Cloud content security and governance platform."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:

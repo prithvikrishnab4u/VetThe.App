@@ -2,7 +2,7 @@ name: "Docker Hub"
 category: "development"
 website: "https://hub.docker.com"
 description: "Container registry service for finding and sharing container images."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:

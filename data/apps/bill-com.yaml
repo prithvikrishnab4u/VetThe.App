@@ -2,7 +2,7 @@ name: "Bill.com"
 category: "finance"
 website: "https://www.bill.com"
 description: "Intelligent business payments platform for accounts payable and receivable."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:

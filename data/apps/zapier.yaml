@@ -2,7 +2,7 @@ name: "Zapier"
 category: "productivity"
 website: "https://zapier.com"
 description: "Automation platform that connects your apps and services to automate workflows."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:

@@ -2,7 +2,7 @@ name: "Slack"
 category: "collaboration"
 website: "https://slack.com"
 description: "A messaging platform for teams that integrates with numerous tools and services."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:

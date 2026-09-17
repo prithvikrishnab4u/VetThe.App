@@ -2,7 +2,7 @@ name: "Loom"
 category: "collaboration"
 website: "https://www.loom.com"
 description: "Video messaging tool for work that allows you to record your screen and camera."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:

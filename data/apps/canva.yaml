@@ -2,7 +2,7 @@ name: "Canva"
 category: "productivity"
 website: "https://canva.com"
 description: "Online design and visual communication platform for creating presentations, social media graphics, and more."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:

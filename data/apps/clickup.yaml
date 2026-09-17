@@ -2,7 +2,7 @@ name: "ClickUp"
 category: "productivity"
 website: "https://clickup.com"
 description: "The all-in-one productivity platform where teams can come together to plan, organize, and collaborate."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:

@@ -2,7 +2,7 @@ name: "Airtable"
 category: "productivity"
 website: "https://airtable.com"
 description: "A platform for building collaborative apps and databases with powerful automation."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:

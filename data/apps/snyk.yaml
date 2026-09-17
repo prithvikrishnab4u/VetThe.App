@@ -2,7 +2,7 @@ name: "Snyk"
 category: "security"
 website: "https://snyk.io"
 description: "Developer-first security platform for finding and fixing vulnerabilities in code, dependencies, containers, and IaC."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:

@@ -2,7 +2,7 @@ name: "Coursera for Business"
 category: "productivity"
 website: "https://www.coursera.org/business"
 description: "Enterprise learning platform for skills development."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:

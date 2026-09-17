@@ -2,7 +2,7 @@ name: "Smartsheet"
 category: "productivity"
 website: "https://smartsheet.com"
 description: "A spreadsheet-style platform for project management, data visualization, and automated business workflows."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:

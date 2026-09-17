@@ -2,7 +2,7 @@ name: "LastPass"
 category: "security"
 website: "https://www.lastpass.com"
 description: "Password management solution for storing encrypted passwords online."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:

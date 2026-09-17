@@ -2,7 +2,7 @@ name: "ADP Workforce Now"
 category: "hr"
 website: "https://www.adp.com"
 description: "All-in-one HR platform for payroll, benefits, talent, and time management."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:

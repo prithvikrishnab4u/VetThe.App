@@ -2,7 +2,7 @@ name: "CircleCI"
 category: "development"
 website: "https://circleci.com"
 description: "Continuous integration and delivery platform for DevOps teams."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:

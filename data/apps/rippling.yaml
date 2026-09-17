@@ -2,7 +2,7 @@ name: "Rippling"
 category: "hr"
 website: "https://www.rippling.com"
 description: "Workforce management platform that manages HR, IT, and Finance in a single system."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:

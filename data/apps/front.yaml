@@ -2,7 +2,7 @@ name: "Front"
 category: "collaboration"
 website: "https://front.com"
 description: "Customer operations platform that combines a help desk with the collaboration of email."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:

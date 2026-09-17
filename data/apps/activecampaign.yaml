@@ -2,7 +2,7 @@ name: "ActiveCampaign"
 category: "sales_marketing"
 website: "https://www.activecampaign.com"
 description: "Automation-first marketing and CRM platform helping businesses connect with customers."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:

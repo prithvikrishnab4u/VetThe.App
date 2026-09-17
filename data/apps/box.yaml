@@ -2,7 +2,7 @@ name: "Box"
 category: "collaboration"
 website: "https://box.com"
 description: "Cloud content management and file sharing service for businesses."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
