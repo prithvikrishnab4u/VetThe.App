@@ -2067,11 +2067,13 @@
         "support": "not_researched"
       },
       "audit_logs": {
-        "checked": "2026-09-14",
-        "notes": "Audit Trail: CSV download of up to 100K events and archiving to S3, GCS or Azure; 7-day retention when Audit Trail is off",
+        "checked": "2026-09-16",
+        "notes": "Audit Trail: CSV download of up to 100K events and archiving to S3, GCS or Azure; 7-day retention when Audit Trail is off. Datadog's Audit Trail FAQ confirms it is a separately purchased product regardless of other plan tier (\"Do I need to purchase other Datadog products to use Datadog Audit Trail? Yes.\").",
+        "plan": "Audit Trail",
         "retention": "90 days",
-        "source": "https://docs.datadoghq.com/account_management/audit_trail/",
-        "support": "supported"
+        "source": "https://www.datadoghq.com/product/audit-trail/",
+        "support": "supported",
+        "tier": "add_on"
       },
       "custom_roles": {
         "checked": "2026-09-14",
@@ -2090,10 +2092,12 @@
         "support": "supported"
       },
       "jit_provisioning": {
-        "checked": "2026-09-14",
-        "notes": "Creates the user on first SAML login",
-        "source": "https://docs.datadoghq.com/account_management/saml/",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Creates the user on first SAML login; requires SAML SSO, which is gated to Infrastructure Pro and Enterprise plans.",
+        "plan": "Pro",
+        "source": "https://www.datadoghq.com/pricing/?product=infrastructure",
+        "support": "supported",
+        "tier": "paid"
       },
       "mfa_enforcement": {
         "checked": "2026-09-14",
@@ -2116,19 +2120,23 @@
         "support": "not_researched"
       },
       "sso": {
-        "checked": "2026-09-14",
-        "notes": "Plan requirement not stated in Datadog's SAML docs",
+        "checked": "2026-09-16",
+        "notes": "SAML SSO is checked for Infrastructure Pro and Enterprise but not Free in Datadog's plan comparison table.",
+        "plan": "Pro",
         "protocols": [
           "SAML"
         ],
-        "source": "https://docs.datadoghq.com/account_management/saml/",
-        "support": "supported"
+        "source": "https://www.datadoghq.com/pricing/?product=infrastructure",
+        "support": "supported",
+        "tier": "paid"
       },
       "sso_enforcement": {
-        "checked": "2026-09-14",
-        "notes": "SAML Strict disables other login methods; admins can exempt individual users",
-        "source": "https://docs.datadoghq.com/account_management/saml/",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "SAML Strict disables other login methods; admins can exempt individual users. It is a configuration option within SAML SSO, which is gated to Infrastructure Pro and Enterprise plans.",
+        "plan": "Pro",
+        "source": "https://www.datadoghq.com/pricing/?product=infrastructure",
+        "support": "supported",
+        "tier": "paid"
       }
     },
     "category": "infrastructure",
@@ -4230,10 +4238,12 @@
         "tier": "paid"
       },
       "custom_roles": {
-        "checked": "2026-09-15",
-        "notes": "Admins create roles by selecting individual permissions; plan requirement not stated",
-        "source": "https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Admins create roles by selecting individual permissions. Marketo Engage has no published self-serve pricing \u2014 all editions are quote-based via Adobe Sales.",
+        "plan": "Enterprise",
+        "source": "https://business.adobe.com/products/marketo/pricing.html",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "domain_verification": {
         "support": "undocumented"
@@ -4260,25 +4270,29 @@
         "support": "not_researched"
       },
       "sso": {
-        "checked": "2026-09-15",
-        "notes": "SAML 2.0, IdP-initiated only; subscriptions on Adobe Identity configure SSO in Adobe Admin Console; plan requirement not stated",
+        "checked": "2026-09-16",
+        "notes": "SAML 2.0, IdP-initiated only; subscriptions on Adobe Identity configure SSO in Adobe Admin Console. Marketo Engage has no published self-serve pricing \u2014 all editions (Growth/Select/Prime/Ultimate) are quote-based via Adobe Sales.",
+        "plan": "Enterprise",
         "protocols": [
           "SAML"
         ],
-        "source": "https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/additional-integrations/add-single-sign-on-to-a-portal",
-        "support": "supported"
+        "source": "https://business.adobe.com/products/marketo/pricing.html",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "sso_enforcement": {
-        "checked": "2026-09-15",
-        "notes": "Require SSO setting per user, with Bypass Single Sign-On role option; not for Adobe IMS subscriptions; plan requirement not stated",
-        "source": "https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/additional-integrations/restrict-user-login-to-sso-only",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Require SSO setting per user, with Bypass Single Sign-On role option; not for Adobe IMS subscriptions. Marketo Engage has no published self-serve pricing \u2014 all editions are quote-based via Adobe Sales.",
+        "plan": "Enterprise",
+        "source": "https://business.adobe.com/products/marketo/pricing.html",
+        "support": "supported",
+        "tier": "enterprise"
       }
     },
     "category": "sales_marketing",
     "description": "Marketing automation software that helps marketers master the art and science of digital marketing.",
     "name": "Marketo",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.marketo.com"
   },
   {

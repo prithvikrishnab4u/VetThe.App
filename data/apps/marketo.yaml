@@ -2,21 +2,25 @@ name: "Marketo"
 category: "sales_marketing"
 website: "https://www.marketo.com"
 description: "Marketing automation software that helps marketers master the art and science of digital marketing."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
     support: "supported"
-    notes: "SAML 2.0, IdP-initiated only; subscriptions on Adobe Identity configure SSO in Adobe Admin Console; plan requirement not stated"
+    tier: "enterprise"
+    plan: "Enterprise"
     protocols: ["SAML"]
-    source: "https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/additional-integrations/add-single-sign-on-to-a-portal"
-    checked: "2026-09-15"
+    notes: "SAML 2.0, IdP-initiated only; subscriptions on Adobe Identity configure SSO in Adobe Admin Console. Marketo Engage has no published self-serve pricing — all editions (Growth/Select/Prime/Ultimate) are quote-based via Adobe Sales."
+    source: "https://business.adobe.com/products/marketo/pricing.html"
+    checked: "2026-09-16"
   sso_enforcement:
     support: "supported"
-    notes: "Require SSO setting per user, with Bypass Single Sign-On role option; not for Adobe IMS subscriptions; plan requirement not stated"
-    source: "https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/additional-integrations/restrict-user-login-to-sso-only"
-    checked: "2026-09-15"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Require SSO setting per user, with Bypass Single Sign-On role option; not for Adobe IMS subscriptions. Marketo Engage has no published self-serve pricing — all editions are quote-based via Adobe Sales."
+    source: "https://business.adobe.com/products/marketo/pricing.html"
+    checked: "2026-09-16"
   scim:
     support: "undocumented"
   mfa_enforcement:
@@ -40,9 +44,11 @@ capabilities:
     support: "undocumented"
   custom_roles:
     support: "supported"
-    notes: "Admins create roles by selecting individual permissions; plan requirement not stated"
-    source: "https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions"
-    checked: "2026-09-15"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Admins create roles by selecting individual permissions. Marketo Engage has no published self-serve pricing — all editions are quote-based via Adobe Sales."
+    source: "https://business.adobe.com/products/marketo/pricing.html"
+    checked: "2026-09-16"
   group_role_mapping:
     support: "not_researched"
   session_controls:
