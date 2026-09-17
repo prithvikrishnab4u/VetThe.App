@@ -3036,16 +3036,20 @@
         "support": "not_researched"
       },
       "audit_logs": {
-        "checked": "2026-09-15",
-        "notes": "Audit API returns platform usage data in JSON; plan requirement not stated",
-        "source": "https://help.gong.io/docs/summary-of-security-features",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Audit API returns platform usage data in JSON; help docs state security features are \"Available on: Any Gong plan\"; Gong has no public self-serve or free plan, all plans are quoted via sales",
+        "plan": "All plans (Gong is contact-sales only; no self-serve/free tier)",
+        "source": "https://www.gong.io/pricing/",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "custom_roles": {
-        "checked": "2026-09-15",
-        "notes": "Granular permission profiles in addition to built-in roles; plan requirement not stated",
-        "source": "https://help.gong.io/docs/summary-of-security-features",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Granular permission profiles in addition to built-in roles; help docs state security features are \"Available on: Any Gong plan\"; Gong has no public self-serve or free plan, all plans are quoted via sales",
+        "plan": "All plans (Gong is contact-sales only; no self-serve/free tier)",
+        "source": "https://www.gong.io/pricing/",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "domain_verification": {
         "notes": "Gong only imports users whose email is on the primary company domain, and documents no DNS or ownership proof for it.",
@@ -3078,32 +3082,38 @@
         "tier": "paid"
       },
       "session_controls": {
-        "checked": "2026-09-15",
-        "notes": "SAML session timeout customizable, default 30 minutes; plan requirement not stated",
-        "source": "https://help.gong.io/docs/authentication-faqs",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "SAML session timeout customizable, default 30 minutes; Gong has no public self-serve or free plan, all plans are quoted via sales",
+        "plan": "All plans (Gong is contact-sales only; no self-serve/free tier)",
+        "source": "https://www.gong.io/pricing/",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "sso": {
-        "checked": "2026-09-15",
-        "notes": "SAML 2.0 SSO and OpenID Connect; plan requirement not stated",
+        "checked": "2026-09-16",
+        "notes": "SAML 2.0 SSO and OpenID Connect; help docs state security features are \"Available on: Any Gong plan\"; Gong has no public self-serve or free plan, all plans are quoted via sales",
+        "plan": "All plans (Gong is contact-sales only; no self-serve/free tier)",
         "protocols": [
           "SAML",
           "OIDC"
         ],
-        "source": "https://help.gong.io/docs/summary-of-security-features",
-        "support": "supported"
+        "source": "https://www.gong.io/pricing/",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "sso_enforcement": {
-        "checked": "2026-09-15",
-        "notes": "Admins can require sign-in via SAML and disable Gong username and password; plan requirement not stated",
-        "source": "https://help.gong.io/docs/authentication-faqs",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Admins can require sign-in via SAML and disable Gong username and password; Gong has no public self-serve or free plan, all plans are quoted via sales",
+        "plan": "All plans (Gong is contact-sales only; no self-serve/free tier)",
+        "source": "https://www.gong.io/pricing/",
+        "support": "supported",
+        "tier": "enterprise"
       }
     },
     "category": "sales_marketing",
     "description": "Revenue intelligence platform capturing customer interactions.",
     "name": "Gong",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.gong.io"
   },
   {

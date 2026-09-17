@@ -2,21 +2,25 @@ name: "Gong"
 category: "sales_marketing"
 website: "https://www.gong.io"
 description: "Revenue intelligence platform capturing customer interactions."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
     support: "supported"
-    notes: "SAML 2.0 SSO and OpenID Connect; plan requirement not stated"
+    tier: "enterprise"
+    plan: "All plans (Gong is contact-sales only; no self-serve/free tier)"
     protocols: ["SAML", "OIDC"]
-    source: "https://help.gong.io/docs/summary-of-security-features"
-    checked: "2026-09-15"
+    notes: "SAML 2.0 SSO and OpenID Connect; help docs state security features are \"Available on: Any Gong plan\"; Gong has no public self-serve or free plan, all plans are quoted via sales"
+    source: "https://www.gong.io/pricing/"
+    checked: "2026-09-16"
   sso_enforcement:
     support: "supported"
-    notes: "Admins can require sign-in via SAML and disable Gong username and password; plan requirement not stated"
-    source: "https://help.gong.io/docs/authentication-faqs"
-    checked: "2026-09-15"
+    tier: "enterprise"
+    plan: "All plans (Gong is contact-sales only; no self-serve/free tier)"
+    notes: "Admins can require sign-in via SAML and disable Gong username and password; Gong has no public self-serve or free plan, all plans are quoted via sales"
+    source: "https://www.gong.io/pricing/"
+    checked: "2026-09-16"
   scim:
     support: "supported"
     tier: "paid"
@@ -30,9 +34,11 @@ capabilities:
     support: "undocumented"
   audit_logs:
     support: "supported"
-    notes: "Audit API returns platform usage data in JSON; plan requirement not stated"
-    source: "https://help.gong.io/docs/summary-of-security-features"
-    checked: "2026-09-15"
+    tier: "enterprise"
+    plan: "All plans (Gong is contact-sales only; no self-serve/free tier)"
+    notes: "Audit API returns platform usage data in JSON; help docs state security features are \"Available on: Any Gong plan\"; Gong has no public self-serve or free plan, all plans are quoted via sales"
+    source: "https://www.gong.io/pricing/"
+    checked: "2026-09-16"
   jit_provisioning:
     support: "undocumented"
     notes: "Gong documents SSO and SCIM or Salesforce provisioning but doesn't say whether accounts are created on first SSO sign-in."
@@ -41,9 +47,11 @@ capabilities:
     notes: "Gong only imports users whose email is on the primary company domain, and documents no DNS or ownership proof for it."
   custom_roles:
     support: "supported"
-    notes: "Granular permission profiles in addition to built-in roles; plan requirement not stated"
-    source: "https://help.gong.io/docs/summary-of-security-features"
-    checked: "2026-09-15"
+    tier: "enterprise"
+    plan: "All plans (Gong is contact-sales only; no self-serve/free tier)"
+    notes: "Granular permission profiles in addition to built-in roles; help docs state security features are \"Available on: Any Gong plan\"; Gong has no public self-serve or free plan, all plans are quoted via sales"
+    source: "https://www.gong.io/pricing/"
+    checked: "2026-09-16"
   group_role_mapping:
     support: "supported"
     tier: "paid"
@@ -53,8 +61,10 @@ capabilities:
     checked: "2026-09-15"
   session_controls:
     support: "supported"
-    notes: "SAML session timeout customizable, default 30 minutes; plan requirement not stated"
-    source: "https://help.gong.io/docs/authentication-faqs"
-    checked: "2026-09-15"
+    tier: "enterprise"
+    plan: "All plans (Gong is contact-sales only; no self-serve/free tier)"
+    notes: "SAML session timeout customizable, default 30 minutes; Gong has no public self-serve or free plan, all plans are quoted via sales"
+    source: "https://www.gong.io/pricing/"
+    checked: "2026-09-16"
   api_token_controls:
     support: "not_researched"
