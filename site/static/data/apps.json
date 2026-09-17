@@ -5495,9 +5495,11 @@
       },
       "audit_logs": {
         "checked": "2026-09-16",
-        "notes": "Security tab Activity Logs record actions across the organization including regular, proxy, SSO and failed logins, session and password events, with username, IP address and timestamp. Retention and plan requirement not stated.",
-        "source": "https://www.qualtrics.com/support/survey-platform/sp-administration/security-tab/",
-        "support": "supported"
+        "notes": "Security tab Activity Logs record actions across the organization including regular, proxy, SSO and failed logins, session and password events, with username, IP address and timestamp. The Security tab is an extra add-on, not part of standard licenses. Retention not stated.",
+        "plan": "Security tab add-on",
+        "source": "https://www.qualtrics.com/support/survey-platform/sp-administration/administration-overview/",
+        "support": "supported",
+        "tier": "add_on"
       },
       "custom_roles": {
         "support": "not_researched"
@@ -5507,21 +5509,27 @@
       },
       "group_role_mapping": {
         "checked": "2026-09-16",
-        "notes": "SSO attributes can be mapped to assign users to Groups and permissions, but CAS and Google OAuth 2.0 cannot pass the extra attributes. Plan requirement not stated.",
-        "source": "https://www.qualtrics.com/support/survey-platform/sp-administration/brand-customization-services/sso/managing-users-brands-with-sso/",
-        "support": "partial"
+        "notes": "SSO attributes can be mapped to assign users to Groups and permissions, but CAS and Google OAuth 2.0 cannot pass the extra attributes. Qualtrics SSO implementations are described as paid and may be an add-on to your license.",
+        "plan": "Paid SSO implementation add-on",
+        "source": "https://www.qualtrics.com/support/survey-platform/sp-administration/brand-customization-services/sso/sso-implementation-considerations/",
+        "support": "partial",
+        "tier": "add_on"
       },
       "jit_provisioning": {
         "checked": "2026-09-16",
-        "notes": "Just-in-time user provisioning creates accounts when users authenticate through SSO without an existing account in the brand. Plan requirement not stated.",
-        "source": "https://www.qualtrics.com/support/survey-platform/sp-administration/brand-customization-services/sso/managing-users-brands-with-sso/",
-        "support": "supported"
+        "notes": "Just-in-time user provisioning creates accounts when users authenticate through SSO without an existing account in the brand. Qualtrics SSO implementations are described as paid and may be an add-on to your license.",
+        "plan": "Paid SSO implementation add-on",
+        "source": "https://www.qualtrics.com/support/survey-platform/sp-administration/brand-customization-services/sso/sso-implementation-considerations/",
+        "support": "supported",
+        "tier": "add_on"
       },
       "mfa_enforcement": {
         "checked": "2026-09-16",
-        "notes": "Brand administrators can enable two-factor authentication for the Qualtrics login type; it does not apply to participant user types. Plan requirement not stated.",
-        "source": "https://www.qualtrics.com/support/survey-platform/sp-administration/organization-settings/",
-        "support": "supported"
+        "notes": "Brand administrators can enable two-factor authentication for the Qualtrics login type; it does not apply to participant user types. The Security tab (which includes 2FA) is an extra add-on, not part of standard licenses.",
+        "plan": "Security tab add-on",
+        "source": "https://www.qualtrics.com/support/survey-platform/sp-administration/administration-overview/",
+        "support": "supported",
+        "tier": "add_on"
       },
       "phishing_resistant_mfa": {
         "support": "undocumented"
@@ -5531,9 +5539,11 @@
       },
       "session_controls": {
         "checked": "2026-09-16",
-        "notes": "Security tab sets minutes of inactivity until automatic logout (default 60), maximum concurrent sessions per user, account lockout thresholds, and lets admins force logout of active sessions. Plan requirement not stated.",
-        "source": "https://www.qualtrics.com/support/survey-platform/sp-administration/security-tab/",
-        "support": "supported"
+        "notes": "Security tab sets minutes of inactivity until automatic logout (default 60), maximum concurrent sessions per user, account lockout thresholds, and lets admins force logout of active sessions. The Security tab is an extra add-on, not part of standard licenses.",
+        "plan": "Security tab add-on",
+        "source": "https://www.qualtrics.com/support/survey-platform/sp-administration/administration-overview/",
+        "support": "supported",
+        "tier": "add_on"
       },
       "sso": {
         "checked": "2026-09-16",
@@ -5556,7 +5566,7 @@
     "category": "sales_marketing",
     "description": "Experience management platform for collecting and analyzing data.",
     "name": "Qualtrics",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.qualtrics.com"
   },
   {
