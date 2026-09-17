@@ -5673,16 +5673,20 @@
         "support": "undocumented"
       },
       "mfa_enforcement": {
-        "checked": "2026-09-15",
-        "notes": "Ramp always requires MFA for password sign-in from new or untrusted devices; admins can set strict MFA to limit fallback methods; plan requirement not stated",
+        "checked": "2026-09-16",
+        "notes": "Ramp always requires MFA for password sign-in from new or untrusted devices; admins can set strict MFA to limit fallback methods; MFA is mandatory for all Ramp accounts and is not listed as a paid-plan feature.",
+        "plan": "Free",
         "source": "https://support.ramp.com/multi-factor-authentication-mfa-overview",
-        "support": "supported"
+        "support": "supported",
+        "tier": "free"
       },
       "phishing_resistant_mfa": {
-        "checked": "2026-09-15",
-        "notes": "Users can sign in with a registered passkey; passkeys are not configurable per role; plan requirement not stated",
+        "checked": "2026-09-16",
+        "notes": "Users can sign in with a registered passkey; passkeys are not configurable per role and are not gated to a paid plan in Ramp's pricing or security docs.",
+        "plan": "Free",
         "source": "https://support.ramp.com/setting-up-single-sign-on-sso-and-login-controls-in-ramp",
-        "support": "supported"
+        "support": "supported",
+        "tier": "free"
       },
       "scim": {
         "checked": "2026-09-15",
@@ -5707,16 +5711,18 @@
         "tier": "paid"
       },
       "sso_enforcement": {
-        "checked": "2026-09-15",
-        "notes": "Sign-in controls enable or disable password, Google SSO and SAML per role, with a per-user exception list; guests always keep password sign-in; plan requirement not stated",
-        "source": "https://support.ramp.com/setting-up-single-sign-on-sso-and-login-controls-in-ramp",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Sign-in controls enable or disable password, Google SSO and SAML per role, with a per-user exception list; guests always keep password sign-in; \"Secure logins with SCIM, SSO, and SAML\" is listed under the Plus plan (and above) on Ramp's pricing page.",
+        "plan": "Plus",
+        "source": "https://ramp.com/pricing",
+        "support": "supported",
+        "tier": "paid"
       }
     },
     "category": "finance",
     "description": "Corporate card and spend management platform.",
     "name": "Ramp",
-    "status": "draft",
+    "status": "published",
     "website": "https://ramp.com"
   },
   {

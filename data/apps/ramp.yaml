@@ -2,7 +2,7 @@ name: "Ramp"
 category: "finance"
 website: "https://ramp.com"
 description: "Corporate card and spend management platform."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
@@ -16,9 +16,11 @@ capabilities:
     checked: "2026-09-15"
   sso_enforcement:
     support: "supported"
-    notes: "Sign-in controls enable or disable password, Google SSO and SAML per role, with a per-user exception list; guests always keep password sign-in; plan requirement not stated"
-    source: "https://support.ramp.com/setting-up-single-sign-on-sso-and-login-controls-in-ramp"
-    checked: "2026-09-15"
+    tier: "paid"
+    plan: "Plus"
+    notes: "Sign-in controls enable or disable password, Google SSO and SAML per role, with a per-user exception list; guests always keep password sign-in; \"Secure logins with SCIM, SSO, and SAML\" is listed under the Plus plan (and above) on Ramp's pricing page."
+    source: "https://ramp.com/pricing"
+    checked: "2026-09-16"
   scim:
     support: "supported"
     tier: "paid"
@@ -28,14 +30,18 @@ capabilities:
     checked: "2026-09-15"
   mfa_enforcement:
     support: "supported"
-    notes: "Ramp always requires MFA for password sign-in from new or untrusted devices; admins can set strict MFA to limit fallback methods; plan requirement not stated"
+    tier: "free"
+    plan: "Free"
+    notes: "Ramp always requires MFA for password sign-in from new or untrusted devices; admins can set strict MFA to limit fallback methods; MFA is mandatory for all Ramp accounts and is not listed as a paid-plan feature."
     source: "https://support.ramp.com/multi-factor-authentication-mfa-overview"
-    checked: "2026-09-15"
+    checked: "2026-09-16"
   phishing_resistant_mfa:
     support: "supported"
-    notes: "Users can sign in with a registered passkey; passkeys are not configurable per role; plan requirement not stated"
+    tier: "free"
+    plan: "Free"
+    notes: "Users can sign in with a registered passkey; passkeys are not configurable per role and are not gated to a paid plan in Ramp's pricing or security docs."
     source: "https://support.ramp.com/setting-up-single-sign-on-sso-and-login-controls-in-ramp"
-    checked: "2026-09-15"
+    checked: "2026-09-16"
   audit_logs:
     support: "supported"
     tier: "paid"
