@@ -4339,11 +4339,13 @@
         "support": "not_researched"
       },
       "audit_logs": {
-        "checked": "2026-09-15",
-        "notes": "Microsoft Purview unified audit log; Audit (Premium) adds retention policies up to 1 year, and up to 10 years with an add-on; licensing depends on M365 subscription, plan requirement not stated on page",
+        "checked": "2026-09-16",
+        "notes": "Microsoft Purview unified audit log; Audit (Standard) is enabled by default for organizations with the appropriate subscription and gives 180-day retention; Audit (Premium), which adds retention policies up to 1 year (10 years with an add-on license), requires E5/G5/A5 or an add-on",
+        "plan": "Audit (Standard), included with any Microsoft 365 subscription that has the audit log enabled by default",
         "retention": "180 days (Audit Standard)",
         "source": "https://learn.microsoft.com/en-us/purview/audit-solutions-overview",
-        "support": "supported"
+        "support": "supported",
+        "tier": "paid"
       },
       "custom_roles": {
         "support": "not_researched"
@@ -4393,25 +4395,29 @@
         "support": "not_researched"
       },
       "sso": {
-        "checked": "2026-09-15",
-        "notes": "Microsoft 365 sign-in is handled by Microsoft Entra ID; custom domains can be federated to a third-party SAML 2.0 SP-Lite IdP, with a limited set of supported clients; plan requirement not stated",
+        "checked": "2026-09-16",
+        "notes": "Microsoft 365 sign-in is handled by Microsoft Entra ID; custom domains can be federated to a third-party SAML 2.0 SP-Lite IdP, with a limited set of supported clients",
+        "plan": "Any Microsoft 365 subscription (Entra ID tenant-level federation, not gated by Entra ID P1/P2)",
         "protocols": [
           "SAML"
         ],
         "source": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-fed-saml-idp",
-        "support": "supported"
+        "support": "supported",
+        "tier": "paid"
       },
       "sso_enforcement": {
-        "checked": "2026-09-15",
-        "notes": "Entra ID control: converting a custom domain to federated sends that domain's sign-ins to the external IdP; the default onmicrosoft.com domain can't be federated; plan requirement not stated",
+        "checked": "2026-09-16",
+        "notes": "Entra ID control: converting a custom domain to federated sends that domain's sign-ins to the external IdP; the default onmicrosoft.com domain can't be federated",
+        "plan": "Any Microsoft 365 subscription (Entra ID tenant-level federation, not gated by Entra ID P1/P2)",
         "source": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-fed-saml-idp",
-        "support": "supported"
+        "support": "supported",
+        "tier": "paid"
       }
     },
     "category": "productivity",
     "description": "Suite of productivity apps, cloud services, and security for businesses.",
     "name": "Microsoft 365",
-    "status": "draft",
+    "status": "published",
     "website": "https://microsoft365.com"
   },
   {
@@ -6364,74 +6370,90 @@
         "support": "not_researched"
       },
       "audit_logs": {
-        "checked": "2026-09-14",
-        "notes": "LOGIN_HISTORY view records successful and failed logins with authentication method",
+        "checked": "2026-09-16",
+        "notes": "LOGIN_HISTORY view records successful and failed logins with authentication method; no edition restriction documented",
+        "plan": "Standard edition (account_usage views available on all editions)",
         "retention": "365 days",
-        "source": "https://docs.snowflake.com/en/sql-reference/account-usage/login_history",
-        "support": "supported"
+        "source": "https://docs.snowflake.com/en/user-guide/intro-editions",
+        "support": "supported",
+        "tier": "paid"
       },
       "custom_roles": {
-        "checked": "2026-09-14",
-        "notes": "Custom account roles and role hierarchies",
-        "source": "https://docs.snowflake.com/en/user-guide/security-access-control-overview",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Custom account roles and role hierarchies; no edition restriction documented",
+        "plan": "Standard edition (RBAC is not edition-gated)",
+        "source": "https://docs.snowflake.com/en/user-guide/intro-editions",
+        "support": "supported",
+        "tier": "paid"
       },
       "domain_verification": {
         "notes": "No domain verification. ALLOWED_USER_DOMAINS on the SAML integration limits login domains but doesn't prove ownership.",
         "support": "undocumented"
       },
       "group_role_mapping": {
-        "checked": "2026-09-14",
+        "checked": "2026-09-16",
         "notes": "Okta Push Groups create Snowflake roles with the same names",
-        "source": "https://docs.snowflake.com/en/user-guide/scim-okta",
-        "support": "supported"
+        "plan": "Standard edition (SCIM push groups are not edition-gated)",
+        "source": "https://docs.snowflake.com/en/user-guide/scim-intro",
+        "support": "supported",
+        "tier": "paid"
       },
       "jit_provisioning": {
         "notes": "SAML docs expect users to already exist in Snowflake (created by hand or through SCIM).",
         "support": "undocumented"
       },
       "mfa_enforcement": {
-        "checked": "2026-09-14",
-        "notes": "Authentication policy with MFA_ENROLLMENT = REQUIRED, for password and SSO users",
-        "source": "https://docs.snowflake.com/en/user-guide/authentication-policies",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Authentication policy with MFA_ENROLLMENT = REQUIRED, for password and SSO users; no edition restriction documented",
+        "plan": "Standard edition (available on all editions)",
+        "source": "https://docs.snowflake.com/en/user-guide/intro-editions",
+        "support": "supported",
+        "tier": "paid"
       },
       "phishing_resistant_mfa": {
-        "checked": "2026-09-14",
-        "notes": "Passkeys as a second factor; authentication policies can limit the allowed methods",
-        "source": "https://docs.snowflake.com/en/user-guide/security-mfa",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Passkeys as a second factor; authentication policies can limit the allowed methods; no edition restriction documented",
+        "plan": "Standard edition (available on all editions)",
+        "source": "https://docs.snowflake.com/en/user-guide/intro-editions",
+        "support": "supported",
+        "tier": "paid"
       },
       "scim": {
-        "checked": "2026-09-14",
-        "notes": "Okta, Microsoft Entra ID and custom IdPs; creates, updates and disables users",
-        "source": "https://docs.snowflake.com/en/user-guide/scim-okta",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Okta, Microsoft Entra ID and custom IdPs; creates, updates and disables users; no edition restriction documented in Snowflake's SCIM docs",
+        "plan": "Standard edition (SCIM is not edition-gated)",
+        "source": "https://docs.snowflake.com/en/user-guide/scim-intro",
+        "support": "supported",
+        "tier": "paid"
       },
       "session_controls": {
         "support": "not_researched"
       },
       "sso": {
-        "checked": "2026-09-14",
-        "notes": "SAML 2.0 and OIDC security integrations; edition requirement not stated",
+        "checked": "2026-09-16",
+        "notes": "SAML 2.0 and OIDC security integrations; \"Federated authentication and SSO\" is listed as available across all Snowflake editions (Standard, Enterprise, Business Critical)",
+        "plan": "Standard edition (available on all editions)",
         "protocols": [
           "SAML",
           "OIDC"
         ],
-        "source": "https://docs.snowflake.com/en/user-guide/admin-security-fed-auth-overview",
-        "support": "supported"
+        "source": "https://docs.snowflake.com/en/user-guide/intro-editions",
+        "support": "supported",
+        "tier": "paid"
       },
       "sso_enforcement": {
-        "checked": "2026-09-14",
-        "notes": "An authentication policy whose AUTHENTICATION_METHODS contains only SAML, set on the account or on specific users",
-        "source": "https://docs.snowflake.com/en/user-guide/authentication-policies",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "An authentication policy whose AUTHENTICATION_METHODS contains only SAML, set on the account or on specific users; no edition restriction documented",
+        "plan": "Standard edition (authentication policies are not edition-gated)",
+        "source": "https://docs.snowflake.com/en/user-guide/intro-editions",
+        "support": "supported",
+        "tier": "paid"
       }
     },
     "category": "infrastructure",
     "description": "Cloud-based data storage and analytics service known as the 'Data Cloud'.",
     "name": "Snowflake",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.snowflake.com"
   },
   {
@@ -6831,35 +6853,43 @@
         "support": "undocumented"
       },
       "mfa_enforcement": {
-        "checked": "2026-09-15",
-        "notes": "MFA is required for Tableau Cloud access since February 2022 when using Tableau credentials; plan requirement not stated",
-        "source": "https://help.tableau.com/current/online/en-us/security_auth.htm",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "MFA is required for Tableau Cloud access since February 2022 when using Tableau credentials; not listed among Tableau Enterprise-exclusive features",
+        "plan": "Tableau Cloud (any site tier, including Standard)",
+        "source": "https://help.tableau.com/current/online/en-us/to_tab_enterprise_features.htm",
+        "support": "supported",
+        "tier": "paid"
       },
       "phishing_resistant_mfa": {
-        "checked": "2026-09-15",
-        "notes": "Security keys listed as a Tableau with MFA verification method; plan requirement not stated",
-        "source": "https://help.tableau.com/current/online/en-us/security_auth.htm",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Security keys listed as an MFA verification method; not listed among Tableau Enterprise-exclusive features",
+        "plan": "Tableau Cloud (any site tier, including Standard)",
+        "source": "https://help.tableau.com/current/online/en-us/to_tab_enterprise_features.htm",
+        "support": "supported",
+        "tier": "paid"
       },
       "scim": {
-        "checked": "2026-09-15",
-        "notes": "Tableau Cloud SCIM for users and groups; requires SAML, OIDC or Google SSO on the site; plan requirement not stated",
-        "source": "https://help.tableau.com/current/online/en-us/scim_config_online.htm",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Tableau Cloud SCIM for users and groups; requires SAML, OIDC or Google SSO on the site; not listed among Tableau Enterprise-exclusive features",
+        "plan": "Tableau Cloud (any site tier, including Standard)",
+        "source": "https://help.tableau.com/current/online/en-us/to_tab_enterprise_features.htm",
+        "support": "supported",
+        "tier": "paid"
       },
       "session_controls": {
         "support": "not_researched"
       },
       "sso": {
-        "checked": "2026-09-15",
-        "notes": "Tableau Cloud supports SAML, OIDC, Google and Salesforce authentication; plan requirement not stated",
+        "checked": "2026-09-16",
+        "notes": "Tableau Cloud supports SAML, OIDC, Google and Salesforce authentication; SSO/SAML is not listed among the Tableau Enterprise-exclusive features (Data Management, Advanced Management, Pulse, eLearning), so it is available on Standard-tier sites",
+        "plan": "Tableau Cloud (any site tier, including Standard)",
         "protocols": [
           "SAML",
           "OIDC"
         ],
-        "source": "https://help.tableau.com/current/online/en-us/security_auth.htm",
-        "support": "supported"
+        "source": "https://help.tableau.com/current/online/en-us/to_tab_enterprise_features.htm",
+        "support": "supported",
+        "tier": "paid"
       },
       "sso_enforcement": {
         "support": "undocumented"
@@ -6868,7 +6898,7 @@
     "category": "productivity",
     "description": "A business intelligence and data visualization platform used for analyzing and sharing data insights.",
     "name": "Tableau",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.tableau.com"
   },
   {

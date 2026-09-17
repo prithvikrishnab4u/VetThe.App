@@ -2,21 +2,25 @@ name: "Microsoft 365"
 category: "productivity"
 website: "https://microsoft365.com"
 description: "Suite of productivity apps, cloud services, and security for businesses."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
     support: "supported"
-    notes: "Microsoft 365 sign-in is handled by Microsoft Entra ID; custom domains can be federated to a third-party SAML 2.0 SP-Lite IdP, with a limited set of supported clients; plan requirement not stated"
+    tier: "paid"
+    plan: "Any Microsoft 365 subscription (Entra ID tenant-level federation, not gated by Entra ID P1/P2)"
     protocols: ["SAML"]
+    notes: "Microsoft 365 sign-in is handled by Microsoft Entra ID; custom domains can be federated to a third-party SAML 2.0 SP-Lite IdP, with a limited set of supported clients"
     source: "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-fed-saml-idp"
-    checked: "2026-09-15"
+    checked: "2026-09-16"
   sso_enforcement:
     support: "supported"
-    notes: "Entra ID control: converting a custom domain to federated sends that domain's sign-ins to the external IdP; the default onmicrosoft.com domain can't be federated; plan requirement not stated"
+    tier: "paid"
+    plan: "Any Microsoft 365 subscription (Entra ID tenant-level federation, not gated by Entra ID P1/P2)"
+    notes: "Entra ID control: converting a custom domain to federated sends that domain's sign-ins to the external IdP; the default onmicrosoft.com domain can't be federated"
     source: "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-fed-saml-idp"
-    checked: "2026-09-15"
+    checked: "2026-09-16"
   scim:
     support: "partial"
     tier: "paid"
@@ -40,10 +44,12 @@ capabilities:
     checked: "2026-09-15"
   audit_logs:
     support: "supported"
-    notes: "Microsoft Purview unified audit log; Audit (Premium) adds retention policies up to 1 year, and up to 10 years with an add-on; licensing depends on M365 subscription, plan requirement not stated on page"
+    tier: "paid"
+    plan: "Audit (Standard), included with any Microsoft 365 subscription that has the audit log enabled by default"
     retention: "180 days (Audit Standard)"
+    notes: "Microsoft Purview unified audit log; Audit (Standard) is enabled by default for organizations with the appropriate subscription and gives 180-day retention; Audit (Premium), which adds retention policies up to 1 year (10 years with an add-on license), requires E5/G5/A5 or an add-on"
     source: "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
-    checked: "2026-09-15"
+    checked: "2026-09-16"
   jit_provisioning:
     support: "not_supported"
     notes: "Users must already exist in Microsoft Entra ID before federated sign-in."
