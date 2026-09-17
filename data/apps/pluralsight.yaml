@@ -2,7 +2,7 @@ name: "Pluralsight"
 category: "productivity"
 website: "https://www.pluralsight.com"
 description: "Technology skills platform for IT and engineering teams."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
@@ -26,8 +26,10 @@ capabilities:
     support: "undocumented"
   jit_provisioning:
     support: "supported"
-    notes: "Just-in-time provisioning allocates licenses to learners as they log in for the first time; plan requirement not stated"
-    source: "https://www.pluralsight.com/product/professional-services/resources/sso"
+    tier: "add_on"
+    plan: "Enterprise (SSO add-on)"
+    notes: "Just-in-time provisioning allocates licenses to learners as they log in for the first time, and depends on SSO being configured. SSO is listed only as an optional add-on professional service on Pluralsight's Enterprise plan (20+ users); the Team plan (2-20 users) does not list SSO"
+    source: "https://www.pluralsight.com/businesses/pricing"
     checked: "2026-09-16"
   domain_verification:
     support: "undocumented"

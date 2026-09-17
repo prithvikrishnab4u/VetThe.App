@@ -2704,10 +2704,12 @@
         "tier": "paid"
       },
       "mfa_enforcement": {
-        "checked": "2026-09-15",
-        "notes": "Freshworks org admins can mandate 2FA as a policy for all users (with exemptions); requires Freshworks login; plan requirement not stated",
-        "source": "https://support.freshworks.com/support/solutions/articles/50000003252-how-can-an-organization-admin-enforce-2fa-as-a-policy-for-all-or-some-users-in-the-organization-",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Freshworks org admins can mandate 2FA as a policy for all users (with exemptions); requires Freshworks login. 2FA is mandatory for org admins on any paid subscription plan (Starter and up)",
+        "plan": "Starter",
+        "source": "https://support.freshworks.com/support/solutions/articles/50000011904-mandatory-two-factor-authentication-for-freshworks-org-admins",
+        "support": "supported",
+        "tier": "paid"
       },
       "phishing_resistant_mfa": {
         "support": "undocumented"
@@ -2737,7 +2739,7 @@
     "category": "infrastructure",
     "description": "IT service management (ITSM) software for modern enterprises.",
     "name": "Freshservice",
-    "status": "draft",
+    "status": "published",
     "website": "https://freshservice.com"
   },
   {
@@ -4224,10 +4226,12 @@
         "support": "not_researched"
       },
       "audit_logs": {
-        "checked": "2026-09-15",
-        "notes": "Teams activities (teams, channels, settings) recorded in the Microsoft Purview audit log; retention depends on the M365 subscription and user license, plan requirement not stated",
-        "source": "https://learn.microsoft.com/en-us/purview/audit-teams-audit-log-events",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Teams activities (teams, channels, settings) recorded in the Microsoft Purview audit log. Audit (Standard) is included with Microsoft 365 Business Premium, F1, F3, E3 and E5 (Business Basic and Standard are not listed); longer retention needs E5 or a Purview add-on",
+        "plan": "Microsoft 365 Business Premium",
+        "source": "https://www.microsoft.com/licensing/guidance/Microsoft-Purview",
+        "support": "supported",
+        "tier": "paid"
       },
       "custom_roles": {
         "support": "not_researched"
@@ -4269,10 +4273,12 @@
         "support": "not_researched"
       },
       "sso": {
-        "checked": "2026-09-15",
-        "notes": "Teams uses Microsoft 365 identity models in Entra ID, including hybrid identity with a federated IdP such as AD FS; plan requirement not stated",
-        "source": "https://learn.microsoft.com/en-us/microsoftteams/identify-models-authentication",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Teams uses Microsoft 365 identity models in Entra ID, including hybrid identity with a federated IdP such as AD FS. The free edition of Entra ID, which provides SSO, is included with any Microsoft 365 subscription (including Business Basic, the cheapest plan that includes Teams)",
+        "plan": "Microsoft 365 Business Basic",
+        "source": "https://learn.microsoft.com/en-us/entra/fundamentals/whatis",
+        "support": "supported",
+        "tier": "paid"
       },
       "sso_enforcement": {
         "support": "undocumented"
@@ -4281,7 +4287,7 @@
     "category": "collaboration",
     "description": "The hub for teamwork in Microsoft 365 that combines chat, meetings, calling, and collaboration.",
     "name": "Microsoft Teams",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.microsoft.com/en-us/microsoft-teams"
   },
   {
@@ -5313,9 +5319,11 @@
       },
       "jit_provisioning": {
         "checked": "2026-09-16",
-        "notes": "Just-in-time provisioning allocates licenses to learners as they log in for the first time; plan requirement not stated",
-        "source": "https://www.pluralsight.com/product/professional-services/resources/sso",
-        "support": "supported"
+        "notes": "Just-in-time provisioning allocates licenses to learners as they log in for the first time, and depends on SSO being configured. SSO is listed only as an optional add-on professional service on Pluralsight's Enterprise plan (20+ users); the Team plan (2-20 users) does not list SSO",
+        "plan": "Enterprise (SSO add-on)",
+        "source": "https://www.pluralsight.com/businesses/pricing",
+        "support": "supported",
+        "tier": "add_on"
       },
       "mfa_enforcement": {
         "support": "undocumented"
@@ -5347,7 +5355,7 @@
     "category": "productivity",
     "description": "Technology skills platform for IT and engineering teams.",
     "name": "Pluralsight",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.pluralsight.com"
   },
   {

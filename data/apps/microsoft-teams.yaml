@@ -2,15 +2,17 @@ name: "Microsoft Teams"
 category: "collaboration"
 website: "https://www.microsoft.com/en-us/microsoft-teams"
 description: "The hub for teamwork in Microsoft 365 that combines chat, meetings, calling, and collaboration."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
     support: "supported"
-    notes: "Teams uses Microsoft 365 identity models in Entra ID, including hybrid identity with a federated IdP such as AD FS; plan requirement not stated"
-    source: "https://learn.microsoft.com/en-us/microsoftteams/identify-models-authentication"
-    checked: "2026-09-15"
+    tier: "paid"
+    plan: "Microsoft 365 Business Basic"
+    notes: "Teams uses Microsoft 365 identity models in Entra ID, including hybrid identity with a federated IdP such as AD FS. The free edition of Entra ID, which provides SSO, is included with any Microsoft 365 subscription (including Business Basic, the cheapest plan that includes Teams)"
+    source: "https://learn.microsoft.com/en-us/entra/fundamentals/whatis"
+    checked: "2026-09-16"
   sso_enforcement:
     support: "undocumented"
   scim:
@@ -31,9 +33,11 @@ capabilities:
     checked: "2026-09-15"
   audit_logs:
     support: "supported"
-    notes: "Teams activities (teams, channels, settings) recorded in the Microsoft Purview audit log; retention depends on the M365 subscription and user license, plan requirement not stated"
-    source: "https://learn.microsoft.com/en-us/purview/audit-teams-audit-log-events"
-    checked: "2026-09-15"
+    tier: "paid"
+    plan: "Microsoft 365 Business Premium"
+    notes: "Teams activities (teams, channels, settings) recorded in the Microsoft Purview audit log. Audit (Standard) is included with Microsoft 365 Business Premium, F1, F3, E3 and E5 (Business Basic and Standard are not listed); longer retention needs E5 or a Purview add-on"
+    source: "https://www.microsoft.com/licensing/guidance/Microsoft-Purview"
+    checked: "2026-09-16"
   jit_provisioning:
     support: "undocumented"
   domain_verification:
