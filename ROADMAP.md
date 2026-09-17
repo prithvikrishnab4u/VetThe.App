@@ -14,7 +14,7 @@ _Last updated: 2026-09-16_
 
 ## Where the data stands
 
-107 apps: 64 `published`, 43 `draft`. 1,284 data points:
+107 apps: 79 `published`, 28 `draft`. 1,284 data points:
 
 | | Count |
 |---|---|
@@ -53,7 +53,7 @@ _Last updated: 2026-09-16_
 
 ## To do: data (in priority order)
 
-1. [ ] **Publish the rest**: 64 are published (2026-09-16). The 43 drafts are mostly missing plan tiers on supported values, often because vendor pages were blocked (403/503) or don't say which plan is needed. Once an app's tiers are filled in, run the publish check again.
+1. [ ] **Publish the rest**: 79 are published (2026-09-16). The 28 drafts are mostly missing plan tiers on supported values, often because vendor pages were blocked (403/503) or don't say which plan is needed. Every draft has had one agent attempt at its tiers, so what's left needs a manual browser check: 1password, adobe-creative-cloud, amplitude, atlassianjira, auth0, bamboohr, brex, cisco-webex, crowdstrike, databricks, datadog, deel, dropbox, expensify, hootsuite, navan, netsuite, outreach, ringcentral, salesforce, servicenow, shopify, sprout-social, twilio, uber-for-business, udemy-business, zoho-crm, zoominfo.
 2. [ ] **Non-core capabilities**, most still not researched:
    | Capability | Not researched |
    |---|---|
