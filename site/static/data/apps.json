@@ -7815,10 +7815,12 @@
       },
       "audit_logs": {
         "checked": "2026-09-16",
-        "notes": "Admin and API actions logged with filtering and CSV export.",
+        "notes": "Admin and API actions logged with filtering and CSV export. Zscaler has no self-serve or free plan; all subscriptions are custom, contact-sales bundles.",
+        "plan": "All plans (contact-sales only, no self-serve or free tier)",
         "retention": "6 months",
-        "source": "https://help.zscaler.com/zia/about-audit-logs",
-        "support": "supported"
+        "source": "https://www.zscaler.com/pricing",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "custom_roles": {
         "support": "not_researched"
@@ -7831,40 +7833,50 @@
       },
       "jit_provisioning": {
         "checked": "2026-09-16",
-        "notes": "Users can be added via SSO just-in-time provisioning.",
-        "source": "https://help.zscaler.com/zia/adding-admins",
-        "support": "supported"
+        "notes": "Users can be added via SSO just-in-time provisioning. Zscaler has no self-serve or free plan; all subscriptions are custom, contact-sales bundles.",
+        "plan": "All plans (contact-sales only, no self-serve or free tier)",
+        "source": "https://www.zscaler.com/pricing",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "mfa_enforcement": {
         "checked": "2026-09-16",
-        "notes": "MFA is required by default for all admins in Authentication Service.",
-        "source": "https://help.zscaler.com/zidentity/configuring-authentication-methods",
-        "support": "supported"
+        "notes": "MFA is required by default for all admins in Authentication Service. Zscaler has no self-serve or free plan; all subscriptions are custom, contact-sales bundles.",
+        "plan": "All plans (contact-sales only, no self-serve or free tier)",
+        "source": "https://www.zscaler.com/pricing",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "phishing_resistant_mfa": {
         "checked": "2026-09-16",
-        "notes": "FIDO2 security keys or biometrics as second factor or passwordless primary authenticator.",
-        "source": "https://help.zscaler.com/zidentity/configuring-authentication-methods",
-        "support": "supported"
+        "notes": "FIDO2 security keys or biometrics as second factor or passwordless primary authenticator. Zscaler has no self-serve or free plan; all subscriptions are custom, contact-sales bundles.",
+        "plan": "All plans (contact-sales only, no self-serve or free tier)",
+        "source": "https://www.zscaler.com/pricing",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "scim": {
         "checked": "2026-09-16",
-        "notes": "External IdPs provision users over SCIM, including deactivate requests.",
-        "source": "https://help.zscaler.com/zidentity/about-external-identity-providers",
-        "support": "supported"
+        "notes": "External IdPs provision users over SCIM, including deactivate requests. Zscaler has no self-serve or free plan; all subscriptions are custom, contact-sales bundles.",
+        "plan": "All plans (contact-sales only, no self-serve or free tier)",
+        "source": "https://www.zscaler.com/pricing",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "session_controls": {
         "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-16",
-        "notes": "Admins sign in through Authentication Service (ZIdentity) with external SAML or OIDC IdPs.",
+        "notes": "Admins sign in through Authentication Service (ZIdentity) with external SAML or OIDC IdPs. Zscaler has no self-serve or free plan; all subscriptions are custom, contact-sales bundles.",
+        "plan": "All plans (contact-sales only, no self-serve or free tier)",
         "protocols": [
           "SAML",
           "OIDC"
         ],
-        "source": "https://help.zscaler.com/zidentity/about-external-identity-providers",
-        "support": "supported"
+        "source": "https://www.zscaler.com/pricing",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "sso_enforcement": {
         "support": "undocumented"
@@ -7873,7 +7885,7 @@
     "category": "security",
     "description": "Cloud security company that provides services for securely transforming networks and applications.",
     "name": "Zscaler",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.zscaler.com"
   }
 ]
