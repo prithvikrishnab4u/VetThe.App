@@ -2515,19 +2515,23 @@
         "support": "not_researched"
       },
       "sso": {
-        "checked": "2026-09-15",
-        "notes": "SAML SSO configured by Domain Admins on a verified domain; plan requirement not stated",
+        "checked": "2026-09-16",
+        "notes": "SAML SSO configured by Domain Admins on a verified domain; Control plan is Expensify's enterprise-security tier with SAML/SSO (starts at $9/member/month)",
+        "plan": "Control",
         "protocols": [
           "SAML"
         ],
-        "source": "https://help.expensify.com/articles/expensify-classic/domains/Set-Up-SAML-SSO",
-        "support": "supported"
+        "source": "https://help.expensify.com/articles/new-expensify/billing-and-subscriptions/explore-plans-subscriptions-and-pricing/Compare-Collect-and-Control-Plans",
+        "support": "supported",
+        "tier": "paid"
       },
       "sso_enforcement": {
-        "checked": "2026-09-15",
-        "notes": "Required for login setting forces members to sign in via SSO only; plan requirement not stated",
-        "source": "https://help.expensify.com/articles/expensify-classic/domains/Set-Up-SAML-SSO",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Required for login setting forces members to sign in via SSO only; SAML/SSO is part of the Control plan",
+        "plan": "Control",
+        "source": "https://help.expensify.com/articles/new-expensify/billing-and-subscriptions/explore-plans-subscriptions-and-pricing/Compare-Collect-and-Control-Plans",
+        "support": "supported",
+        "tier": "paid"
       }
     },
     "category": "finance",

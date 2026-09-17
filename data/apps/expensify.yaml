@@ -8,15 +8,19 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    notes: "SAML SSO configured by Domain Admins on a verified domain; plan requirement not stated"
+    tier: "paid"
+    plan: "Control"
     protocols: ["SAML"]
-    source: "https://help.expensify.com/articles/expensify-classic/domains/Set-Up-SAML-SSO"
-    checked: "2026-09-15"
+    notes: "SAML SSO configured by Domain Admins on a verified domain; Control plan is Expensify's enterprise-security tier with SAML/SSO (starts at $9/member/month)"
+    source: "https://help.expensify.com/articles/new-expensify/billing-and-subscriptions/explore-plans-subscriptions-and-pricing/Compare-Collect-and-Control-Plans"
+    checked: "2026-09-16"
   sso_enforcement:
     support: "supported"
-    notes: "Required for login setting forces members to sign in via SSO only; plan requirement not stated"
-    source: "https://help.expensify.com/articles/expensify-classic/domains/Set-Up-SAML-SSO"
-    checked: "2026-09-15"
+    tier: "paid"
+    plan: "Control"
+    notes: "Required for login setting forces members to sign in via SSO only; SAML/SSO is part of the Control plan"
+    source: "https://help.expensify.com/articles/new-expensify/billing-and-subscriptions/explore-plans-subscriptions-and-pricing/Compare-Collect-and-Control-Plans"
+    checked: "2026-09-16"
   scim:
     support: "partial"
     notes: "SCIM only for Okta, requested via concierge@expensify.com after SAML setup; plan requirement not stated"
