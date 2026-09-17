@@ -2,7 +2,7 @@ name: "Greenhouse"
 category: "hr"
 website: "https://www.greenhouse.io"
 description: "Applicant tracking system and recruiting software."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
@@ -47,9 +47,11 @@ capabilities:
     checked: "2026-09-15"
   jit_provisioning:
     support: "supported"
-    notes: "New user created on first SSO login; plan requirement not stated"
-    source: "https://support.greenhouse.io/hc/en-us/articles/210259723-Single-sign-on-SSO-overview"
-    checked: "2026-09-15"
+    tier: "paid"
+    plan: "Core"
+    notes: "New user created on first SSO login; SSO itself is included on Core, Plus and Pro"
+    source: "https://www.greenhouse.com/pricing"
+    checked: "2026-09-16"
   domain_verification:
     support: "undocumented"
   custom_roles:

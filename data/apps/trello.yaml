@@ -2,7 +2,7 @@ name: "Trello"
 category: "productivity"
 website: "https://trello.com"
 description: "A visual tool that empowers your team to manage any type of project, workflow, or task tracking."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
@@ -57,9 +57,11 @@ capabilities:
     checked: "2026-09-15"
   domain_verification:
     support: "supported"
-    notes: "Domain verification via DNS TXT or HTML file is a setup step for Trello SSO; plan requirement not stated"
-    source: "https://support.atlassian.com/trello/docs/configure-sso-for-trello-with-atlassian-guard/"
-    checked: "2026-09-15"
+    tier: "free"
+    plan: "All plans"
+    notes: "Domain verification via DNS TXT or HTML file is free for any Atlassian org admin; Guard Standard is only needed to enforce features like SSO/2SV, not to claim the domain"
+    source: "https://support.atlassian.com/user-management/docs/verify-a-domain-to-manage-accounts/"
+    checked: "2026-09-16"
   custom_roles:
     support: "not_researched"
   group_role_mapping:

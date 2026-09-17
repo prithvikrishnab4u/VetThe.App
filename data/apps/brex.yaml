@@ -25,9 +25,11 @@ capabilities:
     checked: "2026-09-15"
   mfa_enforcement:
     support: "supported"
-    notes: "2FA is mandatory for all Brex users (authenticator app or SMS); SSO users are not prompted for Brex MFA; plan requirement not stated"
-    source: "https://www.brex.com/support/two-factor-authentication"
-    checked: "2026-09-15"
+    tier: "free"
+    plan: "All plans"
+    notes: "2FA is mandatory for all Brex users (authenticator app or SMS); SSO users are not prompted for Brex MFA; listed as included on Essentials, Premium and Enterprise"
+    source: "https://www.brex.com/pricing"
+    checked: "2026-09-16"
   phishing_resistant_mfa:
     support: "supported"
     notes: "Passkey sign-in available as an alternative to passwords; plan requirement not stated"

@@ -1332,10 +1332,12 @@
         "support": "undocumented"
       },
       "mfa_enforcement": {
-        "checked": "2026-09-15",
-        "notes": "2FA is mandatory for all Brex users (authenticator app or SMS); SSO users are not prompted for Brex MFA; plan requirement not stated",
-        "source": "https://www.brex.com/support/two-factor-authentication",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "2FA is mandatory for all Brex users (authenticator app or SMS); SSO users are not prompted for Brex MFA; listed as included on Essentials, Premium and Enterprise",
+        "plan": "All plans",
+        "source": "https://www.brex.com/pricing",
+        "support": "supported",
+        "tier": "free"
       },
       "phishing_resistant_mfa": {
         "checked": "2026-09-15",
@@ -3262,10 +3264,12 @@
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "checked": "2026-09-15",
-        "notes": "New user created on first SSO login; plan requirement not stated",
-        "source": "https://support.greenhouse.io/hc/en-us/articles/210259723-Single-sign-on-SSO-overview",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "New user created on first SSO login; SSO itself is included on Core, Plus and Pro",
+        "plan": "Core",
+        "source": "https://www.greenhouse.com/pricing",
+        "support": "supported",
+        "tier": "paid"
       },
       "mfa_enforcement": {
         "checked": "2026-09-15",
@@ -3312,7 +3316,7 @@
     "category": "hr",
     "description": "Applicant tracking system and recruiting software.",
     "name": "Greenhouse",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.greenhouse.io"
   },
   {
@@ -6846,10 +6850,12 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "checked": "2026-09-15",
-        "notes": "Domain verification via DNS TXT or HTML file is a setup step for Trello SSO; plan requirement not stated",
-        "source": "https://support.atlassian.com/trello/docs/configure-sso-for-trello-with-atlassian-guard/",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Domain verification via DNS TXT or HTML file is free for any Atlassian org admin; Guard Standard is only needed to enforce features like SSO/2SV, not to claim the domain",
+        "plan": "All plans",
+        "source": "https://support.atlassian.com/user-management/docs/verify-a-domain-to-manage-accounts/",
+        "support": "supported",
+        "tier": "free"
       },
       "group_role_mapping": {
         "support": "not_researched"
@@ -6911,7 +6917,7 @@
     "category": "productivity",
     "description": "A visual tool that empowers your team to manage any type of project, workflow, or task tracking.",
     "name": "Trello",
-    "status": "draft",
+    "status": "published",
     "website": "https://trello.com"
   },
   {
