@@ -2,7 +2,7 @@ name: "GitHub"
 category: "development"
 website: "https://github.com"
 description: "AI-powered developer platform to build, scale, and deliver secure software."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
@@ -42,10 +42,12 @@ capabilities:
     checked: "2026-09-14"
   audit_logs:
     support: "supported"
-    notes: "Minimum plan not confirmed from GitHub sources; audit log API and streaming need Enterprise Cloud"
+    tier: "enterprise"
+    plan: "GitHub Enterprise Cloud"
     retention: "180 days"
-    source: "https://docs.github.com/en/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/reviewing-the-audit-log-for-your-organization"
-    checked: "2026-09-14"
+    notes: "Audit log (web UI, API and streaming) requires GitHub Enterprise Cloud; not included on Free or Team plans"
+    source: "https://github.com/pricing"
+    checked: "2026-09-16"
   jit_provisioning:
     support: "undocumented"
     notes: "Docs describe inviting members and linking accounts (org SAML) or SCIM (Enterprise Managed Users); first-sign-in creation isn't described."

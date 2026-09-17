@@ -2815,11 +2815,13 @@
         "support": "not_researched"
       },
       "audit_logs": {
-        "checked": "2026-09-14",
-        "notes": "Minimum plan not confirmed from GitHub sources; audit log API and streaming need Enterprise Cloud",
+        "checked": "2026-09-16",
+        "notes": "Audit log (web UI, API and streaming) requires GitHub Enterprise Cloud; not included on Free or Team plans",
+        "plan": "GitHub Enterprise Cloud",
         "retention": "180 days",
-        "source": "https://docs.github.com/en/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/reviewing-the-audit-log-for-your-organization",
-        "support": "supported"
+        "source": "https://github.com/pricing",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "custom_roles": {
         "support": "not_researched"
@@ -2893,7 +2895,7 @@
     "category": "development",
     "description": "AI-powered developer platform to build, scale, and deliver secure software.",
     "name": "GitHub",
-    "status": "draft",
+    "status": "published",
     "website": "https://github.com"
   },
   {
@@ -4371,10 +4373,12 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "checked": "2026-09-15",
-        "notes": "Domains must be claimed and verified in Managed Domains before adding to SSO; plan requirement not stated",
-        "source": "https://help.miro.com/hc/en-us/articles/360017571414-Single-sign-on-SSO",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Domains must be claimed and verified in Managed Domains before adding to SSO; domain control is available starting on the Business plan (Enterprise adds full domain control/audit)",
+        "plan": "Business",
+        "source": "https://help.miro.com/hc/en-us/articles/24537366637714-Domain-control-Business-and-Enterprise-plans",
+        "support": "supported",
+        "tier": "paid"
       },
       "group_role_mapping": {
         "support": "not_researched"
@@ -4432,7 +4436,7 @@
     "category": "collaboration",
     "description": "Visual workspace for innovation where teams can dream, design, and build together.",
     "name": "Miro",
-    "status": "draft",
+    "status": "published",
     "website": "https://miro.com"
   },
   {
@@ -5864,16 +5868,18 @@
         "tier": "paid"
       },
       "sso_enforcement": {
-        "checked": "2026-09-15",
-        "notes": "SSO Required blocks username and password sign-in for all users incl. admins and web services; plan requirement not stated",
-        "source": "https://learning.sap.com/courses/exploring-company-administration-settings-in-legacy-concur-travel/managing-single-sign-on",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "SSO Required blocks username and password sign-in for all users incl. admins and web services; self-service SSO (including enforcement) is available in both Standard and Professional editions",
+        "plan": "Standard",
+        "source": "https://www.concur.com/app-center/listings/6009d2e312660c00150b2a41",
+        "support": "supported",
+        "tier": "paid"
       }
     },
     "category": "finance",
     "description": "Integrated travel, expense, and invoice management solution.",
     "name": "SAP Concur",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.concur.com"
   },
   {

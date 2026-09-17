@@ -2,7 +2,7 @@ name: "SAP Concur"
 category: "finance"
 website: "https://www.concur.com"
 description: "Integrated travel, expense, and invoice management solution."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
@@ -15,9 +15,11 @@ capabilities:
     checked: "2026-09-15"
   sso_enforcement:
     support: "supported"
-    notes: "SSO Required blocks username and password sign-in for all users incl. admins and web services; plan requirement not stated"
-    source: "https://learning.sap.com/courses/exploring-company-administration-settings-in-legacy-concur-travel/managing-single-sign-on"
-    checked: "2026-09-15"
+    tier: "paid"
+    plan: "Standard"
+    notes: "SSO Required blocks username and password sign-in for all users incl. admins and web services; self-service SSO (including enforcement) is available in both Standard and Professional editions"
+    source: "https://www.concur.com/app-center/listings/6009d2e312660c00150b2a41"
+    checked: "2026-09-16"
   scim:
     support: "undocumented"
   mfa_enforcement:
