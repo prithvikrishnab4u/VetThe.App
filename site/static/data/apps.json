@@ -401,34 +401,42 @@
         "support": "not_supported"
       },
       "mfa_enforcement": {
-        "checked": "2026-09-15",
-        "notes": "IAM policy can deny all actions unless signed in with MFA; root user MFA enforced for all account types; plan requirement not stated",
-        "source": "https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_users-self-manage-mfa-and-creds.html",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "IAM policy can deny all actions unless signed in with MFA; root user MFA enforced for all account types; no additional charge",
+        "plan": "All AWS accounts",
+        "source": "https://aws.amazon.com/iam/identity-center/pricing/",
+        "support": "supported",
+        "tier": "free"
       },
       "phishing_resistant_mfa": {
-        "checked": "2026-09-15",
-        "notes": "Passkeys and FIDO security keys supported as MFA for root and IAM users; plan requirement not stated",
-        "source": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa.html",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Passkeys and FIDO security keys supported as MFA for root and IAM users; no additional charge",
+        "plan": "All AWS accounts",
+        "source": "https://aws.amazon.com/iam/identity-center/pricing/",
+        "support": "supported",
+        "tier": "free"
       },
       "scim": {
-        "checked": "2026-09-15",
-        "notes": "IAM Identity Center supports SCIM v2.0 user and group provisioning; tokens valid one year; plan requirement not stated",
-        "source": "https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-automatically.html",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "IAM Identity Center supports SCIM v2.0 user and group provisioning; tokens valid one year; no additional charge",
+        "plan": "All AWS accounts",
+        "source": "https://aws.amazon.com/iam/identity-center/pricing/",
+        "support": "supported",
+        "tier": "free"
       },
       "session_controls": {
         "support": "not_researched"
       },
       "sso": {
-        "checked": "2026-09-15",
-        "notes": "IAM Identity Center federates external IdPs via SAML 2.0 for console, CLI and access portal; plan requirement not stated",
+        "checked": "2026-09-16",
+        "notes": "IAM Identity Center federates external IdPs via SAML 2.0 for console, CLI and access portal; no additional charge",
+        "plan": "All AWS accounts",
         "protocols": [
           "SAML"
         ],
-        "source": "https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-identity-source-idp.html",
-        "support": "supported"
+        "source": "https://aws.amazon.com/iam/identity-center/pricing/",
+        "support": "supported",
+        "tier": "free"
       },
       "sso_enforcement": {
         "support": "undocumented"
@@ -437,7 +445,7 @@
     "category": "infrastructure",
     "description": "Comprehensive cloud computing platform offering over 200 fully featured services from data centers globally.",
     "name": "Amazon Web Services (AWS)",
-    "status": "draft",
+    "status": "published",
     "website": "https://aws.amazon.com"
   },
   {
@@ -860,17 +868,21 @@
     "_id": "azure-devops",
     "capabilities": {
       "api_token_controls": {
-        "checked": "2026-09-15",
-        "notes": "Org policy restricts PAT creation; Entra tenant policies restrict global and full-scoped PATs and enforce maximum PAT lifespan; SSH and OAuth app access can be disabled; plan requirement not stated",
+        "checked": "2026-09-16",
+        "notes": "Org policy restricts PAT creation; Entra tenant policies restrict global and full-scoped PATs and enforce maximum PAT lifespan; SSH and OAuth app access can be disabled; these are org/tenant-level policies with no paid-plan gate",
+        "plan": "Any Azure DevOps organization (free tier)",
         "source": "https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/change-application-access-policies",
-        "support": "supported"
+        "support": "supported",
+        "tier": "free"
       },
       "audit_logs": {
-        "checked": "2026-09-15",
-        "notes": "Public preview; Entra-backed orgs only; off by default; CSV/JSON export and audit streaming; sign-in events are not tracked (see Entra logs); plan requirement not stated",
+        "checked": "2026-09-16",
+        "notes": "Public preview; Entra-backed orgs only; off by default; CSV/JSON export and audit streaming; sign-in events are not tracked (see Entra logs); the 'Log audit events' policy is an org-level toggle with no paid-plan gate",
+        "plan": "Any Azure DevOps organization connected to Entra ID (free tier)",
         "retention": "90 days",
-        "source": "https://learn.microsoft.com/en-us/azure/devops/organizations/audit/azure-devops-auditing",
-        "support": "supported"
+        "source": "https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/change-application-access-policies",
+        "support": "supported",
+        "tier": "free"
       },
       "custom_roles": {
         "support": "not_researched"
@@ -890,16 +902,20 @@
         "tier": "free"
       },
       "mfa_enforcement": {
-        "checked": "2026-09-15",
-        "notes": "Enforced by Entra Conditional Access policies targeting the Azure DevOps resource, not an Azure DevOps setting; Conditional Access is an Entra ID P1 feature; plan requirement not stated on this page",
-        "source": "https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/conditional-access-policies",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Enforced by Entra Conditional Access policies targeting the Azure DevOps resource, not an Azure DevOps setting; Conditional Access requires Microsoft Entra ID P1 or higher, a paid add-on to Entra ID",
+        "plan": "Microsoft Entra ID P1 (Conditional Access)",
+        "source": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview",
+        "support": "supported",
+        "tier": "add_on"
       },
       "phishing_resistant_mfa": {
-        "checked": "2026-09-15",
-        "notes": "Entra Conditional Access for Azure DevOps can require a phishing-resistant authentication strength; plan requirement not stated",
-        "source": "https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/conditional-access-policies",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Entra Conditional Access for Azure DevOps can require a phishing-resistant authentication strength; requires Microsoft Entra ID P1 or higher, a paid add-on to Entra ID",
+        "plan": "Microsoft Entra ID P1 (Conditional Access)",
+        "source": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview",
+        "support": "supported",
+        "tier": "add_on"
       },
       "scim": {
         "support": "undocumented"
@@ -908,22 +924,26 @@
         "support": "not_researched"
       },
       "sso": {
-        "checked": "2026-09-15",
-        "notes": "Organizations connected to Microsoft Entra ID sign in with Entra work credentials; unconnected orgs use Microsoft accounts; plan requirement not stated",
+        "checked": "2026-09-16",
+        "notes": "Organizations connected to Microsoft Entra ID sign in with Entra work credentials; unconnected orgs use Microsoft accounts; no paid Azure DevOps or Entra license required to connect",
+        "plan": "Any Azure DevOps organization connected to Entra ID (free tier)",
         "source": "https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/connect-organization-to-azure-ad",
-        "support": "supported"
+        "support": "supported",
+        "tier": "free"
       },
       "sso_enforcement": {
-        "checked": "2026-09-15",
-        "notes": "Entra-backed orgs only admit members or guests of the connected tenant; disabled or removed Entra users lose access, including via PATs and SSH; plan requirement not stated",
+        "checked": "2026-09-16",
+        "notes": "Entra-backed orgs only admit members or guests of the connected tenant; disabled or removed Entra users lose access, including via PATs and SSH; no paid license required",
+        "plan": "Any Azure DevOps organization connected to Entra ID (free tier)",
         "source": "https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/access-with-azure-ad",
-        "support": "supported"
+        "support": "supported",
+        "tier": "free"
       }
     },
     "category": "development",
     "description": "Services for teams to share code, track work, and ship software.",
     "name": "Azure DevOps",
-    "status": "draft",
+    "status": "published",
     "website": "https://azure.microsoft.com/en-us/products/devops"
   },
   {
