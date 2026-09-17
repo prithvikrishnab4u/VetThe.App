@@ -2,7 +2,7 @@ name: "Bitbucket Cloud"
 category: "development"
 website: "https://bitbucket.org"
 description: "Git repository management solution designed for professional teams."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
@@ -57,9 +57,11 @@ capabilities:
     checked: "2026-09-15"
   domain_verification:
     support: "supported"
-    notes: "Domain verification required before SAML SSO; plan requirement not stated"
-    source: "https://support.atlassian.com/security-and-access-policies/docs/configure-saml-single-sign-on-with-an-identity-provider/"
-    checked: "2026-09-15"
+    tier: "add_on"
+    plan: "Atlassian Guard (add-on to Standard/Premium; included free with Cloud Enterprise)"
+    notes: "Domain verification is the first step of Atlassian Guard (formerly Atlassian Access), a separately billed add-on required to enforce SAML SSO across Atlassian cloud products including Bitbucket; bundled at no extra cost only with the Cloud Enterprise plan."
+    source: "https://www.atlassian.com/software/access/pricing"
+    checked: "2026-09-16"
   custom_roles:
     support: "not_researched"
   group_role_mapping:

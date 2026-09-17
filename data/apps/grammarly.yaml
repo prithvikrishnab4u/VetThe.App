@@ -2,7 +2,7 @@ name: "Grammarly"
 category: "productivity"
 website: "https://www.grammarly.com"
 description: "AI-powered writing assistant that helps individuals and teams communicate effectively."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
@@ -49,8 +49,10 @@ capabilities:
     support: "not_researched"
   session_controls:
     support: "supported"
-    notes: "Admins can choose how long employees stay logged in before reauthenticating. Plan requirement not stated."
-    source: "https://www.grammarly.com/security"
+    tier: "enterprise"
+    plan: "Grammarly Enterprise"
+    notes: "Admins can set a re-authentication interval (e.g. 14/30 days). Session timeout is available only to Grammarly Enterprise and Grammarly for Education accounts, not Business."
+    source: "https://support.grammarly.com/hc/en-us/articles/26230680413325-Session-Timeout-FAQs"
     checked: "2026-09-16"
   api_token_controls:
     support: "not_researched"

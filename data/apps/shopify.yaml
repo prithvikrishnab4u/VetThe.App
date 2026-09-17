@@ -37,9 +37,11 @@ capabilities:
     checked: "2026-09-15"
   phishing_resistant_mfa:
     support: "supported"
-    notes: "Passkey login for Shopify accounts; plan requirement not stated"
+    tier: "free"
+    plan: "All plans"
+    notes: "Passkey login is an account-level feature for logging into Shopify, not gated by store subscription plan."
     source: "https://help.shopify.com/en/manual/your-account/logging-in/passkeys"
-    checked: "2026-09-15"
+    checked: "2026-09-16"
   audit_logs:
     support: "partial"
     notes: "User management activity log and last five login sessions per user; retention and export not stated; plan requirement not stated"

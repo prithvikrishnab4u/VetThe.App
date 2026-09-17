@@ -2,7 +2,7 @@ name: "Mixpanel"
 category: "productivity"
 website: "https://mixpanel.com"
 description: "Self-serve product analytics to help you convert, engage, and retain more users."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
@@ -30,7 +30,9 @@ capabilities:
     checked: "2026-09-16"
   mfa_enforcement:
     support: "supported"
-    notes: "An organization admin can enable 2FA, after which all users are prompted for a code at login; users required to use SSO authenticate through the IdP instead. Plan requirement not stated."
+    tier: "free"
+    plan: "All plans (Free, Growth, Enterprise)"
+    notes: "An organization admin can enable 2FA, after which all users are prompted for a code at login; users required to use SSO authenticate through the IdP instead. Not listed as a plan-gated feature on Mixpanel's pricing page or docs, so it appears available regardless of plan (an org can't have both SSO and 2FA enabled simultaneously)."
     source: "https://docs.mixpanel.com/docs/access-security/two-factor-authentication"
     checked: "2026-09-16"
   phishing_resistant_mfa:

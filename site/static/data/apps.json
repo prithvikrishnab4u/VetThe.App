@@ -1110,10 +1110,12 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "checked": "2026-09-15",
-        "notes": "Domain verification required before SAML SSO; plan requirement not stated",
-        "source": "https://support.atlassian.com/security-and-access-policies/docs/configure-saml-single-sign-on-with-an-identity-provider/",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Domain verification is the first step of Atlassian Guard (formerly Atlassian Access), a separately billed add-on required to enforce SAML SSO across Atlassian cloud products including Bitbucket; bundled at no extra cost only with the Cloud Enterprise plan.",
+        "plan": "Atlassian Guard (add-on to Standard/Premium; included free with Cloud Enterprise)",
+        "source": "https://www.atlassian.com/software/access/pricing",
+        "support": "supported",
+        "tier": "add_on"
       },
       "group_role_mapping": {
         "support": "not_researched"
@@ -1175,7 +1177,7 @@
     "category": "development",
     "description": "Git repository management solution designed for professional teams.",
     "name": "Bitbucket Cloud",
-    "status": "draft",
+    "status": "published",
     "website": "https://bitbucket.org"
   },
   {
@@ -3204,9 +3206,11 @@
       },
       "session_controls": {
         "checked": "2026-09-16",
-        "notes": "Admins can choose how long employees stay logged in before reauthenticating. Plan requirement not stated.",
-        "source": "https://www.grammarly.com/security",
-        "support": "supported"
+        "notes": "Admins can set a re-authentication interval (e.g. 14/30 days). Session timeout is available only to Grammarly Enterprise and Grammarly for Education accounts, not Business.",
+        "plan": "Grammarly Enterprise",
+        "source": "https://support.grammarly.com/hc/en-us/articles/26230680413325-Session-Timeout-FAQs",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "sso": {
         "checked": "2026-09-16",
@@ -3226,7 +3230,7 @@
     "category": "productivity",
     "description": "AI-powered writing assistant that helps individuals and teams communicate effectively.",
     "name": "Grammarly",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.grammarly.com"
   },
   {
@@ -4473,9 +4477,11 @@
       },
       "mfa_enforcement": {
         "checked": "2026-09-16",
-        "notes": "An organization admin can enable 2FA, after which all users are prompted for a code at login; users required to use SSO authenticate through the IdP instead. Plan requirement not stated.",
+        "notes": "An organization admin can enable 2FA, after which all users are prompted for a code at login; users required to use SSO authenticate through the IdP instead. Not listed as a plan-gated feature on Mixpanel's pricing page or docs, so it appears available regardless of plan (an org can't have both SSO and 2FA enabled simultaneously).",
+        "plan": "All plans (Free, Growth, Enterprise)",
         "source": "https://docs.mixpanel.com/docs/access-security/two-factor-authentication",
-        "support": "supported"
+        "support": "supported",
+        "tier": "free"
       },
       "phishing_resistant_mfa": {
         "support": "undocumented"
@@ -4514,7 +4520,7 @@
     "category": "productivity",
     "description": "Self-serve product analytics to help you convert, engage, and retain more users.",
     "name": "Mixpanel",
-    "status": "draft",
+    "status": "published",
     "website": "https://mixpanel.com"
   },
   {
@@ -5978,10 +5984,12 @@
         "tier": "enterprise"
       },
       "phishing_resistant_mfa": {
-        "checked": "2026-09-15",
-        "notes": "Passkey login for Shopify accounts; plan requirement not stated",
+        "checked": "2026-09-16",
+        "notes": "Passkey login is an account-level feature for logging into Shopify, not gated by store subscription plan.",
+        "plan": "All plans",
         "source": "https://help.shopify.com/en/manual/your-account/logging-in/passkeys",
-        "support": "supported"
+        "support": "supported",
+        "tier": "free"
       },
       "scim": {
         "checked": "2026-09-15",
