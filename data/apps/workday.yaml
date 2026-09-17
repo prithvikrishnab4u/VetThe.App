@@ -2,32 +2,38 @@ name: "Workday"
 category: "hr"
 website: "https://www.workday.com"
 description: "Enterprise management cloud platform for finance, HR, planning, and spend management."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
   sso:
     support: "supported"
-    notes: "SAML IdP- and SP-initiated; Google is the only supported OpenID Connect provider; plan requirement not stated"
+    tier: "enterprise"
+    plan: "Enterprise (contact sales)"
     protocols: ["SAML", "OIDC"]
-    source: "https://doc.workday.com/admin-guide/en-us/manage-workday/tenant-configuration/tenant-setup/dan1370796470031.html"
-    checked: "2026-09-15"
+    notes: "SAML IdP- and SP-initiated; Google is the only supported OpenID Connect provider; Workday is sold only through direct sales with no self-serve plans, so all capabilities require the enterprise contract"
+    source: "https://www.workday.com/en-us/homepage.html"
+    checked: "2026-09-16"
   sso_enforcement:
     support: "undocumented"
   scim:
     support: "undocumented"
   mfa_enforcement:
     support: "supported"
-    notes: "Maximum Grace Signin Count forces MFA enrollment; authenticator app, backup codes, Duo, email or SMS OTP; plan requirement not stated"
-    source: "https://doc.workday.com/admin-guide/en-us/manage-workday/tenant-configuration/tenant-setup/dan1370796470031.html"
-    checked: "2026-09-15"
+    tier: "enterprise"
+    plan: "Enterprise (contact sales)"
+    notes: "Maximum Grace Signin Count forces MFA enrollment; authenticator app, backup codes, Duo, email or SMS OTP; Workday is sold only through direct sales with no self-serve plans"
+    source: "https://www.workday.com/en-us/homepage.html"
+    checked: "2026-09-16"
   phishing_resistant_mfa:
     support: "undocumented"
   audit_logs:
     support: "supported"
-    notes: "Audit trail, user activity logs and sign-on reports; plan requirement not stated"
-    source: "https://www.workday.com/en-ca/why-workday/trust/security.html"
-    checked: "2026-09-15"
+    tier: "enterprise"
+    plan: "Enterprise (contact sales)"
+    notes: "Audit trail, user activity logs and sign-on reports; Workday is sold only through direct sales with no self-serve plans"
+    source: "https://www.workday.com/en-us/homepage.html"
+    checked: "2026-09-16"
   jit_provisioning:
     support: "undocumented"
   domain_verification:

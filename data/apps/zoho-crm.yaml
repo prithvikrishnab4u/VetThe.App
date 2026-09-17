@@ -28,10 +28,12 @@ capabilities:
     checked: "2026-09-15"
   audit_logs:
     support: "supported"
-    notes: "Audit Log of record and setup actions, exportable; plan requirement not stated clearly on edition chart"
+    tier: "paid"
+    plan: "Enterprise"
     retention: "3 years"
-    source: "https://help.zoho.com/portal/en/kb/crm/security-control/audit-log/articles/monitor-audit-log"
-    checked: "2026-09-15"
+    notes: "Audit Log of record and setup actions, exportable; available from the Enterprise edition per Zoho CRM's edition comparison chart"
+    source: "https://www.zoho.com/sites/default/files/crm/zohocrm-edition-comparison-usd.pdf"
+    checked: "2026-09-16"
   jit_provisioning:
     support: "supported"
     notes: "SAML JIT adds users to the Zoho organization on first sign-in after domain validation; plan requirement not stated"

@@ -7267,10 +7267,12 @@
         "support": "not_researched"
       },
       "audit_logs": {
-        "checked": "2026-09-15",
-        "notes": "Audit trail, user activity logs and sign-on reports; plan requirement not stated",
-        "source": "https://www.workday.com/en-ca/why-workday/trust/security.html",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Audit trail, user activity logs and sign-on reports; Workday is sold only through direct sales with no self-serve plans",
+        "plan": "Enterprise (contact sales)",
+        "source": "https://www.workday.com/en-us/homepage.html",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "custom_roles": {
         "support": "not_researched"
@@ -7285,10 +7287,12 @@
         "support": "undocumented"
       },
       "mfa_enforcement": {
-        "checked": "2026-09-15",
-        "notes": "Maximum Grace Signin Count forces MFA enrollment; authenticator app, backup codes, Duo, email or SMS OTP; plan requirement not stated",
-        "source": "https://doc.workday.com/admin-guide/en-us/manage-workday/tenant-configuration/tenant-setup/dan1370796470031.html",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Maximum Grace Signin Count forces MFA enrollment; authenticator app, backup codes, Duo, email or SMS OTP; Workday is sold only through direct sales with no self-serve plans",
+        "plan": "Enterprise (contact sales)",
+        "source": "https://www.workday.com/en-us/homepage.html",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "phishing_resistant_mfa": {
         "support": "undocumented"
@@ -7300,14 +7304,16 @@
         "support": "not_researched"
       },
       "sso": {
-        "checked": "2026-09-15",
-        "notes": "SAML IdP- and SP-initiated; Google is the only supported OpenID Connect provider; plan requirement not stated",
+        "checked": "2026-09-16",
+        "notes": "SAML IdP- and SP-initiated; Google is the only supported OpenID Connect provider; Workday is sold only through direct sales with no self-serve plans, so all capabilities require the enterprise contract",
+        "plan": "Enterprise (contact sales)",
         "protocols": [
           "SAML",
           "OIDC"
         ],
-        "source": "https://doc.workday.com/admin-guide/en-us/manage-workday/tenant-configuration/tenant-setup/dan1370796470031.html",
-        "support": "supported"
+        "source": "https://www.workday.com/en-us/homepage.html",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "sso_enforcement": {
         "support": "undocumented"
@@ -7316,7 +7322,7 @@
     "category": "hr",
     "description": "Enterprise management cloud platform for finance, HR, planning, and spend management.",
     "name": "Workday",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.workday.com"
   },
   {
@@ -7603,11 +7609,13 @@
         "support": "not_researched"
       },
       "audit_logs": {
-        "checked": "2026-09-15",
-        "notes": "Audit Log of record and setup actions, exportable; plan requirement not stated clearly on edition chart",
+        "checked": "2026-09-16",
+        "notes": "Audit Log of record and setup actions, exportable; available from the Enterprise edition per Zoho CRM's edition comparison chart",
+        "plan": "Enterprise",
         "retention": "3 years",
-        "source": "https://help.zoho.com/portal/en/kb/crm/security-control/audit-log/articles/monitor-audit-log",
-        "support": "supported"
+        "source": "https://www.zoho.com/sites/default/files/crm/zohocrm-edition-comparison-usd.pdf",
+        "support": "supported",
+        "tier": "paid"
       },
       "custom_roles": {
         "support": "not_researched"
