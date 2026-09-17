@@ -14,7 +14,7 @@ _Last updated: 2026-09-16_
 
 ## Where the data stands
 
-107 apps, all `draft`. 1,284 data points:
+107 apps: 60 `published`, 47 `draft`. 1,284 data points:
 
 | | Count |
 |---|---|
@@ -53,7 +53,7 @@ _Last updated: 2026-09-16_
 
 ## To do: data (in priority order)
 
-1. [ ] **Publish apps**: flip `status` to `published` for each app whose core is complete (the validator enforces the rules)
+1. [ ] **Publish the rest**: 60 are published (2026-09-16). The 47 drafts are mostly missing plan tiers on supported values, often because vendor pages were blocked (403/503) or don't say which plan is needed. Once an app's tiers are filled in, run the publish check again.
 2. [ ] **Non-core capabilities**, most still not researched:
    | Capability | Not researched |
    |---|---|
