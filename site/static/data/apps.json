@@ -1693,10 +1693,12 @@
       },
       "audit_logs": {
         "checked": "2026-09-16",
-        "notes": "Admin reports include Usage and Access reports covering login and failed login events; plan requirement not stated",
+        "notes": "Admin reports include Usage and Access reports covering login and failed login events; available from the Advanced plan up (Activity Logs and Reports feature)",
+        "plan": "Advanced",
         "retention": "Account lifetime, but reports can only be run in 90-day increments",
-        "source": "https://docs.sharefile.com/en-us/sharefile/configure/admin-settings/reports.html",
-        "support": "supported"
+        "source": "https://www.sharefile.com/plans-pricing",
+        "support": "supported",
+        "tier": "paid"
       },
       "custom_roles": {
         "support": "not_researched"
@@ -1757,7 +1759,7 @@
     "category": "collaboration",
     "description": "Content collaboration platform for secure file sharing.",
     "name": "Citrix ShareFile",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.sharefile.com"
   },
   {

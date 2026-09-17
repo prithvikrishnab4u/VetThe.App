@@ -2,7 +2,7 @@ name: "Citrix ShareFile"
 category: "collaboration"
 website: "https://www.sharefile.com"
 description: "Content collaboration platform for secure file sharing."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
@@ -39,9 +39,11 @@ capabilities:
     support: "undocumented"
   audit_logs:
     support: "supported"
-    notes: "Admin reports include Usage and Access reports covering login and failed login events; plan requirement not stated"
+    tier: "paid"
+    plan: "Advanced"
     retention: "Account lifetime, but reports can only be run in 90-day increments"
-    source: "https://docs.sharefile.com/en-us/sharefile/configure/admin-settings/reports.html"
+    notes: "Admin reports include Usage and Access reports covering login and failed login events; available from the Advanced plan up (Activity Logs and Reports feature)"
+    source: "https://www.sharefile.com/plans-pricing"
     checked: "2026-09-16"
   jit_provisioning:
     support: "undocumented"
