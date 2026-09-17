@@ -566,9 +566,11 @@
       },
       "session_controls": {
         "checked": "2026-09-16",
-        "notes": "\"Session duration limits\" listed among admin console controls; plan requirement not stated",
-        "source": "https://asana.com/features/admin-security",
-        "support": "supported"
+        "notes": "\"Session duration limits\" listed among admin console controls. The pricing page's feature comparison shows Admin console (which houses session controls) only on the Enterprise tier; Personal, Starter and Advanced do not list it.",
+        "plan": "Enterprise",
+        "source": "https://asana.com/pricing",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "sso": {
         "checked": "2026-09-16",
@@ -588,7 +590,7 @@
     "category": "productivity",
     "description": "A work management platform that helps teams orchestrate their work.",
     "name": "Asana",
-    "status": "draft",
+    "status": "published",
     "website": "https://asana.com"
   },
   {
@@ -3830,7 +3832,7 @@
       },
       "phishing_resistant_mfa": {
         "checked": "2026-09-16",
-        "notes": "Passkeys are a login method; the docs page lists login restrictions as Business/Enterprise and SAML/IP restrictions as Enterprise-only but does not call out any plan restriction for passkeys, indicating availability on all plans including Free.",
+        "notes": "Passkeys are a login method, available to register from Preferences > Account > Security & Access. Linear's docs and pricing page do not gate passkey login itself behind Business/Enterprise (only \"login method restrictions\", i.e. forcing/disallowing methods, are Business+/Enterprise features).",
         "plan": "Free",
         "source": "https://linear.app/docs/login-methods",
         "support": "supported",
@@ -5155,11 +5157,11 @@
       },
       "group_role_mapping": {
         "checked": "2026-09-16",
-        "notes": "SCIM 2.0 group-based provisioning maps IdP group membership to role, license and workspace; documented in the Enterprise-plan SSO implementation article, same basis as the scim tier.",
-        "plan": "Enterprise",
+        "notes": "SCIM 2.0 group-based provisioning maps IdP group membership to role/license/workspace, and depends on SCIM/SSO being enabled, which is Enterprise-included or a paid add-on on Business ($20/month or $240/year per seat).",
+        "plan": "Business (SSO paid add-on, $20/user/mo) or Enterprise",
         "source": "https://support.pandadoc.com/en/articles/9715050-sso-implementation",
         "support": "supported",
-        "tier": "enterprise"
+        "tier": "add_on"
       },
       "jit_provisioning": {
         "checked": "2026-09-15",
@@ -5183,11 +5185,11 @@
       },
       "scim": {
         "checked": "2026-09-16",
-        "notes": "SCIM 1.1 and 2.0 documented in the same SSO implementation article, whose stated availability is the Enterprise plan (Business can add SSO itself as a paid add-on, but SCIM is not separately called out as included in that add-on).",
-        "plan": "Enterprise",
+        "notes": "SCIM 1.1 and 2.0 are documented alongside SSO and require SSO to be enabled first. PandaDoc's own SSO implementation doc states SSO availability as: \"Enterprise plan\" included, \"Business plan: available as a paid add-on ($20/month or $240/year per seat)\" \u2014 SCIM inherits that same gating since it depends on SSO.",
+        "plan": "Business (SSO paid add-on, $20/user/mo) or Enterprise",
         "source": "https://support.pandadoc.com/en/articles/9715050-sso-implementation",
         "support": "supported",
-        "tier": "enterprise"
+        "tier": "add_on"
       },
       "session_controls": {
         "support": "not_researched"
@@ -7372,9 +7374,9 @@
       },
       "mfa_enforcement": {
         "checked": "2026-09-16",
-        "notes": "MFA is mandatory for every user invited into a Xero organization on any plan (no plan-specific carve-out); Xero has no free plan, so the effective floor is the cheapest paid plan, Early.",
+        "notes": "MFA mandatory for all users invited to an organisation; Xero has no perpetual free tier (only a trial), so the cheapest paid plan (Early) is where this applies, same as every other tier.",
         "plan": "Early",
-        "source": "https://www.xero.com/us/security/multi-factor-authentication/faq/",
+        "source": "https://www.xero.com/us/pricing-plans/",
         "support": "supported",
         "tier": "paid"
       },

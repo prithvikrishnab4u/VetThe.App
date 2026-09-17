@@ -23,9 +23,9 @@ capabilities:
     checked: "2026-09-15"
   scim:
     support: "supported"
-    tier: "enterprise"
-    plan: "Enterprise"
-    notes: "SCIM 1.1 and 2.0 documented in the same SSO implementation article, whose stated availability is the Enterprise plan (Business can add SSO itself as a paid add-on, but SCIM is not separately called out as included in that add-on)."
+    tier: "add_on"
+    plan: "Business (SSO paid add-on, $20/user/mo) or Enterprise"
+    notes: "SCIM 1.1 and 2.0 are documented alongside SSO and require SSO to be enabled first. PandaDoc's own SSO implementation doc states SSO availability as: \"Enterprise plan\" included, \"Business plan: available as a paid add-on ($20/month or $240/year per seat)\" — SCIM inherits that same gating since it depends on SSO."
     source: "https://support.pandadoc.com/en/articles/9715050-sso-implementation"
     checked: "2026-09-16"
   mfa_enforcement:
@@ -64,9 +64,9 @@ capabilities:
     support: "not_researched"
   group_role_mapping:
     support: "supported"
-    tier: "enterprise"
-    plan: "Enterprise"
-    notes: "SCIM 2.0 group-based provisioning maps IdP group membership to role, license and workspace; documented in the Enterprise-plan SSO implementation article, same basis as the scim tier."
+    tier: "add_on"
+    plan: "Business (SSO paid add-on, $20/user/mo) or Enterprise"
+    notes: "SCIM 2.0 group-based provisioning maps IdP group membership to role/license/workspace, and depends on SCIM/SSO being enabled, which is Enterprise-included or a paid add-on on Business ($20/month or $240/year per seat)."
     source: "https://support.pandadoc.com/en/articles/9715050-sso-implementation"
     checked: "2026-09-16"
   session_controls:

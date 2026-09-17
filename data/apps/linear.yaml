@@ -34,7 +34,7 @@ capabilities:
     support: "supported"
     tier: "free"
     plan: "Free"
-    notes: "Passkeys are a login method; the docs page lists login restrictions as Business/Enterprise and SAML/IP restrictions as Enterprise-only but does not call out any plan restriction for passkeys, indicating availability on all plans including Free."
+    notes: "Passkeys are a login method, available to register from Preferences > Account > Security & Access. Linear's docs and pricing page do not gate passkey login itself behind Business/Enterprise (only \"login method restrictions\", i.e. forcing/disallowing methods, are Business+/Enterprise features)."
     source: "https://linear.app/docs/login-methods"
     checked: "2026-09-16"
   audit_logs:

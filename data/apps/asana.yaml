@@ -2,7 +2,7 @@ name: "Asana"
 category: "productivity"
 website: "https://asana.com"
 description: "A work management platform that helps teams orchestrate their work."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
@@ -49,8 +49,10 @@ capabilities:
     support: "not_researched"
   session_controls:
     support: "supported"
-    notes: "\"Session duration limits\" listed among admin console controls; plan requirement not stated"
-    source: "https://asana.com/features/admin-security"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "\"Session duration limits\" listed among admin console controls. The pricing page's feature comparison shows Admin console (which houses session controls) only on the Enterprise tier; Personal, Starter and Advanced do not list it."
+    source: "https://asana.com/pricing"
     checked: "2026-09-16"
   api_token_controls:
     support: "supported"

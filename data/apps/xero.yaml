@@ -16,8 +16,8 @@ capabilities:
     support: "supported"
     tier: "paid"
     plan: "Early"
-    notes: "MFA is mandatory for every user invited into a Xero organization on any plan (no plan-specific carve-out); Xero has no free plan, so the effective floor is the cheapest paid plan, Early."
-    source: "https://www.xero.com/us/security/multi-factor-authentication/faq/"
+    notes: "MFA mandatory for all users invited to an organisation; Xero has no perpetual free tier (only a trial), so the cheapest paid plan (Early) is where this applies, same as every other tier."
+    source: "https://www.xero.com/us/pricing-plans/"
     checked: "2026-09-16"
   phishing_resistant_mfa:
     support: "undocumented"
