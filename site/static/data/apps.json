@@ -1258,10 +1258,12 @@
         "support": "not_researched"
       },
       "audit_logs": {
-        "checked": "2026-09-15",
-        "notes": "Security event report CSV export up to 10,000 events, S3 export for higher volume; plan requirement not stated",
-        "source": "https://www.braze.com/docs/user_guide/administer/global/admin_settings/security_settings",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Security event report CSV export up to 10,000 events, S3 export for higher volume; \"Security settings & event logs\" listed as included in every tier on the pricing page",
+        "plan": "Braze Go",
+        "source": "https://www.braze.com/pricing",
+        "support": "supported",
+        "tier": "paid"
       },
       "custom_roles": {
         "support": "not_researched"
@@ -1273,52 +1275,64 @@
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "checked": "2026-09-15",
-        "notes": "SAML JIT provisioning with default workspace and permission set; Braze must enable the feature; plan requirement not stated",
-        "source": "https://www.braze.com/docs/user_guide/administrative/access_braze/single_sign_on/saml_jit",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "SAML JIT provisioning with default workspace and permission set; Braze must enable the feature; pricing page lists \"user provisioning\" as added at the Select tier",
+        "plan": "Braze Select",
+        "source": "https://www.braze.com/pricing",
+        "support": "supported",
+        "tier": "paid"
       },
       "mfa_enforcement": {
-        "checked": "2026-09-15",
-        "notes": "Admins can require 2FA for all company users via app, email or SMS; plan requirement not stated",
-        "source": "https://www.braze.com/docs/user_guide/administer/global/admin_settings/security_settings",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Admins can require 2FA for all company users via app, email or SMS; \"Two-Factor Authentication (2FA)\" listed as included in every tier on the pricing page",
+        "plan": "Braze Go",
+        "source": "https://www.braze.com/pricing",
+        "support": "supported",
+        "tier": "paid"
       },
       "phishing_resistant_mfa": {
         "support": "undocumented"
       },
       "scim": {
-        "checked": "2026-09-15",
-        "notes": "SCIM provisioning via Okta, Entra ID or SCIM API; availability depends on platform edition, plan not named",
-        "source": "https://www.braze.com/docs/user_guide/administer/global/user_management/automated_user_provisioning",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "SCIM provisioning via Okta, Entra ID or SCIM API; pricing page lists \"Enhanced security features and user provisioning\" as added at the Select tier (above the base Go tier)",
+        "plan": "Braze Select",
+        "source": "https://www.braze.com/pricing",
+        "support": "supported",
+        "tier": "paid"
       },
       "session_controls": {
-        "checked": "2026-09-15",
-        "notes": "Configurable inactivity timeout and dashboard IP allowlisting; plan requirement not stated",
-        "source": "https://www.braze.com/docs/user_guide/administer/global/admin_settings/security_settings",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Configurable inactivity timeout and dashboard IP allowlisting, under the same Security Settings included in every tier per the pricing page",
+        "plan": "Braze Go",
+        "source": "https://www.braze.com/pricing",
+        "support": "supported",
+        "tier": "paid"
       },
       "sso": {
-        "checked": "2026-09-15",
-        "notes": "SAML 2.0 dashboard SSO, turned on by account manager; plan requirement not stated",
+        "checked": "2026-09-16",
+        "notes": "SAML 2.0 dashboard SSO, turned on by account manager; \"SAML & Single-Sign On (SSO)\" listed as included in every tier on the pricing page",
+        "plan": "Braze Go",
         "protocols": [
           "SAML"
         ],
-        "source": "https://www.braze.com/docs/user_guide/administrative/access_braze/single_sign_on/set_up/",
-        "support": "supported"
+        "source": "https://www.braze.com/pricing",
+        "support": "supported",
+        "tier": "paid"
       },
       "sso_enforcement": {
-        "checked": "2026-09-15",
-        "notes": "Security Settings can restrict login to SAML SSO only; plan requirement not stated",
-        "source": "https://www.braze.com/docs/user_guide/administer/global/admin_settings/security_settings",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Security Settings can restrict login to SAML SSO only; SSO itself is included in every tier per the pricing page",
+        "plan": "Braze Go",
+        "source": "https://www.braze.com/pricing",
+        "support": "supported",
+        "tier": "paid"
       }
     },
     "category": "sales_marketing",
     "description": "Customer engagement platform that powers real-time interactions.",
     "name": "Braze",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.braze.com"
   },
   {
@@ -3937,9 +3951,11 @@
       },
       "jit_provisioning": {
         "checked": "2026-09-16",
-        "notes": "\"Automatically provision licenses\" toggle grants a license the first time a user authenticates via SSO; plan requirement not stated",
+        "notes": "\"Automatically provision licenses\" toggle grants a license the first time a user authenticates via SSO; documented under \"Enterprise Single Sign-On (SSO)\"",
+        "plan": "Enterprise",
         "source": "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation",
-        "support": "supported"
+        "support": "supported",
+        "tier": "enterprise"
       },
       "mfa_enforcement": {
         "support": "undocumented"
@@ -3949,21 +3965,25 @@
       },
       "scim": {
         "checked": "2026-09-16",
-        "notes": "SCIM user and group provisioning with Microsoft Entra ID (Azure AD) and Okta only; token generated by a Full Admin; plan requirement not stated",
+        "notes": "SCIM user and group provisioning with Microsoft Entra ID (Azure AD) and Okta only; token generated by a Full Admin; gated behind Enterprise SSO per vendor docs",
+        "plan": "Enterprise",
         "source": "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/scim",
-        "support": "supported"
+        "support": "supported",
+        "tier": "enterprise"
       },
       "session_controls": {
         "support": "not_researched"
       },
       "sso": {
         "checked": "2026-09-16",
-        "notes": "Supports SAML 2.0, LTI and Google SSO; admin configures the connection and sets SSO status to Active; plan requirement not stated",
+        "notes": "Supports SAML 2.0, LTI and Google SSO; admin configures the connection and sets SSO status to Active; vendor docs label the feature \"Enterprise Single Sign-On (SSO)\"",
+        "plan": "Enterprise",
         "protocols": [
           "SAML"
         ],
         "source": "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation",
-        "support": "supported"
+        "support": "supported",
+        "tier": "enterprise"
       },
       "sso_enforcement": {
         "support": "undocumented"
@@ -3972,7 +3992,7 @@
     "category": "productivity",
     "description": "Online educational platform that helps you discover and develop business, technology-related, and creative skills.",
     "name": "LinkedIn Learning",
-    "status": "draft",
+    "status": "published",
     "website": "https://learning.linkedin.com"
   },
   {
