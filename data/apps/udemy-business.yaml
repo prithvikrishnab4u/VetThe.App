@@ -36,8 +36,10 @@ capabilities:
     support: "undocumented"
   audit_logs:
     support: "partial"
-    notes: "Only a Group Membership Log of group adds and removals is documented."
-    source: "https://business-support.udemy.com/hc/en-us/articles/360052222154-How-to-Access-And-Review-The-Group-Membership-Log"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Only a Group Membership Log of group adds and removals is documented; the Groups feature itself is explicitly Enterprise-Plan-only."
+    source: "https://business-support.udemy.com/hc/en-us/articles/115005396148-How-to-Create-User-Groups"
     checked: "2026-09-16"
   jit_provisioning:
     support: "supported"

@@ -2,7 +2,7 @@ name: "New Relic"
 category: "infrastructure"
 website: "https://newrelic.com"
 description: "Observability platform that helps you build better software."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
@@ -30,9 +30,11 @@ capabilities:
     checked: "2026-09-15"
   mfa_enforcement:
     support: "supported"
-    notes: "MFA enabled per authentication domain; email verification code at each login plus backup codes; plan requirement not stated"
+    tier: "paid"
+    plan: "Pro"
+    notes: "MFA enabled per authentication domain; email verification code at each login plus backup codes. Editable authentication domains (where MFA is configured) require Pro or Enterprise edition; Pro is self-serve paid."
     source: "https://docs.newrelic.com/docs/accounts/accounts-billing/new-relic-one-user-management/authentication-domains-saml-sso-scim-more/"
-    checked: "2026-09-15"
+    checked: "2026-09-16"
   phishing_resistant_mfa:
     support: "undocumented"
   audit_logs:
@@ -61,8 +63,10 @@ capabilities:
     support: "not_researched"
   session_controls:
     support: "supported"
-    notes: "Per authentication domain: maximum session length and idle timeout; plan requirement not stated"
+    tier: "paid"
+    plan: "Pro"
+    notes: "Per authentication domain: maximum session length and idle timeout. Editable authentication domains require Pro or Enterprise edition; Pro is self-serve paid."
     source: "https://docs.newrelic.com/docs/accounts/accounts-billing/new-relic-one-user-management/authentication-domains-saml-sso-scim-more/"
-    checked: "2026-09-15"
+    checked: "2026-09-16"
   api_token_controls:
     support: "not_researched"

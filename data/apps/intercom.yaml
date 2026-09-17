@@ -2,7 +2,7 @@ name: "Intercom"
 category: "sales_marketing"
 website: "https://intercom.com"
 description: "AI-first customer service platform that connects businesses with customers via messaging, bots, and help center."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
@@ -23,9 +23,11 @@ capabilities:
     checked: "2026-09-15"
   scim:
     support: "supported"
-    notes: "Requires SAML SSO enabled; help article says only available on certain plans; plan requirement not stated"
-    source: "https://www.intercom.com/help/en/articles/5798401-system-for-cross-domain-identity-management-scim-provisioning"
-    checked: "2026-09-15"
+    tier: "paid"
+    plan: "Expert"
+    notes: "Requires SAML SSO enabled; bundled into the Expert plan's \"SSO & identity management\" feature ($132/seat/mo, self-serve)."
+    source: "https://www.intercom.com/pricing"
+    checked: "2026-09-16"
   mfa_enforcement:
     support: "supported"
     tier: "paid"
@@ -61,9 +63,11 @@ capabilities:
     support: "not_researched"
   group_role_mapping:
     support: "supported"
-    notes: "IdP groups pushed via SCIM can be mapped to teammate roles; plan requirement not stated"
-    source: "https://www.intercom.com/help/en/articles/5798401-system-for-cross-domain-identity-management-scim-provisioning"
-    checked: "2026-09-15"
+    tier: "paid"
+    plan: "Expert"
+    notes: "IdP groups pushed via SCIM can be mapped to teammate roles; gated behind the same Expert-plan SCIM/SSO feature."
+    source: "https://www.intercom.com/pricing"
+    checked: "2026-09-16"
   session_controls:
     support: "not_researched"
   api_token_controls:

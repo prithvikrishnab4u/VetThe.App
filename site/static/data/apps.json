@@ -3563,10 +3563,12 @@
         "tier": "enterprise"
       },
       "group_role_mapping": {
-        "checked": "2026-09-15",
-        "notes": "IdP groups pushed via SCIM can be mapped to teammate roles; plan requirement not stated",
-        "source": "https://www.intercom.com/help/en/articles/5798401-system-for-cross-domain-identity-management-scim-provisioning",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "IdP groups pushed via SCIM can be mapped to teammate roles; gated behind the same Expert-plan SCIM/SSO feature.",
+        "plan": "Expert",
+        "source": "https://www.intercom.com/pricing",
+        "support": "supported",
+        "tier": "paid"
       },
       "jit_provisioning": {
         "checked": "2026-09-15",
@@ -3588,10 +3590,12 @@
         "support": "undocumented"
       },
       "scim": {
-        "checked": "2026-09-15",
-        "notes": "Requires SAML SSO enabled; help article says only available on certain plans; plan requirement not stated",
-        "source": "https://www.intercom.com/help/en/articles/5798401-system-for-cross-domain-identity-management-scim-provisioning",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Requires SAML SSO enabled; bundled into the Expert plan's \"SSO & identity management\" feature ($132/seat/mo, self-serve).",
+        "plan": "Expert",
+        "source": "https://www.intercom.com/pricing",
+        "support": "supported",
+        "tier": "paid"
       },
       "session_controls": {
         "support": "not_researched"
@@ -3619,7 +3623,7 @@
     "category": "sales_marketing",
     "description": "AI-first customer service platform that connects businesses with customers via messaging, bots, and help center.",
     "name": "Intercom",
-    "status": "draft",
+    "status": "published",
     "website": "https://intercom.com"
   },
   {
@@ -4839,10 +4843,12 @@
         "support": "not_supported"
       },
       "mfa_enforcement": {
-        "checked": "2026-09-15",
-        "notes": "MFA enabled per authentication domain; email verification code at each login plus backup codes; plan requirement not stated",
+        "checked": "2026-09-16",
+        "notes": "MFA enabled per authentication domain; email verification code at each login plus backup codes. Editable authentication domains (where MFA is configured) require Pro or Enterprise edition; Pro is self-serve paid.",
+        "plan": "Pro",
         "source": "https://docs.newrelic.com/docs/accounts/accounts-billing/new-relic-one-user-management/authentication-domains-saml-sso-scim-more/",
-        "support": "supported"
+        "support": "supported",
+        "tier": "paid"
       },
       "phishing_resistant_mfa": {
         "support": "undocumented"
@@ -4856,10 +4862,12 @@
         "tier": "paid"
       },
       "session_controls": {
-        "checked": "2026-09-15",
-        "notes": "Per authentication domain: maximum session length and idle timeout; plan requirement not stated",
+        "checked": "2026-09-16",
+        "notes": "Per authentication domain: maximum session length and idle timeout. Editable authentication domains require Pro or Enterprise edition; Pro is self-serve paid.",
+        "plan": "Pro",
         "source": "https://docs.newrelic.com/docs/accounts/accounts-billing/new-relic-one-user-management/authentication-domains-saml-sso-scim-more/",
-        "support": "supported"
+        "support": "supported",
+        "tier": "paid"
       },
       "sso": {
         "checked": "2026-09-15",
@@ -4884,7 +4892,7 @@
     "category": "infrastructure",
     "description": "Observability platform that helps you build better software.",
     "name": "New Relic",
-    "status": "draft",
+    "status": "published",
     "website": "https://newrelic.com"
   },
   {
@@ -7105,9 +7113,11 @@
       },
       "audit_logs": {
         "checked": "2026-09-16",
-        "notes": "Only a Group Membership Log of group adds and removals is documented.",
-        "source": "https://business-support.udemy.com/hc/en-us/articles/360052222154-How-to-Access-And-Review-The-Group-Membership-Log",
-        "support": "partial"
+        "notes": "Only a Group Membership Log of group adds and removals is documented; the Groups feature itself is explicitly Enterprise-Plan-only.",
+        "plan": "Enterprise",
+        "source": "https://business-support.udemy.com/hc/en-us/articles/115005396148-How-to-Create-User-Groups",
+        "support": "partial",
+        "tier": "enterprise"
       },
       "custom_roles": {
         "support": "not_researched"
