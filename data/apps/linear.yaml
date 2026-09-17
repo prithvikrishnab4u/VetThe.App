@@ -2,7 +2,7 @@ name: "Linear"
 category: "development"
 website: "https://linear.app"
 description: "Project management tool for high-performance software teams."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
@@ -32,9 +32,11 @@ capabilities:
     support: "undocumented"
   phishing_resistant_mfa:
     support: "supported"
-    notes: "Passkeys are a login method; plan availability not stated"
-    source: "https://linear.app/changelog/2024-05-30-passkeys-a-fast-and-secure-way-to-log-in-to-linear"
-    checked: "2026-09-14"
+    tier: "free"
+    plan: "Free"
+    notes: "Passkeys are a login method; the docs page lists login restrictions as Business/Enterprise and SAML/IP restrictions as Enterprise-only but does not call out any plan restriction for passkeys, indicating availability on all plans including Free."
+    source: "https://linear.app/docs/login-methods"
+    checked: "2026-09-16"
   audit_logs:
     support: "supported"
     tier: "enterprise"

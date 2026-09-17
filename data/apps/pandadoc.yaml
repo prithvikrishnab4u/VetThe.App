@@ -2,7 +2,7 @@ name: "PandaDoc"
 category: "productivity"
 website: "https://www.pandadoc.com"
 description: "All-in-one document automation software to create, approve, track, and eSign documents."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
@@ -23,9 +23,11 @@ capabilities:
     checked: "2026-09-15"
   scim:
     support: "supported"
-    notes: "SCIM 1.1 and 2.0 documented alongside SSO; plan requirement not stated"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM 1.1 and 2.0 documented in the same SSO implementation article, whose stated availability is the Enterprise plan (Business can add SSO itself as a paid add-on, but SCIM is not separately called out as included in that add-on)."
     source: "https://support.pandadoc.com/en/articles/9715050-sso-implementation"
-    checked: "2026-09-15"
+    checked: "2026-09-16"
   mfa_enforcement:
     support: "not_supported"
     notes: "2FA can only be enabled individually by each user; enforce via SSO IdP instead"
@@ -62,9 +64,11 @@ capabilities:
     support: "not_researched"
   group_role_mapping:
     support: "supported"
-    notes: "SCIM 2.0 group-based provisioning maps IdP group membership to role, license and workspace; plan requirement not stated"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM 2.0 group-based provisioning maps IdP group membership to role, license and workspace; documented in the Enterprise-plan SSO implementation article, same basis as the scim tier."
     source: "https://support.pandadoc.com/en/articles/9715050-sso-implementation"
-    checked: "2026-09-15"
+    checked: "2026-09-16"
   session_controls:
     support: "not_researched"
   api_token_controls:

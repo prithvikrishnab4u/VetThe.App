@@ -2,7 +2,7 @@ name: "Xero"
 category: "finance"
 website: "https://www.xero.com"
 description: "Cloud-based accounting software for small businesses to manage finances, invoicing, and inventory."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
@@ -14,9 +14,11 @@ capabilities:
     support: "undocumented"
   mfa_enforcement:
     support: "supported"
-    notes: "MFA mandatory for all users invited to an organisation; Xero Verify or authenticator app; plan requirement not stated"
+    tier: "paid"
+    plan: "Early"
+    notes: "MFA is mandatory for every user invited into a Xero organization on any plan (no plan-specific carve-out); Xero has no free plan, so the effective floor is the cheapest paid plan, Early."
     source: "https://www.xero.com/us/security/multi-factor-authentication/faq/"
-    checked: "2026-09-15"
+    checked: "2026-09-16"
   phishing_resistant_mfa:
     support: "undocumented"
   audit_logs:

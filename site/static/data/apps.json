@@ -3825,10 +3825,12 @@
         "support": "undocumented"
       },
       "phishing_resistant_mfa": {
-        "checked": "2026-09-14",
-        "notes": "Passkeys are a login method; plan availability not stated",
-        "source": "https://linear.app/changelog/2024-05-30-passkeys-a-fast-and-secure-way-to-log-in-to-linear",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Passkeys are a login method; the docs page lists login restrictions as Business/Enterprise and SAML/IP restrictions as Enterprise-only but does not call out any plan restriction for passkeys, indicating availability on all plans including Free.",
+        "plan": "Free",
+        "source": "https://linear.app/docs/login-methods",
+        "support": "supported",
+        "tier": "free"
       },
       "scim": {
         "checked": "2026-09-14",
@@ -3865,7 +3867,7 @@
     "category": "development",
     "description": "Project management tool for high-performance software teams.",
     "name": "Linear",
-    "status": "draft",
+    "status": "published",
     "website": "https://linear.app"
   },
   {
@@ -5148,10 +5150,12 @@
         "tier": "enterprise"
       },
       "group_role_mapping": {
-        "checked": "2026-09-15",
-        "notes": "SCIM 2.0 group-based provisioning maps IdP group membership to role, license and workspace; plan requirement not stated",
+        "checked": "2026-09-16",
+        "notes": "SCIM 2.0 group-based provisioning maps IdP group membership to role, license and workspace; documented in the Enterprise-plan SSO implementation article, same basis as the scim tier.",
+        "plan": "Enterprise",
         "source": "https://support.pandadoc.com/en/articles/9715050-sso-implementation",
-        "support": "supported"
+        "support": "supported",
+        "tier": "enterprise"
       },
       "jit_provisioning": {
         "checked": "2026-09-15",
@@ -5174,10 +5178,12 @@
         "support": "not_supported"
       },
       "scim": {
-        "checked": "2026-09-15",
-        "notes": "SCIM 1.1 and 2.0 documented alongside SSO; plan requirement not stated",
+        "checked": "2026-09-16",
+        "notes": "SCIM 1.1 and 2.0 documented in the same SSO implementation article, whose stated availability is the Enterprise plan (Business can add SSO itself as a paid add-on, but SCIM is not separately called out as included in that add-on).",
+        "plan": "Enterprise",
         "source": "https://support.pandadoc.com/en/articles/9715050-sso-implementation",
-        "support": "supported"
+        "support": "supported",
+        "tier": "enterprise"
       },
       "session_controls": {
         "support": "not_researched"
@@ -5205,7 +5211,7 @@
     "category": "productivity",
     "description": "All-in-one document automation software to create, approve, track, and eSign documents.",
     "name": "PandaDoc",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.pandadoc.com"
   },
   {
@@ -7359,10 +7365,12 @@
         "support": "not_researched"
       },
       "mfa_enforcement": {
-        "checked": "2026-09-15",
-        "notes": "MFA mandatory for all users invited to an organisation; Xero Verify or authenticator app; plan requirement not stated",
+        "checked": "2026-09-16",
+        "notes": "MFA is mandatory for every user invited into a Xero organization on any plan (no plan-specific carve-out); Xero has no free plan, so the effective floor is the cheapest paid plan, Early.",
+        "plan": "Early",
         "source": "https://www.xero.com/us/security/multi-factor-authentication/faq/",
-        "support": "supported"
+        "support": "supported",
+        "tier": "paid"
       },
       "phishing_resistant_mfa": {
         "support": "undocumented"
@@ -7383,7 +7391,7 @@
     "category": "finance",
     "description": "Cloud-based accounting software for small businesses to manage finances, invoicing, and inventory.",
     "name": "Xero",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.xero.com"
   },
   {
