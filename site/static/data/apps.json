@@ -5566,11 +5566,13 @@
         "support": "not_researched"
       },
       "audit_logs": {
-        "checked": "2026-09-15",
-        "notes": "Records sign-ins, settings and data changes; admin access required; cannot be disabled; plan requirement not stated",
+        "checked": "2026-09-16",
+        "notes": "Records sign-ins, settings and data changes; admin access required; cannot be disabled; Intuit's article lists the audit log as available across all QuickBooks Online plans including the cheapest, Simple Start",
+        "plan": "Simple Start",
         "retention": "2 years",
         "source": "https://quickbooks.intuit.com/learn-support/en-us/help-article/audit-log/use-audit-log-quickbooks-online/L2WoVnW6I_US_en_US",
-        "support": "supported"
+        "support": "supported",
+        "tier": "paid"
       },
       "custom_roles": {
         "support": "not_researched"
@@ -5585,16 +5587,20 @@
         "support": "undocumented"
       },
       "mfa_enforcement": {
-        "checked": "2026-09-15",
-        "notes": "MFA is mandatory for Intuit accounts and cannot be turned off; not admin-configurable; plan requirement not stated",
+        "checked": "2026-09-16",
+        "notes": "MFA is mandatory for Intuit accounts and cannot be turned off; applies to all QuickBooks Online plans including the cheapest, Simple Start; not admin-configurable",
+        "plan": "Simple Start",
         "source": "https://quickbooks.intuit.com/learn-support/en-us/help-article/security-risk/verify-account-multi-factor-authentication/L2Xp0GNiT_US_en_US",
-        "support": "supported"
+        "support": "supported",
+        "tier": "paid"
       },
       "phishing_resistant_mfa": {
-        "checked": "2026-09-15",
-        "notes": "Passkeys available as a sign-in method; plan requirement not stated",
+        "checked": "2026-09-16",
+        "notes": "Passkeys available as a sign-in method for any Intuit account; applies to all QuickBooks Online plans including the cheapest, Simple Start",
+        "plan": "Simple Start",
         "source": "https://quickbooks.intuit.com/learn-support/en-us/help-article/security-risk/verify-account-multi-factor-authentication/L2Xp0GNiT_US_en_US",
-        "support": "supported"
+        "support": "supported",
+        "tier": "paid"
       },
       "scim": {
         "checked": "2026-09-15",
@@ -5622,7 +5628,7 @@
     "category": "finance",
     "description": "Accounting software for small businesses to track expenses and manage cash flow.",
     "name": "QuickBooks Online",
-    "status": "draft",
+    "status": "published",
     "website": "https://quickbooks.intuit.com"
   },
   {
@@ -6610,80 +6616,100 @@
     "_id": "stripe",
     "capabilities": {
       "api_token_controls": {
-        "checked": "2026-09-14",
-        "notes": "Restricted API keys with limited permissions and access policies that block use from unauthorized locations",
+        "checked": "2026-09-16",
+        "notes": "Restricted API keys with limited permissions and access policies that block use from unauthorized locations; no plan gate documented",
+        "plan": "Any Stripe account",
         "source": "https://docs.stripe.com/security",
-        "support": "supported"
+        "support": "supported",
+        "tier": "free"
       },
       "audit_logs": {
-        "checked": "2026-09-14",
-        "notes": "Security history in the Dashboard with export; Activity Logs API (public preview) covers API keys, invitations and role changes",
+        "checked": "2026-09-16",
+        "notes": "Security history in the Dashboard with export; Activity Logs API (public preview) covers API keys, invitations and role changes; access requires only a secret key with the Activity logs permission, no plan gate documented",
+        "plan": "Any Stripe account",
         "retention": "6 months",
         "source": "https://docs.stripe.com/activity-logs",
-        "support": "supported"
+        "support": "supported",
+        "tier": "free"
       },
       "custom_roles": {
         "support": "not_researched"
       },
       "domain_verification": {
-        "checked": "2026-09-14",
-        "notes": "DNS TXT record for each email domain, required to set up SSO",
+        "checked": "2026-09-16",
+        "notes": "DNS TXT record for each email domain, required to set up SSO; no plan gate documented",
+        "plan": "Any Stripe account",
         "source": "https://docs.stripe.com/get-started/account/sso/other",
-        "support": "supported"
+        "support": "supported",
+        "tier": "free"
       },
       "group_role_mapping": {
-        "checked": "2026-09-14",
-        "notes": "Assign Dashboard roles to SCIM-synced groups, or send roles in SAML attribute statements",
+        "checked": "2026-09-16",
+        "notes": "Assign Dashboard roles to SCIM-synced groups, or send roles in SAML attribute statements; no plan gate documented",
+        "plan": "Any Stripe account",
         "source": "https://docs.stripe.com/get-started/account/sso/group-role-assignments?locale=en-GB",
-        "support": "supported"
+        "support": "supported",
+        "tier": "free"
       },
       "jit_provisioning": {
-        "checked": "2026-09-14",
-        "notes": "Creates accounts for new users on their first SSO sign-in",
+        "checked": "2026-09-16",
+        "notes": "Creates accounts for new users on their first SSO sign-in; no plan gate documented",
+        "plan": "Any Stripe account",
         "source": "https://docs.stripe.com/get-started/account/sso",
-        "support": "supported"
+        "support": "supported",
+        "tier": "free"
       },
       "mfa_enforcement": {
-        "checked": "2026-09-14",
-        "notes": "Team administrators can require two-step authentication for everyone on the Team settings page",
+        "checked": "2026-09-16",
+        "notes": "Team administrators can require two-step authentication for everyone on the Team settings page; no plan gate documented",
+        "plan": "Any Stripe account",
         "source": "https://support.stripe.com/questions/enable-two-step-authentication",
-        "support": "supported"
+        "support": "supported",
+        "tier": "free"
       },
       "phishing_resistant_mfa": {
-        "checked": "2026-09-14",
-        "notes": "Passkeys and hardware security keys",
+        "checked": "2026-09-16",
+        "notes": "Passkeys and hardware security keys; no plan gate documented",
+        "plan": "Any Stripe account",
         "source": "https://support.stripe.com/questions/enable-two-step-authentication",
-        "support": "supported"
+        "support": "supported",
+        "tier": "free"
       },
       "scim": {
-        "checked": "2026-09-14",
-        "notes": "Needs SSO; creates, updates and deprovisions users and groups; deactivating a user deletes them; email and group name updates aren't supported",
+        "checked": "2026-09-16",
+        "notes": "Needs SSO; creates, updates and deprovisions users and groups; no plan gate documented; deactivating a user deletes them; email and group name updates aren't supported",
+        "plan": "Any Stripe account",
         "source": "https://docs.stripe.com/get-started/account/sso/scim",
-        "support": "supported"
+        "support": "supported",
+        "tier": "free"
       },
       "session_controls": {
         "support": "not_researched"
       },
       "sso": {
-        "checked": "2026-09-14",
-        "notes": "Dashboard SSO for any SAML 2.0 IdP; plan requirement not stated; can be configured centrally for an organization",
+        "checked": "2026-09-16",
+        "notes": "Dashboard SSO for any SAML 2.0 IdP; Stripe accounts have no subscription tiers (pay-per-transaction pricing) and the docs state no plan gate; can be configured centrally for an organization",
+        "plan": "Any Stripe account",
         "protocols": [
           "SAML"
         ],
         "source": "https://docs.stripe.com/get-started/account/sso",
-        "support": "supported"
+        "support": "supported",
+        "tier": "free"
       },
       "sso_enforcement": {
-        "checked": "2026-09-14",
-        "notes": "Enforcement mode Off, Optional or Required; the account owner's access can't be revoked",
+        "checked": "2026-09-16",
+        "notes": "Enforcement mode Off, Optional or Required; no plan gate documented; the account owner's access can't be revoked",
+        "plan": "Any Stripe account",
         "source": "https://docs.stripe.com/get-started/account/sso/other",
-        "support": "supported"
+        "support": "supported",
+        "tier": "free"
       }
     },
     "category": "finance",
     "description": "Financial infrastructure platform for the internet.",
     "name": "Stripe",
-    "status": "draft",
+    "status": "published",
     "website": "https://stripe.com"
   },
   {

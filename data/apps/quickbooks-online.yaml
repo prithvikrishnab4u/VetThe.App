@@ -2,7 +2,7 @@ name: "QuickBooks Online"
 category: "finance"
 website: "https://quickbooks.intuit.com"
 description: "Accounting software for small businesses to track expenses and manage cash flow."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
@@ -24,20 +24,26 @@ capabilities:
     checked: "2026-09-15"
   mfa_enforcement:
     support: "supported"
-    notes: "MFA is mandatory for Intuit accounts and cannot be turned off; not admin-configurable; plan requirement not stated"
+    tier: "paid"
+    plan: "Simple Start"
+    notes: "MFA is mandatory for Intuit accounts and cannot be turned off; applies to all QuickBooks Online plans including the cheapest, Simple Start; not admin-configurable"
     source: "https://quickbooks.intuit.com/learn-support/en-us/help-article/security-risk/verify-account-multi-factor-authentication/L2Xp0GNiT_US_en_US"
-    checked: "2026-09-15"
+    checked: "2026-09-16"
   phishing_resistant_mfa:
     support: "supported"
-    notes: "Passkeys available as a sign-in method; plan requirement not stated"
+    tier: "paid"
+    plan: "Simple Start"
+    notes: "Passkeys available as a sign-in method for any Intuit account; applies to all QuickBooks Online plans including the cheapest, Simple Start"
     source: "https://quickbooks.intuit.com/learn-support/en-us/help-article/security-risk/verify-account-multi-factor-authentication/L2Xp0GNiT_US_en_US"
-    checked: "2026-09-15"
+    checked: "2026-09-16"
   audit_logs:
     support: "supported"
-    notes: "Records sign-ins, settings and data changes; admin access required; cannot be disabled; plan requirement not stated"
+    tier: "paid"
+    plan: "Simple Start"
     retention: "2 years"
+    notes: "Records sign-ins, settings and data changes; admin access required; cannot be disabled; Intuit's article lists the audit log as available across all QuickBooks Online plans including the cheapest, Simple Start"
     source: "https://quickbooks.intuit.com/learn-support/en-us/help-article/audit-log/use-audit-log-quickbooks-online/L2WoVnW6I_US_en_US"
-    checked: "2026-09-15"
+    checked: "2026-09-16"
   jit_provisioning:
     support: "undocumented"
   domain_verification:
