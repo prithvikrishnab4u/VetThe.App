@@ -2,7 +2,7 @@ name: "Freshdesk"
 category: "sales_marketing"
 website: "https://freshdesk.com"
 description: "Online cloud-based customer service software providing help desk support with all smart automations."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
@@ -20,9 +20,11 @@ capabilities:
     support: "undocumented"
   mfa_enforcement:
     support: "supported"
-    notes: "Freshworks org admins can mandate 2FA as a policy for all users (with exemptions); requires Freshworks login; plan requirement not stated"
-    source: "https://support.freshworks.com/support/solutions/articles/50000003252-how-can-an-organization-admin-enforce-2fa-as-a-policy-for-all-or-some-users-in-the-organization-"
-    checked: "2026-09-15"
+    tier: "paid"
+    plan: "Growth"
+    notes: "Freshworks org admins can mandate 2FA as a policy for all users (with exemptions); requires Freshworks login. Not listed as a differentiated feature in the plan comparison, so available starting on the cheapest paid plan (Growth); Freshdesk's free tier is a time-limited trial, not an ongoing free plan."
+    source: "https://www.freshworks.com/freshdesk/pricing/"
+    checked: "2026-09-16"
   phishing_resistant_mfa:
     support: "undocumented"
   audit_logs:

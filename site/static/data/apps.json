@@ -642,10 +642,12 @@
         "tier": "free"
       },
       "phishing_resistant_mfa": {
-        "checked": "2026-09-14",
-        "notes": "Security keys work as a 2-step verification factor; passkeys aren't available for organization-managed accounts",
-        "source": "https://www.atlassian.com/blog/announcements/introducing-passkeys-and-multiple-2-step-verification-factors",
-        "support": "partial"
+        "checked": "2026-09-16",
+        "notes": "Security keys work as a 2-step verification factor; passkeys aren't available for organization-managed accounts. Enforcing two-step verification is available on all Atlassian Cloud plans, including Free.",
+        "plan": "Free",
+        "source": "https://support.atlassian.com/security-and-access-policies/docs/enforce-two-step-verification/",
+        "support": "partial",
+        "tier": "free"
       },
       "scim": {
         "checked": "2026-09-14",
@@ -686,7 +688,7 @@
     "category": "collaboration",
     "description": "Web-based corporate wiki and collaboration software for teams.",
     "name": "Atlassian Confluence",
-    "status": "draft",
+    "status": "published",
     "website": "https://atlassian.com/software/confluence"
   },
   {
@@ -2635,10 +2637,12 @@
         "tier": "paid"
       },
       "mfa_enforcement": {
-        "checked": "2026-09-15",
-        "notes": "Freshworks org admins can mandate 2FA as a policy for all users (with exemptions); requires Freshworks login; plan requirement not stated",
-        "source": "https://support.freshworks.com/support/solutions/articles/50000003252-how-can-an-organization-admin-enforce-2fa-as-a-policy-for-all-or-some-users-in-the-organization-",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Freshworks org admins can mandate 2FA as a policy for all users (with exemptions); requires Freshworks login. Not listed as a differentiated feature in the plan comparison, so available starting on the cheapest paid plan (Growth); Freshdesk's free tier is a time-limited trial, not an ongoing free plan.",
+        "plan": "Growth",
+        "source": "https://www.freshworks.com/freshdesk/pricing/",
+        "support": "supported",
+        "tier": "paid"
       },
       "phishing_resistant_mfa": {
         "support": "undocumented"
@@ -2668,7 +2672,7 @@
     "category": "sales_marketing",
     "description": "Online cloud-based customer service software providing help desk support with all smart automations.",
     "name": "Freshdesk",
-    "status": "draft",
+    "status": "published",
     "website": "https://freshdesk.com"
   },
   {
@@ -4105,9 +4109,11 @@
     "capabilities": {
       "api_token_controls": {
         "checked": "2026-09-16",
-        "notes": "Admins can see API keys other users generated and revoke keys; revoking a user's account access removes the keys they created. Plan requirement not stated.",
-        "source": "https://mailchimp.com/help/about-api-keys/",
-        "support": "supported"
+        "notes": "Admins can see API keys other users generated and revoke keys; revoking a user's account access removes the keys they created. Requires the Admin permission level, which is unavailable on the 1-seat Free plan, so this requires at least Essentials.",
+        "plan": "Essentials",
+        "source": "https://mailchimp.com/help/about-mailchimp-pricing-plans/",
+        "support": "supported",
+        "tier": "paid"
       },
       "audit_logs": {
         "support": "undocumented"
@@ -4126,9 +4132,11 @@
       },
       "mfa_enforcement": {
         "checked": "2026-09-16",
-        "notes": "When an Owner or Admin enables 2-factor authentication for their login, all other users on the account must set it up at their next login. Plan requirement not stated.",
-        "source": "https://mailchimp.com/help/set-up-a-two-factor-authentication-app-at-login/",
-        "support": "supported"
+        "notes": "When an Owner or Admin enables 2-factor authentication for their login, all other users on the account must set it up at their next login. The Free plan is limited to 1 seat (Owner only), so this requires at least Essentials, the cheapest plan with additional user seats.",
+        "plan": "Essentials",
+        "source": "https://mailchimp.com/help/about-mailchimp-pricing-plans/",
+        "support": "supported",
+        "tier": "paid"
       },
       "phishing_resistant_mfa": {
         "support": "undocumented"
@@ -4149,7 +4157,7 @@
     "category": "sales_marketing",
     "description": "Marketing, automation, and email marketing platform for growing businesses.",
     "name": "Mailchimp",
-    "status": "draft",
+    "status": "published",
     "website": "https://mailchimp.com"
   },
   {
@@ -5254,10 +5262,12 @@
         "support": "undocumented"
       },
       "mfa_enforcement": {
-        "checked": "2026-09-15",
-        "notes": "Admins can enforce 2FA (authenticator app or email) for all users; cannot be combined with SSO; plan requirement not stated",
-        "source": "https://support.pipedrive.com/en/article/2fa-two-factor-authentication",
-        "support": "supported"
+        "checked": "2026-09-16",
+        "notes": "Admins can enforce 2FA (authenticator app or email) for all users; cannot be combined with SSO. Available on all Pipedrive plans, including the cheapest (Essential).",
+        "plan": "Essential",
+        "source": "https://support.pipedrive.com/en/article/what-features-do-the-pipedrive-plans-have",
+        "support": "supported",
+        "tier": "paid"
       },
       "phishing_resistant_mfa": {
         "support": "undocumented"
@@ -5296,7 +5306,7 @@
     "category": "sales_marketing",
     "description": "Sales CRM and pipeline management software.",
     "name": "Pipedrive",
-    "status": "draft",
+    "status": "published",
     "website": "https://www.pipedrive.com"
   },
   {

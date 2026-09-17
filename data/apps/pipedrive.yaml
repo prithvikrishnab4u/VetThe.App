@@ -2,7 +2,7 @@ name: "Pipedrive"
 category: "sales_marketing"
 website: "https://www.pipedrive.com"
 description: "Sales CRM and pipeline management software."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
@@ -25,9 +25,11 @@ capabilities:
     support: "undocumented"
   mfa_enforcement:
     support: "supported"
-    notes: "Admins can enforce 2FA (authenticator app or email) for all users; cannot be combined with SSO; plan requirement not stated"
-    source: "https://support.pipedrive.com/en/article/2fa-two-factor-authentication"
-    checked: "2026-09-15"
+    tier: "paid"
+    plan: "Essential"
+    notes: "Admins can enforce 2FA (authenticator app or email) for all users; cannot be combined with SSO. Available on all Pipedrive plans, including the cheapest (Essential)."
+    source: "https://support.pipedrive.com/en/article/what-features-do-the-pipedrive-plans-have"
+    checked: "2026-09-16"
   phishing_resistant_mfa:
     support: "undocumented"
   audit_logs:

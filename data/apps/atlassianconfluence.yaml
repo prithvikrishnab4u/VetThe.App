@@ -2,7 +2,7 @@ name: "Atlassian Confluence"
 category: "collaboration"
 website: "https://atlassian.com/software/confluence"
 description: "Web-based corporate wiki and collaboration software for teams."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
@@ -36,9 +36,11 @@ capabilities:
     checked: "2026-09-14"
   phishing_resistant_mfa:
     support: "partial"
-    notes: "Security keys work as a 2-step verification factor; passkeys aren't available for organization-managed accounts"
-    source: "https://www.atlassian.com/blog/announcements/introducing-passkeys-and-multiple-2-step-verification-factors"
-    checked: "2026-09-14"
+    tier: "free"
+    plan: "Free"
+    notes: "Security keys work as a 2-step verification factor; passkeys aren't available for organization-managed accounts. Enforcing two-step verification is available on all Atlassian Cloud plans, including Free."
+    source: "https://support.atlassian.com/security-and-access-policies/docs/enforce-two-step-verification/"
+    checked: "2026-09-16"
   audit_logs:
     support: "supported"
     tier: "add_on"

@@ -2,7 +2,7 @@ name: "Mailchimp"
 category: "sales_marketing"
 website: "https://mailchimp.com"
 description: "Marketing, automation, and email marketing platform for growing businesses."
-status: "draft"
+status: "published"
 
 # One block per capability. Field meanings and allowed values: CONTRIBUTING.md
 capabilities:
@@ -14,8 +14,10 @@ capabilities:
     support: "undocumented"
   mfa_enforcement:
     support: "supported"
-    notes: "When an Owner or Admin enables 2-factor authentication for their login, all other users on the account must set it up at their next login. Plan requirement not stated."
-    source: "https://mailchimp.com/help/set-up-a-two-factor-authentication-app-at-login/"
+    tier: "paid"
+    plan: "Essentials"
+    notes: "When an Owner or Admin enables 2-factor authentication for their login, all other users on the account must set it up at their next login. The Free plan is limited to 1 seat (Owner only), so this requires at least Essentials, the cheapest plan with additional user seats."
+    source: "https://mailchimp.com/help/about-mailchimp-pricing-plans/"
     checked: "2026-09-16"
   phishing_resistant_mfa:
     support: "undocumented"
@@ -33,6 +35,8 @@ capabilities:
     support: "not_researched"
   api_token_controls:
     support: "supported"
-    notes: "Admins can see API keys other users generated and revoke keys; revoking a user's account access removes the keys they created. Plan requirement not stated."
-    source: "https://mailchimp.com/help/about-api-keys/"
+    tier: "paid"
+    plan: "Essentials"
+    notes: "Admins can see API keys other users generated and revoke keys; revoking a user's account access removes the keys they created. Requires the Admin permission level, which is unavailable on the 1-seat Free plan, so this requires at least Essentials."
+    source: "https://mailchimp.com/help/about-mailchimp-pricing-plans/"
     checked: "2026-09-16"
