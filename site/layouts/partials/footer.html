@@ -3,10 +3,7 @@
 {{/* The "add an app / fix a value" call to action lives in the data strip above the
      footer now, so it sits next to the numbers it is asking people to improve. */}}
 <footer class="ink-band border-t border-white/10">
-    <div class="absolute inset-0 -z-10" aria-hidden="true">
-        <div class="aurora aurora-1 !h-[280px] !w-[380px] !left-[-8%] !top-[-180px]"></div>
-        <div class="aurora aurora-2 !h-[260px] !w-[340px] !right-[-6%] !top-[-150px]"></div>
-    </div>
+    {{/* Flat dark on purpose. The drifting aurora only belongs in the hero. */}}
     <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
 
         <div class="flex items-center gap-2 text-sm text-white/55">
@@ -24,6 +21,7 @@
 
         <nav class="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-sm text-white/55" aria-label="Footer">
             <a href="{{ $repo }}" target="_blank" rel="noopener" class="hover:text-white transition-colors">GitHub</a>
+            <a href="{{ $repo }}/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener" class="hover:text-white transition-colors">Contribute</a>
             <a href="{{ $repo }}/issues/new" target="_blank" rel="noopener" class="hover:text-white transition-colors">Report wrong data</a>
         </nav>
 

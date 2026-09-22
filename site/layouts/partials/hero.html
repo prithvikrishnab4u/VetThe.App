@@ -30,7 +30,7 @@
         <div class="aurora aurora-3"></div>
     </div>
 
-    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-7 grid lg:grid-cols-[1.25fr_1fr] gap-8 items-center">
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-6 grid lg:grid-cols-[1.25fr_1fr] gap-8 items-center">
         <!-- Copy + search -->
         <div class="fade-up text-center lg:text-left">
             <p class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium text-white/80 backdrop-blur">
@@ -41,8 +41,8 @@
             <h1 class="mt-3 text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold tracking-tight leading-[1.08] text-balance">
                 Vet the app <span class="gradient-text">before you sign.</span>
             </h1>
-            <p class="mt-2.5 max-w-xl mx-auto lg:mx-0 text-sm sm:text-base text-white/65 text-pretty">
-                SSO, SCIM, enforced MFA, passkeys and audit logs for {{ len site.Data.apps }} SaaS apps, with the cheapest plan that unlocks each one. Every answer links to the vendor's own page.
+            <p class="mt-2 max-w-xl mx-auto lg:mx-0 text-sm sm:text-base text-white/65 text-pretty">
+                SSO, SCIM, enforced MFA, passkeys and audit logs for {{ len site.Data.apps }} SaaS apps, with the cheapest plan that unlocks each one.
             </p>
 
             <form id="heroSearchForm" class="mt-4 max-w-xl mx-auto lg:mx-0" role="search">
@@ -66,6 +66,22 @@
                 }}
                 <button type="button" class="chip" data-preset="{{ .preset | jsonify }}">{{ .label }}</button>
                 {{ end }}
+            </div>
+
+            {{/* Byline sits next to the credibility claim, not in the nav, where it would
+                 compete with the product name. The footer keeps a copy. */}}
+            <div class="mt-3 flex flex-wrap items-center justify-center lg:justify-start gap-2 text-xs text-white/55">
+                <span>Built by <span class="font-semibold text-white/90">Prithvi Poreddy</span>, IAM engineer</span>
+                <a href="https://linkedin.com/in/pporeddy" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/5 px-2 py-1 font-medium text-white/85 transition-colors hover:border-white/35 hover:bg-white/10 hover:text-white">
+                    <svg class="w-3.5 h-3.5 text-[#5ea8ff]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
+                    LinkedIn
+                </a>
+                <a href="https://iam.ninja" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/5 px-2 py-1 font-medium text-white/85 transition-colors hover:border-white/35 hover:bg-white/10 hover:text-white">
+                    <svg class="w-3.5 h-3.5 text-indigo-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5L12 0Z" /></svg>
+                    iam.ninja
+                </a>
             </div>
         </div>
 

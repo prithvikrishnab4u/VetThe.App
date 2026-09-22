@@ -54,7 +54,7 @@
         <!-- Bar + inline legend -->
         <div class="flex-1 min-w-0">
             <div class="flex h-2 w-full overflow-hidden rounded-full bg-subtle" role="img"
-                aria-label="Core capabilities: {{ $verified }} sourced, {{ $unverified }} unverified, {{ $undocumented }} vendor silent, {{ $notResearched }} not yet checked">
+                aria-label="Core capabilities: {{ $verified }} sourced, {{ $unverified }} unverified, {{ $undocumented }} checked but the vendor will not say, {{ $notResearched }} not yet checked">
                 {{ range slice (slice "verified" $verified) (slice "unverified" $unverified) (slice "undocumented" $undocumented) (slice "not_researched" $notResearched) }}
                 <div class="seg-{{ index . 0 }}" style="width: {{ div (mul (float (index . 1)) 100) $corePoints }}%"></div>
                 {{ end }}
@@ -62,7 +62,7 @@
             {{/* Same badge colours the table uses, so the legend and the bar read as one language. */}}
             <ul class="mt-2 flex flex-wrap items-center gap-1.5 text-xs">
                 <li><span class="badge badge-free"><strong class="font-semibold">{{ $verified }}</strong> sourced</span></li>
-                <li><span class="badge badge-undocumented"><strong class="font-semibold">{{ $undocumented }}</strong> vendor is silent</span></li>
+                <li><span class="badge badge-undocumented"><strong class="font-semibold">{{ $undocumented }}</strong> checked, vendor won't say</span></li>
                 <li><span class="badge badge-not_researched"><strong class="font-semibold">{{ $notResearched }}</strong> still to check</span></li>
                 {{ if $unverified }}<li><span class="badge badge-partial"><strong class="font-semibold">{{ $unverified }}</strong> unverified</span></li>{{ end }}
                 <li class="ml-1 text-muted">{{ $fullApps }} of {{ len site.Data.apps }} apps fully checked</li>
