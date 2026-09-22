@@ -1497,6 +1497,82 @@
     "website": "https://www.brex.com"
   },
   {
+    "_id": "browserstack",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Audit logs track organization activity for up to 180 days; Owners can view/export and grant Admin access.",
+        "plan": "Enterprise",
+        "retention": "180 days",
+        "source": "https://www.browserstack.com/docs/enterprise/audit-logs",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Owners can enforce two-factor authentication for all organization members, with a 7-day grace period.",
+        "plan": "Enterprise",
+        "source": "https://www.browserstack.com/docs/enterprise/setup-two-factor-authentication",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "Account authentication docs list only Password, Google login, and SSO as sign-in methods; no passkey/WebAuthn/FIDO2 login option for BrowserStack accounts is documented.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "Auto User Provisioning integrates an external directory via SCIM for user provisioning and de-provisioning.",
+        "plan": "Enterprise",
+        "source": "https://www.browserstack.com/docs/enterprise/auto-user-provisioning",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Supports IdP-initiated and SP-initiated SAML 2.0 SSO with Okta, Azure AD, OneLogin, ADFS, and Open SAML; SSO is listed as an Enterprise add-on on the pricing page.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://www.browserstack.com/docs/enterprise/single-sign-on",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Owners can set SSO to \"Required\", after which team member passwords no longer work.",
+        "plan": "Enterprise",
+        "source": "https://www.browserstack.com/docs/enterprise/single-sign-on",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "development",
+    "description": "A cloud platform for testing web and mobile applications on real browsers and devices.",
+    "name": "BrowserStack",
+    "status": "draft",
+    "website": "https://www.browserstack.com"
+  },
+  {
     "_id": "calendly",
     "capabilities": {
       "api_token_controls": {
@@ -4923,6 +4999,79 @@
     "name": "Marketo",
     "status": "published",
     "website": "https://www.marketo.com"
+  },
+  {
+    "_id": "microsoft-dynamics-365",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Dataverse auditing logs record create/update/delete operations, security role changes, and user access (sign-in) with an admin-configurable retention period.",
+        "retention": "Forever (default); configurable up to 24,855 days",
+        "source": "https://learn.microsoft.com/en-us/power-platform/admin/manage-dataverse-auditing",
+        "support": "supported",
+        "tier": "free"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Admins enforce MFA for Dynamics 365/Dataverse access using Microsoft Entra Conditional Access policies, which require Entra ID P1 or P2 licensing.",
+        "plan": "Microsoft Entra ID P1/P2 (Conditional Access)",
+        "source": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-all-users-mfa-strength",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-22",
+        "notes": "Microsoft Entra ID supports FIDO2 security keys, Windows Hello for Business, and passkeys as phishing-resistant sign-in methods for the tenant Dynamics 365 users sign in through, at no extra licensing cost.",
+        "source": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-passkeys-fido2",
+        "support": "supported",
+        "tier": "free"
+      },
+      "scim": {
+        "notes": "User access is granted via Microsoft Entra ID/Microsoft 365 license and security-role assignment rather than a documented SCIM endpoint for Dynamics 365 itself.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Dynamics 365 apps are Microsoft Entra ID (Azure AD) enterprise applications; sign-in is exclusively via Microsoft Entra ID, which supports SAML and OpenID Connect, included with the underlying tenant at no extra cost.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/add-application-portal-setup-sso",
+        "support": "supported",
+        "tier": "free"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Dynamics 365 has no separate local password; all sign-in goes through the organization's Microsoft Entra ID tenant, so SSO is inherently required rather than optional.",
+        "source": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/add-application-portal-setup-sso",
+        "support": "supported",
+        "tier": "free"
+      }
+    },
+    "category": "sales_marketing",
+    "description": "A suite of cloud-based ERP and CRM business applications from Microsoft, including Sales, Customer Service, and Finance.",
+    "name": "Microsoft Dynamics 365",
+    "status": "draft",
+    "website": "https://dynamics.microsoft.com"
   },
   {
     "_id": "microsoft-teams",

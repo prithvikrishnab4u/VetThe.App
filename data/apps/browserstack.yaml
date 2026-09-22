@@ -1,0 +1,59 @@
+name: "BrowserStack"
+category: "development"
+website: "https://www.browserstack.com"
+description: "A cloud platform for testing web and mobile applications on real browsers and devices."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML"]
+    notes: "Supports IdP-initiated and SP-initiated SAML 2.0 SSO with Okta, Azure AD, OneLogin, ADFS, and Open SAML; SSO is listed as an Enterprise add-on on the pricing page."
+    source: "https://www.browserstack.com/docs/enterprise/single-sign-on"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Owners can set SSO to \"Required\", after which team member passwords no longer work."
+    source: "https://www.browserstack.com/docs/enterprise/single-sign-on"
+    checked: "2026-09-22"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Auto User Provisioning integrates an external directory via SCIM for user provisioning and de-provisioning."
+    source: "https://www.browserstack.com/docs/enterprise/auto-user-provisioning"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Owners can enforce two-factor authentication for all organization members, with a 7-day grace period."
+    source: "https://www.browserstack.com/docs/enterprise/setup-two-factor-authentication"
+    checked: "2026-09-22"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "Account authentication docs list only Password, Google login, and SSO as sign-in methods; no passkey/WebAuthn/FIDO2 login option for BrowserStack accounts is documented."
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    retention: "180 days"
+    notes: "Audit logs track organization activity for up to 180 days; Owners can view/export and grant Admin access."
+    source: "https://www.browserstack.com/docs/enterprise/audit-logs"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"
