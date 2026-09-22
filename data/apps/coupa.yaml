@@ -1,0 +1,41 @@
+name: "Coupa"
+category: "finance"
+website: "https://www.coupa.com"
+description: "Coupa is a business spend management platform covering procurement, invoicing, and expense management."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "undocumented"
+    protocols: ["SAML"]
+    notes: "Coupa documents SAML 2.0 SSO setup (SP-initiated and IdP-initiated) in its technical documentation; OIDC is referenced in doc navigation but not detailed, and plan/tier is not stated."
+    source: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-user-authentication/coupa-saml-sso-setup"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Vendor docs describe an admin support-only bypass URL for SSO but do not describe org-wide enforcement/disabling of password login."
+  scim:
+    support: "undocumented"
+    notes: "Could not find vendor documentation confirming SCIM or automated provisioning/deprovisioning within the fetch budget."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "No vendor documentation found describing native in-app MFA enforcement."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "No mention of passkeys/WebAuthn/FIDO2 on the pages checked."
+  audit_logs:
+    support: "undocumented"
+    notes: "Trust page references general security/compliance commitments (SOC I/II, PCI, ISO27001) but no specific admin-visible activity log was found within the fetch budget."
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

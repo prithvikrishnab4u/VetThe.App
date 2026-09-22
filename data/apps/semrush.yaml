@@ -1,0 +1,48 @@
+name: "Semrush"
+category: "sales_marketing"
+website: "https://www.semrush.com"
+description: "SaaS platform for SEO, content marketing, competitor research, PPC and social media analytics."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Guru or Business"
+    protocols: ["SAML"]
+    notes: "SAML 2.0 SSO available to Guru and Business plan users; enabled by contacting Semrush support."
+    source: "https://www.semrush.com/kb/1609-saml-sso"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "No mention of admins requiring SSO / disabling password login."
+  scim:
+    support: "undocumented"
+    notes: "No SCIM or automated provisioning mentioned in SAML SSO docs or security page."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Security page states two-factor authentication can be enabled, but does not say admins can require it for all users."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "No mention of passkeys/WebAuthn/FIDO2."
+  audit_logs:
+    support: "undocumented"
+    notes: "Security page describes internal logging of Semrush infrastructure, not a customer-facing admin audit log."
+  jit_provisioning:
+    support: "supported"
+    tier: "paid"
+    plan: "Guru or Business"
+    notes: "SAML SSO documentation states it provides user creation and registration on login, i.e. just-in-time provisioning."
+    source: "https://www.semrush.com/kb/1609-saml-sso"
+    checked: "2026-09-22"
+  domain_verification:
+    support: "undocumented"
+    notes: "No mention of domain ownership verification."
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

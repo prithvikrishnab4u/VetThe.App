@@ -359,6 +359,73 @@
     "website": "https://www.adp.com"
   },
   {
+    "_id": "aircall",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "notes": "No admin-facing activity/audit log feature is documented on Aircall's security or pricing pages.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Admins can enable two-factor authentication (email code) for all users with dashboard access from Company > Security settings; 2FA is listed on all plans including Essentials.",
+        "plan": "Essentials",
+        "source": "https://support.aircall.io/hc/en-gb/articles/16403056597149-Enabling-Two-Factor-Authentication",
+        "support": "supported",
+        "tier": "free"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "No mention of passkeys, WebAuthn, FIDO2 or hardware security keys in Aircall's security/pricing/2FA documentation.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "Pricing page lists 'SSO and SCIM' together as an Enterprise-only capability.",
+        "plan": "Enterprise",
+        "source": "https://aircall.io/pricing/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "SAML SSO is listed as an Enterprise-plan feature; Aircall's own help center notes it is 'currently available only to a limited number of customers' and requires contacting support to enable.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://aircall.io/pricing/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "notes": "Neither the pricing page nor the SAML help article states whether SSO/password login can be enforced for all users.",
+        "support": "undocumented"
+      }
+    },
+    "category": "support",
+    "description": "Cloud-based phone and call center software for sales and support teams.",
+    "name": "Aircall",
+    "status": "draft",
+    "website": "https://aircall.io"
+  },
+  {
     "_id": "airtable",
     "capabilities": {
       "api_token_controls": {
@@ -750,6 +817,73 @@
     "name": "Asana",
     "status": "published",
     "website": "https://asana.com"
+  },
+  {
+    "_id": "ashby",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "User Audit Log tracks permission changes with timestamps; included on all plans including Foundations.",
+        "plan": "Foundations",
+        "source": "https://www.ashbyhq.com/pricing",
+        "support": "supported",
+        "tier": "free"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "notes": "Security page describes 2FA requirements for Ashby employees, not a customer-facing MFA enforcement setting for app users.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "SCIM Directory Sync provisions and deactivates user accounts automatically; included on Plus and Enterprise plans, not on Foundations.",
+        "plan": "Plus",
+        "source": "https://www.ashbyhq.com/pricing",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "SSO via SAML and OIDC available as a $100/month add-on on all plans.",
+        "plan": "SSO add-on ($100/month, all plans)",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://www.ashbyhq.com/pricing",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "sso_enforcement": {
+        "notes": "Pricing and security pages do not state whether password login can be disabled once SSO is enabled.",
+        "support": "undocumented"
+      }
+    },
+    "category": "hr",
+    "description": "Ashby is an all-in-one recruiting and applicant tracking platform for hiring teams.",
+    "name": "Ashby",
+    "status": "draft",
+    "website": "https://www.ashbyhq.com"
   },
   {
     "_id": "atlassianconfluence",
@@ -2389,6 +2523,64 @@
     "name": "Coda",
     "status": "draft",
     "website": "https://coda.io"
+  },
+  {
+    "_id": "coupa",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "notes": "Trust page references general security/compliance commitments (SOC I/II, PCI, ISO27001) but no specific admin-visible activity log was found within the fetch budget.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "notes": "No vendor documentation found describing native in-app MFA enforcement.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "No mention of passkeys/WebAuthn/FIDO2 on the pages checked.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "Could not find vendor documentation confirming SCIM or automated provisioning/deprovisioning within the fetch budget.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Coupa documents SAML 2.0 SSO setup (SP-initiated and IdP-initiated) in its technical documentation; OIDC is referenced in doc navigation but not detailed, and plan/tier is not stated.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-user-authentication/coupa-saml-sso-setup",
+        "support": "supported",
+        "tier": "undocumented"
+      },
+      "sso_enforcement": {
+        "notes": "Vendor docs describe an admin support-only bypass URL for SSO but do not describe org-wide enforcement/disabling of password login.",
+        "support": "undocumented"
+      }
+    },
+    "category": "finance",
+    "description": "Coupa is a business spend management platform covering procurement, invoicing, and expense management.",
+    "name": "Coupa",
+    "status": "draft",
+    "website": "https://www.coupa.com"
   },
   {
     "_id": "coursera-for-business",
@@ -4245,6 +4437,69 @@
     "website": "https://www.harness.io"
   },
   {
+    "_id": "hibob",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Bob offers an Audit Report of field changes and an API audit log, but no retention period is stated.",
+        "source": "https://apidocs.hibob.com/changelog/access-bobs-api-audit-logs",
+        "support": "supported",
+        "tier": "undocumented"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Vendor recommends 2FA via enterprise SSO rather than a native in-app MFA enforcement toggle.",
+        "source": "https://www.hibob.com/security/",
+        "support": "partial"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "No mention of passkeys/WebAuthn/FIDO2 on the pages checked.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "HiBob documents a native SCIM 2.0 integration (requires SSO to be configured first) but plan/tier is not stated on vendor pages checked.",
+        "source": "https://www.hibob.com/security/",
+        "support": "supported",
+        "tier": "undocumented"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Vendor states enterprise SSO can be enabled for end-user authentication but does not name the protocol or which plan it requires.",
+        "source": "https://www.hibob.com/security/",
+        "support": "supported",
+        "tier": "undocumented"
+      },
+      "sso_enforcement": {
+        "notes": "Security page does not state whether password login can be disabled once SSO is enabled.",
+        "support": "undocumented"
+      }
+    },
+    "category": "hr",
+    "description": "HiBob (Bob) is a cloud HR platform for employee data, payroll, time off, and performance management.",
+    "name": "HiBob",
+    "status": "draft",
+    "website": "https://www.hibob.com"
+  },
+  {
     "_id": "hootsuite",
     "capabilities": {
       "api_token_controls": {
@@ -4973,6 +5228,63 @@
     "name": "LaunchDarkly",
     "status": "draft",
     "website": "https://launchdarkly.com"
+  },
+  {
+    "_id": "lever",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "notes": "No customer-facing admin audit log documentation found; security page only describes Lever's internal SSO/MFA use for its own staff.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "notes": "No vendor documentation found on admin-enforced MFA within the Lever product itself.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "No mention of passkeys/WebAuthn/FIDO2.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "No SCIM or automated provisioning documentation found on help.lever.co.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Lever Help Center publishes SAML 2.0 integration setup guides for Okta, OneLogin and Microsoft Entra; required plan not stated in these pages.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://help.lever.co/hc/en-us/articles/20087357055005-Enabling-a-SAML-integration-with-Okta",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "notes": "No vendor documentation found on requiring SSO / disabling password login.",
+        "support": "undocumented"
+      }
+    },
+    "category": "hr",
+    "description": "Talent relationship management and applicant tracking system (LeverTRM) for recruiting.",
+    "name": "Lever",
+    "status": "draft",
+    "website": "https://www.lever.co"
   },
   {
     "_id": "linear",
@@ -6498,6 +6810,81 @@
     "website": "https://notion.so"
   },
   {
+    "_id": "oracle-hcm-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Audit History/Audit Reports work area records creation, modification and removal of business objects including date, user, product, and event type, once auditing is enabled by an admin.",
+        "plan": "Oracle Fusion Cloud HCM",
+        "source": "https://docs.oracle.com/en/cloud/saas/human-resources/fapid/audit-reports.html",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Security administrators can set 'Requires MFA' in Enforce MFA During Sign-in so all users of a category are redirected to enroll in multi-factor authentication; Oracle is also rolling out mandatory MFA enforcement across Fusion Applications.",
+        "plan": "Oracle Fusion Cloud HCM",
+        "source": "https://docs.oracle.com/en-us/iaas/Content/fusion-applications/mfa-enforcement.htm",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-22",
+        "notes": "One of the six supported MFA factors is the 'Fast ID Online (FIDO) Passkey Authenticator'.",
+        "plan": "Oracle Fusion Cloud HCM",
+        "source": "https://docs.oracle.com/en-us/iaas/Content/fusion-applications/mfa-enforcement.htm",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "Oracle publishes SCIM 2.0 REST APIs (hcmRestApi/scim/Users) for creating, updating and deleting users from an external source.",
+        "plan": "Oracle Fusion Cloud HCM",
+        "source": "https://docs.oracle.com/en/cloud/saas/applications-common/25d/farca/op-hcmrestapi-scim-users-get.html",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Cloud HCM supports SSO with any SAML 2.0-compliant identity provider, configured via Security Console > Single Sign-on.",
+        "plan": "Oracle Fusion Cloud HCM",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.oracle.com/en/cloud/saas/human-resources/ochus/configure-single-sign-on.html",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "notes": "SSO configuration docs describe setting up and testing federation but do not state whether password-based login can be disabled/blocked for all users.",
+        "support": "undocumented"
+      }
+    },
+    "category": "hr",
+    "description": "Oracle's cloud human capital management suite covering core HR, talent, and workforce management.",
+    "name": "Oracle HCM Cloud",
+    "status": "draft",
+    "website": "https://www.oracle.com/human-capital-management/"
+  },
+  {
     "_id": "outreach",
     "capabilities": {
       "api_token_controls": {
@@ -7496,6 +7883,71 @@
     "name": "SAP Concur",
     "status": "published",
     "website": "https://www.concur.com"
+  },
+  {
+    "_id": "semrush",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "notes": "Security page describes internal logging of Semrush infrastructure, not a customer-facing admin audit log.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "notes": "No mention of domain ownership verification.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-22",
+        "notes": "SAML SSO documentation states it provides user creation and registration on login, i.e. just-in-time provisioning.",
+        "plan": "Guru or Business",
+        "source": "https://www.semrush.com/kb/1609-saml-sso",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "mfa_enforcement": {
+        "notes": "Security page states two-factor authentication can be enabled, but does not say admins can require it for all users.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "No mention of passkeys/WebAuthn/FIDO2.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "No SCIM or automated provisioning mentioned in SAML SSO docs or security page.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "SAML 2.0 SSO available to Guru and Business plan users; enabled by contacting Semrush support.",
+        "plan": "Guru or Business",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://www.semrush.com/kb/1609-saml-sso",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "notes": "No mention of admins requiring SSO / disabling password login.",
+        "support": "undocumented"
+      }
+    },
+    "category": "sales_marketing",
+    "description": "SaaS platform for SEO, content marketing, competitor research, PPC and social media analytics.",
+    "name": "Semrush",
+    "status": "draft",
+    "website": "https://www.semrush.com"
   },
   {
     "_id": "sentry",
@@ -8922,6 +9374,60 @@
     "name": "Udemy Business",
     "status": "draft",
     "website": "https://business.udemy.com"
+  },
+  {
+    "_id": "ukg-pro",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "notes": "Could not confirm an admin-visible audit log from public vendor documentation within budget.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "notes": "Could not confirm an admin-level MFA enforcement setting for UKG Pro itself from public documentation within budget.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "Could not confirm SCIM or automated directory provisioning/deprovisioning from public vendor documentation within budget.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "UKG Pro offers federated single sign-on; public documentation describes it via Microsoft Active Directory Federated Services (ADFS) and does not explicitly confirm SAML or OIDC protocol support or which plan tier includes it.",
+        "source": "https://library.ukg.com/a/178124",
+        "support": "supported",
+        "tier": "undocumented"
+      },
+      "sso_enforcement": {
+        "notes": "Documentation describes an optional 'Direct Login' feature that lets users log in without SSO, but does not state whether it can be disabled to mandate SSO for all users.",
+        "support": "undocumented"
+      }
+    },
+    "category": "hr",
+    "description": "UKG Pro is a cloud-based human capital management (HCM) suite covering HR, payroll, talent, and workforce management.",
+    "name": "UKG Pro",
+    "status": "draft",
+    "website": "https://www.ukg.com"
   },
   {
     "_id": "vercel",

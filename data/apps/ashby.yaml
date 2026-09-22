@@ -1,0 +1,49 @@
+name: "Ashby"
+category: "hr"
+website: "https://www.ashbyhq.com"
+description: "Ashby is an all-in-one recruiting and applicant tracking platform for hiring teams."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "add_on"
+    plan: "SSO add-on ($100/month, all plans)"
+    protocols: ["SAML", "OIDC"]
+    notes: "SSO via SAML and OIDC available as a $100/month add-on on all plans."
+    source: "https://www.ashbyhq.com/pricing"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Pricing and security pages do not state whether password login can be disabled once SSO is enabled."
+  scim:
+    support: "supported"
+    tier: "paid"
+    plan: "Plus"
+    notes: "SCIM Directory Sync provisions and deactivates user accounts automatically; included on Plus and Enterprise plans, not on Foundations."
+    source: "https://www.ashbyhq.com/pricing"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Security page describes 2FA requirements for Ashby employees, not a customer-facing MFA enforcement setting for app users."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "free"
+    plan: "Foundations"
+    notes: "User Audit Log tracks permission changes with timestamps; included on all plans including Foundations."
+    source: "https://www.ashbyhq.com/pricing"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

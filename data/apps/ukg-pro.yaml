@@ -1,0 +1,39 @@
+name: "UKG Pro"
+category: "hr"
+website: "https://www.ukg.com"
+description: "UKG Pro is a cloud-based human capital management (HCM) suite covering HR, payroll, talent, and workforce management."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "undocumented"
+    notes: "UKG Pro offers federated single sign-on; public documentation describes it via Microsoft Active Directory Federated Services (ADFS) and does not explicitly confirm SAML or OIDC protocol support or which plan tier includes it."
+    source: "https://library.ukg.com/a/178124"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Documentation describes an optional 'Direct Login' feature that lets users log in without SSO, but does not state whether it can be disabled to mandate SSO for all users."
+  scim:
+    support: "undocumented"
+    notes: "Could not confirm SCIM or automated directory provisioning/deprovisioning from public vendor documentation within budget."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Could not confirm an admin-level MFA enforcement setting for UKG Pro itself from public documentation within budget."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+    notes: "Could not confirm an admin-visible audit log from public vendor documentation within budget."
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

@@ -1,0 +1,48 @@
+name: "HiBob"
+category: "hr"
+website: "https://www.hibob.com"
+description: "HiBob (Bob) is a cloud HR platform for employee data, payroll, time off, and performance management."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "undocumented"
+    notes: "Vendor states enterprise SSO can be enabled for end-user authentication but does not name the protocol or which plan it requires."
+    source: "https://www.hibob.com/security/"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Security page does not state whether password login can be disabled once SSO is enabled."
+  scim:
+    support: "supported"
+    tier: "undocumented"
+    notes: "HiBob documents a native SCIM 2.0 integration (requires SSO to be configured first) but plan/tier is not stated on vendor pages checked."
+    source: "https://www.hibob.com/security/"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "partial"
+    notes: "Vendor recommends 2FA via enterprise SSO rather than a native in-app MFA enforcement toggle."
+    source: "https://www.hibob.com/security/"
+    checked: "2026-09-22"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "No mention of passkeys/WebAuthn/FIDO2 on the pages checked."
+  audit_logs:
+    support: "supported"
+    tier: "undocumented"
+    notes: "Bob offers an Audit Report of field changes and an API audit log, but no retention period is stated."
+    source: "https://apidocs.hibob.com/changelog/access-bobs-api-audit-logs"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

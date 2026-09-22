@@ -1,0 +1,50 @@
+name: "Aircall"
+category: "support"
+website: "https://aircall.io"
+description: "Cloud-based phone and call center software for sales and support teams."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML"]
+    notes: "SAML SSO is listed as an Enterprise-plan feature; Aircall's own help center notes it is 'currently available only to a limited number of customers' and requires contacting support to enable."
+    source: "https://aircall.io/pricing/"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Neither the pricing page nor the SAML help article states whether SSO/password login can be enforced for all users."
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Pricing page lists 'SSO and SCIM' together as an Enterprise-only capability."
+    source: "https://aircall.io/pricing/"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "supported"
+    tier: "free"
+    plan: "Essentials"
+    notes: "Admins can enable two-factor authentication (email code) for all users with dashboard access from Company > Security settings; 2FA is listed on all plans including Essentials."
+    source: "https://support.aircall.io/hc/en-gb/articles/16403056597149-Enabling-Two-Factor-Authentication"
+    checked: "2026-09-22"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "No mention of passkeys, WebAuthn, FIDO2 or hardware security keys in Aircall's security/pricing/2FA documentation."
+  audit_logs:
+    support: "undocumented"
+    notes: "No admin-facing activity/audit log feature is documented on Aircall's security or pricing pages."
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

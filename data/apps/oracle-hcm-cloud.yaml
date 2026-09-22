@@ -1,0 +1,58 @@
+name: "Oracle HCM Cloud"
+category: "hr"
+website: "https://www.oracle.com/human-capital-management/"
+description: "Oracle's cloud human capital management suite covering core HR, talent, and workforce management."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Oracle Fusion Cloud HCM"
+    protocols: ["SAML"]
+    notes: "Cloud HCM supports SSO with any SAML 2.0-compliant identity provider, configured via Security Console > Single Sign-on."
+    source: "https://docs.oracle.com/en/cloud/saas/human-resources/ochus/configure-single-sign-on.html"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "SSO configuration docs describe setting up and testing federation but do not state whether password-based login can be disabled/blocked for all users."
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Oracle Fusion Cloud HCM"
+    notes: "Oracle publishes SCIM 2.0 REST APIs (hcmRestApi/scim/Users) for creating, updating and deleting users from an external source."
+    source: "https://docs.oracle.com/en/cloud/saas/applications-common/25d/farca/op-hcmrestapi-scim-users-get.html"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Oracle Fusion Cloud HCM"
+    notes: "Security administrators can set 'Requires MFA' in Enforce MFA During Sign-in so all users of a category are redirected to enroll in multi-factor authentication; Oracle is also rolling out mandatory MFA enforcement across Fusion Applications."
+    source: "https://docs.oracle.com/en-us/iaas/Content/fusion-applications/mfa-enforcement.htm"
+    checked: "2026-09-22"
+  phishing_resistant_mfa:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Oracle Fusion Cloud HCM"
+    notes: "One of the six supported MFA factors is the 'Fast ID Online (FIDO) Passkey Authenticator'."
+    source: "https://docs.oracle.com/en-us/iaas/Content/fusion-applications/mfa-enforcement.htm"
+    checked: "2026-09-22"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Oracle Fusion Cloud HCM"
+    notes: "Audit History/Audit Reports work area records creation, modification and removal of business objects including date, user, product, and event type, once auditing is enabled by an admin."
+    source: "https://docs.oracle.com/en/cloud/saas/human-resources/fapid/audit-reports.html"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"
