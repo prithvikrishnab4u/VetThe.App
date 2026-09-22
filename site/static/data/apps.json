@@ -603,6 +603,76 @@
     "website": "https://amplitude.com"
   },
   {
+    "_id": "apollo-io",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "notes": "Apollo's admin settings mention a 'system activity log' covering data requests and AI word usage, but the vendor documentation does not clearly describe an admin-visible log of general user/admin activity.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Admins on a paid plan can make it mandatory for users to provide an extra verification method (SMS or authenticator app codes) beyond username and password.",
+        "source": "https://knowledge.apollo.io/hc/en-us/articles/20439872853645-Configure-Advanced-Security-Protocols-on-Apollo",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "Apollo's advanced security protocols page describes only SMS and authenticator-app MFA; no passkey/WebAuthn/hardware-key option is documented.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "SCIM user provisioning (create, update, deactivate, reactivate) is supported with Okta and Microsoft Entra ID when SAML SSO is active; requires an Organization-level plan.",
+        "plan": "Organization",
+        "source": "https://knowledge.apollo.io/hc/en-us/articles/15570877535757-Configure-SCIM-User-Provisioning-for-SSO",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Apollo supports SP- and IdP-initiated SSO via SAML; OIDC is not mentioned.",
+        "plan": "Organization",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://knowledge.apollo.io/hc/en-us/articles/12667892496141-Use-Single-Sign-On-SSO-on-Apollo",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "When SSO is enabled, users can only log in via SSO; other login attempts are redirected to SSO sign-in.",
+        "plan": "Organization",
+        "source": "https://knowledge.apollo.io/hc/en-us/articles/12667892496141-Use-Single-Sign-On-SSO-on-Apollo",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "sales_marketing",
+    "description": "A sales intelligence and engagement platform for prospecting, enriching contact data, and running outbound sales workflows.",
+    "name": "Apollo.io",
+    "status": "draft",
+    "website": "https://www.apollo.io"
+  },
+  {
     "_id": "asana",
     "capabilities": {
       "api_token_controls": {
@@ -1737,6 +1807,86 @@
     "name": "Canva",
     "status": "published",
     "website": "https://canva.com"
+  },
+  {
+    "_id": "chatgpt-enterprise",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Enterprise/Edu workspace admins can access conversations, files, admin actions and auth events via the Compliance API; OpenAI retains logs for 30 days unless the customer continuously exports them.",
+        "plan": "Enterprise",
+        "retention": "30 days",
+        "source": "https://help.openai.com/en/articles/9261474-openai-compliance-platform-for-enterprise-and-edu-customers",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "checked": "2026-09-22",
+        "notes": "Domain verification proves ownership of the email namespace used to federate with an IdP; SSO setup stays disabled until at least one domain is verified.",
+        "source": "https://help.openai.com/en/articles/9534785-configuring-sso",
+        "support": "supported"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "MFA cannot currently be enforced at the ChatGPT workspace or API Platform organization level from the OpenAI admin console; org-wide enforcement must be done via the IdP when SSO is enabled.",
+        "source": "https://help.openai.com/en/articles/7967234-enabling-or-disabling-multi-factor-authentication-mfa",
+        "support": "not_supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-22",
+        "notes": "Users can add a passkey to their OpenAI account, which can also serve as an MFA method.",
+        "source": "https://help.openai.com/en/articles/20001039-passkeys-to-secure-your-openai-account",
+        "support": "supported",
+        "tier": "free"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "Directory sync (SCIM) requires an eligible ChatGPT Enterprise/Edu workspace and at least one verified domain; a standalone Business plan does not include SCIM.",
+        "plan": "Enterprise",
+        "source": "https://help.openai.com/en/articles/9627404-openai-chatgpt-scim-integration-faq",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "SSO is available starting on the Business plan, supported via SAML with any SAML-capable IdP.",
+        "plan": "Business",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://help.openai.com/en/articles/9534785-configuring-sso",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Global Admins can set Enforce SSO to Required, after which password and social login stop working for users on the verified domain.",
+        "plan": "Business",
+        "source": "https://help.openai.com/en/articles/10468051-sso-overview",
+        "support": "supported",
+        "tier": "paid"
+      }
+    },
+    "category": "productivity",
+    "description": "OpenAI's enterprise plan for ChatGPT, adding admin controls, SSO/SCIM, higher usage limits and enterprise-grade security and privacy.",
+    "name": "ChatGPT Enterprise",
+    "status": "draft",
+    "website": "https://openai.com/chatgpt/enterprise"
   },
   {
     "_id": "circleci",
@@ -3974,6 +4124,75 @@
     "website": "https://gusto.com"
   },
   {
+    "_id": "harness",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Account admins can view a chronological Audit Trail of key actions under Account Settings; entries are retained up to 2 years, with streaming available for longer retention.",
+        "retention": "2 years",
+        "source": "https://developer.harness.io/harness-platform/use-harness-platform/governance/audit-trail/audit-trail",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "An account administrator can turn on Enforce Two Factor Authentication in Authentication Settings, requiring 2FA at login for all users, including SSO logins.",
+        "source": "https://developer.harness.io/harness-platform/use-harness-platform/authentication/two-factor-authentication",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-22",
+        "notes": "Harness's documented two-factor authentication is TOTP (authenticator app) based; the docs do not mention passkey/WebAuthn/FIDO2 support.",
+        "source": "https://developer.harness.io/harness-platform/use-harness-platform/authentication/two-factor-authentication",
+        "support": "not_supported"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "Harness supports SCIM with Okta and Microsoft Entra ID to provision, update and deactivate/deprovision users and groups.",
+        "source": "https://developer.harness.io/harness-platform/use-harness-platform/platform-access-control/provision-users-with-okta-scim",
+        "support": "supported"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Harness supports SSO via SAML, OIDC and OAuth with third-party identity providers.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://developer.harness.io/harness-platform/use-harness-platform/authentication/single-sign-on-saml",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Admins can set SSO as the default login method, but the native Harness-username/password local login URL stays reachable unless Harness Support enables the DISABLE_LOCAL_LOGIN feature flag on request.",
+        "source": "https://developer.harness.io/harness-platform/use-harness-platform/authentication/single-sign-on-saml",
+        "support": "partial"
+      }
+    },
+    "category": "development",
+    "description": "Harness is a software delivery platform providing CI/CD, feature flags, cloud cost management and related DevOps tooling.",
+    "name": "Harness",
+    "status": "draft",
+    "website": "https://www.harness.io"
+  },
+  {
     "_id": "hootsuite",
     "capabilities": {
       "api_token_controls": {
@@ -4914,6 +5133,87 @@
     "name": "LinkedIn Sales Navigator",
     "status": "draft",
     "website": "https://business.linkedin.com/sales-solutions/sales-navigator"
+  },
+  {
+    "_id": "looker",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Admin Activity and System Event audit logs are always enabled and cannot be disabled; Data Access logs are available but disabled by default.",
+        "plan": "Looker (Google Cloud core)",
+        "source": "https://docs.cloud.google.com/looker/docs/looker-core-audit-logging",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-22",
+        "notes": "On first SAML login, if no existing account matches the user's email, Looker automatically creates a new user account.",
+        "plan": "Looker (Google Cloud core)",
+        "source": "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Admins enable two-factor authentication instance-wide; there is no option to enable it for only a subset of users, so it applies to all users.",
+        "plan": "Looker (Google Cloud core)",
+        "source": "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-two-factor",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-22",
+        "notes": "Looker's built-in two-factor authentication only supports TOTP authenticator-app codes (e.g. Google Authenticator); no WebAuthn/passkey/hardware-key option is documented.",
+        "source": "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-two-factor",
+        "support": "not_supported"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "Looker has no native SCIM support; provisioning is handled via SAML/JIT or the Looker API, not SCIM.",
+        "source": "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml",
+        "support": "not_supported"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Looker supports SAML and OpenID Connect authentication, configured in the Admin > Authentication panel.",
+        "plan": "Looker (Google Cloud core)",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Looker email and password logins are always disabled for regular users when SAML Auth is enabled.",
+        "plan": "Looker (Google Cloud core)",
+        "source": "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "productivity",
+    "description": "A business intelligence and data platform for exploring, modeling, and visualizing enterprise data, built on Google Cloud.",
+    "name": "Looker",
+    "status": "draft",
+    "website": "https://cloud.google.com/looker"
   },
   {
     "_id": "loom",

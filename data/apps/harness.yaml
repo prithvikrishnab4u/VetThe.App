@@ -1,0 +1,51 @@
+name: "Harness"
+category: "development"
+website: "https://www.harness.io"
+description: "Harness is a software delivery platform providing CI/CD, feature flags, cloud cost management and related DevOps tooling."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "Harness supports SSO via SAML, OIDC and OAuth with third-party identity providers."
+    source: "https://developer.harness.io/harness-platform/use-harness-platform/authentication/single-sign-on-saml"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "partial"
+    notes: "Admins can set SSO as the default login method, but the native Harness-username/password local login URL stays reachable unless Harness Support enables the DISABLE_LOCAL_LOGIN feature flag on request."
+    source: "https://developer.harness.io/harness-platform/use-harness-platform/authentication/single-sign-on-saml"
+    checked: "2026-09-22"
+  scim:
+    support: "supported"
+    notes: "Harness supports SCIM with Okta and Microsoft Entra ID to provision, update and deactivate/deprovision users and groups."
+    source: "https://developer.harness.io/harness-platform/use-harness-platform/platform-access-control/provision-users-with-okta-scim"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "supported"
+    notes: "An account administrator can turn on Enforce Two Factor Authentication in Authentication Settings, requiring 2FA at login for all users, including SSO logins."
+    source: "https://developer.harness.io/harness-platform/use-harness-platform/authentication/two-factor-authentication"
+    checked: "2026-09-22"
+  phishing_resistant_mfa:
+    support: "not_supported"
+    notes: "Harness's documented two-factor authentication is TOTP (authenticator app) based; the docs do not mention passkey/WebAuthn/FIDO2 support."
+    source: "https://developer.harness.io/harness-platform/use-harness-platform/authentication/two-factor-authentication"
+    checked: "2026-09-22"
+  audit_logs:
+    support: "supported"
+    retention: "2 years"
+    notes: "Account admins can view a chronological Audit Trail of key actions under Account Settings; entries are retained up to 2 years, with streaming available for longer retention."
+    source: "https://developer.harness.io/harness-platform/use-harness-platform/governance/audit-trail/audit-trail"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

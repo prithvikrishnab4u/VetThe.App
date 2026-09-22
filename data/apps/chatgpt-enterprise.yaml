@@ -1,0 +1,63 @@
+name: "ChatGPT Enterprise"
+category: "productivity"
+website: "https://openai.com/chatgpt/enterprise"
+description: "OpenAI's enterprise plan for ChatGPT, adding admin controls, SSO/SCIM, higher usage limits and enterprise-grade security and privacy."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    protocols: ["SAML"]
+    notes: "SSO is available starting on the Business plan, supported via SAML with any SAML-capable IdP."
+    source: "https://help.openai.com/en/articles/9534785-configuring-sso"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "Global Admins can set Enforce SSO to Required, after which password and social login stop working for users on the verified domain."
+    source: "https://help.openai.com/en/articles/10468051-sso-overview"
+    checked: "2026-09-22"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Directory sync (SCIM) requires an eligible ChatGPT Enterprise/Edu workspace and at least one verified domain; a standalone Business plan does not include SCIM."
+    source: "https://help.openai.com/en/articles/9627404-openai-chatgpt-scim-integration-faq"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "not_supported"
+    notes: "MFA cannot currently be enforced at the ChatGPT workspace or API Platform organization level from the OpenAI admin console; org-wide enforcement must be done via the IdP when SSO is enabled."
+    source: "https://help.openai.com/en/articles/7967234-enabling-or-disabling-multi-factor-authentication-mfa"
+    checked: "2026-09-22"
+  phishing_resistant_mfa:
+    support: "supported"
+    tier: "free"
+    notes: "Users can add a passkey to their OpenAI account, which can also serve as an MFA method."
+    source: "https://help.openai.com/en/articles/20001039-passkeys-to-secure-your-openai-account"
+    checked: "2026-09-22"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    retention: "30 days"
+    notes: "Enterprise/Edu workspace admins can access conversations, files, admin actions and auth events via the Compliance API; OpenAI retains logs for 30 days unless the customer continuously exports them."
+    source: "https://help.openai.com/en/articles/9261474-openai-compliance-platform-for-enterprise-and-edu-customers"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "supported"
+    notes: "Domain verification proves ownership of the email namespace used to federate with an IdP; SSO setup stays disabled until at least one domain is verified."
+    source: "https://help.openai.com/en/articles/9534785-configuring-sso"
+    checked: "2026-09-22"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

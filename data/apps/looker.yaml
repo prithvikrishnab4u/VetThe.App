@@ -1,0 +1,63 @@
+name: "Looker"
+category: "productivity"
+website: "https://cloud.google.com/looker"
+description: "A business intelligence and data platform for exploring, modeling, and visualizing enterprise data, built on Google Cloud."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Looker (Google Cloud core)"
+    protocols: ["SAML", "OIDC"]
+    notes: "Looker supports SAML and OpenID Connect authentication, configured in the Admin > Authentication panel."
+    source: "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Looker (Google Cloud core)"
+    notes: "Looker email and password logins are always disabled for regular users when SAML Auth is enabled."
+    source: "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+    checked: "2026-09-22"
+  scim:
+    support: "not_supported"
+    notes: "Looker has no native SCIM support; provisioning is handled via SAML/JIT or the Looker API, not SCIM."
+    source: "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Looker (Google Cloud core)"
+    notes: "Admins enable two-factor authentication instance-wide; there is no option to enable it for only a subset of users, so it applies to all users."
+    source: "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-two-factor"
+    checked: "2026-09-22"
+  phishing_resistant_mfa:
+    support: "not_supported"
+    notes: "Looker's built-in two-factor authentication only supports TOTP authenticator-app codes (e.g. Google Authenticator); no WebAuthn/passkey/hardware-key option is documented."
+    source: "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-two-factor"
+    checked: "2026-09-22"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Looker (Google Cloud core)"
+    notes: "Admin Activity and System Event audit logs are always enabled and cannot be disabled; Data Access logs are available but disabled by default."
+    source: "https://docs.cloud.google.com/looker/docs/looker-core-audit-logging"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Looker (Google Cloud core)"
+    notes: "On first SAML login, if no existing account matches the user's email, Looker automatically creates a new user account."
+    source: "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+    checked: "2026-09-22"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

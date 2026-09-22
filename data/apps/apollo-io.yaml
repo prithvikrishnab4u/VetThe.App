@@ -1,0 +1,53 @@
+name: "Apollo.io"
+category: "sales_marketing"
+website: "https://www.apollo.io"
+description: "A sales intelligence and engagement platform for prospecting, enriching contact data, and running outbound sales workflows."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Organization"
+    protocols: ["SAML"]
+    notes: "Apollo supports SP- and IdP-initiated SSO via SAML; OIDC is not mentioned."
+    source: "https://knowledge.apollo.io/hc/en-us/articles/12667892496141-Use-Single-Sign-On-SSO-on-Apollo"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Organization"
+    notes: "When SSO is enabled, users can only log in via SSO; other login attempts are redirected to SSO sign-in."
+    source: "https://knowledge.apollo.io/hc/en-us/articles/12667892496141-Use-Single-Sign-On-SSO-on-Apollo"
+    checked: "2026-09-22"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Organization"
+    notes: "SCIM user provisioning (create, update, deactivate, reactivate) is supported with Okta and Microsoft Entra ID when SAML SSO is active; requires an Organization-level plan."
+    source: "https://knowledge.apollo.io/hc/en-us/articles/15570877535757-Configure-SCIM-User-Provisioning-for-SSO"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "supported"
+    tier: "paid"
+    notes: "Admins on a paid plan can make it mandatory for users to provide an extra verification method (SMS or authenticator app codes) beyond username and password."
+    source: "https://knowledge.apollo.io/hc/en-us/articles/20439872853645-Configure-Advanced-Security-Protocols-on-Apollo"
+    checked: "2026-09-22"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "Apollo's advanced security protocols page describes only SMS and authenticator-app MFA; no passkey/WebAuthn/hardware-key option is documented."
+  audit_logs:
+    support: "undocumented"
+    notes: "Apollo's admin settings mention a 'system activity log' covering data requests and AI word usage, but the vendor documentation does not clearly describe an admin-visible log of general user/admin activity."
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"
