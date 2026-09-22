@@ -43,6 +43,8 @@ _Last updated: 2026-09-22_
 - [x] **65 new apps from BACKLOG.md P1 (2026-09-22):** core capabilities researched for the first 65 P1 apps (ChatGPT Enterprise, Claude Enterprise, Cursor, Vercel, Sentry, Power BI, Looker, Klaviyo, Salesloft, SAP SuccessFactors, Okta, JumpCloud, Jamf, Tailscale and others). Parallel Sonnet agents wrote JSON, the main session created `data/apps/<id>.yaml` as drafts and committed each result.
   - Agent token use was cut roughly in half partway through by capping tool calls per app and stripping HTML before it reaches context (`scratchpad/new/f.sh`). Capping too hard made agents give up early, so WebFetch stays the default tool and one retry per URL is allowed.
   - Seven P1 apps could not be researched at all because their sites block automated fetches: bitwarden, cyberark, mimecast, ping-identity, sap-ariba, sentinelone, zip. They were deliberately NOT added as empty rows — they need a manual browser check.
+- [x] **Site pass (2026-09-22):** coverage stats now count core and extended separately, so the headline is defensible (99% of 1,032 core values checked, 644 sourced, 382 vendor silent, 6 left, 171/172 apps fully checked). CSV and JSON export removed. Author links (LinkedIn, iam.ninja) moved into a tight footer. The five-card coverage bento became one strip with a hover helper, and the standalone "know a value that's wrong" block was folded into it. Dark mode repalette. Quality of life: `/` to search, `Esc` to clear, rows per page, share the filtered view as a URL. Logo marquee and hero bulk removed so the table sits higher.
+- [x] **One design language (2026-09-22):** `.btn-primary` (brand gradient) for every primary action, `.panel` for boxed sections, `.ink-band` for the dark bands. Footer is now a dark band matching the header, and the suggest panel got the same dark header so it reads as part of the site.
 - [x] **BACKLOG.md:** 299 widely used apps not yet in the data, ranked P1/P2/P3. The agent wrote the websites from memory, so confirm them while researching.
 
 ## To do: setup (one-off, needed before website suggestions work; user will do this)
@@ -76,6 +78,7 @@ _Last updated: 2026-09-22_
 - [ ] A page per app (`/apps/<id>/`) with all 12 capabilities, sources and notes. Add a "Help wanted" list there of not-researched values
 - [ ] Site-wide "Help wanted" view: filter the table to not-researched values
 - [ ] Show "last checked" on cells, and flag stale values
+- [ ] Suggest panel: group the capability select by core vs extended (it's one flat list of 12), and give the app select a type-ahead (172 options in a plain select)
 - [ ] Remove the `.Site.Data` deprecation warning (switch to `hugo.Data`) once Cloudflare's Hugo is ≥ 0.156
 
 ## Research rules (don't skip)
