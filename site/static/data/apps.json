@@ -8745,6 +8745,79 @@
     "website": "https://www.concur.com"
   },
   {
+    "_id": "sap-successfactors",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Change Audit reporting in Admin Center tracks changes to personal data, system configuration, and other business data across the HCM suite, capturing who changed what and when via UI, API, or import; reports are available for download for 48 hours.",
+        "source": "https://help.sap.com/docs/successfactors-platform/creating-change-audit-reports/change-audit",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Admins can set up two-factor authentication for their users (with risk-based authentication rules and registered token generators such as SAP Authenticator or Google Authenticator) via the Identity Authentication administration console.",
+        "source": "https://help.sap.com/docs/successfactors-platform/setting-up-sap-successfactors-with-identity-authentication-and-identity-provisioning-services/configure-two-factor-authentication",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-22",
+        "notes": "Identity Authentication (the IdP layer used for SuccessFactors SSO) lets admins enable or disable FIDO2 biometric/WebAuthn authentication (Face ID, Touch ID, Windows Hello) per application so users can log on with a registered biometric device instead of a password.",
+        "source": "https://help.sap.com/docs/cloud-identity-services/cloud-identity-services/enable-or-disable-fido2-biometric-authentication-for-application",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "SAP Cloud Identity Services - Identity Provisioning integrates with SuccessFactors via a SCIM API/connector to automate user identity lifecycle management (provisioning/deprovisioning), replacing the older OData connector.",
+        "source": "https://help.sap.com/docs/successfactors-platform/setting-up-sap-successfactors-with-identity-authentication-and-identity-provisioning-services/upgrade-from-odata-ips-connector-to-scim-ips-connector-with-sap-successfactors-hcm-suite",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "SuccessFactors is set up with SAP Cloud Identity Services - Identity Authentication as the IdP integration layer; SAML 2.0 is the recommended and most-used SSO protocol, with other SSO options also supported.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://help.sap.com/docs/successfactors-platform/setting-up-sap-successfactors-with-identity-authentication-and-identity-provisioning-services/single-sign-on-for-sap-successfactors",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Docs describe SSO configured for all users of the system or a partial subset ('Partial SSO'), meaning full-user SSO (i.e., no password login path) is a supported configuration.",
+        "source": "https://help.sap.com/docs/successfactors-platform/setting-up-sap-successfactors-with-identity-authentication-and-identity-provisioning-services/single-sign-on-for-sap-successfactors",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "hr",
+    "description": "SAP SuccessFactors is a cloud HCM/HXM suite covering core HR, payroll, recruiting, and talent management.",
+    "name": "SAP SuccessFactors",
+    "status": "draft",
+    "website": "https://www.sap.com/products/hcm.html"
+  },
+  {
     "_id": "semrush",
     "capabilities": {
       "api_token_controls": {
@@ -10372,6 +10445,87 @@
     "name": "Vercel",
     "status": "draft",
     "website": "https://vercel.com"
+  },
+  {
+    "_id": "webflow",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Workspace audit log API (Enterprise) lets admins track logins, access grants, permission/role changes, membership and invitation events, and Workspace setting changes; integrable with SIEM tools like Splunk.",
+        "plan": "Enterprise",
+        "retention": "1 year",
+        "source": "https://help.webflow.com/hc/en-us/articles/46651794799891-Workspace-audit-log-API",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-22",
+        "notes": "JIT provisioning creates a Webflow account automatically the first time a user signs in via SSO, provided they're approved in the IdP; requires SSO enforcement.",
+        "plan": "Enterprise",
+        "source": "https://help.webflow.com/hc/en-us/articles/46651860216595-JIT-provisioning",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Two-factor authentication (TOTP) can be enabled per individual account in Account settings, but Webflow's documented security features include no admin control to require MFA for all Workspace members.",
+        "source": "https://help.webflow.com/hc/en-us/articles/33961343631891-Two-factor-authentication-2FA",
+        "support": "not_supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-22",
+        "notes": "Webflow account login documentation only describes password + TOTP authenticator app 2FA; no native passkey, WebAuthn, or FIDO2 option is documented for logging in to Webflow itself.",
+        "source": "https://help.webflow.com/hc/en-us/articles/33961343631891-Two-factor-authentication-2FA",
+        "support": "not_supported"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "SCIM automatically provisions, updates, and deprovisions Workspace membership from the IdP; requires SSO to be enabled/enforced first.",
+        "plan": "Enterprise",
+        "source": "https://help.webflow.com/hc/en-us/articles/46651868408595-SCIM-provisioning",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "SSO is available only on Enterprise Workspace plans. Webflow states it supports OAuth and SAML IdP connections.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://help.webflow.com/hc/en-us/articles/46651862433683-Single-Sign-On-SSO-Login",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "SSO enforcement can be set to required so Workspace members must authenticate via the IdP; members can still access their separate personal Workspace with standard credentials.",
+        "plan": "Enterprise",
+        "source": "https://help.webflow.com/hc/en-us/articles/46651862433683-Single-Sign-On-SSO-Login",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "design",
+    "description": "Webflow is a visual web design and CMS platform for building, hosting, and managing websites.",
+    "name": "Webflow",
+    "status": "draft",
+    "website": "https://webflow.com"
   },
   {
     "_id": "workato",

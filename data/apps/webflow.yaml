@@ -1,0 +1,64 @@
+name: "Webflow"
+category: "design"
+website: "https://webflow.com"
+description: "Webflow is a visual web design and CMS platform for building, hosting, and managing websites."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML"]
+    notes: "SSO is available only on Enterprise Workspace plans. Webflow states it supports OAuth and SAML IdP connections."
+    source: "https://help.webflow.com/hc/en-us/articles/46651862433683-Single-Sign-On-SSO-Login"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SSO enforcement can be set to required so Workspace members must authenticate via the IdP; members can still access their separate personal Workspace with standard credentials."
+    source: "https://help.webflow.com/hc/en-us/articles/46651862433683-Single-Sign-On-SSO-Login"
+    checked: "2026-09-22"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM automatically provisions, updates, and deprovisions Workspace membership from the IdP; requires SSO to be enabled/enforced first."
+    source: "https://help.webflow.com/hc/en-us/articles/46651868408595-SCIM-provisioning"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "not_supported"
+    notes: "Two-factor authentication (TOTP) can be enabled per individual account in Account settings, but Webflow's documented security features include no admin control to require MFA for all Workspace members."
+    source: "https://help.webflow.com/hc/en-us/articles/33961343631891-Two-factor-authentication-2FA"
+    checked: "2026-09-22"
+  phishing_resistant_mfa:
+    support: "not_supported"
+    notes: "Webflow account login documentation only describes password + TOTP authenticator app 2FA; no native passkey, WebAuthn, or FIDO2 option is documented for logging in to Webflow itself."
+    source: "https://help.webflow.com/hc/en-us/articles/33961343631891-Two-factor-authentication-2FA"
+    checked: "2026-09-22"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    retention: "1 year"
+    notes: "Workspace audit log API (Enterprise) lets admins track logins, access grants, permission/role changes, membership and invitation events, and Workspace setting changes; integrable with SIEM tools like Splunk."
+    source: "https://help.webflow.com/hc/en-us/articles/46651794799891-Workspace-audit-log-API"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "JIT provisioning creates a Webflow account automatically the first time a user signs in via SSO, provided they're approved in the IdP; requires SSO enforcement."
+    source: "https://help.webflow.com/hc/en-us/articles/46651860216595-JIT-provisioning"
+    checked: "2026-09-22"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"
