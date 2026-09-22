@@ -7,7 +7,6 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "undocumented"
     protocols: ["SAML"]
     notes: "Coupa documents SAML 2.0 SSO setup (SP-initiated and IdP-initiated) in its technical documentation; OIDC is referenced in doc navigation but not detailed, and plan/tier is not stated."
     source: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-user-authentication/coupa-saml-sso-setup"

@@ -7,7 +7,6 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "undocumented"
     notes: "UKG Pro offers federated single sign-on; public documentation describes it via Microsoft Active Directory Federated Services (ADFS) and does not explicitly confirm SAML or OIDC protocol support or which plan tier includes it."
     source: "https://library.ukg.com/a/178124"
     checked: "2026-09-22"

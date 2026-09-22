@@ -2568,8 +2568,7 @@
           "SAML"
         ],
         "source": "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-user-authentication/coupa-saml-sso-setup",
-        "support": "supported",
-        "tier": "undocumented"
+        "support": "supported"
       },
       "sso_enforcement": {
         "notes": "Vendor docs describe an admin support-only bypass URL for SSO but do not describe org-wide enforcement/disabling of password login.",
@@ -4446,8 +4445,7 @@
         "checked": "2026-09-22",
         "notes": "Bob offers an Audit Report of field changes and an API audit log, but no retention period is stated.",
         "source": "https://apidocs.hibob.com/changelog/access-bobs-api-audit-logs",
-        "support": "supported",
-        "tier": "undocumented"
+        "support": "supported"
       },
       "custom_roles": {
         "support": "not_researched"
@@ -4475,8 +4473,7 @@
         "checked": "2026-09-22",
         "notes": "HiBob documents a native SCIM 2.0 integration (requires SSO to be configured first) but plan/tier is not stated on vendor pages checked.",
         "source": "https://www.hibob.com/security/",
-        "support": "supported",
-        "tier": "undocumented"
+        "support": "supported"
       },
       "session_controls": {
         "support": "not_researched"
@@ -4485,8 +4482,7 @@
         "checked": "2026-09-22",
         "notes": "Vendor states enterprise SSO can be enabled for end-user authentication but does not name the protocol or which plan it requires.",
         "source": "https://www.hibob.com/security/",
-        "support": "supported",
-        "tier": "undocumented"
+        "support": "supported"
       },
       "sso_enforcement": {
         "notes": "Security page does not state whether password login can be disabled once SSO is enabled.",
@@ -9415,8 +9411,7 @@
         "checked": "2026-09-22",
         "notes": "UKG Pro offers federated single sign-on; public documentation describes it via Microsoft Active Directory Federated Services (ADFS) and does not explicitly confirm SAML or OIDC protocol support or which plan tier includes it.",
         "source": "https://library.ukg.com/a/178124",
-        "support": "supported",
-        "tier": "undocumented"
+        "support": "supported"
       },
       "sso_enforcement": {
         "notes": "Documentation describes an optional 'Direct Login' feature that lets users log in without SSO, but does not state whether it can be disabled to mandate SSO for all users.",
