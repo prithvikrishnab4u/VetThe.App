@@ -1,0 +1,59 @@
+name: "Sentry"
+category: "development"
+website: "https://sentry.io"
+description: "Sentry is an application monitoring platform for error tracking and performance monitoring."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    protocols: ["SAML"]
+    notes: "SAML 2.0 SSO is a standard feature on Business and Enterprise plans, integrating with providers like Okta and Azure AD."
+    source: "https://sentry.io/security/"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "Once SAML SSO is activated, all existing users must link their account via SSO before they can continue using Sentry."
+    source: "https://docs.sentry.io/organization/authentication/sso/"
+    checked: "2026-09-22"
+  scim:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "SCIM automated provisioning is available only on Business or Enterprise plans, and is not available on Trial plans."
+    source: "https://docs.sentry.io/organization/authentication/sso/"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "supported"
+    tier: "free"
+    notes: "Organization owners can toggle \"Require Two-Factor Authentication\" in Organization Settings to enforce 2FA for all members; no plan restriction is stated."
+    source: "https://docs.sentry.io/organization/authentication/two-factor-authentication/"
+    checked: "2026-09-22"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    notes: "The audit log lists all actions by user and event within the Sentry UI, chronologically by time and IP address."
+    source: "https://sentry.io/security/"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "Every member who creates a new account via SSO is automatically given organization access with a member role."
+    source: "https://docs.sentry.io/organization/authentication/sso/"
+    checked: "2026-09-22"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

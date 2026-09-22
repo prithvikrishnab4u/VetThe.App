@@ -1,0 +1,53 @@
+name: "Dropbox Sign"
+category: "productivity"
+website: "https://sign.dropbox.com"
+description: "Dropbox Sign (formerly HelloSign) is an e-signature and document workflow platform for sending, signing, and tracking agreements."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Premium"
+    protocols: ["SAML"]
+    notes: "SAML SSO is configured via Security settings in the admin console; available on the Premium plan."
+    source: "https://help.dropbox.com/security/dropbox-sign-saml-sso-configuration"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Premium"
+    notes: "Admins can disable standard username/password login for the team once SAML SSO is verified, forcing SSO-only sign-in."
+    source: "https://help.dropbox.com/security/dropbox-sign-saml-sso-configuration"
+    checked: "2026-09-22"
+  scim:
+    support: "not_supported"
+    notes: "Dropbox Sign does not currently support SCIM; provisioning/deprovisioning must be done manually even with SSO enabled."
+    source: "https://help.dropbox.com/security/dropbox-sign-saml-sso-configuration"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "No vendor documentation found stating admins can force MFA for all Dropbox Sign users."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "No vendor documentation found on passkey/WebAuthn support for Dropbox Sign accounts."
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "Standard"
+    retention: "up to 10 years"
+    notes: "Admin console Reporting section provides user activity and compliance reports, with historical data available for up to 10 years."
+    source: "https://help.dropbox.com/account-settings/reporting-admin-console-dropbox-sign"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

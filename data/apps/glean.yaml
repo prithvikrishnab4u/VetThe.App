@@ -1,0 +1,47 @@
+name: "Glean"
+category: "productivity"
+website: "https://www.glean.com"
+description: "Glean is an AI-powered enterprise search and work assistant that connects to a company's apps and data."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    protocols: ["SAML", "OIDC"]
+    notes: "Supports SAML (e.g. Okta, generic SAML) and OIDC (e.g. Entra ID, Google Workspace) identity providers."
+    source: "https://docs.glean.com/get-started/setup/configure-sso"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    notes: "SSO is mandatory for all Glean deployments; there is no separate password-login path to disable."
+    source: "https://docs.glean.com/get-started/setup/configure-sso"
+    checked: "2026-09-22"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    notes: "SCIM deprovisioning via Okta is supported: deactivated Okta users are blocked from authenticating to Glean. Role assignment still requires the Glean Admin UI or a supported group source."
+    source: "https://docs.glean.com/administration/identity/sso/configuration/okta-saml"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    notes: "Admin audit logs capture administrative actions including changes to connectors, roles, global configuration, agent subscriptions, and action executions; separate customer event logs record user-facing events like searches and chats."
+    source: "https://docs.glean.com/security/security-principles"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

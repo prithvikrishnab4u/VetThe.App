@@ -2739,6 +2739,76 @@
     "website": "https://docusign.com"
   },
   {
+    "_id": "dropbox-sign",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Admin console Reporting section provides user activity and compliance reports, with historical data available for up to 10 years.",
+        "plan": "Standard",
+        "retention": "up to 10 years",
+        "source": "https://help.dropbox.com/account-settings/reporting-admin-console-dropbox-sign",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "notes": "No vendor documentation found stating admins can force MFA for all Dropbox Sign users.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "No vendor documentation found on passkey/WebAuthn support for Dropbox Sign accounts.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "Dropbox Sign does not currently support SCIM; provisioning/deprovisioning must be done manually even with SSO enabled.",
+        "source": "https://help.dropbox.com/security/dropbox-sign-saml-sso-configuration",
+        "support": "not_supported"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "SAML SSO is configured via Security settings in the admin console; available on the Premium plan.",
+        "plan": "Premium",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://help.dropbox.com/security/dropbox-sign-saml-sso-configuration",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Admins can disable standard username/password login for the team once SAML SSO is verified, forcing SSO-only sign-in.",
+        "plan": "Premium",
+        "source": "https://help.dropbox.com/security/dropbox-sign-saml-sso-configuration",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "productivity",
+    "description": "Dropbox Sign (formerly HelloSign) is an e-signature and document workflow platform for sending, signing, and tracking agreements.",
+    "name": "Dropbox Sign",
+    "status": "draft",
+    "website": "https://sign.dropbox.com"
+  },
+  {
     "_id": "dropbox",
     "capabilities": {
       "api_token_controls": {
@@ -3433,6 +3503,71 @@
     "name": "GitLab",
     "status": "published",
     "website": "https://about.gitlab.com"
+  },
+  {
+    "_id": "glean",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Admin audit logs capture administrative actions including changes to connectors, roles, global configuration, agent subscriptions, and action executions; separate customer event logs record user-facing events like searches and chats.",
+        "source": "https://docs.glean.com/security/security-principles",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "SCIM deprovisioning via Okta is supported: deactivated Okta users are blocked from authenticating to Glean. Role assignment still requires the Glean Admin UI or a supported group source.",
+        "source": "https://docs.glean.com/administration/identity/sso/configuration/okta-saml",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Supports SAML (e.g. Okta, generic SAML) and OIDC (e.g. Entra ID, Google Workspace) identity providers.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.glean.com/get-started/setup/configure-sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "SSO is mandatory for all Glean deployments; there is no separate password-login path to disable.",
+        "source": "https://docs.glean.com/get-started/setup/configure-sso",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "productivity",
+    "description": "Glean is an AI-powered enterprise search and work assistant that connects to a company's apps and data.",
+    "name": "Glean",
+    "status": "draft",
+    "website": "https://www.glean.com"
   },
   {
     "_id": "gong",
@@ -4495,6 +4630,78 @@
     "name": "LastPass",
     "status": "published",
     "website": "https://www.lastpass.com"
+  },
+  {
+    "_id": "launchdarkly",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Audit logging of account/org changes is listed as an Enterprise-plan feature on the pricing page.",
+        "plan": "Enterprise",
+        "source": "https://launchdarkly.com/pricing/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Org admins can require all newly invited account members to enable MFA at first login; once required, members cannot disable it.",
+        "source": "https://launchdarkly.com/docs/home/account/mfa",
+        "support": "supported",
+        "tier": "free"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-22",
+        "notes": "MFA setup documentation only describes TOTP-based authenticator apps; no WebAuthn/passkey/hardware key option is documented.",
+        "source": "https://launchdarkly.com/docs/home/account/mfa",
+        "support": "not_supported"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "SCIM becomes available after enabling SSO, only for customers on the Enterprise plan; supports automated provisioning and optional IdP group sync.",
+        "plan": "Enterprise",
+        "source": "https://launchdarkly.com/docs/home/account-security/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "SSO with SAML 2.0 is available on all listed plans (Developer, Foundation, Enterprise), supporting IdPs like Okta, Entra ID, Google Workspace, ADFS and OneLogin.",
+        "plan": "Developer",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://launchdarkly.com/pricing/",
+        "support": "supported",
+        "tier": "free"
+      },
+      "sso_enforcement": {
+        "notes": "No vendor documentation found stating whether admins can require SSO-only login and disable password login.",
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "LaunchDarkly is a feature management platform for feature flags, experimentation, and progressive delivery.",
+    "name": "LaunchDarkly",
+    "status": "draft",
+    "website": "https://launchdarkly.com"
   },
   {
     "_id": "linear",
@@ -6858,6 +7065,82 @@
     "name": "SAP Concur",
     "status": "published",
     "website": "https://www.concur.com"
+  },
+  {
+    "_id": "sentry",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "The audit log lists all actions by user and event within the Sentry UI, chronologically by time and IP address.",
+        "source": "https://sentry.io/security/",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-22",
+        "notes": "Every member who creates a new account via SSO is automatically given organization access with a member role.",
+        "plan": "Business",
+        "source": "https://docs.sentry.io/organization/authentication/sso/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Organization owners can toggle \"Require Two-Factor Authentication\" in Organization Settings to enforce 2FA for all members; no plan restriction is stated.",
+        "source": "https://docs.sentry.io/organization/authentication/two-factor-authentication/",
+        "support": "supported",
+        "tier": "free"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "SCIM automated provisioning is available only on Business or Enterprise plans, and is not available on Trial plans.",
+        "plan": "Business",
+        "source": "https://docs.sentry.io/organization/authentication/sso/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "SAML 2.0 SSO is a standard feature on Business and Enterprise plans, integrating with providers like Okta and Azure AD.",
+        "plan": "Business",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://sentry.io/security/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Once SAML SSO is activated, all existing users must link their account via SSO before they can continue using Sentry.",
+        "plan": "Business",
+        "source": "https://docs.sentry.io/organization/authentication/sso/",
+        "support": "supported",
+        "tier": "paid"
+      }
+    },
+    "category": "development",
+    "description": "Sentry is an application monitoring platform for error tracking and performance monitoring.",
+    "name": "Sentry",
+    "status": "draft",
+    "website": "https://sentry.io"
   },
   {
     "_id": "servicenow",
