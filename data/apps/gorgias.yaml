@@ -1,0 +1,47 @@
+name: "Gorgias"
+category: "support"
+website: "https://www.gorgias.com"
+description: "Gorgias is a customer support helpdesk platform built for ecommerce brands."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "free"
+    protocols: ["OIDC"]
+    notes: "Google/Microsoft SSO available on all Helpdesk plans; custom OIDC SSO with IdPs like Okta/JumpCloud is limited to Advanced and Enterprise plans. No SAML support documented."
+    source: "https://helpcenter.gorgias.com/en-US/set-up-custom-sso-for-gorgias-2553083"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "supported"
+    tier: "free"
+    notes: "Admins can activate SSO enforcement to disable email/password sign-in entirely."
+    source: "https://helpcenter.gorgias.com/en-US/manage-gorgias-account-access-214445"
+    checked: "2026-09-22"
+  scim:
+    support: "undocumented"
+    notes: "No mention of SCIM or automated provisioning/deprovisioning in Gorgias account access or SSO documentation."
+  mfa_enforcement:
+    support: "supported"
+    tier: "free"
+    notes: "Admins can require 2FA for all users via Access Management, with a 14-day grace period; 2FA can be bypassed for SSO-authenticated users."
+    source: "https://helpcenter.gorgias.com/en-US/manage-gorgias-account-access-214445"
+    checked: "2026-09-22"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "No mention of passkeys, WebAuthn, or hardware security key support in the account access documentation."
+  audit_logs:
+    support: "undocumented"
+    notes: "No mention of an admin-visible activity/audit log in the account access documentation."
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

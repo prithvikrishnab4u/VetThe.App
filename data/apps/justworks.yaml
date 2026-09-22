@@ -1,0 +1,37 @@
+name: "Justworks"
+category: "hr"
+website: "https://www.justworks.com"
+description: "A PEO platform providing payroll, benefits, HR and compliance for small and mid-sized businesses."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "undocumented"
+    notes: "Vendor's own site (justworks.com and help.justworks.com) returned bot-protection errors on every fetch attempt, so no vendor page could be checked."
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Could not access vendor documentation to verify."
+  scim:
+    support: "undocumented"
+    notes: "Could not access vendor documentation to verify."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Vendor help center has an MFA article (Multi-Factor Authentication) but it could not be fetched due to bot protection, so admin-enforcement scope could not be confirmed."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "Could not access vendor documentation to verify."
+  audit_logs:
+    support: "undocumented"
+    notes: "Could not access vendor documentation to verify."
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

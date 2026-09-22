@@ -1943,6 +1943,66 @@
     "website": "https://canva.com"
   },
   {
+    "_id": "carta",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "notes": "Two-factor authentication is prompted at account registration, but no vendor documentation states admins can require MFA org-wide.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-22",
+        "notes": "Users can log in with a passkey (biometric or hardware key) instead of a password.",
+        "source": "https://support.carta.com/kb/guide/en/how-to-log-in-using-a-passkey-vrdVhWJdr5/Steps/3898803",
+        "support": "supported",
+        "tier": "free"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "SSO for company admins connects to an IdP (e.g. Okta, Rippling) using SAML 2.0 or OIDC; requires a corporate email domain matching the IdP.",
+        "plan": "Scale",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://carta.com/product-updates/sso-company-admin/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "finance",
+    "description": "A platform for managing cap tables, equity, and valuations for private companies.",
+    "name": "Carta",
+    "status": "draft",
+    "website": "https://carta.com"
+  },
+  {
     "_id": "chatgpt-enterprise",
     "capabilities": {
       "api_token_controls": {
@@ -2690,6 +2750,68 @@
     "name": "CrowdStrike",
     "status": "draft",
     "website": "https://www.crowdstrike.com"
+  },
+  {
+    "_id": "culture-amp",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "Culture Amp explicitly states it does not support SCIM, separating authentication from employee data/HRIS sync.",
+        "source": "https://support.cultureamp.com/en/articles/7048521-single-sign-on",
+        "support": "not_supported"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Also supports 'Sign in with Google'; available to Account Administrators on any plan.",
+        "plan": "All Culture Amp subscriptions",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://support.cultureamp.com/en/articles/7048521-single-sign-on",
+        "support": "supported",
+        "tier": "free"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Support recommends disabling Email and Google sign-in to make SSO the only login method; Culture Amp's support team performs this on request.",
+        "plan": "All Culture Amp subscriptions",
+        "source": "https://support.cultureamp.com/en/articles/7048521-single-sign-on",
+        "support": "supported",
+        "tier": "free"
+      }
+    },
+    "category": "hr",
+    "description": "An employee experience platform for engagement surveys, performance reviews, and people analytics.",
+    "name": "Culture Amp",
+    "status": "draft",
+    "website": "https://www.cultureamp.com"
   },
   {
     "_id": "cursor",
@@ -4141,6 +4263,70 @@
     "website": "https://workspace.google.com"
   },
   {
+    "_id": "gorgias",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "notes": "No mention of an admin-visible activity/audit log in the account access documentation.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Admins can require 2FA for all users via Access Management, with a 14-day grace period; 2FA can be bypassed for SSO-authenticated users.",
+        "source": "https://helpcenter.gorgias.com/en-US/manage-gorgias-account-access-214445",
+        "support": "supported",
+        "tier": "free"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "No mention of passkeys, WebAuthn, or hardware security key support in the account access documentation.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "No mention of SCIM or automated provisioning/deprovisioning in Gorgias account access or SSO documentation.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Google/Microsoft SSO available on all Helpdesk plans; custom OIDC SSO with IdPs like Okta/JumpCloud is limited to Advanced and Enterprise plans. No SAML support documented.",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://helpcenter.gorgias.com/en-US/set-up-custom-sso-for-gorgias-2553083",
+        "support": "supported",
+        "tier": "free"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Admins can activate SSO enforcement to disable email/password sign-in entirely.",
+        "source": "https://helpcenter.gorgias.com/en-US/manage-gorgias-account-access-214445",
+        "support": "supported",
+        "tier": "free"
+      }
+    },
+    "category": "support",
+    "description": "Gorgias is a customer support helpdesk platform built for ecommerce brands.",
+    "name": "Gorgias",
+    "status": "draft",
+    "website": "https://www.gorgias.com"
+  },
+  {
     "_id": "grammarly",
     "capabilities": {
       "api_token_controls": {
@@ -4926,6 +5112,58 @@
     "name": "JFrog",
     "status": "draft",
     "website": "https://jfrog.com"
+  },
+  {
+    "_id": "justworks",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "notes": "Could not access vendor documentation to verify.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "notes": "Vendor help center has an MFA article (Multi-Factor Authentication) but it could not be fetched due to bot protection, so admin-enforcement scope could not be confirmed.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "Could not access vendor documentation to verify.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "Could not access vendor documentation to verify.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "notes": "Vendor's own site (justworks.com and help.justworks.com) returned bot-protection errors on every fetch attempt, so no vendor page could be checked.",
+        "support": "undocumented"
+      },
+      "sso_enforcement": {
+        "notes": "Could not access vendor documentation to verify.",
+        "support": "undocumented"
+      }
+    },
+    "category": "hr",
+    "description": "A PEO platform providing payroll, benefits, HR and compliance for small and mid-sized businesses.",
+    "name": "Justworks",
+    "status": "draft",
+    "website": "https://www.justworks.com"
   },
   {
     "_id": "klaviyo",
@@ -7630,6 +7868,65 @@
     "website": "https://ramp.com"
   },
   {
+    "_id": "remote",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "notes": "No mention of an admin-visible audit log on Remote's Trust Center or SSO documentation.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "notes": "Remote's Trust Center references MFA as an internal security control but does not document an admin-facing option to require MFA for all company users.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "No mention of passkey/WebAuthn support on Remote's Trust Center or SSO documentation.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "Could not confirm SCIM/automated provisioning support on Remote's own SSO or trust center pages.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Company Managers can turn on SAML Single Sign-On in Company settings > Authentication; supports IdPs such as OneLogin. Plan/tier gating not stated on the vendor page.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://support.remote.com/hc/en-us/articles/5324146390541-What-happens-when-SAML-Single-Sign-On-SSO-is-turned-on-for-company-users",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Managers can enable an SSO-enforcement toggle per employee/contractor, effective on their start date; login email switches to their work email for SSO.",
+        "source": "https://support.remote.com/hc/en-us/articles/5324146390541-What-happens-when-SAML-Single-Sign-On-SSO-is-turned-on-for-company-users",
+        "support": "supported"
+      }
+    },
+    "category": "hr",
+    "description": "Remote is a global HR platform for hiring, paying and managing international employees and contractors (EOR, payroll, contractor management).",
+    "name": "Remote",
+    "status": "draft",
+    "website": "https://remote.com"
+  },
+  {
     "_id": "ringcentral",
     "capabilities": {
       "api_token_controls": {
@@ -7753,6 +8050,74 @@
     "name": "Rippling",
     "status": "published",
     "website": "https://www.rippling.com"
+  },
+  {
+    "_id": "salesforce-marketing-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Basic Audit Trail is on by default in all editions and can't be turned off, retaining 30 days of data; Advanced Audit Trail (60 days, more event types) is an add-on.",
+        "retention": "30 days",
+        "source": "https://help.salesforce.com/s/articleView?id=sf.mc_overview_audit_trail.htm&language=en_US&type=5",
+        "support": "supported",
+        "tier": "free"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "MFA is mandatory for all non-SSO users and cannot be turned off; part of the standard login experience in all editions.",
+        "source": "https://help.salesforce.com/s/articleView?id=sf.mc_overview_mfa.htm&language=en_US&type=5",
+        "support": "supported",
+        "tier": "free"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-22",
+        "notes": "Supports WebAuthn/U2F physical security keys (YubiKey, Titan) and platform authenticators (Touch ID, Face ID, Windows Hello) as MFA verification methods.",
+        "source": "https://help.salesforce.com/s/articleView?id=sf.mc_overview_mfa.htm&language=en_US&type=5",
+        "support": "supported",
+        "tier": "free"
+      },
+      "scim": {
+        "notes": "Could not find Marketing Cloud Engagement-specific SCIM documentation; SCIM docs found apply to the core Salesforce platform (Sales/Service Cloud), a separate product.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Supports SSO via SAML 2.0 with third-party identity providers; Marketing Cloud Engagement supports only self-signed certificates. OIDC not documented.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://help.salesforce.com/s/articleView?id=sf.mc_overview_single_sign_on_authentication_via_saml_2.htm&language=en_US&type=5",
+        "support": "supported",
+        "tier": "free"
+      },
+      "sso_enforcement": {
+        "notes": "Vendor docs describe SAML SSO configuration but do not state whether admins can force all users into SSO / disable password login.",
+        "support": "undocumented"
+      }
+    },
+    "category": "sales_marketing",
+    "description": "A digital marketing platform for email, journeys, mobile and advertising campaigns.",
+    "name": "Salesforce Marketing Cloud",
+    "status": "draft",
+    "website": "https://www.salesforce.com/marketing/engagement/"
   },
   {
     "_id": "salesforce",

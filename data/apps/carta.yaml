@@ -1,0 +1,42 @@
+name: "Carta"
+category: "finance"
+website: "https://carta.com"
+description: "A platform for managing cap tables, equity, and valuations for private companies."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Scale"
+    protocols: ["SAML", "OIDC"]
+    notes: "SSO for company admins connects to an IdP (e.g. Okta, Rippling) using SAML 2.0 or OIDC; requires a corporate email domain matching the IdP."
+    source: "https://carta.com/product-updates/sso-company-admin/"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Two-factor authentication is prompted at account registration, but no vendor documentation states admins can require MFA org-wide."
+  phishing_resistant_mfa:
+    support: "supported"
+    tier: "free"
+    notes: "Users can log in with a passkey (biometric or hardware key) instead of a password."
+    source: "https://support.carta.com/kb/guide/en/how-to-log-in-using-a-passkey-vrdVhWJdr5/Steps/3898803"
+    checked: "2026-09-22"
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

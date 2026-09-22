@@ -1,0 +1,42 @@
+name: "Remote"
+category: "hr"
+website: "https://remote.com"
+description: "Remote is a global HR platform for hiring, paying and managing international employees and contractors (EOR, payroll, contractor management)."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "Company Managers can turn on SAML Single Sign-On in Company settings > Authentication; supports IdPs such as OneLogin. Plan/tier gating not stated on the vendor page."
+    source: "https://support.remote.com/hc/en-us/articles/5324146390541-What-happens-when-SAML-Single-Sign-On-SSO-is-turned-on-for-company-users"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "supported"
+    notes: "Managers can enable an SSO-enforcement toggle per employee/contractor, effective on their start date; login email switches to their work email for SSO."
+    source: "https://support.remote.com/hc/en-us/articles/5324146390541-What-happens-when-SAML-Single-Sign-On-SSO-is-turned-on-for-company-users"
+    checked: "2026-09-22"
+  scim:
+    support: "undocumented"
+    notes: "Could not confirm SCIM/automated provisioning support on Remote's own SSO or trust center pages."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Remote's Trust Center references MFA as an internal security control but does not document an admin-facing option to require MFA for all company users."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "No mention of passkey/WebAuthn support on Remote's Trust Center or SSO documentation."
+  audit_logs:
+    support: "undocumented"
+    notes: "No mention of an admin-visible audit log on Remote's Trust Center or SSO documentation."
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

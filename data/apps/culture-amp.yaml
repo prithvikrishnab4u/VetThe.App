@@ -1,0 +1,45 @@
+name: "Culture Amp"
+category: "hr"
+website: "https://www.cultureamp.com"
+description: "An employee experience platform for engagement surveys, performance reviews, and people analytics."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "free"
+    plan: "All Culture Amp subscriptions"
+    protocols: ["SAML"]
+    notes: "Also supports 'Sign in with Google'; available to Account Administrators on any plan."
+    source: "https://support.cultureamp.com/en/articles/7048521-single-sign-on"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "supported"
+    tier: "free"
+    plan: "All Culture Amp subscriptions"
+    notes: "Support recommends disabling Email and Google sign-in to make SSO the only login method; Culture Amp's support team performs this on request."
+    source: "https://support.cultureamp.com/en/articles/7048521-single-sign-on"
+    checked: "2026-09-22"
+  scim:
+    support: "not_supported"
+    notes: "Culture Amp explicitly states it does not support SCIM, separating authentication from employee data/HRIS sync."
+    source: "https://support.cultureamp.com/en/articles/7048521-single-sign-on"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

@@ -1,0 +1,51 @@
+name: "Salesforce Marketing Cloud"
+category: "sales_marketing"
+website: "https://www.salesforce.com/marketing/engagement/"
+description: "A digital marketing platform for email, journeys, mobile and advertising campaigns."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "free"
+    protocols: ["SAML"]
+    notes: "Supports SSO via SAML 2.0 with third-party identity providers; Marketing Cloud Engagement supports only self-signed certificates. OIDC not documented."
+    source: "https://help.salesforce.com/s/articleView?id=sf.mc_overview_single_sign_on_authentication_via_saml_2.htm&language=en_US&type=5"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Vendor docs describe SAML SSO configuration but do not state whether admins can force all users into SSO / disable password login."
+  scim:
+    support: "undocumented"
+    notes: "Could not find Marketing Cloud Engagement-specific SCIM documentation; SCIM docs found apply to the core Salesforce platform (Sales/Service Cloud), a separate product."
+  mfa_enforcement:
+    support: "supported"
+    tier: "free"
+    notes: "MFA is mandatory for all non-SSO users and cannot be turned off; part of the standard login experience in all editions."
+    source: "https://help.salesforce.com/s/articleView?id=sf.mc_overview_mfa.htm&language=en_US&type=5"
+    checked: "2026-09-22"
+  phishing_resistant_mfa:
+    support: "supported"
+    tier: "free"
+    notes: "Supports WebAuthn/U2F physical security keys (YubiKey, Titan) and platform authenticators (Touch ID, Face ID, Windows Hello) as MFA verification methods."
+    source: "https://help.salesforce.com/s/articleView?id=sf.mc_overview_mfa.htm&language=en_US&type=5"
+    checked: "2026-09-22"
+  audit_logs:
+    support: "supported"
+    tier: "free"
+    retention: "30 days"
+    notes: "Basic Audit Trail is on by default in all editions and can't be turned off, retaining 30 days of data; Advanced Audit Trail (60 days, more event types) is an add-on."
+    source: "https://help.salesforce.com/s/articleView?id=sf.mc_overview_audit_trail.htm&language=en_US&type=5"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"
