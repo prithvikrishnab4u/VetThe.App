@@ -1,0 +1,62 @@
+name: "Microsoft Power BI"
+category: "productivity"
+website: "https://powerbi.microsoft.com"
+description: "Business intelligence and data visualization platform for building and sharing interactive reports and dashboards."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Any Power BI license (Entra ID tenant-level authentication)"
+    protocols: ["SAML"]
+    notes: "Power BI authentication is handled entirely by Microsoft Entra ID at the tenant level, not by a Power BI-specific SSO config; custom domains can be federated to a third-party SAML 2.0 IdP the same way as other Microsoft 365 services."
+    source: "https://learn.microsoft.com/en-us/fabric/enterprise/powerbi/service-admin-power-bi-security"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Any Power BI license (Entra ID tenant-level federation)"
+    notes: "Entra ID tenant control: converting a custom domain to federated sign-in routes that domain's logins to the external IdP; this governs Power BI sign-in since Power BI has no separate auth layer."
+    source: "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-fed-saml-idp"
+    checked: "2026-09-22"
+  scim:
+    support: "partial"
+    tier: "paid"
+    plan: "Microsoft Entra ID P1"
+    notes: "Entra ID tenant control, not Power BI-specific: API-driven inbound provisioning accepts SCIM-schema bulk payloads via Microsoft Graph /bulkUpload rather than exposing a standard SCIM endpoint."
+    source: "https://learn.microsoft.com/en-us/entra/identity/app-provisioning/inbound-provisioning-api-concepts"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "supported"
+    tier: "free"
+    plan: "Microsoft Entra ID Free (security defaults)"
+    notes: "Entra ID tenant control: security defaults require MFA registration for all users at no extra cost; customizable Conditional Access MFA policies need Entra ID P1."
+    source: "https://learn.microsoft.com/en-us/entra/fundamentals/security-defaults"
+    checked: "2026-09-22"
+  phishing_resistant_mfa:
+    support: "supported"
+    tier: "free"
+    plan: "Microsoft Entra ID Free"
+    notes: "Entra ID tenant control: passkeys (FIDO2) are available in all Entra editions; requiring them via Conditional Access authentication strength needs Entra ID P1."
+    source: "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2"
+    checked: "2026-09-22"
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "Power BI with Fabric administrator access"
+    notes: "The Power BI activity log records all user and admin activity and is retrievable by a Fabric administrator via the ActivityEvents REST API or the Get-PowerBIActivityEvent PowerShell cmdlet; the page does not state a retention period."
+    source: "https://learn.microsoft.com/en-us/fabric/enterprise/powerbi/service-admin-auditing"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

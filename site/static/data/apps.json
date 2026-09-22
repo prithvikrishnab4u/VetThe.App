@@ -2109,6 +2109,58 @@
     "website": "https://www.sharefile.com"
   },
   {
+    "_id": "clari",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Admins can configure SAML SSO for Clari with Okta, OneLogin, Google, or Microsoft Entra ID via Clari's admin settings; the vendor page does not state which plan includes it.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://community.clari.com/product-q-a-6/setting-up-and-integrating-sso-1485",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "sales_marketing",
+    "description": "Revenue orchestration platform for sales forecasting, pipeline inspection, and deal execution.",
+    "name": "Clari",
+    "status": "draft",
+    "website": "https://clari.com"
+  },
+  {
     "_id": "claude-enterprise",
     "capabilities": {
       "api_token_controls": {
@@ -5579,6 +5631,85 @@
     "name": "Microsoft Dynamics 365",
     "status": "draft",
     "website": "https://dynamics.microsoft.com"
+  },
+  {
+    "_id": "microsoft-power-bi",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "The Power BI activity log records all user and admin activity and is retrievable by a Fabric administrator via the ActivityEvents REST API or the Get-PowerBIActivityEvent PowerShell cmdlet; the page does not state a retention period.",
+        "plan": "Power BI with Fabric administrator access",
+        "source": "https://learn.microsoft.com/en-us/fabric/enterprise/powerbi/service-admin-auditing",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Entra ID tenant control: security defaults require MFA registration for all users at no extra cost; customizable Conditional Access MFA policies need Entra ID P1.",
+        "plan": "Microsoft Entra ID Free (security defaults)",
+        "source": "https://learn.microsoft.com/en-us/entra/fundamentals/security-defaults",
+        "support": "supported",
+        "tier": "free"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-22",
+        "notes": "Entra ID tenant control: passkeys (FIDO2) are available in all Entra editions; requiring them via Conditional Access authentication strength needs Entra ID P1.",
+        "plan": "Microsoft Entra ID Free",
+        "source": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2",
+        "support": "supported",
+        "tier": "free"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "Entra ID tenant control, not Power BI-specific: API-driven inbound provisioning accepts SCIM-schema bulk payloads via Microsoft Graph /bulkUpload rather than exposing a standard SCIM endpoint.",
+        "plan": "Microsoft Entra ID P1",
+        "source": "https://learn.microsoft.com/en-us/entra/identity/app-provisioning/inbound-provisioning-api-concepts",
+        "support": "partial",
+        "tier": "paid"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Power BI authentication is handled entirely by Microsoft Entra ID at the tenant level, not by a Power BI-specific SSO config; custom domains can be federated to a third-party SAML 2.0 IdP the same way as other Microsoft 365 services.",
+        "plan": "Any Power BI license (Entra ID tenant-level authentication)",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://learn.microsoft.com/en-us/fabric/enterprise/powerbi/service-admin-power-bi-security",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Entra ID tenant control: converting a custom domain to federated sign-in routes that domain's logins to the external IdP; this governs Power BI sign-in since Power BI has no separate auth layer.",
+        "plan": "Any Power BI license (Entra ID tenant-level federation)",
+        "source": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-fed-saml-idp",
+        "support": "supported",
+        "tier": "paid"
+      }
+    },
+    "category": "productivity",
+    "description": "Business intelligence and data visualization platform for building and sharing interactive reports and dashboards.",
+    "name": "Microsoft Power BI",
+    "status": "draft",
+    "website": "https://powerbi.microsoft.com"
   },
   {
     "_id": "microsoft-teams",
