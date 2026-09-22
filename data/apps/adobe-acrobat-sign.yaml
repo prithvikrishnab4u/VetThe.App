@@ -1,0 +1,63 @@
+name: "Adobe Acrobat Sign"
+category: "productivity"
+website: "https://www.adobe.com/acrobat/business/sign.html"
+description: "Adobe's e-signature and agreement workflow product for sending, signing and managing documents."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Acrobat Sign Solutions (Enterprise)"
+    protocols: ["SAML"]
+    notes: "Acrobat Sign acts as SAML 2.0 service provider with external IdPs (Okta, OneLogin, ADFS, etc.); requires claiming your Adobe domain."
+    source: "https://helpx.adobe.com/sign/using/enable-saml-single-sign-on.html"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Acrobat Sign Solutions (Enterprise)"
+    notes: "SAML Settings can be set to 'SAML Mandatory' mode to require SSO login for all users on the claimed domain."
+    source: "https://helpx.adobe.com/sign/using/enable-saml-single-sign-on.html"
+    checked: "2026-09-22"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Acrobat Sign Solutions (Enterprise)"
+    notes: "Automated provisioning/deprovisioning happens via the shared Adobe Admin Console using Azure AD or Google Workspace Sync (SCIM-based), not a product-specific SCIM endpoint."
+    source: "https://helpx.adobe.com/business/enterprise/identity-sso/integrate-with-microsoft-entra/add-microsoft-entra-id-sync.html"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Checked SSO/authentication docs; found signer identity authentication options (OTP, KBA, password) for document recipients, but no documented admin toggle to require MFA for user login to the Acrobat Sign app itself."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "No vendor documentation found describing passkey/WebAuthn/FIDO2 support for Acrobat Sign account login."
+  audit_logs:
+    support: "supported"
+    tier: "free"
+    notes: "Agreement Activity list/Audit Report and the Settings Activity Audit report (tracking account/group setting changes) are available on all Acrobat Sign accounts, viewable by Account/Group Admins."
+    source: "https://helpx.adobe.com/sign/web/administers/admin-reports/settings-activity-audit.html"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Acrobat Sign Solutions (Enterprise)"
+    notes: "A configured Product access URL lets a claimed-domain SSO login automatically create a new Admin Console user and entitle them to Acrobat Sign."
+    source: "https://helpx.adobe.com/sign/admin/jit-via-sso.html"
+    checked: "2026-09-22"
+  domain_verification:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Acrobat Sign Solutions (Enterprise)"
+    notes: "Organizations must claim/verify their domain in the Adobe Admin Console before SSO/SAML can be enabled for that domain."
+    source: "https://helpx.adobe.com/sign/using/enable-saml-single-sign-on.html"
+    checked: "2026-09-22"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

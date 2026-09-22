@@ -159,6 +159,86 @@
     "website": "https://www.activecampaign.com"
   },
   {
+    "_id": "adobe-acrobat-sign",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Agreement Activity list/Audit Report and the Settings Activity Audit report (tracking account/group setting changes) are available on all Acrobat Sign accounts, viewable by Account/Group Admins.",
+        "source": "https://helpx.adobe.com/sign/web/administers/admin-reports/settings-activity-audit.html",
+        "support": "supported",
+        "tier": "free"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "checked": "2026-09-22",
+        "notes": "Organizations must claim/verify their domain in the Adobe Admin Console before SSO/SAML can be enabled for that domain.",
+        "plan": "Acrobat Sign Solutions (Enterprise)",
+        "source": "https://helpx.adobe.com/sign/using/enable-saml-single-sign-on.html",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-22",
+        "notes": "A configured Product access URL lets a claimed-domain SSO login automatically create a new Admin Console user and entitle them to Acrobat Sign.",
+        "plan": "Acrobat Sign Solutions (Enterprise)",
+        "source": "https://helpx.adobe.com/sign/admin/jit-via-sso.html",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "notes": "Checked SSO/authentication docs; found signer identity authentication options (OTP, KBA, password) for document recipients, but no documented admin toggle to require MFA for user login to the Acrobat Sign app itself.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "No vendor documentation found describing passkey/WebAuthn/FIDO2 support for Acrobat Sign account login.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "Automated provisioning/deprovisioning happens via the shared Adobe Admin Console using Azure AD or Google Workspace Sync (SCIM-based), not a product-specific SCIM endpoint.",
+        "plan": "Acrobat Sign Solutions (Enterprise)",
+        "source": "https://helpx.adobe.com/business/enterprise/identity-sso/integrate-with-microsoft-entra/add-microsoft-entra-id-sync.html",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Acrobat Sign acts as SAML 2.0 service provider with external IdPs (Okta, OneLogin, ADFS, etc.); requires claiming your Adobe domain.",
+        "plan": "Acrobat Sign Solutions (Enterprise)",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://helpx.adobe.com/sign/using/enable-saml-single-sign-on.html",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "SAML Settings can be set to 'SAML Mandatory' mode to require SSO login for all users on the claimed domain.",
+        "plan": "Acrobat Sign Solutions (Enterprise)",
+        "source": "https://helpx.adobe.com/sign/using/enable-saml-single-sign-on.html",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "productivity",
+    "description": "Adobe's e-signature and agreement workflow product for sending, signing and managing documents.",
+    "name": "Adobe Acrobat Sign",
+    "status": "draft",
+    "website": "https://www.adobe.com/acrobat/business/sign.html"
+  },
+  {
     "_id": "adobe-creative-cloud",
     "capabilities": {
       "api_token_controls": {
@@ -2141,6 +2221,83 @@
     "name": "CrowdStrike",
     "status": "draft",
     "website": "https://www.crowdstrike.com"
+  },
+  {
+    "_id": "cursor",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Admins can view audit logs (including authentication events) in the team dashboard; requires admin access. No retention period stated.",
+        "plan": "Enterprise",
+        "source": "https://cursor.com/docs/enterprise/compliance-and-monitoring",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "checked": "2026-09-22",
+        "notes": "Domain Verification Settings must be configured to verify a domain before SSO enforcement takes effect.",
+        "plan": "Teams",
+        "source": "https://cursor.com/docs/account/teams/sso",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "notes": "SSO and SCIM docs describe SCIM-based provisioning/deprovisioning on assignment/unassignment, but do not describe just-in-time account creation on first SSO login.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "Checked SSO, SCIM and compliance/monitoring docs; no mention of an admin toggle to require MFA/2FA within Cursor itself.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "No documentation found on passkeys/WebAuthn/FIDO2 support for Cursor accounts.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "Available on Enterprise plans with SSO enabled. Users are automatically added when assigned to the SCIM application in the IdP and removed when unassigned.",
+        "plan": "Enterprise",
+        "source": "https://cursor.com/docs/account/teams/scim",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "SAML 2.0 SSO is available at no additional cost on Teams and Enterprise plans. OIDC is not mentioned.",
+        "plan": "Teams",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://cursor.com/docs/account/teams/sso",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Enforcement is automatic: once domain verification and the SSO provider connection are active, users on that domain are required to sign in with SSO; there is no separate enforcement toggle.",
+        "plan": "Teams",
+        "source": "https://cursor.com/docs/account/teams/sso",
+        "support": "supported",
+        "tier": "paid"
+      }
+    },
+    "category": "development",
+    "description": "An AI-powered code editor (a fork of VS Code) with agentic coding assistance.",
+    "name": "Cursor",
+    "status": "draft",
+    "website": "https://cursor.com"
   },
   {
     "_id": "databricks",

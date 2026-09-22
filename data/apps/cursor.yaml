@@ -1,0 +1,60 @@
+name: "Cursor"
+category: "development"
+website: "https://cursor.com"
+description: "An AI-powered code editor (a fork of VS Code) with agentic coding assistance."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Teams"
+    protocols: ["SAML"]
+    notes: "SAML 2.0 SSO is available at no additional cost on Teams and Enterprise plans. OIDC is not mentioned."
+    source: "https://cursor.com/docs/account/teams/sso"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Teams"
+    notes: "Enforcement is automatic: once domain verification and the SSO provider connection are active, users on that domain are required to sign in with SSO; there is no separate enforcement toggle."
+    source: "https://cursor.com/docs/account/teams/sso"
+    checked: "2026-09-22"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Available on Enterprise plans with SSO enabled. Users are automatically added when assigned to the SCIM application in the IdP and removed when unassigned."
+    source: "https://cursor.com/docs/account/teams/scim"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Checked SSO, SCIM and compliance/monitoring docs; no mention of an admin toggle to require MFA/2FA within Cursor itself."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "No documentation found on passkeys/WebAuthn/FIDO2 support for Cursor accounts."
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Admins can view audit logs (including authentication events) in the team dashboard; requires admin access. No retention period stated."
+    source: "https://cursor.com/docs/enterprise/compliance-and-monitoring"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "SSO and SCIM docs describe SCIM-based provisioning/deprovisioning on assignment/unassignment, but do not describe just-in-time account creation on first SSO login."
+  domain_verification:
+    support: "supported"
+    tier: "paid"
+    plan: "Teams"
+    notes: "Domain Verification Settings must be configured to verify a domain before SSO enforcement takes effect."
+    source: "https://cursor.com/docs/account/teams/sso"
+    checked: "2026-09-22"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"
