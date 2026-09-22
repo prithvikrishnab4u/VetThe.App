@@ -4,78 +4,13 @@ Widely used B2B SaaS apps not yet in `data/apps/`. Research P1 first; remove a r
 
 | Priority | App | Proposed id | Category | Website |
 |---|---|---|---|---|
-| P1 | Adobe Acrobat Sign | `adobe-acrobat-sign` | productivity | https://adobe.com/acrobat/business/sign.html |
-| P1 | ChatGPT Enterprise | `chatgpt-enterprise` | productivity | https://openai.com/chatgpt/enterprise |
-| P1 | Claude for Enterprise | `claude-enterprise` | productivity | https://claude.com |
-| P1 | Coda | `coda` | productivity | https://coda.io |
-| P1 | Dropbox Sign | `dropbox-sign` | productivity | https://sign.dropbox.com |
-| P1 | Glean | `glean` | productivity | https://glean.com |
-| P1 | Ironclad | `ironclad` | productivity | https://ironcladapp.com |
-| P1 | Looker | `looker` | productivity | https://cloud.google.com/looker |
-| P1 | Microsoft Power BI | `microsoft-power-bi` | productivity | https://powerbi.microsoft.com |
-| P1 | Pendo | `pendo` | productivity | https://pendo.io |
-| P1 | Workato | `workato` | productivity | https://workato.com |
-| P1 | BrowserStack | `browserstack` | development | https://browserstack.com |
-| P1 | Cursor | `cursor` | development | https://cursor.com |
-| P1 | Harness | `harness` | development | https://harness.io |
-| P1 | JetBrains | `jetbrains` | development | https://jetbrains.com |
-| P1 | JFrog | `jfrog` | development | https://jfrog.com |
-| P1 | LaunchDarkly | `launchdarkly` | development | https://launchdarkly.com |
-| P1 | Sentry | `sentry` | development | https://sentry.io |
-| P1 | Vercel | `vercel` | development | https://vercel.com |
-| P1 | Apollo.io | `apollo-io` | sales_marketing | https://apollo.io |
-| P1 | Clari | `clari` | sales_marketing | https://clari.com |
-| P1 | Klaviyo | `klaviyo` | sales_marketing | https://klaviyo.com |
-| P1 | LinkedIn Sales Navigator | `linkedin-sales-navigator` | sales_marketing | https://business.linkedin.com/sales-solutions |
-| P1 | Microsoft Dynamics 365 | `microsoft-dynamics-365` | sales_marketing | https://dynamics.microsoft.com |
-| P1 | Salesforce Marketing Cloud | `salesforce-marketing-cloud` | sales_marketing | https://salesforce.com/marketing |
-| P1 | Salesloft | `salesloft` | sales_marketing | https://salesloft.com |
-| P1 | Semrush | `semrush` | sales_marketing | https://semrush.com |
-| P1 | Aircall | `aircall` | support | https://aircall.io |
-| P1 | Five9 | `five9` | support | https://five9.com |
-| P1 | Gainsight | `gainsight` | support | https://gainsight.com |
-| P1 | Genesys Cloud CX | `genesys-cloud` | support | https://genesys.com |
-| P1 | Gorgias | `gorgias` | support | https://gorgias.com |
-| P1 | Webflow | `webflow` | design | https://webflow.com |
-| P1 | Ashby | `ashby` | hr | https://ashbyhq.com |
-| P1 | Culture Amp | `culture-amp` | hr | https://cultureamp.com |
-| P1 | HiBob | `hibob` | hr | https://hibob.com |
-| P1 | Justworks | `justworks` | hr | https://justworks.com |
-| P1 | Lattice | `lattice` | hr | https://lattice.com |
-| P1 | Lever | `lever` | hr | https://lever.co |
-| P1 | Oracle HCM Cloud | `oracle-hcm-cloud` | hr | https://oracle.com/human-capital-management |
-| P1 | Paycom | `paycom` | hr | https://paycom.com |
-| P1 | Paylocity | `paylocity` | hr | https://paylocity.com |
-| P1 | Personio | `personio` | hr | https://personio.com |
-| P1 | Remote | `remote` | hr | https://remote.com |
-| P1 | SAP SuccessFactors | `sap-successfactors` | hr | https://sap.com/products/hcm.html |
-| P1 | UKG Pro | `ukg-pro` | hr | https://ukg.com |
-| P1 | Carta | `carta` | finance | https://carta.com |
-| P1 | Coupa | `coupa` | finance | https://coupa.com |
 | P1 | SAP Ariba | `sap-ariba` | finance | https://sap.com/products/spend-management/ariba.html |
-| P1 | Workday Adaptive Planning | `workday-adaptive-planning` | finance | https://workday.com/en-us/products/adaptive-planning/overview.html |
 | P1 | Zip | `zip` | finance | https://ziphq.com |
 | P1 | Bitwarden | `bitwarden` | security | https://bitwarden.com |
-| P1 | Cisco Duo | `cisco-duo` | security | https://duo.com |
 | P1 | CyberArk | `cyberark` | security | https://cyberark.com |
-| P1 | Drata | `drata` | security | https://drata.com |
-| P1 | Jamf | `jamf` | security | https://jamf.com |
-| P1 | JumpCloud | `jumpcloud` | security | https://jumpcloud.com |
-| P1 | Kandji | `kandji` | security | https://kandji.io |
-| P1 | Keeper | `keeper` | security | https://keepersecurity.com |
-| P1 | KnowBe4 | `knowbe4` | security | https://knowbe4.com |
-| P1 | Microsoft Entra ID | `microsoft-entra-id` | security | https://microsoft.com/security/business/identity-access/microsoft-entra-id |
 | P1 | Mimecast | `mimecast` | security | https://mimecast.com |
-| P1 | Netskope | `netskope` | security | https://netskope.com |
-| P1 | Okta Workforce Identity | `okta` | security | https://okta.com |
-| P1 | Palo Alto Networks Prisma Cloud | `prisma-cloud` | security | https://paloaltonetworks.com/prisma/cloud |
 | P1 | Ping Identity | `ping-identity` | security | https://pingidentity.com |
-| P1 | Proofpoint | `proofpoint` | security | https://proofpoint.com |
-| P1 | Rapid7 | `rapid7` | security | https://rapid7.com |
 | P1 | SentinelOne | `sentinelone` | security | https://sentinelone.com |
-| P1 | Tailscale | `tailscale` | security | https://tailscale.com |
-| P1 | Tenable | `tenable` | security | https://tenable.com |
-| P1 | Vanta | `vanta` | security | https://vanta.com |
 | P1 | Wiz | `wiz` | security | https://wiz.io |
 | P1 | Cloudflare | `cloudflare` | infrastructure | https://cloudflare.com |
 | P1 | dbt Cloud | `dbt-cloud` | infrastructure | https://getdbt.com |

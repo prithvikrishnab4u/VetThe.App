@@ -2,7 +2,7 @@
 
 Running log of what's done and what's next. **Update this file at the end of every work session**: tick items off, add what you found, and refresh the numbers with `.venv/bin/python scripts/validate.py`.
 
-_Last updated: 2026-09-16_
+_Last updated: 2026-09-22_
 
 ## Remind the user
 
@@ -14,14 +14,14 @@ _Last updated: 2026-09-16_
 
 ## Where the data stands
 
-107 apps: 79 `published`, 28 `draft`. 1,284 data points:
+172 apps: 79 `published`, 93 `draft`. 2,064 data points:
 
 | | Count |
 |---|---|
-| Verified (has `source` + `checked`) | 583 |
+| Verified (has `source` + `checked`) | 823 |
 | Unverified (a value with no source, carried over from the old dataset) | 0 |
-| Not documented (checked, the vendor says nothing) | 308 |
-| Not researched | 393 |
+| Not documented (checked, the vendor says nothing) | 473 |
+| Not researched | 768 |
 
 ## Done
 
@@ -40,6 +40,9 @@ _Last updated: 2026-09-16_
 - [x] **Batches 2–4 (2026-09-16):** first pass on core capabilities for the 14 apps that still had none: Airtable, Basecamp, Box, Canva, CrowdStrike, Dropbox, Gusto, Lark, Rippling, Splunk, TeamViewer, Udemy Business, ZoomInfo and Zscaler. Also checked JIT provisioning and domain verification for every app that supports SSO. About 20 parallel agents wrote JSON, and the main session applied and committed each result.
   - Many values are "not documented" because the help pages need JavaScript or a login, or returned errors: Salesforce, SAP Concur, BambooHR, BILL, LastPass, Hootsuite, Sprout Social and CrowdStrike. A manual check in a browser could turn these into real values.
   - Some supported values from ZoomInfo, Zscaler, CrowdStrike and Dropbox have no tier yet. They need one before publishing.
+- [x] **65 new apps from BACKLOG.md P1 (2026-09-22):** core capabilities researched for the first 65 P1 apps (ChatGPT Enterprise, Claude Enterprise, Cursor, Vercel, Sentry, Power BI, Looker, Klaviyo, Salesloft, SAP SuccessFactors, Okta, JumpCloud, Jamf, Tailscale and others). Parallel Sonnet agents wrote JSON, the main session created `data/apps/<id>.yaml` as drafts and committed each result.
+  - Agent token use was cut roughly in half partway through by capping tool calls per app and stripping HTML before it reaches context (`scratchpad/new/f.sh`). Capping too hard made agents give up early, so WebFetch stays the default tool and one retry per URL is allowed.
+  - Seven P1 apps could not be researched at all because their sites block automated fetches: bitwarden, cyberark, mimecast, ping-identity, sap-ariba, sentinelone, zip. They were deliberately NOT added as empty rows — they need a manual browser check.
 - [x] **BACKLOG.md:** 299 widely used apps not yet in the data, ranked P1/P2/P3. The agent wrote the websites from memory, so confirm them while researching.
 
 ## To do: setup (one-off, needed before website suggestions work; user will do this)
@@ -65,7 +68,8 @@ _Last updated: 2026-09-16_
    | API token controls | 98 |
    Suggested order (run as parallel agents, about 10 apps per agent, report-only, the main session edits): JIT and domain verification first (usually on the same SSO docs page), then roles, then sessions and tokens.
 3. [ ] Recheck values older than about 6 months (vendors change plans); `checked` dates make this a simple query
-4. [ ] Add more apps from [BACKLOG.md](BACKLOG.md), P1 first (core capabilities for each). Requests will also arrive through the website's "Add an app"
+4. [ ] Add more apps from [BACKLOG.md](BACKLOG.md): the first 72 P1 rows are done, so continue from P1 row 73, then P2/P3. Use `scratchpad/new/BRIEF.md` + `mk.py` as the pattern. Requests will also arrive through the website's "Add an app"
+5. [ ] The 65 apps added on 2026-09-22 are all `draft` — they need plan tiers before they can be published
 
 ## To do: site
 
