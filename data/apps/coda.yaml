@@ -1,0 +1,50 @@
+name: "Coda"
+category: "productivity"
+website: "https://coda.io"
+description: "An all-in-one collaborative workspace combining documents, spreadsheets, and applications (now rebranded as Superhuman Docs)."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML"]
+    notes: "Authentication options include SSO via SAML 2.0, alongside Google, Microsoft, Apple, magic links, and email+password with 2FA."
+    source: "https://coda.io/trust/security"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Page states enterprises can govern user authentication but does not describe an enforcement/disable-password toggle."
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "\"Enterprises can manage users through SCIM.\""
+    source: "https://coda.io/trust/security"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "2FA is offered as an authentication option for email+password login, but no admin-level enforcement policy is documented."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    retention: "12 months"
+    notes: "\"Audit APIs let Enterprises obtain audit logs for previous 12 months. Audit events can be viewed with the Coda Admin Pack.\""
+    source: "https://coda.io/trust/security"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

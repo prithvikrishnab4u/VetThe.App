@@ -1,0 +1,48 @@
+name: "Pendo"
+category: "productivity"
+website: "https://www.pendo.io"
+description: "Product analytics and in-app guide platform for tracking user behavior and driving product adoption."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "add_on"
+    protocols: ["SAML"]
+    notes: "SAML SSO is an additional paid service enabled per subscription; OIDC is not mentioned."
+    source: "https://support.pendo.io/hc/en-us/articles/360032953392-SAML-Single-Sign-On-SSO-overview"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "supported"
+    tier: "add_on"
+    notes: "Admins can make SAML mandatory for the subscription or globally for the domain, forcing SSO login."
+    source: "https://support.pendo.io/hc/en-us/articles/360032953392-SAML-Single-Sign-On-SSO-overview"
+    checked: "2026-09-22"
+  scim:
+    support: "supported"
+    tier: "add_on"
+    notes: "SCIM is available for Premium customers or as an add-on; requires SSO enabled first, no JIT provisioning."
+    source: "https://support.pendo.io/hc/en-us/articles/4412768395803-Set-up-SCIM-in-Pendo"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Docs only mention that SAML/Google login options each support 2FA via the IdP; no native in-app MFA enforcement toggle is documented."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "not_supported"
+    notes: "Pendo explicitly states it does not support automatic user provisioning via Just in Time (JIT)."
+    source: "https://support.pendo.io/hc/en-us/articles/360032953392-SAML-Single-Sign-On-SSO-overview"
+    checked: "2026-09-22"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

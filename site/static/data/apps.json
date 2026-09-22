@@ -1803,6 +1803,89 @@
     "website": "https://www.sharefile.com"
   },
   {
+    "_id": "claude-enterprise",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Audit logs are available for Enterprise organizations only; exports aggregate the past 180 days of events.",
+        "plan": "Enterprise",
+        "retention": "180 days",
+        "source": "https://support.claude.com/en/articles/9970975-access-audit-logs",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "checked": "2026-09-22",
+        "notes": "Domain verification is required before configuring SSO and applies at the parent organization level for all plan types.",
+        "plan": "Team",
+        "source": "https://support.claude.com/en/articles/10276682-important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisioning",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-22",
+        "notes": "JIT provisioning is available on Team, Enterprise, and Console org plans.",
+        "plan": "Team",
+        "source": "https://support.claude.com/en/articles/10276682-important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisioning",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "mfa_enforcement": {
+        "notes": "Claude uses SSO or email magic-link login rather than passwords; no admin-facing MFA-enforcement control was found in the help center.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "No mention of passkey/WebAuthn support was found in Claude's help center documentation.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "SCIM directory sync is available for Enterprise organizations and Console organizations under an Enterprise parent org; not available on Team plans.",
+        "plan": "Enterprise",
+        "source": "https://support.claude.com/en/articles/14499648-how-scim-sync-works-for-enterprise-organizations",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "SSO is available on Team plans, Enterprise plans, and Console organizations.",
+        "plan": "Team",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Admins can toggle on 'Require SSO for Console' and/or 'Require SSO for Claude', after which users must log in via SSO instead of email.",
+        "plan": "Team",
+        "source": "https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso",
+        "support": "supported",
+        "tier": "paid"
+      }
+    },
+    "category": "productivity",
+    "description": "Anthropic's enterprise deployment of the Claude AI assistant with organization-wide administration, security and compliance controls.",
+    "name": "Claude for Enterprise",
+    "status": "draft",
+    "website": "https://claude.com/enterprise"
+  },
+  {
     "_id": "clickup",
     "capabilities": {
       "api_token_controls": {
@@ -1881,6 +1964,73 @@
     "name": "ClickUp",
     "status": "published",
     "website": "https://clickup.com"
+  },
+  {
+    "_id": "coda",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "\"Audit APIs let Enterprises obtain audit logs for previous 12 months. Audit events can be viewed with the Coda Admin Pack.\"",
+        "plan": "Enterprise",
+        "retention": "12 months",
+        "source": "https://coda.io/trust/security",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "notes": "2FA is offered as an authentication option for email+password login, but no admin-level enforcement policy is documented.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "\"Enterprises can manage users through SCIM.\"",
+        "plan": "Enterprise",
+        "source": "https://coda.io/trust/security",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Authentication options include SSO via SAML 2.0, alongside Google, Microsoft, Apple, magic links, and email+password with 2FA.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://coda.io/trust/security",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "notes": "Page states enterprises can govern user authentication but does not describe an enforcement/disable-password toggle.",
+        "support": "undocumented"
+      }
+    },
+    "category": "productivity",
+    "description": "An all-in-one collaborative workspace combining documents, spreadsheets, and applications (now rebranded as Superhuman Docs).",
+    "name": "Coda",
+    "status": "draft",
+    "website": "https://coda.io"
   },
   {
     "_id": "coursera-for-business",
@@ -3695,6 +3845,272 @@
     "website": "https://intercom.com"
   },
   {
+    "_id": "ironclad",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Audit Log gives filterable, exportable view of system and user activity; available as part of the paid Security & Data Pro add-on.",
+        "plan": "Security and Data Pro",
+        "source": "https://support.ironcladapp.com/hc/en-us/articles/33834526166807-Audit-Log-Overview",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "notes": "No vendor documentation found describing an admin control to require MFA/2FA for all users within Ironclad itself.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "No vendor documentation found on passkey/WebAuthn/FIDO2 support.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "SCIM provisioning available via Okta, Microsoft Entra ID (Azure), and OneLogin, gated behind having a SAML SSO connector configured first; plan tier not stated on vendor pages found.",
+        "source": "https://support.ironcladapp.com/hc/en-us/articles/12286124794007-Provision-Users-with-OneLogin-SCIM",
+        "support": "supported"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Supports SAML SSO with Okta, OneLogin, Microsoft Entra ID, ADFS, and generic SAML providers; plan tier not stated on vendor pages found.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://support.ironcladapp.com/hc/en-us/sections/12277962703895-SSO-SAML",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "notes": "Vendor docs describe SSO as enabled per-account/per-user alongside password login (existing users must be migrated via support); no vendor page found describing an org-wide toggle to require SSO or disable password login.",
+        "support": "undocumented"
+      }
+    },
+    "category": "productivity",
+    "description": "Ironclad is a contract lifecycle management (CLM) platform for negotiating, signing, and managing contracts.",
+    "name": "Ironclad",
+    "status": "draft",
+    "website": "https://ironcladapp.com"
+  },
+  {
+    "_id": "jetbrains",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "'AI audit logs' are listed as an Enterprise-tier feature marked 'Coming soon' as of the check date.",
+        "source": "https://www.jetbrains.com/help/jetbrains-console/plans-and-pricing.html",
+        "support": "not_supported"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Admins can enable 'Require 2FA in your organization' from the Administration page; non-compliant users are logged out of their products after 7 days.",
+        "plan": "Organization",
+        "source": "https://www.jetbrains.com/help/jetbrains-console/two-factor-authentication.html",
+        "support": "supported",
+        "tier": "free"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-22",
+        "notes": "JetBrains Account 2FA documentation describes only password plus a 6-digit one-time code from an authenticator app; no passkey/WebAuthn option is documented.",
+        "source": "https://www.jetbrains.com/help/jetbrains-console/two-factor-authentication.html",
+        "support": "not_supported"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "JetBrains Central Console lists 'IdP and SCIM configuration' as an Enterprise-tier feature marked 'Coming soon' as of the check date (separately, the older JetBrains Hub product does support SCIM 2.0 provisioning).",
+        "source": "https://www.jetbrains.com/help/jetbrains-console/plans-and-pricing.html",
+        "support": "not_supported"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "SSO and access management is listed across Basic, Business, and Enterprise tiers of JetBrains Central Console; Hub/YouTrack support SAML 2.0 as an identity provider integration.",
+        "plan": "Business",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://www.jetbrains.com/help/jetbrains-console/plans-and-pricing.html",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "notes": "Could not find a vendor statement on disabling password login / requiring SSO org-wide.",
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "JetBrains provides developer IDEs and tools (IntelliJ IDEA, YouTrack, TeamCity, and more) with a central account/license administration console for organizations.",
+    "name": "JetBrains",
+    "status": "draft",
+    "website": "https://www.jetbrains.com"
+  },
+  {
+    "_id": "jfrog",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "notes": "Docs describe MFA as available and \"supported on JFrog SaaS solution only\" but do not state whether admins can require it for all users.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "SCIM user management is listed as included (\"SCIM ID Management\") on Enterprise X and Enterprise + plans, not on Pro.",
+        "plan": "Enterprise X",
+        "source": "https://jfrog.com/pricing/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Enterprise X and Enterprise + plans list \"LDAP / SAML / OIDC / OAuth / Crowd\" as supported identity providers; Pro plans only offer LDAP/SAML depending on deployment.",
+        "plan": "Enterprise X",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://jfrog.com/pricing/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "A DevOps platform for managing binaries, artifacts, and software supply chain security (JFrog Platform / Artifactory).",
+    "name": "JFrog",
+    "status": "draft",
+    "website": "https://jfrog.com"
+  },
+  {
+    "_id": "klaviyo",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Self-service activity log records who changed what and when; visible to Owners, Admins, and users with Account Settings permission. No plan restriction or retention period stated.",
+        "source": "https://help.klaviyo.com/hc/en-us/articles/44579125790747",
+        "support": "supported",
+        "tier": "free"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-22",
+        "notes": "Optional JIT provisioning creates a user account on first SSO login when the IdP grants permission; role is then managed only via the IdP.",
+        "source": "https://help.klaviyo.com/hc/en-us/articles/9353860331035",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "MFA is required by default for all users on paid accounts (unless SSO is required instead); free-plan Owners can optionally require it org-wide.",
+        "source": "https://help.klaviyo.com/hc/en-us/articles/360026617692",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "Requires a paid plan, Admin/Owner role, and SSO already enabled before SCIM can be set up.",
+        "source": "https://help.klaviyo.com/hc/en-us/articles/10952782535579",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "IdP-initiated SAML 2.0 only, requires a paid plan; SP-initiated SSO and OIDC are not supported.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://help.klaviyo.com/hc/en-us/articles/9353860331035",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "\"Require SSO for all users\" setting blocks password-based login for those accounts.",
+        "source": "https://help.klaviyo.com/hc/en-us/articles/9353860331035",
+        "support": "supported",
+        "tier": "paid"
+      }
+    },
+    "category": "sales_marketing",
+    "description": "Marketing automation platform for email and SMS campaigns built around customer data.",
+    "name": "Klaviyo",
+    "status": "draft",
+    "website": "https://www.klaviyo.com"
+  },
+  {
     "_id": "lark",
     "capabilities": {
       "api_token_controls": {
@@ -4002,6 +4418,62 @@
     "name": "LinkedIn Learning",
     "status": "published",
     "website": "https://learning.linkedin.com"
+  },
+  {
+    "_id": "linkedin-sales-navigator",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "Advanced Plus plan's Enterprise License Management includes SCIM alongside Cross-Identity Management and SSO.",
+        "plan": "Advanced Plus",
+        "source": "https://business.linkedin.com/sales-solutions/sales-navigator",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Advanced Plus plan's Enterprise License Management includes Single Sign-On (SSO) alongside Cross-Identity Management and SCIM; specific protocol (SAML/OIDC) not stated.",
+        "plan": "Advanced Plus",
+        "source": "https://business.linkedin.com/sales-solutions/sales-navigator",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "sales_marketing",
+    "description": "LinkedIn Sales Navigator is a sales intelligence and prospecting tool that helps sales teams find and engage leads using LinkedIn's professional network data.",
+    "name": "LinkedIn Sales Navigator",
+    "status": "draft",
+    "website": "https://business.linkedin.com/sales-solutions/sales-navigator"
   },
   {
     "_id": "loom",
@@ -5307,6 +5779,71 @@
     "name": "PandaDoc",
     "status": "published",
     "website": "https://www.pandadoc.com"
+  },
+  {
+    "_id": "pendo",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-22",
+        "notes": "Pendo explicitly states it does not support automatic user provisioning via Just in Time (JIT).",
+        "source": "https://support.pendo.io/hc/en-us/articles/360032953392-SAML-Single-Sign-On-SSO-overview",
+        "support": "not_supported"
+      },
+      "mfa_enforcement": {
+        "notes": "Docs only mention that SAML/Google login options each support 2FA via the IdP; no native in-app MFA enforcement toggle is documented.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "SCIM is available for Premium customers or as an add-on; requires SSO enabled first, no JIT provisioning.",
+        "source": "https://support.pendo.io/hc/en-us/articles/4412768395803-Set-up-SCIM-in-Pendo",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "SAML SSO is an additional paid service enabled per subscription; OIDC is not mentioned.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://support.pendo.io/hc/en-us/articles/360032953392-SAML-Single-Sign-On-SSO-overview",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Admins can make SAML mandatory for the subscription or globally for the domain, forcing SSO login.",
+        "source": "https://support.pendo.io/hc/en-us/articles/360032953392-SAML-Single-Sign-On-SSO-overview",
+        "support": "supported",
+        "tier": "add_on"
+      }
+    },
+    "category": "productivity",
+    "description": "Product analytics and in-app guide platform for tracking user behavior and driving product adoption.",
+    "name": "Pendo",
+    "status": "draft",
+    "website": "https://www.pendo.io"
   },
   {
     "_id": "pipedrive",
@@ -7365,6 +7902,159 @@
     "name": "Udemy Business",
     "status": "draft",
     "website": "https://business.udemy.com"
+  },
+  {
+    "_id": "vercel",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Audit logs are available to Enterprise customers; exported reports cover up to the last 90 days without impacting billing.",
+        "plan": "Enterprise",
+        "retention": "90 days",
+        "source": "https://vercel.com/docs/audit-log",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-22",
+        "notes": "Any new user signing up via SAML SSO is automatically added to the team.",
+        "plan": "Pro (SAML add-on); included on Enterprise",
+        "source": "https://vercel.com/docs/saml",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Teams can enforce 2FA so members cannot access team resources until 2FA is configured; no plan restriction stated.",
+        "plan": "Hobby",
+        "source": "https://vercel.com/docs/two-factor-enforcement",
+        "support": "supported",
+        "tier": "free"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-22",
+        "notes": "2FA supports passkeys: 'any WebAuthN compatible device, such as a security key or biometric key.'",
+        "plan": "Hobby",
+        "source": "https://vercel.com/docs/two-factor-authentication",
+        "support": "supported",
+        "tier": "free"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "Directory Sync (automated provisioning/deprovisioning and role mapping from an IdP) is only available on Enterprise Teams.",
+        "plan": "Enterprise",
+        "source": "https://vercel.com/docs/directory-sync",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "SAML SSO is an optional add-on on the Pro plan (purchased from Billing settings) and included on Enterprise.",
+        "plan": "Pro (SAML add-on); included on Enterprise",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://vercel.com/docs/saml",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Team owners can toggle 'Require Team Members to login with SAML' so team info is inaccessible without a SAML-authenticated session.",
+        "plan": "Pro (SAML add-on); included on Enterprise",
+        "source": "https://vercel.com/docs/saml",
+        "support": "supported",
+        "tier": "add_on"
+      }
+    },
+    "category": "development",
+    "description": "Vercel is a cloud platform for building, deploying, and hosting frontend and full-stack web applications.",
+    "name": "Vercel",
+    "status": "draft",
+    "website": "https://vercel.com"
+  },
+  {
+    "_id": "workato",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Activity audit log lets admins see users' significant actions; streaming to external destinations also documented. Retention period not stated.",
+        "source": "https://docs.workato.com/en/features/activity-audit-log.html",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-22",
+        "notes": "Customers using SAML-based SSO can enable just-in-time provisioning to auto-create Workato users on first login.",
+        "source": "https://docs.workato.com/en/user-accounts-and-teams/just-in-time-provisioning.html",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Organizations can mandate 2FA for all users via authenticator apps (Google Authenticator, Microsoft Authenticator, Authy); plan requirement not stated.",
+        "source": "https://docs.workato.com/en/security/two-factor-authentication.html",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "SAML SSO with third-party IdPs; documentation states self-service Free, Pro and Developer Sandbox users can configure SAML.",
+        "plan": "Free (Self-service)",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.workato.com/en/user-accounts-and-teams/single-sign-on.html",
+        "support": "supported",
+        "tier": "free"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "\"Enforce SAML authentication for all users\" toggle requires all workspace members except the owner to authenticate via IdP, blocking username/password login.",
+        "plan": "Free (Self-service)",
+        "source": "https://docs.workato.com/en/user-accounts-and-teams/single-sign-on.html",
+        "support": "supported",
+        "tier": "free"
+      }
+    },
+    "category": "productivity",
+    "description": "Workato is an integration and automation platform that connects apps and orchestrates workflows across an organization.",
+    "name": "Workato",
+    "status": "draft",
+    "website": "https://www.workato.com"
   },
   {
     "_id": "workday",

@@ -1,0 +1,52 @@
+name: "JetBrains"
+category: "development"
+website: "https://www.jetbrains.com"
+description: "JetBrains provides developer IDEs and tools (IntelliJ IDEA, YouTrack, TeamCity, and more) with a central account/license administration console for organizations."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    protocols: ["SAML"]
+    notes: "SSO and access management is listed across Basic, Business, and Enterprise tiers of JetBrains Central Console; Hub/YouTrack support SAML 2.0 as an identity provider integration."
+    source: "https://www.jetbrains.com/help/jetbrains-console/plans-and-pricing.html"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Could not find a vendor statement on disabling password login / requiring SSO org-wide."
+  scim:
+    support: "not_supported"
+    notes: "JetBrains Central Console lists 'IdP and SCIM configuration' as an Enterprise-tier feature marked 'Coming soon' as of the check date (separately, the older JetBrains Hub product does support SCIM 2.0 provisioning)."
+    source: "https://www.jetbrains.com/help/jetbrains-console/plans-and-pricing.html"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "supported"
+    tier: "free"
+    plan: "Organization"
+    notes: "Admins can enable 'Require 2FA in your organization' from the Administration page; non-compliant users are logged out of their products after 7 days."
+    source: "https://www.jetbrains.com/help/jetbrains-console/two-factor-authentication.html"
+    checked: "2026-09-22"
+  phishing_resistant_mfa:
+    support: "not_supported"
+    notes: "JetBrains Account 2FA documentation describes only password plus a 6-digit one-time code from an authenticator app; no passkey/WebAuthn option is documented."
+    source: "https://www.jetbrains.com/help/jetbrains-console/two-factor-authentication.html"
+    checked: "2026-09-22"
+  audit_logs:
+    support: "not_supported"
+    notes: "'AI audit logs' are listed as an Enterprise-tier feature marked 'Coming soon' as of the check date."
+    source: "https://www.jetbrains.com/help/jetbrains-console/plans-and-pricing.html"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

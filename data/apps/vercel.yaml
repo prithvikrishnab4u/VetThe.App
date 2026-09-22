@@ -1,0 +1,68 @@
+name: "Vercel"
+category: "development"
+website: "https://vercel.com"
+description: "Vercel is a cloud platform for building, deploying, and hosting frontend and full-stack web applications."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "add_on"
+    plan: "Pro (SAML add-on); included on Enterprise"
+    protocols: ["SAML"]
+    notes: "SAML SSO is an optional add-on on the Pro plan (purchased from Billing settings) and included on Enterprise."
+    source: "https://vercel.com/docs/saml"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "supported"
+    tier: "add_on"
+    plan: "Pro (SAML add-on); included on Enterprise"
+    notes: "Team owners can toggle 'Require Team Members to login with SAML' so team info is inaccessible without a SAML-authenticated session."
+    source: "https://vercel.com/docs/saml"
+    checked: "2026-09-22"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Directory Sync (automated provisioning/deprovisioning and role mapping from an IdP) is only available on Enterprise Teams."
+    source: "https://vercel.com/docs/directory-sync"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "supported"
+    tier: "free"
+    plan: "Hobby"
+    notes: "Teams can enforce 2FA so members cannot access team resources until 2FA is configured; no plan restriction stated."
+    source: "https://vercel.com/docs/two-factor-enforcement"
+    checked: "2026-09-22"
+  phishing_resistant_mfa:
+    support: "supported"
+    tier: "free"
+    plan: "Hobby"
+    notes: "2FA supports passkeys: 'any WebAuthN compatible device, such as a security key or biometric key.'"
+    source: "https://vercel.com/docs/two-factor-authentication"
+    checked: "2026-09-22"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    retention: "90 days"
+    notes: "Audit logs are available to Enterprise customers; exported reports cover up to the last 90 days without impacting billing."
+    source: "https://vercel.com/docs/audit-log"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "supported"
+    tier: "add_on"
+    plan: "Pro (SAML add-on); included on Enterprise"
+    notes: "Any new user signing up via SAML SSO is automatically added to the team."
+    source: "https://vercel.com/docs/saml"
+    checked: "2026-09-22"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

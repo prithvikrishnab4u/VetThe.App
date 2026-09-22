@@ -1,0 +1,43 @@
+name: "JFrog"
+category: "development"
+website: "https://jfrog.com"
+description: "A DevOps platform for managing binaries, artifacts, and software supply chain security (JFrog Platform / Artifactory)."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise X"
+    protocols: ["SAML", "OIDC"]
+    notes: "Enterprise X and Enterprise + plans list \"LDAP / SAML / OIDC / OAuth / Crowd\" as supported identity providers; Pro plans only offer LDAP/SAML depending on deployment."
+    source: "https://jfrog.com/pricing/"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise X"
+    notes: "SCIM user management is listed as included (\"SCIM ID Management\") on Enterprise X and Enterprise + plans, not on Pro."
+    source: "https://jfrog.com/pricing/"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Docs describe MFA as available and \"supported on JFrog SaaS solution only\" but do not state whether admins can require it for all users."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

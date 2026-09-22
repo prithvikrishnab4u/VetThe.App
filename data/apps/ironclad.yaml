@@ -1,0 +1,46 @@
+name: "Ironclad"
+category: "productivity"
+website: "https://ironcladapp.com"
+description: "Ironclad is a contract lifecycle management (CLM) platform for negotiating, signing, and managing contracts."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "Supports SAML SSO with Okta, OneLogin, Microsoft Entra ID, ADFS, and generic SAML providers; plan tier not stated on vendor pages found."
+    source: "https://support.ironcladapp.com/hc/en-us/sections/12277962703895-SSO-SAML"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Vendor docs describe SSO as enabled per-account/per-user alongside password login (existing users must be migrated via support); no vendor page found describing an org-wide toggle to require SSO or disable password login."
+  scim:
+    support: "supported"
+    notes: "SCIM provisioning available via Okta, Microsoft Entra ID (Azure), and OneLogin, gated behind having a SAML SSO connector configured first; plan tier not stated on vendor pages found."
+    source: "https://support.ironcladapp.com/hc/en-us/articles/12286124794007-Provision-Users-with-OneLogin-SCIM"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "No vendor documentation found describing an admin control to require MFA/2FA for all users within Ironclad itself."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "No vendor documentation found on passkey/WebAuthn/FIDO2 support."
+  audit_logs:
+    support: "supported"
+    tier: "add_on"
+    plan: "Security and Data Pro"
+    notes: "Audit Log gives filterable, exportable view of system and user activity; available as part of the paid Security & Data Pro add-on."
+    source: "https://support.ironcladapp.com/hc/en-us/articles/33834526166807-Audit-Log-Overview"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

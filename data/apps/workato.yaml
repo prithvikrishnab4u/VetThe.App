@@ -1,0 +1,51 @@
+name: "Workato"
+category: "productivity"
+website: "https://www.workato.com"
+description: "Workato is an integration and automation platform that connects apps and orchestrates workflows across an organization."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "free"
+    plan: "Free (Self-service)"
+    protocols: ["SAML"]
+    notes: "SAML SSO with third-party IdPs; documentation states self-service Free, Pro and Developer Sandbox users can configure SAML."
+    source: "https://docs.workato.com/en/user-accounts-and-teams/single-sign-on.html"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "supported"
+    tier: "free"
+    plan: "Free (Self-service)"
+    notes: "\"Enforce SAML authentication for all users\" toggle requires all workspace members except the owner to authenticate via IdP, blocking username/password login."
+    source: "https://docs.workato.com/en/user-accounts-and-teams/single-sign-on.html"
+    checked: "2026-09-22"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Organizations can mandate 2FA for all users via authenticator apps (Google Authenticator, Microsoft Authenticator, Authy); plan requirement not stated."
+    source: "https://docs.workato.com/en/security/two-factor-authentication.html"
+    checked: "2026-09-22"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    notes: "Activity audit log lets admins see users' significant actions; streaming to external destinations also documented. Retention period not stated."
+    source: "https://docs.workato.com/en/features/activity-audit-log.html"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "supported"
+    notes: "Customers using SAML-based SSO can enable just-in-time provisioning to auto-create Workato users on first login."
+    source: "https://docs.workato.com/en/user-accounts-and-teams/just-in-time-provisioning.html"
+    checked: "2026-09-22"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

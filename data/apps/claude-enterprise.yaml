@@ -1,0 +1,65 @@
+name: "Claude for Enterprise"
+category: "productivity"
+website: "https://claude.com/enterprise"
+description: "Anthropic's enterprise deployment of the Claude AI assistant with organization-wide administration, security and compliance controls."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Team"
+    protocols: ["SAML", "OIDC"]
+    notes: "SSO is available on Team plans, Enterprise plans, and Console organizations."
+    source: "https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Team"
+    notes: "Admins can toggle on 'Require SSO for Console' and/or 'Require SSO for Claude', after which users must log in via SSO instead of email."
+    source: "https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso"
+    checked: "2026-09-22"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM directory sync is available for Enterprise organizations and Console organizations under an Enterprise parent org; not available on Team plans."
+    source: "https://support.claude.com/en/articles/14499648-how-scim-sync-works-for-enterprise-organizations"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Claude uses SSO or email magic-link login rather than passwords; no admin-facing MFA-enforcement control was found in the help center."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "No mention of passkey/WebAuthn support was found in Claude's help center documentation."
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    retention: "180 days"
+    notes: "Audit logs are available for Enterprise organizations only; exports aggregate the past 180 days of events."
+    source: "https://support.claude.com/en/articles/9970975-access-audit-logs"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "supported"
+    tier: "paid"
+    plan: "Team"
+    notes: "JIT provisioning is available on Team, Enterprise, and Console org plans."
+    source: "https://support.claude.com/en/articles/10276682-important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisioning"
+    checked: "2026-09-22"
+  domain_verification:
+    support: "supported"
+    tier: "paid"
+    plan: "Team"
+    notes: "Domain verification is required before configuring SSO and applies at the parent organization level for all plan types."
+    source: "https://support.claude.com/en/articles/10276682-important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisioning"
+    checked: "2026-09-22"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

@@ -1,0 +1,41 @@
+name: "LinkedIn Sales Navigator"
+category: "sales_marketing"
+website: "https://business.linkedin.com/sales-solutions/sales-navigator"
+description: "LinkedIn Sales Navigator is a sales intelligence and prospecting tool that helps sales teams find and engage leads using LinkedIn's professional network data."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Advanced Plus"
+    notes: "Advanced Plus plan's Enterprise License Management includes Single Sign-On (SSO) alongside Cross-Identity Management and SCIM; specific protocol (SAML/OIDC) not stated."
+    source: "https://business.linkedin.com/sales-solutions/sales-navigator"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Advanced Plus"
+    notes: "Advanced Plus plan's Enterprise License Management includes SCIM alongside Cross-Identity Management and SSO."
+    source: "https://business.linkedin.com/sales-solutions/sales-navigator"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

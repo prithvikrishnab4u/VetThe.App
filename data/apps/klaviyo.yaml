@@ -1,0 +1,56 @@
+name: "Klaviyo"
+category: "sales_marketing"
+website: "https://www.klaviyo.com"
+description: "Marketing automation platform for email and SMS campaigns built around customer data."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    protocols: ["SAML"]
+    notes: "IdP-initiated SAML 2.0 only, requires a paid plan; SP-initiated SSO and OIDC are not supported."
+    source: "https://help.klaviyo.com/hc/en-us/articles/9353860331035"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "supported"
+    tier: "paid"
+    notes: "\"Require SSO for all users\" setting blocks password-based login for those accounts."
+    source: "https://help.klaviyo.com/hc/en-us/articles/9353860331035"
+    checked: "2026-09-22"
+  scim:
+    support: "supported"
+    tier: "paid"
+    notes: "Requires a paid plan, Admin/Owner role, and SSO already enabled before SCIM can be set up."
+    source: "https://help.klaviyo.com/hc/en-us/articles/10952782535579"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "supported"
+    tier: "paid"
+    notes: "MFA is required by default for all users on paid accounts (unless SSO is required instead); free-plan Owners can optionally require it org-wide."
+    source: "https://help.klaviyo.com/hc/en-us/articles/360026617692"
+    checked: "2026-09-22"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "free"
+    notes: "Self-service activity log records who changed what and when; visible to Owners, Admins, and users with Account Settings permission. No plan restriction or retention period stated."
+    source: "https://help.klaviyo.com/hc/en-us/articles/44579125790747"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "supported"
+    tier: "paid"
+    notes: "Optional JIT provisioning creates a user account on first SSO login when the IdP grants permission; role is then managed only via the IdP."
+    source: "https://help.klaviyo.com/hc/en-us/articles/9353860331035"
+    checked: "2026-09-22"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"
