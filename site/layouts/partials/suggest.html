@@ -13,13 +13,18 @@
     data-sitekey="{{ $sitekey }}" data-repo="{{ $repo }}">
 
     <form id="suggestForm" class="flex h-full flex-col" novalidate>
-        <header class="flex items-start justify-between gap-4 border-b border-line px-5 py-4">
-            <div class="min-w-0">
-                <p id="suggestKicker" class="bento-kicker">Suggest a fix</p>
-                <h2 id="suggestTitle" tabindex="-1" autofocus class="focus:outline-none mt-1 text-lg font-semibold text-ink truncate">Suggest a fix</h2>
-                <p class="mt-0.5 text-sm text-muted">No account needed. A maintainer checks your source before it goes live.</p>
+        {{/* Same dark band as the site header and footer, so the panel feels part of the site. */}}
+        <header class="ink-band flex items-start justify-between gap-4 px-5 py-4">
+            <div class="absolute inset-0 -z-10" aria-hidden="true">
+                <div class="aurora aurora-1 !h-[260px] !w-[320px] !left-[-15%] !top-[-150px]"></div>
+                <div class="aurora aurora-2 !h-[240px] !w-[300px] !right-[-12%] !top-[-130px]"></div>
             </div>
-            <button type="button" data-close class="btn px-2 text-muted hover:bg-subtle hover:text-ink" aria-label="Close">{{ $close }}</button>
+            <div class="min-w-0">
+                <p id="suggestKicker" class="text-xs font-semibold uppercase tracking-[0.08em] text-indigo-300">Suggest a fix</p>
+                <h2 id="suggestTitle" tabindex="-1" autofocus class="focus:outline-none mt-1 text-lg font-semibold text-white truncate">Suggest a fix</h2>
+                <p class="mt-0.5 text-sm text-white/60">No account needed. A maintainer checks your source before it goes live.</p>
+            </div>
+            <button type="button" data-close class="btn px-2 text-white/60 hover:bg-white/10 hover:text-white" aria-label="Close">{{ $close }}</button>
         </header>
 
         <div class="flex-1 space-y-6 overflow-y-auto px-5 py-5 custom-scrollbar">
@@ -119,7 +124,7 @@
                 <legend class="field-label">What have you checked? <span class="field-hint">optional, skip anything you haven't</span></legend>
                 <div class="mt-2 space-y-2">
                     {{ range $schema.capabilities }}{{ if .core }}
-                    <div class="rounded-xl border border-line p-3" data-core="{{ .id }}">
+                    <div class="rounded-xl border border-line bg-surface p-3 transition-colors hover:border-accent/40" data-core="{{ .id }}">
                         <div class="flex items-center justify-between gap-3">
                             <span class="text-sm font-medium text-ink" title="{{ .question }}">{{ .label }}</span>
                             <select class="input !w-auto !py-1.5" data-k="support" aria-label="{{ .label }}">
@@ -166,7 +171,7 @@
             <p id="sfError" role="alert" class="rounded-xl border px-3.5 py-2.5 text-sm badge-no" hidden></p>
         </div>
 
-        <footer class="flex items-center justify-between gap-3 border-t border-line px-5 py-3">
+        <footer class="flex items-center justify-between gap-3 border-t border-line bg-subtle px-5 py-3">
             <a id="sfGithubLink" href="{{ $repo }}/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener" class="text-sm text-muted hover:text-accent">Prefer GitHub?</a>
             <div class="flex gap-2">
                 <button type="button" data-close class="btn btn-ghost">Cancel</button>
@@ -176,7 +181,7 @@
     </form>
 
     <div id="suggestDone" class="flex h-full flex-col items-center justify-center px-8 text-center" hidden>
-        <div class="flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-500">
+        <div class="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 via-violet-500 to-fuchsia-500 text-white shadow-lg shadow-violet-500/30">
             <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m5 12 5 5L20 7"/></svg>
         </div>
         <h2 class="mt-4 text-xl font-semibold text-ink">Thanks, it's in review</h2>

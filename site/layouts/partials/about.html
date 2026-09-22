@@ -32,7 +32,7 @@
 
 <!-- One tight strip under the table: how solid the data is, and how to fix it. -->
 <section id="about" class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pt-3 pb-8 scroll-mt-16">
-    <div class="rounded-xl border border-line bg-surface px-4 py-3 flex flex-col lg:flex-row lg:items-center gap-x-6 gap-y-3">
+    <div class="panel px-4 py-3 flex flex-col lg:flex-row lg:items-center gap-x-6 gap-y-3">
 
         <!-- Headline number + hover helper -->
         <div class="flex items-center gap-2 shrink-0">
@@ -59,12 +59,13 @@
                 <div class="seg-{{ index . 0 }}" style="width: {{ div (mul (float (index . 1)) 100) $corePoints }}%"></div>
                 {{ end }}
             </div>
-            <ul class="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted">
-                <li class="flex items-center gap-1.5"><span class="h-2 w-2 rounded-full seg-verified"></span><strong class="font-semibold text-ink">{{ $verified }}</strong> sourced</li>
-                <li class="flex items-center gap-1.5"><span class="h-2 w-2 rounded-full seg-undocumented"></span><strong class="font-semibold text-ink">{{ $undocumented }}</strong> vendor is silent</li>
-                <li class="flex items-center gap-1.5"><span class="h-2 w-2 rounded-full seg-not_researched ring-1 ring-muted/40"></span><strong class="font-semibold text-ink">{{ $notResearched }}</strong> still to check</li>
-                {{ if $unverified }}<li class="flex items-center gap-1.5"><span class="h-2 w-2 rounded-full seg-unverified"></span><strong class="font-semibold text-ink">{{ $unverified }}</strong> unverified</li>{{ end }}
-                <li class="text-muted/80">{{ $fullApps }}/{{ len site.Data.apps }} apps fully checked</li>
+            {{/* Same badge colours the table uses, so the legend and the bar read as one language. */}}
+            <ul class="mt-2 flex flex-wrap items-center gap-1.5 text-xs">
+                <li><span class="badge badge-free"><strong class="font-semibold">{{ $verified }}</strong> sourced</span></li>
+                <li><span class="badge badge-undocumented"><strong class="font-semibold">{{ $undocumented }}</strong> vendor is silent</span></li>
+                <li><span class="badge badge-not_researched"><strong class="font-semibold">{{ $notResearched }}</strong> still to check</span></li>
+                {{ if $unverified }}<li><span class="badge badge-partial"><strong class="font-semibold">{{ $unverified }}</strong> unverified</span></li>{{ end }}
+                <li class="ml-1 text-muted">{{ $fullApps }} of {{ len site.Data.apps }} apps fully checked</li>
             </ul>
         </div>
 
@@ -72,7 +73,7 @@
         <div class="flex flex-wrap items-center gap-2 shrink-0 lg:border-l lg:border-line lg:pl-6">
             <p class="text-xs text-muted">Something wrong? Click ✎ on any cell.</p>
             <a href="https://github.com/prithvikrishnab4u/VetThe.App/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener" data-suggest-open="new"
-               class="btn border border-line bg-canvas text-sm font-medium text-ink hover:border-accent hover:text-accent">Add an app</a>
+               class="btn btn-primary">Add an app</a>
         </div>
     </div>
 </section>
