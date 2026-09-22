@@ -1,0 +1,56 @@
+name: "Genesys Cloud CX"
+category: "support"
+website: "https://www.genesys.com"
+description: "Cloud-based contact center and customer experience platform for omnichannel routing, workforce engagement, and analytics."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    protocols: ["SAML"]
+    notes: "Integrates with third-party identity providers that support SAML 2.0 (e.g. Okta, OneLogin, Azure AD/Entra ID)."
+    source: "https://all.docs.genesys.com/PEC-Admin/Current/Admin/SSO"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "supported"
+    tier: "paid"
+    notes: "Admins can configure Genesys Cloud to authenticate with SSO only, disabling username/password login org-wide."
+    source: "https://help.genesys.cloud/faqs/category/single-sign-on/"
+    checked: "2026-09-22"
+  scim:
+    support: "supported"
+    tier: "paid"
+    notes: "Native SCIM 2.0 endpoint syncs users from Azure AD/Entra ID, Okta, or OneLogin into Genesys Cloud; sync is unidirectional (IdP to Genesys Cloud)."
+    source: "https://help.genesys.cloud/articles/about-genesys-cloud-scim-identity-management/"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "supported"
+    tier: "paid"
+    notes: "Org Settings > Authentication has a toggle to require MFA for all users; applies to native username/password login only, not SSO logins."
+    source: "https://help.genesys.cloud/articles/enable-multi-factor-authentication/"
+    checked: "2026-09-22"
+  phishing_resistant_mfa:
+    support: "supported"
+    tier: "paid"
+    notes: "Passkeys (WebAuthn), including platform authenticators and physical security keys, were added as a supported MFA device type on December 15, 2025."
+    source: "https://help.genesys.cloud/announcements/new-multi-factor-authentication-mfa-device-options/"
+    checked: "2026-09-22"
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    notes: "Admin Audit Viewer logs administrative and service events with filtering; accessible under Admin > Troubleshooting."
+    source: "https://help.genesys.cloud/articles/about-the-audit-log-viewer/"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

@@ -3619,6 +3619,67 @@
     "website": "https://figma.com"
   },
   {
+    "_id": "five9",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "notes": "Admin Console has an event/configuration change log, but a working vendor page confirming full admin+user activity audit logging could not be fetched to verify wording.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Five9 Identity Service includes multi-factor authentication as an admin-configurable security feature; plan/tier not stated.",
+        "source": "https://www.five9.com/blog/enabling-five9-identity-service-were-just-getting-started",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "No vendor page found mentioning passkeys, WebAuthn, or FIDO2 support.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "Five9 Identity Service supports automated user provisioning/deprovisioning via SCIM; plan/tier not stated.",
+        "source": "https://www.five9.com/resources/five9-automated-user-management",
+        "support": "supported"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Five9 Identity Service provides SAML-based SSO for Five9 applications; plan/tier not stated.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://www.five9.com/blog/enabling-five9-identity-service-were-just-getting-started",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "notes": "Identity Service lets admins assign SSO per user, but no vendor page found stating an org-wide setting to disable password login for all users.",
+        "support": "undocumented"
+      }
+    },
+    "category": "support",
+    "description": "Five9 is a cloud contact center platform providing voice and digital customer engagement, workforce management, and AI-powered tools.",
+    "name": "Five9",
+    "status": "draft",
+    "website": "https://www.five9.com"
+  },
+  {
     "_id": "freshdesk",
     "capabilities": {
       "api_token_controls": {
@@ -3831,6 +3892,145 @@
     "name": "Front",
     "status": "published",
     "website": "https://front.com"
+  },
+  {
+    "_id": "gainsight",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "User Management has an Activity Log tracking creation/updates to user records (who/when), but it is scoped to user data changes, not a full admin/user activity log.",
+        "source": "https://support.gainsight.com/gainsight_nxt/01Onboarding_and_Implementation/Onboarding_for_Gainsight_NXT/Login_and_Permissions/Activity_Logs",
+        "support": "partial"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "notes": "Checked SSO/authentication docs; no mention of an in-app MFA enforcement policy for Gainsight NXT.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "No mention of passkeys/WebAuthn/FIDO2 in Gainsight authentication or SSO documentation.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "SCIM API automates user provisioning/de-provisioning; requires SAML SSO configured first. Officially supported for Okta and Microsoft Entra ID.",
+        "source": "https://support.gainsight.com/gainsight_nxt/API_and_Developer_Docs/User_Management_APIs/SCIM_API",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Gainsight NXT supports SAML SSO (and G-Suite auth); OIDC is not mentioned in vendor docs.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://support.gainsight.com/gainsight_nxt/Administration_and_Permissions/General_Administration/Single_Sign-On_(SSO)_for_Gainsight_Applications",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Admins can toggle OFF DB Login so all users must authenticate via SAML SSO.",
+        "source": "https://support.gainsight.com/gainsight_nxt/01Onboarding_and_Implementation/Onboarding_for_Gainsight_NXT/Login_and_Permissions/03Gainsight_Authentication",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "sales_marketing",
+    "description": "Customer success and product experience platform for managing customer health, retention, and expansion.",
+    "name": "Gainsight",
+    "status": "draft",
+    "website": "https://www.gainsight.com"
+  },
+  {
+    "_id": "genesys-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Admin Audit Viewer logs administrative and service events with filtering; accessible under Admin > Troubleshooting.",
+        "source": "https://help.genesys.cloud/articles/about-the-audit-log-viewer/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Org Settings > Authentication has a toggle to require MFA for all users; applies to native username/password login only, not SSO logins.",
+        "source": "https://help.genesys.cloud/articles/enable-multi-factor-authentication/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-22",
+        "notes": "Passkeys (WebAuthn), including platform authenticators and physical security keys, were added as a supported MFA device type on December 15, 2025.",
+        "source": "https://help.genesys.cloud/announcements/new-multi-factor-authentication-mfa-device-options/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "Native SCIM 2.0 endpoint syncs users from Azure AD/Entra ID, Okta, or OneLogin into Genesys Cloud; sync is unidirectional (IdP to Genesys Cloud).",
+        "source": "https://help.genesys.cloud/articles/about-genesys-cloud-scim-identity-management/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Integrates with third-party identity providers that support SAML 2.0 (e.g. Okta, OneLogin, Azure AD/Entra ID).",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://all.docs.genesys.com/PEC-Admin/Current/Admin/SSO",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Admins can configure Genesys Cloud to authenticate with SSO only, disabling username/password login org-wide.",
+        "source": "https://help.genesys.cloud/faqs/category/single-sign-on/",
+        "support": "supported",
+        "tier": "paid"
+      }
+    },
+    "category": "support",
+    "description": "Cloud-based contact center and customer experience platform for omnichannel routing, workforce engagement, and analytics.",
+    "name": "Genesys Cloud CX",
+    "status": "draft",
+    "website": "https://www.genesys.com"
   },
   {
     "_id": "github",
@@ -5390,6 +5590,67 @@
     "name": "LastPass",
     "status": "published",
     "website": "https://www.lastpass.com"
+  },
+  {
+    "_id": "lattice",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Lattice provides scoped audit logs for Review Cycles, Automated Review Rules, and Goals, but no company-wide admin/user activity log was found.",
+        "source": "https://help.lattice.com/hc/en-us/articles/360062285513-The-Audit-Log-in-Review-Cycles",
+        "support": "partial"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "notes": "No help center article found describing admin-enforced MFA within Lattice itself.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "No documentation found on passkey/WebAuthn/FIDO2 support.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "SCIM API supports provisioning and attribute sync from Azure, Okta, OneLogin, Sapling, and Microsoft, enabled under Admin > Settings > Platform > Integrations. Plan tier not stated.",
+        "source": "https://help.lattice.com/hc/en-us/articles/4404294040983-The-SCIM-API",
+        "support": "supported"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Lattice integrates with any SAML 2.0 identity provider (Okta, Google Workspace, Azure/Entra, OneLogin) via Admin > Settings > Platform > Single Sign-On. Plan tier not stated in the article.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://help.lattice.com/hc/en-us/articles/360061240253-Configure-Single-Sign-On-for-Lattice",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "notes": "Checked the SSO configuration article; no statement found on requiring SSO / disabling password login.",
+        "support": "undocumented"
+      }
+    },
+    "category": "hr",
+    "description": "A people management platform for performance reviews, goals, engagement surveys, and HRIS functions.",
+    "name": "Lattice",
+    "status": "draft",
+    "website": "https://lattice.com"
   },
   {
     "_id": "launchdarkly",
@@ -7346,6 +7607,113 @@
     "website": "https://www.pandadoc.com"
   },
   {
+    "_id": "paycom",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Paycom states the application maintains an unchangeable, non-purged audit trail including user ID, time/date, and IP stamps; plan/tier not stated.",
+        "source": "https://www.paycom.com/about/security/",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Paycom offers two-step verification (text, email, phone, push) and requires security-question verification for first-time users and new devices, but no vendor page found describing an admin toggle to require MFA for all logins.",
+        "source": "https://www.paycom.com/about/security/",
+        "support": "partial"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "No vendor page found mentioning passkeys, WebAuthn, or FIDO2 support.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "No vendor page found describing SCIM or automated directory provisioning/deprovisioning.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Paycom offers SAML 2.0 SSO so clients can manage access through their chosen identity provider; plan/tier not stated.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://www.paycom.com/about/security/",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "notes": "No vendor page found describing an admin setting to disable standard password login org-wide.",
+        "support": "undocumented"
+      }
+    },
+    "category": "hr",
+    "description": "Paycom is a cloud-based human capital management platform covering payroll, HR, talent management, and time & labor.",
+    "name": "Paycom",
+    "status": "draft",
+    "website": "https://www.paycom.com"
+  },
+  {
+    "_id": "paylocity",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "support": "not_researched"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "support": "not_researched"
+      },
+      "phishing_resistant_mfa": {
+        "support": "not_researched"
+      },
+      "scim": {
+        "support": "not_researched"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "support": "not_researched"
+      },
+      "sso_enforcement": {
+        "support": "not_researched"
+      }
+    },
+    "category": "hr",
+    "description": "Cloud-based payroll and human capital management platform.",
+    "name": "Paylocity",
+    "status": "draft",
+    "website": "https://www.paylocity.com"
+  },
+  {
     "_id": "pendo",
     "capabilities": {
       "api_token_controls": {
@@ -7409,6 +7777,74 @@
     "name": "Pendo",
     "status": "draft",
     "website": "https://www.pendo.io"
+  },
+  {
+    "_id": "personio",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Admin-only Audit Log tracks changes to company and employee data (who changed what and when); entries are immutable.",
+        "source": "https://support.personio.de/hc/en-us/articles/18906413010589-Use-the-Personio-Audit-Log",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Admins can require 2FA per employee role (a role covering all employees can be created); applies only to Personio Credentials login, not SSO logins.",
+        "source": "https://support.personio.de/hc/en-us/articles/207787815-Enable-Two-Factor-Authentication-for-Specific-Employee-Roles",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "No vendor documentation of passkey/WebAuthn/FIDO2 login; requested as a feature on Personio's community forum but not confirmed as shipped.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "Personio documents outbound provisioning (pushing employee data to Google/Okta/Entra ID via its own API) but no SCIM endpoint for provisioning users into Personio itself.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Supports SAML 2.0, Microsoft Entra ID, Google SSO, and a custom OpenID Connect/OAuth 2.0 connection; multiple providers can be combined.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://support.personio.de/hc/en-us/articles/28339886661405-Frequently-asked-questions-on-single-sign-on-SSO-in-Personio",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "SAML 2.0, OpenID Connect, and Entra ID connections can enforce SSO-only login (disabling Personio Credentials) for specific email domains via Home Realm Discovery.",
+        "source": "https://support.personio.de/hc/en-us/articles/28339886661405-Frequently-asked-questions-on-single-sign-on-SSO-in-Personio",
+        "support": "supported",
+        "tier": "paid"
+      }
+    },
+    "category": "hr",
+    "description": "All-in-one HR software for people management, recruiting, payroll, and workforce administration for small and mid-sized companies.",
+    "name": "Personio",
+    "status": "draft",
+    "website": "https://www.personio.com"
   },
   {
     "_id": "pipedrive",
@@ -8188,6 +8624,69 @@
     "name": "Salesforce",
     "status": "draft",
     "website": "https://salesforce.com"
+  },
+  {
+    "_id": "salesloft",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Admins can request a downloadable CSV audit log covering a 35-day lookback of team actions; plan tier not stated.",
+        "retention": "35 days",
+        "source": "https://help.salesloft.com/s/article/Manage-Audit-Logs?language=en_US",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "notes": "No help center article found describing admin-enforced MFA within Salesloft itself.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "No documentation found on passkey/WebAuthn/FIDO2 support.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "Auto-provisioning/deprovisioning via SCIM with Okta is documented as a Salesloft Enterprise feature (per article title/URL).",
+        "source": "https://help.salesloft.com/s/article/Auto-User-Provisioning-with-Okta-Salesloft-Enterprise?language=en_US",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "SAML 2.0 SSO configurable with Okta, Google Workspace, and custom SAML identity providers (ACS URL accounts.salesloft.com/auth/saml-callback). Plan tier not stated in the article.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://help.salesloft.com/s/article/Single-Sign-On-Okta-Instructions",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "notes": "Checked SSO setup articles; no statement found on requiring SSO / disabling password login.",
+        "support": "undocumented"
+      }
+    },
+    "category": "sales_marketing",
+    "description": "A sales engagement platform that helps revenue teams manage prospecting, email/call cadences, and deal execution.",
+    "name": "Salesloft",
+    "status": "draft",
+    "website": "https://salesloft.com"
   },
   {
     "_id": "sap-concur",

@@ -1,0 +1,46 @@
+name: "Salesloft"
+category: "sales_marketing"
+website: "https://salesloft.com"
+description: "A sales engagement platform that helps revenue teams manage prospecting, email/call cadences, and deal execution."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "SAML 2.0 SSO configurable with Okta, Google Workspace, and custom SAML identity providers (ACS URL accounts.salesloft.com/auth/saml-callback). Plan tier not stated in the article."
+    source: "https://help.salesloft.com/s/article/Single-Sign-On-Okta-Instructions"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Checked SSO setup articles; no statement found on requiring SSO / disabling password login."
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    notes: "Auto-provisioning/deprovisioning via SCIM with Okta is documented as a Salesloft Enterprise feature (per article title/URL)."
+    source: "https://help.salesloft.com/s/article/Auto-User-Provisioning-with-Okta-Salesloft-Enterprise?language=en_US"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "No help center article found describing admin-enforced MFA within Salesloft itself."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "No documentation found on passkey/WebAuthn/FIDO2 support."
+  audit_logs:
+    support: "supported"
+    retention: "35 days"
+    notes: "Admins can request a downloadable CSV audit log covering a 35-day lookback of team actions; plan tier not stated."
+    source: "https://help.salesloft.com/s/article/Manage-Audit-Logs?language=en_US"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

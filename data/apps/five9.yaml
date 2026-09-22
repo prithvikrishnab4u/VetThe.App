@@ -1,0 +1,44 @@
+name: "Five9"
+category: "support"
+website: "https://www.five9.com"
+description: "Five9 is a cloud contact center platform providing voice and digital customer engagement, workforce management, and AI-powered tools."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "Five9 Identity Service provides SAML-based SSO for Five9 applications; plan/tier not stated."
+    source: "https://www.five9.com/blog/enabling-five9-identity-service-were-just-getting-started"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Identity Service lets admins assign SSO per user, but no vendor page found stating an org-wide setting to disable password login for all users."
+  scim:
+    support: "supported"
+    notes: "Five9 Identity Service supports automated user provisioning/deprovisioning via SCIM; plan/tier not stated."
+    source: "https://www.five9.com/resources/five9-automated-user-management"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Five9 Identity Service includes multi-factor authentication as an admin-configurable security feature; plan/tier not stated."
+    source: "https://www.five9.com/blog/enabling-five9-identity-service-were-just-getting-started"
+    checked: "2026-09-22"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "No vendor page found mentioning passkeys, WebAuthn, or FIDO2 support."
+  audit_logs:
+    support: "undocumented"
+    notes: "Admin Console has an event/configuration change log, but a working vendor page confirming full admin+user activity audit logging could not be fetched to verify wording."
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

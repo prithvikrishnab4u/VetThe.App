@@ -1,0 +1,49 @@
+name: "Gainsight"
+category: "sales_marketing"
+website: "https://www.gainsight.com"
+description: "Customer success and product experience platform for managing customer health, retention, and expansion."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    protocols: ["SAML"]
+    notes: "Gainsight NXT supports SAML SSO (and G-Suite auth); OIDC is not mentioned in vendor docs."
+    source: "https://support.gainsight.com/gainsight_nxt/Administration_and_Permissions/General_Administration/Single_Sign-On_(SSO)_for_Gainsight_Applications"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    notes: "Admins can toggle OFF DB Login so all users must authenticate via SAML SSO."
+    source: "https://support.gainsight.com/gainsight_nxt/01Onboarding_and_Implementation/Onboarding_for_Gainsight_NXT/Login_and_Permissions/03Gainsight_Authentication"
+    checked: "2026-09-22"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    notes: "SCIM API automates user provisioning/de-provisioning; requires SAML SSO configured first. Officially supported for Okta and Microsoft Entra ID."
+    source: "https://support.gainsight.com/gainsight_nxt/API_and_Developer_Docs/User_Management_APIs/SCIM_API"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Checked SSO/authentication docs; no mention of an in-app MFA enforcement policy for Gainsight NXT."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "No mention of passkeys/WebAuthn/FIDO2 in Gainsight authentication or SSO documentation."
+  audit_logs:
+    support: "partial"
+    notes: "User Management has an Activity Log tracking creation/updates to user records (who/when), but it is scoped to user data changes, not a full admin/user activity log."
+    source: "https://support.gainsight.com/gainsight_nxt/01Onboarding_and_Implementation/Onboarding_for_Gainsight_NXT/Login_and_Permissions/Activity_Logs"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

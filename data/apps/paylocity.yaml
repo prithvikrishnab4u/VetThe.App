@@ -1,0 +1,31 @@
+name: "Paylocity"
+category: "hr"
+website: "https://www.paylocity.com"
+description: "Cloud-based payroll and human capital management platform."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "not_researched"
+  sso_enforcement:
+    support: "not_researched"
+  scim:
+    support: "not_researched"
+  mfa_enforcement:
+    support: "not_researched"
+  phishing_resistant_mfa:
+    support: "not_researched"
+  audit_logs:
+    support: "not_researched"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

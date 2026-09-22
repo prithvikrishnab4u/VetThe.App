@@ -1,0 +1,50 @@
+name: "Personio"
+category: "hr"
+website: "https://www.personio.com"
+description: "All-in-one HR software for people management, recruiting, payroll, and workforce administration for small and mid-sized companies."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    protocols: ["SAML", "OIDC"]
+    notes: "Supports SAML 2.0, Microsoft Entra ID, Google SSO, and a custom OpenID Connect/OAuth 2.0 connection; multiple providers can be combined."
+    source: "https://support.personio.de/hc/en-us/articles/28339886661405-Frequently-asked-questions-on-single-sign-on-SSO-in-Personio"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "supported"
+    tier: "paid"
+    notes: "SAML 2.0, OpenID Connect, and Entra ID connections can enforce SSO-only login (disabling Personio Credentials) for specific email domains via Home Realm Discovery."
+    source: "https://support.personio.de/hc/en-us/articles/28339886661405-Frequently-asked-questions-on-single-sign-on-SSO-in-Personio"
+    checked: "2026-09-22"
+  scim:
+    support: "undocumented"
+    notes: "Personio documents outbound provisioning (pushing employee data to Google/Okta/Entra ID via its own API) but no SCIM endpoint for provisioning users into Personio itself."
+  mfa_enforcement:
+    support: "supported"
+    tier: "paid"
+    notes: "Admins can require 2FA per employee role (a role covering all employees can be created); applies only to Personio Credentials login, not SSO logins."
+    source: "https://support.personio.de/hc/en-us/articles/207787815-Enable-Two-Factor-Authentication-for-Specific-Employee-Roles"
+    checked: "2026-09-22"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "No vendor documentation of passkey/WebAuthn/FIDO2 login; requested as a feature on Personio's community forum but not confirmed as shipped."
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    notes: "Admin-only Audit Log tracks changes to company and employee data (who changed what and when); entries are immutable."
+    source: "https://support.personio.de/hc/en-us/articles/18906413010589-Use-the-Personio-Audit-Log"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

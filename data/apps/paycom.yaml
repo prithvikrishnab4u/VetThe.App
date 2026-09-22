@@ -1,0 +1,44 @@
+name: "Paycom"
+category: "hr"
+website: "https://www.paycom.com"
+description: "Paycom is a cloud-based human capital management platform covering payroll, HR, talent management, and time & labor."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "Paycom offers SAML 2.0 SSO so clients can manage access through their chosen identity provider; plan/tier not stated."
+    source: "https://www.paycom.com/about/security/"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "No vendor page found describing an admin setting to disable standard password login org-wide."
+  scim:
+    support: "undocumented"
+    notes: "No vendor page found describing SCIM or automated directory provisioning/deprovisioning."
+  mfa_enforcement:
+    support: "partial"
+    notes: "Paycom offers two-step verification (text, email, phone, push) and requires security-question verification for first-time users and new devices, but no vendor page found describing an admin toggle to require MFA for all logins."
+    source: "https://www.paycom.com/about/security/"
+    checked: "2026-09-22"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "No vendor page found mentioning passkeys, WebAuthn, or FIDO2 support."
+  audit_logs:
+    support: "supported"
+    notes: "Paycom states the application maintains an unchangeable, non-purged audit trail including user ID, time/date, and IP stamps; plan/tier not stated."
+    source: "https://www.paycom.com/about/security/"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

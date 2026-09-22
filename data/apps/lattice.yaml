@@ -1,0 +1,44 @@
+name: "Lattice"
+category: "hr"
+website: "https://lattice.com"
+description: "A people management platform for performance reviews, goals, engagement surveys, and HRIS functions."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "Lattice integrates with any SAML 2.0 identity provider (Okta, Google Workspace, Azure/Entra, OneLogin) via Admin > Settings > Platform > Single Sign-On. Plan tier not stated in the article."
+    source: "https://help.lattice.com/hc/en-us/articles/360061240253-Configure-Single-Sign-On-for-Lattice"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Checked the SSO configuration article; no statement found on requiring SSO / disabling password login."
+  scim:
+    support: "supported"
+    notes: "SCIM API supports provisioning and attribute sync from Azure, Okta, OneLogin, Sapling, and Microsoft, enabled under Admin > Settings > Platform > Integrations. Plan tier not stated."
+    source: "https://help.lattice.com/hc/en-us/articles/4404294040983-The-SCIM-API"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "No help center article found describing admin-enforced MFA within Lattice itself."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "No documentation found on passkey/WebAuthn/FIDO2 support."
+  audit_logs:
+    support: "partial"
+    notes: "Lattice provides scoped audit logs for Review Cycles, Automated Review Rules, and Goals, but no company-wide admin/user activity log was found."
+    source: "https://help.lattice.com/hc/en-us/articles/360062285513-The-Audit-Log-in-Review-Cycles"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"
