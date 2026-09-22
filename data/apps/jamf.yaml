@@ -1,0 +1,44 @@
+name: "Jamf"
+category: "security"
+website: "https://jamf.com"
+description: "Apple device management (MDM) and endpoint security platform for enterprises."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "Jamf Pro supports SAML-based SSO and OIDC (through Jamf Account) for admin login."
+    source: "https://learn.jamf.com/r/en-US/jamf-pro-documentation-current/SAML-Based_Single_Sign-On"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Jamf Pro documents a dedicated Multi-factor Authentication feature for admin accounts."
+    source: "https://learn.jamf.com/r/en-US/jamf-pro-documentation-current/Multi-factor_Authentication"
+    checked: "2026-09-22"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Jamf Pro documents FIDO2 authentication as an enrollment/login method."
+    source: "https://learn.jamf.com/r/en-US/jamf-pro-documentation-current/FIDO2_Authentication"
+    checked: "2026-09-22"
+  audit_logs:
+    support: "supported"
+    notes: "Jamf Pro documents Event Logs and Change Management for admin/user activity."
+    source: "https://learn.jamf.com/r/en-US/jamf-pro-documentation-current/Event_Logs"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

@@ -1,0 +1,43 @@
+name: "Tenable"
+category: "security"
+website: "https://tenable.com"
+description: "Tenable is a cyber exposure and vulnerability management platform (Tenable One, Tenable Vulnerability Management, Tenable Security Center)."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "SP-initiated SAML flow is not supported; IdP-initiated only."
+    source: "https://docs.tenable.com/vulnerability-management/best-practices/security/Content/SingleSignOn.htm"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "supported"
+    notes: "Admins can disable password login to force users to authenticate via SSO."
+    source: "https://docs.tenable.com/vulnerability-management/best-practices/security/Content/SingleSignOn.htm"
+    checked: "2026-09-22"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "MFA setup is documented but admin-side enforcement/requirement for all users is not stated."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    retention: "3 years"
+    notes: "Activity/audit logs record user and admin events, viewable by Administrator role and via API; retained 3 years."
+    source: "https://docs.tenable.com/vulnerability-management/best-practices/security/Content/ActivityLogs.htm"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

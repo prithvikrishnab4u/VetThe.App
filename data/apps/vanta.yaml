@@ -1,0 +1,39 @@
+name: "Vanta"
+category: "security"
+website: "https://www.vanta.com"
+description: "Vanta is a trust management and compliance automation platform that helps companies achieve and maintain security certifications like SOC 2, ISO 27001, and HIPAA."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "Supports SAML SSO via IdP integrations (Okta, custom SAML connections) or standalone SSO for Vanta login."
+    source: "https://help.vanta.com/en/articles/11345649-creating-a-custom-saml-connection"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "supported"
+    tier: "add_on"
+    notes: "SCIM provisioning/deprovisioning via IdP (e.g. Okta) may require an upgrade or add-on per Vanta pricing."
+    source: "https://help.vanta.com/en/articles/11345647-enabling-scim-in-vanta"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

@@ -1,0 +1,55 @@
+name: "JumpCloud"
+category: "security"
+website: "https://jumpcloud.com"
+description: "JumpCloud is a cloud directory platform providing identity, device, and access management."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "SSO"
+    protocols: ["SAML", "OIDC"]
+    notes: "SSO and MFA across all SAML and OIDC-based apps."
+    source: "https://jumpcloud.com/platform/single-sign-on"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "supported"
+    tier: "paid"
+    notes: "SCIM lifecycle management and account provisioning/deactivation to connected resources such as Slack, Salesforce, AWS, GitHub, Atlassian."
+    source: "https://jumpcloud.com/platform/single-sign-on"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "supported"
+    tier: "paid"
+    notes: "MFA offered as standalone add-on and included in SSO and bundled platform plans."
+    source: "https://jumpcloud.com/pricing"
+    checked: "2026-09-22"
+  phishing_resistant_mfa:
+    support: "supported"
+    tier: "paid"
+    plan: "JumpCloud Go"
+    notes: "JumpCloud Go is a hardware-protected, phishing-resistant passwordless MFA login method."
+    source: "https://jumpcloud.com/platform/single-sign-on"
+    checked: "2026-09-22"
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "Directory Insights"
+    notes: "Directory Insights logs directory, SSO, SAML, RADIUS, LDAP, systems, and admin events; included in some package plans, otherwise enabled on request."
+    source: "https://jumpcloud.com/support/directory-insights"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

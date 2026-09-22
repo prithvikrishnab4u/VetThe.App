@@ -1,0 +1,35 @@
+name: "Proofpoint"
+category: "security"
+website: "https://www.proofpoint.com"
+description: "Proofpoint is a cybersecurity company offering email security, threat protection, and compliance solutions for enterprises."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "Proofpoint Essentials supports SAML-based SSO to the Admin Console via third-party IdPs (Azure AD, Okta, or any SAML 2.0 IdP), configured under Account Management > Identity Providers."
+    source: "https://help.proofpoint.com/Proofpoint_Essentials/Email_Security/Administrator_Topics/Other_Features/Microsoft_Azure_IdP_SSO_Integration_Guide"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

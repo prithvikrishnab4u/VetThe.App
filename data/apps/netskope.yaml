@@ -1,0 +1,41 @@
+name: "Netskope"
+category: "security"
+website: "https://www.netskope.com"
+description: "Netskope is a cloud security platform (SASE/SSE) providing secure web gateway, CASB, and ZTNA capabilities."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "SSO for the Netskope Admin Console uses SAML 2.0, configured under Settings > Administration > SSO."
+    source: "https://docs.netskope.com/en/configure-single-sign-on-for-the-netskope-ui"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "supported"
+    notes: "Netskope supports SCIM to automate user lifecycle management (create/update/deactivate) and group sync from IdPs."
+    source: "https://docs.netskope.com/en/user-provisioning-and-authentication"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    notes: "Admin-visible Audit Log under Home > Settings > Administration > Audit Log, tracks critical admin activities; no retention period stated."
+    source: "https://docs.netskope.com/en/audit-log-1"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

@@ -1,0 +1,62 @@
+name: "Keeper"
+category: "security"
+website: "https://www.keepersecurity.com"
+description: "Keeper is an enterprise password management and privileged access security platform."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML"]
+    notes: "Keeper SSO Connect provides SAML 2.0 federated login for Enterprise plan."
+    source: "https://www.keepersecurity.com/pricing"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SSO Connect enables federated/enforced login for the organization on Enterprise."
+    source: "https://www.keepersecurity.com/en_US/enterprise.html"
+    checked: "2026-09-22"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Direct SCIM API user and team provisioning supported on Enterprise."
+    source: "https://www.keepersecurity.com/pricing"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "Two-factor authentication available from Business; Enterprise adds advanced 2FA (DUO/RSA) integrations."
+    source: "https://www.keepersecurity.com/pricing"
+    checked: "2026-09-22"
+  phishing_resistant_mfa:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Biometric/device-bound passkey login listed as an Enterprise feature."
+    source: "https://www.keepersecurity.com/pricing"
+    checked: "2026-09-22"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Reporting and alerts on 200+ event types including failed logins and admin changes; retention not stated."
+    source: "https://www.keepersecurity.com/en_US/enterprise.html"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

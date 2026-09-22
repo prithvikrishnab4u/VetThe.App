@@ -1,0 +1,38 @@
+name: "Drata"
+category: "security"
+website: "https://drata.com"
+description: "Drata is a compliance automation platform that continuously monitors controls for SOC 2, ISO 27001 and other frameworks."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "SSO login via WorkOS, connecting to an enterprise IdP (e.g. Okta) using SAML 2.0."
+    source: "https://help.drata.com/en/articles/5209416-single-sign-on-sso-integration-guide"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "not_supported"
+    notes: "Drata does not offer native SCIM provisioning for signing into Drata itself; only manual or custom API-based provisioning."
+    source: "https://help.drata.com/en/articles/5209416-single-sign-on-sso-integration-guide"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

@@ -3319,6 +3319,61 @@
     "website": "https://docusign.com"
   },
   {
+    "_id": "drata",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "Drata does not offer native SCIM provisioning for signing into Drata itself; only manual or custom API-based provisioning.",
+        "source": "https://help.drata.com/en/articles/5209416-single-sign-on-sso-integration-guide",
+        "support": "not_supported"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "SSO login via WorkOS, connecting to an enterprise IdP (e.g. Okta) using SAML 2.0.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://help.drata.com/en/articles/5209416-single-sign-on-sso-integration-guide",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Drata is a compliance automation platform that continuously monitors controls for SOC 2, ISO 27001 and other frameworks.",
+    "name": "Drata",
+    "status": "draft",
+    "website": "https://drata.com"
+  },
+  {
     "_id": "dropbox-sign",
     "capabilities": {
       "api_token_controls": {
@@ -5249,6 +5304,68 @@
     "website": "https://ironcladapp.com"
   },
   {
+    "_id": "jamf",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Jamf Pro documents Event Logs and Change Management for admin/user activity.",
+        "source": "https://learn.jamf.com/r/en-US/jamf-pro-documentation-current/Event_Logs",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Jamf Pro documents a dedicated Multi-factor Authentication feature for admin accounts.",
+        "source": "https://learn.jamf.com/r/en-US/jamf-pro-documentation-current/Multi-factor_Authentication",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-22",
+        "notes": "Jamf Pro documents FIDO2 authentication as an enrollment/login method.",
+        "source": "https://learn.jamf.com/r/en-US/jamf-pro-documentation-current/FIDO2_Authentication",
+        "support": "supported"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Jamf Pro supports SAML-based SSO and OIDC (through Jamf Account) for admin login.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://learn.jamf.com/r/en-US/jamf-pro-documentation-current/SAML-Based_Single_Sign-On",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Apple device management (MDM) and endpoint security platform for enterprises.",
+    "name": "Jamf",
+    "status": "draft",
+    "website": "https://jamf.com"
+  },
+  {
     "_id": "jetbrains",
     "capabilities": {
       "api_token_controls": {
@@ -5379,6 +5496,79 @@
     "website": "https://jfrog.com"
   },
   {
+    "_id": "jumpcloud",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Directory Insights logs directory, SSO, SAML, RADIUS, LDAP, systems, and admin events; included in some package plans, otherwise enabled on request.",
+        "plan": "Directory Insights",
+        "source": "https://jumpcloud.com/support/directory-insights",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "MFA offered as standalone add-on and included in SSO and bundled platform plans.",
+        "source": "https://jumpcloud.com/pricing",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-22",
+        "notes": "JumpCloud Go is a hardware-protected, phishing-resistant passwordless MFA login method.",
+        "plan": "JumpCloud Go",
+        "source": "https://jumpcloud.com/platform/single-sign-on",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "SCIM lifecycle management and account provisioning/deactivation to connected resources such as Slack, Salesforce, AWS, GitHub, Atlassian.",
+        "source": "https://jumpcloud.com/platform/single-sign-on",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "SSO and MFA across all SAML and OIDC-based apps.",
+        "plan": "SSO",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://jumpcloud.com/platform/single-sign-on",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "JumpCloud is a cloud directory platform providing identity, device, and access management.",
+    "name": "JumpCloud",
+    "status": "draft",
+    "website": "https://jumpcloud.com"
+  },
+  {
     "_id": "justworks",
     "capabilities": {
       "api_token_controls": {
@@ -5490,6 +5680,85 @@
     "name": "Kandji",
     "status": "draft",
     "website": "https://www.kandji.io"
+  },
+  {
+    "_id": "keeper",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Reporting and alerts on 200+ event types including failed logins and admin changes; retention not stated.",
+        "plan": "Enterprise",
+        "source": "https://www.keepersecurity.com/en_US/enterprise.html",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Two-factor authentication available from Business; Enterprise adds advanced 2FA (DUO/RSA) integrations.",
+        "plan": "Business",
+        "source": "https://www.keepersecurity.com/pricing",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-22",
+        "notes": "Biometric/device-bound passkey login listed as an Enterprise feature.",
+        "plan": "Enterprise",
+        "source": "https://www.keepersecurity.com/pricing",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "Direct SCIM API user and team provisioning supported on Enterprise.",
+        "plan": "Enterprise",
+        "source": "https://www.keepersecurity.com/pricing",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Keeper SSO Connect provides SAML 2.0 federated login for Enterprise plan.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://www.keepersecurity.com/pricing",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "SSO Connect enables federated/enforced login for the organization on Enterprise.",
+        "plan": "Enterprise",
+        "source": "https://www.keepersecurity.com/en_US/enterprise.html",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "security",
+    "description": "Keeper is an enterprise password management and privileged access security platform.",
+    "name": "Keeper",
+    "status": "draft",
+    "website": "https://www.keepersecurity.com"
   },
   {
     "_id": "klaviyo",
@@ -7318,6 +7587,64 @@
     "website": "https://navan.com"
   },
   {
+    "_id": "netskope",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Admin-visible Audit Log under Home > Settings > Administration > Audit Log, tracks critical admin activities; no retention period stated.",
+        "source": "https://docs.netskope.com/en/audit-log-1",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "Netskope supports SCIM to automate user lifecycle management (create/update/deactivate) and group sync from IdPs.",
+        "source": "https://docs.netskope.com/en/user-provisioning-and-authentication",
+        "support": "supported"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "SSO for the Netskope Admin Console uses SAML 2.0, configured under Settings > Administration > SSO.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.netskope.com/en/configure-single-sign-on-for-the-netskope-ui",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Netskope is a cloud security platform (SASE/SSE) providing secure web gateway, CASB, and ZTNA capabilities.",
+    "name": "Netskope",
+    "status": "draft",
+    "website": "https://www.netskope.com"
+  },
+  {
     "_id": "netsuite",
     "capabilities": {
       "api_token_controls": {
@@ -8377,6 +8704,117 @@
     "name": "Postman",
     "status": "published",
     "website": "https://www.postman.com"
+  },
+  {
+    "_id": "prisma-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Prisma Cloud provides an admin-visible audit log with queryable audit events.",
+        "source": "https://docs.prismacloud.io/content-collections/administration/view-audit-logs.md",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-22",
+        "notes": "JIT provisioning is documented for SAML SSO with Google, Okta, and OneLogin IdPs.",
+        "source": "https://docs.prismacloud.io/content-collections/administration/setup-sso-integration-on-prisma-cloud/get-started-with-saml-sso/setup-jit-on-okta.md",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "SSO can be enabled with an IdP supporting SAML or OIDC (Okta, ADFS, Azure AD, Google, OneLogin); only one IdP can be configured per tenant.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.prismacloud.io/content-collections/administration/setup-sso-integration-on-prisma-cloud.md",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Prisma Cloud is Palo Alto Networks' cloud-native application protection platform (CNAPP) for securing cloud infrastructure and workloads.",
+    "name": "Palo Alto Networks Prisma Cloud",
+    "status": "draft",
+    "website": "https://www.paloaltonetworks.com/prisma/cloud"
+  },
+  {
+    "_id": "proofpoint",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Proofpoint Essentials supports SAML-based SSO to the Admin Console via third-party IdPs (Azure AD, Okta, or any SAML 2.0 IdP), configured under Account Management > Identity Providers.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://help.proofpoint.com/Proofpoint_Essentials/Email_Security/Administrator_Topics/Other_Features/Microsoft_Azure_IdP_SSO_Integration_Guide",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Proofpoint is a cybersecurity company offering email security, threat protection, and compliance solutions for enterprises.",
+    "name": "Proofpoint",
+    "status": "draft",
+    "website": "https://www.proofpoint.com"
   },
   {
     "_id": "qualtrics",
@@ -10243,6 +10681,68 @@
     "website": "https://www.tableau.com"
   },
   {
+    "_id": "tailscale",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Configuration and webhook audit logs are available on all plans; Premium and higher additionally get network flow logs.",
+        "source": "https://tailscale.com/blog/pricing-v4",
+        "support": "supported",
+        "tier": "free"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "SCIM user/group provisioning is available on Standard, Premium, and Enterprise plans; confirmed for Microsoft Entra ID.",
+        "plan": "Standard",
+        "source": "https://tailscale.com/kb/1249/sso-entra-id-scim",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Login to the admin console/tailnet is via a third-party identity provider (Google, Microsoft, GitHub, Okta, custom OIDC, etc.); no native password login.",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://tailscale.com/docs/integrations/identity",
+        "support": "supported",
+        "tier": "free"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Tailscale is a zero-config VPN and network access platform built on WireGuard for connecting devices and services.",
+    "name": "Tailscale",
+    "status": "draft",
+    "website": "https://tailscale.com"
+  },
+  {
     "_id": "teamviewer",
     "capabilities": {
       "api_token_controls": {
@@ -10293,6 +10793,66 @@
     "name": "TeamViewer",
     "status": "published",
     "website": "https://www.teamviewer.com"
+  },
+  {
+    "_id": "tenable",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Activity/audit logs record user and admin events, viewable by Administrator role and via API; retained 3 years.",
+        "retention": "3 years",
+        "source": "https://docs.tenable.com/vulnerability-management/best-practices/security/Content/ActivityLogs.htm",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "notes": "MFA setup is documented but admin-side enforcement/requirement for all users is not stated.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "SP-initiated SAML flow is not supported; IdP-initiated only.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.tenable.com/vulnerability-management/best-practices/security/Content/SingleSignOn.htm",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Admins can disable password login to force users to authenticate via SSO.",
+        "source": "https://docs.tenable.com/vulnerability-management/best-practices/security/Content/SingleSignOn.htm",
+        "support": "supported"
+      }
+    },
+    "category": "security",
+    "description": "Tenable is a cyber exposure and vulnerability management platform (Tenable One, Tenable Vulnerability Management, Tenable Security Center).",
+    "name": "Tenable",
+    "status": "draft",
+    "website": "https://tenable.com"
   },
   {
     "_id": "trello",
@@ -10725,6 +11285,62 @@
     "name": "UKG Pro",
     "status": "draft",
     "website": "https://www.ukg.com"
+  },
+  {
+    "_id": "vanta",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "SCIM provisioning/deprovisioning via IdP (e.g. Okta) may require an upgrade or add-on per Vanta pricing.",
+        "source": "https://help.vanta.com/en/articles/11345647-enabling-scim-in-vanta",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Supports SAML SSO via IdP integrations (Okta, custom SAML connections) or standalone SSO for Vanta login.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://help.vanta.com/en/articles/11345649-creating-a-custom-saml-connection",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Vanta is a trust management and compliance automation platform that helps companies achieve and maintain security certifications like SOC 2, ISO 27001, and HIPAA.",
+    "name": "Vanta",
+    "status": "draft",
+    "website": "https://www.vanta.com"
   },
   {
     "_id": "vercel",

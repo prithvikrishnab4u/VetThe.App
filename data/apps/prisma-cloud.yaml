@@ -1,0 +1,41 @@
+name: "Palo Alto Networks Prisma Cloud"
+category: "security"
+website: "https://www.paloaltonetworks.com/prisma/cloud"
+description: "Prisma Cloud is Palo Alto Networks' cloud-native application protection platform (CNAPP) for securing cloud infrastructure and workloads."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "SSO can be enabled with an IdP supporting SAML or OIDC (Okta, ADFS, Azure AD, Google, OneLogin); only one IdP can be configured per tenant."
+    source: "https://docs.prismacloud.io/content-collections/administration/setup-sso-integration-on-prisma-cloud.md"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    notes: "Prisma Cloud provides an admin-visible audit log with queryable audit events."
+    source: "https://docs.prismacloud.io/content-collections/administration/view-audit-logs.md"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "supported"
+    notes: "JIT provisioning is documented for SAML SSO with Google, Okta, and OneLogin IdPs."
+    source: "https://docs.prismacloud.io/content-collections/administration/setup-sso-integration-on-prisma-cloud/get-started-with-saml-sso/setup-jit-on-okta.md"
+    checked: "2026-09-22"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"
