@@ -1,43 +1,57 @@
 {{ $schema := site.Data.schema }}
 
-{{/* Coverage: every app × capability is one data point */}}
-{{ $points := 0 }}{{ $verified := 0 }}{{ $unverified := 0 }}{{ $undocumented := 0 }}{{ $notResearched := 0 }}
-{{ $corePoints := 0 }}{{ $coreVerified := 0 }}
+{{/* Coverage: every app × capability is one data point. Core and extended are counted
+     separately — the six core capabilities are the promise, the rest is ongoing work,
+     and blending them would understate both. */}}
+{{ $verified := 0 }}{{ $unverified := 0 }}{{ $undocumented := 0 }}{{ $notResearched := 0 }}
+{{ $corePoints := 0 }}{{ $coreVerified := 0 }}{{ $coreChecked := 0 }}
+{{ $extPoints := 0 }}{{ $extChecked := 0 }}
+{{ $fullApps := 0 }}
 {{ range site.Data.apps }}
     {{ $app := . }}
+    {{ $gaps := 0 }}
     {{ range $schema.capabilities }}
         {{ $cap := (index $app.capabilities .id) | default (dict) }}
         {{ $s := $cap.support | default "not_researched" }}
-        {{ $points = add $points 1 }}
-        {{ if .core }}{{ $corePoints = add $corePoints 1 }}{{ end }}
-        {{ if eq $s "undocumented" }}{{ $undocumented = add $undocumented 1 }}
-        {{ else if eq $s "not_researched" }}{{ $notResearched = add $notResearched 1 }}
-        {{ else if $cap.source }}{{ $verified = add $verified 1 }}{{ if .core }}{{ $coreVerified = add $coreVerified 1 }}{{ end }}
-        {{ else }}{{ $unverified = add $unverified 1 }}{{ end }}
+        {{ $isChecked := ne $s "not_researched" }}
+        {{ if .core }}
+            {{ $corePoints = add $corePoints 1 }}
+            {{ if $isChecked }}{{ $coreChecked = add $coreChecked 1 }}{{ else }}{{ $gaps = add $gaps 1 }}{{ end }}
+            {{ if eq $s "undocumented" }}{{ $undocumented = add $undocumented 1 }}
+            {{ else if not $isChecked }}{{ $notResearched = add $notResearched 1 }}
+            {{ else if $cap.source }}{{ $verified = add $verified 1 }}{{ $coreVerified = add $coreVerified 1 }}
+            {{ else }}{{ $unverified = add $unverified 1 }}{{ end }}
+        {{ else }}
+            {{ $extPoints = add $extPoints 1 }}
+            {{ if $isChecked }}{{ $extChecked = add $extChecked 1 }}{{ end }}
+        {{ end }}
     {{ end }}
+    {{ if eq $gaps 0 }}{{ $fullApps = add $fullApps 1 }}{{ end }}
 {{ end }}
+{{ $corePct := div (mul $coreChecked 100) $corePoints }}
 <!-- What's inside and how solid it is. Sits below the table. -->
 <section id="about" class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-6 scroll-mt-16">
     <div class="grid grid-cols-2 lg:grid-cols-6 gap-4">
         <div class="bento col-span-2 flex flex-col justify-between">
             <div>
                 <p class="bento-kicker">Data you can defend</p>
-                <h2 class="mt-1.5 text-lg sm:text-xl font-bold tracking-tight text-ink text-balance">No guesses shown as facts. Every gap is labelled.</h2>
-                <p class="mt-1.5 text-sm text-muted">A value only counts when it links to the vendor's pricing page, docs or trust center. If we checked and the vendor is silent, we say so.</p>
+                <h2 class="mt-1.5 text-lg sm:text-xl font-bold tracking-tight text-ink text-balance">Every core capability checked, on every app.</h2>
+                <p class="mt-1.5 text-sm text-muted">{{ $corePct }}% of the {{ lang.FormatNumber 0 $corePoints }} core values ({{ len site.Data.apps }} apps × 6 capabilities) have been looked up against the vendor's own pages. A value only counts when it links to their pricing page, docs or trust center — and when we checked and the vendor is silent, we say that instead of guessing.</p>
             </div>
             <div class="mt-4">
                 <div class="flex h-3 w-full overflow-hidden rounded-full bg-subtle" role="img"
-                    aria-label="{{ $verified }} verified, {{ $unverified }} unverified, {{ $undocumented }} not documented, {{ $notResearched }} not researched">
+                    aria-label="Core capabilities: {{ $verified }} sourced, {{ $unverified }} unverified, {{ $undocumented }} vendor silent, {{ $notResearched }} not yet checked">
                     {{ range slice (slice "verified" $verified) (slice "unverified" $unverified) (slice "undocumented" $undocumented) (slice "not_researched" $notResearched) }}
-                    <div class="seg-{{ index . 0 }}" style="width: {{ div (mul (float (index . 1)) 100) $points }}%"></div>
+                    <div class="seg-{{ index . 0 }}" style="width: {{ div (mul (float (index . 1)) 100) $corePoints }}%"></div>
                     {{ end }}
                 </div>
                 <ul class="mt-3 grid grid-cols-2 gap-x-3 gap-y-2 text-xs text-muted">
-                    <li><span class="flex items-center gap-1.5"><span class="h-2 w-2 rounded-full seg-verified"></span>Checked against a source</span><strong class="mt-0.5 block text-base font-semibold text-ink">{{ $verified }}</strong></li>
-                    <li><span class="flex items-center gap-1.5"><span class="h-2 w-2 rounded-full seg-undocumented"></span>Vendor doesn't document</span><strong class="mt-0.5 block text-base font-semibold text-ink">{{ $undocumented }}</strong></li>
-                    <li><span class="flex items-center gap-1.5"><span class="h-2 w-2 rounded-full seg-not_researched ring-1 ring-muted/40"></span>Not researched yet</span><strong class="mt-0.5 block text-base font-semibold text-ink">{{ $notResearched }}</strong></li>
+                    <li><span class="flex items-center gap-1.5"><span class="h-2 w-2 rounded-full seg-verified"></span>Sourced to a vendor page</span><strong class="mt-0.5 block text-base font-semibold text-ink">{{ $verified }}</strong></li>
+                    <li><span class="flex items-center gap-1.5"><span class="h-2 w-2 rounded-full seg-undocumented"></span>Checked — vendor is silent</span><strong class="mt-0.5 block text-base font-semibold text-ink">{{ $undocumented }}</strong></li>
+                    <li><span class="flex items-center gap-1.5"><span class="h-2 w-2 rounded-full seg-not_researched ring-1 ring-muted/40"></span>Still to check</span><strong class="mt-0.5 block text-base font-semibold text-ink">{{ $notResearched }}</strong></li>
                     {{ if $unverified }}<li><span class="flex items-center gap-1.5"><span class="h-2 w-2 rounded-full seg-unverified"></span>Unverified</span><strong class="mt-0.5 block text-base font-semibold text-ink">{{ $unverified }}</strong></li>{{ end }}
                 </ul>
+                <p class="mt-3 text-xs text-muted">Counts cover the 6 core capabilities. The 6 extended ones (JIT, domain verification, roles, sessions, API tokens) are an ongoing pass — {{ lang.FormatNumber 0 $extChecked }} of {{ lang.FormatNumber 0 $extPoints }} checked so far.</p>
             </div>
         </div>
 
@@ -48,8 +62,8 @@
         </div>
         <div class="bento">
             <div class="bento-icon bg-gradient-to-br from-emerald-500 to-teal-500">✅</div>
-            <p class="mt-4 text-3xl font-bold text-ink">{{ div (mul $coreVerified 100) $corePoints }}%</p>
-            <p class="text-sm text-muted">of core values sourced</p>
+            <p class="mt-4 text-3xl font-bold text-ink">{{ $fullApps }}<span class="text-xl text-muted">/{{ len site.Data.apps }}</span></p>
+            <p class="text-sm text-muted">apps with all 6 core capabilities checked</p>
         </div>
         <div class="bento">
             <div class="bento-icon bg-gradient-to-br from-fuchsia-500 to-pink-500">🧩</div>
