@@ -1,0 +1,48 @@
+name: "Microsoft Entra ID"
+category: "security"
+website: "https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-id"
+description: "Microsoft's cloud-based identity and access management platform providing single sign-on, MFA, and conditional access for apps and resources."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "free"
+    plan: "Microsoft Entra ID Free"
+    protocols: ["SAML", "OIDC"]
+    notes: "Free edition includes unlimited SSO across any SaaS app."
+    source: "https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "supported"
+    notes: "Automates provisioning and deprovisioning of users into SaaS apps via SCIM 2.0."
+    source: "https://learn.microsoft.com/en-us/entra/identity/app-provisioning/user-provisioning"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "supported"
+    tier: "free"
+    plan: "Microsoft Entra ID Free"
+    notes: "Free edition supports multifactor authentication (e.g. via security defaults)."
+    source: "https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing"
+    checked: "2026-09-22"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Supports passkeys (FIDO2), including device-bound security keys and synced passkeys."
+    source: "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-passwordless"
+    checked: "2026-09-22"
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

@@ -2156,6 +2156,71 @@
     "website": "https://circleci.com"
   },
   {
+    "_id": "cisco-duo",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Admin API exposes authentication logs, administrator action logs, and telephony logs.",
+        "source": "https://duo.com/docs/adminapi",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "plan": "Duo Free",
+        "source": "https://duo.com/pricing",
+        "support": "supported",
+        "tier": "free"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-22",
+        "notes": "Phishing-resistant MFA is highlighted as a Duo Premier plan feature.",
+        "plan": "Duo Premier",
+        "source": "https://duo.com/pricing",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "plan": "Essentials",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://duo.com/pricing",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Cisco Duo is a cloud-delivered identity security platform providing multi-factor authentication, single sign-on, and device trust.",
+    "name": "Cisco Duo",
+    "status": "draft",
+    "website": "https://duo.com"
+  },
+  {
     "_id": "cisco-webex",
     "capabilities": {
       "api_token_controls": {
@@ -5366,6 +5431,67 @@
     "website": "https://www.justworks.com"
   },
   {
+    "_id": "kandji",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Audit events can be exported via Amazon S3 integration.",
+        "source": "https://support.kandji.io/support/solutions/articles/72000562726-amazon-s3-audit-events-integration",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Kandji documents MFA for standard (non-SSO) authentication to the admin console.",
+        "source": "https://support.kandji.io/support/solutions/articles/72000562726-mfa-for-standard-authentication",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "SCIM directory integration available for Entra ID and Okta.",
+        "source": "https://support.kandji.io/support/solutions/articles/72000562726-scim-directory-integration",
+        "support": "supported"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Admin console supports SAML-based SSO with providers like Okta, Entra ID, Google Workspace, OneLogin, and JumpCloud.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://support.kandji.io/support/solutions/articles/72000560457-saml-based-single-sign-on",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Apple device management (MDM) platform for enrolling, securing, and managing macOS, iOS, iPadOS, and tvOS devices.",
+    "name": "Kandji",
+    "status": "draft",
+    "website": "https://www.kandji.io"
+  },
+  {
     "_id": "klaviyo",
     "capabilities": {
       "api_token_controls": {
@@ -5437,6 +5563,64 @@
     "name": "Klaviyo",
     "status": "draft",
     "website": "https://www.klaviyo.com"
+  },
+  {
+    "_id": "knowbe4",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Centralized, real-time record of all administrative actions in the console.",
+        "source": "https://www.knowbe4.com/pricing",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "User provisioning via Active Directory or SCIM integration for Azure, Okta, or OneLogin.",
+        "source": "https://www.knowbe4.com/pricing",
+        "support": "supported"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "SSO/SAML integration is included with all subscription levels.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://www.knowbe4.com/pricing",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Security awareness training and simulated phishing platform.",
+    "name": "KnowBe4",
+    "status": "draft",
+    "website": "https://www.knowbe4.com"
   },
   {
     "_id": "lark",
@@ -6440,6 +6624,72 @@
     "website": "https://dynamics.microsoft.com"
   },
   {
+    "_id": "microsoft-entra-id",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "notes": "Free edition supports multifactor authentication (e.g. via security defaults).",
+        "plan": "Microsoft Entra ID Free",
+        "source": "https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing",
+        "support": "supported",
+        "tier": "free"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-22",
+        "notes": "Supports passkeys (FIDO2), including device-bound security keys and synced passkeys.",
+        "source": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-passwordless",
+        "support": "supported"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "Automates provisioning and deprovisioning of users into SaaS apps via SCIM 2.0.",
+        "source": "https://learn.microsoft.com/en-us/entra/identity/app-provisioning/user-provisioning",
+        "support": "supported"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Free edition includes unlimited SSO across any SaaS app.",
+        "plan": "Microsoft Entra ID Free",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing",
+        "support": "supported",
+        "tier": "free"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Microsoft's cloud-based identity and access management platform providing single sign-on, MFA, and conditional access for apps and resources.",
+    "name": "Microsoft Entra ID",
+    "status": "draft",
+    "website": "https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-id"
+  },
+  {
     "_id": "microsoft-power-bi",
     "capabilities": {
       "api_token_controls": {
@@ -7303,6 +7553,69 @@
     "name": "Notion",
     "status": "published",
     "website": "https://notion.so"
+  },
+  {
+    "_id": "okta",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-22",
+        "plan": "Starter",
+        "source": "https://okta.com/pricing/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-22",
+        "notes": "SCIM-based automated provisioning/deprovisioning via Lifecycle Management, included from the Essentials tier.",
+        "plan": "Essentials (Lifecycle Management)",
+        "source": "https://okta.com/products/lifecycle-management/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "plan": "Starter",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://okta.com/pricing/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Okta Workforce Identity is an identity and access management platform providing SSO, MFA, and lifecycle management for enterprises.",
+    "name": "Okta Workforce Identity",
+    "status": "draft",
+    "website": "https://okta.com"
   },
   {
     "_id": "oracle-hcm-cloud",
@@ -8302,6 +8615,58 @@
     "name": "Ramp",
     "status": "published",
     "website": "https://ramp.com"
+  },
+  {
+    "_id": "rapid7",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "SSO to the Command Platform via SAML 2.0 IdP; plan requirement not stated.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.rapid7.com/insight/single-sign-on/",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Rapid7 is a security analytics and vulnerability management platform delivered via its Insight/Command cloud platform.",
+    "name": "Rapid7",
+    "status": "draft",
+    "website": "https://www.rapid7.com"
   },
   {
     "_id": "remote",
@@ -10594,6 +10959,62 @@
     "name": "Workato",
     "status": "draft",
     "website": "https://www.workato.com"
+  },
+  {
+    "_id": "workday-adaptive-planning",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "not_researched"
+      },
+      "audit_logs": {
+        "checked": "2026-09-22",
+        "notes": "Provides audit trail, user activity logs, and sign-on reports for admins and auditors.",
+        "source": "https://www.workday.com/en-us/why-workday/trust/security.html",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "support": "not_researched"
+      },
+      "domain_verification": {
+        "support": "not_researched"
+      },
+      "group_role_mapping": {
+        "support": "not_researched"
+      },
+      "jit_provisioning": {
+        "support": "not_researched"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "not_researched"
+      },
+      "sso": {
+        "checked": "2026-09-22",
+        "notes": "Workday platform supports SAML for single sign-on and also supports OpenID Connect.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://www.workday.com/en-us/why-workday/trust/security.html",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "finance",
+    "description": "Cloud-based enterprise performance management software for budgeting, forecasting, and financial planning.",
+    "name": "Workday Adaptive Planning",
+    "status": "draft",
+    "website": "https://www.workday.com/en-us/products/adaptive-planning/overview.html"
   },
   {
     "_id": "workday",

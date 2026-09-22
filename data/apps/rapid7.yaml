@@ -1,0 +1,35 @@
+name: "Rapid7"
+category: "security"
+website: "https://www.rapid7.com"
+description: "Rapid7 is a security analytics and vulnerability management platform delivered via its Insight/Command cloud platform."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "SSO to the Command Platform via SAML 2.0 IdP; plan requirement not stated."
+    source: "https://docs.rapid7.com/insight/single-sign-on/"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

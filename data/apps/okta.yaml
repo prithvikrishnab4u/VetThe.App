@@ -1,0 +1,45 @@
+name: "Okta Workforce Identity"
+category: "security"
+website: "https://okta.com"
+description: "Okta Workforce Identity is an identity and access management platform providing SSO, MFA, and lifecycle management for enterprises."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Starter"
+    protocols: ["SAML", "OIDC"]
+    source: "https://okta.com/pricing/"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "supported"
+    tier: "paid"
+    plan: "Essentials (Lifecycle Management)"
+    notes: "SCIM-based automated provisioning/deprovisioning via Lifecycle Management, included from the Essentials tier."
+    source: "https://okta.com/products/lifecycle-management/"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Starter"
+    source: "https://okta.com/pricing/"
+    checked: "2026-09-22"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

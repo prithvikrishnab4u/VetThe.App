@@ -1,0 +1,41 @@
+name: "KnowBe4"
+category: "security"
+website: "https://www.knowbe4.com"
+description: "Security awareness training and simulated phishing platform."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "SSO/SAML integration is included with all subscription levels."
+    source: "https://www.knowbe4.com/pricing"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "supported"
+    notes: "User provisioning via Active Directory or SCIM integration for Azure, Okta, or OneLogin."
+    source: "https://www.knowbe4.com/pricing"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    notes: "Centralized, real-time record of all administrative actions in the console."
+    source: "https://www.knowbe4.com/pricing"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

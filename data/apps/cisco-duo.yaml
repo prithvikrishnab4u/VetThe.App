@@ -1,0 +1,48 @@
+name: "Cisco Duo"
+category: "security"
+website: "https://duo.com"
+description: "Cisco Duo is a cloud-delivered identity security platform providing multi-factor authentication, single sign-on, and device trust."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Essentials"
+    protocols: ["SAML"]
+    source: "https://duo.com/pricing"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "supported"
+    tier: "free"
+    plan: "Duo Free"
+    source: "https://duo.com/pricing"
+    checked: "2026-09-22"
+  phishing_resistant_mfa:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Duo Premier"
+    notes: "Phishing-resistant MFA is highlighted as a Duo Premier plan feature."
+    source: "https://duo.com/pricing"
+    checked: "2026-09-22"
+  audit_logs:
+    support: "supported"
+    notes: "Admin API exposes authentication logs, administrator action logs, and telephony logs."
+    source: "https://duo.com/docs/adminapi"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

@@ -1,0 +1,44 @@
+name: "Kandji"
+category: "security"
+website: "https://www.kandji.io"
+description: "Apple device management (MDM) platform for enrolling, securing, and managing macOS, iOS, iPadOS, and tvOS devices."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "Admin console supports SAML-based SSO with providers like Okta, Entra ID, Google Workspace, OneLogin, and JumpCloud."
+    source: "https://support.kandji.io/support/solutions/articles/72000560457-saml-based-single-sign-on"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "supported"
+    notes: "SCIM directory integration available for Entra ID and Okta."
+    source: "https://support.kandji.io/support/solutions/articles/72000562726-scim-directory-integration"
+    checked: "2026-09-22"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Kandji documents MFA for standard (non-SSO) authentication to the admin console."
+    source: "https://support.kandji.io/support/solutions/articles/72000562726-mfa-for-standard-authentication"
+    checked: "2026-09-22"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    notes: "Audit events can be exported via Amazon S3 integration."
+    source: "https://support.kandji.io/support/solutions/articles/72000562726-amazon-s3-audit-events-integration"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"

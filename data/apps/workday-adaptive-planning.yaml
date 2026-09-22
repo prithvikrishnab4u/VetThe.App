@@ -1,0 +1,38 @@
+name: "Workday Adaptive Planning"
+category: "finance"
+website: "https://www.workday.com/en-us/products/adaptive-planning/overview.html"
+description: "Cloud-based enterprise performance management software for budgeting, forecasting, and financial planning."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "Workday platform supports SAML for single sign-on and also supports OpenID Connect."
+    source: "https://www.workday.com/en-us/why-workday/trust/security.html"
+    checked: "2026-09-22"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    notes: "Provides audit trail, user activity logs, and sign-on reports for admins and auditors."
+    source: "https://www.workday.com/en-us/why-workday/trust/security.html"
+    checked: "2026-09-22"
+  jit_provisioning:
+    support: "not_researched"
+  domain_verification:
+    support: "not_researched"
+  custom_roles:
+    support: "not_researched"
+  group_role_mapping:
+    support: "not_researched"
+  session_controls:
+    support: "not_researched"
+  api_token_controls:
+    support: "not_researched"
