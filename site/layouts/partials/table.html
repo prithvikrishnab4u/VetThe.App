@@ -12,7 +12,8 @@
                 <label for="filterApp" class="sr-only">Filter apps</label>
                 <svg class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="m20 20-3.5-3.5"/></svg>
                 <input type="search" id="filterApp" placeholder="Filter apps…" autocomplete="off"
-                    class="w-full rounded-lg border border-line bg-surface py-2 pl-9 pr-3 text-sm text-ink placeholder:text-muted focus:border-accent focus:outline-none focus:ring-4 focus:ring-accent/15">
+                    class="w-full rounded-lg border border-line bg-surface py-2 pl-9 pr-10 text-sm text-ink placeholder:text-muted focus:border-accent focus:outline-none focus:ring-4 focus:ring-accent/15">
+                <kbd class="kbd pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2" aria-hidden="true">/</kbd>
             </div>
 
             <p class="text-sm text-muted" aria-live="polite"><strong id="resultCount" class="font-semibold text-ink">0</strong> apps</p>
@@ -21,6 +22,10 @@
                 <button id="clearAllBtn" type="button" class="btn text-accent hover:bg-accent-soft" hidden>
                     <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></svg>
                     Clear filters
+                </button>
+                <button id="shareViewBtn" type="button" class="btn btn-ghost" title="Copy a link to this filtered view">
+                    <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1m-2 8a5 5 0 0 1-7 0 5 5 0 0 1 0-7l2-2a5 5 0 0 1 7 0"/></svg>
+                    <span id="shareViewLabel">Share view</span>
                 </button>
                 <label class="btn btn-ghost cursor-pointer select-none">
                     <input id="toggleExtendedBtn" type="checkbox" class="peer sr-only">
@@ -129,11 +134,22 @@
         </div>
 
         <!-- Pagination -->
-        <div class="flex flex-wrap items-center justify-between gap-3 border-t border-line px-4 py-3">
-            <p class="text-sm text-muted">
-                Showing <span id="pageStart" class="font-medium text-ink">1</span>–<span id="pageEnd" class="font-medium text-ink">25</span>
-                of <span id="totalRows" class="font-medium text-ink">0</span>
-            </p>
+        <div class="flex flex-wrap items-center justify-between gap-3 border-t border-line px-4 py-2">
+            <div class="flex items-center gap-3">
+                <p class="text-sm text-muted">
+                    Showing <span id="pageStart" class="font-medium text-ink">1</span>–<span id="pageEnd" class="font-medium text-ink">25</span>
+                    of <span id="totalRows" class="font-medium text-ink">0</span>
+                </p>
+                <label class="flex items-center gap-1.5 text-sm text-muted">
+                    <span class="sr-only sm:not-sr-only">Rows</span>
+                    <select id="rowsPerPage" class="rounded-md border border-line bg-surface px-2 py-1 text-sm text-ink focus:border-accent focus:outline-none">
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                        <option value="all">All</option>
+                    </select>
+                </label>
+            </div>
             <div class="flex items-center gap-1.5" id="paginationControls"></div>
         </div>
     </div>

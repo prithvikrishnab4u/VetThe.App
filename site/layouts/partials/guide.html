@@ -1,13 +1,10 @@
 {{ $schema := site.Data.schema }}
-<section id="guide" class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pt-6 scroll-mt-16">
-    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
-        <div>
-            <h2 class="text-xl font-semibold tracking-tight text-ink">Compare apps</h2>
-            <p class="mt-1 text-sm text-muted">Each cell shows the <strong class="font-medium text-body">minimum plan</strong> that includes a capability. Hover a column name for the exact question, or a cell for plan details. Spot a mistake? Click <span class="font-medium text-accent">✎</span> in the cell.</p>
-        </div>
+<section id="guide" class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pt-4 scroll-mt-16">
+    <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+        <p class="text-sm text-muted">Each cell shows the <strong class="font-medium text-ink">cheapest plan</strong> that includes the capability.</p>
 
         <!-- Legend -->
-        <ul class="flex flex-wrap items-center gap-2" aria-label="Legend">
+        <ul class="flex flex-wrap items-center gap-1.5" aria-label="Legend">
             {{ range $schema.tiers }}
             <li><span class="badge badge-{{ .id }}" title="{{ .description }}">
                 <svg class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m5 12 5 5L20 7"/></svg>{{ .label }}</span></li>
@@ -19,8 +16,8 @@
         </ul>
     </div>
 
-    <details class="group mt-4 rounded-xl border border-line bg-surface">
-        <summary class="flex cursor-pointer list-none items-center justify-between gap-2 px-4 py-3 text-sm font-medium text-ink [&::-webkit-details-marker]:hidden">
+    <details class="group mt-3 rounded-xl border border-line bg-surface">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-2 px-4 py-2 text-sm font-medium text-ink [&::-webkit-details-marker]:hidden">
             <span class="flex items-center gap-2">
                 <svg class="h-4 w-4 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M12 11v5m0-8h.01"/></svg>
                 What each column means, and how values are verified
@@ -51,6 +48,10 @@
                 <div>
                     <h3 class="font-medium text-ink">Core columns</h3>
                     <p class="mt-1">Six core capabilities show by default. Turn on <strong class="font-medium text-body">All capabilities</strong> to see the other six.</p>
+                </div>
+                <div>
+                    <h3 class="font-medium text-ink">Shortcuts</h3>
+                    <p class="mt-1">Press <kbd class="kbd">/</kbd> to jump to the filter box, <kbd class="kbd">Esc</kbd> to clear it. Hover a column name for the exact question, a cell for the plan and notes. Click <span class="font-medium text-accent">✎</span> in any cell to fix a value. Filters are kept in the URL, so you can share the view you are looking at.</p>
                 </div>
             </div>
         </div>

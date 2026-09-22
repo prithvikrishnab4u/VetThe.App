@@ -434,8 +434,112 @@
         });
     });
 
+    // ---- Rows per page, remembered ----
+    const rowsSelect = document.getElementById('rowsPerPage');
+    rowsSelect.addEventListener('change', () => {
+        rowsPerPage = rowsSelect.value === 'all' ? Number.MAX_SAFE_INTEGER : Number(rowsSelect.value);
+        currentPage = 1;
+        try { localStorage.setItem('rowsPerPage', rowsSelect.value); } catch (e) {}
+        renderTable();
+    });
+
+    // ---- Keyboard: "/" focuses the filter, Esc clears it ----
+    document.addEventListener('keydown', (e) => {
+        const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName);
+        if (e.key === '/' && !typing && !e.metaKey && !e.ctrlKey) {
+            e.preventDefault();
+            explore.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            filterApp.focus();
+        } else if (e.key === 'Escape') {
+            const open = document.querySelectorAll('.flowbite-dropdown.open');
+            if (open.length) { open.forEach(d => d.classList.remove('open')); return; }
+            if (document.activeElement === filterApp && filterApp.value) {
+                filterApp.value = '';
+                heroSearch.value = '';
+                applyFilters();
+            }
+        }
+    });
+
+    // ---- The current view lives in the URL, so a filtered table is shareable ----
+    let restoring = false;
+    function writeUrl() {
+        if (restoring) return;
+        const p = new URLSearchParams();
+        if (filterApp.value) p.set('q', filterApp.value);
+        Object.entries(dropdowns).forEach(([column, d]) => {
+            const sel = Array.from(d.getSelected());
+            if (sel.length) p.set(column, sel.join('|'));
+        });
+        if (sortColumn) p.set('sort', sortColumn + (sortDirection === 'desc' ? ':desc' : ''));
+        if (toggleExtendedBtn.checked) p.set('all', '1');
+        const url = location.pathname + (p.toString() ? '?' + p : '') + '#explore';
+        history.replaceState(null, '', url);
+    }
+
+    function readUrl() {
+        const p = new URLSearchParams(location.search);
+        if (![...p.keys()].length) return false;
+        restoring = true;
+        if (p.get('q')) { filterApp.value = p.get('q'); heroSearch.value = p.get('q'); }
+        Object.entries(dropdowns).forEach(([column, d]) => {
+            if (p.get(column)) d.setSelected(p.get(column).split('|'));
+        });
+        if (p.get('all')) {
+            toggleExtendedBtn.checked = true;
+            table.classList.add('show-extended');
+        }
+        const sort = p.get('sort');
+        if (sort) {
+            sortColumn = sort.replace(/:desc$/, '');
+            sortDirection = sort.endsWith(':desc') ? 'desc' : 'asc';
+            updateSortIndicators();
+        }
+        restoring = false;
+        return true;
+    }
+
+    const shareBtn = document.getElementById('shareViewBtn');
+    const shareLabel = document.getElementById('shareViewLabel');
+    shareBtn.addEventListener('click', async () => {
+        writeUrl();
+        try {
+            await navigator.clipboard.writeText(location.href);
+            shareLabel.textContent = 'Link copied';
+        } catch (e) {
+            shareLabel.textContent = 'Copy from the address bar';
+        }
+        setTimeout(() => { shareLabel.textContent = 'Share view'; }, 2000);
+    });
+
     // Initialize
     populateFilters();
-    renderTable();
+
+    try {
+        const saved = localStorage.getItem('rowsPerPage');
+        if (saved) {
+            rowsSelect.value = saved;
+            rowsPerPage = saved === 'all' ? Number.MAX_SAFE_INTEGER : Number(saved);
+        }
+        if (localStorage.getItem('showExtended') === '1') {
+            toggleExtendedBtn.checked = true;
+            table.classList.add('show-extended');
+        }
+    } catch (e) {}
+
+    toggleExtendedBtn.addEventListener('change', () => {
+        try { localStorage.setItem('showExtended', toggleExtendedBtn.checked ? '1' : '0'); } catch (e) {}
+        writeUrl();
+    });
+
+    const hadUrlState = readUrl();
+    if (hadUrlState) applyFilters(); else renderTable();
+
+    // Keep the URL in step with whatever the table is showing
+    ['input', 'change'].forEach(ev => filterApp.addEventListener(ev, writeUrl));
+    table.addEventListener('click', writeUrl);
+    document.addEventListener('click', (e) => {
+        if (e.target.closest('.flowbite-dropdown') || e.target.closest('[data-preset]')) writeUrl();
+    });
 })();
 </script>

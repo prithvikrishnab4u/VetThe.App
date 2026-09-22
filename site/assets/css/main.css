@@ -43,24 +43,50 @@
 }
 
 .dark {
-    --page: #0b0f1a;
-    --surface: #121829;
-    --subtle: #1a2135;
-    --line: #262f47;
-    --ink: #f1f5f9;
-    --body: #cbd5e1;
-    --muted: #8b97ad;
-    --accent: #818cf8;
-    --accent-strong: #a5b4fc;
-    --accent-soft: #1e2345;
+    --page: #0b0e14;
+    --surface: #151a24;
+    --subtle: #1e2532;
+    --line: #2d3647;
+    --ink: #eef2f8;
+    --body: #c4cdda;
+    --muted: #97a3b6;
+    --accent: #8b95fb;
+    --accent-strong: #aab3fd;
+    --accent-soft: #1f2540;
 
-    --free-bg: #06281d;  --free-fg: #6ee7b7;  --free-bd: #0f4a36;
-    --paid-bg: #0b2140;  --paid-fg: #93c5fd;  --paid-bd: #1e3a66;
-    --ent-bg: #1f1640;   --ent-fg: #c4b5fd;   --ent-bd: #3b2a73;
-    --addon-bg: #2a1d05; --addon-fg: #fcd34d; --addon-bd: #4d3710;
-    --partial-bg: #2b1606; --partial-fg: #fdba74; --partial-bd: #55300f;
-    --no-bg: #2a0f12;    --no-fg: #fca5a5;    --no-bd: #5a1e24;
+    --free-bg: #0c2e22;  --free-fg: #6ee7b7;  --free-bd: #19553e;
+    --paid-bg: #0f2647;  --paid-fg: #9ec5fd;  --paid-bd: #264271;
+    --ent-bg: #251b48;   --ent-fg: #c9bcfd;   --ent-bd: #44337f;
+    --addon-bg: #2f2309; --addon-fg: #fbd34e; --addon-bd: #59421b;
+    --partial-bg: #311b09; --partial-fg: #fdba74; --partial-bd: #603916;
+    --no-bg: #311317;    --no-fg: #fca5a5;    --no-bd: #66252c;
     color-scheme: dark;
+}
+
+/* Dark needs deeper shadows and a touch more contrast to read as layered
+   rather than flat. Light values are tuned for a white page. */
+.dark .flowbite-dropdown,
+.dark .info-tip-body {
+    box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.75);
+}
+.dark .suggest-dialog {
+    box-shadow: -30px 0 70px -30px rgba(0, 0, 0, 0.85);
+}
+.dark .suggest-dialog::backdrop {
+    background: rgba(2, 4, 9, 0.65);
+}
+.dark .bento:hover {
+    box-shadow: 0 24px 50px -28px rgba(0, 0, 0, 0.9);
+}
+.dark .unverified {
+    opacity: 0.62;
+}
+.dark .seg-undocumented { background: #6b7a92; }
+.dark .seg-not_researched { background: #323c50; }
+.dark .app-favicon { background: #e9edf4; }
+.dark ::selection {
+    background: #343e73;
+    color: var(--ink);
 }
 
 @layer base {
@@ -238,6 +264,10 @@
     }
     .choice:has(input:focus-visible) {
         @apply outline-2 outline-offset-2 outline-accent;
+    }
+
+    .kbd {
+        @apply inline-flex h-5 min-w-5 items-center justify-center rounded border border-line bg-subtle px-1 font-sans text-[11px] font-medium text-muted;
     }
 
     /* Coverage bar segments */
