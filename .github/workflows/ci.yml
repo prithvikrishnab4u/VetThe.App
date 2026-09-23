@@ -40,6 +40,14 @@ jobs:
         run: |
           npm ci
 
+      # Pinned to the version Cloudflare Pages runs, so a green CI means the
+      # deploy will build too. Bump both together.
+      - name: Set up Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.147.7'
+          extended: true
+
       - name: Build Hugo site
         working-directory: site
         run: |
