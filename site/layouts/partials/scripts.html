@@ -377,7 +377,6 @@
     // Clear all filters
     function clearAll() {
         filterApp.value = '';
-        heroSearch.value = '';
         Object.values(dropdowns).forEach(d => d.clear());
         applyFilters();
     }
@@ -387,19 +386,9 @@
         table.classList.toggle('show-extended', toggleExtendedBtn.checked);
     });
 
-    // Hero search mirrors the table filter and jumps to the results
-    const heroSearch = document.getElementById('heroSearch');
     const explore = document.getElementById('explore');
-    heroSearch.addEventListener('input', () => {
-        filterApp.value = heroSearch.value;
-        applyFilters();
-    });
-    document.getElementById('heroSearchForm').addEventListener('submit', (e) => {
-        e.preventDefault();
-        explore.scrollIntoView({ behavior: 'smooth' });
-    });
 
-    // "Try:" chips apply a set of capability filters
+    // Hero chips apply a set of capability filters
     document.querySelectorAll('[data-preset]').forEach(btn => {
         btn.addEventListener('click', () => {
             Object.values(dropdowns).forEach(d => d.setSelected([]));
@@ -455,7 +444,6 @@
             if (open.length) { open.forEach(d => d.classList.remove('open')); return; }
             if (document.activeElement === filterApp && filterApp.value) {
                 filterApp.value = '';
-                heroSearch.value = '';
                 applyFilters();
             }
         }
@@ -481,7 +469,7 @@
         const p = new URLSearchParams(location.search);
         if (![...p.keys()].length) return false;
         restoring = true;
-        if (p.get('q')) { filterApp.value = p.get('q'); heroSearch.value = p.get('q'); }
+        if (p.get('q')) filterApp.value = p.get('q');
         Object.entries(dropdowns).forEach(([column, d]) => {
             if (p.get(column)) d.setSelected(p.get(column).split('|'));
         });

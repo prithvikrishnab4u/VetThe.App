@@ -30,8 +30,9 @@
 {{ end }}
 {{ $corePct := div (mul $coreChecked 100) $corePoints }}
 
-<!-- One tight strip under the table: how solid the data is, and how to fix it. -->
-<section id="about" class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pt-3 pb-8 scroll-mt-16">
+{{/* "Should I believe this?" is asked before the data is used, so the strip sits
+     above the table, not after it. One line, with the detail on hover. */}}
+<section id="about" class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pt-5 scroll-mt-16">
     <div class="panel px-4 py-3 flex flex-col lg:flex-row lg:items-center gap-x-6 gap-y-3">
 
         <!-- Headline number + hover helper -->
@@ -69,11 +70,5 @@
             </ul>
         </div>
 
-        <!-- Fix it -->
-        <div class="flex flex-wrap items-center gap-2 shrink-0 lg:border-l lg:border-line lg:pl-6">
-            <p class="text-xs text-muted">Something wrong? Click ✎ on any cell.</p>
-            <a href="https://github.com/prithvikrishnab4u/VetThe.App/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener" data-suggest-open="new"
-               class="btn btn-primary">Add an app</a>
-        </div>
     </div>
 </section>

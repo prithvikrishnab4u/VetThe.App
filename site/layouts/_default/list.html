@@ -6,10 +6,11 @@
     <a href="#explore" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] btn btn-primary">Skip to the table</a>
     {{ partial "header.html" . }}
     <main>
+        {{/* Signpost, then "can I trust this", then the data, then reference material. */}}
         {{ partial "hero.html" . }}
-        {{ partial "guide.html" . }}
-        {{ partial "table.html" . }}
         {{ partial "about.html" . }}
+        {{ partial "table.html" . }}
+        {{ partial "guide.html" . }}
     </main>
     {{ partial "footer.html" . }}
     {{ partial "suggest.html" . }}

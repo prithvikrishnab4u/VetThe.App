@@ -35,6 +35,22 @@
             </div>
         </div>
 
+        {{/* The legend explains what is inside the cells, so it sits on the table's own
+             chrome, outside the scroll box. It stays put while you read rows. */}}
+        <div class="flex flex-wrap items-center gap-x-3 gap-y-1.5 border-b border-line bg-subtle px-4 py-2">
+            <span class="text-xs text-muted">Cheapest plan that includes it:</span>
+            <ul class="flex flex-wrap items-center gap-1.5" aria-label="Legend">
+                {{ range $schema.tiers }}
+                <li><span class="badge badge-{{ .id }}" title="{{ .description }}">
+                    <svg class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m5 12 5 5L20 7"/></svg>{{ .label }}</span></li>
+                {{ end }}
+                <li><span class="badge badge-partial" title="Works with a real limitation. Hover the cell for details">~ Partial</span></li>
+                <li><span class="badge badge-no" title="The vendor's docs or pricing show it isn't offered">✕ No</span></li>
+                <li><span class="badge badge-undocumented" title="Checked the vendor's own pages; they say nothing either way">Not documented</span></li>
+                <li><span class="badge badge-not_researched" title="Nobody has checked this yet">? Not researched</span></li>
+            </ul>
+        </div>
+
         <!-- Table -->
         <div class="overflow-auto custom-scrollbar max-h-[75vh]">
             <table id="appsTable" class="w-full text-left border-separate border-spacing-0">
@@ -151,6 +167,14 @@
                 </label>
             </div>
             <div class="flex items-center gap-1.5" id="paginationControls"></div>
+
+            {{/* The ask sits at the end of the data, where someone has just seen a value
+                 they disagree with. */}}
+            <div class="flex w-full items-center justify-center gap-2 border-t border-line pt-2 text-xs text-muted sm:w-auto sm:border-0 sm:pt-0">
+                <span>Something wrong? Click ✎ on any cell.</span>
+                <a href="https://github.com/prithvikrishnab4u/VetThe.App/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener" data-suggest-open="new"
+                   class="font-medium text-accent hover:underline">Add an app</a>
+            </div>
         </div>
     </div>
 </section>
