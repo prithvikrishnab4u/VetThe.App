@@ -2,7 +2,7 @@
 
 Running log of what's done and what's next. **Update this file at the end of every work session**: tick items off, add what you found, and refresh the numbers with `.venv/bin/python scripts/validate.py`.
 
-_Last updated: 2026-09-22_
+_Last updated: 2026-09-23_
 
 ## Remind the user
 
@@ -47,6 +47,9 @@ _Last updated: 2026-09-22_
 - [x] **One design language (2026-09-22):** `.btn-primary` (brand gradient) for every primary action, `.panel` for boxed sections, `.ink-band` for the dark bands. Footer is now a dark band matching the header, and the suggest panel got the same dark header so it reads as part of the site.
 - [x] **Honest colour and placement (2026-09-23):** "Not documented" moved from grey to a muted sage (`--silent-*`), so a checked-but-silent value reads as a finding rather than a gap; grey now means only "nobody has opened this yet". Contribute moved from the header nav to the footer, byline with LinkedIn and iam.ninja moved into the hero. Drifting aurora removed from the footer and suggest panel, so the hero is the only place with motion.
 - [x] **Suggest panel pickers (2026-09-23):** app picker is a datalist type-ahead over a hidden select that still holds the id; capability picker grouped core vs extended.
+- [x] **Page laid out around the job (2026-09-23):** order is now signpost → "can I trust this" → table → reference. The hero lost its search box, its preview card and its byline, and is four entry chips plus a line of copy. The legend moved onto the table's own chrome, outside the scroll box, so it stays put while rows scroll. "How to read" moved below the table. "Something wrong? Click ✎" sits at the end of the data, where you have just seen a value you disagree with.
+- [x] **Light mode (2026-09-23):** a fixed brand wash behind the body, a tinted lift on `.panel` instead of a grey shadow, and a tinted table header row, so the content area reads as part of the same design instead of a grey sheet between two dark bands. Header carries the LinkedIn and iam.ninja icons only; the name reads as publicity up there and the footer already has it.
+- [x] **CI installs Hugo (2026-09-23):** the workflow called `hugo` on a runner that never had it, so every build since the workflow was written failed. Pinned to 0.147.7, the version Cloudflare Pages runs. Bump both together. **Still red after the fix** — the "Build Hugo site" step fails on Linux only; a clean clone builds fine on macOS and the job log needs a token to read.
 - [x] **BACKLOG.md:** 299 widely used apps not yet in the data, ranked P1/P2/P3. The agent wrote the websites from memory, so confirm them while researching.
 
 ## To do: setup (one-off, needed before website suggestions work; user will do this)
