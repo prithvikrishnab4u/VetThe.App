@@ -27,16 +27,28 @@
 
             <!-- Fix: which cell -->
             <div data-show="fix" class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                {{/* A plain select with {{ len site.Data.apps }} options is unusable when you open the panel
+                     from "Add an app". The datalist gives type-ahead; the select behind it
+                     still holds the id, so everything downstream is unchanged. */}}
                 <label class="field">
                     <span class="field-label">App</span>
-                    <select id="sfApp" class="input">
+                    <input id="sfAppSearch" class="input" list="sfAppList" autocomplete="off" placeholder="Type an app name…">
+                    <datalist id="sfAppList">
+                        {{ range $id, $app := site.Data.apps }}<option value="{{ $app.name }}"></option>{{ end }}
+                    </datalist>
+                    <select id="sfApp" class="sr-only" tabindex="-1" aria-hidden="true">
                         {{ range $id, $app := site.Data.apps }}<option value="{{ $id }}">{{ $app.name }}</option>{{ end }}
                     </select>
                 </label>
                 <label class="field">
                     <span class="field-label">Capability</span>
                     <select id="sfCap" class="input">
-                        {{ range $schema.capabilities }}<option value="{{ .id }}">{{ .label }}</option>{{ end }}
+                        <optgroup label="Core">
+                            {{ range $schema.capabilities }}{{ if .core }}<option value="{{ .id }}">{{ .label }}</option>{{ end }}{{ end }}
+                        </optgroup>
+                        <optgroup label="Extended">
+                            {{ range $schema.capabilities }}{{ if not .core }}<option value="{{ .id }}">{{ .label }}</option>{{ end }}{{ end }}
+                        </optgroup>
                     </select>
                 </label>
                 <p id="sfQuestion" class="text-sm text-body sm:col-span-2"></p>
@@ -260,6 +272,7 @@
             $('suggestKicker').textContent = 'Suggest a fix';
             if (opts.app) $('sfApp').value = opts.app;
             if (opts.cap) $('sfCap').value = opts.cap;
+            syncAppSearch();
             prefill();
         } else {
             $('suggestKicker').textContent = 'Add an app';
@@ -458,7 +471,21 @@
     });
 
     // ---- Wiring ----
-    $('sfApp').addEventListener('change', prefill);
+    // The visible box is a name, the select behind it is the id. Keep them in step.
+    function syncAppSearch() {
+        const opt = $('sfApp').selectedOptions[0];
+        $('sfAppSearch').value = opt ? opt.text : '';
+        $('sfAppSearch').removeAttribute('aria-invalid');
+    }
+    $('sfAppSearch').addEventListener('input', () => {
+        const typed = $('sfAppSearch').value.trim().toLowerCase();
+        const match = [...$('sfApp').options].find(o => o.text.toLowerCase() === typed);
+        if (!match) { $('sfAppSearch').setAttribute('aria-invalid', 'true'); return; }
+        $('sfAppSearch').removeAttribute('aria-invalid');
+        if (match.value !== $('sfApp').value) { $('sfApp').value = match.value; prefill(); }
+    });
+    // Leaving the box with something unmatched snaps back to the app in play.
+    $('sfAppSearch').addEventListener('blur', syncAppSearch);
     $('sfCap').addEventListener('change', prefill);
     form.querySelectorAll('input[name="support"]').forEach(r => r.addEventListener('change', syncSupport));
     form.querySelectorAll('[data-core]').forEach(row => {

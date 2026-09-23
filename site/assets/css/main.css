@@ -283,6 +283,10 @@
     .input {
         @apply w-full rounded-lg border border-line bg-surface px-3 py-2 text-sm text-ink placeholder:text-muted focus:border-accent focus:outline-none focus:ring-4 focus:ring-accent/15;
     }
+    /* Typed a name that is not in the list yet */
+    .input[aria-invalid] {
+        border-color: var(--no-bd);
+    }
     .choice {
         @apply inline-flex cursor-pointer select-none items-center gap-2 rounded-lg border border-line bg-surface px-3 py-2 text-sm text-body transition-colors hover:border-accent;
     }
