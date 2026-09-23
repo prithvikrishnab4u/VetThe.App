@@ -13,10 +13,11 @@ dataDir = "../data"
   description = 'Community-driven comparison of identity security features across SaaS applications'
   # This helps Hugo find your CSS for the Tailwind pipeline
   css_main = "css/main.css"
-  # Cloudflare Turnstile site key for the suggestion form (public). Set
-  # HUGO_PARAMS_TURNSTILESITEKEY in the Cloudflare Pages build variables. Left empty, the
-  # form asks people to use GitHub; `hugo server` uses Cloudflare's test key instead.
-  turnstileSiteKey = ""
+  # Cloudflare Turnstile site key for the suggestion form. Public by design, it
+  # ships in the HTML, so it lives here rather than in a build variable.
+  # HUGO_PARAMS_TURNSTILESITEKEY still overrides it if you need a different widget.
+  # The matching secret is TURNSTILE_SECRET, set in Cloudflare, never in the repo.
+  turnstileSiteKey = "0x4AAAAAAFBZn3dDauvCegHQ"
 
 [security]
   [security.exec]
