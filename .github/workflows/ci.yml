@@ -30,10 +30,12 @@ jobs:
         run: |
           python scripts/validate.py
 
+      # Read from .node-version, which Cloudflare Pages reads too, so CI and the
+      # deploy can't drift. Tailwind v4's oxide binary needs Node 20 or newer.
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version-file: .node-version
 
       - name: Install Node deps
         working-directory: site
