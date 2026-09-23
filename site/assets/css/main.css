@@ -94,8 +94,21 @@
 }
 
 @layer base {
+    /* Light mode was a flat grey field between two dark bands. The wash carries
+       the hero's colour a little way down the page so the content area reads as
+       part of the same design instead of a blank sheet stapled underneath. */
     body {
         @apply bg-page text-body font-sans antialiased;
+        background-image:
+            radial-gradient(70rem 26rem at 50% -6rem, rgba(79, 70, 229, 0.10), transparent 70%),
+            radial-gradient(48rem 22rem at 88% 2rem, rgba(192, 38, 211, 0.06), transparent 70%);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    .dark body {
+        background-image:
+            radial-gradient(70rem 26rem at 50% -6rem, rgba(139, 149, 251, 0.10), transparent 70%),
+            radial-gradient(48rem 22rem at 88% 2rem, rgba(192, 38, 211, 0.07), transparent 70%);
     }
     ::selection {
         background: var(--accent-soft);
@@ -124,8 +137,14 @@
     }
 
     /* Every boxed section on the page: table, coverage strip, guide. */
+    /* A tinted lift rather than a grey one, so panels sit on the wash instead of
+       disappearing into it. */
     .panel {
-        @apply rounded-2xl border border-line bg-surface shadow-sm;
+        @apply rounded-2xl border border-line bg-surface;
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 18px 40px -28px rgba(79, 70, 229, 0.45);
+    }
+    .dark .panel {
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 22px 45px -30px rgba(0, 0, 0, 0.9);
     }
 
     /* Dark bands that bookend the page: header, hero, footer. */
@@ -137,12 +156,16 @@
         color: #fff;
     }
 
-    /* Table header row sticks while the table body scrolls */
+    /* Table header row sticks while the table body scrolls. Tinted, not white,
+       so the column names read as chrome and the rows below read as content. */
     .sticky-header {
         position: sticky;
         top: 0;
         z-index: 30;
-        background: var(--surface);
+        background: var(--subtle);
+    }
+    .sticky-header .sticky-col {
+        background: var(--subtle);
     }
 
     /* First column stays visible when scrolling sideways */
