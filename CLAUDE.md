@@ -51,7 +51,9 @@ Adding a capability to the schema therefore adds it to the site, the CSV and val
 
 ## Data state and working rules
 
-- All 107 apps are `draft`. Core capabilities have been checked against vendor docs (with a few leftovers); most non-core values are `not_researched`. Current numbers and the to-do list are in ROADMAP.md.
+- Core capabilities are nearly all checked; most non-core values are still `not_researched`. **Current counts live in ROADMAP.md only** — don't repeat them here, they go stale.
 - A value without a `source` is unverified, even if it looks right.
 - Accuracy work means checking each value against the vendor's own pricing page, docs, or trust center, and adding `source` + `checked`. Don't use auto-scanning, homepage keyword matches, Reddit, review sites, or blogs. When a value can't be confirmed, set it to `undocumented` instead of guessing, and don't carry old values forward.
-- Keep the double-quoted YAML style from the `CONTRIBUTING.md` template; contributors edit these files in the GitHub web UI.
+- Keep the double-quoted YAML style from the `CONTRIBUTING.md` template; contributors edit these files in the GitHub web UI. Write the YAML by hand, never with `yaml.dump`.
+- Some vendor help centers (Zendesk-hosted ones, and anything that needs JavaScript or a login) return 403/503 to automated fetches. Those need a person in a browser; leave them `undocumented` rather than guessing. ROADMAP.md lists which ones.
+- **If `provenance:` blocks or auto-verify scripts appear in `data/apps/`, stop and tell the owner.** A different agent did this once and broke validation for every file. Don't silently revert.

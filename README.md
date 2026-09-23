@@ -51,27 +51,22 @@ python -m venv .venv
 
 ## 🤝 Contributing
 
-**No technical knowledge required.** Add or fix apps directly in your browser:
+**No GitHub account needed.** On [vetthe.app](https://vetthe.app), click ✎ on any cell to correct a value, or "Add an app" to suggest a new one. Paste the vendor page you read it on and send. It opens a pull request for you.
 
-1. Go to [`data/apps/`](data/apps)
-2. Click "Add file" → "Create new file"
-3. Name it `yourapp.yaml`
-4. Copy the template from [CONTRIBUTING.md](CONTRIBUTING.md) and fill in what you can confirm
-5. Submit → automated validation runs → done!
+Prefer GitHub? Add a file to [`data/apps/`](data/apps) using the template in [CONTRIBUTING.md](CONTRIBUTING.md). Validation runs automatically on your pull request.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
-
-[Request an app](https://github.com/prithvikrishnab4u/VetThe.App/issues/new?template=app-request.md) or add it yourself!
+Either way, one rule: **every value needs a link to the vendor's own page.**
 
 ---
 
 ## 🎨 Features
 
-- Filter and sort on every capability
+- Filter and sort on every capability, and share the filtered view as a URL
 - Core capabilities by default, all 12 on demand
 - Every verified value links to its source
+- Suggest a correction from the page itself, no account needed
 - Auto-validation on every contribution
-- Fast static site (no database), with JSON and CSV exports
+- Fast static site, no database. Raw data at [`apps.json`](site/static/data/apps.json) and [`apps.csv`](site/static/data/apps.csv)
 
 ---
 
