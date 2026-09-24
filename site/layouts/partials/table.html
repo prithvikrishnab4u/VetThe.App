@@ -52,6 +52,13 @@
         </div>
 
         <!-- Table -->
+        {{/* Six capability columns never fit a phone, so say so rather than leaving
+             people to guess that the table scrolls sideways. */}}
+        <div class="sm:hidden flex items-center justify-center gap-1.5 border-b border-line px-4 py-1.5 text-xs text-muted">
+            <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7 4 12l4 5m8-10 4 5-4 5"/></svg>
+            Swipe the table sideways for the other columns
+        </div>
+
         <div class="overflow-auto custom-scrollbar max-h-[75vh]">
             <table id="appsTable" class="w-full text-left border-separate border-spacing-0">
                 <thead class="sticky-header">
@@ -59,11 +66,13 @@
                         <th scope="col" class="sticky-col px-4 pt-3 pb-1 text-xs font-semibold text-muted cursor-pointer hover:text-ink transition-colors" data-column="app">
                             <span class="inline-flex items-center gap-1">Application <span class="sort-indicator">⇅</span></span>
                         </th>
-                        <th scope="col" class="px-4 pt-3 pb-1 text-xs font-semibold text-muted cursor-pointer hover:text-ink transition-colors" data-column="category">
+                        {{/* Category is the first thing to go on a phone: it costs 140px and
+                             nobody came here to read it. */}}
+                        <th scope="col" class="hidden sm:table-cell px-4 pt-3 pb-1 text-xs font-semibold text-muted cursor-pointer hover:text-ink transition-colors" data-column="category">
                             <span class="inline-flex items-center gap-1">Category <span class="sort-indicator">⇅</span></span>
                         </th>
                         {{ range $schema.capabilities }}
-                        <th scope="col" class="px-3 pt-3 pb-1 text-xs font-semibold text-muted cursor-pointer hover:text-ink transition-colors whitespace-nowrap{{ if not .core }} cap-extended{{ end }}"
+                        <th scope="col" class="px-2 sm:px-3 pt-3 pb-1 text-xs font-semibold text-muted cursor-pointer hover:text-ink transition-colors whitespace-nowrap{{ if not .core }} cap-extended{{ end }}"
                             data-column="{{ .id }}" title="{{ .question }}">
                             <span class="inline-flex items-center gap-1">{{ .label }} <span class="sort-indicator">⇅</span></span>
                         </th>
@@ -71,14 +80,16 @@
                     </tr>
                     <tr>
                         <th class="sticky-col px-4 pb-2.5 pt-1 border-b border-line"><span class="sr-only">No filter</span></th>
-                        <th class="px-4 pb-2.5 pt-1 border-b border-line min-w-[140px]">
+                        <th class="hidden sm:table-cell px-4 pb-2.5 pt-1 border-b border-line sm:min-w-[140px]">
                             <div class="relative" id="filterCategoryContainer">
                                 <button class="dropdown-button" aria-label="Filter by category"><span class="text-muted">All</span>{{ $chevron }}</button>
                                 <div class="flowbite-dropdown custom-scrollbar"></div>
                             </div>
                         </th>
                         {{ range $schema.capabilities }}
-                        <th class="px-3 pb-2.5 pt-1 border-b border-line min-w-[130px]{{ if not .core }} cap-extended{{ end }}">
+                        {{/* The 130px floor is the filter dropdown's, not the badge's. Lift it
+                             on small screens so a column is only as wide as its value. */}}
+                        <th class="px-2 sm:px-3 pb-2.5 pt-1 border-b border-line sm:min-w-[130px]{{ if not .core }} cap-extended{{ end }}">
                             <div class="relative" id="filter-{{ .id }}" data-filter-cap="{{ .id }}">
                                 <button class="dropdown-button" aria-label="Filter by {{ .label }}"><span class="text-muted">All</span>{{ $chevron }}</button>
                                 <div class="flowbite-dropdown custom-scrollbar"></div>
@@ -91,18 +102,20 @@
                 <tbody id="tableBody">
                     {{ range $id, $app := site.Data.apps }}
                     <tr class="group" data-id="{{ $id }}" data-app="{{ $app.name }}" data-category="{{ $app.category }}">
-                        <th scope="row" class="sticky-col px-4 py-3 border-b border-line font-normal group-hover:bg-subtle">
-                            <div class="flex items-center gap-3">
+                        {{/* Pinned left, so every pixel it takes is a pixel of data you cannot
+                             see. On a phone it caps out and long names wrap. */}}
+                        <th scope="row" class="sticky-col px-3 sm:px-4 py-3 border-b border-line font-normal group-hover:bg-subtle">
+                            <div class="flex items-center gap-2 sm:gap-3">
                                 <img src="https://www.google.com/s2/favicons?domain={{ $app.website }}&sz=64" alt="" loading="lazy"
                                     class="app-favicon" onerror="this.style.visibility='hidden'">
-                                <div class="min-w-0">
+                                <div class="min-w-0 max-w-[7.5rem] sm:max-w-none">
                                     <a href="{{ $app.website }}" target="_blank" rel="noopener"
-                                        class="block text-sm font-semibold text-ink hover:text-accent transition-colors whitespace-nowrap">{{ $app.name }}</a>
+                                        class="block text-sm font-semibold text-ink hover:text-accent transition-colors sm:whitespace-nowrap">{{ $app.name }}</a>
                                 </div>
                             </div>
                         </th>
 
-                        <td class="px-4 py-3 border-b border-line group-hover:bg-subtle">
+                        <td class="hidden sm:table-cell px-4 py-3 border-b border-line group-hover:bg-subtle">
                             <span class="text-xs text-muted whitespace-nowrap">{{ index (dict "hr" "HR" "sales_marketing" "Sales & marketing") $app.category | default (replace $app.category "_" " " | humanize) }}</span>
                         </td>
 
@@ -117,7 +130,7 @@
                         {{ else if eq $support "not_supported" }}{{ $value = "No" }}
                         {{ else if eq $support "undocumented" }}{{ $value = "Not documented" }}{{ end }}
                         {{ $unverified := and (not (in (slice "undocumented" "not_researched") $support)) (not $cap.source) }}
-                        <td class="relative pl-3 pr-8 py-3 border-b border-line whitespace-nowrap group-hover:bg-subtle{{ if not .core }} cap-extended{{ end }}"
+                        <td class="relative pl-2 pr-7 sm:pl-3 sm:pr-8 py-3 border-b border-line whitespace-nowrap group-hover:bg-subtle{{ if not .core }} cap-extended{{ end }}"
                             data-cap="{{ .id }}" data-value="{{ $value }}">
                             <div class="flex items-center gap-1{{ if $unverified }} unverified{{ end }}"
                                 title="{{ .label }}: {{ $value }}{{ with $cap.plan }} · Plan: {{ . }}{{ end }}{{ with $cap.notes }} · {{ . }}{{ end }}{{ if $cap.source }} · Checked {{ $cap.checked }}{{ else if $unverified }} · Unverified: no source yet{{ end }}">
