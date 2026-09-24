@@ -2,11 +2,11 @@
 
 Running log of what's done and what's next. **Update this file at the end of every work session**: tick items off, add what you found, and refresh the numbers with `.venv/bin/python scripts/validate.py`.
 
-_Last updated: 2026-09-23_
+_Last updated: 2026-09-24_
 
 ## Remind the user
 
-- **Website suggestions aren't switched on yet.** Ask whether the Cloudflare setup below is done (GitHub token, Turnstile widget, three variables, redeploy). Step-by-step instructions were given on 2026-09-16; repeat them if asked.
+- **Website suggestions still aren't switched on.** Labels and the Turnstile widget are done. What's left is the two secrets in Cloudflare (`GITHUB_TOKEN`, `TURNSTILE_SECRET`) on Production, plus a redeploy. Probe `POST /api/suggest` to check.
 
 ## In progress
 
@@ -54,17 +54,19 @@ _Last updated: 2026-09-23_
 
 ## To do: setup (one-off, needed before website suggestions work; user will do this)
 
+- [x] The `community-suggestion`, `data-fix` and `app-request` labels exist (2026-09-24)
+- [x] Turnstile widget created; the site key is committed in `site/hugo.toml`, since it is public and ships in the HTML. No `HUGO_PARAMS_TURNSTILESITEKEY` variable needed (2026-09-24)
 - [ ] Fine-grained GitHub token for this repo only: Contents read/write, Pull requests read/write, Issues read/write (for the label)
-- [ ] Cloudflare Turnstile widget for `vetthe.app`
-- [ ] Cloudflare Pages → Settings → Variables: `GITHUB_TOKEN` (secret), `TURNSTILE_SECRET` (secret), `HUGO_PARAMS_TURNSTILESITEKEY` (plain)
+- [ ] Cloudflare Pages → Settings → Variables: `GITHUB_TOKEN` (secret), `TURNSTILE_SECRET` (secret). Env vars bind at deploy time, so redeploy after adding them, and put them on Production, not just Preview
 - [ ] Confirm the Pages project's root directory is `site`, so `site/functions/` is deployed
-- [ ] Create the `community-suggestion`, `data-fix` and `app-request` labels
+- [ ] **Still returning 503 as of 2026-09-24.** `POST /api/suggest` with a junk Turnstile token is a safe probe: 503 means the Function cannot see `GITHUB_TOKEN` or `TURNSTILE_SECRET`; anything else means they are bound.
 - [ ] Pin the Hugo version in Cloudflare (`HUGO_VERSION`) to match local builds. Cloudflare currently uses 0.147.7, which is why templates use `site.Data`
 
 ## To do: data (in priority order)
 
 1. [ ] **Publish the rest**: 79 are published (2026-09-16). The 28 drafts are mostly missing plan tiers on supported values, often because vendor pages were blocked (403/503) or don't say which plan is needed. Every draft has had one agent attempt at its tiers, so what's left needs a manual browser check: 1password, adobe-creative-cloud, amplitude, atlassianjira, auth0, bamboohr, brex, cisco-webex, crowdstrike, databricks, datadog, deel, dropbox, expensify, hootsuite, navan, netsuite, outreach, ringcentral, salesforce, servicenow, shopify, sprout-social, twilio, uber-for-business, udemy-business, zoho-crm, zoominfo.
-2. [ ] **Non-core capabilities**, most still not researched:
+2. [ ] **Paylocity is the last app with unchecked core values**, all six. Everything public returns a JS shell to automated fetches, and the real docs live in PEAK (Help → Knowledge Base), which needs a client login. Their SSO PDF on `docs.paylocity.com` is a blank intake form, not documentation. Needs a person with an account. Left as `not_researched` rather than `undocumented`, because nobody has actually looked; flipping it would round the headline to 100% on an app no one has verified.
+3. [ ] **Non-core capabilities**, most still not researched:
    | Capability | Not researched |
    |---|---|
    | JIT provisioning | 10 (apps without SSO) |
@@ -74,9 +76,9 @@ _Last updated: 2026-09-23_
    | Session controls | 85 |
    | API token controls | 98 |
    Suggested order (run as parallel agents, about 10 apps per agent, report-only, the main session edits): JIT and domain verification first (usually on the same SSO docs page), then roles, then sessions and tokens.
-3. [ ] Recheck values older than about 6 months (vendors change plans); `checked` dates make this a simple query
-4. [ ] Add more apps from [BACKLOG.md](BACKLOG.md): the first 72 P1 rows are done, so continue from P1 row 73, then P2/P3. Use `scratchpad/new/BRIEF.md` + `mk.py` as the pattern. Requests will also arrive through the website's "Add an app"
-5. [ ] The 65 apps added on 2026-09-22 are all `draft` — they need plan tiers before they can be published
+4. [ ] Recheck values older than about 6 months (vendors change plans); `checked` dates make this a simple query
+5. [ ] Add more apps from [BACKLOG.md](BACKLOG.md): the first 72 P1 rows are done, so continue from P1 row 73, then P2/P3. Use `scratchpad/new/BRIEF.md` + `mk.py` as the pattern. Requests will also arrive through the website's "Add an app"
+6. [ ] The 65 apps added on 2026-09-22 are all `draft` — they need plan tiers before they can be published
 
 ## To do: site
 
