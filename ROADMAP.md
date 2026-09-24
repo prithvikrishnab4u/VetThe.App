@@ -10,7 +10,7 @@ _Last updated: 2026-09-24_
 
 ## In progress
 
-- Nothing running.
+- **JIT and domain verification, batches 4 to 9 (48 apps).** Report-only agents, applied and reviewed here. Batches 1 to 3 are done and committed.
 
 ## Where the data stands
 
@@ -18,10 +18,10 @@ _Last updated: 2026-09-24_
 
 | | Count |
 |---|---|
-| Verified (has `source` + `checked`) | 823 |
+| Verified (has `source` + `checked`) | 838 |
 | Unverified (a value with no source, carried over from the old dataset) | 0 |
-| Not documented (checked, the vendor says nothing) | 473 |
-| Not researched | 768 |
+| Not documented (checked, the vendor says nothing) | 505 |
+| Not researched | 721 |
 
 ## Done
 
@@ -50,6 +50,12 @@ _Last updated: 2026-09-24_
 - [x] **Page laid out around the job (2026-09-23):** order is now signpost → "can I trust this" → table → reference. The hero lost its search box, its preview card and its byline, and is four entry chips plus a line of copy. The legend moved onto the table's own chrome, outside the scroll box, so it stays put while rows scroll. "How to read" moved below the table. "Something wrong? Click ✎" sits at the end of the data, where you have just seen a value you disagree with.
 - [x] **Light mode (2026-09-23):** a fixed brand wash behind the body, a tinted lift on `.panel` instead of a grey shadow, and a tinted table header row, so the content area reads as part of the same design instead of a grey sheet between two dark bands. Header carries the LinkedIn and iam.ninja icons only; the name reads as publicity up there and the footer already has it.
 - [x] **CI goes green (2026-09-23):** it had never passed. Two causes. The workflow called `hugo` on a runner that never had it, now installed via `peaceiris/actions-hugo@v3` pinned to 0.147.7, the version Cloudflare Pages runs. And it ran Node 18, but Tailwind v4's `@tailwindcss/oxide` binary needs Node 20+, and Hugo shells out to the Tailwind CLI mid-build, so the build step died. Node is now pinned in `.node-version` (22), which both `actions/setup-node` and Cloudflare Pages read, so CI and the deploy can't drift. A `NODE_VERSION` env var set in Cloudflare would override that file, so don't set one.
+- [x] **JIT and domain verification, batches 1 to 3 (2026-09-24):** 24 apps, 47 values off `not_researched`, 15 sourced and 32 vendor silent. Three agent values failed review and were corrected here, which is what the three-batch pilot was for:
+  - Cisco Duo domain verification came back `supported`. Duo verifies a domain by DNS TXT record, but only to route logins for it, not to claim existing accounts. Recorded `partial`.
+  - Dropbox domain verification came back `supported` with a plan, cited to a `help.dropbox.com` page that returns 503 to everyone. That was a search snippet, not a page read. Recorded `undocumented`.
+  - Harness JIT is `supported` and sourced, but no vendor page names the plan, so it has no tier and stays a draft.
+  - The brief now carries all three lessons: never cite a page you could not fetch, never infer a tier, and a list of same-word traps for "domain" (email allowlists, DKIM/SPF/DMARC sending domains, telephony domains, tenant subdomains, typosquatting protection).
+  - **`docs.box.com` is readable again.** Box's core values were set to `undocumented` when box.com blocked us, so they are worth a recheck.
 - [x] **BACKLOG.md:** 299 widely used apps not yet in the data, ranked P1/P2/P3. The agent wrote the websites from memory, so confirm them while researching.
 
 ## Setup (done 2026-09-24)
