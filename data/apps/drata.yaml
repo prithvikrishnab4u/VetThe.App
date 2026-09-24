@@ -25,9 +25,11 @@ capabilities:
   audit_logs:
     support: "undocumented"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The Intercom-hosted help centre returns only navigation to automated fetches, so JIT could not be confirmed. Needs a browser check."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The Drata Domain article looks like tenant subdomain and IdP config rather than email domain claiming, but the help centre was not fetchable. Needs a browser check."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

@@ -34,9 +34,11 @@ capabilities:
     support: "undocumented"
     notes: "No mention of an admin-visible activity/audit log in the account access documentation."
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The custom OIDC SSO article covers configuration and SSO enforcement only, with no mention of accounts being created on first login."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "No help centre article on verifying an email domain or capturing existing accounts."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

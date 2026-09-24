@@ -37,9 +37,19 @@ capabilities:
     source: "https://coda.io/trust/security"
     checked: "2026-09-22"
   jit_provisioning:
-    support: "not_researched"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "The SAML SSO setup guide lists just-in-time provisioning alongside SP and IdP initiated SSO."
+    source: "https://help.coda.io/en/articles/8931516-set-up-saml-sso-scim-with-okta"
+    checked: "2026-09-24"
   domain_verification:
-    support: "not_researched"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Domain capture: admins verify an owned domain by DNS TXT record, then manage the docs and users on it."
+    source: "https://help.coda.io/en/articles/9346652-add-and-verify-owned-domains"
+    checked: "2026-09-24"
   custom_roles:
     support: "not_researched"
   group_role_mapping:

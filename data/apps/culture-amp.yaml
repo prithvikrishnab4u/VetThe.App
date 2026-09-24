@@ -32,9 +32,13 @@ capabilities:
   audit_logs:
     support: "undocumented"
   jit_provisioning:
-    support: "not_researched"
+    support: "not_supported"
+    notes: "The SSO setup guide says users must already exist in Culture Amp before they can sign in through SSO."
+    source: "https://support.cultureamp.com/en/articles/14713324-set-up-saml-single-sign-on-sso"
+    checked: "2026-09-24"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "No vendor page on domain verification or claiming."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

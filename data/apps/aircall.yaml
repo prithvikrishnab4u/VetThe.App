@@ -37,9 +37,11 @@ capabilities:
     support: "undocumented"
     notes: "No admin-facing activity/audit log feature is documented on Aircall's security or pricing pages."
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The SAML help article covers setup and roles but never mentions accounts being created on first sign-in."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "No help centre page on verifying or claiming an email domain; the only domain feature is email allowlisting for deliverability."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

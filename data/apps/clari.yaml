@@ -22,9 +22,11 @@ capabilities:
   audit_logs:
     support: "undocumented"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Only Okta and CyberArk IdP-side docs describe JIT for Clari. No Clari page confirms it."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "No vendor page on domain verification or claiming."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

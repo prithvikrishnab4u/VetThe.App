@@ -40,9 +40,13 @@ capabilities:
     support: "undocumented"
     notes: "Apollo's admin settings mention a 'system activity log' covering data requests and AI word usage, but the vendor documentation does not clearly describe an admin-visible log of general user/admin activity."
   jit_provisioning:
-    support: "not_researched"
+    support: "not_supported"
+    notes: "Users assigned in an IdP are only created in Apollo if SCIM provisioning is set up; an SSO login alone does not create the account."
+    source: "https://knowledge.apollo.io/hc/en-us/articles/15575994677005-Why-Are-the-Users-I-Assign-in-Okta-Not-Created-in-Apollo"
+    checked: "2026-09-24"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The help centre covers DKIM, SPF and DMARC for sending email, not claiming accounts on a domain."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

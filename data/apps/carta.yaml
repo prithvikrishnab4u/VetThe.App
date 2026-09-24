@@ -29,9 +29,11 @@ capabilities:
   audit_logs:
     support: "undocumented"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "SSO setup guides describe a manual, support-assisted configuration and never mention accounts being created on first sign-in."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "SSO docs require a matching corporate domain but describe no verification or claiming feature; the product updates page returned 403."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

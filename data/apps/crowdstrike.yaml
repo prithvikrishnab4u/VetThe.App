@@ -27,9 +27,11 @@ capabilities:
   audit_logs:
     support: "undocumented"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The JIT pages found are Falcon Identity Protection's privileged access feature for the customer's own environment, not provisioning of Falcon console users."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The domain pages found cover spoofing and typosquatting protection, not claiming Falcon console accounts."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

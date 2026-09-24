@@ -36,9 +36,11 @@ capabilities:
     source: "https://support.gainsight.com/gainsight_nxt/01Onboarding_and_Implementation/Onboarding_for_Gainsight_NXT/Login_and_Permissions/Activity_Logs"
     checked: "2026-09-22"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The SSO and SSO FAQ pages describe SAML setup but never mention accounts being created on first sign-in."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The only Gainsight domain feature documented is a survey subdomain, not email domain verification."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

@@ -20,9 +20,17 @@ capabilities:
   audit_logs:
     support: "undocumented"
   jit_provisioning:
-    support: "not_researched"
+    support: "supported"
+    tier: "paid"
+    notes: "SSO On-the-Fly Registration provisions the account the first time a user logs in. SSO is on Business and Enterprise."
+    source: "https://docs.box.com/en/box-admin-tools/box-security/setting-up-single-sign-on-sso-for-your-organization"
+    checked: "2026-09-24"
   domain_verification:
-    support: "not_researched"
+    support: "supported"
+    tier: "paid"
+    notes: "Domain Management verifies a domain by DNS TXT record, and Auto Enrollment then claims users who sign up on it."
+    source: "https://docs.box.com/en/box-admin-tools/how-to-guides-for-admins/domain-management-verification-and-auto-enrollment"
+    checked: "2026-09-24"
   custom_roles:
     support: "not_researched"
   group_role_mapping:

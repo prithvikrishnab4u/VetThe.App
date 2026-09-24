@@ -372,13 +372,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "No help centre page on verifying or claiming an email domain; the only domain feature is email allowlisting for deliverability.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "The SAML help article covers setup and roles but never mentions accounts being created on first sign-in.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-22",
@@ -683,13 +685,17 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "The help centre covers DKIM, SPF and DMARC for sending email, not claiming accounts on a domain.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "Users assigned in an IdP are only created in Apollo if SCIM provisioning is set up; an SSO login alone does not create the account.",
+        "source": "https://knowledge.apollo.io/hc/en-us/articles/15575994677005-Why-Are-the-Users-I-Assign-in-Okta-Not-Created-in-Apollo",
+        "support": "not_supported"
       },
       "mfa_enforcement": {
         "checked": "2026-09-22",
@@ -836,13 +842,19 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "Docs FAQ answers it directly: no log streams and no domain verification.",
+        "source": "https://docs.ashbyhq.com/sso-and-scim",
+        "support": "not_supported"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "Docs say Ashby does not support just-in-time provisioning through SSO; users signing in through SSO must already have an account. Google and Microsoft sign-in have a separate limited-access path.",
+        "source": "https://docs.ashbyhq.com/sso-and-scim",
+        "support": "not_supported"
       },
       "mfa_enforcement": {
         "notes": "Security page describes 2FA requirements for Ashby employees, not a customer-facing MFA enforcement setting for app users.",
@@ -1301,13 +1313,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "No help centre page on domain verification or claiming.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "No vendor page describing SAML or SSO could be found at all, so JIT cannot be confirmed either way.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-16",
@@ -1501,13 +1515,21 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "Domain Management verifies a domain by DNS TXT record, and Auto Enrollment then claims users who sign up on it.",
+        "source": "https://docs.box.com/en/box-admin-tools/how-to-guides-for-admins/domain-management-verification-and-auto-enrollment",
+        "support": "supported",
+        "tier": "paid"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "SSO On-the-Fly Registration provisions the account the first time a user logs in. SSO is on Business and Enterprise.",
+        "source": "https://docs.box.com/en/box-admin-tools/box-security/setting-up-single-sign-on-sso-for-your-organization",
+        "support": "supported",
+        "tier": "paid"
       },
       "mfa_enforcement": {
         "support": "undocumented"
@@ -1719,13 +1741,21 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "Domain Capture verifies ownership by DNS record or HTML file and then manages matching users. Docs call it Enterprise only.",
+        "plan": "Enterprise",
+        "source": "https://www.browserstack.com/docs/enterprise/domain-verification",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "SSO docs require users to be pre-assigned the app in the IdP. The auto user provisioning they document is SCIM push, not account creation on first login.",
+        "source": "https://www.browserstack.com/docs/enterprise/single-sign-on",
+        "support": "not_supported"
       },
       "mfa_enforcement": {
         "checked": "2026-09-22",
@@ -1955,13 +1985,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "SSO docs require a matching corporate domain but describe no verification or claiming feature; the product updates page returned 403.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "SSO setup guides describe a manual, support-assisted configuration and never mention accounts being created on first sign-in.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "notes": "Two-factor authentication is prompted at account registration, but no vendor documentation states admins can require MFA org-wide.",
@@ -2030,7 +2062,12 @@
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "Automatic account creation applies to eligible workspaces. It is separate from SCIM and does not require SSO.",
+        "plan": "Enterprise",
+        "source": "https://help.openai.com/en/articles/9672121-getting-started-with-identity-and-provisioning-in-chatgpt-enterprise/",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "mfa_enforcement": {
         "checked": "2026-09-22",
@@ -2171,13 +2208,21 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "Duo SSO verifies a domain by DNS TXT record, but only to route logins for it: an unverified domain is rejected at sign-in. It does not claim existing accounts on that domain.",
+        "plan": "Essentials",
+        "source": "https://duo.com/docs/sso",
+        "support": "partial",
+        "tier": "paid"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "Duo admin accounts cannot be created by a SAML login. They are added by hand, by directory sync, or through the Admin API.",
+        "source": "https://duo.com/docs/administration-admins",
+        "support": "not_supported"
       },
       "mfa_enforcement": {
         "checked": "2026-09-22",
@@ -2380,13 +2425,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "No vendor page on domain verification or claiming.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "Only Okta and CyberArk IdP-side docs describe JIT for Clari. No Clari page confirms it.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "support": "undocumented"
@@ -2601,13 +2648,23 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "Domain capture: admins verify an owned domain by DNS TXT record, then manage the docs and users on it.",
+        "plan": "Enterprise",
+        "source": "https://help.coda.io/en/articles/9346652-add-and-verify-owned-domains",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "The SAML SSO setup guide lists just-in-time provisioning alongside SP and IdP initiated SSO.",
+        "plan": "Enterprise",
+        "source": "https://help.coda.io/en/articles/8931516-set-up-saml-sso-scim-with-okta",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "mfa_enforcement": {
         "notes": "2FA is offered as an authentication option for email+password login, but no admin-level enforcement policy is documented.",
@@ -2663,13 +2720,17 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "No vendor page on domain verification or claiming.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "The SAML FAQ says the Coupa SAML setup is only for authentication and not user provisioning within Coupa.",
+        "source": "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-user-authentication/coupa-saml-faq",
+        "support": "not_supported"
       },
       "mfa_enforcement": {
         "notes": "No vendor documentation found describing native in-app MFA enforcement.",
@@ -2775,13 +2836,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "The domain pages found cover spoofing and typosquatting protection, not claiming Falcon console accounts.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "The JIT pages found are Falcon Identity Protection's privileged access feature for the customer's own environment, not provisioning of Falcon console users.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-16",
@@ -2829,13 +2892,17 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "No vendor page on domain verification or claiming.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "The SSO setup guide says users must already exist in Culture Amp before they can sign in through SSO.",
+        "source": "https://support.cultureamp.com/en/articles/14713324-set-up-saml-single-sign-on-sso",
+        "support": "not_supported"
       },
       "mfa_enforcement": {
         "support": "undocumented"
@@ -3331,13 +3398,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "The Drata Domain article looks like tenant subdomain and IdP config rather than email domain claiming, but the help centre was not fetchable. Needs a browser check.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "The Intercom-hosted help centre returns only navigation to automated fetches, so JIT could not be confirmed. Needs a browser check.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "support": "undocumented"
@@ -3392,13 +3461,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "Domain verification is documented for Dropbox team accounts, and it is not clear it covers Dropbox Sign. The page returned 503. Needs a browser check.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "help.dropbox.com returns 503 to automated fetches. Needs a browser check.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "notes": "No vendor documentation found stating admins can force MFA for all Dropbox Sign users.",
@@ -3461,13 +3532,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "Dropbox does document domain verification with invite enforcement, but help.dropbox.com returns 503 so the page and its plan could not be read. Needs a browser check.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "help.dropbox.com returns 503 to automated fetches. Needs a browser check.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-16",
@@ -3752,13 +3825,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "The only domain settings documented are telephony ones, not email domain verification.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "documentation.five9.com needs JavaScript. The readable pages describe SCIM-based automated user management and never mention JIT. Needs a browser check.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-22",
@@ -4029,13 +4104,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "The only Gainsight domain feature documented is a survey subdomain, not email domain verification.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "The SSO and SSO FAQ pages describe SAML setup but never mention accounts being created on first sign-in.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "notes": "Checked SSO/authentication docs; no mention of an in-app MFA enforcement policy for Gainsight NXT.",
@@ -4096,13 +4173,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "The only domain setup documented is the email sending domain, not domain ownership or account claiming.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "The SSO admin docs and the About SSO article never mention JIT.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-22",
@@ -4355,13 +4434,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "The docs describe checking a login email against a pre-registered customer domain at sign-in, not a self-service verification or claiming flow.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "The SSO overview and setup pages cover SAML and OIDC configuration but never mention accounts being created on first sign-in.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "support": "undocumented"
@@ -4596,13 +4677,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "No help centre article on verifying an email domain or capturing existing accounts.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "The custom OIDC SSO article covers configuration and SSO enforcement only, with no mention of accounts being created on first login.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-22",
@@ -4823,13 +4906,15 @@
         "tier": "paid"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "support.gusto.com returns 403. The only domain verification found elsewhere is for the Google Workspace integration and for bank accounts, not account claiming. Needs a browser check.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "support.gusto.com and gusto.com return 403 to automated fetches. Needs a browser check.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-16",
@@ -4889,13 +4974,17 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "The authentication docs describe an email domain allowlist for restricting login, not domain ownership verification or account claiming.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "Docs: Harness automatically creates user accounts when users log in for the first time via SAML SSO. Neither the JIT doc nor the pricing page says which plan is needed, so there is no tier yet.",
+        "source": "https://developer.harness.io/harness-platform/use-harness-platform/platform-access-control/just-in-time-user-provisioning",
+        "support": "supported"
       },
       "mfa_enforcement": {
         "checked": "2026-09-22",

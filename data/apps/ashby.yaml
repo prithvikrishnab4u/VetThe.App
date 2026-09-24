@@ -36,9 +36,15 @@ capabilities:
     source: "https://www.ashbyhq.com/pricing"
     checked: "2026-09-22"
   jit_provisioning:
-    support: "not_researched"
+    support: "not_supported"
+    notes: "Docs say Ashby does not support just-in-time provisioning through SSO; users signing in through SSO must already have an account. Google and Microsoft sign-in have a separate limited-access path."
+    source: "https://docs.ashbyhq.com/sso-and-scim"
+    checked: "2026-09-24"
   domain_verification:
-    support: "not_researched"
+    support: "not_supported"
+    notes: "Docs FAQ answers it directly: no log streams and no domain verification."
+    source: "https://docs.ashbyhq.com/sso-and-scim"
+    checked: "2026-09-24"
   custom_roles:
     support: "not_researched"
   group_role_mapping:

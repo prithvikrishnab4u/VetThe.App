@@ -24,9 +24,11 @@ capabilities:
   audit_logs:
     support: "undocumented"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "No vendor page describing SAML or SSO could be found at all, so JIT cannot be confirmed either way."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "No help centre page on domain verification or claiming."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

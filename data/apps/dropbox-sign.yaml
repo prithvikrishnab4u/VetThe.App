@@ -40,9 +40,11 @@ capabilities:
     source: "https://help.dropbox.com/account-settings/reporting-admin-console-dropbox-sign"
     checked: "2026-09-22"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "help.dropbox.com returns 503 to automated fetches. Needs a browser check."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Domain verification is documented for Dropbox team accounts, and it is not clear it covers Dropbox Sign. The page returned 503. Needs a browser check."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

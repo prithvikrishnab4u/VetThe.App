@@ -31,9 +31,11 @@ capabilities:
     support: "undocumented"
     notes: "Admin Console has an event/configuration change log, but a working vendor page confirming full admin+user activity audit logging could not be fetched to verify wording."
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "documentation.five9.com needs JavaScript. The readable pages describe SCIM-based automated user management and never mention JIT. Needs a browser check."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The only domain settings documented are telephony ones, not email domain verification."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

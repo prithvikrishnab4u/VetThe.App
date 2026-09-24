@@ -46,9 +46,17 @@ capabilities:
     source: "https://www.browserstack.com/docs/enterprise/audit-logs"
     checked: "2026-09-22"
   jit_provisioning:
-    support: "not_researched"
+    support: "not_supported"
+    notes: "SSO docs require users to be pre-assigned the app in the IdP. The auto user provisioning they document is SCIM push, not account creation on first login."
+    source: "https://www.browserstack.com/docs/enterprise/single-sign-on"
+    checked: "2026-09-24"
   domain_verification:
-    support: "not_researched"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Domain Capture verifies ownership by DNS record or HTML file and then manages matching users. Docs call it Enterprise only."
+    source: "https://www.browserstack.com/docs/enterprise/domain-verification"
+    checked: "2026-09-24"
   custom_roles:
     support: "not_researched"
   group_role_mapping:

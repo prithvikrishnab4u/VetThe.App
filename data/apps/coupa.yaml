@@ -27,9 +27,13 @@ capabilities:
     support: "undocumented"
     notes: "Trust page references general security/compliance commitments (SOC I/II, PCI, ISO27001) but no specific admin-visible activity log was found within the fetch budget."
   jit_provisioning:
-    support: "not_researched"
+    support: "not_supported"
+    notes: "The SAML FAQ says the Coupa SAML setup is only for authentication and not user provisioning within Coupa."
+    source: "https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/coupa-core-user-authentication/coupa-saml-faq"
+    checked: "2026-09-24"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "No vendor page on domain verification or claiming."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

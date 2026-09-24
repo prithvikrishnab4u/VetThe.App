@@ -34,9 +34,11 @@ capabilities:
     source: "https://docs.glean.com/security/security-principles"
     checked: "2026-09-22"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The SSO overview and setup pages cover SAML and OIDC configuration but never mention accounts being created on first sign-in."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The docs describe checking a login email against a pre-registered customer domain at sign-in, not a self-service verification or claiming flow."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

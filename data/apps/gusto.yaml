@@ -40,9 +40,11 @@ capabilities:
     source: "https://support.gusto.com/article/102787011100000/view-employee-or-contractor-pay-history-for-admins"
     checked: "2026-09-16"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "support.gusto.com and gusto.com return 403 to automated fetches. Needs a browser check."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "support.gusto.com returns 403. The only domain verification found elsewhere is for the Google Workspace integration and for bank accounts, not account claiming. Needs a browser check."
   custom_roles:
     support: "supported"
     tier: "paid"

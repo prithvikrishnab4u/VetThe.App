@@ -47,7 +47,12 @@ capabilities:
     source: "https://help.openai.com/en/articles/9261474-openai-compliance-platform-for-enterprise-and-edu-customers"
     checked: "2026-09-22"
   jit_provisioning:
-    support: "not_researched"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Automatic account creation applies to eligible workspaces. It is separate from SCIM and does not require SSO."
+    source: "https://help.openai.com/en/articles/9672121-getting-started-with-identity-and-provisioning-in-chatgpt-enterprise/"
+    checked: "2026-09-24"
   domain_verification:
     support: "supported"
     notes: "Domain verification proves ownership of the email namespace used to federate with an IdP; SSO setup stays disabled until at least one domain is verified."

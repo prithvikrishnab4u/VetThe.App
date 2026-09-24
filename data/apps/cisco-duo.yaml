@@ -35,9 +35,17 @@ capabilities:
     source: "https://duo.com/docs/adminapi"
     checked: "2026-09-22"
   jit_provisioning:
-    support: "not_researched"
+    support: "not_supported"
+    notes: "Duo admin accounts cannot be created by a SAML login. They are added by hand, by directory sync, or through the Admin API."
+    source: "https://duo.com/docs/administration-admins"
+    checked: "2026-09-24"
   domain_verification:
-    support: "not_researched"
+    support: "partial"
+    tier: "paid"
+    plan: "Essentials"
+    notes: "Duo SSO verifies a domain by DNS TXT record, but only to route logins for it: an unverified domain is rejected at sign-in. It does not claim existing accounts on that domain."
+    source: "https://duo.com/docs/sso"
+    checked: "2026-09-24"
   custom_roles:
     support: "not_researched"
   group_role_mapping:

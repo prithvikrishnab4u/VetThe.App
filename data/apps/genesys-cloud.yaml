@@ -43,9 +43,11 @@ capabilities:
     source: "https://help.genesys.cloud/articles/about-the-audit-log-viewer/"
     checked: "2026-09-22"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The SSO admin docs and the About SSO article never mention JIT."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The only domain setup documented is the email sending domain, not domain ownership or account claiming."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

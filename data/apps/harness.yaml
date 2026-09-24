@@ -38,9 +38,13 @@ capabilities:
     source: "https://developer.harness.io/harness-platform/use-harness-platform/governance/audit-trail/audit-trail"
     checked: "2026-09-22"
   jit_provisioning:
-    support: "not_researched"
+    support: "supported"
+    notes: "Docs: Harness automatically creates user accounts when users log in for the first time via SAML SSO. Neither the JIT doc nor the pricing page says which plan is needed, so there is no tier yet."
+    source: "https://developer.harness.io/harness-platform/use-harness-platform/platform-access-control/just-in-time-user-provisioning"
+    checked: "2026-09-24"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The authentication docs describe an email domain allowlist for restricting login, not domain ownership verification or account claiming."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

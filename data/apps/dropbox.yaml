@@ -48,9 +48,11 @@ capabilities:
     source: "https://help.dropbox.com/account-access/view-activity"
     checked: "2026-09-16"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "help.dropbox.com returns 503 to automated fetches. Needs a browser check."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Dropbox does document domain verification with invite enforcement, but help.dropbox.com returns 503 so the page and its plan could not be read. Needs a browser check."
   custom_roles:
     support: "not_researched"
   group_role_mapping:
