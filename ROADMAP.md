@@ -10,7 +10,7 @@ _Last updated: 2026-09-24_
 
 ## In progress
 
-- **JIT and domain verification, batches 4 to 9 (48 apps).** Report-only agents, applied and reviewed here. Batches 1 to 3 are done and committed.
+- Nothing running.
 
 ## Where the data stands
 
@@ -18,10 +18,10 @@ _Last updated: 2026-09-24_
 
 | | Count |
 |---|---|
-| Verified (has `source` + `checked`) | 838 |
+| Verified (has `source` + `checked`) | 854 |
 | Unverified (a value with no source, carried over from the old dataset) | 0 |
-| Not documented (checked, the vendor says nothing) | 505 |
-| Not researched | 721 |
+| Not documented (checked, the vendor says nothing) | 572 |
+| Not researched | 638 |
 
 ## Done
 
@@ -56,6 +56,11 @@ _Last updated: 2026-09-24_
   - Harness JIT is `supported` and sourced, but no vendor page names the plan, so it has no tier and stays a draft.
   - The brief now carries all three lessons: never cite a page you could not fetch, never infer a tier, and a list of same-word traps for "domain" (email allowlists, DKIM/SPF/DMARC sending domains, telephony domains, tenant subdomains, typosquatting protection).
   - **`docs.box.com` is readable again.** Box's core values were set to `undocumented` when box.com blocked us, so they are worth a recheck.
+- [x] **JIT and domain verification finished, batches 4 to 9 (2026-09-24):** 48 more apps. Both columns are now complete for every app except Paylocity. Across all nine batches, 133 values left `not_researched`, 31 sourced and 99 vendor silent.
+  - Four more agent values failed review. Mailchimp and Okta domain verification each came back `not_supported` citing a page about a *different* feature; a page about email sending authentication proves nothing about account claiming, so both are `undocumented`. Keeper carried a tier no page named. Paylocity stayed `not_researched` rather than `undocumented`, because the agent was told not to look.
+  - **The `partial` rule paid for itself.** Jamf, Pendo, JetBrains, Keeper and Cisco Duo all verify a domain only to route SSO or block new signups, with no account capture. Ten apps sit at `partial` now. A keyword pass would have called every one of them `supported`, which is exactly the failure mode this dataset exists to avoid.
+  - Where the two columns landed: JIT is 72 supported, 19 not supported, 3 partial, 77 vendor silent. Domain verification is 47 supported, 2 not supported, 10 partial, 112 vendor silent. Vendors document JIT far more often than domain capture.
+  - **Hosts that blocked every automated fetch this round**, on top of the ones already listed: tailscale.com, teamviewer.com, help.dropbox.com, support.gusto.com, help.salesloft.com, help.sap.com, help.lever.co, learn.jamf.com, help.proofpoint.com, support.remote.com, and the Zendesk-hosted help centres for hibob, ironclad and justworks. Two of those are known to hide a real answer: Ironclad has a JIT Provisioning article and Remote has an SSO Domain Validation article, both visible in search and both unreadable. Those two are the best value for a person with a browser.
 - [x] **BACKLOG.md:** 299 widely used apps not yet in the data, ranked P1/P2/P3. The agent wrote the websites from memory, so confirm them while researching.
 
 ## Setup (done 2026-09-24)
@@ -72,16 +77,14 @@ _Last updated: 2026-09-24_
 
 1. [ ] **Publish the rest**: 79 are published (2026-09-16). The 28 drafts are mostly missing plan tiers on supported values, often because vendor pages were blocked (403/503) or don't say which plan is needed. Every draft has had one agent attempt at its tiers, so what's left needs a manual browser check: 1password, adobe-creative-cloud, amplitude, atlassianjira, auth0, bamboohr, brex, cisco-webex, crowdstrike, databricks, datadog, deel, dropbox, expensify, hootsuite, navan, netsuite, outreach, ringcentral, salesforce, servicenow, shopify, sprout-social, twilio, uber-for-business, udemy-business, zoho-crm, zoominfo.
 2. [ ] **Paylocity is the last app with unchecked core values**, all six. Everything public returns a JS shell to automated fetches, and the real docs live in PEAK (Help → Knowledge Base), which needs a client login. Their SSO PDF on `docs.paylocity.com` is a blank intake form, not documentation. Needs a person with an account. Left as `not_researched` rather than `undocumented`, because nobody has actually looked; flipping it would round the headline to 100% on an app no one has verified.
-3. [ ] **Non-core capabilities**, most still not researched:
+3. [ ] **Non-core capabilities.** JIT provisioning and domain verification are done (2026-09-24), both at 171 of 172, with only Paylocity left. Still to go:
    | Capability | Not researched |
    |---|---|
-   | JIT provisioning | 10 (apps without SSO) |
-   | Domain verification | 13 |
-   | Group → role mapping | 92 |
-   | Custom roles | 95 |
-   | Session controls | 85 |
-   | API token controls | 98 |
-   Suggested order (run as parallel agents, about 10 apps per agent, report-only, the main session edits): JIT and domain verification first (usually on the same SSO docs page), then roles, then sessions and tokens.
+   | Group → role mapping | 157 |
+   | Custom roles | 160 |
+   | Session controls | 150 |
+   | API token controls | 163 |
+   Run the same way: parallel report-only agents, about 8 apps each, every value applied and reviewed in the main session. Use [research/BRIEF-jit-domain.md](research/BRIEF-jit-domain.md) as the pattern, but **these four need a rewritten brief**. JIT and domain verification usually sit on the one SSO docs page, and these do not: roles live in an admin guide, session controls in a security or policy page, API tokens in a developer doc. Expect more fetches per app and a lower hit rate. Carry over the three rules the first run proved necessary: never cite a page you could not fetch, never infer a tier, and define the `partial` boundary up front for each capability, since that is where every agent error landed.
 4. [ ] Recheck values older than about 6 months (vendors change plans); `checked` dates make this a simple query
 5. [ ] Add more apps from [BACKLOG.md](BACKLOG.md): the first 72 P1 rows are done, so continue from P1 row 73, then P2/P3. Use `scratchpad/new/BRIEF.md` + `mk.py` as the pattern. Requests will also arrive through the website's "Add an app"
 6. [ ] The 65 apps added on 2026-09-22 are all `draft` — they need plan tiers before they can be published
