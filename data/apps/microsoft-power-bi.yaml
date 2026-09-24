@@ -49,9 +49,11 @@ capabilities:
     source: "https://learn.microsoft.com/en-us/fabric/enterprise/powerbi/service-admin-auditing"
     checked: "2026-09-22"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The docs cover unmanaged tenant creation at signup and guest accounts created when content is shared. Neither is internal user creation on SSO sign-in."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Domain verification happens at the Microsoft 365 and Entra tenant level. No Power BI specific page found."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

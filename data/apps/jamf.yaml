@@ -31,9 +31,13 @@ capabilities:
     source: "https://learn.jamf.com/r/en-US/jamf-pro-documentation-current/Event_Logs"
     checked: "2026-09-22"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "learn.jamf.com renders via JavaScript and returned only navigation. The JIT evidence found is local macOS account creation on a device, which is a different capability from Jamf Pro console accounts. Needs a browser check."
   domain_verification:
-    support: "not_researched"
+    support: "partial"
+    notes: "Jamf Account verifies domain ownership by DNS TXT record before an SSO connection can be added. That enables SSO routing only, with no mention of claiming existing accounts."
+    source: "https://learn.jamf.com/r/en-US/jamf-account-documentation/Verifying_your_SSO_Domain_in_Jamf_Account"
+    checked: "2026-09-24"
   custom_roles:
     support: "not_researched"
   group_role_mapping:

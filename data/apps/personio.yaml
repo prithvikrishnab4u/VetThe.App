@@ -37,9 +37,11 @@ capabilities:
     source: "https://support.personio.de/hc/en-us/articles/18906413010589-Use-the-Personio-Audit-Log"
     checked: "2026-09-22"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The SSO articles cover SAML and OIDC setup but never say accounts are created on first sign-in."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "No help centre article on verifying or claiming an email domain."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

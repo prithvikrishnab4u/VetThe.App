@@ -25,9 +25,11 @@ capabilities:
     support: "undocumented"
     notes: "TeamViewer site returned 503 to every fetch; could not confirm."
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "teamviewer.com and its community site return 503 and SSL errors to automated fetches. Needs a browser check."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Same fetch failures across teamviewer.com. Needs a browser check."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

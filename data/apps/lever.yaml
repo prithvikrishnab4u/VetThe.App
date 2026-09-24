@@ -27,9 +27,11 @@ capabilities:
     support: "undocumented"
     notes: "No customer-facing admin audit log documentation found; security page only describes Lever's internal SSO/MFA use for its own staff."
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "help.lever.co is a Salesforce Community site that renders via JavaScript and returns only an error shell. Needs a browser check."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Same help centre, same JavaScript wall. Needs a browser check."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

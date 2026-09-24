@@ -24,9 +24,11 @@ capabilities:
   audit_logs:
     support: "undocumented"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "No Mailchimp page describes SAML or SSO at all, so JIT cannot be confirmed either way. The SSO mentions found are all third-party connector sites."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Mailchimp's domain verification is email sending authentication, DKIM and DMARC records. No page addresses claiming accounts on a company domain, either to confirm or rule it out."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

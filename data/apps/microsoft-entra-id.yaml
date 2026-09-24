@@ -35,9 +35,16 @@ capabilities:
   audit_logs:
     support: "undocumented"
   jit_provisioning:
-    support: "not_researched"
+    support: "not_supported"
+    notes: "For a federated domain the account must already exist in the tenant. Sign-in fails with AADSTS50020 if it does not. This is about Entra's own directory users, not what Entra provisions into other apps."
+    source: "https://learn.microsoft.com/en-us/troubleshoot/entra/entra-id/app-integration/error-code-aadsts50020-user-account-identity-provider-does-not-exist"
+    checked: "2026-09-24"
   domain_verification:
-    support: "not_researched"
+    support: "supported"
+    tier: "free"
+    notes: "Admin takeover: verifying DNS ownership of a domain used by an unmanaged tenant moves its users, subscriptions and licences into the managed tenant. Built in, no separate plan."
+    source: "https://learn.microsoft.com/en-us/entra/identity/users/domains-admin-takeover"
+    checked: "2026-09-24"
   custom_roles:
     support: "not_researched"
   group_role_mapping:

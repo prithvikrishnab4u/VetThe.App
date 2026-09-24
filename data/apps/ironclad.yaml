@@ -33,9 +33,11 @@ capabilities:
     source: "https://support.ironcladapp.com/hc/en-us/articles/33834526166807-Audit-Log-Overview"
     checked: "2026-09-22"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "A JIT Provisioning article exists but support.ironcladapp.com is Zendesk hosted and returns 403, so it could not be read. Needs a browser check, and it will probably turn into a real value."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Same 403. The only domain pages visible elsewhere are DKIM and SPF sending domains and subdomain branding, not account capture. Needs a browser check."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

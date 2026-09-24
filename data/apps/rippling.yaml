@@ -29,9 +29,11 @@ capabilities:
   audit_logs:
     support: "undocumented"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The SAML and OIDC guides found describe Rippling acting as an IdP for other apps. Nothing states that accounts are created in Rippling itself on first SSO sign-in."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "No page on domain verification or account claiming for Rippling."
   custom_roles:
     support: "supported"
     tier: "paid"

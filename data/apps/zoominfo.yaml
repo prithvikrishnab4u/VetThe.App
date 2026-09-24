@@ -29,9 +29,11 @@ capabilities:
   audit_logs:
     support: "undocumented"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "help.zoominfo.com returns a loading error to automated fetches. Needs a browser check."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Same blocked host. Needs a browser check."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

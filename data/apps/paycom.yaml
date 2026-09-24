@@ -31,9 +31,11 @@ capabilities:
     source: "https://www.paycom.com/about/security/"
     checked: "2026-09-22"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Paycom's security page confirms SAML 2.0 SSO but says nothing about accounts being created on first sign-in. The help centre is not reachable."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "No Paycom page mentions domain verification or account claiming."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

@@ -48,7 +48,8 @@ capabilities:
     source: "https://docs.sentry.io/organization/authentication/sso/"
     checked: "2026-09-22"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The SSO docs only describe restricting membership to a Google Workspace domain, which is an allowlist, not verifying a domain or claiming accounts on it."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

@@ -28,9 +28,11 @@ capabilities:
   audit_logs:
     support: "undocumented"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The JIT claims come only from Microsoft's Entra tutorial, which is IdP-side and does not count. LinkedIn's own pages describe SCIM and licence auto-assignment, not creation on first login."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "LinkedIn's domain verification links are per-user email activation for support access, not company level domain claiming."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

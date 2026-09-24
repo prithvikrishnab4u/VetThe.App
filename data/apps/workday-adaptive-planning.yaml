@@ -25,9 +25,13 @@ capabilities:
     source: "https://www.workday.com/en-us/why-workday/trust/security.html"
     checked: "2026-09-22"
   jit_provisioning:
-    support: "not_researched"
+    support: "not_supported"
+    notes: "Users are created manually against available seats, and the SAML docs refer to synced users, so accounts must exist before sign-in."
+    source: "https://doc.workday.com/adaptive-planning/en-us/workday-adaptive-planning-documentation/security-and-administration/using-administration/users-and-permission-sets/manage-users/create-users--refactored-with-correct-template-.html"
+    checked: "2026-09-24"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "No vendor page on verifying an email domain or claiming accounts on it."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

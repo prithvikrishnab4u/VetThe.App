@@ -52,7 +52,8 @@ capabilities:
     source: "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
     checked: "2026-09-22"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Google Cloud's domain verification for Looker confirms DNS routing for a custom hosting URL, not ownership of an email domain."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

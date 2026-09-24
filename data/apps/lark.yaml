@@ -56,7 +56,8 @@ capabilities:
     source: "https://www.larksuite.com/hc/en-US/articles/639199964238-admin-configure-saml-2.0-sso-login-microsoft-entra-id"
     checked: "2026-09-16"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Lark does have a domain management help section, but it renders via JavaScript and returned no article text. Needs a browser check."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

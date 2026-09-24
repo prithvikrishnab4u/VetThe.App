@@ -40,7 +40,8 @@ capabilities:
     source: "https://docs.workato.com/en/user-accounts-and-teams/just-in-time-provisioning.html"
     checked: "2026-09-22"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The docs cover custom domains for workflow apps and API hosting only. Nothing about verifying an email domain to claim accounts."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

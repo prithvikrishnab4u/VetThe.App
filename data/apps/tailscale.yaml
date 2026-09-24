@@ -32,9 +32,11 @@ capabilities:
     source: "https://tailscale.com/blog/pricing-v4"
     checked: "2026-09-22"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "tailscale.com returns 503 to automated fetches. Needs a browser check."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Tailscale does document domain ownership, but tailscale.com returns 503 so the page could not be read. Needs a browser check."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

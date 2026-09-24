@@ -30,9 +30,14 @@ capabilities:
   audit_logs:
     support: "undocumented"
   jit_provisioning:
-    support: "not_researched"
+    support: "supported"
+    tier: "enterprise"
+    notes: "The SAML SSO Auto Create Users setting creates users on first SAML login and assigns default groups. Enterprise X or Enterprise+ on SaaS; self-managed starts lower, at Pro X."
+    source: "https://docs.jfrog.com/administration/docs/saml-sso"
+    checked: "2026-09-24"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The only domain feature found is custom domain and SSL setup in MyJFrog, which is hosting, not email domain ownership."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

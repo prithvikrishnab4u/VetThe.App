@@ -42,9 +42,11 @@ capabilities:
     source: "https://jumpcloud.com/support/directory-insights"
     checked: "2026-09-22"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "JumpCloud's JIT docs describe what it does as an IdP into other apps. For JumpCloud's own console, the federation docs require users to exist already, but no page states that outright."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "No page on verifying an email domain to claim existing JumpCloud accounts. The device account takeover and shadow IT discovery features are different things."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

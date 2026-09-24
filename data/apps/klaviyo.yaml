@@ -45,7 +45,8 @@ capabilities:
     source: "https://help.klaviyo.com/hc/en-us/articles/9353860331035"
     checked: "2026-09-22"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Klaviyo's domain verification is branded sending domain setup with DKIM and SPF, not claiming accounts on a company email domain."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

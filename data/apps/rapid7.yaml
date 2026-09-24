@@ -22,9 +22,11 @@ capabilities:
   audit_logs:
     support: "undocumented"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The default access profile doc covers assigning products and roles to users provisioned from an IdP, but does not say whether the account itself is created at first sign-in."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The only domain verification found is InsightAppSec proving ownership of a target domain before scanning it, which is not this."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

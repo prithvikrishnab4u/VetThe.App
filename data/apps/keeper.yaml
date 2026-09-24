@@ -49,9 +49,15 @@ capabilities:
     source: "https://www.keepersecurity.com/en_US/enterprise.html"
     checked: "2026-09-22"
   jit_provisioning:
-    support: "not_researched"
+    support: "supported"
+    notes: "SSO Connect Cloud provisions the user's vault on first SSO sign-in. No plan is named, so there is no tier yet."
+    source: "https://docs.keeper.io/enterprise-guide/user-and-team-provisioning/single-sign-on-saml-2.0-authentication"
+    checked: "2026-09-24"
   domain_verification:
-    support: "not_researched"
+    support: "partial"
+    notes: "Domain Reservation verifies ownership by DNS TXT record and reserves the domain to block rogue signups. The docs do not describe capturing accounts already on it, and name no plan."
+    source: "https://docs.keeper.io/enterprise-guide/domain-reservation"
+    checked: "2026-09-24"
   custom_roles:
     support: "not_researched"
   group_role_mapping:

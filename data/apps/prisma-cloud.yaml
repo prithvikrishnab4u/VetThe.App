@@ -30,7 +30,8 @@ capabilities:
     source: "https://docs.prismacloud.io/content-collections/administration/setup-sso-integration-on-prisma-cloud/get-started-with-saml-sso/setup-jit-on-okta.md"
     checked: "2026-09-22"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "No page on verifying or claiming an email domain. The Active Directory UPN suffix and DNS certificate docs are unrelated."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

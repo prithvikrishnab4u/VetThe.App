@@ -57,7 +57,12 @@ capabilities:
     source: "https://vercel.com/docs/saml"
     checked: "2026-09-22"
   domain_verification:
-    support: "not_researched"
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Enterprise Managed Users: verify a domain and both new and existing users on it become team owned managed accounts through SSO. New personal accounts cannot be made on a claimed domain."
+    source: "https://vercel.com/docs/security/enterprise-managed-users"
+    checked: "2026-09-24"
   custom_roles:
     support: "not_researched"
   group_role_mapping:

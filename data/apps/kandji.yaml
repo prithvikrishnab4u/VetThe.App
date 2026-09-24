@@ -31,9 +31,11 @@ capabilities:
     source: "https://support.kandji.io/support/solutions/articles/72000562726-amazon-s3-audit-events-integration"
     checked: "2026-09-22"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Kandji's SSO Extension creates local macOS accounts on a device just in time, which is a different capability. Nothing found about Kandji console accounts."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The domain verification found is Apple Business Manager's, for Managed Apple IDs, not a Kandji feature."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

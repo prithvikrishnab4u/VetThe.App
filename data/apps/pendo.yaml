@@ -37,7 +37,10 @@ capabilities:
     source: "https://support.pendo.io/hc/en-us/articles/360032953392-SAML-Single-Sign-On-SSO-overview"
     checked: "2026-09-22"
   domain_verification:
-    support: "not_researched"
+    support: "partial"
+    notes: "A Domain Verification tab under SSO settings confirms domain ownership by TXT record in order to enable SAML. Nothing about claiming existing accounts. Needs SAML SSO on the subscription, but no plan is named."
+    source: "https://support.pendo.io/hc/en-us/articles/29552443092123-Verify-your-domain-for-SAML"
+    checked: "2026-09-24"
   custom_roles:
     support: "not_researched"
   group_role_mapping:

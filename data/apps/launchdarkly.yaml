@@ -42,9 +42,13 @@ capabilities:
     source: "https://launchdarkly.com/pricing/"
     checked: "2026-09-22"
   jit_provisioning:
-    support: "not_researched"
+    support: "supported"
+    notes: "LaunchDarkly creates accounts automatically for new members who sign in through the IdP by SAML. No plan is named, so there is no tier yet."
+    source: "https://launchdarkly.com/docs/home/account/saml"
+    checked: "2026-09-24"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "LaunchDarkly's domain verification only unlocks SSO access to the support portal. It does not claim accounts."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

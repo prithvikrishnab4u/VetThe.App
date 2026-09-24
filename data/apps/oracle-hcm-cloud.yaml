@@ -45,9 +45,11 @@ capabilities:
     source: "https://docs.oracle.com/en/cloud/saas/human-resources/fapid/audit-reports.html"
     checked: "2026-09-22"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The HCM SSO doc pages return landing pages only. The general Oracle Identity Domains JIT docs are not HCM specific enough to cite. Needs a browser check."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "No HCM specific domain verification page found, only generic OCI IAM pages."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

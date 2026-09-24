@@ -29,9 +29,11 @@ capabilities:
     support: "undocumented"
     notes: "No mention of an admin-visible audit log on Remote's Trust Center or SSO documentation."
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "No support article says accounts are created on first SSO sign-in."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "An SSO Domain Validation article appears to exist but support.remote.com returns 403, so it could not be read. Needs a browser check, and it will probably turn into a real value."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

@@ -33,9 +33,11 @@ capabilities:
     source: "https://help.salesloft.com/s/article/Manage-Audit-Logs?language=en_US"
     checked: "2026-09-22"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "help.salesloft.com is a Salesforce Lightning site that renders nothing without JavaScript. Needs a browser check."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Same help centre, same JavaScript wall, and no domain verification page surfaced elsewhere. Needs a browser check."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

@@ -22,9 +22,11 @@ capabilities:
   audit_logs:
     support: "undocumented"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "help.proofpoint.com returns a sign-in page to automated fetches. Needs a browser check."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Proofpoint Essentials does have domain verification by TXT record or meta tag, but it is for email relay and outbound filtering domains, not account claiming."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

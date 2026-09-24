@@ -5046,13 +5046,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "Same help centre, same 403. Needs a browser check.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "help.hibob.com is Zendesk hosted and returns 403 to automated fetches. Needs a browser check.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-22",
@@ -5347,13 +5349,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "Same 403. The only domain pages visible elsewhere are DKIM and SPF sending domains and subdomain branding, not account capture. Needs a browser check.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "A JIT Provisioning article exists but support.ironcladapp.com is Zendesk hosted and returns 403, so it could not be read. Needs a browser check, and it will probably turn into a real value.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "notes": "No vendor documentation found describing an admin control to require MFA/2FA for all users within Ironclad itself.",
@@ -5408,13 +5412,17 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "Jamf Account verifies domain ownership by DNS TXT record before an SSO connection can be added. That enables SSO routing only, with no mention of claiming existing accounts.",
+        "source": "https://learn.jamf.com/r/en-US/jamf-account-documentation/Verifying_your_SSO_Domain_in_Jamf_Account",
+        "support": "partial"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "learn.jamf.com renders via JavaScript and returned only navigation. The JIT evidence found is local macOS account creation on a device, which is a different capability from Jamf Pro console accounts. Needs a browser check.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-22",
@@ -5470,13 +5478,19 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "A verified domain, proved by DNS TXT record, lets an organisation add contacts and create or delete accounts through the JetBrains Account API. Nothing says it captures existing personal accounts on that domain.",
+        "source": "https://sales.jetbrains.com/hc/en-gb/articles/11751884991250-Verified-domains-for-organizations",
+        "support": "partial"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "Hub's SAML 2.0 auth module has a user creation setting that creates Hub accounts for unregistered users on first SAML login. No plan is named, so there is no tier yet.",
+        "source": "https://www.jetbrains.com/help/hub/saml-authentication-module.html",
+        "support": "supported"
       },
       "mfa_enforcement": {
         "checked": "2026-09-22",
@@ -5536,13 +5550,18 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "The only domain feature found is custom domain and SSL setup in MyJFrog, which is hosting, not email domain ownership.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "The SAML SSO Auto Create Users setting creates users on first SAML login and assigns default groups. Enterprise X or Enterprise+ on SaaS; self-managed starts lower, at Pro X.",
+        "source": "https://docs.jfrog.com/administration/docs/saml-sso",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "mfa_enforcement": {
         "notes": "Docs describe MFA as available and \"supported on JFrog SaaS solution only\" but do not state whether admins can require it for all users.",
@@ -5602,13 +5621,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "No page on verifying an email domain to claim existing JumpCloud accounts. The device account takeover and shadow IT discovery features are different things.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "JumpCloud's JIT docs describe what it does as an IdP into other apps. For JumpCloud's own console, the federation docs require users to exist already, but no page states that outright.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-22",
@@ -5671,13 +5692,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "Same 403, and no domain verification page found elsewhere. Needs a browser check.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "help.justworks.com is Zendesk hosted and returns 403. No enterprise SAML SSO was found at all, only per-integration SSO and Google sign-in. Needs a browser check.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "notes": "Vendor help center has an MFA article (Multi-Factor Authentication) but it could not be fetched due to bot protection, so admin-enforcement scope could not be confirmed.",
@@ -5725,13 +5748,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "The domain verification found is Apple Business Manager's, for Managed Apple IDs, not a Kandji feature.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "Kandji's SSO Extension creates local macOS accounts on a device just in time, which is a different capability. Nothing found about Kandji console accounts.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-22",
@@ -5788,13 +5813,19 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "Domain Reservation verifies ownership by DNS TXT record and reserves the domain to block rogue signups. The docs do not describe capturing accounts already on it, and name no plan.",
+        "source": "https://docs.keeper.io/enterprise-guide/domain-reservation",
+        "support": "partial"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "SSO Connect Cloud provisions the user's vault on first SSO sign-in. No plan is named, so there is no tier yet.",
+        "source": "https://docs.keeper.io/enterprise-guide/user-and-team-provisioning/single-sign-on-saml-2.0-authentication",
+        "support": "supported"
       },
       "mfa_enforcement": {
         "checked": "2026-09-22",
@@ -5866,7 +5897,8 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "Klaviyo's domain verification is branded sending domain setup with DKIM and SPF, not claiming accounts on a company email domain.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
@@ -5998,7 +6030,8 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "Lark does have a domain management help section, but it renders via JavaScript and returned no article text. Needs a browser check.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
@@ -6149,13 +6182,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "The help centre has changing an email domain and limiting invites to a company domain, which is an allowlist. Neither is verify and capture.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "The SSO article only says to connect an existing IdP. The help centre documents SCIM but has no JIT article.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "notes": "No help center article found describing admin-enforced MFA within Lattice itself.",
@@ -6212,13 +6247,17 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "LaunchDarkly's domain verification only unlocks SSO access to the support portal. It does not claim accounts.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "LaunchDarkly creates accounts automatically for new members who sign in through the IdP by SAML. No plan is named, so there is no tier yet.",
+        "source": "https://launchdarkly.com/docs/home/account/saml",
+        "support": "supported"
       },
       "mfa_enforcement": {
         "checked": "2026-09-22",
@@ -6280,13 +6319,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "Same help centre, same JavaScript wall. Needs a browser check.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "help.lever.co is a Salesforce Community site that renders via JavaScript and returns only an error shell. Needs a browser check.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "notes": "No vendor documentation found on admin-enforced MFA within the Lever product itself.",
@@ -6492,13 +6533,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "LinkedIn's domain verification links are per-user email activation for support access, not company level domain claiming.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "The JIT claims come only from Microsoft's Entra tutorial, which is IdP-side and does not count. LinkedIn's own pages describe SCIM and licence auto-assignment, not creation on first login.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "support": "undocumented"
@@ -6553,7 +6596,8 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "Google Cloud's domain verification for Looker confirms DNS routing for a custom hosting URL, not ownership of an email domain.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
@@ -6797,13 +6841,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "Mailchimp's domain verification is email sending authentication, DKIM and DMARC records. No page addresses claiming accounts on a company domain, either to confirm or rule it out.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "No Mailchimp page describes SAML or SSO at all, so JIT cannot be confirmed either way. The SSO mentions found are all third-party connector sites.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-16",
@@ -6926,13 +6972,17 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "Domain verification happens at the Microsoft 365 and Entra tenant level. Nothing documents it as a Dynamics 365 capability.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "A licensed Entra ID user is added to the Dataverse SystemUsers table automatically the first time they try to access the environment. No plan is named for this behaviour.",
+        "source": "https://learn.microsoft.com/en-us/power-platform/admin/create-users",
+        "support": "supported"
       },
       "mfa_enforcement": {
         "checked": "2026-09-22",
@@ -6994,13 +7044,20 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "Admin takeover: verifying DNS ownership of a domain used by an unmanaged tenant moves its users, subscriptions and licences into the managed tenant. Built in, no separate plan.",
+        "source": "https://learn.microsoft.com/en-us/entra/identity/users/domains-admin-takeover",
+        "support": "supported",
+        "tier": "free"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "For a federated domain the account must already exist in the tenant. Sign-in fails with AADSTS50020 if it does not. This is about Entra's own directory users, not what Entra provisions into other apps.",
+        "source": "https://learn.microsoft.com/en-us/troubleshoot/entra/entra-id/app-integration/error-code-aadsts50020-user-account-identity-provider-does-not-exist",
+        "support": "not_supported"
       },
       "mfa_enforcement": {
         "checked": "2026-09-22",
@@ -7065,13 +7122,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "Domain verification happens at the Microsoft 365 and Entra tenant level. No Power BI specific page found.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "The docs cover unmanaged tenant creation at signup and guest accounts created when content is shared. Neither is internal user creation on SSO sign-in.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-22",
@@ -7983,13 +8042,17 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "Okta's domain verification covers custom email and URL domains, which is branding. No page addresses claiming existing accounts on a domain, either to confirm or rule it out.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "Inbound SAML IdP setup offers Create new user (JIT) with a just-in-time provisioning toggle, creating Okta accounts on first sign-in from an external IdP. This is Okta's own users, not what it provisions elsewhere. No plan is named.",
+        "source": "https://help.okta.com/en-us/content/topics/security/idp-add-saml.htm",
+        "support": "supported"
       },
       "mfa_enforcement": {
         "checked": "2026-09-22",
@@ -8051,13 +8114,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "No HCM specific domain verification page found, only generic OCI IAM pages.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "The HCM SSO doc pages return landing pages only. The general Oracle Identity Domains JIT docs are not HCM specific enough to cite. Needs a browser check.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-22",
@@ -8351,13 +8416,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "No Paycom page mentions domain verification or account claiming.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "Paycom's security page confirms SAML 2.0 SSO but says nothing about accounts being created on first sign-in. The help centre is not reachable.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-22",
@@ -8455,7 +8522,10 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "A Domain Verification tab under SSO settings confirms domain ownership by TXT record in order to enable SAML. Nothing about claiming existing accounts. Needs SAML SSO on the subscription, but no plan is named.",
+        "source": "https://support.pendo.io/hc/en-us/articles/29552443092123-Verify-your-domain-for-SAML",
+        "support": "partial"
       },
       "group_role_mapping": {
         "support": "not_researched"
@@ -8524,13 +8594,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "No help centre article on verifying or claiming an email domain.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "The SSO articles cover SAML and OIDC setup but never say accounts are created on first sign-in.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-22",
@@ -8810,7 +8882,8 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "No page on verifying or claiming an email domain. The Active Directory UPN suffix and DNS certificate docs are unrelated.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
@@ -8866,13 +8939,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "Proofpoint Essentials does have domain verification by TXT record or meta tag, but it is for email relay and outbound filtering domains, not account claiming.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "help.proofpoint.com returns a sign-in page to automated fetches. Needs a browser check.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "support": "undocumented"
@@ -9156,13 +9231,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "The only domain verification found is InsightAppSec proving ownership of a target domain before scanning it, which is not this.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "The default access profile doc covers assigning products and roles to users provisioned from an IdP, but does not say whether the account itself is created at first sign-in.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "support": "undocumented"
@@ -9209,13 +9286,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "An SSO Domain Validation article appears to exist but support.remote.com returns 403, so it could not be read. Needs a browser check, and it will probably turn into a real value.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "No support article says accounts are created on first SSO sign-in.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "notes": "Remote's Trust Center references MFA as an internal security control but does not document an admin-facing option to require MFA for all company users.",
@@ -9336,13 +9415,15 @@
         "tier": "paid"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "No page on domain verification or account claiming for Rippling.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "The SAML and OIDC guides found describe Rippling acting as an IdP for other apps. Nothing states that accounts are created in Rippling itself on first SSO sign-in.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-16",
@@ -9397,13 +9478,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "Domain registration here is sender authentication for the From address, not account claiming.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "The JIT for SAML articles on help.salesforce.com cover core Salesforce and Experience Cloud. None was confirmed to apply to Marketing Cloud.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-22",
@@ -9534,13 +9617,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "Same help centre, same JavaScript wall, and no domain verification page surfaced elsewhere. Needs a browser check.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "help.salesloft.com is a Salesforce Lightning site that renders nothing without JavaScript. Needs a browser check.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "notes": "No help center article found describing admin-enforced MFA within Salesloft itself.",
@@ -9653,13 +9738,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "help.sap.com is unreadable to fetches. The only domain pages found elsewhere are DKIM and email notification sending domains, not account claiming. Needs a browser check.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "help.sap.com returns only a page title to automated fetches. Needs a browser check.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-22",
@@ -9790,7 +9877,8 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "The SSO docs only describe restricting membership to a Google Workspace domain, which is an allowlist, not verifying a domain or claiming accounts on it.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
@@ -10403,7 +10491,8 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "No vendor page describes domain ownership verification or account capture. The trusted domains setting is a dashboard allowlist, not this.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "checked": "2026-09-16",
@@ -10786,13 +10875,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "Tailscale does document domain ownership, but tailscale.com returns 503 so the page could not be read. Needs a browser check.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "tailscale.com returns 503 to automated fetches. Needs a browser check.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "support": "undocumented"
@@ -10845,13 +10936,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "Same fetch failures across teamviewer.com. Needs a browser check.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "teamviewer.com and its community site return 503 and SSL errors to automated fetches. Needs a browser check.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "notes": "TeamViewer site returned 503 to every fetch; could not confirm.",
@@ -10900,13 +10993,17 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "The only domain verification documented is in Tenable MSSP, where a domain is tied to a partner account for tracking, not for claiming end user accounts.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "Automatic account provisioning creates a Vulnerability Management account the first time a user signs in through the configured SAML IdP. No plan is named on the page, so there is no tier yet.",
+        "source": "https://docs.tenable.com/vulnerability-management/Content/Settings/SAML/DisableAutoUserCreate.htm",
+        "support": "supported"
       },
       "mfa_enforcement": {
         "notes": "MFA setup is documented but admin-side enforcement/requirement for all users is not stated.",
@@ -11336,13 +11433,17 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "No vendor page on verifying an email domain or claiming accounts on it.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "Federated SSO needs an admin to pre-create an SSO mapping record per employee. First sign-in uses challenge questions to match an existing account rather than creating one.",
+        "source": "https://library.ukg.com/a/178124",
+        "support": "not_supported"
       },
       "mfa_enforcement": {
         "notes": "Could not confirm an admin-level MFA enforcement setting for UKG Pro itself from public documentation within budget.",
@@ -11388,13 +11489,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "The domain features found are Trust Center custom domains and domain matching for portal viewers, not verifying a domain to claim Vanta logins.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "There is an auto-provision employee portal accounts setting, but it needs the IdP configured as a personnel source first, so it is unclear whether it fires on first login or on sync. Needs a browser check.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "support": "undocumented"
@@ -11450,7 +11553,12 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "Enterprise Managed Users: verify a domain and both new and existing users on it become team owned managed accounts through SSO. New personal accounts cannot be made on a claimed domain.",
+        "plan": "Enterprise",
+        "source": "https://vercel.com/docs/security/enterprise-managed-users",
+        "support": "supported",
+        "tier": "enterprise"
       },
       "group_role_mapping": {
         "support": "not_researched"
@@ -11535,7 +11643,8 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "Webflow's domain verification pages are about custom domains for published sites, not verifying an email domain to claim workspace accounts.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
@@ -11613,7 +11722,8 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "The docs cover custom domains for workflow apps and API hosting only. Nothing about verifying an email domain to claim accounts.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
@@ -11681,13 +11791,17 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "No vendor page on verifying an email domain or claiming accounts on it.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "checked": "2026-09-24",
+        "notes": "Users are created manually against available seats, and the SAML docs refer to synced users, so accounts must exist before sign-in.",
+        "source": "https://doc.workday.com/adaptive-planning/en-us/workday-adaptive-planning-documentation/security-and-administration/using-administration/users-and-permission-sets/manage-users/create-users--refactored-with-correct-template-.html",
+        "support": "not_supported"
       },
       "mfa_enforcement": {
         "support": "undocumented"
@@ -11883,13 +11997,15 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "No vendor page on email domain verification or account capture.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "No vendor page documents external SAML or SSO at all. The security page covers MFA only, so it is not even clear SSO exists.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "checked": "2026-09-16",
@@ -12238,7 +12354,8 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "Same blocked host. Needs a browser check.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "checked": "2026-09-16",
@@ -12247,7 +12364,8 @@
         "support": "supported"
       },
       "jit_provisioning": {
-        "support": "not_researched"
+        "notes": "help.zoominfo.com returns a loading error to automated fetches. Needs a browser check.",
+        "support": "undocumented"
       },
       "mfa_enforcement": {
         "support": "undocumented"
@@ -12305,7 +12423,8 @@
         "support": "not_researched"
       },
       "domain_verification": {
-        "support": "not_researched"
+        "notes": "help.zscaler.com renders via JavaScript and returned no content. Needs a browser check.",
+        "support": "undocumented"
       },
       "group_role_mapping": {
         "support": "not_researched"

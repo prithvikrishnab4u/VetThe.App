@@ -39,9 +39,15 @@ capabilities:
     source: "https://www.jetbrains.com/help/jetbrains-console/plans-and-pricing.html"
     checked: "2026-09-22"
   jit_provisioning:
-    support: "not_researched"
+    support: "supported"
+    notes: "Hub's SAML 2.0 auth module has a user creation setting that creates Hub accounts for unregistered users on first SAML login. No plan is named, so there is no tier yet."
+    source: "https://www.jetbrains.com/help/hub/saml-authentication-module.html"
+    checked: "2026-09-24"
   domain_verification:
-    support: "not_researched"
+    support: "partial"
+    notes: "A verified domain, proved by DNS TXT record, lets an organisation add contacts and create or delete accounts through the JetBrains Account API. Nothing says it captures existing personal accounts on that domain."
+    source: "https://sales.jetbrains.com/hc/en-gb/articles/11751884991250-Verified-domains-for-organizations"
+    checked: "2026-09-24"
   custom_roles:
     support: "not_researched"
   group_role_mapping:

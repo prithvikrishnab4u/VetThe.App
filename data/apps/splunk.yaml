@@ -40,7 +40,8 @@ capabilities:
     source: "https://help.splunk.com/en/splunk-cloud-platform/administer/manage-users-and-security/10.5.2605/use-saml-as-an-authentication-scheme-for-single-sign-on/configure-single-sign-on-with-saml"
     checked: "2026-09-16"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "No vendor page describes domain ownership verification or account capture. The trusted domains setting is a dashboard allowlist, not this."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

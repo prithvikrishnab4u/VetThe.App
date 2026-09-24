@@ -30,9 +30,13 @@ capabilities:
     source: "https://docs.tenable.com/vulnerability-management/best-practices/security/Content/ActivityLogs.htm"
     checked: "2026-09-22"
   jit_provisioning:
-    support: "not_researched"
+    support: "supported"
+    notes: "Automatic account provisioning creates a Vulnerability Management account the first time a user signs in through the configured SAML IdP. No plan is named on the page, so there is no tier yet."
+    source: "https://docs.tenable.com/vulnerability-management/Content/Settings/SAML/DisableAutoUserCreate.htm"
+    checked: "2026-09-24"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The only domain verification documented is in Tenable MSSP, where a domain is tied to a partner account for tracking, not for claiming end user accounts."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

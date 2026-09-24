@@ -53,7 +53,8 @@ capabilities:
     source: "https://help.webflow.com/hc/en-us/articles/46651860216595-JIT-provisioning"
     checked: "2026-09-22"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Webflow's domain verification pages are about custom domains for published sites, not verifying an email domain to claim workspace accounts."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

@@ -24,9 +24,11 @@ capabilities:
   audit_logs:
     support: "undocumented"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "No vendor page documents external SAML or SSO at all. The security page covers MFA only, so it is not even clear SSO exists."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "No vendor page on email domain verification or account capture."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

@@ -31,9 +31,11 @@ capabilities:
     source: "https://help.lattice.com/hc/en-us/articles/360062285513-The-Audit-Log-in-Review-Cycles"
     checked: "2026-09-22"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The SSO article only says to connect an existing IdP. The help centre documents SCIM but has no JIT article."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The help centre has changing an email domain and limiting invites to a company domain, which is an allowlist. Neither is verify and capture."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

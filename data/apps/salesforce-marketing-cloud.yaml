@@ -38,9 +38,11 @@ capabilities:
     source: "https://help.salesforce.com/s/articleView?id=sf.mc_overview_audit_trail.htm&language=en_US&type=5"
     checked: "2026-09-22"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "The JIT for SAML articles on help.salesforce.com cover core Salesforce and Experience Cloud. None was confirmed to apply to Marketing Cloud."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Domain registration here is sender authentication for the From address, not account claiming."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

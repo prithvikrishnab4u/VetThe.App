@@ -43,9 +43,11 @@ capabilities:
     source: "https://help.sap.com/docs/successfactors-platform/creating-change-audit-reports/change-audit"
     checked: "2026-09-22"
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "help.sap.com returns only a page title to automated fetches. Needs a browser check."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "help.sap.com is unreadable to fetches. The only domain pages found elsewhere are DKIM and email notification sending domains, not account claiming. Needs a browser check."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

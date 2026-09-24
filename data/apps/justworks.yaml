@@ -24,9 +24,11 @@ capabilities:
     support: "undocumented"
     notes: "Could not access vendor documentation to verify."
   jit_provisioning:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "help.justworks.com is Zendesk hosted and returns 403. No enterprise SAML SSO was found at all, only per-integration SSO and Google sign-in. Needs a browser check."
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Same 403, and no domain verification page found elsewhere. Needs a browser check."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

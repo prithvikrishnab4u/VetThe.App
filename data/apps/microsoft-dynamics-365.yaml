@@ -42,9 +42,13 @@ capabilities:
     source: "https://learn.microsoft.com/en-us/power-platform/admin/manage-dataverse-auditing"
     checked: "2026-09-22"
   jit_provisioning:
-    support: "not_researched"
+    support: "supported"
+    notes: "A licensed Entra ID user is added to the Dataverse SystemUsers table automatically the first time they try to access the environment. No plan is named for this behaviour."
+    source: "https://learn.microsoft.com/en-us/power-platform/admin/create-users"
+    checked: "2026-09-24"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Domain verification happens at the Microsoft 365 and Entra tenant level. Nothing documents it as a Dynamics 365 capability."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

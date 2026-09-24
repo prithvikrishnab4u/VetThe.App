@@ -32,9 +32,13 @@ capabilities:
   audit_logs:
     support: "undocumented"
   jit_provisioning:
-    support: "not_researched"
+    support: "supported"
+    notes: "Inbound SAML IdP setup offers Create new user (JIT) with a just-in-time provisioning toggle, creating Okta accounts on first sign-in from an external IdP. This is Okta's own users, not what it provisions elsewhere. No plan is named."
+    source: "https://help.okta.com/en-us/content/topics/security/idp-add-saml.htm"
+    checked: "2026-09-24"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "Okta's domain verification covers custom email and URL domains, which is branding. No page addresses claiming existing accounts on a domain, either to confirm or rule it out."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

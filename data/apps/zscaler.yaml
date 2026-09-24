@@ -53,7 +53,8 @@ capabilities:
     source: "https://www.zscaler.com/pricing"
     checked: "2026-09-16"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "help.zscaler.com renders via JavaScript and returned no content. Needs a browser check."
   custom_roles:
     support: "not_researched"
   group_role_mapping:

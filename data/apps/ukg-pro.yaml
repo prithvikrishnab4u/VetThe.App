@@ -25,9 +25,13 @@ capabilities:
     support: "undocumented"
     notes: "Could not confirm an admin-visible audit log from public vendor documentation within budget."
   jit_provisioning:
-    support: "not_researched"
+    support: "not_supported"
+    notes: "Federated SSO needs an admin to pre-create an SSO mapping record per employee. First sign-in uses challenge questions to match an existing account rather than creating one."
+    source: "https://library.ukg.com/a/178124"
+    checked: "2026-09-24"
   domain_verification:
-    support: "not_researched"
+    support: "undocumented"
+    notes: "No vendor page on verifying an email domain or claiming accounts on it."
   custom_roles:
     support: "not_researched"
   group_role_mapping:
