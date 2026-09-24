@@ -6,7 +6,7 @@ _Last updated: 2026-09-24_
 
 ## Remind the user
 
-- **Website suggestions still aren't switched on.** Labels and the Turnstile widget are done. What's left is the two secrets in Cloudflare (`GITHUB_TOKEN`, `TURNSTILE_SECRET`) on Production, plus a redeploy. Probe `POST /api/suggest` to check.
+- **Website suggestions are switched on (2026-09-24).** Nothing to chase here any more. `POST /api/suggest` with a junk Turnstile token answers 403 (spam check failed), which means both secrets are bound; 503 would mean they are not. The GitHub token half has not been exercised yet: that needs one real submission through the browser form.
 
 ## In progress
 
@@ -52,14 +52,14 @@ _Last updated: 2026-09-24_
 - [x] **CI goes green (2026-09-23):** it had never passed. Two causes. The workflow called `hugo` on a runner that never had it, now installed via `peaceiris/actions-hugo@v3` pinned to 0.147.7, the version Cloudflare Pages runs. And it ran Node 18, but Tailwind v4's `@tailwindcss/oxide` binary needs Node 20+, and Hugo shells out to the Tailwind CLI mid-build, so the build step died. Node is now pinned in `.node-version` (22), which both `actions/setup-node` and Cloudflare Pages read, so CI and the deploy can't drift. A `NODE_VERSION` env var set in Cloudflare would override that file, so don't set one.
 - [x] **BACKLOG.md:** 299 widely used apps not yet in the data, ranked P1/P2/P3. The agent wrote the websites from memory, so confirm them while researching.
 
-## To do: setup (one-off, needed before website suggestions work; user will do this)
+## Setup (done 2026-09-24)
 
 - [x] The `community-suggestion`, `data-fix` and `app-request` labels exist (2026-09-24)
 - [x] Turnstile widget created; the site key is committed in `site/hugo.toml`, since it is public and ships in the HTML. No `HUGO_PARAMS_TURNSTILESITEKEY` variable needed (2026-09-24)
-- [ ] Fine-grained GitHub token for this repo only: Contents read/write, Pull requests read/write, Issues read/write (for the label)
-- [ ] Cloudflare Pages → Settings → Variables: `GITHUB_TOKEN` (secret), `TURNSTILE_SECRET` (secret). Env vars bind at deploy time, so redeploy after adding them, and put them on Production, not just Preview
-- [ ] Confirm the Pages project's root directory is `site`, so `site/functions/` is deployed
-- [ ] **Still returning 503 as of 2026-09-24.** `POST /api/suggest` with a junk Turnstile token is a safe probe: 503 means the Function cannot see `GITHUB_TOKEN` or `TURNSTILE_SECRET`; anything else means they are bound.
+- [x] Fine-grained GitHub token for this repo only: Contents read/write, Pull requests read/write, Issues read/write (2026-09-24)
+- [x] Cloudflare Pages → Settings → Variables: `GITHUB_TOKEN` and `TURNSTILE_SECRET`, both encrypted, both on Production (2026-09-24). Env vars bind at deploy time, so a redeploy is needed after changing them
+- [x] Pages root directory is `site`, so `site/functions/` is deployed (2026-09-24)
+- [ ] **End to end test still owed:** submit one real fix through the website and confirm a pull request opens with the `community-suggestion` label. That is the only thing that proves the GitHub token works.
 - [ ] Pin the Hugo version in Cloudflare (`HUGO_VERSION`) to match local builds. Cloudflare currently uses 0.147.7, which is why templates use `site.Data`
 
 ## To do: data (in priority order)
