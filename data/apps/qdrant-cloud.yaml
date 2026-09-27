@@ -1,0 +1,49 @@
+name: "Qdrant Cloud"
+category: "infrastructure"
+website: "https://qdrant.tech"
+description: "Qdrant Cloud is a managed service for the Qdrant vector database."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "add_on"
+    plan: "Premium Tier (SSO add-on)"
+    protocols: ["SAML", "OIDC"]
+    notes: "Enterprise Sign-On is an add-on for Premium Tier customers, set up by contacting Qdrant. Supported providers include SAML, OpenID Connect, Okta, Azure AD and Google Workspace."
+    source: "https://qdrant.tech/documentation/cloud-account-setup/"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "partial"
+    tier: "paid"
+    plan: "Paid clusters"
+    retention: "Configurable daily or hourly rotation and number of files kept"
+    notes: "Paid clusters (v1.17.0+) can log database API calls with action, timestamp, API key or user, result and IP. No account or console activity log is documented."
+    source: "https://qdrant.tech/documentation/cloud/configure-cluster/"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    notes: "Besides the built-in Base, Admin and Owner roles, you can create custom roles with fine-grained permissions."
+    source: "https://qdrant.tech/documentation/cloud-rbac/role-management/"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "Database API keys can be scoped to specific clusters and collections, given an expiry (default 90 days), rotated and revoked."
+    source: "https://qdrant.tech/documentation/cloud/authentication/"
+    checked: "2026-09-27"

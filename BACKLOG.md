@@ -97,7 +97,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P1 | HCP Terraform | `hcp-terraform` | infrastructure | https://hashicorp.com/products/terraform |
 | P1 | Jira Service Management | `jira-service-management` | infrastructure | https://atlassian.com/software/jira/service-management |
 | P1 | Microsoft Azure | `microsoft-azure` | infrastructure | https://azure.microsoft.com |
-| P1 | MongoDB Atlas | `mongodb-atlas` | infrastructure | https://mongodb.com/atlas |
 | P2 | Dialpad | `dialpad` | collaboration | https://dialpad.com |
 | P2 | Frame.io | `frame-io` | collaboration | https://frame.io |
 | P2 | GoTo Connect | `goto-connect` | collaboration | https://goto.com/connect |

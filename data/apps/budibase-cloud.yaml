@@ -1,0 +1,60 @@
+name: "Budibase Cloud"
+category: "development"
+website: "https://budibase.com"
+description: "Budibase is a low-code platform for building internal apps, workflows and forms."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["OIDC"]
+    notes: "Admins can set up OpenID Connect with any OIDC provider, and Google sign-in is also offered. The docs don't mention SAML or name a plan."
+    source: "https://docs.budibase.com/docs/openid-connect"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Enforced SSO is an Enterprise feature. Once it's on, users who log in with a password can no longer do so."
+    source: "https://docs.budibase.com/docs/enforced-sso"
+    checked: "2026-09-27"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM syncs users and groups one way from the IdP (for example Azure AD or Okta). Roles are still set inside Budibase."
+    source: "https://docs.budibase.com/docs/scim-provisioning"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    notes: "Admins can filter and download audit logs. The feature is locked on the free tier, but the docs don't name the plan that unlocks it. Row and query auditing needs a conversation with sales."
+    source: "https://docs.budibase.com/docs/audit-logs"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    notes: "Users who sign in with OIDC are created automatically on first login. Google sign-in needs an existing account."
+    source: "https://docs.budibase.com/docs/openid-connect"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    notes: "Builders can create custom app roles under Manage roles, each with an inherited role and base permissions."
+    source: "https://docs.budibase.com/docs/user-roles"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "partial"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM syncs IdP groups into Budibase user groups; app access and roles are then assigned to those groups inside Budibase, not mapped from the IdP."
+    source: "https://docs.budibase.com/docs/scim-provisioning"
+    checked: "2026-09-27"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"
+    notes: "Each user makes their own API key, and making a new one cancels the old one. The docs don't describe admin controls over keys."

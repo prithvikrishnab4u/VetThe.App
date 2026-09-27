@@ -2259,10 +2259,10 @@
       },
       "group_role_mapping": {
         "checked": "2026-09-27",
-        "notes": "SCIM syncs IdP groups into Budibase user groups, and those groups are given app access and roles inside Budibase.",
+        "notes": "SCIM syncs IdP groups into Budibase user groups; app access and roles are then assigned to those groups inside Budibase, not mapped from the IdP.",
         "plan": "Enterprise",
         "source": "https://docs.budibase.com/docs/scim-provisioning",
-        "support": "supported",
+        "support": "partial",
         "tier": "enterprise"
       },
       "jit_provisioning": {
@@ -4117,6 +4117,93 @@
     "website": "https://configcat.com"
   },
   {
+    "_id": "convex",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Personal access tokens can have an optional expiration, show when they were last used, and can be revoked. Tokens created through an SSO login are scoped to that team.",
+        "source": "https://docs.convex.dev/dashboard/profile",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "The team audit log shows actions members take in the team, like managing projects and deployments and inviting or removing members. It is only available on Professional, Business and Enterprise.",
+        "plan": "Professional",
+        "source": "https://docs.convex.dev/dashboard/teams",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Custom Roles are in beta on Business and Enterprise and use fine-grained permission policies.",
+        "plan": "Business",
+        "source": "https://docs.convex.dev/team-management/custom-roles",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "domain_verification": {
+        "checked": "2026-09-27",
+        "notes": "Domains are verified with a DNS record and show as Pending until it's picked up, then Verified.",
+        "plan": "Business",
+        "source": "https://docs.convex.dev/team-management/sso",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "With Directory Sync, each directory group maps to a Convex team role, including custom roles. Directory Sync is in beta.",
+        "plan": "Business",
+        "source": "https://docs.convex.dev/team-management/directory-sync",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "Users can turn on MFA for their own account, but the docs don't describe a team setting that requires it.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The profile docs only mention an authenticator app as an extra factor.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "Directory Sync (SCIM) is in beta on Business and Enterprise, and support has to turn it on. Users are offered the team rather than added directly, and it only covers accounts on a verified domain.",
+        "plan": "Business",
+        "source": "https://docs.convex.dev/team-management/directory-sync",
+        "support": "partial",
+        "tier": "paid"
+      },
+      "session_controls": {
+        "notes": "Users can see and sign out their own active sessions, but no team-level session settings are documented.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Single Sign-On through your identity provider is only available on Convex Business and Enterprise. It is set up per team on a verified domain.",
+        "plan": "Business",
+        "source": "https://docs.convex.dev/team-management/sso",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Turning on \"Require SSO to access team\" makes all members sign in through your IdP for both the dashboard and the CLI. By default, users on your verified domain also have to use SSO.",
+        "plan": "Business",
+        "source": "https://docs.convex.dev/team-management/sso",
+        "support": "supported",
+        "tier": "paid"
+      }
+    },
+    "category": "development",
+    "description": "Convex is a hosted backend platform with a reactive database, server functions and file storage for web apps.",
+    "name": "Convex",
+    "status": "draft",
+    "website": "https://www.convex.dev"
+  },
+  {
     "_id": "coupa",
     "capabilities": {
       "api_token_controls": {
@@ -4431,6 +4518,71 @@
     "name": "Cursor",
     "status": "draft",
     "website": "https://cursor.com"
+  },
+  {
+    "_id": "cypress-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "The docs list fixed roles (Viewer, Member, Team Admin, Org Admin, Owner). Nothing about custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "notes": "SSO users start as Member, and an Owner or Admin changes their role in Cypress Cloud. Nothing about mapping IdP groups.",
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "Once SSO is on, users are invited through your IdP and added with the Member role when they first sign in.",
+        "plan": "Business",
+        "source": "https://docs.cypress.io/cloud/account-management/enterprise-sso",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "mfa_enforcement": {
+        "notes": "The SSO doc says MFA policies set in your IdP apply to Cypress Cloud. There's no Cypress setting of its own to require MFA.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The SSO doc says to contact support for Smart Card authentication. Nothing about passkeys.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "The SSO doc says revoking a user in the IdP removes their access, but it doesn't mention SCIM.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SSO needs the Business or Enterprise plan and an organization owner to set it up. It connects over SAML to Okta, OneLogin or any SAML provider, or through an Azure AD app.",
+        "plan": "Business",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.cypress.io/cloud/account-management/enterprise-sso",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "notes": "Once SSO is set up, invites go through the IdP and the Cypress invite option is disabled. The doc doesn't say whether other sign-in methods are blocked.",
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "Cypress Cloud records and analyzes test runs from the Cypress testing framework, with parallelization and flaky test reporting.",
+    "name": "Cypress Cloud",
+    "status": "draft",
+    "website": "https://www.cypress.io"
   },
   {
     "_id": "dagster-plus",
@@ -5445,6 +5597,68 @@
     "name": "Elastic Cloud",
     "status": "draft",
     "website": "https://www.elastic.co/cloud"
+  },
+  {
+    "_id": "estuary-flow",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "The Admin > CLI-API tab issues access tokens and lets you revoke refresh tokens. No expiry policy or admin-wide controls are documented.",
+        "source": "https://docs.estuary.dev/guides/dashboard/admin/",
+        "support": "partial"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "Only fixed read, write and admin capabilities on catalog prefixes are documented.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "An account is created on first SSO login, but a tenant admin still has to send an invite link before the user can access the tenant.",
+        "source": "https://docs.estuary.dev/getting-started/sso-setup/",
+        "support": "partial"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "The SSO docs say Estuary uses just-in-time account creation rather than SCIM.",
+        "source": "https://docs.estuary.dev/getting-started/sso-setup/",
+        "support": "not_supported"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SAML 2.0 SSO is set up by contacting Estuary support with your IdP metadata URL and company domain. No plan requirement is stated.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.estuary.dev/getting-started/sso-setup/",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Estuary Flow is a managed platform for real-time data integration and change data capture.",
+    "name": "Estuary Flow",
+    "status": "draft",
+    "website": "https://estuary.dev"
   },
   {
     "_id": "expensify",
@@ -10128,6 +10342,68 @@
     "website": "https://www.marketo.com"
   },
   {
+    "_id": "materialize",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Users can view and delete app passwords in the Console. No expiry or organization-wide token policy is documented.",
+        "source": "https://materialize.com/docs/developer-tools/console/admin/",
+        "support": "partial"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "The mz_audit_events system table records who created, altered, dropped, granted or revoked catalog objects and when. No login or console audit log is documented.",
+        "source": "https://materialize.com/docs/sql/system-catalog/mz_catalog/#mz_audit_events",
+        "support": "partial"
+      },
+      "custom_roles": {
+        "notes": "The vendor docs page for this (SCIM group sync) still carries an unpublished pre-release note, so it is not treated as confirmed.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "notes": "The vendor docs page for this (SCIM group sync) still carries an unpublished pre-release note, so it is not treated as confirmed.",
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "The vendor docs page for this (SCIM group sync) still carries an unpublished pre-release note, so it is not treated as confirmed.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Organization admins can set up SAML or OIDC single sign-on for the Materialize Console under Account Settings > SSO. No plan requirement is stated.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://materialize.com/docs/security/cloud/users-service-accounts/sso/",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Materialize is a cloud operational data store that keeps SQL views up to date as data changes.",
+    "name": "Materialize",
+    "status": "draft",
+    "website": "https://materialize.com"
+  },
+  {
     "_id": "mattermost",
     "capabilities": {
       "api_token_controls": {
@@ -11337,6 +11613,87 @@
     "name": "monday.com",
     "status": "published",
     "website": "https://monday.com"
+  },
+  {
+    "_id": "mongodb-atlas",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Owners can require an IP access list for all Atlas Admin API requests, and API keys and service accounts can be revoked.",
+        "source": "https://www.mongodb.com/docs/atlas/tutorial/manage-organizations/",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "The organization and project Activity Feed records events such as user, role and cluster changes and can be filtered and exported.",
+        "retention": "From organization creation until the organization is deleted",
+        "source": "https://www.mongodb.com/docs/atlas/tutorial/activity-feed/",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "notes": "Only custom database roles are documented; organization and project roles are fixed.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "checked": "2026-09-27",
+        "notes": "Domains must be verified with an HTML file upload or a DNS TXT record before they can be associated with an IdP.",
+        "source": "https://www.mongodb.com/docs/atlas/security/manage-domain-mapping/",
+        "support": "supported"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "IdP group memberships can be mapped to Atlas organization and project roles, applied when the user logs in.",
+        "source": "https://www.mongodb.com/docs/atlas/security/manage-role-mapping/",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "With restrict access by domain and default roles set, Atlas creates users in the mapped organization on their first federated login.",
+        "source": "https://www.mongodb.com/docs/atlas/security/federation-advanced-options/",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Organization owners can turn on \"Require Multi-Factor Authentication\" so every member must use MFA to access the organization.",
+        "source": "https://www.mongodb.com/docs/atlas/tutorial/manage-organizations/",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-27",
+        "notes": "Security keys and biometrics (FIDO2/WebAuthn) are available as an MFA method for Atlas accounts.",
+        "source": "https://www.mongodb.com/docs/atlas/security-multi-factor-authentication/",
+        "support": "supported"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "Organization owners can set an absolute session timeout (1 to 12 hours) and an idle timeout. This setting is in Public Preview.",
+        "source": "https://www.mongodb.com/docs/atlas/tutorial/manage-organization-settings/",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Federated authentication lets users sign in to the Atlas UI through a SAML identity provider. No plan requirement is stated.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://www.mongodb.com/docs/atlas/security/federated-authentication/",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "While a federated IdP is enabled for a domain, Atlas disables other login methods for those users. A bypass SAML URL is on by default and can be turned off.",
+        "source": "https://www.mongodb.com/docs/atlas/security/federated-authentication/",
+        "support": "supported"
+      }
+    },
+    "category": "infrastructure",
+    "description": "MongoDB Atlas is a managed cloud database service for MongoDB.",
+    "name": "MongoDB Atlas",
+    "status": "draft",
+    "website": "https://www.mongodb.com/atlas"
   },
   {
     "_id": "mural",
@@ -13798,6 +14155,73 @@
     "name": "Pulumi Cloud",
     "status": "draft",
     "website": "https://www.pulumi.com"
+  },
+  {
+    "_id": "qdrant-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Database API keys can be scoped to specific clusters and collections, given an expiry (default 90 days), rotated and revoked.",
+        "source": "https://qdrant.tech/documentation/cloud/authentication/",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Paid clusters (v1.17.0+) can log database API calls with action, timestamp, API key or user, result and IP. No account or console activity log is documented.",
+        "plan": "Paid clusters",
+        "retention": "Configurable daily or hourly rotation and number of files kept",
+        "source": "https://qdrant.tech/documentation/cloud/configure-cluster/",
+        "support": "partial",
+        "tier": "paid"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Besides the built-in Base, Admin and Owner roles, you can create custom roles with fine-grained permissions.",
+        "source": "https://qdrant.tech/documentation/cloud-rbac/role-management/",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Enterprise Sign-On is an add-on for Premium Tier customers, set up by contacting Qdrant. Supported providers include SAML, OpenID Connect, Okta, Azure AD and Google Workspace.",
+        "plan": "Premium Tier (SSO add-on)",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://qdrant.tech/documentation/cloud-account-setup/",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Qdrant Cloud is a managed service for the Qdrant vector database.",
+    "name": "Qdrant Cloud",
+    "status": "draft",
+    "website": "https://qdrant.tech"
   },
   {
     "_id": "qualtrics",
