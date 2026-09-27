@@ -3639,6 +3639,83 @@
     "website": "https://coder.com"
   },
   {
+    "_id": "configcat",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Every plan has an audit log. How far back it goes depends on the plan.",
+        "plan": "Free",
+        "retention": "7 days on Free, 35 days on Pro and Smart, 750 days on Enterprise and Dedicated",
+        "source": "https://configcat.com/docs/subscription-plan-limits/",
+        "support": "supported",
+        "tier": "free"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Product-level permission groups are custom sets of permissions. The number you can create depends on the plan.",
+        "source": "https://configcat.com/docs/advanced/team-management/team-management-basics/",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "checked": "2026-09-27",
+        "notes": "You verify ownership of your email domains. This is needed before you can use SAML SSO or auto-assign users.",
+        "source": "https://configcat.com/docs/advanced/team-management/domain-verification/",
+        "support": "supported"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "Groups synced over SCIM can be mapped to ConfigCat permission groups and to the Organization Admin and Billing Manager roles.",
+        "source": "https://configcat.com/docs/advanced/team-management/scim/scim-overview/",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "New users who sign up with an email on a verified domain are added to the organization automatically, with preset roles and product permissions.",
+        "source": "https://configcat.com/docs/advanced/team-management/auto-assign-users/",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Admins can require two-factor authentication for team members from the Authentication & Provisioning page.",
+        "source": "https://configcat.com/docs/advanced/team-management/team-management-basics/",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "SCIM syncs users and groups from your identity provider. A soft delete disables the user and a hard delete removes them from the organization.",
+        "source": "https://configcat.com/docs/advanced/team-management/scim/scim-overview/",
+        "support": "supported"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Organization admins can set up SAML 2.0 single sign-on for a verified domain, with both IdP- and SP-initiated login. Google, Microsoft, GitHub and Bitbucket login are also available.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://configcat.com/docs/advanced/team-management/saml/saml-overview/",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "notes": "Admins can turn individual login methods on or off for the organization, but the docs don't clearly say email and password login can be switched off to require SSO.",
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "ConfigCat is a hosted feature flag and remote configuration service.",
+    "name": "ConfigCat",
+    "status": "draft",
+    "website": "https://configcat.com"
+  },
+  {
     "_id": "coupa",
     "capabilities": {
       "api_token_controls": {
@@ -11680,6 +11757,71 @@
     "name": "Pendo",
     "status": "draft",
     "website": "https://www.pendo.io"
+  },
+  {
+    "_id": "penpot",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Users can create personal access tokens, but the docs don't describe admin controls over them.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "Teams use fixed roles (Viewer, Editor, Admin, Owner). The Enterprise Advanced Permissions module restricts actions org-wide on top of these roles but doesn't add new roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "A successful SSO login never grants org membership on its own; members still need an invitation from the org owner.",
+        "source": "https://help.penpot.app/user-guide/account-teams/organizations/",
+        "support": "not_supported"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "notes": "SSO sessions last a fixed 4 hours; the docs don't describe admins changing this or signing users out.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "The SSO module for Enterprise organizations is set up in the Admin Console with generic OIDC, Azure AD (OIDC) or Google OAuth. Self-hosted server admins can separately enable OIDC login for the whole instance.",
+        "plan": "Enterprise",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://help.penpot.app/user-guide/account-teams/organizations/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Once SSO is active, all org members must sign in through the IdP to reach the organization's teams and files. The Admin Console stays reachable without SSO.",
+        "plan": "Enterprise",
+        "source": "https://help.penpot.app/user-guide/account-teams/organizations/",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "design",
+    "description": "Penpot is an open-source design and prototyping platform for product teams.",
+    "name": "Penpot",
+    "status": "draft",
+    "website": "https://penpot.app"
   },
   {
     "_id": "personio",
