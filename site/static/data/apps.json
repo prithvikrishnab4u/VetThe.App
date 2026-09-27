@@ -7539,6 +7539,65 @@
     "website": "https://infisical.com"
   },
   {
+    "_id": "influxdb-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Tokens are listed on the API Tokens page and can be deleted there. They can be scoped to read or write specific buckets. The docs don't describe admin policies for tokens.",
+        "source": "https://docs.influxdata.com/influxdb/cloud/admin/tokens/view-tokens/",
+        "support": "partial"
+      },
+      "audit_logs": {
+        "notes": "The security page only says InfluxData logs and audits access internally.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "InfluxDB Cloud has only one permission level for users, Owner, which has full access to the organization.",
+        "source": "https://docs.influxdata.com/influxdb/cloud/admin/organizations/users/",
+        "support": "not_supported"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "The security page says MFA can only be turned on through an enterprise SSO connection, where your identity provider handles it.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Logins from a given email domain can be routed to your enterprise SSO provider. It's only available with an annual commercial contract, and you set it up through sales.",
+        "plan": "Annual contract",
+        "source": "https://docs.influxdata.com/influxdb/cloud/reference/internals/security/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "infrastructure",
+    "description": "InfluxDB Cloud is InfluxData's managed time-series database service.",
+    "name": "InfluxDB Cloud",
+    "status": "draft",
+    "website": "https://www.influxdata.com"
+  },
+  {
     "_id": "intercom",
     "capabilities": {
       "api_token_controls": {
@@ -15637,6 +15696,67 @@
     "name": "Tenable",
     "status": "draft",
     "website": "https://tenable.com"
+  },
+  {
+    "_id": "timescale-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Project client credentials are listed in project settings and can be deleted there. The docs don't describe any other restrictions on them.",
+        "source": "https://www.tigerdata.com/docs/use-timescale/latest/security/client-credentials/",
+        "support": "partial"
+      },
+      "audit_logs": {
+        "notes": "The security overview only mentions that staff access to customer VMs is audit logged.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "The docs list fixed project roles: Owner, Admin, Developer and Viewer.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "Users can turn on authenticator-app 2FA themselves. The docs don't describe admins requiring it.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The docs only describe authenticator-app codes for 2FA.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SAML login is part of the Enterprise offering and only supports IdP-initiated login. You set it up through your account manager or sales.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://www.tigerdata.com/docs/use-timescale/latest/security/saml/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Timescale Cloud, now called Tiger Cloud, is a managed PostgreSQL service for time-series and analytics workloads.",
+    "name": "Timescale Cloud",
+    "status": "draft",
+    "website": "https://www.tigerdata.com"
   },
   {
     "_id": "tooljet",
