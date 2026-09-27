@@ -131,7 +131,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P2 | Apigee | `apigee` | development | https://cloud.google.com/apigee |
 | P2 | Buildkite | `buildkite` | development | https://buildkite.com |
 | P2 | Devin | `devin` | development | https://devin.ai |
-| P2 | Hugging Face | `hugging-face` | development | https://huggingface.co |
 | P2 | Kong Konnect | `kong-konnect` | development | https://konghq.com |
 | P2 | Netlify | `netlify` | development | https://netlify.com |
 | P2 | Retool | `retool` | development | https://retool.com |
