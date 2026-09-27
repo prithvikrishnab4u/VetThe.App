@@ -2,14 +2,90 @@
 
 Widely used B2B SaaS apps not yet in `data/apps/`. Research P1 first; remove a row when the app's YAML is added.
 
+## Identity tools: research these first
+
+The site is about IAM, so the identity vendors themselves come before everything else (52 apps, added 2026-09-27). All are P1 and `security`. Okta, Microsoft Entra ID, Auth0, JumpCloud, Cisco Duo and the password managers are already in `data/apps/`; their governance add-ons (Okta Identity Governance, Entra ID Governance) are plans of those apps, not separate rows. Several of these are also sold self-hosted: record the SaaS edition only, and say so in `notes` when the docs split by edition. Websites are from memory, so confirm them while researching.
+
+### Identity governance and administration (IGA)
+
+| Priority | App | Proposed id | Category | Website |
+|---|---|---|---|---|
+| P1 | SailPoint Identity Security Cloud | `sailpoint` | security | https://sailpoint.com |
+| P1 | Saviynt | `saviynt` | security | https://saviynt.com |
+| P1 | Omada Identity Cloud | `omada` | security | https://omadaidentity.com |
+| P1 | One Identity Manager On Demand | `one-identity` | security | https://oneidentity.com |
+| P1 | ConductorOne | `conductorone` | security | https://conductorone.com |
+| P1 | Lumos | `lumos` | security | https://lumos.com |
+| P1 | Veza | `veza` | security | https://veza.com |
+| P1 | Opal | `opal` | security | https://opal.dev |
+| P1 | Zluri | `zluri` | security | https://zluri.com |
+| P1 | Clarity Security | `clarity-security` | security | https://claritysecurity.com |
+| P1 | EmpowerID | `empowerid` | security | https://empowerid.com |
+| P1 | HelloID (Tools4ever) | `helloid` | security | https://tools4ever.com |
+| P1 | Pathlock | `pathlock` | security | https://pathlock.com |
+| P1 | Torii | `torii` | security | https://toriihq.com |
+| P1 | BetterCloud | `bettercloud` | security | https://bettercloud.com |
+
+### Access management, workforce and customer identity
+
+| Priority | App | Proposed id | Category | Website |
+|---|---|---|---|---|
+| P1 | Ping Identity | `ping-identity` | security | https://pingidentity.com |
+| P1 | OneLogin | `onelogin` | security | https://onelogin.com |
+| P1 | IBM Verify | `ibm-verify` | security | https://ibm.com/verify |
+| P1 | RSA ID Plus | `rsa-id-plus` | security | https://rsa.com |
+| P1 | Thales SafeNet Trusted Access | `thales-sta` | security | https://cpl.thalesgroup.com |
+| P1 | Beyond Identity | `beyond-identity` | security | https://beyondidentity.com |
+| P1 | HYPR | `hypr` | security | https://hypr.com |
+| P1 | Silverfort | `silverfort` | security | https://silverfort.com |
+| P1 | Imprivata | `imprivata` | security | https://imprivata.com |
+| P1 | Transmit Security | `transmit-security` | security | https://transmitsecurity.com |
+| P1 | WorkOS | `workos` | security | https://workos.com |
+| P1 | Descope | `descope` | security | https://descope.com |
+| P1 | Stytch | `stytch` | security | https://stytch.com |
+| P1 | Frontegg | `frontegg` | security | https://frontegg.com |
+| P1 | FusionAuth | `fusionauth` | security | https://fusionauth.io |
+| P1 | Clerk | `clerk` | security | https://clerk.com |
+
+### Privileged access and secrets (PAM)
+
+| Priority | App | Proposed id | Category | Website |
+|---|---|---|---|---|
+| P1 | CyberArk | `cyberark` | security | https://cyberark.com |
+| P1 | BeyondTrust | `beyondtrust` | security | https://beyondtrust.com |
+| P1 | Delinea | `delinea` | security | https://delinea.com |
+| P1 | StrongDM | `strongdm` | security | https://strongdm.com |
+| P1 | Teleport | `teleport` | security | https://goteleport.com |
+| P1 | Britive | `britive` | security | https://britive.com |
+| P1 | Apono | `apono` | security | https://apono.io |
+| P1 | P0 Security | `p0-security` | security | https://p0.dev |
+| P1 | Netwrix | `netwrix` | security | https://netwrix.com |
+| P1 | WALLIX | `wallix` | security | https://wallix.com |
+| P1 | Segura | `segura` | security | https://segura.security |
+| P1 | Akeyless | `akeyless` | security | https://akeyless.io |
+| P1 | HCP Vault | `hcp-vault` | security | https://hashicorp.com/products/vault |
+
+### Identity threat detection and non-human identity (ITDR, NHI, SSPM)
+
+| Priority | App | Proposed id | Category | Website |
+|---|---|---|---|---|
+| P1 | Push Security | `push-security` | security | https://pushsecurity.com |
+| P1 | Astrix Security | `astrix` | security | https://astrix.security |
+| P1 | Oasis Security | `oasis-security` | security | https://oasis.security |
+| P1 | Aembit | `aembit` | security | https://aembit.io |
+| P1 | Obsidian Security | `obsidian-security` | security | https://obsidiansecurity.com |
+| P1 | AppOmni | `appomni` | security | https://appomni.com |
+| P1 | Grip Security | `grip-security` | security | https://grip.security |
+| P1 | Valence Security | `valence-security` | security | https://valencesecurity.com |
+
+## Everything else
+
 | Priority | App | Proposed id | Category | Website |
 |---|---|---|---|---|
 | P1 | SAP Ariba | `sap-ariba` | finance | https://sap.com/products/spend-management/ariba.html |
 | P1 | Zip | `zip` | finance | https://ziphq.com |
 | P1 | Bitwarden | `bitwarden` | security | https://bitwarden.com |
-| P1 | CyberArk | `cyberark` | security | https://cyberark.com |
 | P1 | Mimecast | `mimecast` | security | https://mimecast.com |
-| P1 | Ping Identity | `ping-identity` | security | https://pingidentity.com |
 | P1 | SentinelOne | `sentinelone` | security | https://sentinelone.com |
 | P1 | Wiz | `wiz` | security | https://wiz.io |
 | P1 | Cloudflare | `cloudflare` | infrastructure | https://cloudflare.com |
@@ -64,7 +140,6 @@ Widely used B2B SaaS apps not yet in `data/apps/`. Research P1 first; remove a r
 | P2 | Sourcegraph | `sourcegraph` | development | https://sourcegraph.com |
 | P2 | Statsig | `statsig` | development | https://statsig.com |
 | P2 | Supabase | `supabase` | development | https://supabase.com |
-| P2 | WorkOS | `workos` | development | https://workos.com |
 | P2 | 6sense | `6sense` | sales_marketing | https://6sense.com |
 | P2 | Adobe Experience Manager | `adobe-experience-manager` | sales_marketing | https://business.adobe.com/products/experience-manager/adobe-experience-manager.html |
 | P2 | Ahrefs | `ahrefs` | sales_marketing | https://ahrefs.com |
@@ -121,24 +196,17 @@ Widely used B2B SaaS apps not yet in `data/apps/`. Research P1 first; remove a r
 | P2 | Abnormal Security | `abnormal-security` | security | https://abnormalsecurity.com |
 | P2 | AuditBoard | `auditboard` | security | https://auditboard.com |
 | P2 | Axonius | `axonius` | security | https://axonius.com |
-| P2 | BeyondTrust | `beyondtrust` | security | https://beyondtrust.com |
 | P2 | Checkmarx One | `checkmarx` | security | https://checkmarx.com |
 | P2 | Cisco Umbrella | `cisco-umbrella` | security | https://umbrella.cisco.com |
-| P2 | ConductorOne | `conductorone` | security | https://conductorone.com |
 | P2 | Cortex XDR | `cortex-xdr` | security | https://paloaltonetworks.com/cortex/cortex-xdr |
 | P2 | Dashlane | `dashlane` | security | https://dashlane.com |
-| P2 | Delinea | `delinea` | security | https://delinea.com |
 | P2 | Lacework FortiCNAPP | `lacework` | security | https://fortinet.com/products/forticnapp |
 | P2 | OneTrust | `onetrust` | security | https://onetrust.com |
 | P2 | Orca Security | `orca-security` | security | https://orca.security |
 | P2 | Palo Alto Networks Prisma Access | `prisma-access` | security | https://paloaltonetworks.com/sase/access |
-| P2 | SailPoint | `sailpoint` | security | https://sailpoint.com |
-| P2 | Saviynt | `saviynt` | security | https://saviynt.com |
 | P2 | Secureframe | `secureframe` | security | https://secureframe.com |
 | P2 | Semgrep | `semgrep` | security | https://semgrep.dev |
 | P2 | Sophos Central | `sophos-central` | security | https://sophos.com |
-| P2 | StrongDM | `strongdm` | security | https://strongdm.com |
-| P2 | Teleport | `teleport` | security | https://goteleport.com |
 | P2 | Tines | `tines` | security | https://tines.com |
 | P2 | Twingate | `twingate` | security | https://twingate.com |
 | P2 | Varonis | `varonis` | security | https://varonis.com |
@@ -205,7 +273,6 @@ Widely used B2B SaaS apps not yet in `data/apps/`. Research P1 first; remove a r
 | P3 | Spendflo | `spendflo` | finance | https://spendflo.com |
 | P3 | Tropic | `tropic` | finance | https://tropicapp.io |
 | P3 | Addigy | `addigy` | security | https://addigy.com |
-| P3 | Beyond Identity | `beyond-identity` | security | https://beyondidentity.com |
 | P3 | BitSight | `bitsight` | security | https://bitsight.com |
 | P3 | Chainguard | `chainguard` | security | https://chainguard.dev |
 | P3 | Cyera | `cyera` | security | https://cyera.com |
@@ -216,10 +283,8 @@ Widely used B2B SaaS apps not yet in `data/apps/`. Research P1 first; remove a r
 | P3 | Kolide | `kolide` | security | https://kolide.com |
 | P3 | Nightfall AI | `nightfall-ai` | security | https://nightfall.ai |
 | P3 | Nudge Security | `nudge-security` | security | https://nudgesecurity.com |
-| P3 | Opal | `opal` | security | https://opal.dev |
 | P3 | Panther | `panther` | security | https://panther.com |
 | P3 | Proton for Business | `proton-business` | security | https://proton.me/business |
-| P3 | Push Security | `push-security` | security | https://pushsecurity.com |
 | P3 | SafeBase | `safebase` | security | https://safebase.io |
 | P3 | SecurityScorecard | `securityscorecard` | security | https://securityscorecard.com |
 | P3 | Socket | `socket` | security | https://socket.dev |

@@ -86,8 +86,9 @@ _Last updated: 2026-09-27_
    | API token controls | 163 |
    Run the same way: parallel report-only agents, about 8 apps each, every value applied and reviewed in the main session. Use [research/BRIEF-roles-session-tokens.md](research/BRIEF-roles-session-tokens.md) (written 2026-09-27; pilot it on about 3 batches first, as with JIT). Why it needed rewriting: JIT and domain verification usually sit on the one SSO docs page, and these do not: roles live in an admin guide, session controls in a security or policy page, API tokens in a developer doc. Expect more fetches per app and a lower hit rate. Carry over the three rules the first run proved necessary: never cite a page you could not fetch, never infer a tier, and define the `partial` boundary up front for each capability, since that is where every agent error landed.
 4. [ ] Recheck values older than about 6 months (vendors change plans); `checked` dates make this a simple query
-5. [ ] Add more apps from [BACKLOG.md](BACKLOG.md): the first 72 P1 rows are done, so continue from P1 row 73, then P2/P3. Use `scratchpad/new/BRIEF.md` + `mk.py` as the pattern. Requests will also arrive through the website's "Add an app"
-6. [ ] The 65 apps added on 2026-09-22 are all `draft` — they need plan tiers before they can be published
+5. [ ] **Identity tools first (added 2026-09-27):** 52 IGA, access management, PAM and ITDR/NHI vendors now head [BACKLOG.md](BACKLOG.md) (SailPoint, Saviynt, Omada, ConductorOne, Veza, Ping, OneLogin, CyberArk, BeyondTrust, Delinea and more). None researched yet: the 2026-09-27 session's network policy blocked every vendor host. Research core capabilities with parallel report-only agents (about 20, 2-3 apps each) once vendor docs are reachable. Expect a lot of blocked or login-gated docs: CyberArk and Ping already failed in the P1 run.
+6. [ ] Add more apps from [BACKLOG.md](BACKLOG.md): the first 72 P1 rows are done, so continue from P1 row 73, then P2/P3. Use `scratchpad/new/BRIEF.md` + `mk.py` as the pattern. Requests will also arrive through the website's "Add an app"
+7. [ ] The 65 apps added on 2026-09-22 are all `draft` — they need plan tiers before they can be published
 
 ## To do: site
 
