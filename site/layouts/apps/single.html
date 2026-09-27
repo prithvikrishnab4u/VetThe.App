@@ -62,6 +62,7 @@
                         {{ $tierLabel := "" }}
                         {{ with $cap.tier }}{{ $tierLabel = index $tierLabels . }}{{ end }}
                         {{ $unverified := and (not (in (slice "undocumented" "not_researched") $support)) (not $cap.source) }}
+                        {{ $stale := and $cap.checked (lt (time.AsTime $cap.checked) (now.AddDate 0 -6 0)) }}
                         {{/* data-id on the row and data-cap on the cell are what the ✎ button reads. */}}
                         <tr data-id="{{ $id }}">
                             <th scope="row" class="px-4 py-3 border-b border-line align-top font-normal">
@@ -83,7 +84,7 @@
                                 {{ with $cap.source }}
                                 <div class="mt-1 text-xs text-muted">
                                     <a href="{{ . }}" target="_blank" rel="noopener" class="text-accent hover:underline break-all">{{ . | replaceRE `^https?://(www\.)?` "" }}</a>
-                                    · checked {{ $cap.checked }}
+                                    · checked {{ $cap.checked }}{{ if $stale }} · <span class="stale-note">over 6 months ago, may be out of date</span>{{ end }}
                                 </div>
                                 {{ else }}
                                 {{ if eq $support "not_researched" }}<div class="text-xs text-muted">Nobody has checked this yet.</div>

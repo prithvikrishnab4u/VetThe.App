@@ -130,10 +130,12 @@
                         {{ else if eq $support "not_supported" }}{{ $value = "No" }}
                         {{ else if eq $support "undocumented" }}{{ $value = "Not documented" }}{{ end }}
                         {{ $unverified := and (not (in (slice "undocumented" "not_researched") $support)) (not $cap.source) }}
+                        {{/* Stale is judged at build time, so it moves forward with each deploy. */}}
+                        {{ $stale := and $cap.checked (lt (time.AsTime $cap.checked) (now.AddDate 0 -6 0)) }}
                         <td class="relative pl-2 pr-7 sm:pl-3 sm:pr-8 py-3 border-b border-line whitespace-nowrap group-hover:bg-subtle{{ if not .core }} cap-extended{{ end }}"
                             data-cap="{{ .id }}" data-value="{{ $value }}">
-                            <div class="flex items-center gap-1{{ if $unverified }} unverified{{ end }}"
-                                title="{{ .label }}: {{ $value }}{{ with $cap.plan }} · Plan: {{ . }}{{ end }}{{ with $cap.notes }} · {{ . }}{{ end }}{{ if $cap.source }} · Checked {{ $cap.checked }}{{ else if $unverified }} · Unverified: no source yet{{ end }}">
+                            <div class="flex items-center gap-1{{ if $unverified }} unverified{{ end }}{{ if $stale }} stale{{ end }}"
+                                title="{{ .label }}: {{ $value }}{{ with $cap.plan }} · Plan: {{ . }}{{ end }}{{ with $cap.notes }} · {{ . }}{{ end }}{{ if $cap.source }} · Checked {{ $cap.checked }}{{ if $stale }}, over 6 months ago, so it may be out of date{{ end }}{{ else if $unverified }} · Unverified: no source yet{{ end }}">
                                 {{ partial "badge.html" (dict "cap" $cap "tierLabel" $tierLabel) }}
                                 {{ with $cap.source }}
                                 <a href="{{ . }}" target="_blank" rel="noopener" class="source-link" aria-label="Source">

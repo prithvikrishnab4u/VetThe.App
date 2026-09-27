@@ -98,7 +98,7 @@ _Last updated: 2026-09-27_
 
 - [x] A page per app (`/apps/<id>/`) with all 12 capabilities, sources, notes, a ✎ on each value, and a "Help wanted" list of not-researched values (done 2026-09-27; built by a content adapter, `site/content/apps/_content.gotmpl`, from `data/apps/`, so no content files to maintain). App names in the main table now link there
 - [x] Site-wide "Help wanted" view: `/apps/` lists every app with checked / not-researched counts, most work left first (done 2026-09-27)
-- [ ] Show "last checked" on cells, and flag stale values
+- [x] Show "last checked" on cells, and flag stale values (2026-09-27). The check date is in each cell's tooltip and on the app page. Values checked more than 6 months before the build get an amber source link and a note. It's judged at build time, so a redeploy moves the line forward.
 - [ ] Remove the `.Site.Data` deprecation warning (switch to `hugo.Data`) once Cloudflare's Hugo is ≥ 0.156
 
 ## Research rules (don't skip)
