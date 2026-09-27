@@ -3020,6 +3020,101 @@
     "website": "https://clerk.com"
   },
   {
+    "_id": "clickhouse-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Each API key has a role-based set of permissions, an expiration time and an optional IP allowlist. Keys can be edited, disabled or deleted from the API Keys page.",
+        "source": "https://clickhouse.com/docs/cloud/manage/openapi",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Admins and Developers can see console activity (who did what, IP address and time) in the Audit tab, export it to CSV, or pull it through the Cloud API activity endpoint. The docs don't name a plan.",
+        "source": "https://clickhouse.com/docs/cloud/security/audit-logging/console-audit-log",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Admins can create custom roles that combine organization, service and database permissions, scoped to all or some services and databases. The docs don't name a plan.",
+        "source": "https://clickhouse.com/docs/cloud/guides/security/manage-custom-roles",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "checked": "2026-09-27",
+        "notes": "SAML setup requires you to verify your domain with a DNS TXT record.",
+        "plan": "Enterprise",
+        "source": "https://clickhouse.com/docs/cloud/security/saml-setup",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "SCIM groups map to custom roles by name, but not to predefined system roles. It depends on SCIM, which is in private preview. SAML attribute mapping isn't supported yet.",
+        "plan": "Enterprise",
+        "source": "https://clickhouse.com/docs/cloud/security/scim-setup",
+        "support": "partial",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "SAML SSO includes just-in-time provisioning. New users get the default role you set in the SAML configuration the first time they sign in.",
+        "plan": "Enterprise",
+        "source": "https://clickhouse.com/docs/cloud/security/saml-setup",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "notes": "The docs cover users setting up authenticator-app MFA for themselves, but not an admin setting to require it.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The MFA docs only mention authenticator (TOTP) apps.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "SCIM 2.0 user and group provisioning is marked as an Enterprise plan feature, but it's in private preview, with guides for Okta and Entra ID only. SAML SSO has to be set up first.",
+        "plan": "Enterprise",
+        "source": "https://clickhouse.com/docs/cloud/security/scim-setup",
+        "support": "partial",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "Once SAML SSO is set up, admins can adjust session timeout settings.",
+        "plan": "Enterprise",
+        "source": "https://clickhouse.com/docs/cloud/security/saml-setup",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SAML SSO is marked as an Enterprise plan feature. Only service provider-initiated sign-in is supported; IdP-initiated sign-in isn't.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://clickhouse.com/docs/cloud/security/saml-setup",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "To enforce SAML-only sign-in, you remove users with other authentication methods once at least one SAML user has the Admin role. It's done by removing users rather than through a setting.",
+        "plan": "Enterprise",
+        "source": "https://clickhouse.com/docs/cloud/security/manage-cloud-users",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "infrastructure",
+    "description": "ClickHouse Cloud is the managed cloud service for the ClickHouse analytical database.",
+    "name": "ClickHouse Cloud",
+    "status": "draft",
+    "website": "https://clickhouse.com"
+  },
+  {
     "_id": "clickup",
     "capabilities": {
       "api_token_controls": {
@@ -4589,6 +4684,80 @@
     "website": "https://www.expensify.com"
   },
   {
+    "_id": "expo-eas",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Users can revoke their own personal access tokens, and admins manage robot users with assigned roles. The docs don't say admins can see or revoke members' personal tokens.",
+        "source": "https://docs.expo.dev/accounts/programmatic-access/",
+        "support": "partial"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "View logs in the dashboard, export them in ranges of up to 30 days, or query them with eas account:audit.",
+        "plan": "Enterprise",
+        "retention": "1.5 years",
+        "source": "https://docs.expo.dev/accounts/audit-logs/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "notes": "The docs list only fixed roles: Owner, Admin, Release Manager, Developer and Viewer.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "A new user picks a username the first time they sign in with SSO and gets the View Only role by default.",
+        "plan": "Production",
+        "source": "https://docs.expo.dev/accounts/sso/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "mfa_enforcement": {
+        "notes": "Two-factor authentication is set up per user in personal settings; no org setting to require it is described.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The two-factor docs list only authenticator apps, deprecated SMS and recovery codes.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "The docs say to remove users in the identity provider, after which they lose access when their token refreshes. SCIM isn't mentioned.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "notes": "Token refresh time is set in the identity provider; no Expo session setting is described.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SSO is on the Production and Enterprise plans. It uses OpenID Connect Discovery and works with Okta, OneLogin, Microsoft Entra ID and Google Workspace.",
+        "plan": "Production",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://docs.expo.dev/accounts/sso/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "notes": "SSO orgs must keep at least one non-SSO Owner and can still invite non-SSO users; no option to require SSO is described.",
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "Expo Application Services (EAS) is a cloud service for building, submitting and updating React Native apps.",
+    "name": "Expo EAS",
+    "status": "draft",
+    "website": "https://expo.dev"
+  },
+  {
     "_id": "figma",
     "capabilities": {
       "api_token_controls": {
@@ -4738,6 +4907,90 @@
     "name": "Five9",
     "status": "draft",
     "website": "https://www.five9.com"
+  },
+  {
+    "_id": "flagsmith",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Management API keys are created at the organisation level and act as either full admin or a chosen set of RBAC roles. Granular key permissions need Scale-Up or Enterprise.",
+        "source": "https://docs.flagsmith.com/integrating-with-flagsmith/flagsmith-api-overview/management-api/authentication",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Every action in the dashboard is logged and can be filtered in the app, or streamed to your own systems with audit log webhooks.",
+        "source": "https://docs.flagsmith.com/administration-and-security/governance-and-compliance/audit-logs",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Role-based access control with custom roles needs a Scale-Up or Enterprise subscription.",
+        "plan": "Scale-Up",
+        "source": "https://docs.flagsmith.com/administration-and-security/access-control/rbac",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "On SAML sign-in, users are added to or removed from pre-created Flagsmith groups whose External ID matches the groups claim.",
+        "plan": "Enterprise",
+        "source": "https://docs.flagsmith.com/administration-and-security/access-control/saml",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "Users can join your organisation by signing in through SSO. By default they get no permissions unless a group is set to add new users automatically.",
+        "source": "https://docs.flagsmith.com/administration-and-security/access-control/rbac",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "notes": "Two-factor authentication is available on Start-Up and Enterprise, but the docs don't say admins can require it.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "SCIM 2.0 creates, deactivates and deletes users and pushes permission groups and their membership. Needs SSO set up first.",
+        "plan": "Enterprise",
+        "source": "https://docs.flagsmith.com/administration-and-security/access-control/scim",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SAML 2.0 single sign-on needs an Enterprise subscription. LDAP and Microsoft ADFS are also Enterprise options.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.flagsmith.com/administration-and-security/access-control/saml",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "You can force SSO by restricting sign-in methods per email domain. On SaaS and private cloud you ask Flagsmith support to set this up.",
+        "plan": "Enterprise",
+        "source": "https://docs.flagsmith.com/administration-and-security/access-control/",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "development",
+    "description": "Flagsmith is an open-source feature flag and remote config service.",
+    "name": "Flagsmith",
+    "status": "draft",
+    "website": "https://www.flagsmith.com"
   },
   {
     "_id": "fly-io",
@@ -5013,6 +5266,63 @@
     "name": "Front",
     "status": "published",
     "website": "https://front.com"
+  },
+  {
+    "_id": "fusionauth",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "API keys can be limited to specific endpoints and HTTP methods, scoped to one tenant, and given an expiration; limiting a key to an IP access control list is an Enterprise feature.",
+        "source": "https://fusionauth.io/docs/apis/api-keys/create-an-api-key",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Audit log entries are created automatically whenever an admin does something in the FusionAuth Admin UI, and can be searched and exported through the API.",
+        "source": "https://fusionauth.io/docs/apis/audit-logs/add-an-entry-to-the-audit-log",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "notes": "The docs list built-in Admin UI roles and fixed account portal roles (Admin, Billing manager, Deployment manager, Plan manager, Security officer); custom admin roles aren't mentioned.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "Account portal users and Admin UI users can each turn on MFA for their own account; the docs don't describe a way to require it for them.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The account portal docs say only TOTP MFA is currently allowed there.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "SCIM is an Enterprise feature for provisioning your app's users; the docs don't describe SCIM for account portal or Admin UI users.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "notes": "FusionAuth's identity provider docs cover login for your own apps; the docs don't describe SSO for the account portal or for Admin UI users.",
+        "support": "undocumented"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "FusionAuth Cloud is a managed hosting service for FusionAuth, a customer identity and access management platform.",
+    "name": "FusionAuth Cloud",
+    "status": "draft",
+    "website": "https://fusionauth.io"
   },
   {
     "_id": "gainsight",
@@ -6110,6 +6420,71 @@
     "website": "https://www.harness.io"
   },
   {
+    "_id": "hasura-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Users can create personal access tokens; no admin controls are described.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "Project collaborators are Admin or User; a User can be given Execute GraphQL and View Metrics permissions.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "notes": "You give support the email domains to use for SSO; no verification step is described.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "The SSO docs say session expiry time is not configurable.",
+        "source": "https://hasura.io/docs/2.0/hasura-cloud/sso/",
+        "support": "not_supported"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SAML 2.0 SSO is set up through support; only SP-initiated login and HTTP POST binding are supported, with no single logout.",
+        "plan": "Cloud Enterprise",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://hasura.io/docs/2.0/hasura-cloud/sso/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Once SSO is on for an org, emails on its domains can't use Google, GitHub or email login.",
+        "plan": "Cloud Enterprise",
+        "source": "https://hasura.io/docs/2.0/hasura-cloud/sso/",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "development",
+    "description": "Hasura Cloud is a managed service for running the Hasura GraphQL Engine.",
+    "name": "Hasura Cloud",
+    "status": "draft",
+    "website": "https://hasura.io"
+  },
+  {
     "_id": "hcp-terraform",
     "capabilities": {
       "api_token_controls": {
@@ -6195,6 +6570,83 @@
     "name": "HCP Terraform",
     "status": "draft",
     "website": "https://www.hashicorp.com/products/terraform"
+  },
+  {
+    "_id": "hcp-vault-dedicated",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "API access uses service principals and keys managed by admins; controls over user-created tokens aren't described.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "HCP produces platform audit logs (such as sign-ins and project creation) and product audit logs, which you stream to a SIEM such as Splunk, Datadog or CloudWatch rather than view in HCP.",
+        "source": "https://developer.hashicorp.com/hcp/docs/hcp/audit-log",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "notes": "The docs list built-in roles (Owner, Admin, Contributor, Viewer, Browser and service-specific roles) and don't mention custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "checked": "2026-09-27",
+        "notes": "You verify each email domain with a DNS TXT record before setting up SSO, and a domain can only be used by one HCP organization.",
+        "source": "https://developer.hashicorp.com/hcp/docs/hcp/iam/sso/setup/saml",
+        "support": "supported"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "Groups and their members can be synced from the IdP over SCIM, and admins assign roles to groups per project.",
+        "source": "https://developer.hashicorp.com/hcp/docs/hcp/iam/groups",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "Users with an email on a configured SSO domain can sign up as new SSO users and get the organization's default role.",
+        "source": "https://developer.hashicorp.com/hcp/docs/hcp/iam/sso/manage",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "notes": "HCP offers optional per-user OTP MFA for email sign-in, set up in each user's account settings. The docs don't describe a way for admins to require it.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-27",
+        "notes": "HCP offers one MFA method, a one-time password from an authenticator app, and only for email sign-in.",
+        "source": "https://developer.hashicorp.com/hcp/docs/hcp/iam/mfa",
+        "support": "not_supported"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "With SCIM, the IdP creates, updates and deactivates or deletes users, and manages groups and group membership in HCP. SAML SSO is required first. Entra ID and Okta have HCP guides.",
+        "source": "https://developer.hashicorp.com/hcp/docs/hcp/iam/scim",
+        "support": "supported"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Access is managed through the HashiCorp Cloud Platform (HCP) organization, which supports SAML 2.0 and OIDC SSO with providers such as Okta, Entra ID, Ping and Google. No plan is named.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://developer.hashicorp.com/hcp/docs/hcp/iam/sso",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Once SSO is on, invitations stop and new users must come through the IdP, and existing SAML users on the SSO domain must use the SSO link. Existing personal accounts keep access until an admin removes them, and the owner can still use their original non-SSO login.",
+        "source": "https://developer.hashicorp.com/hcp/docs/hcp/iam/sso/manage",
+        "support": "partial"
+      }
+    },
+    "category": "security",
+    "description": "HCP Vault Dedicated is HashiCorp's managed Vault service for secrets management, run on the HashiCorp Cloud Platform.",
+    "name": "HCP Vault Dedicated",
+    "status": "draft",
+    "website": "https://www.hashicorp.com/products/vault"
   },
   {
     "_id": "hibob",
@@ -8560,6 +9012,65 @@
     "website": "https://mattermost.com"
   },
   {
+    "_id": "mergify",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Application keys belong to the GitHub account, not a person, and are scoped to admin or ci; deleting the application in the dashboard revokes the key.",
+        "source": "https://docs.mergify.com/api/usage/",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "notes": "The Activity Log covers pull request and queue events, not admin or user actions.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "Roles come from GitHub. On Enterprise, owners can hand out four fixed delegated admin roles (Billing, CI, Integrations, Delegation); custom roles aren't described.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "Login goes through GitHub; the docs don't mention MFA.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "Mergify has no identity system of its own; access and roles come from GitHub.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Sign-in is only through GitHub OAuth, and you can't connect your identity provider to Mergify directly. SAML SSO set up on your GitHub organization applies to Mergify.",
+        "source": "https://docs.mergify.com/security/",
+        "support": "partial"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "To enforce SSO, the docs say to enforce SAML SSO on your GitHub organization; there's no Mergify-side setting.",
+        "source": "https://docs.mergify.com/security/",
+        "support": "partial"
+      }
+    },
+    "category": "development",
+    "description": "Mergify is a merge queue and CI automation service for GitHub pull requests.",
+    "name": "Mergify",
+    "status": "draft",
+    "website": "https://mergify.com"
+  },
+  {
     "_id": "metabase",
     "capabilities": {
       "api_token_controls": {
@@ -9259,6 +9770,102 @@
     "name": "Microsoft 365",
     "status": "published",
     "website": "https://microsoft365.com"
+  },
+  {
+    "_id": "mintlify",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Admins can revoke a member's sessions, CLI tokens, API keys, discovery API keys, M2M clients and connected apps.",
+        "source": "https://www.mintlify.com/docs/dashboard/roles",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Admins can view logs, export them to CSV, and stream them to S3 or Datadog.",
+        "plan": "Enterprise",
+        "retention": "2 years",
+        "source": "https://www.mintlify.com/docs/dashboard/audit-logs",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "notes": "The roles page lists only three built-in roles (viewer, editor, admin).",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "checked": "2026-09-27",
+        "notes": "Once SSO is active you can verify up to 25 domains, and users on them are sent to your identity provider. The docs don't say existing accounts are claimed.",
+        "plan": "Enterprise",
+        "source": "https://www.mintlify.com/docs/dashboard/sso",
+        "support": "partial",
+        "tier": "enterprise"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "A SAML groups attribute can be mapped to roles (set up with your account rep), and SCIM groups can be mapped to roles.",
+        "plan": "Enterprise",
+        "source": "https://www.mintlify.com/docs/dashboard/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "Needs SSO, and only works for sign-ins started from the identity provider.",
+        "plan": "Enterprise",
+        "source": "https://www.mintlify.com/docs/dashboard/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "notes": "The docs don't describe a setting to require MFA.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "Provisions and deprovisions members from any SCIM 2.0 identity provider; Okta create, update and deactivate are supported.",
+        "plan": "Enterprise",
+        "source": "https://www.mintlify.com/docs/dashboard/scim",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "Idle timeout and maximum session length from 5 minutes to 14 days, plus an IP allowlist.",
+        "plan": "Enterprise",
+        "source": "https://www.mintlify.com/docs/dashboard/session-security",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Admins can set up SAML for Okta and Microsoft Entra themselves; other providers, like Google Workspace or Okta OIDC, are set up through support.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://www.mintlify.com/docs/dashboard/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "A Require SSO setting blocks password, magic link and Google sign-in, with break-glass access for named members.",
+        "plan": "Enterprise",
+        "source": "https://www.mintlify.com/docs/dashboard/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "development",
+    "description": "Mintlify is a platform for building and hosting documentation websites.",
+    "name": "Mintlify",
+    "status": "draft",
+    "website": "https://www.mintlify.com"
   },
   {
     "_id": "miro",
@@ -14751,6 +15358,95 @@
     "website": "https://www.ukg.com"
   },
   {
+    "_id": "unleash",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Admins can view, create, update and delete backend and frontend API tokens for any project, and tokens can expire. Admin control over users' personal access tokens isn't described.",
+        "source": "https://docs.getunleash.io/concepts/api-tokens-and-client-keys",
+        "support": "partial"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "The Event Log lists all events and can be filtered by date, type, project, flag and user, then exported as CSV or JSON. A separate login history (Enterprise) keeps sign-in events for 14 days.",
+        "source": "https://docs.getunleash.io/concepts/events",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Enterprise customers can create custom root roles and custom project roles.",
+        "plan": "Enterprise",
+        "source": "https://docs.getunleash.io/concepts/rbac",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "domain_verification": {
+        "notes": "Only an email-domain allowlist for auto-creating SSO users is documented.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "Group SSO syncing adds or removes users from Unleash groups on each login based on matching SSO group names; groups can carry a root role or project roles.",
+        "plan": "Enterprise",
+        "source": "https://docs.getunleash.io/concepts/rbac",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "With Auto-create users turned on, people from allowed email domains get an account on their first SSO sign-in with a default root role.",
+        "plan": "Enterprise",
+        "source": "https://docs.getunleash.io/single-sign-on/how-to-add-sso-saml",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "notes": "The docs only mention MFA being enforced through your own identity provider when using SSO.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "Available since v6.1. Provisions users and groups; doesn't sync passwords or map roles. Deprovisioned users are soft-deleted so their audit history stays.",
+        "plan": "Enterprise",
+        "source": "https://docs.getunleash.io/concepts/scim",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "Self-hosted only: session length (SESSION_TTL_HOURS, default 48) and parallel session limits are set with environment variables. No Cloud setting is documented.",
+        "source": "https://docs.getunleash.io/deploy/configuring-unleash",
+        "support": "partial"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Enterprise feature. Single sign-on works through SAML 2.0 or OpenID Connect.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.getunleash.io/concepts/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Admins can turn off password-based login under Single sign-on > Password so users have to sign in through SSO.",
+        "source": "https://docs.getunleash.io/guides/user-management-access-controls",
+        "support": "supported"
+      }
+    },
+    "category": "development",
+    "description": "Unleash is an open-source feature flag management platform.",
+    "name": "Unleash",
+    "status": "draft",
+    "website": "https://www.getunleash.io"
+  },
+  {
     "_id": "upstash",
     "capabilities": {
       "api_token_controls": {
@@ -15102,6 +15798,93 @@
     "name": "Webflow",
     "status": "draft",
     "website": "https://webflow.com"
+  },
+  {
+    "_id": "weights-and-biases",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Enterprise orgs on Multi-tenant Cloud can issue org API keys and block personal keys from reaching org resources. Dedicated Cloud and Self-Managed can turn off API key creation for members.",
+        "plan": "Enterprise",
+        "source": "https://docs.wandb.ai/platform/hosting/iam/api-keys",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "On Multi-tenant Cloud, audit logs are Enterprise-only and fetched through the API as JSON. Dedicated Cloud can also sync them to your own bucket.",
+        "plan": "Enterprise",
+        "retention": "Not stated; W&B recommends exporting logs to long-term storage",
+        "source": "https://docs.wandb.ai/platform/hosting/monitoring-usage/audit-logging",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Admins build custom roles on top of the Viewer or Member role and add permissions; team admins assign them.",
+        "plan": "Enterprise",
+        "source": "https://docs.wandb.ai/platform/hosting/iam/access-management/manage-organization",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "domain_verification": {
+        "checked": "2026-09-27",
+        "notes": "Domain capture lets admins claim an email domain so new sign-ups from it join the org's default team. Not available on free or trial plans; a domain can belong to only one org.",
+        "source": "https://docs.wandb.ai/platform/hosting/iam/access-management/manage-organization",
+        "support": "supported"
+      },
+      "group_role_mapping": {
+        "notes": "IdP groups can set team membership (SCIM, or OIDC group claims on Dedicated Cloud/Self-Managed), but docs don't describe mapping groups to roles.",
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "Auto-provisioning creates an account the first time a user with a matching email domain signs in through SSO, with the Member role by default. It can't be configured on Multi-tenant Cloud.",
+        "plan": "Enterprise",
+        "source": "https://docs.wandb.ai/platform/hosting/iam/access-management/manage-organization",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "SCIM provisioning is listed as an Enterprise license feature. The SCIM API provisions and deprovisions users, and SCIM groups map to W&B teams.",
+        "plan": "Enterprise",
+        "source": "https://docs.wandb.ai/platform/hosting/enterprise-licenses",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "Session length can be changed with the SESSION_LENGTH setting (default 720 hours), but only on Dedicated Cloud or Self-Managed, not Multi-tenant Cloud.",
+        "source": "https://docs.wandb.ai/platform/hosting/iam/advanced_env_vars",
+        "support": "partial"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SSO is available on all Enterprise licenses. The SSO docs cover OIDC (plus LDAP for self-managed) and say SAML isn't supported. Multi-tenant Cloud customers set it up through W&B support.",
+        "plan": "Enterprise",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://docs.wandb.ai/platform/hosting/iam/access-management/manage-organization",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "Platform for tracking, evaluating and managing machine learning experiments and models.",
+    "name": "Weights & Biases",
+    "status": "draft",
+    "website": "https://wandb.ai"
   },
   {
     "_id": "workato",
