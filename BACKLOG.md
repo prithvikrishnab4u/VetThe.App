@@ -252,7 +252,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P3 | Graphite | `graphite` | development | https://graphite.dev |
 | P3 | Lovable | `lovable` | development | https://lovable.dev |
 | P3 | MuleSoft Anypoint Platform | `mulesoft` | development | https://mulesoft.com |
-| P3 | Octopus Deploy | `octopus-deploy` | development | https://octopus.com |
 | P3 | ReadMe | `readme` | development | https://readme.com |
 | P3 | Rollbar | `rollbar` | development | https://rollbar.com |
 | P3 | Tabnine | `tabnine` | development | https://tabnine.com |

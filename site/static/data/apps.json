@@ -3612,6 +3612,70 @@
     "website": "https://www.codacy.com"
   },
   {
+    "_id": "codemagic",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Each user has a personal API token; the docs describe no admin controls over tokens.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "The pricing page lists an Audit Log Connector for Enterprise, with no further detail.",
+        "plan": "Enterprise",
+        "source": "https://docs.codemagic.io/billing/pricing/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "notes": "The teams docs only describe the fixed Admin, Member and User roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "Docs suggest turning on MFA at your OAuth provider (e.g. GitHub); there is no admin setting to require it.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "The pricing page lists SSO login (OpenID, OAuth2 or SAML 2.0) as part of the Enterprise offering.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.codemagic.io/billing/pricing/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "notes": "Docs mention Enterprise SSO can limit access by geolocation, device and time range, but say nothing about requiring SSO for all members.",
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "Codemagic is a CI/CD service for building, testing and publishing mobile apps.",
+    "name": "Codemagic",
+    "status": "draft",
+    "website": "https://codemagic.io"
+  },
+  {
     "_id": "coder",
     "capabilities": {
       "api_token_controls": {
@@ -11454,6 +11518,84 @@
     "website": "https://notion.so"
   },
   {
+    "_id": "octopus-deploy",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "API keys can have an expiry date, and from 2025.4 the server enforces a configurable maximum expiry (366 days by default).",
+        "source": "https://octopus.com/docs/api/authentication/create-an-api-key",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Every create, edit and delete action is logged with who did it. Streaming to a SIEM is for enterprise-tier customers.",
+        "retention": "90 days by default, configurable up to 365 days on Cloud; older entries are archived as downloadable files",
+        "source": "https://octopus.com/docs/security/users-and-teams/auditing",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Admins can create custom user roles with any combination of permissions and assign them to teams.",
+        "source": "https://octopus.com/docs/security/users-and-teams/user-roles",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "On Octopus Cloud, Entra ID and Okta groups can be added as members of Octopus teams; this doesn't work through Octopus ID.",
+        "source": "https://octopus.com/docs/security/authentication/auth-provider-compatibility",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "OpenID Connect providers create a user automatically the first time someone signs in; this can be turned off.",
+        "source": "https://octopus.com/docs/security/authentication/auto-user-creation",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "notes": "The docs recommend using an identity provider that supports MFA; Octopus has no setting of its own to require it.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "SCIM 2 user and group provisioning works only with Microsoft Entra ID and needs a license that includes SCIM, such as Enterprise.",
+        "plan": "Enterprise",
+        "source": "https://octopus.com/docs/security/authentication/scim",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "Admins can set the session timeout and maximum session duration, and can revoke a user's sessions.",
+        "source": "https://octopus.com/docs/security/users-and-teams/timeouts-and-invalidation",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Octopus Cloud supports Microsoft Entra ID, Okta, Google Workspace and generic OpenID Connect providers; no plan is named.",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://octopus.com/docs/security/authentication/auth-provider-compatibility",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "notes": "The username and password provider can be disabled, but the docs don't say whether Octopus ID sign-in can be turned off on Octopus Cloud.",
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "Octopus Deploy is a release and deployment automation platform, available as Octopus Cloud or self-hosted Octopus Server.",
+    "name": "Octopus Deploy",
+    "status": "draft",
+    "website": "https://octopus.com"
+  },
+  {
     "_id": "okta",
     "capabilities": {
       "api_token_controls": {
@@ -13875,6 +14017,92 @@
     "name": "SAP SuccessFactors",
     "status": "draft",
     "website": "https://www.sap.com/products/hcm.html"
+  },
+  {
+    "_id": "semaphore",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Users can reset their own API token and service account tokens can be regenerated; no admin policy over user tokens is described.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Audit events are viewable in organization settings, exportable as CSV, and can be streamed to an S3-compatible bucket.",
+        "plan": "The Plan",
+        "source": "https://docs.semaphore.io/using-semaphore/organizations#audit-log",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "You can create your own roles in addition to the pre-defined ones.",
+        "plan": "The Plan",
+        "source": "https://docs.semaphore.io/using-semaphore/rbac#custom-roles",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "Groups pushed from Okta become Semaphore groups, and each group can have one role assigned.",
+        "plan": "The Plan",
+        "source": "https://docs.semaphore.io/using-semaphore/rbac#org-groups",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "jit_provisioning": {
+        "notes": "Users are provisioned through SCIM; the docs don't mention creating accounts at first SSO sign-in.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "Okta provisioning can create users, update user attributes, deactivate users and push groups.",
+        "plan": "The Plan",
+        "source": "https://docs.semaphore.io/using-semaphore/okta",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "Admins can set the Okta SSO session expiration in days; the default is 14 and the maximum is 30.",
+        "plan": "The Plan",
+        "source": "https://docs.semaphore.io/using-semaphore/okta",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Okta SSO over SAML 2.0 is documented; other identity providers such as JumpCloud need a request to support.",
+        "plan": "The Plan",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.semaphore.io/using-semaphore/okta",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Once enforced, Okta is the only login method allowed for all users in the organization.",
+        "plan": "The Plan",
+        "source": "https://docs.semaphore.io/using-semaphore/okta",
+        "support": "supported",
+        "tier": "paid"
+      }
+    },
+    "category": "development",
+    "description": "Semaphore is a CI/CD platform for building, testing and deploying code.",
+    "name": "Semaphore",
+    "status": "draft",
+    "website": "https://semaphore.io"
   },
   {
     "_id": "semgrep",
