@@ -1,0 +1,59 @@
+name: "GrowthBook"
+category: "development"
+website: "https://www.growthbook.io"
+description: "GrowthBook is an open-source feature flagging and A/B testing platform, available as GrowthBook Cloud or self-hosted."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["OIDC"]
+    notes: "Enterprise SSO uses OpenID Connect, not SAML. On GrowthBook Cloud your account rep sets it up from the client ID, secret and email domain you send them."
+    source: "https://docs.growthbook.io/sso"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "The SSO doc doesn't say whether password login can be turned off for SSO users."
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Needs SSO turned on. Only Okta and Azure AD / Entra ID are supported, covering user provisioning, deprovisioning and Group Push."
+    source: "https://docs.growthbook.io/integrations/scim"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Logs every action under Settings > Log. Users can't edit it, and you can export it."
+    source: "https://docs.growthbook.io/account/audit-logs"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+    notes: "Users with a verified email on the owner's domain can ask to join, but there is no domain ownership check."
+  custom_roles:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Only Enterprise has custom roles. Pro gets full management of the built-in roles."
+    source: "https://docs.growthbook.io/account/user-permissions"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "partial"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM Group Push syncs IdP groups into GrowthBook Teams. New Teams get the org default role, so you set their permissions in GrowthBook."
+    source: "https://docs.growthbook.io/integrations/scim"
+    checked: "2026-09-27"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"

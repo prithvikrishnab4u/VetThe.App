@@ -5645,6 +5645,101 @@
     "website": "https://hubspot.com"
   },
   {
+    "_id": "infisical",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Service tokens can be scoped and given an expiry, but no admin controls over tokens users create are described.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Audit logs are on the Pro, Advanced, and Enterprise plans and can be viewed in the app or exported through the API.",
+        "plan": "Pro",
+        "retention": "Varies by plan",
+        "source": "https://infisical.com/docs/documentation/platform/audit-logs",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Custom organization and project roles are on the Enterprise plan; the built-in roles are on every plan.",
+        "plan": "Enterprise",
+        "source": "https://infisical.com/docs/documentation/platform/access-controls/role-based-access-controls",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "domain_verification": {
+        "checked": "2026-09-27",
+        "notes": "Domains are verified with a DNS TXT record and then linked only to your organization; this is on the Pro tier of Infisical Cloud.",
+        "plan": "Pro",
+        "source": "https://infisical.com/docs/documentation/platform/email-domain",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "SCIM group names can be mapped to organization roles, but only when users are first provisioned. OIDC groups claims can also sync Infisical group membership at login.",
+        "plan": "Enterprise",
+        "source": "https://infisical.com/docs/documentation/platform/scim/group-mappings",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "Infisical creates a new user for anyone who comes in through an external identity provider; they verify their email on first login unless SSO is enforced.",
+        "source": "https://infisical.com/docs/documentation/platform/sso/overview",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "The organization's Security settings let admins enforce MFA. Users can use email codes or an authenticator app.",
+        "source": "https://infisical.com/docs/documentation/platform/organization",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The MFA docs cover email codes and authenticator apps; security keys and passkeys aren't mentioned.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "SCIM provisions and deprovisions users and groups on the Enterprise tier of Infisical Cloud. It needs SAML or OIDC SSO and a verified email domain.",
+        "plan": "Enterprise",
+        "source": "https://infisical.com/docs/documentation/platform/scim/overview",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "The organization's Security settings let admins set how long a login session lasts.",
+        "source": "https://infisical.com/docs/documentation/platform/organization",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SAML and OIDC SSO are on the Pro tier of Infisical Cloud (self-hosted needs an enterprise license). Google and GitHub sign-in are free.",
+        "plan": "Pro",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://infisical.com/docs/documentation/platform/sso/overview",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Admins can enforce SAML or OIDC SSO so members can only sign in through the identity provider; it needs a verified email domain. Org admins keep a break-glass login.",
+        "source": "https://infisical.com/docs/documentation/platform/sso/overview",
+        "support": "supported"
+      }
+    },
+    "category": "security",
+    "description": "Infisical is an open-source platform for managing secrets, certificates, and privileged access.",
+    "name": "Infisical",
+    "status": "draft",
+    "website": "https://infisical.com"
+  },
+  {
     "_id": "intercom",
     "capabilities": {
       "api_token_controls": {
@@ -9185,6 +9280,105 @@
     "website": "https://www.pluralsight.com"
   },
   {
+    "_id": "posthog",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Personal API keys can be scoped, and org admins and owners can see every key that reaches the org, with scopes and last use. This needs a plan with organization security settings, which the page doesn't name.",
+        "source": "https://posthog.com/docs/api/personal-api-keys",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Activity logs record changes across the organization, including auth settings, and are available on the Scale and Enterprise packages.",
+        "plan": "Scale or Enterprise platform package",
+        "retention": "Depends on platform package",
+        "source": "https://posthog.com/docs/settings/activity-logs",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Roles can be created on any plan, but they only work for access control (project and resource permissions) on Enterprise.",
+        "plan": "Enterprise",
+        "source": "https://posthog.com/docs/settings/access-control",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "domain_verification": {
+        "checked": "2026-09-27",
+        "notes": "Authentication domains are verified with a _posthog-challenge DNS TXT record.",
+        "source": "https://posthog.com/docs/settings/authentication/sso",
+        "support": "supported"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "With SCIM, IdP roles or pushed groups are mapped to PostHog roles by name.",
+        "plan": "Enterprise",
+        "source": "https://posthog.com/docs/settings/authentication/scim",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "Users signing in with an email on a verified domain get an account created automatically.",
+        "plan": "Boost, Scale, or Enterprise platform package",
+        "source": "https://posthog.com/docs/settings/authentication/sso",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Org admins and owners can change 2FA enforcement in the authentication settings. The page doesn't name a plan for it.",
+        "source": "https://posthog.com/docs/settings/access-control",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-27",
+        "notes": "Users can add passkeys and use them for 2FA. The page doesn't name a plan for it.",
+        "source": "https://posthog.com/docs/settings/account-settings",
+        "support": "supported"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "SCIM creates users with their mapped roles, updates matching users, and deactivates users removed in the IdP.",
+        "plan": "Enterprise",
+        "source": "https://posthog.com/docs/settings/authentication/scim",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "notes": "The docs list events that sign users out of other sessions but no admin session settings.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SAML and OIDC need a platform package that includes them (Scale or Enterprise). Google, GitHub, and GitLab social login are also available.",
+        "plan": "Scale or Enterprise platform package",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://posthog.com/docs/settings/authentication/saml",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "SSO enforcement for a verified domain blocks password logins and password resets for those users, owners included.",
+        "plan": "Boost, Scale, or Enterprise platform package",
+        "source": "https://posthog.com/docs/settings/authentication/sso",
+        "support": "supported",
+        "tier": "add_on"
+      }
+    },
+    "category": "development",
+    "description": "PostHog is a product analytics platform with session replay, feature flags, experiments, and surveys.",
+    "name": "PostHog",
+    "status": "draft",
+    "website": "https://posthog.com"
+  },
+  {
     "_id": "postman",
     "capabilities": {
       "api_token_controls": {
@@ -10950,6 +11144,86 @@
     "name": "Snyk",
     "status": "published",
     "website": "https://snyk.io"
+  },
+  {
+    "_id": "sourcegraph",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "auth.accessTokens controls who can create access tokens (all users, site admins only, or no one), whether they must expire, and which expiry periods are offered.",
+        "source": "https://sourcegraph.com/docs/admin/config/site-config",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "On Sourcegraph Cloud, audit logs are available by request and kept for 30 days. Longer retention and LogPush to GCS or S3 cost extra.",
+        "retention": "30 days",
+        "source": "https://sourcegraph.com/docs/cloud",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Site admins can create roles with chosen permissions. Only some areas are covered so far, such as Batch Changes, service accounts, and MCP server access.",
+        "plan": "Enterprise",
+        "source": "https://sourcegraph.com/docs/admin/access-control",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "notes": "SAML groups can restrict sign-in, but the docs don't describe mapping them to roles.",
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "With allowSignup on (the default for SAML), users get an account the first time they sign in. SAML groups can limit who is allowed to sign up.",
+        "source": "https://sourcegraph.com/docs/admin/auth/saml",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "Beta. SCIM 2.0 provisions and deprovisions users only, and has been tested with Okta and Microsoft Entra ID.",
+        "source": "https://sourcegraph.com/docs/admin/scim",
+        "support": "partial"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "auth.sessionExpiry sets the maximum session length. The default is 90 days and the minimum is 1 hour.",
+        "source": "https://sourcegraph.com/docs/admin/config/site-config",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "User authentication providers are listed as supported on Enterprise plans. SAML, OpenID Connect, code-host OAuth, and HTTP auth proxies are available.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://sourcegraph.com/docs/admin/auth",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Admins choose which sign-in methods are enabled in auth.providers. Using just one provider is described as the usual setup, and builtin password sign-in can be left out.",
+        "source": "https://sourcegraph.com/docs/admin/auth",
+        "support": "supported"
+      }
+    },
+    "category": "development",
+    "description": "Code search and code intelligence platform, offered as a single-tenant Sourcegraph Cloud instance or self-hosted.",
+    "name": "Sourcegraph",
+    "status": "draft",
+    "website": "https://sourcegraph.com"
   },
   {
     "_id": "splunk",
@@ -13226,5 +13500,83 @@
     "name": "Zscaler",
     "status": "published",
     "website": "https://www.zscaler.com"
+  },
+  {
+    "_id": "zulip",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Every user has an API key they can change themselves. The help center doesn't describe admin controls over those keys.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "notes": "The help center has no page on an admin-facing audit log.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "There are five built-in roles, and extra permissions go through custom user groups. The help center doesn't mention custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "notes": "Admins can limit sign-ups to certain email domains, but the help center describes no domain ownership check.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "IdP groups sync into Zulip user groups through SAML (Okta) or SCIM, and those groups can carry permissions. The org role comes from a separate SCIM attribute, not from a group.",
+        "plan": "Zulip Cloud Plus",
+        "source": "https://zulip.com/help/saml-authentication",
+        "support": "partial",
+        "tier": "paid"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "The Zulip Cloud help center has no page on two-factor authentication.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "Creates, updates and deactivates users. Okta can also push groups; the Entra ID setup says group provisioning isn't supported. Zulip support issues the SCIM token.",
+        "plan": "Zulip Cloud Plus",
+        "source": "https://zulip.com/help/scim",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "Deactivating a user logs them out of every session right away. The help center doesn't cover setting session length.",
+        "source": "https://zulip.com/help/deactivate-or-reactivate-a-user",
+        "support": "partial"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Zulip Cloud needs the Plus plan for SAML and OpenID Connect; you then ask support to turn them on. Entra ID OAuth2 login also works on Cloud Standard.",
+        "plan": "Zulip Cloud Plus",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://zulip.com/help/configure-authentication-methods",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Owners choose which login methods are on, so they can switch off email/password and social logins and leave only SAML.",
+        "plan": "Zulip Cloud Plus",
+        "source": "https://zulip.com/help/configure-authentication-methods",
+        "support": "supported",
+        "tier": "paid"
+      }
+    },
+    "category": "collaboration",
+    "description": "Zulip Cloud is the hosted version of Zulip, an open-source team chat app that organizes conversations into topics.",
+    "name": "Zulip Cloud",
+    "status": "draft",
+    "website": "https://zulip.com"
   }
 ]
