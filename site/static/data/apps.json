@@ -1403,6 +1403,84 @@
     "website": "https://auth0.com"
   },
   {
+    "_id": "axiom",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "API tokens can be limited to certain datasets and actions, given an expiry date, regenerated, deleted and capped on query cost. Personal access tokens carry the user's full permissions.",
+        "source": "https://axiom.co/docs/reference/tokens",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Every organization gets the audit log, and by default it can be queried for the previous 30 days. Full access is sold as an add-on on the Axiom Cloud plan, and only the Owner role can view the log.",
+        "retention": "30 days by default; full access as an add-on",
+        "source": "https://axiom.co/docs/reference/audit-log",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "With the RBAC add-on, admins can create custom roles under Settings > Roles and set create, read, update and delete permissions for each capability.",
+        "plan": "Axiom Cloud (RBAC add-on)",
+        "source": "https://axiom.co/docs/reference/settings",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "notes": "Axiom groups assign roles to users, but the docs don't say that identity provider groups can be mapped to roles.",
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Axiom doesn't offer 2FA natively. With SAML SSO you can turn on and enforce 2FA through your identity provider.",
+        "source": "https://axiom.co/docs/reference/settings",
+        "support": "not_supported"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "Axiom has no native 2FA, and the docs don't mention passkeys or security keys.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "Directory Sync, run through WorkOS, is an add-on on the Axiom Cloud plan; the SAML SSO section says access grants stay up to date through SCIM.",
+        "plan": "Axiom Cloud (Directory Sync add-on)",
+        "source": "https://axiom.co/docs/reference/settings",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "session_controls": {
+        "notes": "Users can view and end their own active sessions. The docs mention no admin session timeout settings, apart from a 24-hour timeout that applies once a BAA is signed.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SAML SSO, run through WorkOS, is an add-on on the Axiom Cloud plan and supports both IdP- and SP-initiated flows.",
+        "plan": "Axiom Cloud (SAML SSO add-on)",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://axiom.co/docs/reference/settings",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "sso_enforcement": {
+        "notes": "The docs don't say whether SSO can be required for all users.",
+        "support": "undocumented"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Axiom is a cloud platform for storing, querying and analysing logs, traces and other event data.",
+    "name": "Axiom",
+    "status": "draft",
+    "website": "https://axiom.co"
+  },
+  {
     "_id": "azure-devops",
     "capabilities": {
       "api_token_controls": {
@@ -2886,6 +2964,62 @@
     "website": "https://claude.com/enterprise"
   },
   {
+    "_id": "clerk",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Admin Logs record workspace admin actions made through the Dashboard, Backend API or Platform API; they're available on the Business and Enterprise plans only.",
+        "plan": "Business",
+        "retention": "30 days on Business; custom on Enterprise",
+        "source": "https://clerk.com/docs/guides/dashboard/logs/overview",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "custom_roles": {
+        "notes": "The team access docs list five fixed workspace Roles (Owner, Admin, Developer, Support, Viewer) and don't mention custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "The docs don't describe requiring MFA for Clerk Dashboard team members.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "The docs don't describe SCIM provisioning of Clerk Dashboard team members.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "notes": "Clerk's enterprise SSO docs cover sign-in for your app's users; the docs don't describe SSO for Clerk Dashboard team members.",
+        "support": "undocumented"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Clerk is an authentication and user management platform for developers.",
+    "name": "Clerk",
+    "status": "draft",
+    "website": "https://clerk.com"
+  },
+  {
     "_id": "clickup",
     "capabilities": {
       "api_token_controls": {
@@ -3053,6 +3187,80 @@
     "name": "Cloudflare",
     "status": "draft",
     "website": "https://www.cloudflare.com"
+  },
+  {
+    "_id": "cockroachdb-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "API keys belong to service accounts that admins create on the Access Management page; admins can list each account's API keys, limit access through its roles, and delete keys.",
+        "source": "https://www.cockroachlabs.com/docs/cockroachcloud/managing-access",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Organization Admins can view organization audit logs (cluster creation, members added or removed, and more) in the Console, and export them through the Cloud API.",
+        "source": "https://www.cockroachlabs.com/docs/cockroachcloud/organization-audit-logs-in-cloud-console",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "notes": "The authorization docs only list fixed built-in roles such as Organization Admin, Cluster Admin and Cluster Developer.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "notes": "Admins can limit an SSO method to allowed email domains, but that is an allowlist; the docs don't describe verifying a domain or claiming accounts on it.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "With SCIM Group Push (Okta), admins can assign roles to a pushed group and its provisioned members get those roles automatically.",
+        "source": "https://www.cockroachlabs.com/docs/cockroachcloud/configure-scim-provisioning",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "Autoprovisioning can be turned on per SSO method under Cloud Organization SSO; new users get an account with the Organization Member role on first sign-in.",
+        "source": "https://www.cockroachlabs.com/docs/cockroachcloud/cloud-org-sso",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "notes": "The docs only recommend turning on MFA at your SSO provider; they don't describe an in-app setting to require MFA.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "SCIM creates, updates and deactivates Cloud organization users and can push groups. It needs Cloud Organization SSO and a service account with the Organization Admin role.",
+        "source": "https://www.cockroachlabs.com/docs/cockroachcloud/configure-scim-provisioning",
+        "support": "supported"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Cloud Organization SSO lets admins add custom SAML or OIDC authentication methods for IdPs like Okta, on top of the default GitHub, Google and Microsoft sign-in. The docs don't name a plan.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://www.cockroachlabs.com/docs/cockroachcloud/cloud-org-sso",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "With Cloud Organization SSO, admins can enable only SSO methods and disable password authentication to require SSO. Basic SSO can't enforce this.",
+        "source": "https://www.cockroachlabs.com/docs/cockroachcloud/configure-cloud-org-sso",
+        "support": "supported"
+      }
+    },
+    "category": "infrastructure",
+    "description": "CockroachDB Cloud is a managed distributed SQL database service from Cockroach Labs.",
+    "name": "CockroachDB Cloud",
+    "status": "draft",
+    "website": "https://www.cockroachlabs.com"
   },
   {
     "_id": "coda",
@@ -6200,6 +6408,103 @@
     "website": "https://hubspot.com"
   },
   {
+    "_id": "hugging-face",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Admins can list all org tokens and require fine-grained tokens or admin approval. Revoking tokens needs Enterprise or higher.",
+        "plan": "Team",
+        "source": "https://huggingface.co/docs/hub/enterprise-tokens-management",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Admins can review member actions in org settings and export them as JSON or via the API. No retention period is stated.",
+        "plan": "Team",
+        "source": "https://huggingface.co/docs/hub/audit-logs",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "custom_roles": {
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "notes": "Docs mention orgs with a verified domain and an org email domain setting, but don't describe how a domain is verified.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "Role Mapping assigns org roles from an IdP attribute such as groups; Resource Group Mapping works the same way for resource groups.",
+        "plan": "Team",
+        "source": "https://huggingface.co/docs/hub/security-sso-user-management",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "With Managed SSO, an account is created automatically the first time a user signs in through the IdP.",
+        "plan": "Enterprise Plus",
+        "source": "https://huggingface.co/docs/hub/enterprise-advanced-sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Admins can require all org members to enable 2FA.",
+        "plan": "Team",
+        "source": "https://huggingface.co/docs/hub/enterprise-advanced-security",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "2FA docs only cover authenticator apps and recovery codes.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "On Enterprise, SCIM only invites existing Hugging Face users and can't change their profiles; deprovisioning and group push work. Full lifecycle provisioning needs Enterprise Plus.",
+        "plan": "Enterprise",
+        "source": "https://huggingface.co/docs/hub/enterprise-scim",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "Admins set the SSO session length, after which members must re-authenticate with the IdP. Default is 7 days.",
+        "plan": "Team",
+        "source": "https://huggingface.co/docs/hub/security-sso-user-management",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Basic SSO is on Team and Enterprise and works with any SAML or OIDC IdP. Managed SSO, which replaces the Hugging Face login, is on Enterprise Plus.",
+        "plan": "Team",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://huggingface.co/docs/hub/security-sso-basic",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Basic SSO can be enforced for anything under the org namespace, but members still sign in to Hugging Face with their own credentials first. Making the IdP the only login needs Managed SSO on Enterprise Plus.",
+        "plan": "Team",
+        "source": "https://huggingface.co/docs/hub/security-sso-basic",
+        "support": "supported",
+        "tier": "paid"
+      }
+    },
+    "category": "development",
+    "description": "Hub for hosting and sharing machine learning models, datasets and Spaces.",
+    "name": "Hugging Face",
+    "status": "draft",
+    "website": "https://huggingface.co"
+  },
+  {
     "_id": "infisical",
     "capabilities": {
       "api_token_controls": {
@@ -7709,6 +8014,79 @@
     "name": "LinkedIn Sales Navigator",
     "status": "draft",
     "website": "https://business.linkedin.com/sales-solutions/sales-navigator"
+  },
+  {
+    "_id": "logz-io",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Admins can create and delete named API tokens for each account. The docs don't mention scopes or expiry, and Community plans don't include API tokens.",
+        "plan": "Pro or Enterprise",
+        "source": "https://docs.logz.io/docs/user-guide/admin/authentication-tokens/api-tokens/",
+        "support": "partial",
+        "tier": "paid"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Account admins get an Audit trail page listing admin and user actions (logins, user changes, token changes, alerts and more) with user, IP and time, and it can be exported to CSV.",
+        "source": "https://docs.logz.io/docs/user-guide/admin/logzio-accounts/audit-trail/",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "notes": "The docs describe fixed Read Only, User, Expert User, SIEM and Admin roles, and don't mention custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "You add SSO groups under Settings > Manage Users > Groups and give each one Read only, User, Expert User, Admin or per-user permissions. Once a group exists, only its members can log in.",
+        "source": "https://docs.logz.io/docs/user-guide/admin/sso/single-sign-on/",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "Once SSO is set up, users with your email domain can sign in through your identity provider without being added in advance. New users get User access on first login.",
+        "source": "https://docs.logz.io/docs/user-guide/admin/sso/single-sign-on/",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Account admins can turn on Two-Factor Authentication in Account settings, and every user in the account then has to set it up at their next login.",
+        "source": "https://docs.logz.io/docs/user-guide/admin/users/multi-factor-authentication/",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The only 2FA method documented is Google Authenticator codes.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "The SSO docs don't mention SCIM or directory provisioning.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SAML SSO works with providers such as Okta, Azure, Google Workspace, OneLogin, AWS and Auth0. You start setup by emailing Logz.io support. The docs don't name a plan.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.logz.io/docs/user-guide/admin/sso/single-sign-on/",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "notes": "With SSO on, the identity provider handles authentication, but the docs don't say whether password login is turned off.",
+        "support": "undocumented"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Logz.io is a cloud observability platform for logs, metrics, traces and security analytics.",
+    "name": "Logz.io",
+    "status": "draft",
+    "website": "https://logz.io"
   },
   {
     "_id": "looker",
@@ -9415,6 +9793,83 @@
     "website": "https://neon.com"
   },
   {
+    "_id": "netbird",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Personal access tokens have an expiration set at creation, but no admin controls over them are described.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Audit events logging is on by default for every NetBird network and tracks changes such as peers, users, groups, settings and access policies. Traffic event logging is a separate Business-plan feature.",
+        "source": "https://docs.netbird.io/manage/activity",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "notes": "The docs list six fixed roles (Owner, Admin, Network Admin, Billing Admin, Auditor, User) and don't mention custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "notes": "NetBird groups users by private email domain, but the docs don't describe a domain verification step.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "Groups synced from the IdP only set group membership and don't change a user's NetBird role.",
+        "source": "https://docs.netbird.io/manage/team/user-roles",
+        "support": "not_supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "Users who sign up with an email on a private domain are added automatically to the existing organization for that domain.",
+        "source": "https://docs.netbird.io/manage/team/add-users-to-your-network",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Admins can turn on MFA for all users who sign in with email and password under Settings > Authentication (cloud only). The page says it's available for all users, but the plans page lists MFA under Team, so the plan isn't clear.",
+        "source": "https://docs.netbird.io/manage/settings/multi-factor-authentication",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "IdP-Sync is available in NetBird Cloud on the Team plan and above. Entra ID and Okta can sync users and groups over SCIM, and Okta can create, update and deactivate users.",
+        "plan": "Team",
+        "source": "https://docs.netbird.io/manage/team/idp-sync",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "Admins can set how long peer sessions last (1 hour to 180 days, default 24 hours) and require login again after a disconnect. This applies to peers added through SSO login.",
+        "source": "https://docs.netbird.io/manage/settings/enforce-periodic-user-authentication",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "The Free plan supports sign-in with Google Workspace, Microsoft Entra ID and social logins. Other OIDC-compliant identity providers need the Team plan or higher.",
+        "plan": "Free (Google Workspace and Microsoft); Team for other OIDC IdPs",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://docs.netbird.io/manage/team/single-sign-on",
+        "support": "supported",
+        "tier": "free"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "NetBird is a WireGuard-based overlay network for connecting devices and services with zero-trust access controls.",
+    "name": "NetBird",
+    "status": "draft",
+    "website": "https://netbird.io"
+  },
+  {
     "_id": "netskope",
     "capabilities": {
       "api_token_controls": {
@@ -10462,6 +10917,64 @@
     "website": "https://www.pluralsight.com"
   },
   {
+    "_id": "pomerium-zero",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Admins can create service accounts with an optional expiration date, but controls over user-created API tokens aren't described.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Pomerium outputs authorization logs for each request, which you read from your own cluster's logs. The docs don't describe an admin activity log in the Zero console.",
+        "source": "https://www.pomerium.com/docs/capabilities/audit-logs",
+        "support": "partial"
+      },
+      "custom_roles": {
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "Directory Sync is documented as a Pomerium Enterprise feature; the docs don't mention SCIM or directory sync for Zero.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "notes": "With the hosted authenticate service, users must sign in again after about an hour; no admin setting is described.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "You can replace Pomerium's hosted identity provider with your own OAuth2/OIDC provider (such as Okta, Entra ID or Google) to authenticate users who access routes. No plan is named.",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://www.pomerium.com/docs/get-started/fundamentals/zero/zero-custom-idp",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Pomerium Zero is the hosted control plane for Pomerium, an identity-aware proxy that secures access to internal apps and services.",
+    "name": "Pomerium Zero",
+    "status": "draft",
+    "website": "https://www.pomerium.com"
+  },
+  {
     "_id": "posthog",
     "capabilities": {
       "api_token_controls": {
@@ -11234,6 +11747,86 @@
     "name": "Rapid7",
     "status": "draft",
     "website": "https://www.rapid7.com"
+  },
+  {
+    "_id": "redis-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Account owners create and delete API user keys tied to a user with a given role, and can set a CIDR allow list on each key.",
+        "source": "https://redis.io/docs/latest/operate/rc/api/get-started/manage-api-keys/",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "The system log records actions on the account, users, API keys, subscriptions, databases and more. You can view, search and export it to CSV in the console, or query it through the REST API.",
+        "source": "https://redis.io/docs/latest/operate/rc/logs-reports/system-logs/",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Console team roles are fixed (Owner, Billing Admin, Manager, Viewer and so on). You can create custom roles only for database data access, built from Redis ACL rules.",
+        "source": "https://redis.io/docs/latest/operate/rc/security/access-control/data-access-control/create-roles/",
+        "support": "partial"
+      },
+      "domain_verification": {
+        "checked": "2026-09-27",
+        "notes": "Before setting up SAML SSO, you verify each domain by adding a TXT DNS record; users on unverified domains can't sign in with SAML SSO.",
+        "source": "https://redis.io/docs/latest/operate/rc/security/access-control/saml-sso/",
+        "support": "supported"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "Roles come from a per-user redisAccountMapping SAML attribute. The docs say you can fill it automatically with IdP group rules, but there is no built-in group-to-role mapping.",
+        "source": "https://redis.io/docs/latest/operate/rc/security/access-control/saml-sso/",
+        "support": "partial"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "Redis Cloud creates a user account automatically the first time a new user signs in with SAML SSO.",
+        "source": "https://redis.io/docs/latest/operate/rc/security/access-control/saml-sso/",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Account owners can enforce MFA for all users in the account. It isn't enforced for SAML SSO users, since the IdP handles MFA for them.",
+        "source": "https://redis.io/docs/latest/operate/rc/security/access-control/multi-factor-authentication/",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The MFA docs only cover text message codes and authenticator (TOTP) apps.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "The docs say you can't use SCIM to provision Redis Cloud users; JIT provisioning is offered instead.",
+        "source": "https://redis.io/docs/latest/operate/rc/security/access-control/saml-sso/",
+        "support": "not_supported"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Redis Cloud supports IdP-initiated and SP-initiated SAML SSO with any SAML identity provider. The docs don't name a plan.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://redis.io/docs/latest/operate/rc/security/access-control/saml-sso/",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "When SAML SSO is activated, all existing users except the one who set it up are converted to SAML users and must sign in with SSO. Local bypass users can be added for IdP outages.",
+        "source": "https://redis.io/docs/latest/operate/rc/security/access-control/saml-sso/",
+        "support": "supported"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Redis Cloud is Redis's fully managed database-as-a-service.",
+    "name": "Redis Cloud",
+    "status": "draft",
+    "website": "https://redis.io"
   },
   {
     "_id": "remote",
@@ -13575,6 +14168,55 @@
     "website": "https://www.tooljet.ai"
   },
   {
+    "_id": "travis-ci",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Users get a personal API token from their account settings page; the docs don't describe any admin view or revocation of other users' tokens.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "Sign-in goes through the code host account, and the docs don't describe any Travis CI setting to require MFA.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "notes": "The docs describe signing in with a GitHub, Bitbucket, GitLab or Assembla account only. SAML is mentioned only for the self-hosted Travis CI Enterprise, through GitHub Enterprise.",
+        "support": "undocumented"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "Travis CI is a hosted continuous integration and delivery service.",
+    "name": "Travis CI",
+    "status": "draft",
+    "website": "https://www.travis-ci.com"
+  },
+  {
     "_id": "trello",
     "capabilities": {
       "api_token_controls": {
@@ -14319,6 +14961,65 @@
     "name": "Vercel",
     "status": "draft",
     "website": "https://vercel.com"
+  },
+  {
+    "_id": "weaviate-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Cluster API keys are listed in the console, where you can assign each one a role, rotate it or delete it. The docs say this works on free and Shared Cloud clusters alike.",
+        "plan": "Free",
+        "source": "https://docs.weaviate.io/cloud/manage-clusters/authentication",
+        "support": "supported",
+        "tier": "free"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "You can create custom roles with specific permissions on collections, tenants and operations, but these apply to cluster API keys. Console members get one of four fixed roles: Owner, Admin, Editor or Viewer.",
+        "plan": "Free",
+        "source": "https://docs.weaviate.io/cloud/manage-clusters/authorization",
+        "support": "partial",
+        "tier": "free"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "The docs say MFA is off by default and each user turns it on in their own account settings; they don't describe a way for admins to require it.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The MFA docs only describe authenticator-app one-time codes, not security keys or passkeys.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "notes": "The Weaviate Cloud docs cover email and password accounts but don't mention SAML or OIDC sign-in to the console.",
+        "support": "undocumented"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Weaviate Cloud is a managed hosting service for the Weaviate vector database.",
+    "name": "Weaviate Cloud",
+    "status": "draft",
+    "website": "https://weaviate.io"
   },
   {
     "_id": "webflow",
