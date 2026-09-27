@@ -988,6 +988,62 @@
     "website": "https://www.appsmith.com"
   },
   {
+    "_id": "appwrite-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Activity tab on tables, rows and users shows user, event, location, IP and date.",
+        "plan": "Free",
+        "retention": "1 hour (Free), 7 days (Pro)",
+        "source": "https://appwrite.io/docs/advanced/security/audit-logs",
+        "support": "supported",
+        "tier": "free"
+      },
+      "custom_roles": {
+        "notes": "Docs list built-in Console roles (Owner, Developer, Editor, Analyst, Billing) and say custom roles are coming soon for Scale and Enterprise.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "Console MFA is turned on by each user; the docs don't mention an org admin requiring it.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "Console MFA docs list TOTP authenticator apps only and say more factors will come later.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "notes": "The pricing comparison table lists Console SSO as coming soon on Scale and Enterprise; no docs page describes it.",
+        "support": "undocumented"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "Hosted backend platform with auth, databases, storage, functions and sites.",
+    "name": "Appwrite Cloud",
+    "status": "draft",
+    "website": "https://appwrite.io"
+  },
+  {
     "_id": "asana",
     "capabilities": {
       "api_token_controls": {
@@ -4419,6 +4475,57 @@
     "name": "Deel",
     "status": "draft",
     "website": "https://www.deel.com"
+  },
+  {
+    "_id": "deno-deploy",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Organization access tokens exist, but the docs don't describe any controls over them.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Docs say all organization members currently have owner permissions.",
+        "source": "https://docs.deno.com/deploy/reference/organizations/",
+        "support": "not_supported"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "notes": "Docs only mention signing in with GitHub or Google accounts.",
+        "support": "undocumented"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Serverless hosting platform for JavaScript and TypeScript apps.",
+    "name": "Deno Deploy",
+    "status": "draft",
+    "website": "https://deno.com/deploy"
   },
   {
     "_id": "directus-cloud",
