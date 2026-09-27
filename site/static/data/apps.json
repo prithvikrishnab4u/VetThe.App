@@ -169,7 +169,7 @@
         "notes": "Agreement Activity list/Audit Report and the Settings Activity Audit report (tracking account/group setting changes) are available on all Acrobat Sign accounts, viewable by Account/Group Admins.",
         "source": "https://helpx.adobe.com/sign/web/administers/admin-reports/settings-activity-audit.html",
         "support": "supported",
-        "tier": "free"
+        "tier": "paid"
       },
       "custom_roles": {
         "support": "not_researched"
@@ -388,7 +388,7 @@
         "plan": "Essentials",
         "source": "https://support.aircall.io/hc/en-gb/articles/16403056597149-Enabling-Two-Factor-Authentication",
         "support": "supported",
-        "tier": "free"
+        "tier": "paid"
       },
       "phishing_resistant_mfa": {
         "notes": "No mention of passkeys, WebAuthn, FIDO2 or hardware security keys in Aircall's security/pricing/2FA documentation.",
@@ -836,7 +836,7 @@
         "plan": "Foundations",
         "source": "https://www.ashbyhq.com/pricing",
         "support": "supported",
-        "tier": "free"
+        "tier": "paid"
       },
       "custom_roles": {
         "support": "not_researched"
@@ -2928,7 +2928,7 @@
         ],
         "source": "https://support.cultureamp.com/en/articles/7048521-single-sign-on",
         "support": "supported",
-        "tier": "free"
+        "tier": "paid"
       },
       "sso_enforcement": {
         "checked": "2026-09-22",
@@ -2936,7 +2936,7 @@
         "plan": "All Culture Amp subscriptions",
         "source": "https://support.cultureamp.com/en/articles/7048521-single-sign-on",
         "support": "supported",
-        "tier": "free"
+        "tier": "paid"
       }
     },
     "category": "hr",
@@ -4621,12 +4621,8 @@
         "tier": "paid"
       },
       "scim": {
-        "checked": "2026-09-14",
-        "notes": "Identity providers such as Microsoft Entra create, update and suspend users and sync groups through Google's Directory API, not a SCIM endpoint",
-        "plan": "Business Starter",
-        "source": "https://learn.microsoft.com/en-us/entra/identity/saas-apps/g-suite-provisioning-tutorial",
-        "support": "partial",
-        "tier": "paid"
+        "notes": "Provisioning runs through Google's Directory API, not a SCIM endpoint. The only source found was an Entra tutorial, which doesn't count; needs a Google-owned page.",
+        "support": "undocumented"
       },
       "session_controls": {
         "checked": "2026-09-14",
@@ -6966,7 +6962,7 @@
         "retention": "Forever (default); configurable up to 24,855 days",
         "source": "https://learn.microsoft.com/en-us/power-platform/admin/manage-dataverse-auditing",
         "support": "supported",
-        "tier": "free"
+        "tier": "paid"
       },
       "custom_roles": {
         "support": "not_researched"
@@ -6997,7 +6993,7 @@
         "notes": "Microsoft Entra ID supports FIDO2 security keys, Windows Hello for Business, and passkeys as phishing-resistant sign-in methods for the tenant Dynamics 365 users sign in through, at no extra licensing cost.",
         "source": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-passkeys-fido2",
         "support": "supported",
-        "tier": "free"
+        "tier": "paid"
       },
       "scim": {
         "notes": "User access is granted via Microsoft Entra ID/Microsoft 365 license and security-role assignment rather than a documented SCIM endpoint for Dynamics 365 itself.",
@@ -7015,14 +7011,14 @@
         ],
         "source": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/add-application-portal-setup-sso",
         "support": "supported",
-        "tier": "free"
+        "tier": "paid"
       },
       "sso_enforcement": {
         "checked": "2026-09-22",
         "notes": "Dynamics 365 has no separate local password; all sign-in goes through the organization's Microsoft Entra ID tenant, so SSO is inherently required rather than optional.",
         "source": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/add-application-portal-setup-sso",
         "support": "supported",
-        "tier": "free"
+        "tier": "paid"
       }
     },
     "category": "sales_marketing",
@@ -9472,7 +9468,7 @@
         "retention": "30 days",
         "source": "https://help.salesforce.com/s/articleView?id=sf.mc_overview_audit_trail.htm&language=en_US&type=5",
         "support": "supported",
-        "tier": "free"
+        "tier": "paid"
       },
       "custom_roles": {
         "support": "not_researched"
@@ -9493,14 +9489,14 @@
         "notes": "MFA is mandatory for all non-SSO users and cannot be turned off; part of the standard login experience in all editions.",
         "source": "https://help.salesforce.com/s/articleView?id=sf.mc_overview_mfa.htm&language=en_US&type=5",
         "support": "supported",
-        "tier": "free"
+        "tier": "paid"
       },
       "phishing_resistant_mfa": {
         "checked": "2026-09-22",
         "notes": "Supports WebAuthn/U2F physical security keys (YubiKey, Titan) and platform authenticators (Touch ID, Face ID, Windows Hello) as MFA verification methods.",
         "source": "https://help.salesforce.com/s/articleView?id=sf.mc_overview_mfa.htm&language=en_US&type=5",
         "support": "supported",
-        "tier": "free"
+        "tier": "paid"
       },
       "scim": {
         "notes": "Could not find Marketing Cloud Engagement-specific SCIM documentation; SCIM docs found apply to the core Salesforce platform (Sales/Service Cloud), a separate product.",
@@ -9517,7 +9513,7 @@
         ],
         "source": "https://help.salesforce.com/s/articleView?id=sf.mc_overview_single_sign_on_authentication_via_saml_2.htm&language=en_US&type=5",
         "support": "supported",
-        "tier": "free"
+        "tier": "paid"
       },
       "sso_enforcement": {
         "notes": "Vendor docs describe SAML SSO configuration but do not state whether admins can force all users into SSO / disable password login.",

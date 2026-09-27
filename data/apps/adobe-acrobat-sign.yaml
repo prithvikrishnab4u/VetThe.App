@@ -35,7 +35,7 @@ capabilities:
     notes: "No vendor documentation found describing passkey/WebAuthn/FIDO2 support for Acrobat Sign account login."
   audit_logs:
     support: "supported"
-    tier: "free"
+    tier: "paid"
     notes: "Agreement Activity list/Audit Report and the Settings Activity Audit report (tracking account/group setting changes) are available on all Acrobat Sign accounts, viewable by Account/Group Admins."
     source: "https://helpx.adobe.com/sign/web/administers/admin-reports/settings-activity-audit.html"
     checked: "2026-09-22"

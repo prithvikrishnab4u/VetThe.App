@@ -18,13 +18,17 @@ _Last updated: 2026-09-27_
 
 | | Count |
 |---|---|
-| Verified (has `source` + `checked`) | 854 |
+| Verified (has `source` + `checked`) | 853 |
 | Unverified (a value with no source, carried over from the old dataset) | 0 |
-| Not documented (checked, the vendor says nothing) | 572 |
+| Not documented (checked, the vendor says nothing) | 573 |
 | Not researched | 638 |
 
 ## Done
 
+- [x] **Offline consistency audit** (2026-09-27, no network needed). Checked every file for IdP-sourced values, tiers that contradict the plan name, JIT or group mapping without SSO/SCIM, and future `checked` dates. Fixed:
+  - Google Workspace SCIM cited an Entra tutorial (IdP docs never count). Now `undocumented` until a Google-owned page is found.
+  - `tier: "free"` on 12 values from apps that have no free plan (Aircall, Ashby, Culture Amp, Dynamics 365, Marketing Cloud, Acrobat Sign). Agents had used "free" to mean "all plans at no extra cost". Changed to `paid`, which is the schema's meaning for the cheapest paid plan.
+  - Left for a browser recheck, because the plan structure isn't clear enough to change blind: JetBrains Enforce MFA (`free` with plan "Organization"), Gorgias SSO/Enforce SSO/Enforce MFA (`free`, may have no free plan now), Shopify and ChatGPT Enterprise passkeys (`free` because passkeys are account-level, though neither product has a free tier for the admin side).
 - [x] Data model: 12 IAM capabilities, each with support, minimum tier, plan, notes, source, checked (`data/schema.yaml`)
 - [x] Split `unknown` into `undocumented` and `not_researched`
 - [x] **Core capabilities** (SSO, Enforce SSO, SCIM, Enforce MFA, Passkeys, Audit logs) checked against vendor docs for all 107 apps, including Snyk
