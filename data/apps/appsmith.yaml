@@ -1,0 +1,63 @@
+name: "Appsmith"
+category: "development"
+website: "https://www.appsmith.com"
+description: "Low-code platform for building internal tools, available as Appsmith Cloud or self-hosted."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML", "OIDC"]
+    notes: "SAML and OIDC are marked Enterprise. The docs describe setting them up on self-hosted instances, and SAML needs a high-availability instance."
+    source: "https://docs.appsmith.com/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Google login can be limited to allowed domains, but the docs don't describe turning off form login."
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM 2.0 provisions users and syncs groups. The docs list a self-hosted instance as a prerequisite."
+    source: "https://docs.appsmith.com/advanced-concepts/user-provisioning-group-sync"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "Admins can view audit logs under Admin Settings. No retention period is stated."
+    source: "https://docs.appsmith.com/advanced-concepts/audit-logs"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "Admins can create custom roles with chosen permissions on workspaces, apps, and other resources."
+    source: "https://docs.appsmith.com/advanced-concepts/granular-access-control/reference/custom-roles"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "Roles can be assigned to user groups and members inherit them. Groups can be synced from the IdP over SCIM."
+    source: "https://docs.appsmith.com/advanced-concepts/granular-access-control"
+    checked: "2026-09-27"
+  session_controls:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Admins can set an idle session timeout (1 minute to 30 days) and limit each user to one active session."
+    source: "https://docs.appsmith.com/getting-started/setup/instance-configuration/user-management"
+    checked: "2026-09-27"
+  api_token_controls:
+    support: "undocumented"

@@ -1,0 +1,62 @@
+name: "Sourcegraph"
+category: "development"
+website: "https://sourcegraph.com"
+description: "Code search and code intelligence platform, offered as a single-tenant Sourcegraph Cloud instance or self-hosted."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML", "OIDC"]
+    notes: "User authentication providers are listed as supported on Enterprise plans. SAML, OpenID Connect, code-host OAuth, and HTTP auth proxies are available."
+    source: "https://sourcegraph.com/docs/admin/auth"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    notes: "Admins choose which sign-in methods are enabled in auth.providers. Using just one provider is described as the usual setup, and builtin password sign-in can be left out."
+    source: "https://sourcegraph.com/docs/admin/auth"
+    checked: "2026-09-27"
+  scim:
+    support: "partial"
+    notes: "Beta. SCIM 2.0 provisions and deprovisions users only, and has been tested with Okta and Microsoft Entra ID."
+    source: "https://sourcegraph.com/docs/admin/scim"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    retention: "30 days"
+    notes: "On Sourcegraph Cloud, audit logs are available by request and kept for 30 days. Longer retention and LogPush to GCS or S3 cost extra."
+    source: "https://sourcegraph.com/docs/cloud"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    notes: "With allowSignup on (the default for SAML), users get an account the first time they sign in. SAML groups can limit who is allowed to sign up."
+    source: "https://sourcegraph.com/docs/admin/auth/saml"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Site admins can create roles with chosen permissions. Only some areas are covered so far, such as Batch Changes, service accounts, and MCP server access."
+    source: "https://sourcegraph.com/docs/admin/access-control"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "undocumented"
+    notes: "SAML groups can restrict sign-in, but the docs don't describe mapping them to roles."
+  session_controls:
+    support: "supported"
+    notes: "auth.sessionExpiry sets the maximum session length. The default is 90 days and the minimum is 1 hour."
+    source: "https://sourcegraph.com/docs/admin/config/site-config"
+    checked: "2026-09-27"
+  api_token_controls:
+    support: "supported"
+    notes: "auth.accessTokens controls who can create access tokens (all users, site admins only, or no one), whether they must expire, and which expiry periods are offered."
+    source: "https://sourcegraph.com/docs/admin/config/site-config"
+    checked: "2026-09-27"

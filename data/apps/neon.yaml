@@ -1,0 +1,48 @@
+name: "Neon"
+category: "infrastructure"
+website: "https://neon.com"
+description: "Neon is a serverless Postgres database platform with branching and autoscaling."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "undocumented"
+    notes: "The docs cover email, Google, GitHub and other social logins but say nothing about SAML or OIDC SSO."
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Admins can require 2FA for everyone in the organization from Organization settings. A passkey also counts, and members without either are prompted to set one up."
+    source: "https://neon.com/docs/manage/orgs-manage#require-2fa-for-organization-members"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Users can add a passkey that uses device biometrics or a security key as a second step after email and password."
+    source: "https://neon.com/docs/manage/accounts#passkeys"
+    checked: "2026-09-27"
+  audit_logs:
+    support: "partial"
+    tier: "paid"
+    plan: "Scale"
+    notes: "Console, API and pgAudit logs are kept only for HIPAA projects on the Scale plan, and there's no self-serve access. You have to ask Support for them."
+    source: "https://neon.com/docs/security/hipaa"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "partial"
+    notes: "Admins verify a domain with a DNS TXT record, and new users with that email domain get added to the org as Editors. The docs don't say it lets you take control of existing accounts."
+    source: "https://neon.com/docs/manage/orgs-add-members-by-domain"
+    checked: "2026-09-27"
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs list fixed org roles (Admin, Editor, Viewer, Collaborator) and project permissions, with no custom roles."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"
+    notes: "Admins manage org and project API keys, but the docs don't say admins can see or revoke members' personal keys."

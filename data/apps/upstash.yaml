@@ -1,0 +1,47 @@
+name: "Upstash"
+category: "infrastructure"
+website: "https://upstash.com"
+description: "Upstash provides serverless Redis, vector, message queue and workflow services."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML"]
+    notes: "SAML SSO with your own identity provider is available on request for Enterprise customers."
+    source: "https://upstash.com/docs/redis/overall/enterprise"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "supported"
+    notes: "The healthcare data guide tells you to enforce MFA as a requirement for accessing the organization, and the production checklist says to force MFA for all team members. Neither page names a plan or shows the setting."
+    source: "https://upstash.com/docs/redis/help/managing-healthcare-data"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "free"
+    plan: "Free"
+    retention: "7 days for free databases, 30 days for pay-as-you-go, 1 year for Pro"
+    notes: "Audit logs under Account > Audit Logs show each action, whether it came from the console or an API key, the affected resource and the IP address."
+    source: "https://upstash.com/docs/common/account/auditlogs"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "Teams have fixed roles (Owner, Admin, Dev, Finance), with no custom roles mentioned."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"

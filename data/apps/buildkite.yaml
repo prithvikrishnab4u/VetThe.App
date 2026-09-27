@@ -1,0 +1,77 @@
+name: "Buildkite"
+category: "development"
+website: "https://buildkite.com"
+description: "Buildkite is a CI/CD platform that runs build pipelines on agents you host or that Buildkite hosts."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Pro"
+    protocols: ["SAML"]
+    notes: "SSO is a Pro and Enterprise plan feature. Okta, GitHub, Google Workspace and OneLogin work on Pro; ADFS, Google Workspace SAML, Entra ID and custom SAML need Enterprise."
+    source: "https://buildkite.com/docs/platform/sso"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Pro"
+    notes: "Admins can set SSO to required or optional per user. To require SSO for the whole org, 2FA enforcement has to be turned off."
+    source: "https://buildkite.com/docs/platform/sso"
+    checked: "2026-09-27"
+  scim:
+    support: "partial"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Enterprise only, via Okta or Entra ID. SCIM can create and deactivate users; the real account is made at first SSO login, and there are no attribute updates or group sync."
+    source: "https://buildkite.com/docs/platform/sso/okta"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Admins can turn on Enforce Two-factor authentication under the organization's Security settings."
+    source: "https://buildkite.com/docs/platform/team-management/enforce-2fa"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The 2FA docs only describe authenticator app (TOTP) codes."
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    retention: "Stored indefinitely; 12 months in the UI, older events via GraphQL"
+    notes: "Enterprise plan feature, visible to organization admins. Events are kept indefinitely and older ones can be pulled through the GraphQL API."
+    source: "https://buildkite.com/docs/platform/audit-log"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    tier: "paid"
+    plan: "Pro"
+    notes: "The SSO FAQ says JIT provisioning is supported: users get an account the first time they sign in through SSO."
+    source: "https://buildkite.com/docs/platform/sso"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+    notes: "SSO setup asks for an email domain and a verification address, but the docs don't describe claiming or verifying a domain beyond that."
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs only describe fixed roles: organization admin, team maintainer or member, and pipeline access levels."
+  group_role_mapping:
+    support: "supported"
+    tier: "paid"
+    plan: "Pro"
+    notes: "A SAML teams attribute can put users into teams as member or maintainer, and an admin attribute can make them organization admins."
+    source: "https://buildkite.com/docs/platform/sso/custom-saml"
+    checked: "2026-09-27"
+  session_controls:
+    support: "supported"
+    tier: "paid"
+    plan: "Pro"
+    notes: "SSO session length can be set from 6 hours up to 8,760 hours. Pinning SSO sessions to an IP address is an Enterprise feature."
+    source: "https://buildkite.com/docs/platform/sso"
+    checked: "2026-09-27"
+  api_token_controls:
+    support: "supported"
+    notes: "Admins can use the API Access Audit page to see every token with access to the org (scopes, creation, last use) and remove the org from a token."
+    source: "https://buildkite.com/docs/apis/managing-api-tokens"
+    checked: "2026-09-27"

@@ -359,6 +359,90 @@
     "website": "https://www.adp.com"
   },
   {
+    "_id": "airbyte",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "API access tokens belong to a user's application and expire after 15 minutes, but the docs don't describe admins viewing or revoking other users' applications.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Available in Pro and Enterprise Flex, and only org admins can see it. It logs changes to workspaces, connections, connectors, users, permissions, SSO and SCIM.",
+        "plan": "Pro",
+        "retention": "365 days",
+        "source": "https://docs.airbyte.com/platform/access-management/audit-logs",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "custom_roles": {
+        "notes": "The RBAC page only lists fixed organization and workspace roles such as Reader, Runner, Editor and Admin.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "checked": "2026-09-27",
+        "notes": "SSO setup requires verifying each domain with a DNS TXT record. Users with email addresses on a verified domain must then sign in with SSO.",
+        "plan": "Plus",
+        "source": "https://docs.airbyte.com/platform/access-management/sso-providers/okta",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "Groups and their members come from the identity provider over SCIM, and an org admin gives each group permissions in Airbyte. SCIM itself can't assign roles.",
+        "plan": "Pro",
+        "source": "https://docs.airbyte.com/platform/access-management/user-groups",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "jit_provisioning": {
+        "notes": "The SSO docs don't say whether an account is created on first SSO sign-in without SCIM.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "The security page lists email/password, Google and GitHub sign-in, but doesn't mention MFA.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "Needs the Pro or Enterprise Flex plan and SSO, and Airbyte has to turn SCIM on for you. Okta or Entra ID can create, update and deactivate users and manage groups.",
+        "plan": "Pro",
+        "source": "https://docs.airbyte.com/platform/access-management/scim",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SSO uses OIDC with an identity provider such as Okta or Entra ID. The page marks it for the Plus, Pro and Enterprise Flex plans and says it isn't on Cloud Standard.",
+        "plan": "Plus",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://docs.airbyte.com/platform/access-management/sso",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Once SSO is activated, users with a verified email domain have to sign in through SSO.",
+        "plan": "Plus",
+        "source": "https://docs.airbyte.com/platform/access-management/sso-providers/okta",
+        "support": "supported",
+        "tier": "paid"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Airbyte Cloud is the hosted version of Airbyte, a data integration platform that syncs data from sources into warehouses and other destinations.",
+    "name": "Airbyte Cloud",
+    "status": "draft",
+    "website": "https://airbyte.com"
+  },
+  {
     "_id": "aircall",
     "capabilities": {
       "api_token_controls": {
@@ -744,6 +828,87 @@
     "name": "Apollo.io",
     "status": "draft",
     "website": "https://www.apollo.io"
+  },
+  {
+    "_id": "appsmith",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Admins can view audit logs under Admin Settings. No retention period is stated.",
+        "plan": "Business",
+        "source": "https://docs.appsmith.com/advanced-concepts/audit-logs",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Admins can create custom roles with chosen permissions on workspaces, apps, and other resources.",
+        "plan": "Business",
+        "source": "https://docs.appsmith.com/advanced-concepts/granular-access-control/reference/custom-roles",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "Roles can be assigned to user groups and members inherit them. Groups can be synced from the IdP over SCIM.",
+        "plan": "Business",
+        "source": "https://docs.appsmith.com/advanced-concepts/granular-access-control",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "SCIM 2.0 provisions users and syncs groups. The docs list a self-hosted instance as a prerequisite.",
+        "plan": "Enterprise",
+        "source": "https://docs.appsmith.com/advanced-concepts/user-provisioning-group-sync",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "Admins can set an idle session timeout (1 minute to 30 days) and limit each user to one active session.",
+        "plan": "Enterprise",
+        "source": "https://docs.appsmith.com/getting-started/setup/instance-configuration/user-management",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SAML and OIDC are marked Enterprise. The docs describe setting them up on self-hosted instances, and SAML needs a high-availability instance.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.appsmith.com/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "notes": "Google login can be limited to allowed domains, but the docs don't describe turning off form login.",
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "Low-code platform for building internal tools, available as Appsmith Cloud or self-hosted.",
+    "name": "Appsmith",
+    "status": "draft",
+    "website": "https://www.appsmith.com"
   },
   {
     "_id": "asana",
@@ -2724,6 +2889,95 @@
     "website": "https://clickup.com"
   },
   {
+    "_id": "cloudflare",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "On Enterprise accounts, Super Administrators can turn off API access for the whole account or for specific members. Any API token can also be limited by IP range and given an expiry date.",
+        "plan": "Enterprise",
+        "source": "https://developers.cloudflare.com/fundamentals/api/how-to/control-api-access/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Audit Logs record user and system actions across the API and dashboard and are kept for 18 months. The UI covers the last 90 days, and the API or Logpush reaches the full period. Enterprise customers can use Logpush to keep logs longer.",
+        "retention": "18 months",
+        "source": "https://developers.cloudflare.com/fundamentals/account/account-security/audit-logs/",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "notes": "The docs list predefined roles, which are combined with scopes in policies. They don't describe creating new roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "checked": "2026-09-27",
+        "notes": "To set up dashboard SSO, you verify your email domain with a cloudflare_dashboard_sso DNS TXT record.",
+        "plan": "Free",
+        "source": "https://developers.cloudflare.com/fundamentals/manage-members/dashboard-sso/",
+        "support": "supported",
+        "tier": "free"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "Groups pushed from the IdP over SCIM become User Groups, and admins assign them policies that grant roles.",
+        "plan": "Enterprise",
+        "source": "https://developers.cloudflare.com/fundamentals/account/account-security/scim-setup/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "notes": "The dashboard SSO docs don't say whether accounts are created automatically on first SSO login.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Super Administrators can turn on 2FA Enforcement so all members must set up 2FA. The page doesn't name a plan for it.",
+        "source": "https://developers.cloudflare.com/fundamentals/user-profiles/2fa/",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-27",
+        "notes": "Users can add WebAuthn security keys or built-in authenticators such as Touch ID or Windows Hello as a 2FA method. The page doesn't name a plan for it.",
+        "source": "https://developers.cloudflare.com/fundamentals/user-profiles/2fa/",
+        "support": "supported"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "Dashboard SCIM is for Enterprise customers using Okta, Microsoft Entra, or Authentik. It adds and removes account members and syncs groups. Removing a user from the account needs the IdP to send active: false.",
+        "plan": "Enterprise",
+        "source": "https://developers.cloudflare.com/fundamentals/account/account-security/scim-setup/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "notes": "The docs say dashboard sessions time out after 72 hours of inactivity by default, and users can revoke their own sessions. They don't describe admin session settings.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Dashboard SSO is free on all plans for users with a custom email domain. It uses an identity provider set up in Cloudflare Zero Trust, which needs a Zero Trust organization (the Free tier works).",
+        "plan": "Free",
+        "source": "https://developers.cloudflare.com/fundamentals/manage-members/dashboard-sso/",
+        "support": "supported",
+        "tier": "free"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Once the SSO connector is enabled, everyone with that email domain must sign in through the IdP, including users who registered before SSO was set up.",
+        "plan": "Free",
+        "source": "https://developers.cloudflare.com/fundamentals/manage-members/dashboard-sso/",
+        "support": "supported",
+        "tier": "free"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Cloudflare provides CDN, DNS, security, and Zero Trust services managed from the Cloudflare dashboard.",
+    "name": "Cloudflare",
+    "status": "draft",
+    "website": "https://www.cloudflare.com"
+  },
+  {
     "_id": "coda",
     "capabilities": {
       "api_token_controls": {
@@ -2799,6 +3053,62 @@
     "name": "Coda",
     "status": "draft",
     "website": "https://coda.io"
+  },
+  {
+    "_id": "codacy",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Account API tokens must expire within a year, but the docs don't say admins can see or revoke other users' tokens.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Codacy logs user, organization and repository events on the Business plan. Org admins and managers get them through the Codacy API, not the UI.",
+        "plan": "Business",
+        "retention": "1 year",
+        "source": "https://docs.codacy.com/organizations/audit-logs-for-organizations/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "custom_roles": {
+        "notes": "Roles come from the Git provider, plus an organization manager role. The docs don't describe custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "notes": "Sessions time out after 4 hours idle or 12 hours total, but the docs don't say admins can change this.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "notes": "The docs describe signing in with a GitHub, GitLab or Bitbucket account and don't mention SAML or OIDC SSO.",
+        "support": "undocumented"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "Codacy is an automated code quality and security analysis platform.",
+    "name": "Codacy",
+    "status": "draft",
+    "website": "https://www.codacy.com"
   },
   {
     "_id": "coupa",
@@ -7453,6 +7763,194 @@
     "website": "https://www.marketo.com"
   },
   {
+    "_id": "mattermost",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Personal access tokens are off by default. Admins turn them on and choose which users can create them.",
+        "source": "https://docs.mattermost.com/administration-guide/configure/integrations-configuration-settings.html",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Audit logging is in Beta. Cloud admins configure it under System Console > Compliance > Audit Logging, but can't use local file output.",
+        "plan": "Enterprise or Enterprise Advanced",
+        "source": "https://docs.mattermost.com/administration-guide/manage/logging.html",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Delegated granular administration lets you adjust the permissions of fixed admin roles (System Manager, User Manager, Viewer, and others). The docs don't describe creating new named roles.",
+        "plan": "Enterprise or Enterprise Advanced",
+        "source": "https://docs.mattermost.com/administration-guide/onboard/delegated-granular-administration.html",
+        "support": "partial",
+        "tier": "enterprise"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "Only through AD/LDAP group sync, which can give group members the Team admin or Channel admin role. Not on Professional.",
+        "plan": "Enterprise or Enterprise Advanced",
+        "source": "https://docs.mattermost.com/administration-guide/onboard/ad-ldap-groups-synchronization.html",
+        "support": "partial",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "Accounts are created automatically the first time a user signs in with SAML. SAML alone doesn't update attributes periodically or deprovision users.",
+        "plan": "Professional",
+        "source": "https://docs.mattermost.com/administration-guide/onboard/sso-saml.html",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "\"Enforce Multi-factor Authentication\" makes email and LDAP users set up MFA before they can use the site. SSO users rely on their IdP.",
+        "plan": "Professional",
+        "source": "https://docs.mattermost.com/administration-guide/onboard/multi-factor-authentication.html",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The MFA docs only describe TOTP authenticator apps; no passkey or security key option is mentioned.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "The SAML FAQ says SCIM isn't supported. Provisioning and deprovisioning rely on AD/LDAP sync instead.",
+        "source": "https://docs.mattermost.com/administration-guide/onboard/sso-saml-faq.html",
+        "support": "not_supported"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "Admins set session lengths for email/LDAP, mobile, and SSO logins, whether sessions extend with activity, and whether a password change ends sessions.",
+        "source": "https://docs.mattermost.com/administration-guide/configure/environment-configuration-settings.html",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SAML 2.0 and OpenID Connect are on Professional, Enterprise, and Enterprise Advanced (also the free self-hosted Entry edition, but not Team Edition).",
+        "plan": "Professional",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.mattermost.com/administration-guide/onboard/sso-saml.html",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Setting \"Enable sign-in with email\" to false removes email and password login so people can only sign in through single sign-on.",
+        "plan": "Professional",
+        "source": "https://docs.mattermost.com/administration-guide/configure/authentication-configuration-settings.html",
+        "support": "supported",
+        "tier": "paid"
+      }
+    },
+    "category": "collaboration",
+    "description": "Mattermost is a team messaging and workflow platform offered as a managed cloud service or self-hosted.",
+    "name": "Mattermost Cloud",
+    "status": "draft",
+    "website": "https://mattermost.com"
+  },
+  {
+    "_id": "metabase",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Only admins create API keys, and each key gets the permissions of the group it's assigned to. Admins can view, edit, regenerate and delete keys.",
+        "source": "https://www.metabase.com/docs/latest/people-and-groups/api-keys",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Usage analytics tracks who viewed or changed what, including settings changes and invites. Starter doesn't collect activity and view data, but Pro and Enterprise do.",
+        "plan": "Pro",
+        "retention": "720 days by default",
+        "source": "https://www.metabase.com/docs/latest/usage-and-performance-tools/usage-analytics",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Admins create groups and choose each group's access to databases, collections and other items. Administrators and All Users are built-in groups.",
+        "source": "https://www.metabase.com/docs/latest/people-and-groups/managing",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "notes": "Google Sign-in lets you name a domain whose users can sign up themselves, but the docs don't describe verifying a domain or claiming its accounts.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "SAML can put people into Metabase groups from a user attribute sent by the identity provider. OIDC and SCIM with Okta can sync groups too.",
+        "source": "https://www.metabase.com/docs/latest/people-and-groups/authenticating-with-saml",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "With SAML, user provisioning is on by default, so Metabase creates an account the first time someone signs in through SSO. Admins can turn it off.",
+        "source": "https://www.metabase.com/docs/latest/people-and-groups/authenticating-with-saml",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "A Pro/Enterprise feature. Admins can require authenticator-app 2FA right away or by a deadline. It covers password and LDAP logins; SSO logins rely on the identity provider's MFA.",
+        "plan": "Pro",
+        "source": "https://www.metabase.com/docs/latest/people-and-groups/two-factor-authentication",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-27",
+        "notes": "Metabase's own 2FA doesn't support passkeys, U2F or WebAuthn. SSO users get whatever their identity provider offers.",
+        "source": "https://www.metabase.com/docs/latest/people-and-groups/two-factor-authentication",
+        "support": "not_supported"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "SCIM is tested with Okta and Entra ID. Okta can provision users and groups, while Entra ID provisions users only. The page doesn't name a plan in its text.",
+        "source": "https://www.metabase.com/docs/latest/people-and-groups/user-provisioning",
+        "support": "supported"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "Admins can set an inactivity timeout in the admin settings. The maximum session age and browser-close logout are set with environment variables.",
+        "source": "https://www.metabase.com/docs/latest/people-and-groups/changing-session-expiration",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SAML, OIDC and JWT sign-in are listed for Pro and Enterprise plans. Starter and open source only get Google Sign-in and LDAP.",
+        "plan": "Pro",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://www.metabase.com/docs/latest/people-and-groups/start",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "On Pro and Enterprise plans, admins can require SSO by turning off password logins. That applies to admin accounts too.",
+        "plan": "Pro",
+        "source": "https://www.metabase.com/docs/latest/people-and-groups/changing-password-complexity",
+        "support": "supported",
+        "tier": "paid"
+      }
+    },
+    "category": "productivity",
+    "description": "Metabase Cloud is the hosted version of Metabase, a business intelligence tool for querying data and building dashboards.",
+    "name": "Metabase Cloud",
+    "status": "draft",
+    "website": "https://www.metabase.com"
+  },
+  {
     "_id": "microsoft-dynamics-365",
     "capabilities": {
       "api_token_controls": {
@@ -8231,6 +8729,69 @@
     "name": "Navan",
     "status": "draft",
     "website": "https://navan.com"
+  },
+  {
+    "_id": "neon",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Admins manage org and project API keys, but the docs don't say admins can see or revoke members' personal keys.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Console, API and pgAudit logs are kept only for HIPAA projects on the Scale plan, and there's no self-serve access. You have to ask Support for them.",
+        "plan": "Scale",
+        "source": "https://neon.com/docs/security/hipaa",
+        "support": "partial",
+        "tier": "paid"
+      },
+      "custom_roles": {
+        "notes": "The docs list fixed org roles (Admin, Editor, Viewer, Collaborator) and project permissions, with no custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "checked": "2026-09-27",
+        "notes": "Admins verify a domain with a DNS TXT record, and new users with that email domain get added to the org as Editors. The docs don't say it lets you take control of existing accounts.",
+        "source": "https://neon.com/docs/manage/orgs-add-members-by-domain",
+        "support": "partial"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Admins can require 2FA for everyone in the organization from Organization settings. A passkey also counts, and members without either are prompted to set one up.",
+        "source": "https://neon.com/docs/manage/orgs-manage#require-2fa-for-organization-members",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-27",
+        "notes": "Users can add a passkey that uses device biometrics or a security key as a second step after email and password.",
+        "source": "https://neon.com/docs/manage/accounts#passkeys",
+        "support": "supported"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "notes": "The docs cover email, Google, GitHub and other social logins but say nothing about SAML or OIDC SSO.",
+        "support": "undocumented"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Neon is a serverless Postgres database platform with branching and autoscaling.",
+    "name": "Neon",
+    "status": "draft",
+    "website": "https://neon.com"
   },
   {
     "_id": "netskope",
@@ -9578,6 +10139,105 @@
     "website": "https://www.proofpoint.com"
   },
   {
+    "_id": "pulumi-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Admins can set a maximum token expiry that applies to personal, org and team tokens used against the org, and can create and delete org tokens.",
+        "source": "https://www.pulumi.com/docs/administration/concepts/access-tokens/",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Org admins can view and download audit logs; automatic export to Amazon S3 or Microsoft Sentinel needs Pro or Enterprise.",
+        "plan": "Essentials",
+        "retention": "Limited window; exact period not stated",
+        "source": "https://www.pulumi.com/docs/administration/concepts/audit-logs/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Pro allows up to 25 custom roles and Enterprise allows unlimited ones.",
+        "plan": "Pro",
+        "source": "https://www.pulumi.com/docs/administration/concepts/rbac/roles/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "SCIM groups become Pulumi teams, and you grant those teams roles and access in Pulumi; SCIM itself can't set roles.",
+        "plan": "Enterprise",
+        "source": "https://www.pulumi.com/docs/administration/guides/scim/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "Signing in through the org's SAML SSO without an existing Pulumi account creates an org-managed account.",
+        "plan": "Pro",
+        "source": "https://www.pulumi.com/docs/administration/concepts/org-managed-users/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "mfa_enforcement": {
+        "notes": "Users can enroll in TOTP themselves; for SSO or social logins the docs say to enforce MFA at that provider. No org-wide MFA requirement is described.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-27",
+        "notes": "Users can sign in with WebAuthn passkeys, including hardware security keys, in every edition. Org-managed SAML/SCIM accounts can't register passkeys.",
+        "plan": "All editions",
+        "source": "https://www.pulumi.com/docs/administration/concepts/accounts/",
+        "support": "supported",
+        "tier": "free"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "SCIM 2.0 provisions users and syncs groups to teams. It can't set roles, and deprovisioning deactivates rather than deletes users.",
+        "plan": "Enterprise",
+        "source": "https://www.pulumi.com/docs/administration/guides/scim/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "SSO session length comes from the IdP's SessionNotOnOrAfter attribute (default 12 hours); there's no session setting in Pulumi itself.",
+        "plan": "Pro",
+        "source": "https://www.pulumi.com/docs/administration/guides/saml/sso/",
+        "support": "partial",
+        "tier": "paid"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Works with any SAML 2.0 identity provider; the docs mark SAML SSO as a Pro and Enterprise feature.",
+        "plan": "Pro",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://www.pulumi.com/docs/administration/guides/saml/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "An org backed by a SAML identity provider draws its membership from the users the IdP assigns to the Pulumi app. One SAML admin keeps another login method as a break-glass account.",
+        "plan": "Pro",
+        "source": "https://www.pulumi.com/docs/administration/concepts/identity-providers/",
+        "support": "supported",
+        "tier": "paid"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Pulumi Cloud is the hosted service behind Pulumi infrastructure as code, managing state, secrets, deployments and policy for teams.",
+    "name": "Pulumi Cloud",
+    "status": "draft",
+    "website": "https://www.pulumi.com"
+  },
+  {
     "_id": "qualtrics",
     "capabilities": {
       "api_token_controls": {
@@ -9730,6 +10390,91 @@
     "name": "QuickBooks Online",
     "status": "published",
     "website": "https://quickbooks.intuit.com"
+  },
+  {
+    "_id": "railway",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Workspace admins can view audit logs, and retention depends on the plan.",
+        "plan": "Free",
+        "retention": "48 hours on Free, Trial and Hobby; 30 days on Pro; 18 months on Enterprise",
+        "source": "https://docs.railway.com/enterprise/audit-logs",
+        "support": "supported",
+        "tier": "free"
+      },
+      "custom_roles": {
+        "notes": "The docs list fixed workspace roles (Admin, Member, Deployer). Access groups combine people and projects with a fixed project role.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "checked": "2026-09-27",
+        "notes": "Trusted Domains are verified through a custom domain on a Railway service, and new sign-ups with that email domain join the workspace with a set role. The docs don't mention taking control of existing accounts.",
+        "source": "https://docs.railway.com/projects/workspaces#trusted-domains",
+        "support": "partial"
+      },
+      "group_role_mapping": {
+        "notes": "Access groups are managed in Railway, and the docs don't mention syncing them from identity provider groups.",
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "New users who sign in through your identity provider are added to the workspace as members automatically.",
+        "plan": "Enterprise",
+        "source": "https://docs.railway.com/enterprise/saml",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Workspace admins can require two-factor authentication for all members on Pro and above. API tokens keep working without 2FA.",
+        "plan": "Pro",
+        "source": "https://docs.railway.com/access/two-factor-enforcement",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-27",
+        "notes": "Users can register passkeys as a second factor.",
+        "source": "https://docs.railway.com/access/multi-factor-authentication",
+        "support": "supported"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "notes": "Users can see and revoke their own sessions, but the docs don't describe admin controls.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SAML SSO works with any identity provider that supports SAML or OIDC, on Enterprise workspaces.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.railway.com/enterprise/saml",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Admins can require members to log in with SAML SSO to access the workspace, but users can still use other login methods for the rest of their account.",
+        "plan": "Enterprise",
+        "source": "https://docs.railway.com/enterprise/saml",
+        "support": "partial",
+        "tier": "enterprise"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Railway is a cloud platform for deploying apps, databases and services.",
+    "name": "Railway",
+    "status": "draft",
+    "website": "https://railway.com"
   },
   {
     "_id": "ramp",
@@ -11460,6 +12205,91 @@
     "website": "https://stripe.com"
   },
   {
+    "_id": "sumo-logic",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Access keys can be scoped. Admins set org-wide policies to deactivate unused keys (30 days by default) and expire keys, and they can deactivate or delete any user's keys.",
+        "source": "https://help.sumologic.com/docs/manage/security/access-keys/",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "An admin has to turn on the Audit Index. It keeps data as long as the default partition does, and you can change that by editing the sumologic_audit partition.",
+        "plan": "Professional and Enterprise (Cloud Flex); Essentials and Enterprise (Credits)",
+        "retention": "Same as the default partition, adjustable",
+        "source": "https://help.sumologic.com/docs/manage/security/audit-indexes/audit-index/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Admins can create roles with chosen capabilities, search filters and index access.",
+        "source": "https://help.sumologic.com/docs/manage/users-roles/roles/create-manage-roles/",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "A SAML Roles Attribute assigns Sumo Logic roles from IdP values each time the user logs in.",
+        "source": "https://help.sumologic.com/docs/manage/security/saml/set-up-saml/",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "SAML setup has an optional on-demand user creation setting that creates the user on first SAML login.",
+        "source": "https://help.sumologic.com/docs/manage/security/saml/set-up-saml/",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Admins can set the 2-Step Verification policy to Required for everyone in the org.",
+        "source": "https://help.sumologic.com/docs/manage/security/2-step-verification-admins/",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The 2-Step Verification docs only mention authenticator apps.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "SCIM 2.0 provisions and deprovisions users and assigns roles from the IdP. It needs SAML set up and an access key.",
+        "source": "https://help.sumologic.com/docs/manage/security/scim/about-scim-provisioning/",
+        "support": "supported"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "Admins set the longest web session timeout users can pick (up to 7 days), and they can also limit concurrent sessions per user.",
+        "source": "https://help.sumologic.com/docs/manage/security/set-max-web-session-timeout/",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SAML 2.0 SSO is available on Credits Essentials and Enterprise plans and Cloud Flex Enterprise (plus trials).",
+        "plan": "Essentials and Enterprise (Credits); Enterprise (Cloud Flex)",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://help.sumologic.com/docs/manage/security/saml/set-up-saml/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "A Require SAML Sign In toggle forces SAML login. Allowlisted users can still use a password, and the admin who turns it on is added to that list automatically.",
+        "source": "https://help.sumologic.com/docs/manage/security/saml/integrate-sumo-logic-with-okta/",
+        "support": "supported"
+      }
+    },
+    "category": "security",
+    "description": "Sumo Logic is a cloud log analytics and security monitoring platform.",
+    "name": "Sumo Logic",
+    "status": "draft",
+    "website": "https://www.sumologic.com"
+  },
+  {
     "_id": "supabase",
     "capabilities": {
       "api_token_controls": {
@@ -11809,6 +12639,94 @@
     "website": "https://www.teamviewer.com"
   },
   {
+    "_id": "teleport",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Access uses short-lived certificates; no personal API token policy was found in the docs.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "All Teleport Enterprise Cloud customers have audit logs kept in S3 for 4 years; External Audit Storage lets you keep them in your own AWS account.",
+        "plan": "Teleport Enterprise (Cloud)",
+        "retention": "4 years",
+        "source": "https://goteleport.com/docs/reference/architecture/teleport-cloud-architecture/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Roles are defined with allow and deny rules and managed through the Web UI, tctl, Terraform, the Kubernetes operator or the API.",
+        "source": "https://goteleport.com/docs/reference/access-controls/roles/",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "SSO connectors map SAML attributes, OIDC claims or GitHub teams to Teleport roles.",
+        "source": "https://goteleport.com/docs/zero-trust-access/sso/integrate-idp/",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "After an SSO login Teleport creates a temporary user resource (default TTL 12 hours, up to 30 hours) rather than a permanent account.",
+        "source": "https://goteleport.com/docs/zero-trust-access/sso/",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Setting second factor to on requires every local user to register an MFA device; WebAuthn is the default on cloud-hosted Teleport Enterprise. MFA for SSO users is left to the IdP.",
+        "source": "https://goteleport.com/docs/reference/access-controls/authentication/",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-27",
+        "notes": "Supports WebAuthn security keys, Touch ID and Windows Hello, including passwordless login with no username or password.",
+        "source": "https://goteleport.com/docs/zero-trust-access/authentication/passwordless/",
+        "support": "supported"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "Listed under Identity Governance. The Okta SCIM integration creates, updates and deletes Teleport users; a generic SCIM integration syncs SCIM groups to Access List membership.",
+        "plan": "Teleport Enterprise (Identity Governance)",
+        "source": "https://goteleport.com/docs/identity-governance/integrations/okta/scim-integration/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "Roles set max_session_ttl for certificate lifetime and client_idle_timeout to end idle sessions; the most restrictive value wins.",
+        "source": "https://goteleport.com/docs/reference/access-controls/roles/",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SAML and OIDC connectors (Okta, Entra ID, Google Workspace and others) need Teleport Enterprise. Community Edition only gets GitHub SSO.",
+        "plan": "Teleport Enterprise",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://goteleport.com/docs/zero-trust-access/sso/integrate-idp/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Setting allow_local_auth to false in the cluster auth preference turns off local (password) login alongside the SSO connectors.",
+        "source": "https://goteleport.com/docs/reference/infrastructure-as-code/teleport-resources/cluster-auth-preferences/",
+        "support": "supported"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Teleport is an infrastructure access platform for SSH, Kubernetes, databases, apps and desktops, offered as the hosted Teleport Enterprise (Cloud).",
+    "name": "Teleport",
+    "status": "draft",
+    "website": "https://goteleport.com"
+  },
+  {
     "_id": "temporal-cloud",
     "capabilities": {
       "api_token_controls": {
@@ -11956,6 +12874,84 @@
     "name": "Tenable",
     "status": "draft",
     "website": "https://tenable.com"
+  },
+  {
+    "_id": "tooljet",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Paid feature. Records user, app, query, and group permission events with IP address, and can be filtered. Self-hosted instances can also write a daily-rotated log file.",
+        "plan": "Paid plans",
+        "source": "https://docs.tooljet.ai/docs/security/audit-logs",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Besides the Admin, Builder, and End-user roles, admins can create custom groups with their own permissions and per-app or per-data-source access.",
+        "source": "https://docs.tooljet.ai/docs/user-management/role-based-access/custom-groups",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "notes": "Allowed Domains limits sign-up and login by email domain, but no verification step is described.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "Paid feature. OIDC group sync maps IdP groups to ToolJet roles and custom groups at each login, per workspace.",
+        "plan": "Paid plans",
+        "source": "https://docs.tooljet.ai/docs/user-management/group-sync/oidc",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "jit_provisioning": {
+        "notes": "The SAML page says both that unknown users get an error and that first-time users go to onboarding. Sign-up without invitation is a separate setting.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "2FA is mentioned, but the docs don't describe admins requiring it.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "No SCIM docs found. Group sync happens at login through OIDC.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "Self-hosted only: the USER_SESSION_EXPIRY environment variable sets session length (default 10 days). No setting is documented for ToolJet Cloud.",
+        "source": "https://docs.tooljet.ai/docs/setup/env-vars",
+        "support": "partial"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Workspaces can use Google, GitHub, OpenID Connect, LDAP, and SAML. The OIDC page is marked as a paid feature. The SAML page doesn't name a plan.",
+        "plan": "Paid plans",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.tooljet.ai/docs/user-management/sso/oidc/setup",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Admins can turn off password login in workspace login settings. With one SSO provider and password login off, Automatic SSO Login skips the login page.",
+        "source": "https://docs.tooljet.ai/docs/user-management/authentication/cloud-login",
+        "support": "supported"
+      }
+    },
+    "category": "development",
+    "description": "Low-code platform for building internal tools and business apps, available as ToolJet Cloud or self-hosted.",
+    "name": "ToolJet",
+    "status": "draft",
+    "website": "https://www.tooljet.ai"
   },
   {
     "_id": "trello",
@@ -12490,6 +13486,70 @@
     "name": "UKG Pro",
     "status": "draft",
     "website": "https://www.ukg.com"
+  },
+  {
+    "_id": "upstash",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Audit logs under Account > Audit Logs show each action, whether it came from the console or an API key, the affected resource and the IP address.",
+        "plan": "Free",
+        "retention": "7 days for free databases, 30 days for pay-as-you-go, 1 year for Pro",
+        "source": "https://upstash.com/docs/common/account/auditlogs",
+        "support": "supported",
+        "tier": "free"
+      },
+      "custom_roles": {
+        "notes": "Teams have fixed roles (Owner, Admin, Dev, Finance), with no custom roles mentioned.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "The healthcare data guide tells you to enforce MFA as a requirement for accessing the organization, and the production checklist says to force MFA for all team members. Neither page names a plan or shows the setting.",
+        "source": "https://upstash.com/docs/redis/help/managing-healthcare-data",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SAML SSO with your own identity provider is available on request for Enterprise customers.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://upstash.com/docs/redis/overall/enterprise",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Upstash provides serverless Redis, vector, message queue and workflow services.",
+    "name": "Upstash",
+    "status": "draft",
+    "website": "https://upstash.com"
   },
   {
     "_id": "vanta",
