@@ -5744,6 +5744,93 @@
     "website": "https://www.harness.io"
   },
   {
+    "_id": "hcp-terraform",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Owners can set a maximum time to live for organization, team and user tokens, and can block user tokens from accessing organization resources.",
+        "source": "https://developer.hashicorp.com/terraform/cloud-docs/users-teams-organizations/api-tokens",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Audit trails are available in Standard and Premium editions and are read through the Audit Trails API, which keeps 14 days of events.",
+        "plan": "Standard",
+        "retention": "14 days",
+        "source": "https://developer.hashicorp.com/terraform/cloud-docs/api-docs/audit-trails",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Teams can be given a workspace custom role built from any workspace permission except admin-only ones; the page doesn't name a plan.",
+        "source": "https://developer.hashicorp.com/terraform/cloud-docs/users-teams-organizations/permissions/workspace",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "A SAML attribute (MemberOf by default) adds and removes team memberships on each login; this needs team management, which is in Essentials, Standard and Premium.",
+        "plan": "Essentials",
+        "source": "https://developer.hashicorp.com/terraform/cloud-docs/users-teams-organizations/single-sign-on",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "SSO doesn't automatically create user accounts: on first SSO sign-in the user must set a password for a new account or link an existing one, after which they join the organization.",
+        "source": "https://developer.hashicorp.com/terraform/cloud-docs/users-teams-organizations/single-sign-on",
+        "support": "partial"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Organization owners can turn on \"Require two-factor\" under Authentication settings for all members; the page doesn't name a plan.",
+        "source": "https://developer.hashicorp.com/terraform/cloud-docs/users-teams-organizations/2fa",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The 2FA page only describes authenticator apps and SMS (SMS for Terraform Enterprise); no security keys or passkeys.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "The HCP Terraform user and SSO docs don't mention SCIM.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "Owners can shorten the idle session timeout and forced re-authentication interval (default 14 days each) for standalone accounts; accounts linked to HCP follow HCP settings instead.",
+        "source": "https://developer.hashicorp.com/terraform/cloud-docs/users-teams-organizations/organizations/settings",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SAML SSO is available to all HCP Terraform organizations, including Free Edition, with guides for Entra ID, Okta and generic SAML.",
+        "plan": "Free",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://developer.hashicorp.com/terraform/cloud-docs/users-teams-organizations/single-sign-on",
+        "support": "supported",
+        "tier": "free"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Once SSO is on, all non-owner members must sign in through SSO; owners can still use their password as a break-glass path.",
+        "plan": "Free",
+        "source": "https://developer.hashicorp.com/terraform/cloud-docs/users-teams-organizations/single-sign-on",
+        "support": "supported",
+        "tier": "free"
+      }
+    },
+    "category": "infrastructure",
+    "description": "HCP Terraform is HashiCorp's hosted service for running Terraform, managing state and collaborating on infrastructure as code.",
+    "name": "HCP Terraform",
+    "status": "draft",
+    "website": "https://www.hashicorp.com/products/terraform"
+  },
+  {
     "_id": "hibob",
     "capabilities": {
       "api_token_controls": {
@@ -6819,6 +6906,85 @@
     "name": "KnowBe4",
     "status": "draft",
     "website": "https://www.knowbe4.com"
+  },
+  {
+    "_id": "kong-konnect",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Each user gets up to 10 personal access tokens. Tokens unused for 12 months are revoked, and org admins can revoke users' tokens. System account tokens last at most 12 months.",
+        "source": "https://developer.konghq.com/konnect-api/",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Org and Dev Portal audit logs go out through a webhook, and org logs can also be pulled from the API. Konnect keeps logs for 7 days.",
+        "retention": "7 days",
+        "source": "https://developer.konghq.com/konnect-platform/audit-logs/",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "notes": "The docs describe custom teams built from predefined roles, but not custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "IdP groups can be mapped to Konnect org teams and Dev Portal teams. Changes to group membership in the IdP carry over to Konnect.",
+        "source": "https://developer.konghq.com/konnect-platform/sso/",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "With team mappings set up, Konnect creates the account with the mapped roles the first time a user logs in through the IdP.",
+        "source": "https://developer.konghq.com/konnect-platform/sso/",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "MFA is required for Konnect Plus and Enterprise users who sign in with username and password. They're asked to set it up at first sign-in. Other orgs can opt in.",
+        "plan": "Konnect Plus",
+        "source": "https://developer.konghq.com/konnect-platform/authentication/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-27",
+        "notes": "Users who sign in with username and password can also set up passkeys.",
+        "source": "https://developer.konghq.com/konnect-platform/authentication/",
+        "support": "supported"
+      },
+      "scim": {
+        "notes": "The Konnect docs describe IdP team mapping at SSO login but no SCIM provisioning.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Org admins can set up SSO with any SAML or OIDC identity provider. You can combine built-in login with SAML or OIDC, but not SAML and OIDC together. The docs don't name a plan.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://developer.konghq.com/konnect-platform/sso/",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Once SSO has been tested, admins can turn off built-in username and password login.",
+        "source": "https://developer.konghq.com/konnect-platform/sso/",
+        "support": "supported"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Kong Konnect is Kong's hosted API management platform for running and managing API gateways, Dev Portals, and service catalogs.",
+    "name": "Kong Konnect",
+    "status": "draft",
+    "website": "https://konghq.com"
   },
   {
     "_id": "lark",
@@ -8673,6 +8839,87 @@
     "name": "Mural",
     "status": "published",
     "website": "https://www.mural.co"
+  },
+  {
+    "_id": "n8n",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Each API key gets a label and an expiration time, and scopes are available on Enterprise. No admin-wide key policy is documented, and the API isn't available during the free trial.",
+        "source": "https://docs.n8n.io/connect/n8n-api/authentication",
+        "support": "partial"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Audit events like logins, user changes, credential changes and API key creation are available through log streaming to external destinations, which n8n Cloud offers on Enterprise. No in-app audit log or retention period is documented.",
+        "plan": "Enterprise",
+        "source": "https://docs.n8n.io/administer/observe-and-log/stream-logs-to-external-systems",
+        "support": "partial",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Custom roles are available on n8n Cloud Enterprise.",
+        "plan": "Enterprise",
+        "source": "https://docs.n8n.io/administer/manage-users-and-access/set-permissions-and-roles-rbac/create-custom-roles",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "Instance and project roles can come from IdP attributes or from rules in n8n that check the user's groups. They're re-checked at every login.",
+        "source": "https://docs.n8n.io/administer/manage-users-and-access/verify-user-identity/use-saml/set-up-saml",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Admins can require 2FA for all users under Settings > Security (Cloud Enterprise only). It covers email and password logins, not SSO users.",
+        "plan": "Enterprise",
+        "source": "https://docs.n8n.io/deploy/host-n8n/configure-n8n/security/manage-security-policies",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The 2FA docs only mention authenticator apps.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "No SCIM page was found. The SAML docs say users removed in the IdP stay in n8n until deleted by hand.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SAML is available on Business and Enterprise plans, and OIDC only on Enterprise. An instance owner or admin sets it up.",
+        "plan": "Business (SAML); Enterprise (SAML and OIDC)",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.n8n.io/administer/manage-users-and-access/verify-user-identity/use-saml/set-up-saml",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "With SAML on, users sign in through SAML unless an admin exempts them with Allow Manual Login.",
+        "source": "https://docs.n8n.io/administer/manage-users-and-access/verify-user-identity/use-saml/manage-users-with-saml",
+        "support": "supported"
+      }
+    },
+    "category": "productivity",
+    "description": "n8n Cloud is the hosted version of the n8n workflow automation tool.",
+    "name": "n8n Cloud",
+    "status": "draft",
+    "website": "https://n8n.io"
   },
   {
     "_id": "navan",
