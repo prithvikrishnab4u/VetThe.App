@@ -2221,6 +2221,71 @@
     "website": "https://buildkite.com"
   },
   {
+    "_id": "cal-com",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Audit logs are included with every Cal.com organization plan and on by default; only org or team admins can view them. They cover bookings, routing forms and security events like logins and 2FA changes. No export or retention period is mentioned.",
+        "plan": "Organizations",
+        "source": "https://cal.com/help/enterprise/audit-logs",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "The audit log docs describe granting a custom role permissions such as viewing team or organization routing form audit logs.",
+        "source": "https://cal.com/help/enterprise/audit-logs",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "With SCIM, Okta groups can be mapped to teams in the organization and pushed users are added to those teams automatically.",
+        "source": "https://cal.com/help/auth-and-provision/scim-okta",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "Organizations can set up directory sync with Okta over SCIM 2.0 (create users, update attributes, deactivate users). The guide uses self-hosting env vars and doesn't state a plan.",
+        "source": "https://cal.com/help/auth-and-provision/scim-okta",
+        "support": "supported"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "The help guide sets up OIDC single sign-on with Okta under Settings > Security > SSO. It's written for a self-hosted instance (SAML_DATABASE_URL and SAML_ADMINS env vars) and doesn't state a plan.",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://cal.com/help/auth-and-provision/oidc-with-okta",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "productivity",
+    "description": "Cal.com is an open-source scheduling platform for booking meetings and managing calendars.",
+    "name": "Cal.com",
+    "status": "draft",
+    "website": "https://cal.com"
+  },
+  {
     "_id": "calendly",
     "capabilities": {
       "api_token_controls": {
@@ -8629,6 +8694,66 @@
     "website": "https://business.linkedin.com/sales-solutions/sales-navigator"
   },
   {
+    "_id": "logto",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "notes": "The Console audit log records end-user authentication events only and says Management API operations aren't recorded; it doesn't describe logging of console member actions.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "Tenant members get one of two fixed roles, Admin or Collaborator; the docs don't mention custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Pro and Enterprise tenants can require MFA for all tenant members. It isn't self-service yet; you contact Logto to turn it on.",
+        "plan": "Pro",
+        "source": "https://docs.logto.io/logto-cloud/tenant-settings#enable-mfa",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "Logto's WebAuthn/passkey docs cover your app's end users, not sign-in to the Logto Cloud console.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "The Logto Cloud docs don't describe SCIM provisioning of tenant members.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Logto Cloud supports enterprise SSO (for example Google Workspace, Okta, Azure AD) for signing in to Enterprise plan tenants; you contact Logto to set it up.",
+        "plan": "Enterprise",
+        "source": "https://docs.logto.io/logto-cloud/tenant-settings#enable-enterprise-sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Logto Cloud is a hosted authentication and authorization platform built on the open-source Logto project.",
+    "name": "Logto Cloud",
+    "status": "draft",
+    "website": "https://logto.io"
+  },
+  {
     "_id": "logz-io",
     "capabilities": {
       "api_token_controls": {
@@ -10498,6 +10623,82 @@
     "website": "https://navan.com"
   },
   {
+    "_id": "neo4j-aura",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Each user creates their own Aura API client credentials, which inherit that user's roles and never expire unless deleted. The access tokens they issue expire after one hour. The docs say all tiers can create credentials.",
+        "source": "https://neo4j.com/docs/aura/api/authentication/",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "The activity feed records user, role, instance, SSO and other security changes at organization and project level, with user, IP and timestamp. It can't be turned off, and up to the last 30 days can be exported as JSON or CSV or pulled through the Aura API. The docs don't name a plan.",
+        "source": "https://neo4j.com/docs/aura/logging/activity-feed/",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Custom roles are database roles you create with Cypher admin commands. Console organization and project roles are a fixed built-in set.",
+        "plan": "AuraDB Business Critical, AuraDB Virtual Dedicated Cloud",
+        "source": "https://neo4j.com/docs/aura/user-management/",
+        "support": "partial"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "Instance SSO can map IdP groups to database roles. The docs say organization roles in the console can't be assigned through SSO group mapping.",
+        "plan": "AuraDB Business Critical, AuraDB Virtual Dedicated Cloud, AuraDS Enterprise",
+        "source": "https://neo4j.com/docs/aura/security/single-sign-on/",
+        "support": "partial"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Organization owners and admins can require MFA for all members from organization security settings. It applies to email/password logins, not SSO or Google sign-in. The docs don't name a plan.",
+        "source": "https://neo4j.com/docs/aura/security/mfa/",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The MFA docs only mention authenticator (TOTP) apps.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "The docs don't mention SCIM; organization roles are granted through console invites or the API.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "OIDC SSO with Microsoft Entra ID, Okta or Google can be used for the Aura console, for database instances, or both. The page is labelled for Business Critical, Virtual Dedicated Cloud and AuraDS Enterprise.",
+        "plan": "AuraDB Business Critical, AuraDB Virtual Dedicated Cloud, AuraDS Enterprise",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://neo4j.com/docs/aura/security/single-sign-on/",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Once SSO is a console login method, an organization can turn off email/password and social logins (Google, Microsoft, GitHub). Username/password login stays available on instances.",
+        "plan": "AuraDB Business Critical, AuraDB Virtual Dedicated Cloud, AuraDS Enterprise",
+        "source": "https://neo4j.com/docs/aura/security/single-sign-on/",
+        "support": "supported"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Neo4j Aura is Neo4j's fully managed cloud graph database service.",
+    "name": "Neo4j Aura",
+    "status": "draft",
+    "website": "https://neo4j.com"
+  },
+  {
     "_id": "neon",
     "capabilities": {
       "api_token_controls": {
@@ -11624,6 +11825,87 @@
     "name": "Pipedrive",
     "status": "published",
     "website": "https://www.pipedrive.com"
+  },
+  {
+    "_id": "plausible",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "API keys are scoped to one team and Viewers can't create them, but the docs don't describe admins viewing or revoking other members' keys.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "The docs list five built-in team roles (Owner, Admin, Editor, Billing, Viewer) and don't mention custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "checked": "2026-09-27",
+        "notes": "SSO domains must be verified with a DNS TXT record, a file or route, or a META tag before SSO works.",
+        "plan": "Enterprise",
+        "source": "https://plausible.io/docs/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "Accounts are created automatically on first SSO login, with a configurable default role (Viewer by default).",
+        "plan": "Enterprise",
+        "source": "https://plausible.io/docs/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Owners can use \"Force Two-Factor Authentication (2FA)\" in Team Settings to make 2FA mandatory for all team members. No plan is stated.",
+        "source": "https://plausible.io/docs/2fa",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The 2FA docs only cover authenticator app codes; passkeys and security keys aren't mentioned.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "The docs describe just-in-time SSO provisioning but don't mention SCIM.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "Admins can set the session timeout for SSO users (up to 12 hours) and view or log out members' active SSO sessions. This applies to SSO accounts only.",
+        "plan": "Enterprise",
+        "source": "https://plausible.io/docs/sso",
+        "support": "partial",
+        "tier": "enterprise"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SSO is Enterprise plan only and uses SAML 2.0, working with IdPs like Google Workspace, Okta and Microsoft Entra ID.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://plausible.io/docs/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Owners can turn on \"Force Single Sign-On\" so only SSO users can access the team. Owners keep an email and password fallback and must have 2FA enabled first.",
+        "plan": "Enterprise",
+        "source": "https://plausible.io/docs/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "sales_marketing",
+    "description": "Plausible Analytics is a privacy-friendly, cookie-free web analytics service.",
+    "name": "Plausible Analytics",
+    "status": "draft",
+    "website": "https://plausible.io"
   },
   {
     "_id": "pluralsight",
@@ -15428,6 +15710,63 @@
     "website": "https://www.twilio.com"
   },
   {
+    "_id": "tyk-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "notes": "The Tyk Cloud docs don't describe an audit log of account or organization changes.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "The docs list four fixed roles: Billing Admin, Organization Admin, Team Admin and Team Member. They don't mention custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "If you untick \"Only registered users\" on an SSO profile, new users are added to Tyk Cloud in the default user group the first time they sign in.",
+        "source": "https://tyk.io/docs/tyk-cloud/teams-users/single-sign-on",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "You add SSO profiles with an OIDC client ID, secret and discovery URL, and the page is framed around Control Plane deployments. SSO has to be enabled as an entitlement in your subscription plan; you ask your account manager or support. No plan is named.",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://tyk.io/docs/tyk-cloud/teams-users/single-sign-on",
+        "support": "partial"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "Tyk Cloud is Tyk's managed API management platform, hosting the Tyk Dashboard, control planes and gateways.",
+    "name": "Tyk Cloud",
+    "status": "draft",
+    "website": "https://tyk.io"
+  },
+  {
     "_id": "typeform",
     "capabilities": {
       "api_token_controls": {
@@ -16692,6 +17031,77 @@
     "name": "Zendesk",
     "status": "published",
     "website": "https://zendesk.com"
+  },
+  {
+    "_id": "zitadel",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "The hardening guide uses personal access tokens on service accounts but doesn't describe expiry or scoping controls for them.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Every change is kept as an event. Admins can browse and filter all instance events in the Console Event Viewer, pull them through the Event API, or stream them to a SIEM.",
+        "retention": "Unlimited (append-only event store)",
+        "source": "https://zitadel.com/docs/concepts/features/audit-trail",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "notes": "The hardening guide says custom administrator role permission mappings (InternalAuthZ.RolePermissionMappings) are only for self-hosted deployments; it doesn't say whether Zitadel Cloud offers custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "checked": "2026-09-27",
+        "notes": "Organization domains can be verified with a DNS or HTTP challenge in the Console.",
+        "source": "https://zitadel.com/docs/guides/manage/console/organizations-overview#domain-verification-guide",
+        "support": "supported"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "The \"Force MFA\" login setting requires users to register and use MFA, or only for local logins if you pick \"Force MFA for local authenticated users\". The hardening guide recommends enforcing it for the organization that holds admins.",
+        "source": "https://zitadel.com/docs/guides/manage/console/default-settings#multifactor-mfa",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-27",
+        "notes": "The login settings can allow passkeys and U2F security keys; passkeys need U2F with PIN enabled.",
+        "source": "https://zitadel.com/docs/guides/manage/console/default-settings#passkeys",
+        "support": "supported"
+      },
+      "scim": {
+        "notes": "The console docs don't describe provisioning console administrators or their roles over SCIM.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "Login settings set how long password, external login, and MFA checks last before users must reauthenticate. Separate lockout settings cap password and OTP attempts.",
+        "source": "https://zitadel.com/docs/guides/manage/console/default-settings#login-lifetimes",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Console admins sign in through Zitadel itself, so the login settings of the organization holding them can allow external identity providers; the hardening guide says to limit which IdPs admins may use.",
+        "source": "https://zitadel.com/docs/guides/manage/console/administrator-hardening",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "If \"Username Password allowed\" is turned off in the login settings, only login with external identity providers is allowed. Admins can be kept in a dedicated organization that has its own login settings.",
+        "source": "https://zitadel.com/docs/guides/manage/console/default-settings#login-behavior-and-security",
+        "support": "supported"
+      }
+    },
+    "category": "security",
+    "description": "Zitadel Cloud is a hosted identity and access management platform built on the open-source Zitadel project.",
+    "name": "Zitadel Cloud",
+    "status": "draft",
+    "website": "https://zitadel.com"
   },
   {
     "_id": "zoho-crm",

@@ -1,0 +1,60 @@
+name: "NetBird"
+category: "security"
+website: "https://netbird.io"
+description: "NetBird is a WireGuard-based overlay network for connecting devices and services with zero-trust access controls."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "free"
+    plan: "Free (Google Workspace and Microsoft); Team for other OIDC IdPs"
+    protocols: ["OIDC"]
+    notes: "The Free plan supports sign-in with Google Workspace, Microsoft Entra ID and social logins. Other OIDC-compliant identity providers need the Team plan or higher."
+    source: "https://docs.netbird.io/manage/team/single-sign-on"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "supported"
+    tier: "paid"
+    plan: "Team"
+    notes: "IdP-Sync is available in NetBird Cloud on the Team plan and above. Entra ID and Okta can sync users and groups over SCIM, and Okta can create, update and deactivate users."
+    source: "https://docs.netbird.io/manage/team/idp-sync"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Admins can turn on MFA for all users who sign in with email and password under Settings > Authentication (cloud only). The page says it's available for all users, but the plans page lists MFA under Team, so the plan isn't clear."
+    source: "https://docs.netbird.io/manage/settings/multi-factor-authentication"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    notes: "Audit events logging is on by default for every NetBird network and tracks changes such as peers, users, groups, settings and access policies. Traffic event logging is a separate Business-plan feature."
+    source: "https://docs.netbird.io/manage/activity"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    notes: "Users who sign up with an email on a private domain are added automatically to the existing organization for that domain."
+    source: "https://docs.netbird.io/manage/team/add-users-to-your-network"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+    notes: "NetBird groups users by private email domain, but the docs don't describe a domain verification step."
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs list six fixed roles (Owner, Admin, Network Admin, Billing Admin, Auditor, User) and don't mention custom roles."
+  group_role_mapping:
+    support: "not_supported"
+    notes: "Groups synced from the IdP only set group membership and don't change a user's NetBird role."
+    source: "https://docs.netbird.io/manage/team/user-roles"
+    checked: "2026-09-27"
+  session_controls:
+    support: "supported"
+    notes: "Admins can set how long peer sessions last (1 hour to 180 days, default 24 hours) and require login again after a disconnect. This applies to peers added through SSO login."
+    source: "https://docs.netbird.io/manage/settings/enforce-periodic-user-authentication"
+    checked: "2026-09-27"
+  api_token_controls:
+    support: "undocumented"
+    notes: "Personal access tokens have an expiration set at creation, but no admin controls over them are described."
