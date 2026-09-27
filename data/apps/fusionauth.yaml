@@ -1,0 +1,42 @@
+name: "FusionAuth Cloud"
+category: "security"
+website: "https://fusionauth.io"
+description: "FusionAuth Cloud is a managed hosting service for FusionAuth, a customer identity and access management platform."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "undocumented"
+    notes: "FusionAuth's identity provider docs cover login for your own apps; the docs don't describe SSO for the account portal or for Admin UI users."
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+    notes: "SCIM is an Enterprise feature for provisioning your app's users; the docs don't describe SCIM for account portal or Admin UI users."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Account portal users and Admin UI users can each turn on MFA for their own account; the docs don't describe a way to require it for them."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The account portal docs say only TOTP MFA is currently allowed there."
+  audit_logs:
+    support: "supported"
+    notes: "Audit log entries are created automatically whenever an admin does something in the FusionAuth Admin UI, and can be searched and exported through the API."
+    source: "https://fusionauth.io/docs/apis/audit-logs/add-an-entry-to-the-audit-log"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs list built-in Admin UI roles and fixed account portal roles (Admin, Billing manager, Deployment manager, Plan manager, Security officer); custom admin roles aren't mentioned."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "API keys can be limited to specific endpoints and HTTP methods, scoped to one tenant, and given an expiration; limiting a key to an IP access control list is an Enterprise feature."
+    source: "https://fusionauth.io/docs/apis/api-keys/create-an-api-key"
+    checked: "2026-09-27"
