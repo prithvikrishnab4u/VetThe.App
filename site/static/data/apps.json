@@ -2236,6 +2236,83 @@
     "website": "https://www.browserstack.com"
   },
   {
+    "_id": "budibase-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Each user makes their own API key, and making a new one cancels the old one. The docs don't describe admin controls over keys.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Admins can filter and download audit logs. The feature is locked on the free tier, but the docs don't name the plan that unlocks it. Row and query auditing needs a conversation with sales.",
+        "source": "https://docs.budibase.com/docs/audit-logs",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Builders can create custom app roles under Manage roles, each with an inherited role and base permissions.",
+        "source": "https://docs.budibase.com/docs/user-roles",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "SCIM syncs IdP groups into Budibase user groups, and those groups are given app access and roles inside Budibase.",
+        "plan": "Enterprise",
+        "source": "https://docs.budibase.com/docs/scim-provisioning",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "Users who sign in with OIDC are created automatically on first login. Google sign-in needs an existing account.",
+        "source": "https://docs.budibase.com/docs/openid-connect",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "SCIM syncs users and groups one way from the IdP (for example Azure AD or Okta). Roles are still set inside Budibase.",
+        "plan": "Enterprise",
+        "source": "https://docs.budibase.com/docs/scim-provisioning",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Admins can set up OpenID Connect with any OIDC provider, and Google sign-in is also offered. The docs don't mention SAML or name a plan.",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://docs.budibase.com/docs/openid-connect",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Enforced SSO is an Enterprise feature. Once it's on, users who log in with a password can no longer do so.",
+        "plan": "Enterprise",
+        "source": "https://docs.budibase.com/docs/enforced-sso",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "development",
+    "description": "Budibase is a low-code platform for building internal apps, workflows and forms.",
+    "name": "Budibase Cloud",
+    "status": "draft",
+    "website": "https://budibase.com"
+  },
+  {
     "_id": "buildkite",
     "capabilities": {
       "api_token_controls": {
@@ -6223,6 +6300,69 @@
     "website": "https://www.genesys.com"
   },
   {
+    "_id": "gitbook",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "API tokens are personal, carry the user's own access and can be revoked by that user; no org-level token controls are documented.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "The roles page lists only fixed roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "The first time a new member signs in through the IdP, GitBook creates their account automatically.",
+        "source": "https://gitbook.com/docs/account-and-billing/sso-and-saml",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "The SSO docs don't mention SCIM, and removing someone from the IdP doesn't remove their GitBook account.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SAML SSO is listed on the Enterprise plan; GitBook also offers email-domain SSO, where anyone with a verified email on an allowed domain can join.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://gitbook.com/docs/account-and-billing/plans",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Admins can turn on Enforce SSO so members must sign in through SAML; admins can still use other sign-in methods so they don't get locked out.",
+        "source": "https://gitbook.com/docs/account-and-billing/sso-and-saml",
+        "support": "supported"
+      }
+    },
+    "category": "collaboration",
+    "description": "GitBook is a platform for writing, publishing and managing product and technical documentation.",
+    "name": "GitBook",
+    "status": "draft",
+    "website": "https://www.gitbook.com"
+  },
+  {
     "_id": "github",
     "capabilities": {
       "api_token_controls": {
@@ -6950,6 +7090,64 @@
     "name": "Greenhouse",
     "status": "published",
     "website": "https://www.greenhouse.io"
+  },
+  {
+    "_id": "grist",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Users create and revoke their own API keys. Admin controls over keys are documented only for self-managed installs.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "notes": "Audit log streaming is documented only for self-managed Grist on the Enterprise plan.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "Users can turn on MFA for themselves, but the docs don't say admins can require it.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "The SCIM docs only cover self-managed Grist, where it's marked experimental.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "The regular hosted service uses email and password or Google sign-in. The Dedicated Server offering connects to the customer's own identity provider over OIDC or SAML.",
+        "plan": "Dedicated Server",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://support.getgrist.com/data-security/",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "productivity",
+    "description": "Grist is a spreadsheet-database hybrid for building and sharing relational data.",
+    "name": "Grist",
+    "status": "draft",
+    "website": "https://www.getgrist.com"
   },
   {
     "_id": "growthbook",
@@ -7864,6 +8062,79 @@
     "name": "InfluxDB Cloud",
     "status": "draft",
     "website": "https://www.influxdata.com"
+  },
+  {
+    "_id": "insomnia",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "notes": "Docs mention SCIM logs and a user Last Active view, but no general audit log.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "Docs list Owner, Co-owner and Member roles; custom roles aren't mentioned.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "checked": "2026-09-27",
+        "notes": "Verify domains with a DNS TXT record. Verified domains enable domain capture and domain lock.",
+        "plan": "Enterprise",
+        "source": "https://developer.konghq.com/insomnia/enterprise-account-management/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "group_role_mapping": {
+        "notes": "SCIM can provision teams and roles are set per team, but the docs don't say IdP groups map to roles.",
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "Provisions users and teams from the IdP (Okta, Azure). Users added by hand before SCIM stay until removed manually.",
+        "plan": "Enterprise",
+        "source": "https://developer.konghq.com/insomnia/scim/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SSO is for Enterprise organizations, using SAML 2.0 or OIDC. You need at least one verified domain first.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://developer.konghq.com/insomnia/sso/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Once SSO is on for an Enterprise account, users can't use other login methods.",
+        "plan": "Enterprise",
+        "source": "https://developer.konghq.com/insomnia/sso/",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "development",
+    "description": "Insomnia is Kong's API client for designing, debugging and testing APIs.",
+    "name": "Insomnia",
+    "status": "draft",
+    "website": "https://insomnia.rest"
   },
   {
     "_id": "intercom",

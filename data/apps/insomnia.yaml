@@ -1,0 +1,55 @@
+name: "Insomnia"
+category: "development"
+website: "https://insomnia.rest"
+description: "Insomnia is Kong's API client for designing, debugging and testing APIs."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML", "OIDC"]
+    notes: "SSO is for Enterprise organizations, using SAML 2.0 or OIDC. You need at least one verified domain first."
+    source: "https://developer.konghq.com/insomnia/sso/"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Once SSO is on for an Enterprise account, users can't use other login methods."
+    source: "https://developer.konghq.com/insomnia/sso/"
+    checked: "2026-09-27"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Provisions users and teams from the IdP (Okta, Azure). Users added by hand before SCIM stay until removed manually."
+    source: "https://developer.konghq.com/insomnia/scim/"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+    notes: "Docs mention SCIM logs and a user Last Active view, but no general audit log."
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Verify domains with a DNS TXT record. Verified domains enable domain capture and domain lock."
+    source: "https://developer.konghq.com/insomnia/enterprise-account-management/"
+    checked: "2026-09-27"
+  custom_roles:
+    support: "undocumented"
+    notes: "Docs list Owner, Co-owner and Member roles; custom roles aren't mentioned."
+  group_role_mapping:
+    support: "undocumented"
+    notes: "SCIM can provision teams and roles are set per team, but the docs don't say IdP groups map to roles."
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"
