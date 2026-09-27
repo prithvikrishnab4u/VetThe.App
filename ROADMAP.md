@@ -96,8 +96,8 @@ _Last updated: 2026-09-27_
 
 ## To do: site
 
-- [ ] A page per app (`/apps/<id>/`) with all 12 capabilities, sources and notes. Add a "Help wanted" list there of not-researched values
-- [ ] Site-wide "Help wanted" view: filter the table to not-researched values
+- [x] A page per app (`/apps/<id>/`) with all 12 capabilities, sources, notes, a ✎ on each value, and a "Help wanted" list of not-researched values (done 2026-09-27; built by a content adapter, `site/content/apps/_content.gotmpl`, from `data/apps/`, so no content files to maintain). App names in the main table now link there
+- [x] Site-wide "Help wanted" view: `/apps/` lists every app with checked / not-researched counts, most work left first (done 2026-09-27)
 - [ ] Show "last checked" on cells, and flag stale values
 - [ ] Remove the `.Site.Data` deprecation warning (switch to `hugo.Data`) once Cloudflare's Hugo is ≥ 0.156
 
