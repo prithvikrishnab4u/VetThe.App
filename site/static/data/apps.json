@@ -11698,6 +11698,99 @@
     "website": "https://newrelic.com"
   },
   {
+    "_id": "ngrok",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Authtoken ACLs restrict what endpoints a token can create. Disabling or deleting a user blocks or revokes their authtokens and API keys.",
+        "plan": "Pay-as-you-go",
+        "source": "https://ngrok.com/docs/pricing-limits/how-ngrok-charges/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Audit events for account changes (domains, API keys, IP policies, etc.) are sent through Log Exports to destinations like a SIEM or Datadog. Retention isn't stated.",
+        "plan": "Pay-as-you-go with Identity and Access Governance Suite",
+        "source": "https://ngrok.com/docs/pricing-limits/how-ngrok-charges/",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "custom_roles": {
+        "notes": "The RBAC docs only describe fixed Developer, Team, Billing and Administrator roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "checked": "2026-09-27",
+        "notes": "Domain Controls let you claim an email domain via a DNS TXT record and route its logins and sign-ups to your SSO. Requires SSO.",
+        "plan": "Pay-as-you-go with Identity and Access Governance Suite",
+        "source": "https://ngrok.com/docs/pricing-limits/how-ngrok-charges/",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "SCIM doesn't support groups, and SCIM and JIT users always get the same fixed roles.",
+        "source": "https://ngrok.com/docs/iam/users/",
+        "support": "not_supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "Users signing in through SSO without an existing account are created automatically, with a Read/Write Developer role and Invite Team role.",
+        "source": "https://ngrok.com/docs/iam/users/",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "You can set the account to require MFA for all users.",
+        "source": "https://ngrok.com/docs/iam/users/",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-27",
+        "notes": "MFA only supports one-time passwords (TOTP).",
+        "source": "https://ngrok.com/docs/iam/users/",
+        "support": "not_supported"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "Provisions and deprovisions users only; groups aren't supported. Needs SSO set up first.",
+        "plan": "Pay-as-you-go with Identity and Access Governance Suite",
+        "source": "https://ngrok.com/docs/iam/sso/",
+        "support": "partial",
+        "tier": "add_on"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Dashboard SSO with SAML or OpenID Connect. The add-on is $10 per user/month and must cover all users.",
+        "plan": "Pay-as-you-go with SSO & RBAC add-on",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://ngrok.com/docs/iam/sso/",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "\"SSO Enforced\" mode makes every user sign in through the IdP; other login methods stop working.",
+        "plan": "Pay-as-you-go with SSO & RBAC add-on",
+        "source": "https://ngrok.com/docs/iam/sso/",
+        "support": "supported",
+        "tier": "add_on"
+      }
+    },
+    "category": "infrastructure",
+    "description": "ngrok is an API gateway and tunneling service that puts local and private services on the internet.",
+    "name": "ngrok",
+    "status": "draft",
+    "website": "https://ngrok.com"
+  },
+  {
     "_id": "notion",
     "capabilities": {
       "api_token_controls": {
@@ -12008,6 +12101,79 @@
     "name": "Oracle HCM Cloud",
     "status": "draft",
     "website": "https://www.oracle.com/human-capital-management/"
+  },
+  {
+    "_id": "ory",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Workspace API keys have an expiration date, and only workspace Owners can create or delete them; Developers can only view them. Project API keys can be managed by project Owners and Developers.",
+        "source": "https://www.ory.com/docs/console/roles-and-permissions",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "notes": "No doc found on an audit log of Ory Console or workspace activity.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "The docs list fixed Owner and Developer roles at the workspace and project level; nothing about creating custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "checked": "2026-09-27",
+        "notes": "SSO setup enrolls your email domain, and all users on that domain are then forced through SSO. Only one domain per workspace, and the doc doesn't describe a DNS verification step.",
+        "plan": "Ory Enterprise",
+        "source": "https://www.ory.com/docs/console/single-sign-on",
+        "support": "partial",
+        "tier": "enterprise"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "No doc found on requiring MFA for Ory Console accounts.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "Passkey and WebAuthn docs are about customers' own projects, not signing in to the Ory Console.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "The docs cover SCIM for customers' own Ory projects, but nothing about provisioning Ory Console workspace members.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "The Ory Console supports SSO over OIDC or SAML, set up per workspace. Console SSO is available on Ory Enterprise plans.",
+        "plan": "Ory Enterprise",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://www.ory.com/docs/console/single-sign-on",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Once SSO is set up, everyone with an email on the enrolled domain has to use SSO and can't use a Console password. Owners can also limit the workspace to organization members who signed in through SSO. Designated members can be allowed break-glass recovery by email.",
+        "plan": "Ory Enterprise",
+        "source": "https://www.ory.com/docs/console/single-sign-on",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "security",
+    "description": "Ory Network is a hosted identity and access platform for adding login, OAuth2 and permissions to applications.",
+    "name": "Ory Network",
+    "status": "draft",
+    "website": "https://www.ory.com"
   },
   {
     "_id": "outreach",
