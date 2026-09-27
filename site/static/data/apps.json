@@ -1807,6 +1807,100 @@
     "website": "https://www.browserstack.com"
   },
   {
+    "_id": "buildkite",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Admins can use the API Access Audit page to see every token with access to the org (scopes, creation, last use) and remove the org from a token.",
+        "source": "https://buildkite.com/docs/apis/managing-api-tokens",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Enterprise plan feature, visible to organization admins. Events are kept indefinitely and older ones can be pulled through the GraphQL API.",
+        "plan": "Enterprise",
+        "retention": "Stored indefinitely; 12 months in the UI, older events via GraphQL",
+        "source": "https://buildkite.com/docs/platform/audit-log",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "notes": "The docs only describe fixed roles: organization admin, team maintainer or member, and pipeline access levels.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "notes": "SSO setup asks for an email domain and a verification address, but the docs don't describe claiming or verifying a domain beyond that.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "A SAML teams attribute can put users into teams as member or maintainer, and an admin attribute can make them organization admins.",
+        "plan": "Pro",
+        "source": "https://buildkite.com/docs/platform/sso/custom-saml",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "The SSO FAQ says JIT provisioning is supported: users get an account the first time they sign in through SSO.",
+        "plan": "Pro",
+        "source": "https://buildkite.com/docs/platform/sso",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Admins can turn on Enforce Two-factor authentication under the organization's Security settings.",
+        "source": "https://buildkite.com/docs/platform/team-management/enforce-2fa",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The 2FA docs only describe authenticator app (TOTP) codes.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "Enterprise only, via Okta or Entra ID. SCIM can create and deactivate users; the real account is made at first SSO login, and there are no attribute updates or group sync.",
+        "plan": "Enterprise",
+        "source": "https://buildkite.com/docs/platform/sso/okta",
+        "support": "partial",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "SSO session length can be set from 6 hours up to 8,760 hours. Pinning SSO sessions to an IP address is an Enterprise feature.",
+        "plan": "Pro",
+        "source": "https://buildkite.com/docs/platform/sso",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SSO is a Pro and Enterprise plan feature. Okta, GitHub, Google Workspace and OneLogin work on Pro; ADFS, Google Workspace SAML, Entra ID and custom SAML need Enterprise.",
+        "plan": "Pro",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://buildkite.com/docs/platform/sso",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Admins can set SSO to required or optional per user. To require SSO for the whole org, 2FA enforcement has to be turned off.",
+        "plan": "Pro",
+        "source": "https://buildkite.com/docs/platform/sso",
+        "support": "supported",
+        "tier": "paid"
+      }
+    },
+    "category": "development",
+    "description": "Buildkite is a CI/CD platform that runs build pipelines on agents you host or that Buildkite hosts.",
+    "name": "Buildkite",
+    "status": "draft",
+    "website": "https://buildkite.com"
+  },
+  {
     "_id": "calendly",
     "capabilities": {
       "api_token_controls": {
@@ -3176,6 +3270,101 @@
     "website": "https://www.datadoghq.com"
   },
   {
+    "_id": "dbt-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "The token docs cover creating personal and service account tokens but not admin review or revocation of users' tokens.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "The audit log is only on Enterprise plans. The UI shows the last 90 days, and older events can be exported. Events are kept for at least 12 months.",
+        "plan": "Enterprise",
+        "retention": "At least 12 months",
+        "source": "https://docs.getdbt.com/docs/platform/manage-access/audit-log",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "notes": "Access is built from dbt's fixed permission sets assigned to groups; the docs don't describe creating custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "notes": "The SSO setup pages ask for your IdP domain, but don't describe verifying a domain or claiming accounts on it.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "SSO mappings tie an IdP group to a dbt group, and group memberships (and permissions) update each time the user signs in.",
+        "plan": "Enterprise",
+        "source": "https://docs.getdbt.com/docs/platform/manage-access/about-user-access",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "dbt supports JIT provisioning: a user who signs in with SSO and doesn't exist yet gets created.",
+        "plan": "Enterprise",
+        "source": "https://docs.getdbt.com/docs/platform/manage-access/sso-overview",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "dbt enforces MFA for every user with a username and password, on all plans. Users who don't enroll can't get in.",
+        "plan": "All plans",
+        "source": "https://docs.getdbt.com/docs/platform/manage-access/mfa",
+        "support": "supported",
+        "tier": "free"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-27",
+        "notes": "A WebAuthn-compliant security key is one of the three MFA methods, next to SMS and an authenticator app.",
+        "plan": "All plans",
+        "source": "https://docs.getdbt.com/docs/platform/manage-access/mfa",
+        "support": "supported",
+        "tier": "free"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "SCIM handles user provisioning and deprovisioning, profile updates and groups. It needs an Enterprise or Enterprise+ plan and Okta or Entra ID as the SSO provider.",
+        "plan": "Enterprise",
+        "source": "https://docs.getdbt.com/docs/platform/manage-access/scim",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "notes": "SSO users are asked to re-authenticate every 24 hours, but the docs don't describe a setting admins can change.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SSO needs an Enterprise or Enterprise+ plan. The docs cover SAML 2.0, Okta, Microsoft Entra ID and Google Workspace (an OAuth client with the openid scope).",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.getdbt.com/docs/platform/manage-access/sso-overview",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Turning on SSO forces SSO-only login for non-admin users. Admins with a password keep it unless you turn off \"Allow password logins for account administrators\".",
+        "plan": "Enterprise",
+        "source": "https://docs.getdbt.com/docs/platform/manage-access/sso-overview",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "development",
+    "description": "dbt Cloud (the dbt platform) is a hosted service for building, testing and scheduling SQL data transformations.",
+    "name": "dbt Cloud",
+    "status": "draft",
+    "website": "https://www.getdbt.com"
+  },
+  {
     "_id": "deel",
     "capabilities": {
       "api_token_controls": {
@@ -3873,6 +4062,67 @@
     "name": "Five9",
     "status": "draft",
     "website": "https://www.five9.com"
+  },
+  {
+    "_id": "fly-io",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Tokens can be scoped to an app, an org, read-only, SSH or specific commands, and can have an expiry. Org tokens can be listed and revoked with flyctl or in the dashboard.",
+        "source": "https://fly.io/docs/security/tokens/",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "notes": "The docs cover app logs and metrics, but not an audit log of org or account activity.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Organizations have just two roles, Member and Admin, and Fly.io says it keeps roles simple on purpose.",
+        "source": "https://fly.io/docs/security/org-roles-permissions/",
+        "support": "not_supported"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "Users can turn on authenticator-app MFA, but the docs don't describe a way for admins to require it.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The docs only mention standard MFA apps. Passkeys come up only as something Google or GitHub provide when used for SSO.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Org SSO works only with Google Workspace (by hosted domain) or a GitHub organization as the identity provider. The docs don't mention SAML or other providers.",
+        "source": "https://fly.io/docs/security/sso/",
+        "support": "partial"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "SSO is set up as a requirement on the organization: members must re-authenticate with Google or GitHub to access that org's resources. No plan is named.",
+        "source": "https://fly.io/docs/security/sso/",
+        "support": "supported"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Fly.io is a cloud platform for running apps and databases in VMs close to users around the world.",
+    "name": "Fly.io",
+    "status": "draft",
+    "website": "https://fly.io"
   },
   {
     "_id": "freshdesk",
@@ -4726,6 +4976,87 @@
     "website": "https://www.gorgias.com"
   },
   {
+    "_id": "grafana-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Service account tokens have no expiry by default, but an expiry can be set. Users with Edit permission can disable service accounts and add or delete their tokens.",
+        "source": "https://grafana.com/docs/grafana/latest/administration/service-accounts/",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Available in Grafana Enterprise and Grafana Cloud. On Cloud, audit logs are exported to Loki after you ask support to turn them on, and standard ingest and retention rates apply. No specific Cloud plan is named.",
+        "source": "https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/audit-grafana/",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Available in Grafana Enterprise and Grafana Cloud. Custom roles are created through the RBAC HTTP API, Terraform or file provisioning, not in the UI.",
+        "source": "https://grafana.com/docs/grafana/latest/administration/roles-and-permissions/access-control/create-custom-roles/",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "SAML role sync maps IdP attribute values to Viewer, Editor, Admin or Grafana Admin, and team sync maps groups to teams. The docs say this is on select Grafana Cloud plans but don't name them.",
+        "source": "https://grafana.com/docs/grafana/latest/setup-grafana/configure-access/configure-authentication/saml/configure-saml-team-role-mapping/",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "The SAML allow_sign_up option, on by default, creates new Grafana users when they first sign in through SAML.",
+        "source": "https://grafana.com/docs/grafana/latest/setup-grafana/configure-access/configure-authentication/saml/saml-configuration-options/",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "The docs say Grafana and the Grafana Cloud portal don't include built-in MFA, and suggest using an external identity provider that enforces it.",
+        "source": "https://grafana.com/docs/grafana/latest/setup-grafana/configure-access/configure-authentication/",
+        "support": "not_supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-27",
+        "notes": "There's no built-in MFA, so no built-in passkeys or security keys either. The docs point to an external identity provider instead.",
+        "source": "https://grafana.com/docs/grafana/latest/setup-grafana/configure-access/configure-authentication/",
+        "support": "not_supported"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "Available in Grafana Enterprise and Grafana Cloud. Syncs users and teams from Entra ID or Okta, and works only with SAML. No specific Cloud plan is named.",
+        "source": "https://grafana.com/docs/grafana/latest/setup-grafana/configure-access/configure-scim-provisioning/",
+        "support": "supported"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "Users can remove their own sessions from their profile, and a Grafana admin can remove any user's sessions. Session lifetime limits are config-file settings, and the docs say the forced-logout workaround isn't available to Grafana Cloud customers.",
+        "source": "https://grafana.com/docs/grafana/latest/setup-grafana/configure-access/configure-authentication/",
+        "support": "partial"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SAML is available in Grafana Enterprise and Grafana Cloud, set up through the UI, API or Terraform. Generic OAuth/OIDC is also available on Cloud. No specific Cloud plan is named.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://grafana.com/docs/grafana/latest/setup-grafana/configure-access/configure-authentication/saml/",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "notes": "The docs don't describe a way to require SSO for Grafana Cloud. The option to disable the login form is a config-file setting on the self-managed basic auth page, and Cloud Portal users can always sign in.",
+        "support": "undocumented"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Grafana Cloud is a hosted observability platform for metrics, logs, traces and dashboards.",
+    "name": "Grafana Cloud",
+    "status": "draft",
+    "website": "https://grafana.com"
+  },
+  {
     "_id": "grammarly",
     "capabilities": {
       "api_token_controls": {
@@ -4878,6 +5209,82 @@
     "name": "Greenhouse",
     "status": "published",
     "website": "https://www.greenhouse.io"
+  },
+  {
+    "_id": "growthbook",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Logs every action under Settings > Log. Users can't edit it, and you can export it.",
+        "plan": "Enterprise",
+        "source": "https://docs.growthbook.io/account/audit-logs",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Only Enterprise has custom roles. Pro gets full management of the built-in roles.",
+        "plan": "Enterprise",
+        "source": "https://docs.growthbook.io/account/user-permissions",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "domain_verification": {
+        "notes": "Users with a verified email on the owner's domain can ask to join, but there is no domain ownership check.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "SCIM Group Push syncs IdP groups into GrowthBook Teams. New Teams get the org default role, so you set their permissions in GrowthBook.",
+        "plan": "Enterprise",
+        "source": "https://docs.growthbook.io/integrations/scim",
+        "support": "partial",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "Needs SSO turned on. Only Okta and Azure AD / Entra ID are supported, covering user provisioning, deprovisioning and Group Push.",
+        "plan": "Enterprise",
+        "source": "https://docs.growthbook.io/integrations/scim",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Enterprise SSO uses OpenID Connect, not SAML. On GrowthBook Cloud your account rep sets it up from the client ID, secret and email domain you send them.",
+        "plan": "Enterprise",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://docs.growthbook.io/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "notes": "The SSO doc doesn't say whether password login can be turned off for SSO users.",
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "GrowthBook is an open-source feature flagging and A/B testing platform, available as GrowthBook Cloud or self-hosted.",
+    "name": "GrowthBook",
+    "status": "draft",
+    "website": "https://www.growthbook.io"
   },
   {
     "_id": "gusto",
@@ -9793,6 +10200,81 @@
     "website": "https://www.sap.com/products/hcm.html"
   },
   {
+    "_id": "semgrep",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Admins see API, CLI, and service tokens under Settings > Tokens and can revoke any of them. API tokens stay valid until revoked, even if the creator leaves.",
+        "source": "https://docs.semgrep.dev/deployment/tokens",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "notes": "The docs mention scan and findings history for compliance, not a log of user or admin activity.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "Only the built-in roles (Admin, Manager, Member, Read-only) are documented.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "notes": "An email domain is set during SSO setup, but no verification step is described.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "Only through beta SCIM: IdP groups map to Admin, Member, or Read-only, and groups named with a team prefix create Semgrep teams.",
+        "source": "https://docs.semgrep.dev/deployment/scim",
+        "support": "partial"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "Any user at the configured SSO domain who signs in gets access; new SSO accounts get the Member role by default, which admins can change.",
+        "source": "https://docs.semgrep.dev/deployment/sso",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "notes": "Sign-in goes through GitHub, GitLab, or SSO; no Semgrep setting to require MFA is described.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "SCIM is in beta (contact your account team to join), needs SSO, and only works with Okta and Entra ID on multi-tenant deployments.",
+        "source": "https://docs.semgrep.dev/deployment/scim",
+        "support": "partial"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "Sessions last 7 days and the docs say this timeout isn't configurable.",
+        "source": "https://docs.semgrep.dev/deployment/checklist",
+        "support": "not_supported"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SAML and OIDC SSO are supported on plans that include SSO; the docs don't name the plan and say to contact Semgrep to set it up. OIDC isn't supported with Entra ID.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.semgrep.dev/deployment/sso",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Once SSO is on, admins can turn off GitHub and GitLab login so members with an approved-domain email have to sign in through SSO.",
+        "source": "https://docs.semgrep.dev/deployment/sso",
+        "support": "supported"
+      }
+    },
+    "category": "security",
+    "description": "Semgrep is a code security platform for static analysis, supply chain, and secrets scanning.",
+    "name": "Semgrep",
+    "status": "draft",
+    "website": "https://semgrep.dev"
+  },
+  {
     "_id": "semrush",
     "capabilities": {
       "api_token_controls": {
@@ -10704,6 +11186,86 @@
     "website": "https://stripe.com"
   },
   {
+    "_id": "supabase",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Users can scope their own personal access tokens, but the docs don't describe admins viewing or revoking members' tokens.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Platform audit logs record dashboard and Management API actions by org members and can be streamed through audit log drains; Team and Enterprise plans only.",
+        "plan": "Team",
+        "retention": "Depends on plan",
+        "source": "https://supabase.com/docs/guides/security/platform-audit-logs",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "custom_roles": {
+        "notes": "The access control page lists four built-in roles (Owner, Administrator, Developer, Read-Only) and doesn't mention custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "notes": "Email domains are only used to route SP-initiated SSO sign-ins; the docs don't describe claiming existing accounts on a domain.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "With auto-join on, users from a matching email domain join the organization on SSO sign-in with a default role the admin picks.",
+        "plan": "Team",
+        "source": "https://supabase.com/docs/guides/platform/sso",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Organization owners can turn on \"Require MFA to access organization\"; available on Pro, Team and Enterprise plans.",
+        "plan": "Pro",
+        "source": "https://supabase.com/docs/guides/platform/mfa/org-mfa-enforcement",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The account MFA page only describes TOTP authenticator apps as a second factor.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "The organization SSO docs don't mention SCIM; access is removed by disabling the user in the IdP or removing them in Supabase.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SAML 2.0 SSO to the Supabase dashboard is available for Team and Enterprise plan organizations.",
+        "plan": "Team",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://supabase.com/docs/guides/platform/sso",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Admins choose per invitation whether SSO is required, and the org must keep at least one non-SSO owner; there is no single org-wide switch to block password sign-in.",
+        "plan": "Team",
+        "source": "https://supabase.com/docs/guides/platform/sso",
+        "support": "partial",
+        "tier": "paid"
+      }
+    },
+    "category": "development",
+    "description": "Supabase is a hosted Postgres development platform with auth, storage, edge functions and realtime APIs.",
+    "name": "Supabase",
+    "status": "draft",
+    "website": "https://supabase.com"
+  },
+  {
     "_id": "surveymonkey",
     "capabilities": {
       "api_token_controls": {
@@ -10973,6 +11535,91 @@
     "website": "https://www.teamviewer.com"
   },
   {
+    "_id": "temporal-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Keys have expiry dates. Global Admins and Account Owners can view, disable, and delete any API key, and can stop users from creating keys.",
+        "source": "https://docs.temporal.io/cloud/api-keys",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Account Owners and Global Admins can view control-plane events in the UI or API, or stream them to AWS Kinesis or GCP Pub/Sub.",
+        "retention": "30 days",
+        "source": "https://docs.temporal.io/cloud/audit-logs",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Pre-release. Custom permission sets can be assigned to users, groups, or service accounts.",
+        "source": "https://docs.temporal.io/cloud/manage-access/custom-roles",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "notes": "IdP domains are mapped by support ticket; no verification step is described.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "Groups synced over SCIM can be given roles and permissions.",
+        "plan": "SCIM add-on on Developer and Business; included in Enterprise and Mission Critical",
+        "source": "https://docs.temporal.io/cloud/manage-access/scim",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "jit_provisioning": {
+        "notes": "Docs only cover invited users being added through SAML.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Users who sign up with email and password must use MFA with an authenticator app.",
+        "source": "https://docs.temporal.io/cloud/manage-access/",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "Creates and removes users and syncs group membership. SAML has to be set up first.",
+        "plan": "Add-on on Developer and Business ($500/month); included in Enterprise and Mission Critical",
+        "source": "https://docs.temporal.io/cloud/pricing",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "Support can turn on Strict UI Session Mode for SAML sessions: 15-minute idle timeout and a 12-hour maximum session instead of 7 days.",
+        "source": "https://docs.temporal.io/best-practices/security-controls",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SAML is included on every plan (Developer, Business, Enterprise, Mission Critical). Setup is finished through a support ticket.",
+        "plan": "Developer",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.temporal.io/cloud/manage-access/saml",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Once SAML is set up, support can turn off Google and Microsoft social logins. The docs don't say email/password sign-in can be blocked.",
+        "source": "https://docs.temporal.io/best-practices/security-controls",
+        "support": "partial"
+      }
+    },
+    "category": "development",
+    "description": "Managed cloud service for running Temporal durable execution workflows.",
+    "name": "Temporal Cloud",
+    "status": "draft",
+    "website": "https://temporal.io"
+  },
+  {
     "_id": "tenable",
     "capabilities": {
       "api_token_controls": {
@@ -11128,6 +11775,104 @@
     "name": "Trello",
     "status": "published",
     "website": "https://trello.com"
+  },
+  {
+    "_id": "twilio-segment",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Only Workspace Owners can create Public API tokens, with Owner or Member access. Tokens found exposed on GitHub are revoked automatically. The Public API is for Team and Business Tier customers.",
+        "plan": "Team",
+        "source": "https://segment.com/docs/api/public-api/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "The Audit Trail shows the last 90 days of user and system activity to Workspace Owners, and can be exported to an event stream source or CSV.",
+        "plan": "Business",
+        "retention": "90 days",
+        "source": "https://segment.com/docs/segment-app/iam/audit-trail/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "notes": "The docs list built-in roles only and don't describe creating new ones.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "checked": "2026-09-27",
+        "notes": "Domains are verified in Authentication > Domains with a meta tag or DNS TXT record, which lets users start SSO from the login page.",
+        "plan": "Business",
+        "source": "https://segment.com/docs/segment-app/iam/sso/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "Groups pushed from the IdP over SCIM show up in Segment, where admins assign permissions to them.",
+        "plan": "Business",
+        "source": "https://segment.com/docs/segment-app/iam/scim/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "New users who sign in through the IdP are created automatically as minimal-access members.",
+        "plan": "Business",
+        "source": "https://segment.com/docs/segment-app/iam/sso/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Workspace owners can require MFA for everyone in the workspace, on all plans. MFA uses SMS (US/Canada) or an authenticator app and doesn't apply to SSO logins.",
+        "plan": "Free",
+        "source": "https://segment.com/docs/segment-app/iam/mfa/",
+        "support": "supported",
+        "tier": "free"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The MFA doc only lists SMS codes and authenticator apps.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "SCIM provisions users and groups and needs an SSO connection on the Business Tier. Deactivating or deleting a user removes them from the workspace, but the Segment account itself isn't deleted.",
+        "plan": "Business",
+        "source": "https://segment.com/docs/segment-app/iam/scim/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "notes": "The docs say sessions last 7 days (15 minutes in HIPAA-eligible workspaces) but don't describe admin settings for this.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SSO is available for Business Tier workspaces and works with SAML identity providers and GSuite.",
+        "plan": "Business",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://segment.com/docs/segment-app/iam/sso/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Admins can turn on \"Require SSO\" in Advanced Settings so members must log in through SSO; exceptions can be set for specific users.",
+        "plan": "Business",
+        "source": "https://segment.com/docs/segment-app/iam/sso/",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "sales_marketing",
+    "description": "Segment is a customer data platform from Twilio that collects, cleans, and routes customer event data to other tools.",
+    "name": "Segment",
+    "status": "draft",
+    "website": "https://segment.com"
   },
   {
     "_id": "twilio",
