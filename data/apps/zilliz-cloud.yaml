@@ -1,0 +1,60 @@
+name: "Zilliz Cloud"
+category: "infrastructure"
+website: "https://zilliz.com"
+description: "Managed vector database service built on Milvus."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML", "OIDC"]
+    notes: "Org-level SSO over OIDC or SAML 2.0. The docs say it's only on the Enterprise plan or higher, and on BYOC deployments."
+    source: "https://docs.zilliz.com/docs/single-sign-on"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    notes: "Organization Owners can turn on Enforce SSO Login, which blocks password and Google/GitHub logins for members. Owners stay exempt as a break-glass path."
+    source: "https://docs.zilliz.com/docs/enforce-sso-in-your-organization"
+    checked: "2026-09-27"
+  scim:
+    support: "undocumented"
+    notes: "The SSO docs don't mention SCIM."
+  mfa_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Organization Owners can require TOTP MFA for all org users. Needs a valid payment method, an Enterprise project and a Dedicated cluster."
+    source: "https://docs.zilliz.com/docs/multi-factor-auth"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The MFA doc only covers TOTP authenticator apps; passkeys and security keys aren't mentioned."
+  audit_logs:
+    support: "supported"
+    notes: "Platform Audit Logs show org events (clusters, access, billing) with the operator's identity, filterable in up-to-30-day windows. Separate data-plane VectorDB audit logs are Enterprise plan or higher."
+    source: "https://docs.zilliz.com/docs/view-activities"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    notes: "Users without a Zilliz Cloud account are created on their first SSO login and get the Organization Member role."
+    source: "https://docs.zilliz.com/docs/single-sign-on-with-okta"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "partial"
+    notes: "Custom roles exist only at the cluster (data plane) level and only for Dedicated clusters. Organization and project roles are fixed."
+    source: "https://docs.zilliz.com/docs/cluster-roles"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "undocumented"
+    notes: "The SSO docs say new SSO users get the Organization Member role by default; no group mapping is described."
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "Owners and Project Admins create customized API keys scoped by org/project role and optionally limited to specific clusters, and can view members' keys. Personal keys are deleted when the user leaves."
+    source: "https://docs.zilliz.com/docs/manage-api-keys"
+    checked: "2026-09-27"

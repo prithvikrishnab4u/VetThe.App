@@ -2783,6 +2783,82 @@
     "website": "https://www.checklyhq.com"
   },
   {
+    "_id": "chromatic",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "The docs describe fixed account and project roles and don't mention custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "notes": "Chromatic Support manages an allow list of email domains for SSO sign-in; verifying domain ownership isn't described.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "Directory groups map to account roles (set up by Chromatic Support), and SCIM-synced Teams can grant project roles.",
+        "plan": "Enterprise",
+        "source": "https://chromatic.com/docs/access/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "JIT provisioning creates a profile the first time someone signs in through SSO.",
+        "plan": "Enterprise",
+        "source": "https://chromatic.com/docs/access/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "SCIM pushes profiles and groups from the IdP, can assign roles, and removes access when the IdP disables someone; groups become Teams.",
+        "plan": "Enterprise",
+        "source": "https://chromatic.com/docs/access/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SSO is available only on the Enterprise plan and works with any SAML 2.0 identity provider; Chromatic enables it on the account and users sign in through a custom subdomain.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://chromatic.com/docs/access/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Once SSO is on, every account collaborator has to sign in through SAML, and accounts with SSO don't allow external collaborators outside the SSO flow.",
+        "plan": "Enterprise",
+        "source": "https://chromatic.com/docs/access/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "development",
+    "description": "Chromatic is a visual testing and review service for UI components built with Storybook, Playwright or Cypress.",
+    "name": "Chromatic",
+    "status": "draft",
+    "website": "https://www.chromatic.com"
+  },
+  {
     "_id": "circleci",
     "capabilities": {
       "api_token_controls": {
@@ -18024,6 +18100,84 @@
     "name": "Zendesk",
     "status": "published",
     "website": "https://zendesk.com"
+  },
+  {
+    "_id": "zilliz-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Owners and Project Admins create customized API keys scoped by org/project role and optionally limited to specific clusters, and can view members' keys. Personal keys are deleted when the user leaves.",
+        "source": "https://docs.zilliz.com/docs/manage-api-keys",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Platform Audit Logs show org events (clusters, access, billing) with the operator's identity, filterable in up-to-30-day windows. Separate data-plane VectorDB audit logs are Enterprise plan or higher.",
+        "source": "https://docs.zilliz.com/docs/view-activities",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Custom roles exist only at the cluster (data plane) level and only for Dedicated clusters. Organization and project roles are fixed.",
+        "source": "https://docs.zilliz.com/docs/cluster-roles",
+        "support": "partial"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "notes": "The SSO docs say new SSO users get the Organization Member role by default; no group mapping is described.",
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "Users without a Zilliz Cloud account are created on their first SSO login and get the Organization Member role.",
+        "source": "https://docs.zilliz.com/docs/single-sign-on-with-okta",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Organization Owners can require TOTP MFA for all org users. Needs a valid payment method, an Enterprise project and a Dedicated cluster.",
+        "plan": "Enterprise",
+        "source": "https://docs.zilliz.com/docs/multi-factor-auth",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The MFA doc only covers TOTP authenticator apps; passkeys and security keys aren't mentioned.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "The SSO docs don't mention SCIM.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Org-level SSO over OIDC or SAML 2.0. The docs say it's only on the Enterprise plan or higher, and on BYOC deployments.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.zilliz.com/docs/single-sign-on",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Organization Owners can turn on Enforce SSO Login, which blocks password and Google/GitHub logins for members. Owners stay exempt as a break-glass path.",
+        "source": "https://docs.zilliz.com/docs/enforce-sso-in-your-organization",
+        "support": "supported"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Managed vector database service built on Milvus.",
+    "name": "Zilliz Cloud",
+    "status": "draft",
+    "website": "https://zilliz.com"
   },
   {
     "_id": "zitadel",
