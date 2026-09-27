@@ -604,6 +604,83 @@
     "website": "https://airtable.com"
   },
   {
+    "_id": "aiven",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Admins can stop users from creating personal tokens and require that tokens were made with an allowed login method. IP allowlists also apply to tokens. Each token gets its own session duration.",
+        "source": "https://aiven.io/docs/platform/howto/set-authentication-policies",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Organization event logs record the action, who did it, when, and the target resource. Logs are kept for 30 days.",
+        "retention": "30 days",
+        "source": "https://aiven.io/docs/platform/howto/organization-event-logs",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "notes": "Individual permissions can be granted alongside the predefined roles, but the docs don't describe creating custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "checked": "2026-09-27",
+        "notes": "Domains are verified with a DNS TXT record or an uploaded HTML file. Users on a verified domain become managed users.",
+        "source": "https://aiven.io/docs/platform/howto/manage-domains",
+        "support": "supported"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "With group syncing turned on, users' IdP group membership syncs to matching Aiven groups at login, and roles are granted to those groups.",
+        "source": "https://aiven.io/docs/platform/howto/saml/add-identity-providers",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Admins can require 2FA for everyone, but only for email and password logins. Aiven can't enforce 2FA on logins through third-party providers or IdPs.",
+        "source": "https://aiven.io/docs/platform/howto/set-authentication-policies",
+        "support": "partial"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The 2FA docs only describe TOTP authenticator apps.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "SCIM provisioning is documented for Okta only. It can create, update, and deactivate users and push groups.",
+        "source": "https://aiven.io/docs/platform/howto/saml/add-okta-idp",
+        "support": "partial"
+      },
+      "session_controls": {
+        "notes": "Admins can limit access to allowed IP ranges, but the docs don't describe an organization-wide session timeout.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Organization admins can add SAML identity providers. Each one has to be linked to a verified domain. The docs don't name a plan.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://aiven.io/docs/platform/howto/saml/add-identity-providers",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "The authentication policy sets which login methods are allowed. Admins can turn off password and third-party login and require your own organization's IdP.",
+        "source": "https://aiven.io/docs/platform/howto/set-authentication-policies",
+        "support": "supported"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Aiven is a managed cloud data platform for running open-source databases, streaming, and search services.",
+    "name": "Aiven",
+    "status": "draft",
+    "website": "https://aiven.io"
+  },
+  {
     "_id": "amazon-web-services-aws",
     "capabilities": {
       "api_token_controls": {
@@ -8267,6 +8344,224 @@
     "website": "https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-id"
   },
   {
+    "_id": "microsoft-fabric",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Fabric user activities are recorded in the Microsoft Purview audit log; viewing them needs the Audit Logs role.",
+        "source": "https://learn.microsoft.com/en-us/fabric/admin/track-user-activities",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Workspace roles are fixed (Admin, Member, Contributor, Viewer); OneLake security lets you create custom data access roles.",
+        "source": "https://learn.microsoft.com/en-us/fabric/onelake/security/create-manage-roles",
+        "support": "partial"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "Workspace roles can be assigned to security groups, Microsoft 365 groups, and distribution lists.",
+        "source": "https://learn.microsoft.com/en-us/fabric/fundamentals/roles-workspaces",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Entra ID Conditional Access policies can require multifactor authentication to access Fabric.",
+        "source": "https://learn.microsoft.com/en-us/fabric/security/security-conditional-access",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-27",
+        "notes": "Entra ID tenant control: passkeys (FIDO2) are available in all Entra ID editions, including Entra ID Free, with no extra licenses.",
+        "plan": "Microsoft Entra ID Free",
+        "source": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-passkeys-fido2",
+        "support": "supported",
+        "tier": "free"
+      },
+      "scim": {
+        "notes": "Fabric users are Entra ID accounts; the Fabric docs don't describe a SCIM endpoint.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "notes": "The Conditional Access page says Fabric doesn't support the continuous access evaluation session control.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Fabric uses Microsoft Entra ID to authenticate users and service principals and to issue access tokens; federating sign-in to another identity provider is set up in Entra ID.",
+        "source": "https://learn.microsoft.com/en-us/fabric/security/security-fundamentals",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Every request to connect to Fabric is authenticated with Microsoft Entra ID; there's no separate Fabric password.",
+        "source": "https://learn.microsoft.com/en-us/fabric/security/security-overview",
+        "support": "supported"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Microsoft Fabric is an analytics platform for data engineering, warehousing, and reporting that signs users in through Microsoft Entra ID.",
+    "name": "Microsoft Fabric",
+    "status": "draft",
+    "website": "https://www.microsoft.com/microsoft-fabric"
+  },
+  {
+    "_id": "microsoft-intune",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Auditing is on for all customers and can't be turned off; it records create, update, delete, assign, and remote actions and can be sent to Azure Monitor.",
+        "retention": "Two years via Graph API",
+        "source": "https://learn.microsoft.com/en-us/intune/governance/monitor-audit-logs",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Admins can create custom Intune roles that include any Intune RBAC permission; built-in roles can't be edited.",
+        "source": "https://learn.microsoft.com/en-us/intune/fundamentals/role-based-access-control/create-custom-role",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "Intune RBAC roles are assigned to groups, not individual users, and every group member gets the role's permissions.",
+        "source": "https://learn.microsoft.com/en-us/intune/fundamentals/role-based-access-control/assign-role",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "An Entra ID Conditional Access policy can require multifactor authentication at device enrollment; the doc says users need Microsoft Entra ID P1 or later.",
+        "source": "https://learn.microsoft.com/en-us/intune/device-enrollment/configure-multifactor-authentication",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-27",
+        "notes": "Entra ID tenant control: passkeys (FIDO2) are available in all Entra ID editions, including Entra ID Free, with no extra licenses.",
+        "plan": "Microsoft Entra ID Free",
+        "source": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-passkeys-fido2",
+        "support": "supported",
+        "tier": "free"
+      },
+      "scim": {
+        "notes": "Users are provisioned into Entra ID rather than Intune; the Intune docs don't describe a SCIM endpoint.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Microsoft Entra ID is the identity service for Intune; accounts can be synced from on-premises AD and federated (for example with AD FS) through Entra Connect.",
+        "source": "https://learn.microsoft.com/en-us/intune/fundamentals/tenant-administration/add-users",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "User accounts in Intune exist in Microsoft Entra ID; there's no separate Intune login.",
+        "source": "https://learn.microsoft.com/en-us/intune/fundamentals/tenant-administration/add-users",
+        "support": "supported"
+      }
+    },
+    "category": "security",
+    "description": "Microsoft Intune is an endpoint and device management service that signs users in through Microsoft Entra ID.",
+    "name": "Microsoft Intune",
+    "status": "draft",
+    "website": "https://www.microsoft.com/security/business/microsoft-intune"
+  },
+  {
+    "_id": "microsoft-power-apps",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Power Apps activities such as creating, using, and deleting canvas apps are logged in Microsoft Purview; viewing needs the Audit Logs role.",
+        "source": "https://learn.microsoft.com/en-us/power-platform/admin/activity-logging-auditing/activity-logs-power-apps",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Admins with the System Administrator role can create and edit Dataverse security roles.",
+        "source": "https://learn.microsoft.com/en-us/power-platform/admin/create-edit-security-role",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "Entra ID security and Microsoft 365 groups can be mapped to Dataverse group teams with security roles, and members get access automatically.",
+        "source": "https://learn.microsoft.com/en-us/power-platform/admin/manage-group-teams",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "When a member of an Entra ID group team accesses Dataverse and doesn't exist there yet, the user is added just-in-time.",
+        "source": "https://learn.microsoft.com/en-us/power-apps/developer/data-platform/aad-group-team",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Entra ID Conditional Access can require multifactor authentication, for example to open a Power Apps canvas app.",
+        "source": "https://learn.microsoft.com/en-us/power-platform/guidance/adoption/conditional-access",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-27",
+        "notes": "Entra ID tenant control: passkeys (FIDO2) are available in all Entra ID editions, including Entra ID Free, with no extra licenses.",
+        "plan": "Microsoft Entra ID Free",
+        "source": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-passkeys-fido2",
+        "support": "supported",
+        "tier": "free"
+      },
+      "scim": {
+        "notes": "Users are created in Microsoft 365 / Entra ID and synced to environments; no SCIM endpoint is documented.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "Per-environment session expiration and inactivity timeout can be set, but Power Apps canvas apps don't enforce the user session timeout.",
+        "source": "https://learn.microsoft.com/en-us/power-platform/admin/user-session-management",
+        "support": "partial"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Power Platform uses Microsoft Entra ID for identity and access management; tenant-level access requires an active Entra account.",
+        "source": "https://learn.microsoft.com/en-us/power-platform/guidance/adoption/conditional-access",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Tenant-level access uses Entra ID: users need an active Entra account and must meet any Conditional Access policies to sign in.",
+        "source": "https://learn.microsoft.com/en-us/power-platform/guidance/adoption/conditional-access",
+        "support": "supported"
+      }
+    },
+    "category": "productivity",
+    "description": "Microsoft Power Apps is a low-code app builder on Power Platform and Dataverse that signs users in through Microsoft Entra ID.",
+    "name": "Microsoft Power Apps",
+    "status": "draft",
+    "website": "https://www.microsoft.com/power-platform/products/power-apps"
+  },
+  {
     "_id": "microsoft-power-bi",
     "capabilities": {
       "api_token_controls": {
@@ -8898,15 +9193,13 @@
       },
       "sso": {
         "checked": "2026-09-27",
-        "notes": "SAML is available on Business and Enterprise plans, and OIDC only on Enterprise. An instance owner or admin sets it up.",
-        "plan": "Business (SAML); Enterprise (SAML and OIDC)",
+        "notes": "SAML and OIDC are both documented, and an instance owner or admin sets them up. The plan note on the SAML page comes from a shared snippet we couldn't read, so no plan is recorded here yet.",
         "protocols": [
           "SAML",
           "OIDC"
         ],
         "source": "https://docs.n8n.io/administer/manage-users-and-access/verify-user-identity/use-saml/set-up-saml",
-        "support": "supported",
-        "tier": "paid"
+        "support": "supported"
       },
       "sso_enforcement": {
         "checked": "2026-09-27",
