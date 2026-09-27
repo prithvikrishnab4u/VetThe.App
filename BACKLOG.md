@@ -248,7 +248,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P3 | Bugsnag | `bugsnag` | development | https://bugsnag.com |
 | P3 | Coder | `coder` | development | https://coder.com |
 | P3 | CodeRabbit | `coderabbit` | development | https://coderabbit.ai |
-| P3 | GitBook | `gitbook` | development | https://gitbook.com |
 | P3 | Graphite | `graphite` | development | https://graphite.dev |
 | P3 | Lovable | `lovable` | development | https://lovable.dev |
 | P3 | MuleSoft Anypoint Platform | `mulesoft` | development | https://mulesoft.com |

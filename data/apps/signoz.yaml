@@ -1,0 +1,52 @@
+name: "SigNoz Cloud"
+category: "development"
+website: "https://signoz.io"
+description: "SigNoz Cloud is the hosted version of SigNoz, an OpenTelemetry-based observability platform for logs, metrics and traces."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "SAML 2.0 and OIDC are available on SigNoz Cloud and Enterprise Self-Hosted; Google Workspace sign-in is also on the free Community Edition."
+    source: "https://signoz.io/docs/manage/administrator-guide/sso/overview/"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    notes: "Admins can turn on Enforce SSO for an authenticated domain, so users with that email domain must sign in through the IdP."
+    source: "https://signoz.io/docs/manage/administrator-guide/sso/overview/"
+    checked: "2026-09-27"
+  scim:
+    support: "undocumented"
+    notes: "The SSO docs say users removed from the IdP stay in SigNoz until an admin deletes them; SCIM isn't mentioned."
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "supported"
+    notes: "Users with emails on an authenticated domain can sign in through the IdP without a prior invite."
+    source: "https://signoz.io/docs/manage/administrator-guide/sso/overview/"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+    notes: "Admins register an authenticated domain for SSO, but the docs don't describe verifying ownership of it."
+  custom_roles:
+    support: "supported"
+    notes: "Custom roles with granular permissions are available on SigNoz Cloud and Self-Hosted Enterprise and need an active license; fine-grained access control is in beta."
+    source: "https://signoz.io/docs/manage/administrator-guide/iam/roles/"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "supported"
+    notes: "SSO can assign the Viewer, Editor or Admin role automatically from IdP group memberships or a role attribute."
+    source: "https://signoz.io/docs/manage/administrator-guide/sso/overview/"
+    checked: "2026-09-27"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "API keys belong to service accounts with assigned roles; keys can have an expiry date and can be revoked at any time."
+    source: "https://signoz.io/docs/manage/administrator-guide/iam/service-accounts/"
+    checked: "2026-09-27"

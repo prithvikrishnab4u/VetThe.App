@@ -17039,6 +17039,64 @@
     "website": "https://trello.com"
   },
   {
+    "_id": "turso",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Admins and owners can list every API token in the organization, along with who minted it, and can revoke any of them.",
+        "source": "https://docs.turso.tech/api-reference/tokens/list-organization",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "The Platform API returns the organization's audit logs, newest first. The docs say audit logs need the Scaler plan or higher.",
+        "plan": "Scaler",
+        "source": "https://docs.turso.tech/api-reference/audit-logs/list",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "custom_roles": {
+        "notes": "The API documents fixed member roles such as admin, member and viewer, but nothing about custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Admins can set require_mfa on the organization so every member must have MFA turned on. You need MFA on your own account before you can turn this on. No plan is named.",
+        "source": "https://docs.turso.tech/api-reference/organizations/update",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "support": "undocumented"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Turso is a hosted database platform built on SQLite and libSQL.",
+    "name": "Turso",
+    "status": "draft",
+    "website": "https://turso.tech"
+  },
+  {
     "_id": "twilio-segment",
     "capabilities": {
       "api_token_controls": {
