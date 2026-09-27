@@ -2,7 +2,7 @@
 
 Running log of what's done and what's next. **Update this file at the end of every work session**: tick items off, add what you found, and refresh the numbers with `.venv/bin/python scripts/validate.py`.
 
-_Last updated: 2026-09-24_
+_Last updated: 2026-09-27_
 
 ## Remind the user
 
@@ -10,7 +10,7 @@ _Last updated: 2026-09-24_
 
 ## In progress
 
-- Nothing running.
+- **Brief for the last four non-core columns is written** (2026-09-27): [research/BRIEF-roles-session-tokens.md](research/BRIEF-roles-session-tokens.md). It says where each answer usually lives, defines the `partial` boundary and the same-word traps for each capability, and adds two rules from the last run: the cited page must be about the capability, and silence on one page is `undocumented`, not `not_supported`. The pilot has not run yet: the 2026-09-27 session's network policy blocked vendor hosts (slack.com), so it needs an environment whose network access allows vendor docs.
 
 ## Where the data stands
 
@@ -84,7 +84,7 @@ _Last updated: 2026-09-24_
    | Custom roles | 160 |
    | Session controls | 150 |
    | API token controls | 163 |
-   Run the same way: parallel report-only agents, about 8 apps each, every value applied and reviewed in the main session. Use [research/BRIEF-jit-domain.md](research/BRIEF-jit-domain.md) as the pattern, but **these four need a rewritten brief**. JIT and domain verification usually sit on the one SSO docs page, and these do not: roles live in an admin guide, session controls in a security or policy page, API tokens in a developer doc. Expect more fetches per app and a lower hit rate. Carry over the three rules the first run proved necessary: never cite a page you could not fetch, never infer a tier, and define the `partial` boundary up front for each capability, since that is where every agent error landed.
+   Run the same way: parallel report-only agents, about 8 apps each, every value applied and reviewed in the main session. Use [research/BRIEF-roles-session-tokens.md](research/BRIEF-roles-session-tokens.md) (written 2026-09-27; pilot it on about 3 batches first, as with JIT). Why it needed rewriting: JIT and domain verification usually sit on the one SSO docs page, and these do not: roles live in an admin guide, session controls in a security or policy page, API tokens in a developer doc. Expect more fetches per app and a lower hit rate. Carry over the three rules the first run proved necessary: never cite a page you could not fetch, never infer a tier, and define the `partial` boundary up front for each capability, since that is where every agent error landed.
 4. [ ] Recheck values older than about 6 months (vendors change plans); `checked` dates make this a simple query
 5. [ ] Add more apps from [BACKLOG.md](BACKLOG.md): the first 72 P1 rows are done, so continue from P1 row 73, then P2/P3. Use `scratchpad/new/BRIEF.md` + `mk.py` as the pattern. Requests will also arrive through the website's "Add an app"
 6. [ ] The 65 apps added on 2026-09-22 are all `draft` — they need plan tiers before they can be published
