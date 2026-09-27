@@ -1459,6 +1459,59 @@
     "website": "https://auth0.com"
   },
   {
+    "_id": "authzed",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "On Cloud and Dedicated, the dashboard's Access tab manages service accounts, tokens, roles and policies, which can include CEL conditions.",
+        "source": "https://authzed.com/docs/authzed/concepts/restricted-api-access",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "notes": "The documented audit logging records SpiceDB API requests sent to a sink, not admin activity in the management dashboard.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "AuthZed Cloud lets you create organizations and teams and delegate access with your SSO provider; the page doesn't name protocols.",
+        "source": "https://authzed.com/docs/authzed/guides/picking-a-product",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "AuthZed offers managed and self-hosted SpiceDB, a database for fine-grained application permissions.",
+    "name": "AuthZed",
+    "status": "draft",
+    "website": "https://authzed.com"
+  },
+  {
     "_id": "axiom",
     "capabilities": {
       "api_token_controls": {
@@ -2653,6 +2706,81 @@
     "name": "ChatGPT Enterprise",
     "status": "draft",
     "website": "https://openai.com/chatgpt/enterprise"
+  },
+  {
+    "_id": "checkly",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Admins and Owners can create and delete account-level service API keys with a set role (Enterprise only); user API keys can only be deleted by the user who made them.",
+        "source": "https://www.checklyhq.com/docs/admin/creating-api-key/",
+        "support": "partial"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "The docs list five fixed roles (Owner, Admin, Read & Write, Read & Run, Read Only) and don't mention custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "notes": "Domain aliases on the SSO connection route SP-initiated logins; the docs don't describe verifying domain ownership.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "The SSO docs say Checkly does not currently support IdP-based role mapping.",
+        "source": "https://www.checklyhq.com/docs/admin/team-management/single-sign-on/",
+        "support": "not_supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "With JIT on (the default), new users who sign in through SSO are added to the account automatically with a default role.",
+        "plan": "Enterprise",
+        "source": "https://www.checklyhq.com/docs/admin/team-management/single-sign-on/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "notes": "The MFA docs only cover each user turning on an authenticator app in their own settings; no account-wide requirement is described.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The MFA docs only mention authenticator-app one-time codes.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "The SSO docs say SCIM is currently not supported.",
+        "source": "https://www.checklyhq.com/docs/admin/team-management/single-sign-on/",
+        "support": "not_supported"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SSO is only available on Checkly's enterprise plans; the setup is SAML and is done with Checkly support.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://www.checklyhq.com/docs/admin/team-management/single-sign-on/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "The docs say there is currently no option to require SSO for account members; the suggested workaround is to remove non-SSO users.",
+        "source": "https://www.checklyhq.com/docs/admin/team-management/single-sign-on/",
+        "support": "not_supported"
+      }
+    },
+    "category": "development",
+    "description": "Checkly is a synthetic monitoring and API testing platform for checking that websites and APIs work as expected.",
+    "name": "Checkly",
+    "status": "draft",
+    "website": "https://www.checklyhq.com"
   },
   {
     "_id": "circleci",
@@ -8301,6 +8429,72 @@
     "website": "https://www.keepersecurity.com"
   },
   {
+    "_id": "kinde",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Management API access goes through machine-to-machine apps whose scopes admins choose and can change at any time.",
+        "source": "https://docs.kinde.com/developer-tools/kinde-api/about-m2m-scopes/",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "notes": "The documented audit log covers end-user auth events like sign-ups and tokens, not team member activity in the dashboard.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "The docs list only pre-defined team member roles (Owner, Admin, and specialist roles on paid plans); custom roles aren't mentioned.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "MFA for Kinde dashboard access is set up by contacting support and can apply to the whole team or only certain roles; not available on the free plan.",
+        "plan": "Paid plans",
+        "source": "https://docs.kinde.com/get-started/team-and-account/mfa-for-kinde-access/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The team MFA page lists email code, SMS code and authenticator app, not passkeys or security keys.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "The docs don't mention SCIM for provisioning team members to the Kinde dashboard.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "notes": "Session settings in the docs apply to end users of your app, not to the Kinde dashboard.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Team members can sign in to the Kinde dashboard through an enterprise connection such as SAML or Entra ID, set up on request to Kinde, on the Scale or Enterprise plan.",
+        "plan": "Scale or Enterprise",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.kinde.com/get-started/team-and-account/enterprise-access-to-kinde/",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Kinde is an authentication and user management platform for adding sign-in, organizations and billing to apps.",
+    "name": "Kinde",
+    "status": "draft",
+    "website": "https://kinde.com"
+  },
+  {
     "_id": "klaviyo",
     "capabilities": {
       "api_token_controls": {
@@ -12209,6 +12403,61 @@
     "website": "https://penpot.app"
   },
   {
+    "_id": "permit-io",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "API keys can be scoped to the organization, a project or an environment, and can be rotated or deleted from the dashboard.",
+        "source": "https://docs.permit.io/manage-your-account/workspace-settings",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "The activity log shows who made each administrative change in the workspace, filterable by date and member, and is also readable through the API.",
+        "source": "https://docs.permit.io/manage-your-account/permit-logs",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "notes": "Members get fixed Owner, Editor or Viewer roles at workspace, project or environment level; custom member roles aren't mentioned.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "The documented SCIM integration provisions your app's users into a Permit environment, not workspace members.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "notes": "The docs don't cover SSO for signing in to the Permit dashboard.",
+        "support": "undocumented"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Permit.io is an authorization-as-a-service platform for managing application permissions and policies.",
+    "name": "Permit.io",
+    "status": "draft",
+    "website": "https://www.permit.io"
+  },
+  {
     "_id": "personio",
     "capabilities": {
       "api_token_controls": {
@@ -14533,6 +14782,76 @@
     "name": "Shortcut",
     "status": "published",
     "website": "https://www.shortcut.com"
+  },
+  {
+    "_id": "signoz",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "API keys belong to service accounts with assigned roles; keys can have an expiry date and can be revoked at any time.",
+        "source": "https://signoz.io/docs/manage/administrator-guide/iam/service-accounts/",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Custom roles with granular permissions are available on SigNoz Cloud and Self-Hosted Enterprise and need an active license; fine-grained access control is in beta.",
+        "source": "https://signoz.io/docs/manage/administrator-guide/iam/roles/",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "notes": "Admins register an authenticated domain for SSO, but the docs don't describe verifying ownership of it.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "SSO can assign the Viewer, Editor or Admin role automatically from IdP group memberships or a role attribute.",
+        "source": "https://signoz.io/docs/manage/administrator-guide/sso/overview/",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "Users with emails on an authenticated domain can sign in through the IdP without a prior invite.",
+        "source": "https://signoz.io/docs/manage/administrator-guide/sso/overview/",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "The SSO docs say users removed from the IdP stay in SigNoz until an admin deletes them; SCIM isn't mentioned.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SAML 2.0 and OIDC are available on SigNoz Cloud and Enterprise Self-Hosted; Google Workspace sign-in is also on the free Community Edition.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://signoz.io/docs/manage/administrator-guide/sso/overview/",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Admins can turn on Enforce SSO for an authenticated domain, so users with that email domain must sign in through the IdP.",
+        "source": "https://signoz.io/docs/manage/administrator-guide/sso/overview/",
+        "support": "supported"
+      }
+    },
+    "category": "development",
+    "description": "SigNoz Cloud is the hosted version of SigNoz, an OpenTelemetry-based observability platform for logs, metrics and traces.",
+    "name": "SigNoz Cloud",
+    "status": "draft",
+    "website": "https://signoz.io"
   },
   {
     "_id": "slack",

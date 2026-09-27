@@ -1,0 +1,38 @@
+name: "AuthZed"
+category: "security"
+website: "https://authzed.com"
+description: "AuthZed offers managed and self-hosted SpiceDB, a database for fine-grained application permissions."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    notes: "AuthZed Cloud lets you create organizations and teams and delegate access with your SSO provider; the page doesn't name protocols."
+    source: "https://authzed.com/docs/authzed/guides/picking-a-product"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+    notes: "The documented audit logging records SpiceDB API requests sent to a sink, not admin activity in the management dashboard."
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "On Cloud and Dedicated, the dashboard's Access tab manages service accounts, tokens, roles and policies, which can include CEL conditions."
+    source: "https://authzed.com/docs/authzed/concepts/restricted-api-access"
+    checked: "2026-09-27"
