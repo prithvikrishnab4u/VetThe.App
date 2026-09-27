@@ -1,0 +1,70 @@
+name: "HCP Terraform"
+category: "infrastructure"
+website: "https://www.hashicorp.com/products/terraform"
+description: "HCP Terraform is HashiCorp's hosted service for running Terraform, managing state and collaborating on infrastructure as code."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "free"
+    plan: "Free"
+    protocols: ["SAML"]
+    notes: "SAML SSO is available to all HCP Terraform organizations, including Free Edition, with guides for Entra ID, Okta and generic SAML."
+    source: "https://developer.hashicorp.com/terraform/cloud-docs/users-teams-organizations/single-sign-on"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    tier: "free"
+    plan: "Free"
+    notes: "Once SSO is on, all non-owner members must sign in through SSO; owners can still use their password as a break-glass path."
+    source: "https://developer.hashicorp.com/terraform/cloud-docs/users-teams-organizations/single-sign-on"
+    checked: "2026-09-27"
+  scim:
+    support: "undocumented"
+    notes: "The HCP Terraform user and SSO docs don't mention SCIM."
+  mfa_enforcement:
+    support: "supported"
+    notes: "Organization owners can turn on \"Require two-factor\" under Authentication settings for all members; the page doesn't name a plan."
+    source: "https://developer.hashicorp.com/terraform/cloud-docs/users-teams-organizations/2fa"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The 2FA page only describes authenticator apps and SMS (SMS for Terraform Enterprise); no security keys or passkeys."
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "Standard"
+    retention: "14 days"
+    notes: "Audit trails are available in Standard and Premium editions and are read through the Audit Trails API, which keeps 14 days of events."
+    source: "https://developer.hashicorp.com/terraform/cloud-docs/api-docs/audit-trails"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "partial"
+    notes: "SSO doesn't automatically create user accounts: on first SSO sign-in the user must set a password for a new account or link an existing one, after which they join the organization."
+    source: "https://developer.hashicorp.com/terraform/cloud-docs/users-teams-organizations/single-sign-on"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    notes: "Teams can be given a workspace custom role built from any workspace permission except admin-only ones; the page doesn't name a plan."
+    source: "https://developer.hashicorp.com/terraform/cloud-docs/users-teams-organizations/permissions/workspace"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "supported"
+    tier: "paid"
+    plan: "Essentials"
+    notes: "A SAML attribute (MemberOf by default) adds and removes team memberships on each login; this needs team management, which is in Essentials, Standard and Premium."
+    source: "https://developer.hashicorp.com/terraform/cloud-docs/users-teams-organizations/single-sign-on"
+    checked: "2026-09-27"
+  session_controls:
+    support: "supported"
+    notes: "Owners can shorten the idle session timeout and forced re-authentication interval (default 14 days each) for standalone accounts; accounts linked to HCP follow HCP settings instead."
+    source: "https://developer.hashicorp.com/terraform/cloud-docs/users-teams-organizations/organizations/settings"
+    checked: "2026-09-27"
+  api_token_controls:
+    support: "supported"
+    notes: "Owners can set a maximum time to live for organization, team and user tokens, and can block user tokens from accessing organization resources."
+    source: "https://developer.hashicorp.com/terraform/cloud-docs/users-teams-organizations/api-tokens"
+    checked: "2026-09-27"

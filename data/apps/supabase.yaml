@@ -1,0 +1,63 @@
+name: "Supabase"
+category: "development"
+website: "https://supabase.com"
+description: "Supabase is a hosted Postgres development platform with auth, storage, edge functions and realtime APIs."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Team"
+    protocols: ["SAML"]
+    notes: "SAML 2.0 SSO to the Supabase dashboard is available for Team and Enterprise plan organizations."
+    source: "https://supabase.com/docs/guides/platform/sso"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "partial"
+    tier: "paid"
+    plan: "Team"
+    notes: "Admins choose per invitation whether SSO is required, and the org must keep at least one non-SSO owner; there is no single org-wide switch to block password sign-in."
+    source: "https://supabase.com/docs/guides/platform/sso"
+    checked: "2026-09-27"
+  scim:
+    support: "undocumented"
+    notes: "The organization SSO docs don't mention SCIM; access is removed by disabling the user in the IdP or removing them in Supabase."
+  mfa_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Pro"
+    notes: "Organization owners can turn on \"Require MFA to access organization\"; available on Pro, Team and Enterprise plans."
+    source: "https://supabase.com/docs/guides/platform/mfa/org-mfa-enforcement"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The account MFA page only describes TOTP authenticator apps as a second factor."
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "Team"
+    retention: "Depends on plan"
+    notes: "Platform audit logs record dashboard and Management API actions by org members and can be streamed through audit log drains; Team and Enterprise plans only."
+    source: "https://supabase.com/docs/guides/security/platform-audit-logs"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    tier: "paid"
+    plan: "Team"
+    notes: "With auto-join on, users from a matching email domain join the organization on SSO sign-in with a default role the admin picks."
+    source: "https://supabase.com/docs/guides/platform/sso"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+    notes: "Email domains are only used to route SP-initiated SSO sign-ins; the docs don't describe claiming existing accounts on a domain."
+  custom_roles:
+    support: "undocumented"
+    notes: "The access control page lists four built-in roles (Owner, Administrator, Developer, Read-Only) and doesn't mention custom roles."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"
+    notes: "Users can scope their own personal access tokens, but the docs don't describe admins viewing or revoking members' tokens."

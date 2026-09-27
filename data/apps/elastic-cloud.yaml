@@ -1,0 +1,64 @@
+name: "Elastic Cloud"
+category: "infrastructure"
+website: "https://www.elastic.co/cloud"
+description: "Elastic Cloud is Elastic's managed service for running Elasticsearch, Kibana and the Elastic observability and security solutions."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "SAML SSO to the Elastic Cloud organization is included at no extra cost on any Serverless tier; organizations with Elastic Cloud Hosted deployments need an Enterprise subscription. Only one IdP per organization, and IdP-initiated sign-in isn't supported."
+    source: "https://www.elastic.co/docs/deploy-manage/users-roles/cloud-organization/configure-saml-authentication"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    notes: "An \"Enforce SAML SSO\" setting makes members sign in through the IdP and blocks other login methods."
+    source: "https://www.elastic.co/docs/deploy-manage/users-roles/cloud-organization/configure-saml-authentication"
+    checked: "2026-09-27"
+  scim:
+    support: "undocumented"
+    notes: "The docs don't mention SCIM, and the SAML page says users removed in the IdP aren't removed from Elastic Cloud."
+  mfa_enforcement:
+    support: "supported"
+    notes: "MFA is required for every email and password login and can't be turned off; Google, Microsoft and SAML logins rely on the IdP's MFA."
+    source: "https://www.elastic.co/docs/cloud-account/multifactor-authentication"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Hardware security keys (such as YubiKey) and biometrics can be registered as an MFA method."
+    source: "https://www.elastic.co/docs/cloud-account/multifactor-authentication"
+    checked: "2026-09-27"
+  audit_logs:
+    support: "partial"
+    notes: "Organization-level audit events (sign-ins, membership and role changes, project settings) are only available through Serverless audit trail log delivery, which is in technical preview."
+    source: "https://www.elastic.co/docs/deploy-manage/monitor/log-delivery/audit-trail"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    notes: "On first SSO login, a user whose email matches a claimed domain is created and added to the organization automatically."
+    source: "https://www.elastic.co/docs/deploy-manage/users-roles/cloud-organization/configure-saml-authentication"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "supported"
+    notes: "Organizations claim up to 10 domains (subdomains included) by adding a DNS TXT record."
+    source: "https://www.elastic.co/docs/deploy-manage/users-roles/cloud-organization/configure-saml-authentication"
+    checked: "2026-09-27"
+  custom_roles:
+    support: "partial"
+    notes: "Custom roles can be created inside Serverless projects only, and they grant just Viewer-level access to Elastic Cloud itself; organization roles are predefined."
+    source: "https://www.elastic.co/docs/deploy-manage/users-roles/cloud-organization/user-roles"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "supported"
+    notes: "Role mappings based on IdP groups or email rules assign organization and resource roles at each SSO login."
+    source: "https://www.elastic.co/docs/deploy-manage/users-roles/cloud-organization/configure-saml-authentication"
+    checked: "2026-09-27"
+  session_controls:
+    support: "undocumented"
+    notes: "The SAML page only notes that existing sessions aren't ended when a user is removed from the IdP."
+  api_token_controls:
+    support: "supported"
+    notes: "Organization owners can view and revoke all API keys in the organization; keys expire after 3 months by default and can be set up to 1 year or never."
+    source: "https://www.elastic.co/docs/deploy-manage/api-keys/elastic-cloud-api-keys"
+    checked: "2026-09-27"
