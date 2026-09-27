@@ -3491,6 +3491,89 @@
     "website": "https://www.codacy.com"
   },
   {
+    "_id": "coder",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "CODER_MAX_TOKEN_LIFETIME caps how long tokens can live. Tokens can be scoped and expired.",
+        "source": "https://coder.com/docs/admin/users/sessions-tokens",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "plan": "Premium",
+        "retention": "Configurable via CODER_AUDIT_LOGS_RETENTION",
+        "source": "https://coder.com/docs/admin/security/audit-logs",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Custom roles can be created at the organization level (since v2.16.0).",
+        "plan": "Premium",
+        "source": "https://coder.com/docs/admin/users/groups-roles",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "domain_verification": {
+        "notes": "CODER_OIDC_EMAIL_DOMAIN limits which email domains can log in, but that's not domain verification.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "IdP sync maps OIDC claims to Coder groups, roles and organizations.",
+        "plan": "Premium",
+        "source": "https://coder.com/docs/admin/users/idp-sync",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "The docs say to enforce MFA in your identity provider.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "Only covers users: provisioning, listing and deprovisioning (deprovisioned users get suspended, not deleted). Coder says it isn't a full SCIM 2.0 implementation.",
+        "plan": "Premium",
+        "source": "https://coder.com/docs/admin/users/oidc-auth",
+        "support": "partial",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "Sessions last 24 hours by default and refresh while in use. CODER_SESSION_DURATION changes the length, and CODER_DISABLE_SESSION_EXPIRY_REFRESH turns off the refresh.",
+        "source": "https://coder.com/docs/admin/users/sessions-tokens",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "OpenID Connect login works with any OIDC provider. GitHub OAuth login is also available. Coder is self-hosted, so you configure this on your own deployment.",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://coder.com/docs/admin/users/oidc-auth",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Setting CODER_DISABLE_PASSWORD_AUTH=true turns off email and password login.",
+        "source": "https://coder.com/docs/admin/users/password-auth",
+        "support": "supported"
+      }
+    },
+    "category": "development",
+    "description": "Coder is a self-hosted platform for running cloud development environments on your own infrastructure.",
+    "name": "Coder",
+    "status": "draft",
+    "website": "https://coder.com"
+  },
+  {
     "_id": "coupa",
     "capabilities": {
       "api_token_controls": {
@@ -4117,6 +4200,84 @@
     "name": "Deel",
     "status": "draft",
     "website": "https://www.deel.com"
+  },
+  {
+    "_id": "directus-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Each user can have one static token. It never expires and is stored in plain text, so there are no scope or expiry controls.",
+        "source": "https://directus.io/docs/guides/auth/tokens-cookies",
+        "support": "partial"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "The activity feed logs the user, the action (including logins), the time, the IP address and the user agent. Changes made directly in the database aren't tracked.",
+        "source": "https://directus.io/docs/guides/auth/accountability",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Roles and policies with custom item-level and field-level permissions.",
+        "source": "https://directus.io/docs/guides/auth/access-control",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "AUTH_<PROVIDER>_ROLE_MAPPING maps OAuth or OIDC groups to Directus roles. Each user gets one role, and the first match wins.",
+        "source": "https://directus.io/docs/configuration/auth-sso",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "AUTH_<PROVIDER>_ALLOW_PUBLIC_REGISTRATION creates users on first SSO login and gives them the role set in DEFAULT_ROLE_ID.",
+        "source": "https://directus.io/docs/configuration/auth-sso",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "2FA for the Data Studio can be enabled or enforced on the user page.",
+        "source": "https://directus.io/docs/guides/auth/2fa",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The documented 2FA is a one-time code from an authenticator app only.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "SESSION_COOKIE_TTL, ACCESS_TOKEN_TTL and REFRESH_TOKEN_TTL set how long sessions and tokens last.",
+        "source": "https://directus.io/docs/configuration/security-limits",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Directus supports OpenID, OAuth 2.0, LDAP and SAML, set up with environment variables. On Directus Cloud, env vars outside the preset list can only be changed by Enterprise customers through support.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://directus.io/docs/guides/auth/sso",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "AUTH_DISABLE_DEFAULT turns off the default local email and password login.",
+        "source": "https://directus.io/docs/configuration/auth-sso",
+        "support": "supported"
+      }
+    },
+    "category": "development",
+    "description": "Directus Cloud is the managed hosting service for Directus, an open-source backend and data platform.",
+    "name": "Directus Cloud",
+    "status": "draft",
+    "website": "https://directus.io/cloud"
   },
   {
     "_id": "docker-hub",
@@ -11766,6 +11927,95 @@
     "website": "https://www.postman.com"
   },
   {
+    "_id": "prefect-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Service accounts (Pro and Enterprise) get their own API keys with an expiry date or never-expire option, and keys can be rotated with a grace period for the old one. User API keys also take an expiration date.",
+        "plan": "Pro",
+        "source": "https://docs.prefect.io/v3/how-to-guides/cloud/manage-users/service-accounts",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "On Pro and Enterprise. Logs cover logins, API key and service account changes, member invites and role changes, and workspace changes, and can be filtered by workspace, user, event type and date.",
+        "plan": "Pro",
+        "retention": "Varies by plan; the docs don't give numbers",
+        "source": "https://docs.prefect.io/v3/how-to-guides/cloud/manage-users/audit-logs",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "Enterprise admins can create custom workspace roles, either from scratch or inheriting a built-in role's permissions.",
+        "plan": "Enterprise",
+        "source": "https://docs.prefect.io/v3/how-to-guides/cloud/manage-users/manage-roles",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "domain_verification": {
+        "notes": "You enter the email domains to enable SSO for, but the docs don't say how domain ownership is checked.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "With SCIM on, teams and their members come from the IdP, and teams can be added to workspaces and object access lists like users.",
+        "plan": "Enterprise",
+        "source": "https://docs.prefect.io/v3/how-to-guides/cloud/manage-users/manage-teams",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "notes": "The docs cover directory sync and SCIM but not creating users on first SSO login.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "The Prefect Cloud user-management docs don't mention MFA.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "SCIM provisioning is turned on from the SSO tab. Provisioned users get the basic Member role and lose access when unassigned in the IdP.",
+        "plan": "Enterprise",
+        "source": "https://docs.prefect.io/v3/how-to-guides/cloud/manage-users/configure-sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Enterprise plans can connect any identity provider that supports OIDC or SAML 2.0.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.prefect.io/v3/how-to-guides/cloud/manage-users/configure-sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Once SSO is set up for your email domains, non-admins must sign in through the IdP. Account Owners can still bypass SSO; Admins can't.",
+        "plan": "Enterprise",
+        "source": "https://docs.prefect.io/v3/how-to-guides/cloud/manage-users/configure-sso",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "development",
+    "description": "Hosted control plane for scheduling, running and monitoring Prefect data workflows.",
+    "name": "Prefect Cloud",
+    "status": "draft",
+    "website": "https://www.prefect.io"
+  },
+  {
     "_id": "prisma-cloud",
     "capabilities": {
       "api_token_controls": {
@@ -13924,6 +14174,90 @@
     "name": "Sprout Social",
     "status": "draft",
     "website": "https://sproutsocial.com"
+  },
+  {
+    "_id": "strapi-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "API tokens last 7, 30 or 90 days, or never expire. Types are read-only, full access or custom scopes, and tokens can be regenerated.",
+        "plan": "Free feature",
+        "source": "https://docs.strapi.io/cms/features/api-tokens",
+        "support": "supported",
+        "tier": "free"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Records admin panel actions. On Strapi Cloud projects, the license's retention applies unless you configure a smaller value.",
+        "plan": "CMS Enterprise",
+        "retention": "90 days by default (configurable)",
+        "source": "https://docs.strapi.io/cms/features/audit-logs",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "You can create admin roles with custom permissions in the admin panel.",
+        "plan": "Free feature",
+        "source": "https://docs.strapi.io/cms/features/rbac",
+        "support": "supported",
+        "tier": "free"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "notes": "The SSO docs only cover a single default role for auto-registered users.",
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "SSO auto-registration creates a user on first login and gives them a default role.",
+        "plan": "CMS Enterprise (or SSO add-on with CMS Growth)",
+        "source": "https://docs.strapi.io/cms/features/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "The admin auth.sessions config sets the access token lifespan, the idle session lifespan (1 hour by default) and the max session lifespan (30 days by default). Sessions can also be revoked.",
+        "source": "https://docs.strapi.io/cms/configurations/admin-panel",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Admin panel SSO for your hosted Strapi project, set up with OAuth/OIDC providers through Passport strategies. Logging in to the Strapi Cloud dashboard itself uses GitHub, Google, GitLab or a one-time code.",
+        "plan": "CMS Enterprise (or SSO add-on with CMS Growth)",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://docs.strapi.io/cms/features/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "You can turn on local authentication lock-out per role, so users with that role have to sign in through SSO.",
+        "plan": "CMS Enterprise (or SSO add-on with CMS Growth)",
+        "source": "https://docs.strapi.io/cms/features/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "development",
+    "description": "Strapi Cloud is the managed hosting service for Strapi, an open-source headless CMS.",
+    "name": "Strapi Cloud",
+    "status": "draft",
+    "website": "https://strapi.io/cloud"
   },
   {
     "_id": "stripe",
