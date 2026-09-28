@@ -5477,6 +5477,54 @@
     "website": "https://depot.dev"
   },
   {
+    "_id": "dify-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "The team members page only lists four built-in roles: Owner, Admin, Editor and Normal.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "notes": "The cloud docs don't mention SSO. The self-hosted docs say OAuth and SAML sign-in come with Dify Enterprise, which is a separate product.",
+        "support": "undocumented"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "Dify Cloud is the hosted version of Dify, a platform for building LLM apps, agents and workflows.",
+    "name": "Dify Cloud",
+    "status": "draft",
+    "website": "https://dify.ai"
+  },
+  {
     "_id": "directus-cloud",
     "capabilities": {
       "api_token_controls": {
@@ -10495,6 +10543,95 @@
     "name": "Langfuse",
     "status": "draft",
     "website": "https://langfuse.com"
+  },
+  {
+    "_id": "langsmith",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-28",
+        "notes": "Org Admins and Operators can deactivate, reactivate and delete any member's personal access tokens, and keys can be given an expiry date.",
+        "source": "https://docs.langchain.com/langsmith/create-account-api-key",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-28",
+        "notes": "Org Admins and Operators can view and filter audit logs of admin and config actions in the UI or through the API.",
+        "plan": "Enterprise",
+        "retention": "400 days",
+        "source": "https://docs.langchain.com/langsmith/audit-logs",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "checked": "2026-09-28",
+        "notes": "Enterprise organizations can create custom workspace roles; organization roles are fixed.",
+        "plan": "Enterprise",
+        "source": "https://docs.langchain.com/langsmith/rbac",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-28",
+        "notes": "IdP groups map to organization and workspace roles through SCIM group push or SSO Groups Sync, which reads groups from the SSO token at login.",
+        "plan": "Enterprise",
+        "source": "https://docs.langchain.com/langsmith/user-management",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-28",
+        "notes": "Someone signing in through SAML SSO for the first time joins the organization and chosen workspaces as a member.",
+        "plan": "Enterprise",
+        "source": "https://docs.langchain.com/langsmith/user-management",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "notes": "The docs only say SSO lets you apply your own IdP's policies such as MFA; no LangSmith MFA setting is described.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-28",
+        "notes": "SCIM 2.0 provisions and deprovisions users and syncs groups into workspace roles. Cloud customers need SAML SSO set up first.",
+        "plan": "Enterprise",
+        "source": "https://docs.langchain.com/langsmith/user-management",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-28",
+        "notes": "SAML 2.0 SSO is available for Enterprise Cloud customers. Self-hosted installs use OIDC instead.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.langchain.com/langsmith/user-management",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-28",
+        "notes": "Admins can set the organization to Only SAML SSO, so users signed in another way have to log back in through SAML SSO.",
+        "plan": "Enterprise",
+        "source": "https://docs.langchain.com/langsmith/user-management",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "development",
+    "description": "LangSmith is a platform for tracing, evaluating and monitoring LLM applications and agents.",
+    "name": "LangSmith",
+    "status": "draft",
+    "website": "https://www.langchain.com/langsmith"
   },
   {
     "_id": "lark",

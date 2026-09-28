@@ -1,0 +1,72 @@
+name: "LangSmith"
+category: "development"
+website: "https://www.langchain.com/langsmith"
+description: "LangSmith is a platform for tracing, evaluating and monitoring LLM applications and agents."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML"]
+    notes: "SAML 2.0 SSO is available for Enterprise Cloud customers. Self-hosted installs use OIDC instead."
+    source: "https://docs.langchain.com/langsmith/user-management"
+    checked: "2026-09-28"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Admins can set the organization to Only SAML SSO, so users signed in another way have to log back in through SAML SSO."
+    source: "https://docs.langchain.com/langsmith/user-management"
+    checked: "2026-09-28"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM 2.0 provisions and deprovisions users and syncs groups into workspace roles. Cloud customers need SAML SSO set up first."
+    source: "https://docs.langchain.com/langsmith/user-management"
+    checked: "2026-09-28"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The docs only say SSO lets you apply your own IdP's policies such as MFA; no LangSmith MFA setting is described."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    retention: "400 days"
+    notes: "Org Admins and Operators can view and filter audit logs of admin and config actions in the UI or through the API."
+    source: "https://docs.langchain.com/langsmith/audit-logs"
+    checked: "2026-09-28"
+  jit_provisioning:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Someone signing in through SAML SSO for the first time joins the organization and chosen workspaces as a member."
+    source: "https://docs.langchain.com/langsmith/user-management"
+    checked: "2026-09-28"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Enterprise organizations can create custom workspace roles; organization roles are fixed."
+    source: "https://docs.langchain.com/langsmith/rbac"
+    checked: "2026-09-28"
+  group_role_mapping:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "IdP groups map to organization and workspace roles through SCIM group push or SSO Groups Sync, which reads groups from the SSO token at login."
+    source: "https://docs.langchain.com/langsmith/user-management"
+    checked: "2026-09-28"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "Org Admins and Operators can deactivate, reactivate and delete any member's personal access tokens, and keys can be given an expiry date."
+    source: "https://docs.langchain.com/langsmith/create-account-api-key"
+    checked: "2026-09-28"

@@ -1,0 +1,33 @@
+name: "Dify Cloud"
+category: "development"
+website: "https://dify.ai"
+description: "Dify Cloud is the hosted version of Dify, a platform for building LLM apps, agents and workflows."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "undocumented"
+    notes: "The cloud docs don't mention SSO. The self-hosted docs say OAuth and SAML sign-in come with Dify Enterprise, which is a separate product."
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "The team members page only lists four built-in roles: Owner, Admin, Editor and Normal."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"
