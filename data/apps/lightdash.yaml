@@ -1,0 +1,71 @@
+name: "Lightdash"
+category: "development"
+website: "https://www.lightdash.com"
+description: "Lightdash is an open-source BI tool that builds dashboards on top of dbt projects."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["OIDC"]
+    notes: "Okta, Azure AD, OneLogin and generic OIDC are listed for Enterprise; Cloud Pro includes Google sign-in only (one line on the same page lists Okta for Cloud Pro, contradicting the plan table). Admins set it up under Organization settings, and a verified domain is required."
+    source: "https://docs.lightdash.com/workspace-admin/sso"
+    checked: "2026-09-28"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Each provider has an Allow password sign-in option; turning it off on every provider for a domain enforces SSO-only sign-in. Google sign-in can also be switched off."
+    source: "https://docs.lightdash.com/workspace-admin/sso/setup"
+    checked: "2026-09-28"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM 2.0 provisions users and groups from Okta, Azure and other identity providers, and can deactivate users. Uses SCIM access tokens that can expire and be rotated."
+    source: "https://docs.lightdash.com/workspace-admin/sso/scim"
+    checked: "2026-09-28"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+    notes: "Audit logs are mentioned in passing (service accounts, impersonation) but no audit log feature page was found."
+  jit_provisioning:
+    support: "supported"
+    notes: "With allowed email domains, anyone on those domains can join the organization without an invite and gets a configured default org and project role."
+    source: "https://docs.lightdash.com/get-started/quickstart/invite-new-users"
+    checked: "2026-09-28"
+  domain_verification:
+    support: "supported"
+    tier: "paid"
+    plan: "Cloud Pro and Enterprise"
+    notes: "Domains are verified with a one-time code emailed to an address on the domain, not DNS. Verified domains control SSO routing only; one organization can hold a domain at a time."
+    source: "https://docs.lightdash.com/workspace-admin/sso/verified-domains"
+    checked: "2026-09-28"
+  custom_roles:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Custom roles are built from chosen scopes at organization or project level. Permissions are additive, so a project role cannot remove access granted by an org role."
+    source: "https://docs.lightdash.com/workspace-admin/custom-roles"
+    checked: "2026-09-28"
+  group_role_mapping:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Through SCIM, identity provider group membership can set org and project roles (the Okta guide shows expression mappings), or groups can be synced and given project roles in Lightdash."
+    source: "https://docs.lightdash.com/workspace-admin/sso/scim"
+    checked: "2026-09-28"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Service accounts need an Enterprise license key. They are userless tokens scoped to the org or specific projects, with a system or custom role, an optional expiry, and in-place rotation."
+    source: "https://docs.lightdash.com/workspace-admin/service-accounts"
+    checked: "2026-09-28"

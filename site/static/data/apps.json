@@ -4605,6 +4605,93 @@
     "website": "https://www.crowdstrike.com"
   },
   {
+    "_id": "cube-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-28",
+        "notes": "Admins create and revoke API keys. Personal keys for non-admins are optional and carry the owner's permissions. Keys can be limited to deployments; no expiry is mentioned.",
+        "source": "https://docs.cube.dev/admin/account-billing/api-keys",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-28",
+        "notes": "Must be turned on. Shows security events across deployments with user, IP address, event and deployment, and can be filtered and downloaded. Billed in S and M tiers; export needs tier M. No retention stated.",
+        "plan": "Enterprise",
+        "source": "https://docs.cube.dev/admin/monitoring/audit-log",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "checked": "2026-09-28",
+        "notes": "Custom roles start from a base role (Viewer, Explorer or Developer) and add global and per-deployment permissions.",
+        "plan": "Enterprise",
+        "source": "https://docs.cube.dev/admin/users-and-permissions/custom-roles",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-28",
+        "notes": "Map roles by group assigns roles from identity provider groups. Over SAML this applies only when a user is first provisioned; SCIM group pushes also apply it.",
+        "plan": "Enterprise",
+        "source": "https://docs.cube.dev/admin/sso/okta/saml",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-28",
+        "notes": "With Auto-provision new users on, users are created at first SAML sign-in with the Viewer role or a configured default role.",
+        "plan": "Enterprise",
+        "source": "https://docs.cube.dev/admin/sso/okta/saml",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-28",
+        "notes": "SCIM for Okta and Microsoft Entra ID creates, updates and deactivates users and pushes groups. Authenticates with an API key and needs SAML set up first.",
+        "plan": "Enterprise",
+        "source": "https://docs.cube.dev/admin/sso/okta/scim",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-28",
+        "notes": "SAML SSO with guides for Okta, Google Workspace and Microsoft Entra ID. Password, Google and GitHub sign-in are also available.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.cube.dev/admin/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-28",
+        "notes": "Admins can turn off the Password, Google and GitHub sign-in methods under Admin, Settings, Authentication & SSO.",
+        "plan": "Enterprise",
+        "source": "https://docs.cube.dev/admin/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "development",
+    "description": "Cube Cloud is a managed semantic layer and analytics platform built on the open-source Cube project.",
+    "name": "Cube Cloud",
+    "status": "draft",
+    "website": "https://cube.dev"
+  },
+  {
     "_id": "culture-amp",
     "capabilities": {
       "api_token_controls": {
@@ -8373,6 +8460,61 @@
     "website": "https://www.hashicorp.com/products/vault"
   },
   {
+    "_id": "helicone",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "The pricing FAQ mentions built-in role-based access on the Team plan; custom roles are not described.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-28",
+        "notes": "The pricing comparison lists SAML SSO on the Enterprise plan only.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://www.helicone.ai/pricing",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "Helicone is an open-source LLM observability platform and AI gateway.",
+    "name": "Helicone",
+    "status": "draft",
+    "website": "https://www.helicone.ai"
+  },
+  {
     "_id": "hibob",
     "capabilities": {
       "api_token_controls": {
@@ -9752,6 +9894,97 @@
     "website": "https://www.keepersecurity.com"
   },
   {
+    "_id": "kestra",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-28",
+        "notes": "User and service account tokens have an optional max age (blank means no expiry). Extended mode resets the expiry on each use, and the token is shown only once.",
+        "plan": "Enterprise",
+        "source": "https://kestra.io/docs/enterprise/auth/api-tokens",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "audit_logs": {
+        "checked": "2026-09-28",
+        "notes": "Records actions by users and service accounts with before and after diffs, and can be filtered. Logs can be purged with a PurgeAuditLogs task and sent to a SIEM with Log Shipper. No fixed retention stated.",
+        "plan": "Enterprise",
+        "source": "https://kestra.io/docs/enterprise/governance/audit-logs",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "checked": "2026-09-28",
+        "notes": "Roles are sets of permissions and actions per resource, bound to users, groups or service accounts, and can be scoped to namespaces.",
+        "plan": "Enterprise",
+        "source": "https://kestra.io/docs/enterprise/auth/rbac",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-28",
+        "notes": "Identity provider group memberships sync through SCIM into Kestra groups, and roles are bound to those groups.",
+        "plan": "Enterprise",
+        "source": "https://kestra.io/docs/enterprise/auth/scim",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-28",
+        "notes": "A configured default role is given automatically to new users who sign in through SSO.",
+        "plan": "Enterprise",
+        "source": "https://kestra.io/docs/enterprise/auth/rbac",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "notes": "The docs recommend enforcing MFA at the identity provider through SSO.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-28",
+        "notes": "SCIM 2.0 syncs users and groups from Okta, Microsoft Entra ID, authentik and Keycloak.",
+        "plan": "Enterprise",
+        "source": "https://kestra.io/docs/enterprise/auth/scim",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "checked": "2026-09-28",
+        "notes": "Only the session cookie max age can be set, through server configuration (cookie-max-age); no admin UI setting is described.",
+        "plan": "Enterprise",
+        "source": "https://kestra.io/docs/enterprise/auth/authentication",
+        "support": "partial",
+        "tier": "enterprise"
+      },
+      "sso": {
+        "checked": "2026-09-28",
+        "notes": "OIDC SSO is set up in configuration, with guides for Google, Microsoft, Keycloak, Okta and authentik. LDAP is also supported. Enterprise Edition and Cloud only.",
+        "plan": "Enterprise",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://kestra.io/docs/enterprise/auth/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "notes": "Basic authentication is on by default; the docs do not describe turning it off to require SSO.",
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "Kestra is an open-source orchestration platform for data, infrastructure and business workflows.",
+    "name": "Kestra",
+    "status": "draft",
+    "website": "https://kestra.io"
+  },
+  {
     "_id": "kinde",
     "capabilities": {
       "api_token_controls": {
@@ -10027,6 +10260,163 @@
     "name": "Kong Konnect",
     "status": "draft",
     "website": "https://konghq.com"
+  },
+  {
+    "_id": "lago",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-28",
+        "notes": "Premium allows multiple API keys and scheduled rotation, and admins are emailed when keys are created or rotated. Keys show a Last used time. Per-object read and write permissions need an Enterprise add-on.",
+        "plan": "Premium",
+        "source": "https://getlago.com/docs/guide/security/api-keys",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "audit_logs": {
+        "checked": "2026-09-28",
+        "notes": "Activity and API logs are not available on Free. Premium keeps 30 days; an Enterprise add-on gives full history. Separate security logs track user, role and API key events.",
+        "plan": "Premium",
+        "retention": "30 days",
+        "source": "https://getlago.com/docs/guide/security/audit-logs",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "custom_roles": {
+        "checked": "2026-09-28",
+        "notes": "Custom roles with per-object permissions are a premium add-on available on request. The system roles (Admin, Account manager, Finance & analyst) need a license.",
+        "plan": "Premium add-on",
+        "source": "https://getlago.com/docs/guide/security/rbac",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-28",
+        "notes": "Okta and Microsoft Entra ID SSO over OIDC are premium add-ons available on request. Google sign-in is also available.",
+        "plan": "Premium add-on",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://getlago.com/docs/guide/security/sso",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-28",
+        "notes": "Admins can turn off password and Google login under Organization Settings, Authentication, so that only the connected SSO methods remain.",
+        "plan": "Premium add-on",
+        "source": "https://getlago.com/docs/guide/security/sso",
+        "support": "supported",
+        "tier": "add_on"
+      }
+    },
+    "category": "finance",
+    "description": "Lago is an open-source billing platform for usage metering, subscriptions and invoicing.",
+    "name": "Lago",
+    "status": "draft",
+    "website": "https://www.getlago.com"
+  },
+  {
+    "_id": "langfuse",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-28",
+        "notes": "API keys are scoped to a project or organization, not a user, and are managed by Owners and Admins. Keys can be deleted at once, can have an optional expiry, and show a Last used time.",
+        "source": "https://langfuse.com/docs/administration/rbac",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-28",
+        "notes": "Records who did what and when, with before and after state. Logs can be exported from the UI; viewing needs the auditLogs:read permission. No retention period stated.",
+        "plan": "Enterprise",
+        "source": "https://langfuse.com/docs/administration/audit-logs",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "notes": "The docs describe only fixed roles (Owner, Admin, Member, Viewer, None).",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "checked": "2026-09-28",
+        "notes": "Domains are verified with a DNS TXT record before SSO is enabled; existing users on the domain are moved to SSO.",
+        "plan": "Pro with Teams add-on, or Enterprise",
+        "source": "https://langfuse.com/docs/administration/authentication-and-sso",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-28",
+        "notes": "SSO does not auto-provision roles for new users; members are added by invitation in the UI or through SCIM.",
+        "source": "https://langfuse.com/docs/administration/authentication-and-sso",
+        "support": "not_supported"
+      },
+      "mfa_enforcement": {
+        "notes": "The docs suggest enforcing SSO with an identity provider that requires 2FA; no native MFA enforcement is described.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-28",
+        "notes": "SCIM supports only the Users endpoints (list, create, delete), with no Groups or updates. Delete only removes the org membership. Authenticates with org API keys; self-hosted needs an Enterprise license.",
+        "plan": "Enterprise",
+        "source": "https://langfuse.com/docs/administration/scim-and-org-api",
+        "support": "partial",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-28",
+        "notes": "Enterprise SSO uses OIDC; SAML is not supported. Also available on self-hosted deployments.",
+        "plan": "Pro with Teams add-on, or Enterprise",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://langfuse.com/docs/administration/authentication-and-sso",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-28",
+        "notes": "SSO can be enforced per email domain. No break-glass accounts, and existing sessions are not ended when enforcement is turned on.",
+        "plan": "Pro with Teams add-on, or Enterprise",
+        "source": "https://langfuse.com/docs/administration/authentication-and-sso",
+        "support": "supported",
+        "tier": "add_on"
+      }
+    },
+    "category": "development",
+    "description": "Langfuse is an open-source LLM engineering platform for tracing, evaluation and prompt management.",
+    "name": "Langfuse",
+    "status": "draft",
+    "website": "https://langfuse.com"
   },
   {
     "_id": "lark",
@@ -10379,6 +10769,94 @@
     "name": "Lever",
     "status": "draft",
     "website": "https://www.lever.co"
+  },
+  {
+    "_id": "lightdash",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-28",
+        "notes": "Service accounts need an Enterprise license key. They are userless tokens scoped to the org or specific projects, with a system or custom role, an optional expiry, and in-place rotation.",
+        "plan": "Enterprise",
+        "source": "https://docs.lightdash.com/workspace-admin/service-accounts",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "audit_logs": {
+        "notes": "Audit logs are mentioned in passing (service accounts, impersonation) but no audit log feature page was found.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "checked": "2026-09-28",
+        "notes": "Custom roles are built from chosen scopes at organization or project level. Permissions are additive, so a project role cannot remove access granted by an org role.",
+        "plan": "Enterprise",
+        "source": "https://docs.lightdash.com/workspace-admin/custom-roles",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "domain_verification": {
+        "checked": "2026-09-28",
+        "notes": "Domains are verified with a one-time code emailed to an address on the domain, not DNS. Verified domains control SSO routing only; one organization can hold a domain at a time.",
+        "plan": "Cloud Pro and Enterprise",
+        "source": "https://docs.lightdash.com/workspace-admin/sso/verified-domains",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-28",
+        "notes": "Through SCIM, identity provider group membership can set org and project roles (the Okta guide shows expression mappings), or groups can be synced and given project roles in Lightdash.",
+        "plan": "Enterprise",
+        "source": "https://docs.lightdash.com/workspace-admin/sso/scim",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-28",
+        "notes": "With allowed email domains, anyone on those domains can join the organization without an invite and gets a configured default org and project role.",
+        "source": "https://docs.lightdash.com/get-started/quickstart/invite-new-users",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-28",
+        "notes": "SCIM 2.0 provisions users and groups from Okta, Azure and other identity providers, and can deactivate users. Uses SCIM access tokens that can expire and be rotated.",
+        "plan": "Enterprise",
+        "source": "https://docs.lightdash.com/workspace-admin/sso/scim",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-28",
+        "notes": "Okta, Azure AD, OneLogin and generic OIDC are listed for Enterprise; Cloud Pro includes Google sign-in only (one line on the same page lists Okta for Cloud Pro, contradicting the plan table). Admins set it up under Organization settings, and a verified domain is required.",
+        "plan": "Enterprise",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://docs.lightdash.com/workspace-admin/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-28",
+        "notes": "Each provider has an Allow password sign-in option; turning it off on every provider for a domain enforces SSO-only sign-in. Google sign-in can also be switched off.",
+        "plan": "Enterprise",
+        "source": "https://docs.lightdash.com/workspace-admin/sso/setup",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "development",
+    "description": "Lightdash is an open-source BI tool that builds dashboards on top of dbt projects.",
+    "name": "Lightdash",
+    "status": "draft",
+    "website": "https://www.lightdash.com"
   },
   {
     "_id": "linear",
