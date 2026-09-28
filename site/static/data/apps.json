@@ -12777,6 +12777,83 @@
     "website": "https://www.metabase.com"
   },
   {
+    "_id": "microsoft-azure",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-28",
+        "notes": "The Azure Monitor activity log records control plane operations. Azure keeps events for 90 days at no charge; export via a diagnostic setting to keep them longer.",
+        "retention": "90 days",
+        "source": "https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/activity-log",
+        "support": "supported",
+        "tier": "free"
+      },
+      "custom_roles": {
+        "checked": "2026-09-28",
+        "notes": "If the Azure built-in roles don't fit, you can create custom roles and assign them to users, groups and service principals at management group, subscription and resource group scopes.",
+        "source": "https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "checked": "2026-09-28",
+        "notes": "Entra ID lets you prove ownership of a DNS domain and take over an unmanaged directory created by self-service sign-ups on that domain.",
+        "source": "https://learn.microsoft.com/en-us/entra/identity/users/domains-admin-takeover",
+        "support": "supported"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-28",
+        "notes": "Azure RBAC roles can be assigned to Entra ID groups as well as to users, service principals and managed identities.",
+        "source": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-28",
+        "notes": "Microsoft enforces mandatory MFA for all accounts signing in to the Azure portal (since 2024) and to Azure CLI, PowerShell, the mobile app and IaC tools for create, update and delete operations (since October 2025).",
+        "source": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mandatory-multifactor-authentication",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-28",
+        "notes": "Entra ID supports passkeys (FIDO2), including device-bound passkeys and FIDO2 security keys, for sign-in. The mandatory Azure MFA doc says passkeys satisfy the MFA requirement.",
+        "source": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-passkeys-fido2",
+        "support": "supported"
+      },
+      "scim": {
+        "notes": "Azure users are Entra ID directory objects; the docs checked don't describe SCIM provisioning into Azure itself.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "checked": "2026-09-28",
+        "notes": "A Global Administrator can set a directory-wide Azure portal inactivity timeout; users can only pick a shorter one for themselves.",
+        "source": "https://learn.microsoft.com/en-us/azure/azure-portal/set-preferences",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-09-28",
+        "notes": "Azure sign-in goes through Microsoft Entra ID, which can federate with a SAML 2.0 identity provider (or AD FS / PingFederate) for sign-on to Entra ID-secured resources. The doc names no plan.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-fed-saml-idp",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "notes": "Azure has no separate login of its own; accounts are Entra ID accounts. The docs checked don't describe blocking password sign-in in favour of federation.",
+        "support": "undocumented"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Microsoft Azure is a cloud computing platform managed through the Azure portal, CLI and APIs, with sign-in handled by Microsoft Entra ID.",
+    "name": "Microsoft Azure",
+    "status": "draft",
+    "website": "https://azure.microsoft.com"
+  },
+  {
     "_id": "microsoft-dynamics-365",
     "capabilities": {
       "api_token_controls": {
