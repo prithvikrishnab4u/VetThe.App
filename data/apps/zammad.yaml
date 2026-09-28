@@ -1,0 +1,61 @@
+name: "Zammad"
+category: "support"
+website: "https://zammad.com"
+description: "Zammad is an open-source helpdesk and ticketing system available as a hosted service or self-hosted."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "Admins can connect a SAML identity provider or an OpenID Connect provider as a login method, alongside Google, Microsoft and other third-party logins. The docs don't say which hosted plans include it."
+    source: "https://admin-docs.zammad.org/en/latest/settings/security/third-party/saml.html"
+    checked: "2026-09-28"
+  sso_enforcement:
+    support: "supported"
+    notes: "Once a third-party login is set up, admins can turn off password login. Admins can still request a password reset so they aren't locked out."
+    source: "https://admin-docs.zammad.org/en/latest/settings/security/base.html"
+    checked: "2026-09-28"
+  scim:
+    support: "undocumented"
+    notes: "The admin docs don't mention SCIM; user sync is documented via LDAP only."
+  mfa_enforcement:
+    support: "supported"
+    notes: "Admins can require 2FA setup for chosen user roles; affected users must set it up at their next sign-in before they can work."
+    source: "https://admin-docs.zammad.org/en/latest/settings/security/two-factor.html"
+    checked: "2026-09-28"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Security keys (WebAuthn), including hardware keys and passkeys, can be turned on as a 2FA method. The docs don't say admins can require security keys over the authenticator app."
+    source: "https://admin-docs.zammad.org/en/latest/settings/security/two-factor/security-keys.html"
+    checked: "2026-09-28"
+  audit_logs:
+    support: "supported"
+    notes: "A read-only audit log records admin-area changes, agent and admin account changes (passwords, roles, 2FA, activation) and \"switch to user\" sessions. Day-to-day ticket changes aren't included."
+    source: "https://admin-docs.zammad.org/en/latest/system/audit-logs.html"
+    checked: "2026-09-28"
+  jit_provisioning:
+    support: "supported"
+    notes: "If no matching account exists, Zammad creates one on first third-party login and gives it the default signup roles."
+    source: "https://admin-docs.zammad.org/en/latest/settings/security/third-party.html"
+    checked: "2026-09-28"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    notes: "Zammad ships with Admin, Agent and Customer roles; admins can change them or create new roles with their own permissions."
+    source: "https://admin-docs.zammad.org/en/latest/manage/roles/index.html"
+    checked: "2026-09-28"
+  group_role_mapping:
+    support: "partial"
+    notes: "Only the LDAP / Active Directory integration assigns Zammad roles from directory groups (optionally including nested groups). The SAML and OpenID Connect pages don't describe group mapping."
+    source: "https://admin-docs.zammad.org/en/latest/system/integrations/ldap/index.html"
+    checked: "2026-09-28"
+  session_controls:
+    support: "supported"
+    notes: "Admins can set session timeouts by permission (admin, agent, customer, default; 4 weeks by default), and can view and end user sessions."
+    source: "https://admin-docs.zammad.org/en/latest/settings/security/base.html"
+    checked: "2026-09-28"
+  api_token_controls:
+    support: "undocumented"
+    notes: "The admin docs don't cover API token management."

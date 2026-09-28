@@ -270,7 +270,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P3 | Tropic | `tropic` | finance | https://tropicapp.io |
 | P3 | Addigy | `addigy` | security | https://addigy.com |
 | P3 | BitSight | `bitsight` | security | https://bitsight.com |
-| P3 | Chainguard | `chainguard` | security | https://chainguard.dev |
 | P3 | Cyera | `cyera` | security | https://cyera.com |
 | P3 | Endor Labs | `endor-labs` | security | https://endorlabs.com |
 | P3 | GitGuardian | `gitguardian` | security | https://gitguardian.com |

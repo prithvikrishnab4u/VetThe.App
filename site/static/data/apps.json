@@ -2852,6 +2852,84 @@
     "website": "https://carta.com"
   },
   {
+    "_id": "chainguard",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-28",
+        "notes": "Registry pull tokens have a lifetime you set, 30 days by default and up to one year. CI systems can use assumable identities instead of long-lived tokens.",
+        "source": "https://edu.chainguard.dev/platform/chainctl/chainctl-docs/chainctl_auth_pull-token_create/",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-28",
+        "notes": "Chainguard sends CloudEvents, each naming the actor, to a webhook you subscribe. They cover IAM changes, logins and registry pulls. The docs don't describe a stored log you can search.",
+        "source": "https://edu.chainguard.dev/platform/administration/cloudevents/events-reference/",
+        "support": "partial"
+      },
+      "custom_roles": {
+        "checked": "2026-09-28",
+        "notes": "Besides the built-in owner, editor, viewer and console_viewer roles, you can create roles from specific capabilities.",
+        "source": "https://edu.chainguard.dev/platform/administration/iam-organizations/roles-role-bindings/roles-role-bindings/",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "notes": "Support can mark an organization as verified by hand so users log in with the organization name. The docs don't say how domain ownership is checked.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-28",
+        "notes": "Groups from your identity provider's OIDC token can be mapped to Chainguard roles. The roles last for that login session and are checked again at every login.",
+        "source": "https://edu.chainguard.dev/platform/administration/custom-idps/grant-roles-from-groups/",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-28",
+        "notes": "Users who log in through a custom identity provider get the default role you set for that provider, such as viewer.",
+        "source": "https://edu.chainguard.dev/platform/administration/custom-idps/custom-idps/",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-28",
+        "notes": "Email and password accounts always have to use an authenticator app code. For SSO and social logins, MFA is up to that provider, and there's no organization setting to require it.",
+        "source": "https://edu.chainguard.dev/get-started/mfa-devices/",
+        "support": "partial"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The only MFA Chainguard itself manages is authenticator app codes on email and password accounts.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-28",
+        "notes": "SCIM from Okta or Entra ID creates and deactivates users, but it can't push groups or assign roles. Users who aren't provisioned can still log in.",
+        "source": "https://edu.chainguard.dev/platform/administration/custom-idps/scim-provisioning/scim-overview/",
+        "support": "partial"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-28",
+        "notes": "You can bring your own OIDC identity provider, such as Okta, Entra ID or Ping, for Console and chainctl logins. The docs don't name a plan.",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://edu.chainguard.dev/platform/administration/custom-idps/custom-idps/",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-28",
+        "notes": "The docs say there's no native setting to turn off social logins. If you use Google Workspace, you can block the Chainguard app there instead.",
+        "source": "https://edu.chainguard.dev/platform/administration/custom-idps/disabling-social-logins/",
+        "support": "not_supported"
+      }
+    },
+    "category": "security",
+    "description": "Chainguard provides hardened, minimal container images and packages through its registry, managed in the Chainguard Console.",
+    "name": "Chainguard",
+    "status": "draft",
+    "website": "https://www.chainguard.dev"
+  },
+  {
     "_id": "chatgpt-enterprise",
     "capabilities": {
       "api_token_controls": {
@@ -21142,6 +21220,85 @@
     "name": "Xero",
     "status": "published",
     "website": "https://www.xero.com"
+  },
+  {
+    "_id": "zammad",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "The admin docs don't cover API token management.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-28",
+        "notes": "A read-only audit log records admin-area changes, agent and admin account changes (passwords, roles, 2FA, activation) and \"switch to user\" sessions. Day-to-day ticket changes aren't included.",
+        "source": "https://admin-docs.zammad.org/en/latest/system/audit-logs.html",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-09-28",
+        "notes": "Zammad ships with Admin, Agent and Customer roles; admins can change them or create new roles with their own permissions.",
+        "source": "https://admin-docs.zammad.org/en/latest/manage/roles/index.html",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-28",
+        "notes": "Only the LDAP / Active Directory integration assigns Zammad roles from directory groups (optionally including nested groups). The SAML and OpenID Connect pages don't describe group mapping.",
+        "source": "https://admin-docs.zammad.org/en/latest/system/integrations/ldap/index.html",
+        "support": "partial"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-28",
+        "notes": "If no matching account exists, Zammad creates one on first third-party login and gives it the default signup roles.",
+        "source": "https://admin-docs.zammad.org/en/latest/settings/security/third-party.html",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-28",
+        "notes": "Admins can require 2FA setup for chosen user roles; affected users must set it up at their next sign-in before they can work.",
+        "source": "https://admin-docs.zammad.org/en/latest/settings/security/two-factor.html",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-28",
+        "notes": "Security keys (WebAuthn), including hardware keys and passkeys, can be turned on as a 2FA method. The docs don't say admins can require security keys over the authenticator app.",
+        "source": "https://admin-docs.zammad.org/en/latest/settings/security/two-factor/security-keys.html",
+        "support": "supported"
+      },
+      "scim": {
+        "notes": "The admin docs don't mention SCIM; user sync is documented via LDAP only.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "checked": "2026-09-28",
+        "notes": "Admins can set session timeouts by permission (admin, agent, customer, default; 4 weeks by default), and can view and end user sessions.",
+        "source": "https://admin-docs.zammad.org/en/latest/settings/security/base.html",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-09-28",
+        "notes": "Admins can connect a SAML identity provider or an OpenID Connect provider as a login method, alongside Google, Microsoft and other third-party logins. The docs don't say which hosted plans include it.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://admin-docs.zammad.org/en/latest/settings/security/third-party/saml.html",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-28",
+        "notes": "Once a third-party login is set up, admins can turn off password login. Admins can still request a password reset so they aren't locked out.",
+        "source": "https://admin-docs.zammad.org/en/latest/settings/security/base.html",
+        "support": "supported"
+      }
+    },
+    "category": "support",
+    "description": "Zammad is an open-source helpdesk and ticketing system available as a hosted service or self-hosted.",
+    "name": "Zammad",
+    "status": "draft",
+    "website": "https://zammad.com"
   },
   {
     "_id": "zapier",
