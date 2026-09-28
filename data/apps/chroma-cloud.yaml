@@ -1,0 +1,32 @@
+name: "Chroma Cloud"
+category: "infrastructure"
+website: "https://www.trychroma.com"
+description: "Chroma Cloud is the hosted, serverless version of the Chroma open-source vector database."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "undocumented"
+    notes: "The Chroma Cloud docs don't cover sign-in, SSO or team access controls."
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"

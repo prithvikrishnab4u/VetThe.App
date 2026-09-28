@@ -833,6 +833,73 @@
     "website": "https://aiven.io"
   },
   {
+    "_id": "akeyless",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-28",
+        "notes": "Records nearly every change or action; viewable and filterable in the console and can be forwarded to tools like Splunk. No retention period stated.",
+        "source": "https://docs.akeyless.io/docs/audit-logs",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-09-28",
+        "notes": "Admins define Access Roles with permission rules per path and assign them to auth methods.",
+        "source": "https://docs.akeyless.io/docs/rbac",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-28",
+        "notes": "A role association can be restricted to SAML attributes or OIDC claims, such as a Groups value from the IdP.",
+        "source": "https://docs.akeyless.io/docs/sub-claims",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "Users can turn on two-factor in their own account settings, and it can be enabled per email auth method; no org-wide enforcement is described.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "checked": "2026-09-28",
+        "notes": "Account settings set the auth method token TTL, allowed client IPs and allowed client types.",
+        "source": "https://docs.akeyless.io/docs/account-settings",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-09-28",
+        "notes": "Users can sign in through an external identity provider such as Okta, Ping or Entra ID using SAML or OIDC auth methods.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.akeyless.io/docs/auth-with-saml",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "notes": "Account settings let admins pick a default auth method for SAML/OIDC, but the docs do not say SSO can be required for all users.",
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Akeyless is a SaaS platform for secrets management, machine identity and privileged access.",
+    "name": "Akeyless",
+    "status": "draft",
+    "website": "https://www.akeyless.io"
+  },
+  {
     "_id": "amazon-web-services-aws",
     "capabilities": {
       "api_token_controls": {
@@ -2925,6 +2992,57 @@
     "website": "https://carta.com"
   },
   {
+    "_id": "cerbos-hub",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-28",
+        "notes": "Client credentials are scoped to a deployment or policy store and can be read-only or read and write.",
+        "source": "https://docs.cerbos.dev/cerbos-hub/concepts.html",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "notes": "Hub collects decision and access logs from customer PDPs; a log of Hub user and admin activity is not described.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "The docs list fixed organization and workspace roles (Owner, Developer, Analyst, Viewer, Member); custom roles are not mentioned.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "support": "undocumented"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Cerbos Hub is a managed control plane for authoring, testing and distributing Cerbos authorization policies to policy decision points.",
+    "name": "Cerbos Hub",
+    "status": "draft",
+    "website": "https://www.cerbos.dev"
+  },
+  {
     "_id": "chainguard",
     "capabilities": {
       "api_token_controls": {
@@ -3161,6 +3279,53 @@
     "name": "Checkly",
     "status": "draft",
     "website": "https://www.checklyhq.com"
+  },
+  {
+    "_id": "chroma-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "notes": "The Chroma Cloud docs don't cover sign-in, SSO or team access controls.",
+        "support": "undocumented"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Chroma Cloud is the hosted, serverless version of the Chroma open-source vector database.",
+    "name": "Chroma Cloud",
+    "status": "draft",
+    "website": "https://www.trychroma.com"
   },
   {
     "_id": "chromatic",
@@ -12049,6 +12214,72 @@
     "name": "Lucidchart",
     "status": "published",
     "website": "https://www.lucidchart.com"
+  },
+  {
+    "_id": "mage-pro",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-28",
+        "notes": "The OSS-to-Pro comparison lists user activity tracking and audit logs as a Pro feature. No retention or plan is given.",
+        "source": "https://docs.mage.ai/migrations/mage-oss-to-mage-pro",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-09-28",
+        "notes": "Mage Pro lets admins define roles, define permissions, and attach permissions to roles and roles to users.",
+        "source": "https://docs.mage.ai/production/authentication/permissions/overview",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-28",
+        "notes": "The OSS-to-Pro comparison lists enterprise SSO with group mapping per tenant; the auth docs also map Active Directory app roles and LDAP groups to Mage roles.",
+        "source": "https://docs.mage.ai/migrations/mage-oss-to-mage-pro",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "TOTP MFA is Pro-only but configured per user from their own account settings; no admin setting to require it is described.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-28",
+        "notes": "The OSS-to-Pro comparison lists SCIM user and group provisioning from IdPs such as Okta, Azure AD and Google Workspace as a Pro feature. No setup guide or plan is published.",
+        "source": "https://docs.mage.ai/migrations/mage-oss-to-mage-pro",
+        "support": "supported"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-28",
+        "notes": "The Mage Pro SaaS architecture page lists SAML/OAuth2 support for SSO, and the auth docs cover OIDC, Okta, Microsoft and Google sign-in. No plan is named.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.mage.ai/pro-architecture/saas",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Mage Pro is the managed version of the Mage data pipeline and orchestration platform.",
+    "name": "Mage Pro",
+    "status": "draft",
+    "website": "https://www.mage.ai"
   },
   {
     "_id": "mailchimp",
