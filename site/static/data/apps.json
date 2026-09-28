@@ -5025,6 +5025,65 @@
     "website": "https://deno.com/deploy"
   },
   {
+    "_id": "depot",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Owners can create and remove organization API tokens, but the docs don't say whether admins can see or revoke tokens that users create.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "The docs list only two built-in roles, Owner and Member, and say more roles may come later.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "SSO comes with SCIM provisioning as an add-on, and the identity provider handles organization members.",
+        "plan": "SSO add-on",
+        "source": "https://depot.dev/docs/account",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Single sign-on with SCIM provisioning is an add-on feature; you configure your identity provider once in the Depot dashboard. The docs don't name the protocols.",
+        "plan": "SSO add-on",
+        "source": "https://depot.dev/docs/account",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "sso_enforcement": {
+        "notes": "The account docs don't say whether SSO can be made mandatory for all members.",
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "Depot is a build acceleration platform for faster Docker image builds, GitHub Actions runners and remote build caching.",
+    "name": "Depot",
+    "status": "draft",
+    "website": "https://depot.dev"
+  },
+  {
     "_id": "directus-cloud",
     "capabilities": {
       "api_token_controls": {
