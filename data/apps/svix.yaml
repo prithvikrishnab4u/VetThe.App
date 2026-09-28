@@ -1,0 +1,33 @@
+name: "Svix"
+category: "development"
+website: "https://www.svix.com"
+description: "Svix is a webhooks-as-a-service platform for sending and managing webhooks."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "undocumented"
+    notes: "The public docs repo does not mention SSO or SAML."
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs list four built-in roles (Viewer, Support Agent, Member, Admin) and do not mention custom roles."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"

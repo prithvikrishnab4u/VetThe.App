@@ -7285,6 +7285,77 @@
     "website": "https://www.grammarly.com"
   },
   {
+    "_id": "gravitee",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Only account admins can create Gravitee Cloud account tokens; tokens take the creator's permissions, at most 10 can be active, and they can be revoked.",
+        "source": "https://documentation.gravitee.io/gravitee-cloud/guides/account-token",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "The API Management Console has an Audit Trail of events you can filter by event, type and date, with patch details; it is an Enterprise Edition feature.",
+        "plan": "Enterprise Edition",
+        "source": "https://documentation.gravitee.io/apim/4.12/analyze-and-monitor-apis/audit-trail",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "API Management lets admins create custom roles with their own create, read, update and delete permissions at each scope; custom roles are an Enterprise Edition feature.",
+        "plan": "Enterprise Edition",
+        "source": "https://documentation.gravitee.io/apim/4.12/configure-and-manage-the-platform/manage-organizations-and-environments/user-management",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "In API Management, each identity provider has Groups Mapping and Roles Mapping that turn IdP roles, groups or claims into Gravitee groups and roles.",
+        "source": "https://documentation.gravitee.io/apim/4.12/configure-and-manage-the-platform/manage-organizations-and-environments/authentication/roles-and-groups-mapping",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Gravitee Cloud sign-in can be federated with your IdP over OAuth 2.0 and OpenID Connect; the docs call SSO an enterprise feature.",
+        "plan": "Enterprise",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://documentation.gravitee.io/gravitee-cloud/guides/configure-sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "notes": "The SSO guide recommends keeping the Account Primary Owner as a non-SSO user and does not describe requiring SSO.",
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "Gravitee is an API management platform for designing, securing and running APIs and event streams.",
+    "name": "Gravitee",
+    "status": "draft",
+    "website": "https://www.gravitee.io"
+  },
+  {
     "_id": "greenhouse",
     "capabilities": {
       "api_token_controls": {
@@ -10616,6 +10687,61 @@
     "name": "Mattermost Cloud",
     "status": "draft",
     "website": "https://mattermost.com"
+  },
+  {
+    "_id": "meltano",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Each user has a Developer Token shown on the API Keys page; the docs don't describe scopes, expiry or admin controls.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "The docs list Owner, Administrator and Member roles and don't mention custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "notes": "Workspaces can limit invitations to approved email domains, but the docs don't describe verifying domain ownership.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Meltano Cloud supports signing in with a Microsoft account through Entra ID; the docs don't mention SAML or other identity providers.",
+        "source": "https://docs.meltano.com/releases/cloud/2026-06-04-cloud-changelog",
+        "support": "partial"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Users on SSO-enforced domains are sent through Entra ID at login and on invitation with no password; this is Microsoft only, and the docs don't explain how a domain becomes enforced.",
+        "source": "https://docs.meltano.com/releases/cloud/2026-06-10-cloud-changelog",
+        "support": "partial"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Meltano is an open-source ELT tool with a hosted Meltano Cloud service for running data pipelines.",
+    "name": "Meltano",
+    "status": "draft",
+    "website": "https://meltano.com"
   },
   {
     "_id": "mergify",
@@ -16312,6 +16438,78 @@
     "website": "https://sourcegraph.com"
   },
   {
+    "_id": "speakeasy",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "API keys have scopes, can be bound to one project, show when they were last used, and can be revoked right away; only admins can manage them.",
+        "source": "https://www.speakeasy.com/docs/ai-control-plane/org-admin/api-keys",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "An org-wide feed shows who changed what, when and from which surface, with filters and diffs; viewing it needs the org:read permission.",
+        "source": "https://www.speakeasy.com/docs/ai-control-plane/org-admin/audit-logs",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-09-27",
+        "notes": "The role editor lets admins create custom roles with permissions scoped down to specific servers and tools.",
+        "source": "https://www.speakeasy.com/docs/ai-control-plane/org-admin/roles-and-permissions",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "notes": "The docs cover custom domain verification only for MCP server URLs, not for claiming an org's email domain.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "Each directory group maps to a Control Plane role, so roles are assigned from IdP group membership.",
+        "source": "https://www.speakeasy.com/docs/ai-control-plane/org-admin/identity",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "Your directory pushes user adds, edits, removals and group changes over SCIM; the docs say this is gated by plan without naming one.",
+        "source": "https://www.speakeasy.com/docs/ai-control-plane/org-admin/identity",
+        "support": "supported"
+      },
+      "session_controls": {
+        "notes": "The docs describe session length only for MCP server sign-ins, not dashboard sessions.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SSO over OIDC and SAML runs through WorkOS and is available on request to enterprise customers.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://www.speakeasy.com/docs/ai-control-plane/reference/platform-security",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "Speakeasy is an API tooling platform with an AI Control Plane for managing MCP servers and tools.",
+    "name": "Speakeasy",
+    "status": "draft",
+    "website": "https://www.speakeasy.com"
+  },
+  {
     "_id": "splunk",
     "capabilities": {
       "api_token_controls": {
@@ -16868,6 +17066,54 @@
     "name": "SurveyMonkey",
     "status": "published",
     "website": "https://www.surveymonkey.com"
+  },
+  {
+    "_id": "svix",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "The docs list four built-in roles (Viewer, Support Agent, Member, Admin) and do not mention custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "notes": "The public docs repo does not mention SSO or SAML.",
+        "support": "undocumented"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "Svix is a webhooks-as-a-service platform for sending and managing webhooks.",
+    "name": "Svix",
+    "status": "draft",
+    "website": "https://www.svix.com"
   },
   {
     "_id": "tableau",
