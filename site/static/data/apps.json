@@ -4102,8 +4102,7 @@
         "notes": "Federated SSO works with SAML 2.0 identity providers and OpenID Connect providers. LDAP is also an option.",
         "protocols": [
           "SAML",
-          "OIDC",
-          "LDAP"
+          "OIDC"
         ],
         "source": "https://docs.codefresh.io/docs/administration/single-sign-on/",
         "support": "supported"
