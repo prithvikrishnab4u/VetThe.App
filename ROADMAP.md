@@ -2,7 +2,7 @@
 
 Running log of what's done and what's next. **Update this file at the end of every work session**: tick items off, add what you found, and refresh the numbers with `.venv/bin/python scripts/validate.py`.
 
-_Last updated: 2026-09-27_
+_Last updated: 2026-09-28_
 
 ## Remind the user
 
@@ -14,16 +14,20 @@ _Last updated: 2026-09-27_
 
 ## Where the data stands
 
-172 apps: 79 `published`, 93 `draft`. 2,064 data points:
+312 apps: 79 `published`, 233 `draft`. 3,744 data points:
 
 | | Count |
 |---|---|
-| Verified (has `source` + `checked`) | 853 |
+| Verified (has `source` + `checked`) | 1,649 |
 | Unverified (a value with no source, carried over from the old dataset) | 0 |
-| Not documented (checked, the vendor says nothing) | 573 |
+| Not documented (checked, the vendor says nothing) | 1,457 |
 | Not researched | 638 |
 
 ## Done
+
+- [x] **140 new apps from vendors' public docs repos (2026-09-28).** Goal is 500 apps by year end. This session's network blocked vendor websites but allowed `git clone` from GitHub/GitLab, so agents sparse-cloned each vendor's docs source (Markdown/MDX) and cited the published URL each file maps to. All 12 capabilities filled per app, every value sourced or `undocumented`, no inferred tiers. All added as `draft`: most docs name a feature but not the plan, so tiers are often missing. Brief lives in the session scratchpad; the rules are the same as the P1 run.
+  - **The method is running dry.** Most well-known SaaS vendors don't publish docs on GitHub. Skipped because no current public docs repo was found (need a browser): statsig, coderabbit, bugsnag, graphite, socket, gitguardian, rudderstack, astronomer, spacelift, port, env0, pinecone, oso-cloud, descope, endor-labs, nocodb, baserow, rootly, panther, humanitec, courier, roadie, rocket-chat, codecov, chatwoot, infracost, pipedream.
+  - Getting to 500 needs vendor websites reachable again. With that, BACKLOG.md P1/P2 is the obvious source.
 
 - [x] **Offline consistency audit** (2026-09-27, no network needed). Checked every file for IdP-sourced values, tiers that contradict the plan name, JIT or group mapping without SSO/SCIM, and future `checked` dates. Fixed:
   - Google Workspace SCIM cited an Entra tutorial (IdP docs never count). Now `undocumented` until a Google-owned page is found.
