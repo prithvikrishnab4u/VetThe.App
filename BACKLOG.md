@@ -63,7 +63,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P1 | WALLIX | `wallix` | security | https://wallix.com |
 | P1 | Segura | `segura` | security | https://segura.security |
 | P1 | Akeyless | `akeyless` | security | https://akeyless.io |
-| P1 | HCP Vault | `hcp-vault` | security | https://hashicorp.com/products/vault |
 
 ### Identity threat detection and non-human identity (ITDR, NHI, SSPM)
 
@@ -230,7 +229,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P2 | NinjaOne | `ninjaone` | infrastructure | https://ninjaone.com |
 | P2 | Oracle Cloud Infrastructure | `oracle-cloud` | infrastructure | https://oracle.com/cloud |
 | P2 | Rubrik | `rubrik` | infrastructure | https://rubrik.com |
-| P2 | Segment | `segment` | infrastructure | https://segment.com |
 | P2 | SolarWinds Service Desk | `solarwinds-service-desk` | infrastructure | https://solarwinds.com/service-desk |
 | P2 | Splunk AppDynamics | `appdynamics` | infrastructure | https://splunk.com/en_us/products/appdynamics.html |
 | P2 | Sumo Logic | `sumo-logic` | infrastructure | https://sumologic.com |
