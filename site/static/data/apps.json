@@ -18323,6 +18323,86 @@
     "website": "https://turso.tech"
   },
   {
+    "_id": "twenty",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-28",
+        "notes": "Workspace API keys can be assigned a role that limits what they can access; keys with no role use default permissions. The docs don't cover reviewing or revoking keys by user.",
+        "source": "https://docs.twenty.com/user-guide/permissions-access/capabilities/permissions",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-28",
+        "notes": "Audit logs, to check what each workspace member has been doing, are a Premium feature on the Organization plans.",
+        "plan": "Organization",
+        "source": "https://docs.twenty.com/user-guide/billing/capabilities/pricing-plans",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "checked": "2026-09-28",
+        "notes": "Admins can create roles and set object, field, settings and action permissions. Row-level permissions need the Organization plan.",
+        "source": "https://docs.twenty.com/user-guide/permissions-access/capabilities/permissions",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "notes": "Approved access domains let anyone at that email domain join without an invite, but the docs don't describe verifying the domain or taking over existing accounts.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "notes": "The SSO page only says to map IdP groups to roles \"if available\"; no setup is documented.",
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-28",
+        "notes": "With JIT provisioning, accounts are created on first SSO login and get the default role. SSO is Organization plan only.",
+        "plan": "Organization",
+        "source": "https://docs.twenty.com/user-guide/permissions-access/how-tos/permissions-faq",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "notes": "Users can turn on authenticator-app 2FA for their own account; the docs don't describe a way for admins to require it.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The only 2FA method documented is an authenticator app.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "The SSO docs cover JIT and manual invites but don't mention SCIM.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-28",
+        "notes": "SSO works with SAML 2.0, Google Workspace and Microsoft Entra ID. It is a Premium feature on the Organization plan (cloud and self-hosted).",
+        "plan": "Organization",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.twenty.com/user-guide/permissions-access/capabilities/sso-configuration",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-28",
+        "notes": "Once SSO is configured, you can disable password login for SSO users to enforce sign-in through your identity provider. SSO is Organization plan only.",
+        "plan": "Organization",
+        "source": "https://docs.twenty.com/user-guide/permissions-access/how-tos/permissions-faq",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "sales_marketing",
+    "description": "Twenty is an open-source CRM available as a cloud service or self-hosted.",
+    "name": "Twenty",
+    "status": "draft",
+    "website": "https://twenty.com"
+  },
+  {
     "_id": "twilio-segment",
     "capabilities": {
       "api_token_controls": {
