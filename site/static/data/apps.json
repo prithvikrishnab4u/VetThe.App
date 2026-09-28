@@ -4045,6 +4045,83 @@
     "website": "https://www.codacy.com"
   },
   {
+    "_id": "codefresh",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-28",
+        "notes": "Service accounts can hold multiple API keys; you pick scopes for each key and can edit the scopes or delete the key later.",
+        "source": "https://docs.codefresh.io/docs/administration/account-user-management/service-accounts/",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-28",
+        "notes": "Logs all API-driven actions from the UI, CLI and integrations, with filtering and CSV export. How far back it goes depends on your pricing tier.",
+        "source": "https://docs.codefresh.io/docs/administration/account-user-management/audit/",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-09-28",
+        "notes": "There are only two roles, Admin and User. Finer access comes from attribute-based rules that combine teams, tags and CRUD permissions.",
+        "source": "https://docs.codefresh.io/docs/administration/account-user-management/access-control/",
+        "support": "partial"
+      },
+      "domain_verification": {
+        "notes": "Admins can limit invitations to listed email domains, but there's no domain ownership check in the docs.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-28",
+        "notes": "Team sync pulls teams from Azure, Okta, Google and other IdPs into Codefresh teams, which access rules are built on. Automatic sync works only for some providers.",
+        "source": "https://docs.codefresh.io/docs/administration/single-sign-on/team-sync/",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-28",
+        "notes": "For Okta SAML, the docs say to use the auto-sync and activate user options for just-in-time provisioning.",
+        "source": "https://docs.codefresh.io/docs/administration/single-sign-on/saml/saml-okta/",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "SCIM isn't mentioned. Users and teams are synced from some IdPs through Codefresh's own team sync instead.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "checked": "2026-09-28",
+        "notes": "Admins can set an inactivity timeout of up to 30 days; users get a warning 15 minutes before being logged out.",
+        "source": "https://docs.codefresh.io/docs/administration/account-user-management/add-users/",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-09-28",
+        "notes": "Federated SSO works with SAML 2.0 identity providers and OpenID Connect providers. LDAP is also an option.",
+        "protocols": [
+          "SAML",
+          "OIDC",
+          "LDAP"
+        ],
+        "source": "https://docs.codefresh.io/docs/administration/single-sign-on/",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-28",
+        "notes": "Once SSO is turned on for a user, Codefresh blocks their logins through other providers. Admins can also hide login options on the sign-in page.",
+        "source": "https://docs.codefresh.io/docs/administration/single-sign-on/saml/",
+        "support": "supported"
+      }
+    },
+    "category": "development",
+    "description": "Codefresh is a CI/CD and GitOps platform built on Argo for deploying to Kubernetes.",
+    "name": "Codefresh",
+    "status": "draft",
+    "website": "https://codefresh.io"
+  },
+  {
     "_id": "codemagic",
     "capabilities": {
       "api_token_controls": {
@@ -6381,6 +6458,84 @@
     "name": "Fly.io",
     "status": "draft",
     "website": "https://fly.io"
+  },
+  {
+    "_id": "formbricks",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-28",
+        "notes": "API keys are scoped per Workspace (read, write or manage) and to organization administration, and scopes are fixed at creation. Keys can be deleted to revoke access.",
+        "source": "https://formbricks.com/docs/api-reference/generate-key",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-28",
+        "notes": "Audit logging is an Enterprise feature. On a self-hosted instance you turn it on with environment variables, and events are written to stdout as JSON Lines for you to forward to your own logging. The docs don't cover audit logs on Formbricks Cloud.",
+        "plan": "Enterprise Edition",
+        "source": "https://formbricks.com/docs/self-hosting/advanced/enterprise-features/audit-logging",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "notes": "The docs list fixed organization roles (Owner, Manager, Billing, Member) and team roles as an Enterprise Edition feature, but don't describe creating custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-28",
+        "notes": "Self-hosted: with AUTH_SKIP_INVITE_FOR_SSO, SSO users can create an account without an invite, and AUTH_SSO_DEFAULT_ORGANIZATION_ID (Enterprise Edition with SSO) adds them to an organization with a set role.",
+        "plan": "Enterprise Edition",
+        "source": "https://formbricks.com/docs/self-hosting/configuration/environment-variables",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "notes": "Users can turn on authenticator-app 2FA (Enterprise Edition) for their own account; the docs don't describe a way for admins to require it.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The only 2FA method documented is a TOTP authenticator app, plus backup codes.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "The docs don't mention SCIM.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "checked": "2026-09-28",
+        "notes": "Self-hosted only: SESSION_MAX_AGE sets the maximum session age for the instance (24 hours by default). Nothing is documented for Formbricks Cloud.",
+        "source": "https://formbricks.com/docs/self-hosting/configuration/environment-variables",
+        "support": "partial"
+      },
+      "sso": {
+        "checked": "2026-09-28",
+        "notes": "SAML SSO is part of the Enterprise Edition and needs a licence. The docs only cover setting it up on a self-hosted instance through environment variables; they don't say whether Formbricks Cloud offers it.",
+        "plan": "Enterprise Edition",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://formbricks.com/docs/self-hosting/configuration/auth-sso/saml-sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-28",
+        "notes": "Self-hosted only: setting EMAIL_AUTH_DISABLED turns off email and password sign-up and login for the whole instance. Nothing is documented for Formbricks Cloud.",
+        "source": "https://formbricks.com/docs/self-hosting/configuration/environment-variables",
+        "support": "partial"
+      }
+    },
+    "category": "sales_marketing",
+    "description": "Formbricks is an open-source survey and experience management platform available as a cloud service or self-hosted.",
+    "name": "Formbricks",
+    "status": "draft",
+    "website": "https://formbricks.com"
   },
   {
     "_id": "freshdesk",
@@ -14306,6 +14461,77 @@
     "website": "https://www.pipedrive.com"
   },
   {
+    "_id": "plane",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-28",
+        "notes": "API keys are personal access tokens with an optional expiry; OAuth apps get scoped tokens. The docs don't describe admin controls over users' tokens.",
+        "source": "https://developers.plane.so/api-reference/introduction",
+        "support": "partial"
+      },
+      "audit_logs": {
+        "notes": "The developer docs don't describe audit logs.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "notes": "The custom domain page is about hosting a self-hosted instance on your own domain, not verifying email domains.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-28",
+        "notes": "IdP group sync maps IdP groups to workspace and project roles, can sync on login and can remove users who leave a group. The docs cover the API for it, not which plans include it.",
+        "source": "https://developers.plane.so/api-reference/idp-group-sync/overview",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "The developer docs don't mention 2FA or MFA.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "The developer docs don't mention SCIM.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "checked": "2026-09-28",
+        "notes": "Self-hosted only: instance admins set an inactivity-based session expiry for the whole instance (7 days by default) and a separate absolute limit for the admin panel. It can't be set per workspace. Nothing is documented for Plane Cloud.",
+        "source": "https://developers.plane.so/self-hosting/govern/god-mode/session-expiry",
+        "support": "partial"
+      },
+      "sso": {
+        "checked": "2026-09-28",
+        "notes": "The SAML and OIDC SSO pages are marked Pro and Business. They're part of the self-hosting docs and describe setup in the instance admin panel (God mode); the developer docs don't cover SSO setup on Plane Cloud.",
+        "plan": "Pro, Business",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://developers.plane.so/self-hosting/govern/saml-sso",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-28",
+        "notes": "Self-hosted only: instance admins can turn off password login in the instance authentication settings so people use another method such as SSO. Nothing is documented for Plane Cloud.",
+        "source": "https://developers.plane.so/self-hosting/govern/authentication",
+        "support": "partial"
+      }
+    },
+    "category": "productivity",
+    "description": "Plane is an open-source project management tool available as a cloud service or self-hosted.",
+    "name": "Plane",
+    "status": "draft",
+    "website": "https://plane.so"
+  },
+  {
     "_id": "plausible",
     "capabilities": {
       "api_token_controls": {
@@ -15055,6 +15281,81 @@
     "name": "Qdrant Cloud",
     "status": "draft",
     "website": "https://qdrant.tech"
+  },
+  {
+    "_id": "qovery",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-28",
+        "notes": "Organization API tokens each carry a role and can be listed and deleted in settings. Only Owner, Admin and DevOps roles can manage them.",
+        "source": "https://www.qovery.com/docs/configuration/organization/api-token",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-28",
+        "notes": "Every API call is logged with who, what, where and when, and you can filter the log. How long it's kept depends on the plan.",
+        "retention": "User plan 3 days, Team 7 days, Business 30 days, Enterprise custom",
+        "source": "https://www.qovery.com/docs/getting-started/security-and-compliance/audit-logs",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-09-28",
+        "notes": "Custom roles set permissions per cluster and per project. They can't create API tokens or manage organization settings.",
+        "source": "https://www.qovery.com/docs/configuration/organization/members-rbac",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-28",
+        "notes": "IdP groups can be mapped to Qovery roles through the CLI, with an option to keep the groups in sync on each login.",
+        "source": "https://www.qovery.com/docs/configuration/organization/sso",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-28",
+        "notes": "Users are added to the organization on their first SSO login and get the default role, which is viewer unless you change it.",
+        "source": "https://www.qovery.com/docs/configuration/organization/sso",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "notes": "The security docs only recommend requiring MFA; login goes through your IdP or a social provider.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "SCIM isn't mentioned; the SSO docs say users show up only after their first login.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "checked": "2026-09-28",
+        "notes": "You can turn on an Okta Global Token Revocation endpoint to end sessions from the IdP. The docs don't mention a session length setting.",
+        "source": "https://www.qovery.com/docs/configuration/organization/sso",
+        "support": "partial"
+      },
+      "sso": {
+        "checked": "2026-09-28",
+        "notes": "SSO connects your identity provider over SAML or OIDC; you ask your customer success manager to turn it on for the organization.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://www.qovery.com/docs/configuration/organization/sso",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "notes": "The SSO docs don't say whether other login methods can be blocked.",
+        "support": "undocumented"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Qovery is a DevOps automation platform for deploying applications and environments on your own cloud Kubernetes clusters.",
+    "name": "Qovery",
+    "status": "draft",
+    "website": "https://www.qovery.com"
   },
   {
     "_id": "qualtrics",
