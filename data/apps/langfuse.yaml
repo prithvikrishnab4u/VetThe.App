@@ -1,0 +1,65 @@
+name: "Langfuse"
+category: "development"
+website: "https://langfuse.com"
+description: "Langfuse is an open-source LLM engineering platform for tracing, evaluation and prompt management."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "add_on"
+    plan: "Pro with Teams add-on, or Enterprise"
+    protocols: ["OIDC"]
+    notes: "Enterprise SSO uses OIDC; SAML is not supported. Also available on self-hosted deployments."
+    source: "https://langfuse.com/docs/administration/authentication-and-sso"
+    checked: "2026-09-28"
+  sso_enforcement:
+    support: "supported"
+    tier: "add_on"
+    plan: "Pro with Teams add-on, or Enterprise"
+    notes: "SSO can be enforced per email domain. No break-glass accounts, and existing sessions are not ended when enforcement is turned on."
+    source: "https://langfuse.com/docs/administration/authentication-and-sso"
+    checked: "2026-09-28"
+  scim:
+    support: "partial"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM supports only the Users endpoints (list, create, delete), with no Groups or updates. Delete only removes the org membership. Authenticates with org API keys; self-hosted needs an Enterprise license."
+    source: "https://langfuse.com/docs/administration/scim-and-org-api"
+    checked: "2026-09-28"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The docs suggest enforcing SSO with an identity provider that requires 2FA; no native MFA enforcement is described."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Records who did what and when, with before and after state. Logs can be exported from the UI; viewing needs the auditLogs:read permission. No retention period stated."
+    source: "https://langfuse.com/docs/administration/audit-logs"
+    checked: "2026-09-28"
+  jit_provisioning:
+    support: "not_supported"
+    notes: "SSO does not auto-provision roles for new users; members are added by invitation in the UI or through SCIM."
+    source: "https://langfuse.com/docs/administration/authentication-and-sso"
+    checked: "2026-09-28"
+  domain_verification:
+    support: "supported"
+    tier: "add_on"
+    plan: "Pro with Teams add-on, or Enterprise"
+    notes: "Domains are verified with a DNS TXT record before SSO is enabled; existing users on the domain are moved to SSO."
+    source: "https://langfuse.com/docs/administration/authentication-and-sso"
+    checked: "2026-09-28"
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs describe only fixed roles (Owner, Admin, Member, Viewer, None)."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "API keys are scoped to a project or organization, not a user, and are managed by Owners and Admins. Keys can be deleted at once, can have an optional expiry, and show a Last used time."
+    source: "https://langfuse.com/docs/administration/rbac"
+    checked: "2026-09-28"

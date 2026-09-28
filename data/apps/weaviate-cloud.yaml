@@ -1,0 +1,44 @@
+name: "Weaviate Cloud"
+category: "infrastructure"
+website: "https://weaviate.io"
+description: "Weaviate Cloud is a managed hosting service for the Weaviate vector database."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "undocumented"
+    notes: "The Weaviate Cloud docs cover email and password accounts but don't mention SAML or OIDC sign-in to the console."
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The docs say MFA is off by default and each user turns it on in their own account settings; they don't describe a way for admins to require it."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The MFA docs only describe authenticator-app one-time codes, not security keys or passkeys."
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "partial"
+    tier: "free"
+    plan: "Free"
+    notes: "You can create custom roles with specific permissions on collections, tenants and operations, but these apply to cluster API keys. Console members get one of four fixed roles: Owner, Admin, Editor or Viewer."
+    source: "https://docs.weaviate.io/cloud/manage-clusters/authorization"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    tier: "free"
+    plan: "Free"
+    notes: "Cluster API keys are listed in the console, where you can assign each one a role, rotate it or delete it. The docs say this works on free and Shared Cloud clusters alike."
+    source: "https://docs.weaviate.io/cloud/manage-clusters/authentication"
+    checked: "2026-09-27"

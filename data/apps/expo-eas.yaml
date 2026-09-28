@@ -1,0 +1,57 @@
+name: "Expo EAS"
+category: "development"
+website: "https://expo.dev"
+description: "Expo Application Services (EAS) is a cloud service for building, submitting and updating React Native apps."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Production"
+    protocols: ["OIDC"]
+    notes: "SSO is on the Production and Enterprise plans. It uses OpenID Connect Discovery and works with Okta, OneLogin, Microsoft Entra ID and Google Workspace."
+    source: "https://docs.expo.dev/accounts/sso/"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "SSO orgs must keep at least one non-SSO Owner and can still invite non-SSO users; no option to require SSO is described."
+  scim:
+    support: "undocumented"
+    notes: "The docs say to remove users in the identity provider, after which they lose access when their token refreshes. SCIM isn't mentioned."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Two-factor authentication is set up per user in personal settings; no org setting to require it is described."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The two-factor docs list only authenticator apps, deprecated SMS and recovery codes."
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    retention: "1.5 years"
+    notes: "View logs in the dashboard, export them in ranges of up to 30 days, or query them with eas account:audit."
+    source: "https://docs.expo.dev/accounts/audit-logs/"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    tier: "paid"
+    plan: "Production"
+    notes: "A new user picks a username the first time they sign in with SSO and gets the View Only role by default."
+    source: "https://docs.expo.dev/accounts/sso/"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs list only fixed roles: Owner, Admin, Release Manager, Developer and Viewer."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+    notes: "Token refresh time is set in the identity provider; no Expo session setting is described."
+  api_token_controls:
+    support: "partial"
+    notes: "Users can revoke their own personal access tokens, and admins manage robot users with assigned roles. The docs don't say admins can see or revoke members' personal tokens."
+    source: "https://docs.expo.dev/accounts/programmatic-access/"
+    checked: "2026-09-27"

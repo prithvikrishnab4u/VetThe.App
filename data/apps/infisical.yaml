@@ -1,0 +1,77 @@
+name: "Infisical"
+category: "security"
+website: "https://infisical.com"
+description: "Infisical is an open-source platform for managing secrets, certificates, and privileged access."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Pro"
+    protocols: ["SAML", "OIDC"]
+    notes: "SAML and OIDC SSO are on the Pro tier of Infisical Cloud (self-hosted needs an enterprise license). Google and GitHub sign-in are free."
+    source: "https://infisical.com/docs/documentation/platform/sso/overview"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    notes: "Admins can enforce SAML or OIDC SSO so members can only sign in through the identity provider; it needs a verified email domain. Org admins keep a break-glass login."
+    source: "https://infisical.com/docs/documentation/platform/sso/overview"
+    checked: "2026-09-27"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM provisions and deprovisions users and groups on the Enterprise tier of Infisical Cloud. It needs SAML or OIDC SSO and a verified email domain."
+    source: "https://infisical.com/docs/documentation/platform/scim/overview"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "supported"
+    notes: "The organization's Security settings let admins enforce MFA. Users can use email codes or an authenticator app."
+    source: "https://infisical.com/docs/documentation/platform/organization"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The MFA docs cover email codes and authenticator apps; security keys and passkeys aren't mentioned."
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "Pro"
+    retention: "Varies by plan"
+    notes: "Audit logs are on the Pro, Advanced, and Enterprise plans and can be viewed in the app or exported through the API."
+    source: "https://infisical.com/docs/documentation/platform/audit-logs"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    notes: "Infisical creates a new user for anyone who comes in through an external identity provider; they verify their email on first login unless SSO is enforced."
+    source: "https://infisical.com/docs/documentation/platform/sso/overview"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "supported"
+    tier: "paid"
+    plan: "Pro"
+    notes: "Domains are verified with a DNS TXT record and then linked only to your organization; this is on the Pro tier of Infisical Cloud."
+    source: "https://infisical.com/docs/documentation/platform/email-domain"
+    checked: "2026-09-27"
+  custom_roles:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Custom organization and project roles are on the Enterprise plan; the built-in roles are on every plan."
+    source: "https://infisical.com/docs/documentation/platform/access-controls/role-based-access-controls"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM group names can be mapped to organization roles, but only when users are first provisioned. OIDC groups claims can also sync Infisical group membership at login."
+    source: "https://infisical.com/docs/documentation/platform/scim/group-mappings"
+    checked: "2026-09-27"
+  session_controls:
+    support: "supported"
+    notes: "The organization's Security settings let admins set how long a login session lasts."
+    source: "https://infisical.com/docs/documentation/platform/organization"
+    checked: "2026-09-27"
+  api_token_controls:
+    support: "undocumented"
+    notes: "Service tokens can be scoped and given an expiry, but no admin controls over tokens users create are described."

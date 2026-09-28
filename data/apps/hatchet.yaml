@@ -1,0 +1,57 @@
+name: "Hatchet"
+category: "development"
+website: "https://hatchet.run"
+description: "Hatchet is a platform for running background tasks and durable workflows, available as Hatchet Cloud or self-hosted."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Custom"
+    protocols: ["OIDC"]
+    notes: "Single Sign-On is only available on Hatchet Custom plans; documented identity providers are Okta, Microsoft Entra ID, OneLogin, JumpCloud, Google and generic OIDC."
+    source: "https://docs.hatchet.run/v1/single-sign-on"
+    checked: "2026-09-28"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Custom"
+    notes: "Enabling the Force SSO toggle forces all users to sign in with SSO, disabling all other login methods."
+    source: "https://docs.hatchet.run/v1/single-sign-on"
+    checked: "2026-09-28"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    plan: "Business"
+    retention: "30 days"
+    notes: "Audit logs are available on Business plans and above; entries older than 30 days are automatically removed. Docs do not say whether Business is self-serve, so no tier is set."
+    source: "https://docs.hatchet.run/v1/security/audit-logs"
+    checked: "2026-09-28"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Custom"
+    notes: "Domains are verified with a DNS TXT record as part of SSO setup; SSO is only available on Custom plans."
+    source: "https://docs.hatchet.run/v1/single-sign-on"
+    checked: "2026-09-28"
+  custom_roles:
+    support: "undocumented"
+    notes: "Docs list fixed tenant roles (Owner, Admin, Member, Viewer) and do not mention custom roles."
+  group_role_mapping:
+    support: "undocumented"
+    notes: "User groups (Custom plans) are created in Hatchet with a tenant role; syncing groups from an identity provider is not described."
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "API tokens are scoped per-tenant with configurable expiration."
+    source: "https://docs.hatchet.run/v1/security"
+    checked: "2026-09-28"

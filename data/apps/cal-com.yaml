@@ -1,0 +1,48 @@
+name: "Cal.com"
+category: "productivity"
+website: "https://cal.com"
+description: "Cal.com is an open-source scheduling platform for booking meetings and managing calendars."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["OIDC"]
+    notes: "The help guide sets up OIDC single sign-on with Okta under Settings > Security > SSO. It's written for a self-hosted instance (SAML_DATABASE_URL and SAML_ADMINS env vars) and doesn't state a plan."
+    source: "https://cal.com/help/auth-and-provision/oidc-with-okta"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "supported"
+    notes: "Organizations can set up directory sync with Okta over SCIM 2.0 (create users, update attributes, deactivate users). The guide uses self-hosting env vars and doesn't state a plan."
+    source: "https://cal.com/help/auth-and-provision/scim-okta"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    plan: "Organizations"
+    notes: "Audit logs are included with every Cal.com organization plan and on by default; only org or team admins can view them. They cover bookings, routing forms and security events like logins and 2FA changes. No export or retention period is mentioned."
+    source: "https://cal.com/help/enterprise/audit-logs"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    notes: "The audit log docs describe granting a custom role permissions such as viewing team or organization routing form audit logs."
+    source: "https://cal.com/help/enterprise/audit-logs"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "supported"
+    notes: "With SCIM, Okta groups can be mapped to teams in the organization and pushed users are added to those teams automatically."
+    source: "https://cal.com/help/auth-and-provision/scim-okta"
+    checked: "2026-09-27"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"

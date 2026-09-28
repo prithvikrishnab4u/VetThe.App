@@ -1,0 +1,41 @@
+name: "Codacy"
+category: "development"
+website: "https://www.codacy.com"
+description: "Codacy is an automated code quality and security analysis platform."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "undocumented"
+    notes: "The docs describe signing in with a GitHub, GitLab or Bitbucket account and don't mention SAML or OIDC SSO."
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    retention: "1 year"
+    notes: "Codacy logs user, organization and repository events on the Business plan. Org admins and managers get them through the Codacy API, not the UI."
+    source: "https://docs.codacy.com/organizations/audit-logs-for-organizations/"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "Roles come from the Git provider, plus an organization manager role. The docs don't describe custom roles."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+    notes: "Sessions time out after 4 hours idle or 12 hours total, but the docs don't say admins can change this."
+  api_token_controls:
+    support: "undocumented"
+    notes: "Account API tokens must expire within a year, but the docs don't say admins can see or revoke other users' tokens."

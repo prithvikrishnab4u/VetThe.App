@@ -1,0 +1,36 @@
+name: "Cerbos Hub"
+category: "security"
+website: "https://www.cerbos.dev"
+description: "Cerbos Hub is a managed control plane for authoring, testing and distributing Cerbos authorization policies to policy decision points."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "undocumented"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+    notes: "Hub collects decision and access logs from customer PDPs; a log of Hub user and admin activity is not described."
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs list fixed organization and workspace roles (Owner, Developer, Analyst, Viewer, Member); custom roles are not mentioned."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "Client credentials are scoped to a deployment or policy store and can be read-only or read and write."
+    source: "https://docs.cerbos.dev/cerbos-hub/concepts.html"
+    checked: "2026-09-28"

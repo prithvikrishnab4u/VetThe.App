@@ -1,0 +1,68 @@
+name: "Sumo Logic"
+category: "security"
+website: "https://www.sumologic.com"
+description: "Sumo Logic is a cloud log analytics and security monitoring platform."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Essentials and Enterprise (Credits); Enterprise (Cloud Flex)"
+    protocols: ["SAML"]
+    notes: "SAML 2.0 SSO is available on Credits Essentials and Enterprise plans and Cloud Flex Enterprise (plus trials)."
+    source: "https://help.sumologic.com/docs/manage/security/saml/set-up-saml/"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    notes: "A Require SAML Sign In toggle forces SAML login. Allowlisted users can still use a password, and the admin who turns it on is added to that list automatically."
+    source: "https://help.sumologic.com/docs/manage/security/saml/integrate-sumo-logic-with-okta/"
+    checked: "2026-09-27"
+  scim:
+    support: "supported"
+    notes: "SCIM 2.0 provisions and deprovisions users and assigns roles from the IdP. It needs SAML set up and an access key."
+    source: "https://help.sumologic.com/docs/manage/security/scim/about-scim-provisioning/"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Admins can set the 2-Step Verification policy to Required for everyone in the org."
+    source: "https://help.sumologic.com/docs/manage/security/2-step-verification-admins/"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The 2-Step Verification docs only mention authenticator apps."
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "Professional and Enterprise (Cloud Flex); Essentials and Enterprise (Credits)"
+    retention: "Same as the default partition, adjustable"
+    notes: "An admin has to turn on the Audit Index. It keeps data as long as the default partition does, and you can change that by editing the sumologic_audit partition."
+    source: "https://help.sumologic.com/docs/manage/security/audit-indexes/audit-index/"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    notes: "SAML setup has an optional on-demand user creation setting that creates the user on first SAML login."
+    source: "https://help.sumologic.com/docs/manage/security/saml/set-up-saml/"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    notes: "Admins can create roles with chosen capabilities, search filters and index access."
+    source: "https://help.sumologic.com/docs/manage/users-roles/roles/create-manage-roles/"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "supported"
+    notes: "A SAML Roles Attribute assigns Sumo Logic roles from IdP values each time the user logs in."
+    source: "https://help.sumologic.com/docs/manage/security/saml/set-up-saml/"
+    checked: "2026-09-27"
+  session_controls:
+    support: "supported"
+    notes: "Admins set the longest web session timeout users can pick (up to 7 days), and they can also limit concurrent sessions per user."
+    source: "https://help.sumologic.com/docs/manage/security/set-max-web-session-timeout/"
+    checked: "2026-09-27"
+  api_token_controls:
+    support: "supported"
+    notes: "Access keys can be scoped. Admins set org-wide policies to deactivate unused keys (30 days by default) and expire keys, and they can deactivate or delete any user's keys."
+    source: "https://help.sumologic.com/docs/manage/security/access-keys/"
+    checked: "2026-09-27"

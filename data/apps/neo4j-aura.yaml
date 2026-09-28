@@ -1,0 +1,59 @@
+name: "Neo4j Aura"
+category: "infrastructure"
+website: "https://neo4j.com"
+description: "Neo4j Aura is Neo4j's fully managed cloud graph database service."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    plan: "AuraDB Business Critical, AuraDB Virtual Dedicated Cloud, AuraDS Enterprise"
+    protocols: ["OIDC"]
+    notes: "OIDC SSO with Microsoft Entra ID, Okta or Google can be used for the Aura console, for database instances, or both. The page is labelled for Business Critical, Virtual Dedicated Cloud and AuraDS Enterprise."
+    source: "https://neo4j.com/docs/aura/security/single-sign-on/"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    plan: "AuraDB Business Critical, AuraDB Virtual Dedicated Cloud, AuraDS Enterprise"
+    notes: "Once SSO is a console login method, an organization can turn off email/password and social logins (Google, Microsoft, GitHub). Username/password login stays available on instances."
+    source: "https://neo4j.com/docs/aura/security/single-sign-on/"
+    checked: "2026-09-27"
+  scim:
+    support: "undocumented"
+    notes: "The docs don't mention SCIM; organization roles are granted through console invites or the API."
+  mfa_enforcement:
+    support: "supported"
+    notes: "Organization owners and admins can require MFA for all members from organization security settings. It applies to email/password logins, not SSO or Google sign-in. The docs don't name a plan."
+    source: "https://neo4j.com/docs/aura/security/mfa/"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The MFA docs only mention authenticator (TOTP) apps."
+  audit_logs:
+    support: "supported"
+    notes: "The activity feed records user, role, instance, SSO and other security changes at organization and project level, with user, IP and timestamp. It can't be turned off, and up to the last 30 days can be exported as JSON or CSV or pulled through the Aura API. The docs don't name a plan."
+    source: "https://neo4j.com/docs/aura/logging/activity-feed/"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "partial"
+    plan: "AuraDB Business Critical, AuraDB Virtual Dedicated Cloud"
+    notes: "Custom roles are database roles you create with Cypher admin commands. Console organization and project roles are a fixed built-in set."
+    source: "https://neo4j.com/docs/aura/user-management/"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "partial"
+    plan: "AuraDB Business Critical, AuraDB Virtual Dedicated Cloud, AuraDS Enterprise"
+    notes: "Instance SSO can map IdP groups to database roles. The docs say organization roles in the console can't be assigned through SSO group mapping."
+    source: "https://neo4j.com/docs/aura/security/single-sign-on/"
+    checked: "2026-09-27"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "Each user creates their own Aura API client credentials, which inherit that user's roles and never expire unless deleted. The access tokens they issue expire after one hour. The docs say all tiers can create credentials."
+    source: "https://neo4j.com/docs/aura/api/authentication/"
+    checked: "2026-09-27"

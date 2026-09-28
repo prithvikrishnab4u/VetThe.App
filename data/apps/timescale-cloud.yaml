@@ -1,0 +1,44 @@
+name: "Timescale Cloud"
+category: "infrastructure"
+website: "https://www.tigerdata.com"
+description: "Timescale Cloud, now called Tiger Cloud, is a managed PostgreSQL service for time-series and analytics workloads."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML"]
+    notes: "SAML login is part of the Enterprise offering and only supports IdP-initiated login. You set it up through your account manager or sales."
+    source: "https://www.tigerdata.com/docs/use-timescale/latest/security/saml/"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Users can turn on authenticator-app 2FA themselves. The docs don't describe admins requiring it."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The docs only describe authenticator-app codes for 2FA."
+  audit_logs:
+    support: "undocumented"
+    notes: "The security overview only mentions that staff access to customer VMs is audit logged."
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs list fixed project roles: Owner, Admin, Developer and Viewer."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "partial"
+    notes: "Project client credentials are listed in project settings and can be deleted there. The docs don't describe any other restrictions on them."
+    source: "https://www.tigerdata.com/docs/use-timescale/latest/security/client-credentials/"
+    checked: "2026-09-27"

@@ -1,0 +1,41 @@
+name: "Pomerium Zero"
+category: "security"
+website: "https://www.pomerium.com"
+description: "Pomerium Zero is the hosted control plane for Pomerium, an identity-aware proxy that secures access to internal apps and services."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["OIDC"]
+    notes: "You can replace Pomerium's hosted identity provider with your own OAuth2/OIDC provider (such as Okta, Entra ID or Google) to authenticate users who access routes. No plan is named."
+    source: "https://www.pomerium.com/docs/get-started/fundamentals/zero/zero-custom-idp"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+    notes: "Directory Sync is documented as a Pomerium Enterprise feature; the docs don't mention SCIM or directory sync for Zero."
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "partial"
+    notes: "Pomerium outputs authorization logs for each request, which you read from your own cluster's logs. The docs don't describe an admin activity log in the Zero console."
+    source: "https://www.pomerium.com/docs/capabilities/audit-logs"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+    notes: "With the hosted authenticate service, users must sign in again after about an hour; no admin setting is described."
+  api_token_controls:
+    support: "undocumented"
+    notes: "Admins can create service accounts with an optional expiration date, but controls over user-created API tokens aren't described."

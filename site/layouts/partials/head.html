@@ -1,23 +1,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VetThe.App - IAM Capabilities of SaaS Apps</title>
-    <meta name="description" content="Community-driven, open-source catalogue of the IAM capabilities of SaaS apps: SSO, SCIM, MFA and SSO enforcement, audit logs, roles, and the plan each one needs. Every value links to its source.">
-    
+    {{/* The home page keeps its hand-written copy; other pages use their own title and description. */}}
+    {{ $title := "VetThe.App - IAM Capabilities of SaaS Apps" }}
+    {{ $description := "Community-driven, open-source catalogue of the IAM capabilities of SaaS apps: SSO, SCIM, MFA and SSO enforcement, audit logs, roles, and the plan each one needs. Every value links to its source." }}
+    {{ $social := "Community-driven catalogue of SaaS IAM capabilities. Compare SSO, SCIM, MFA and SSO enforcement, audit logs and roles, and the plan each one needs." }}
+    {{ if not .IsHome }}
+    {{ $title = printf "%s · VetThe.App" .Title }}
+    {{ with .Params.description }}{{ $description = . }}{{ $social = . }}{{ end }}
+    {{ end }}
+    <title>{{ $title }}</title>
+    <meta name="description" content="{{ $description }}">
+    <link rel="canonical" href="{{ .Permalink }}">
+
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://vetthe.app/">
-    <meta property="og:title" content="VetThe.App - IAM Capabilities of SaaS Apps">
-    <meta property="og:description" content="Community-driven catalogue of SaaS IAM capabilities. Compare SSO, SCIM, MFA and SSO enforcement, audit logs and roles, and the plan each one needs.">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:title" content="{{ $title }}">
+    <meta property="og:description" content="{{ $social }}">
     <meta property="og:image" content="https://vetthe.app/og-image.png">
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://vetthe.app/">
-    <meta property="twitter:title" content="VetThe.App - IAM Capabilities of SaaS Apps">
-    <meta property="twitter:description" content="Community-driven catalogue of SaaS IAM capabilities. Compare SSO, SCIM, MFA and SSO enforcement, audit logs and roles, and the plan each one needs.">
+    <meta property="twitter:url" content="{{ .Permalink }}">
+    <meta property="twitter:title" content="{{ $title }}">
+    <meta property="twitter:description" content="{{ $social }}">
     <meta property="twitter:image" content="https://vetthe.app/og-image.png">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     

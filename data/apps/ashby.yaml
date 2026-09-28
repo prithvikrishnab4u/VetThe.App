@@ -30,7 +30,7 @@ capabilities:
     support: "undocumented"
   audit_logs:
     support: "supported"
-    tier: "free"
+    tier: "paid"
     plan: "Foundations"
     notes: "User Audit Log tracks permission changes with timestamps; included on all plans including Foundations."
     source: "https://www.ashbyhq.com/pricing"

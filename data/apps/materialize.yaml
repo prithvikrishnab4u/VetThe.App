@@ -1,0 +1,44 @@
+name: "Materialize"
+category: "infrastructure"
+website: "https://materialize.com"
+description: "Materialize is a cloud operational data store that keeps SQL views up to date as data changes."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "Organization admins can set up SAML or OIDC single sign-on for the Materialize Console under Account Settings > SSO. No plan requirement is stated."
+    source: "https://materialize.com/docs/security/cloud/users-service-accounts/sso/"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+    notes: "The vendor docs page for this (SCIM group sync) still carries an unpublished pre-release note, so it is not treated as confirmed."
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "partial"
+    notes: "The mz_audit_events system table records who created, altered, dropped, granted or revoked catalog objects and when. No login or console audit log is documented."
+    source: "https://materialize.com/docs/sql/system-catalog/mz_catalog/#mz_audit_events"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "The vendor docs page for this (SCIM group sync) still carries an unpublished pre-release note, so it is not treated as confirmed."
+  group_role_mapping:
+    support: "undocumented"
+    notes: "The vendor docs page for this (SCIM group sync) still carries an unpublished pre-release note, so it is not treated as confirmed."
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "partial"
+    notes: "Users can view and delete app passwords in the Console. No expiry or organization-wide token policy is documented."
+    source: "https://materialize.com/docs/developer-tools/console/admin/"
+    checked: "2026-09-27"

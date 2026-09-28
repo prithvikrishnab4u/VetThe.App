@@ -1,0 +1,63 @@
+name: "Redis Cloud"
+category: "infrastructure"
+website: "https://redis.io"
+description: "Redis Cloud is Redis's fully managed database-as-a-service."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "Redis Cloud supports IdP-initiated and SP-initiated SAML SSO with any SAML identity provider. The docs don't name a plan."
+    source: "https://redis.io/docs/latest/operate/rc/security/access-control/saml-sso/"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    notes: "When SAML SSO is activated, all existing users except the one who set it up are converted to SAML users and must sign in with SSO. Local bypass users can be added for IdP outages."
+    source: "https://redis.io/docs/latest/operate/rc/security/access-control/saml-sso/"
+    checked: "2026-09-27"
+  scim:
+    support: "not_supported"
+    notes: "The docs say you can't use SCIM to provision Redis Cloud users; JIT provisioning is offered instead."
+    source: "https://redis.io/docs/latest/operate/rc/security/access-control/saml-sso/"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Account owners can enforce MFA for all users in the account. It isn't enforced for SAML SSO users, since the IdP handles MFA for them."
+    source: "https://redis.io/docs/latest/operate/rc/security/access-control/multi-factor-authentication/"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The MFA docs only cover text message codes and authenticator (TOTP) apps."
+  audit_logs:
+    support: "supported"
+    notes: "The system log records actions on the account, users, API keys, subscriptions, databases and more. You can view, search and export it to CSV in the console, or query it through the REST API."
+    source: "https://redis.io/docs/latest/operate/rc/logs-reports/system-logs/"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    notes: "Redis Cloud creates a user account automatically the first time a new user signs in with SAML SSO."
+    source: "https://redis.io/docs/latest/operate/rc/security/access-control/saml-sso/"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "supported"
+    notes: "Before setting up SAML SSO, you verify each domain by adding a TXT DNS record; users on unverified domains can't sign in with SAML SSO."
+    source: "https://redis.io/docs/latest/operate/rc/security/access-control/saml-sso/"
+    checked: "2026-09-27"
+  custom_roles:
+    support: "partial"
+    notes: "Console team roles are fixed (Owner, Billing Admin, Manager, Viewer and so on). You can create custom roles only for database data access, built from Redis ACL rules."
+    source: "https://redis.io/docs/latest/operate/rc/security/access-control/data-access-control/create-roles/"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "partial"
+    notes: "Roles come from a per-user redisAccountMapping SAML attribute. The docs say you can fill it automatically with IdP group rules, but there is no built-in group-to-role mapping."
+    source: "https://redis.io/docs/latest/operate/rc/security/access-control/saml-sso/"
+    checked: "2026-09-27"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "Account owners create and delete API user keys tied to a user with a given role, and can set a CIDR allow list on each key."
+    source: "https://redis.io/docs/latest/operate/rc/api/get-started/manage-api-keys/"
+    checked: "2026-09-27"

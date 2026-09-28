@@ -1,0 +1,70 @@
+name: "Teleport"
+category: "infrastructure"
+website: "https://goteleport.com"
+description: "Teleport is an infrastructure access platform for SSH, Kubernetes, databases, apps and desktops, offered as the hosted Teleport Enterprise (Cloud)."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Teleport Enterprise"
+    protocols: ["SAML", "OIDC"]
+    notes: "SAML and OIDC connectors (Okta, Entra ID, Google Workspace and others) need Teleport Enterprise. Community Edition only gets GitHub SSO."
+    source: "https://goteleport.com/docs/zero-trust-access/sso/integrate-idp/"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    notes: "Setting allow_local_auth to false in the cluster auth preference turns off local (password) login alongside the SSO connectors."
+    source: "https://goteleport.com/docs/reference/infrastructure-as-code/teleport-resources/cluster-auth-preferences/"
+    checked: "2026-09-27"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Teleport Enterprise (Identity Governance)"
+    notes: "Listed under Identity Governance. The Okta SCIM integration creates, updates and deletes Teleport users; a generic SCIM integration syncs SCIM groups to Access List membership."
+    source: "https://goteleport.com/docs/identity-governance/integrations/okta/scim-integration/"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Setting second factor to on requires every local user to register an MFA device; WebAuthn is the default on cloud-hosted Teleport Enterprise. MFA for SSO users is left to the IdP."
+    source: "https://goteleport.com/docs/reference/access-controls/authentication/"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Supports WebAuthn security keys, Touch ID and Windows Hello, including passwordless login with no username or password."
+    source: "https://goteleport.com/docs/zero-trust-access/authentication/passwordless/"
+    checked: "2026-09-27"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Teleport Enterprise (Cloud)"
+    retention: "4 years"
+    notes: "All Teleport Enterprise Cloud customers have audit logs kept in S3 for 4 years; External Audit Storage lets you keep them in your own AWS account."
+    source: "https://goteleport.com/docs/reference/architecture/teleport-cloud-architecture/"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    notes: "After an SSO login Teleport creates a temporary user resource (default TTL 12 hours, up to 30 hours) rather than a permanent account."
+    source: "https://goteleport.com/docs/zero-trust-access/sso/"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    notes: "Roles are defined with allow and deny rules and managed through the Web UI, tctl, Terraform, the Kubernetes operator or the API."
+    source: "https://goteleport.com/docs/reference/access-controls/roles/"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "supported"
+    notes: "SSO connectors map SAML attributes, OIDC claims or GitHub teams to Teleport roles."
+    source: "https://goteleport.com/docs/zero-trust-access/sso/integrate-idp/"
+    checked: "2026-09-27"
+  session_controls:
+    support: "supported"
+    notes: "Roles set max_session_ttl for certificate lifetime and client_idle_timeout to end idle sessions; the most restrictive value wins."
+    source: "https://goteleport.com/docs/reference/access-controls/roles/"
+    checked: "2026-09-27"
+  api_token_controls:
+    support: "undocumented"
+    notes: "Access uses short-lived certificates; no personal API token policy was found in the docs."

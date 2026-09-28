@@ -1,0 +1,71 @@
+name: "Unleash"
+category: "development"
+website: "https://www.getunleash.io"
+description: "Unleash is an open-source feature flag management platform."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML", "OIDC"]
+    notes: "Enterprise feature. Single sign-on works through SAML 2.0 or OpenID Connect."
+    source: "https://docs.getunleash.io/concepts/sso"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    notes: "Admins can turn off password-based login under Single sign-on > Password so users have to sign in through SSO."
+    source: "https://docs.getunleash.io/guides/user-management-access-controls"
+    checked: "2026-09-27"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Available since v6.1. Provisions users and groups; doesn't sync passwords or map roles. Deprovisioned users are soft-deleted so their audit history stays."
+    source: "https://docs.getunleash.io/concepts/scim"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The docs only mention MFA being enforced through your own identity provider when using SSO."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    notes: "The Event Log lists all events and can be filtered by date, type, project, flag and user, then exported as CSV or JSON. A separate login history (Enterprise) keeps sign-in events for 14 days."
+    source: "https://docs.getunleash.io/concepts/events"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "With Auto-create users turned on, people from allowed email domains get an account on their first SSO sign-in with a default root role."
+    source: "https://docs.getunleash.io/single-sign-on/how-to-add-sso-saml"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+    notes: "Only an email-domain allowlist for auto-creating SSO users is documented."
+  custom_roles:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Enterprise customers can create custom root roles and custom project roles."
+    source: "https://docs.getunleash.io/concepts/rbac"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Group SSO syncing adds or removes users from Unleash groups on each login based on matching SSO group names; groups can carry a root role or project roles."
+    source: "https://docs.getunleash.io/concepts/rbac"
+    checked: "2026-09-27"
+  session_controls:
+    support: "partial"
+    notes: "Self-hosted only: session length (SESSION_TTL_HOURS, default 48) and parallel session limits are set with environment variables. No Cloud setting is documented."
+    source: "https://docs.getunleash.io/deploy/configuring-unleash"
+    checked: "2026-09-27"
+  api_token_controls:
+    support: "partial"
+    notes: "Admins can view, create, update and delete backend and frontend API tokens for any project, and tokens can expire. Admin control over users' personal access tokens isn't described."
+    source: "https://docs.getunleash.io/concepts/api-tokens-and-client-keys"
+    checked: "2026-09-27"

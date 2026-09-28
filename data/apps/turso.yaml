@@ -1,0 +1,43 @@
+name: "Turso"
+category: "infrastructure"
+website: "https://turso.tech"
+description: "Turso is a hosted database platform built on SQLite and libSQL."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "undocumented"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Admins can set require_mfa on the organization so every member must have MFA turned on. You need MFA on your own account before you can turn this on. No plan is named."
+    source: "https://docs.turso.tech/api-reference/organizations/update"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "Scaler"
+    notes: "The Platform API returns the organization's audit logs, newest first. The docs say audit logs need the Scaler plan or higher."
+    source: "https://docs.turso.tech/api-reference/audit-logs/list"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "The API documents fixed member roles such as admin, member and viewer, but nothing about custom roles."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "Admins and owners can list every API token in the organization, along with who minted it, and can revoke any of them."
+    source: "https://docs.turso.tech/api-reference/tokens/list-organization"
+    checked: "2026-09-27"

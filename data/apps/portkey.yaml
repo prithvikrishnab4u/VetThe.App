@@ -1,0 +1,66 @@
+name: "Portkey"
+category: "development"
+website: "https://portkey.ai"
+description: "Portkey is an AI gateway and LLMOps platform for routing, observing and governing LLM requests."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML", "OIDC"]
+    notes: "The control plane supports OIDC and SAML 2.0 SSO for enterprise customers."
+    source: "https://portkey.ai/docs/product/enterprise-offering/org-management/sso"
+    checked: "2026-09-28"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "The SSO docs describe restricting auto-provisioning to invited users but not requiring SSO for every sign-in."
+  scim:
+    support: "supported"
+    notes: "SCIM provisions and deprovisions users and syncs workspace memberships (Okta and Entra ID guides). The SCIM page does not name a plan."
+    source: "https://portkey.ai/docs/product/enterprise-offering/org-management/scim/scim"
+    checked: "2026-09-28"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    retention: "Indefinite"
+    notes: "Records administrative actions with user attribution and filters; the page lists indefinite retention and custom retention policies."
+    source: "https://portkey.ai/docs/product/enterprise-offering/audit-logs"
+    checked: "2026-09-28"
+  jit_provisioning:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "First-time SSO users from a verified allowed domain are provisioned automatically; this can be turned off to allow invited users only."
+    source: "https://portkey.ai/docs/product/enterprise-offering/org-management/sso"
+    checked: "2026-09-28"
+  domain_verification:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SSO and SCIM only provision users whose email is on a verified domain listed under Allowed Domains."
+    source: "https://portkey.ai/docs/product/enterprise-offering/org-management/sso"
+    checked: "2026-09-28"
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs describe fixed organization roles (Owner, Admin, Member) and workspace roles; no custom role builder is described."
+  group_role_mapping:
+    support: "supported"
+    notes: "SCIM groups from Okta or Entra ID can be mapped to one or more workspaces with a role. The page does not name a plan."
+    source: "https://portkey.ai/docs/product/enterprise-offering/org-management/scim/group-management"
+    checked: "2026-09-28"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    tier: "free"
+    plan: "Free"
+    notes: "API key rotation is on all plans (Free, Growth, Enterprise); owners and admins can enforce a rotation period on workspace-user keys, and keys carry scoped permissions."
+    source: "https://portkey.ai/docs/product/enterprise-offering/org-management/api-key-rotation"
+    checked: "2026-09-28"

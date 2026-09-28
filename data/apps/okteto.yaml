@@ -1,0 +1,47 @@
+name: "Okteto"
+category: "development"
+website: "https://www.okteto.com"
+description: "Okteto is a platform for cloud development and preview environments on Kubernetes, run as a managed BYOC service or self-hosted."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["OIDC"]
+    notes: "Any OpenID Connect provider can be the login provider, with guides for Okta, Azure AD and GitLab. It's set in the instance's Helm configuration."
+    source: "https://www.okteto.com/docs/self-hosted/install/auth/openid-connect/"
+    checked: "2026-09-28"
+  sso_enforcement:
+    support: "supported"
+    notes: "The instance's auth configuration decides which login method users can use, so an OIDC-only setup means everyone signs in through your IdP."
+    source: "https://www.okteto.com/docs/self-hosted/install/auth/"
+    checked: "2026-09-28"
+  scim:
+    support: "undocumented"
+    notes: "SCIM isn't mentioned. There's an Okta event hook that removes users when they're deactivated or deleted in Okta."
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "supported"
+    notes: "Users get an account on their first OIDC login. You can limit logins to members of one IdP group."
+    source: "https://www.okteto.com/docs/self-hosted/install/auth/openid-connect/"
+    checked: "2026-09-28"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs describe only two built-in roles, Admin and Developer."
+  group_role_mapping:
+    support: "undocumented"
+    notes: "The OIDC group setting only controls who can log in; it isn't described as mapping groups to roles."
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "Personal access tokens get a name and an expiration and can be renewed or deleted. Admins can create admin access tokens for shared automations."
+    source: "https://www.okteto.com/docs/core/credentials/personal-access-tokens/"
+    checked: "2026-09-28"

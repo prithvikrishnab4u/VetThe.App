@@ -1,0 +1,38 @@
+name: "Helicone"
+category: "development"
+website: "https://www.helicone.ai"
+description: "Helicone is an open-source LLM observability platform and AI gateway."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML"]
+    notes: "The pricing comparison lists SAML SSO on the Enterprise plan only."
+    source: "https://www.helicone.ai/pricing"
+    checked: "2026-09-28"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "The pricing FAQ mentions built-in role-based access on the Team plan; custom roles are not described."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"

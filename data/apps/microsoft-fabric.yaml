@@ -1,0 +1,56 @@
+name: "Microsoft Fabric"
+category: "infrastructure"
+website: "https://www.microsoft.com/microsoft-fabric"
+description: "Microsoft Fabric is an analytics platform for data engineering, warehousing, and reporting that signs users in through Microsoft Entra ID."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    notes: "Fabric uses Microsoft Entra ID to authenticate users and service principals and to issue access tokens; federating sign-in to another identity provider is set up in Entra ID."
+    source: "https://learn.microsoft.com/en-us/fabric/security/security-fundamentals"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    notes: "Every request to connect to Fabric is authenticated with Microsoft Entra ID; there's no separate Fabric password."
+    source: "https://learn.microsoft.com/en-us/fabric/security/security-overview"
+    checked: "2026-09-27"
+  scim:
+    support: "undocumented"
+    notes: "Fabric users are Entra ID accounts; the Fabric docs don't describe a SCIM endpoint."
+  mfa_enforcement:
+    support: "supported"
+    notes: "Entra ID Conditional Access policies can require multifactor authentication to access Fabric."
+    source: "https://learn.microsoft.com/en-us/fabric/security/security-conditional-access"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "supported"
+    tier: "free"
+    plan: "Microsoft Entra ID Free"
+    notes: "Entra ID tenant control: passkeys (FIDO2) are available in all Entra ID editions, including Entra ID Free, with no extra licenses."
+    source: "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-passkeys-fido2"
+    checked: "2026-09-27"
+  audit_logs:
+    support: "supported"
+    notes: "Fabric user activities are recorded in the Microsoft Purview audit log; viewing them needs the Audit Logs role."
+    source: "https://learn.microsoft.com/en-us/fabric/admin/track-user-activities"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "partial"
+    notes: "Workspace roles are fixed (Admin, Member, Contributor, Viewer); OneLake security lets you create custom data access roles."
+    source: "https://learn.microsoft.com/en-us/fabric/onelake/security/create-manage-roles"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "supported"
+    notes: "Workspace roles can be assigned to security groups, Microsoft 365 groups, and distribution lists."
+    source: "https://learn.microsoft.com/en-us/fabric/fundamentals/roles-workspaces"
+    checked: "2026-09-27"
+  session_controls:
+    support: "undocumented"
+    notes: "The Conditional Access page says Fabric doesn't support the continuous access evaluation session control."
+  api_token_controls:
+    support: "undocumented"

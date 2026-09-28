@@ -1,0 +1,71 @@
+name: "Prefect Cloud"
+category: "development"
+website: "https://www.prefect.io"
+description: "Hosted control plane for scheduling, running and monitoring Prefect data workflows."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML", "OIDC"]
+    notes: "Enterprise plans can connect any identity provider that supports OIDC or SAML 2.0."
+    source: "https://docs.prefect.io/v3/how-to-guides/cloud/manage-users/configure-sso"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Once SSO is set up for your email domains, non-admins must sign in through the IdP. Account Owners can still bypass SSO; Admins can't."
+    source: "https://docs.prefect.io/v3/how-to-guides/cloud/manage-users/configure-sso"
+    checked: "2026-09-27"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM provisioning is turned on from the SSO tab. Provisioned users get the basic Member role and lose access when unassigned in the IdP."
+    source: "https://docs.prefect.io/v3/how-to-guides/cloud/manage-users/configure-sso"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The Prefect Cloud user-management docs don't mention MFA."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "Pro"
+    retention: "Varies by plan; the docs don't give numbers"
+    notes: "On Pro and Enterprise. Logs cover logins, API key and service account changes, member invites and role changes, and workspace changes, and can be filtered by workspace, user, event type and date."
+    source: "https://docs.prefect.io/v3/how-to-guides/cloud/manage-users/audit-logs"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "The docs cover directory sync and SCIM but not creating users on first SSO login."
+  domain_verification:
+    support: "undocumented"
+    notes: "You enter the email domains to enable SSO for, but the docs don't say how domain ownership is checked."
+  custom_roles:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Enterprise admins can create custom workspace roles, either from scratch or inheriting a built-in role's permissions."
+    source: "https://docs.prefect.io/v3/how-to-guides/cloud/manage-users/manage-roles"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "With SCIM on, teams and their members come from the IdP, and teams can be added to workspaces and object access lists like users."
+    source: "https://docs.prefect.io/v3/how-to-guides/cloud/manage-users/manage-teams"
+    checked: "2026-09-27"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    tier: "paid"
+    plan: "Pro"
+    notes: "Service accounts (Pro and Enterprise) get their own API keys with an expiry date or never-expire option, and keys can be rotated with a grace period for the old one. User API keys also take an expiration date."
+    source: "https://docs.prefect.io/v3/how-to-guides/cloud/manage-users/service-accounts"
+    checked: "2026-09-27"

@@ -1,0 +1,74 @@
+name: "Kestra"
+category: "development"
+website: "https://kestra.io"
+description: "Kestra is an open-source orchestration platform for data, infrastructure and business workflows."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["OIDC"]
+    notes: "OIDC SSO is set up in configuration, with guides for Google, Microsoft, Keycloak, Okta and authentik. LDAP is also supported. Enterprise Edition and Cloud only."
+    source: "https://kestra.io/docs/enterprise/auth/sso"
+    checked: "2026-09-28"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Basic authentication is on by default; the docs do not describe turning it off to require SSO."
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM 2.0 syncs users and groups from Okta, Microsoft Entra ID, authentik and Keycloak."
+    source: "https://kestra.io/docs/enterprise/auth/scim"
+    checked: "2026-09-28"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The docs recommend enforcing MFA at the identity provider through SSO."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Records actions by users and service accounts with before and after diffs, and can be filtered. Logs can be purged with a PurgeAuditLogs task and sent to a SIEM with Log Shipper. No fixed retention stated."
+    source: "https://kestra.io/docs/enterprise/governance/audit-logs"
+    checked: "2026-09-28"
+  jit_provisioning:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "A configured default role is given automatically to new users who sign in through SSO."
+    source: "https://kestra.io/docs/enterprise/auth/rbac"
+    checked: "2026-09-28"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Roles are sets of permissions and actions per resource, bound to users, groups or service accounts, and can be scoped to namespaces."
+    source: "https://kestra.io/docs/enterprise/auth/rbac"
+    checked: "2026-09-28"
+  group_role_mapping:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Identity provider group memberships sync through SCIM into Kestra groups, and roles are bound to those groups."
+    source: "https://kestra.io/docs/enterprise/auth/scim"
+    checked: "2026-09-28"
+  session_controls:
+    support: "partial"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Only the session cookie max age can be set, through server configuration (cookie-max-age); no admin UI setting is described."
+    source: "https://kestra.io/docs/enterprise/auth/authentication"
+    checked: "2026-09-28"
+  api_token_controls:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "User and service account tokens have an optional max age (blank means no expiry). Extended mode resets the expiry on each use, and the token is shown only once."
+    source: "https://kestra.io/docs/enterprise/auth/api-tokens"
+    checked: "2026-09-28"

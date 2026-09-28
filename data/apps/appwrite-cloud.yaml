@@ -1,0 +1,41 @@
+name: "Appwrite Cloud"
+category: "development"
+website: "https://appwrite.io"
+description: "Hosted backend platform with auth, databases, storage, functions and sites."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "undocumented"
+    notes: "The pricing comparison table lists Console SSO as coming soon on Scale and Enterprise; no docs page describes it."
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Console MFA is turned on by each user; the docs don't mention an org admin requiring it."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "Console MFA docs list TOTP authenticator apps only and say more factors will come later."
+  audit_logs:
+    support: "supported"
+    tier: "free"
+    plan: "Free"
+    retention: "1 hour (Free), 7 days (Pro)"
+    notes: "Activity tab on tables, rows and users shows user, event, location, IP and date."
+    source: "https://appwrite.io/docs/advanced/security/audit-logs"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "Docs list built-in Console roles (Owner, Developer, Editor, Analyst, Billing) and say custom roles are coming soon for Scale and Enterprise."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"

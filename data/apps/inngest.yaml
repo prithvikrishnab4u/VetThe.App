@@ -1,0 +1,51 @@
+name: "Inngest"
+category: "development"
+website: "https://www.inngest.com"
+description: "Platform for running durable functions and background workflows."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML"]
+    notes: "Enterprise users can enable SAML by contacting their account manager."
+    source: "https://www.inngest.com/docs/learn/security"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Once SAML is enabled, users must sign in through SAML."
+    source: "https://www.inngest.com/docs/learn/security"
+    checked: "2026-09-27"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "The pricing page lists audit trails on Enterprise. Retention isn't stated."
+    source: "https://www.inngest.com/pricing"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "The pricing page lists RBAC on Enterprise but doesn't say whether roles can be customized."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "API keys can be scoped to a single environment and rotated. Only org admins can create, update or delete them."
+    source: "https://www.inngest.com/docs/platform/api-keys"
+    checked: "2026-09-27"

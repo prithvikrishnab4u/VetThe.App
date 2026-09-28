@@ -1,0 +1,64 @@
+name: "MongoDB Atlas"
+category: "infrastructure"
+website: "https://www.mongodb.com/atlas"
+description: "MongoDB Atlas is a managed cloud database service for MongoDB."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "Federated authentication lets users sign in to the Atlas UI through a SAML identity provider. No plan requirement is stated."
+    source: "https://www.mongodb.com/docs/atlas/security/federated-authentication/"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    notes: "While a federated IdP is enabled for a domain, Atlas disables other login methods for those users. A bypass SAML URL is on by default and can be turned off."
+    source: "https://www.mongodb.com/docs/atlas/security/federated-authentication/"
+    checked: "2026-09-27"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Organization owners can turn on \"Require Multi-Factor Authentication\" so every member must use MFA to access the organization."
+    source: "https://www.mongodb.com/docs/atlas/tutorial/manage-organizations/"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Security keys and biometrics (FIDO2/WebAuthn) are available as an MFA method for Atlas accounts."
+    source: "https://www.mongodb.com/docs/atlas/security-multi-factor-authentication/"
+    checked: "2026-09-27"
+  audit_logs:
+    support: "supported"
+    retention: "From organization creation until the organization is deleted"
+    notes: "The organization and project Activity Feed records events such as user, role and cluster changes and can be filtered and exported."
+    source: "https://www.mongodb.com/docs/atlas/tutorial/activity-feed/"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    notes: "With restrict access by domain and default roles set, Atlas creates users in the mapped organization on their first federated login."
+    source: "https://www.mongodb.com/docs/atlas/security/federation-advanced-options/"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "supported"
+    notes: "Domains must be verified with an HTML file upload or a DNS TXT record before they can be associated with an IdP."
+    source: "https://www.mongodb.com/docs/atlas/security/manage-domain-mapping/"
+    checked: "2026-09-27"
+  custom_roles:
+    support: "undocumented"
+    notes: "Only custom database roles are documented; organization and project roles are fixed."
+  group_role_mapping:
+    support: "supported"
+    notes: "IdP group memberships can be mapped to Atlas organization and project roles, applied when the user logs in."
+    source: "https://www.mongodb.com/docs/atlas/security/manage-role-mapping/"
+    checked: "2026-09-27"
+  session_controls:
+    support: "supported"
+    notes: "Organization owners can set an absolute session timeout (1 to 12 hours) and an idle timeout. This setting is in Public Preview."
+    source: "https://www.mongodb.com/docs/atlas/tutorial/manage-organization-settings/"
+    checked: "2026-09-27"
+  api_token_controls:
+    support: "supported"
+    notes: "Owners can require an IP access list for all Atlas Admin API requests, and API keys and service accounts can be revoked."
+    source: "https://www.mongodb.com/docs/atlas/tutorial/manage-organizations/"
+    checked: "2026-09-27"

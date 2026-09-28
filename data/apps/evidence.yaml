@@ -1,0 +1,37 @@
+name: "Evidence"
+category: "productivity"
+website: "https://evidence.studio"
+description: "Evidence is a business intelligence tool that builds reports from SQL and markdown, hosted on its Evidence Studio platform or self-hosted."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    notes: "The Evidence Studio comparison table lists SSO with viewer, developer and admin roles. Self-hosted sites only get HTTP Basic Auth unless you put an authenticating proxy in front. The docs don't name the plan or protocols for Studio SSO."
+    source: "https://docs.evidence.studio/self-host"
+    checked: "2026-09-28"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "The docs don't say whether SSO can be required for Evidence Studio."
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs list four fixed roles: Viewer, Org Viewer, Developer and Admin."
+  group_role_mapping:
+    support: "undocumented"
+    notes: "Groups are created in Settings and used for page access; the docs don't describe syncing them from an identity provider."
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"

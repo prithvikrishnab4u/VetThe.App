@@ -1,0 +1,56 @@
+name: "Logz.io"
+category: "infrastructure"
+website: "https://logz.io"
+description: "Logz.io is a cloud observability platform for logs, metrics, traces and security analytics."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "SAML SSO works with providers such as Okta, Azure, Google Workspace, OneLogin, AWS and Auth0. You start setup by emailing Logz.io support. The docs don't name a plan."
+    source: "https://docs.logz.io/docs/user-guide/admin/sso/single-sign-on/"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "With SSO on, the identity provider handles authentication, but the docs don't say whether password login is turned off."
+  scim:
+    support: "undocumented"
+    notes: "The SSO docs don't mention SCIM or directory provisioning."
+  mfa_enforcement:
+    support: "supported"
+    notes: "Account admins can turn on Two-Factor Authentication in Account settings, and every user in the account then has to set it up at their next login."
+    source: "https://docs.logz.io/docs/user-guide/admin/users/multi-factor-authentication/"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The only 2FA method documented is Google Authenticator codes."
+  audit_logs:
+    support: "supported"
+    notes: "Account admins get an Audit trail page listing admin and user actions (logins, user changes, token changes, alerts and more) with user, IP and time, and it can be exported to CSV."
+    source: "https://docs.logz.io/docs/user-guide/admin/logzio-accounts/audit-trail/"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    notes: "Once SSO is set up, users with your email domain can sign in through your identity provider without being added in advance. New users get User access on first login."
+    source: "https://docs.logz.io/docs/user-guide/admin/sso/single-sign-on/"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs describe fixed Read Only, User, Expert User, SIEM and Admin roles, and don't mention custom roles."
+  group_role_mapping:
+    support: "supported"
+    notes: "You add SSO groups under Settings > Manage Users > Groups and give each one Read only, User, Expert User, Admin or per-user permissions. Once a group exists, only its members can log in."
+    source: "https://docs.logz.io/docs/user-guide/admin/sso/single-sign-on/"
+    checked: "2026-09-27"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "partial"
+    tier: "paid"
+    plan: "Pro or Enterprise"
+    notes: "Admins can create and delete named API tokens for each account. The docs don't mention scopes or expiry, and Community plans don't include API tokens."
+    source: "https://docs.logz.io/docs/user-guide/admin/authentication-tokens/api-tokens/"
+    checked: "2026-09-27"

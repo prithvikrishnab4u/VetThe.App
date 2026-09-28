@@ -1,0 +1,46 @@
+name: "GitBook"
+category: "collaboration"
+website: "https://www.gitbook.com"
+description: "GitBook is a platform for writing, publishing and managing product and technical documentation."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML"]
+    notes: "SAML SSO is listed on the Enterprise plan; GitBook also offers email-domain SSO, where anyone with a verified email on an allowed domain can join."
+    source: "https://gitbook.com/docs/account-and-billing/plans"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    notes: "Admins can turn on Enforce SSO so members must sign in through SAML; admins can still use other sign-in methods so they don't get locked out."
+    source: "https://gitbook.com/docs/account-and-billing/sso-and-saml"
+    checked: "2026-09-27"
+  scim:
+    support: "undocumented"
+    notes: "The SSO docs don't mention SCIM, and removing someone from the IdP doesn't remove their GitBook account."
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "supported"
+    notes: "The first time a new member signs in through the IdP, GitBook creates their account automatically."
+    source: "https://gitbook.com/docs/account-and-billing/sso-and-saml"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "The roles page lists only fixed roles."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"
+    notes: "API tokens are personal, carry the user's own access and can be revoked by that user; no org-level token controls are documented."

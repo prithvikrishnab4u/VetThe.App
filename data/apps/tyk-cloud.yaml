@@ -1,0 +1,40 @@
+name: "Tyk Cloud"
+category: "development"
+website: "https://tyk.io"
+description: "Tyk Cloud is Tyk's managed API management platform, hosting the Tyk Dashboard, control planes and gateways."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "partial"
+    protocols: ["OIDC"]
+    notes: "You add SSO profiles with an OIDC client ID, secret and discovery URL, and the page is framed around Control Plane deployments. SSO has to be enabled as an entitlement in your subscription plan; you ask your account manager or support. No plan is named."
+    source: "https://tyk.io/docs/tyk-cloud/teams-users/single-sign-on"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+    notes: "The Tyk Cloud docs don't describe an audit log of account or organization changes."
+  jit_provisioning:
+    support: "supported"
+    notes: "If you untick \"Only registered users\" on an SSO profile, new users are added to Tyk Cloud in the default user group the first time they sign in."
+    source: "https://tyk.io/docs/tyk-cloud/teams-users/single-sign-on"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs list four fixed roles: Billing Admin, Organization Admin, Team Admin and Team Member. They don't mention custom roles."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"

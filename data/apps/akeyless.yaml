@@ -1,0 +1,49 @@
+name: "Akeyless"
+category: "security"
+website: "https://www.akeyless.io"
+description: "Akeyless is a SaaS platform for secrets management, machine identity and privileged access."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "Users can sign in through an external identity provider such as Okta, Ping or Entra ID using SAML or OIDC auth methods."
+    source: "https://docs.akeyless.io/docs/auth-with-saml"
+    checked: "2026-09-28"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Account settings let admins pick a default auth method for SAML/OIDC, but the docs do not say SSO can be required for all users."
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Users can turn on two-factor in their own account settings, and it can be enabled per email auth method; no org-wide enforcement is described."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    notes: "Records nearly every change or action; viewable and filterable in the console and can be forwarded to tools like Splunk. No retention period stated."
+    source: "https://docs.akeyless.io/docs/audit-logs"
+    checked: "2026-09-28"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    notes: "Admins define Access Roles with permission rules per path and assign them to auth methods."
+    source: "https://docs.akeyless.io/docs/rbac"
+    checked: "2026-09-28"
+  group_role_mapping:
+    support: "supported"
+    notes: "A role association can be restricted to SAML attributes or OIDC claims, such as a Groups value from the IdP."
+    source: "https://docs.akeyless.io/docs/sub-claims"
+    checked: "2026-09-28"
+  session_controls:
+    support: "supported"
+    notes: "Account settings set the auth method token TTL, allowed client IPs and allowed client types."
+    source: "https://docs.akeyless.io/docs/account-settings"
+    checked: "2026-09-28"
+  api_token_controls:
+    support: "undocumented"

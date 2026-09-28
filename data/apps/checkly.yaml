@@ -1,0 +1,58 @@
+name: "Checkly"
+category: "development"
+website: "https://www.checklyhq.com"
+description: "Checkly is a synthetic monitoring and API testing platform for checking that websites and APIs work as expected."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML"]
+    notes: "SSO is only available on Checkly's enterprise plans; the setup is SAML and is done with Checkly support."
+    source: "https://www.checklyhq.com/docs/admin/team-management/single-sign-on/"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "not_supported"
+    notes: "The docs say there is currently no option to require SSO for account members; the suggested workaround is to remove non-SSO users."
+    source: "https://www.checklyhq.com/docs/admin/team-management/single-sign-on/"
+    checked: "2026-09-27"
+  scim:
+    support: "not_supported"
+    notes: "The SSO docs say SCIM is currently not supported."
+    source: "https://www.checklyhq.com/docs/admin/team-management/single-sign-on/"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The MFA docs only cover each user turning on an authenticator app in their own settings; no account-wide requirement is described."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The MFA docs only mention authenticator-app one-time codes."
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "With JIT on (the default), new users who sign in through SSO are added to the account automatically with a default role."
+    source: "https://www.checklyhq.com/docs/admin/team-management/single-sign-on/"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+    notes: "Domain aliases on the SSO connection route SP-initiated logins; the docs don't describe verifying domain ownership."
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs list five fixed roles (Owner, Admin, Read & Write, Read & Run, Read Only) and don't mention custom roles."
+  group_role_mapping:
+    support: "not_supported"
+    notes: "The SSO docs say Checkly does not currently support IdP-based role mapping."
+    source: "https://www.checklyhq.com/docs/admin/team-management/single-sign-on/"
+    checked: "2026-09-27"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "partial"
+    notes: "Admins and Owners can create and delete account-level service API keys with a set role (Enterprise only); user API keys can only be deleted by the user who made them."
+    source: "https://www.checklyhq.com/docs/admin/creating-api-key/"
+    checked: "2026-09-27"

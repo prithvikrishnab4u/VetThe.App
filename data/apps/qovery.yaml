@@ -1,0 +1,57 @@
+name: "Qovery"
+category: "infrastructure"
+website: "https://www.qovery.com"
+description: "Qovery is a DevOps automation platform for deploying applications and environments on your own cloud Kubernetes clusters."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "SSO connects your identity provider over SAML or OIDC; you ask your customer success manager to turn it on for the organization."
+    source: "https://www.qovery.com/docs/configuration/organization/sso"
+    checked: "2026-09-28"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "The SSO docs don't say whether other login methods can be blocked."
+  scim:
+    support: "undocumented"
+    notes: "SCIM isn't mentioned; the SSO docs say users show up only after their first login."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The security docs only recommend requiring MFA; login goes through your IdP or a social provider."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    retention: "User plan 3 days, Team 7 days, Business 30 days, Enterprise custom"
+    notes: "Every API call is logged with who, what, where and when, and you can filter the log. How long it's kept depends on the plan."
+    source: "https://www.qovery.com/docs/getting-started/security-and-compliance/audit-logs"
+    checked: "2026-09-28"
+  jit_provisioning:
+    support: "supported"
+    notes: "Users are added to the organization on their first SSO login and get the default role, which is viewer unless you change it."
+    source: "https://www.qovery.com/docs/configuration/organization/sso"
+    checked: "2026-09-28"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    notes: "Custom roles set permissions per cluster and per project. They can't create API tokens or manage organization settings."
+    source: "https://www.qovery.com/docs/configuration/organization/members-rbac"
+    checked: "2026-09-28"
+  group_role_mapping:
+    support: "supported"
+    notes: "IdP groups can be mapped to Qovery roles through the CLI, with an option to keep the groups in sync on each login."
+    source: "https://www.qovery.com/docs/configuration/organization/sso"
+    checked: "2026-09-28"
+  session_controls:
+    support: "partial"
+    notes: "You can turn on an Okta Global Token Revocation endpoint to end sessions from the IdP. The docs don't mention a session length setting."
+    source: "https://www.qovery.com/docs/configuration/organization/sso"
+    checked: "2026-09-28"
+  api_token_controls:
+    support: "supported"
+    notes: "Organization API tokens each carry a role and can be listed and deleted in settings. Only Owner, Admin and DevOps roles can manage them."
+    source: "https://www.qovery.com/docs/configuration/organization/api-token"
+    checked: "2026-09-28"

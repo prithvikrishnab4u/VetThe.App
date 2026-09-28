@@ -1,0 +1,60 @@
+name: "Directus Cloud"
+category: "development"
+website: "https://directus.io/cloud"
+description: "Directus Cloud is the managed hosting service for Directus, an open-source backend and data platform."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "Directus supports OpenID, OAuth 2.0, LDAP and SAML, set up with environment variables. On Directus Cloud, env vars outside the preset list can only be changed by Enterprise customers through support."
+    source: "https://directus.io/docs/guides/auth/sso"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    notes: "AUTH_DISABLE_DEFAULT turns off the default local email and password login."
+    source: "https://directus.io/docs/configuration/auth-sso"
+    checked: "2026-09-27"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "supported"
+    notes: "2FA for the Data Studio can be enabled or enforced on the user page."
+    source: "https://directus.io/docs/guides/auth/2fa"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The documented 2FA is a one-time code from an authenticator app only."
+  audit_logs:
+    support: "supported"
+    notes: "The activity feed logs the user, the action (including logins), the time, the IP address and the user agent. Changes made directly in the database aren't tracked."
+    source: "https://directus.io/docs/guides/auth/accountability"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    notes: "AUTH_<PROVIDER>_ALLOW_PUBLIC_REGISTRATION creates users on first SSO login and gives them the role set in DEFAULT_ROLE_ID."
+    source: "https://directus.io/docs/configuration/auth-sso"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    notes: "Roles and policies with custom item-level and field-level permissions."
+    source: "https://directus.io/docs/guides/auth/access-control"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "supported"
+    notes: "AUTH_<PROVIDER>_ROLE_MAPPING maps OAuth or OIDC groups to Directus roles. Each user gets one role, and the first match wins."
+    source: "https://directus.io/docs/configuration/auth-sso"
+    checked: "2026-09-27"
+  session_controls:
+    support: "supported"
+    notes: "SESSION_COOKIE_TTL, ACCESS_TOKEN_TTL and REFRESH_TOKEN_TTL set how long sessions and tokens last."
+    source: "https://directus.io/docs/configuration/security-limits"
+    checked: "2026-09-27"
+  api_token_controls:
+    support: "partial"
+    notes: "Each user can have one static token. It never expires and is stored in plain text, so there are no scope or expiry controls."
+    source: "https://directus.io/docs/guides/auth/tokens-cookies"
+    checked: "2026-09-27"

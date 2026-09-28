@@ -1,0 +1,10 @@
+{{/* One page per app file in data/apps. The data files stay the only source of
+     truth; these pages are generated from them at build time. */}}
+{{ range $id, $app := site.Data.apps }}
+  {{ $.AddPage (dict
+    "path" $id
+    "title" $app.name
+    "kind" "page"
+    "params" (dict "appId" $id "description" (printf "%s IAM capabilities: SSO, SCIM, MFA, audit logs and more, with the plan each one needs and a source for every value." $app.name))
+  ) }}
+{{ end }}

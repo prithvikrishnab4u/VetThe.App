@@ -2,7 +2,7 @@
 
 Running log of what's done and what's next. **Update this file at the end of every work session**: tick items off, add what you found, and refresh the numbers with `.venv/bin/python scripts/validate.py`.
 
-_Last updated: 2026-09-24_
+_Last updated: 2026-09-28_
 
 ## Remind the user
 
@@ -10,21 +10,29 @@ _Last updated: 2026-09-24_
 
 ## In progress
 
-- Nothing running.
+- **Brief for the last four non-core columns is written** (2026-09-27): [research/BRIEF-roles-session-tokens.md](research/BRIEF-roles-session-tokens.md). It says where each answer usually lives, defines the `partial` boundary and the same-word traps for each capability, and adds two rules from the last run: the cited page must be about the capability, and silence on one page is `undocumented`, not `not_supported`. The pilot has not run yet: the 2026-09-27 session's network policy blocked vendor hosts (slack.com), so it needs an environment whose network access allows vendor docs.
 
 ## Where the data stands
 
-172 apps: 79 `published`, 93 `draft`. 2,064 data points:
+316 apps: 79 `published`, 237 `draft`. 3,792 data points:
 
 | | Count |
 |---|---|
-| Verified (has `source` + `checked`) | 854 |
+| Verified (has `source` + `checked`) | 1,680 |
 | Unverified (a value with no source, carried over from the old dataset) | 0 |
-| Not documented (checked, the vendor says nothing) | 572 |
+| Not documented (checked, the vendor says nothing) | 1,474 |
 | Not researched | 638 |
 
 ## Done
 
+- [x] **144 new apps from vendors' public docs repos (2026-09-28).** Goal is 500 apps by year end. This session's network blocked vendor websites but allowed `git clone` from GitHub/GitLab, so agents sparse-cloned each vendor's docs source (Markdown/MDX) and cited the published URL each file maps to. All 12 capabilities filled per app, every value sourced or `undocumented`, no inferred tiers. All added as `draft`: most docs name a feature but not the plan, so tiers are often missing. Brief lives in the session scratchpad; the rules are the same as the P1 run.
+  - **The method is running dry.** Most well-known SaaS vendors don't publish docs on GitHub. Skipped because no current public docs repo was found (need a browser): statsig, coderabbit, bugsnag, graphite, socket, gitguardian, rudderstack, astronomer, spacelift, port, env0, pinecone, oso-cloud, descope, endor-labs, nocodb, baserow, rootly, panther, humanitec, courier, roadie, rocket-chat, codecov, chatwoot, infracost, pipedream, bitwarden (help repo archived), p0-security, apono, hightouch, fivetran, tines, confluent-cloud, launchable, retool, twingate, cribl, honeycomb, rollbar (docs repo deprecated), cloudsmith, doppler, gitpod (docs archived), scalr, xata (docs archived), opslevel, element (docs archived).
+  - Getting to 500 needs vendor websites reachable again. With that, BACKLOG.md P1/P2 is the obvious source.
+
+- [x] **Offline consistency audit** (2026-09-27, no network needed). Checked every file for IdP-sourced values, tiers that contradict the plan name, JIT or group mapping without SSO/SCIM, and future `checked` dates. Fixed:
+  - Google Workspace SCIM cited an Entra tutorial (IdP docs never count). Now `undocumented` until a Google-owned page is found.
+  - `tier: "free"` on 13 values from apps that have no free plan (Aircall, Ashby, Culture Amp, Dynamics 365, Marketing Cloud, Acrobat Sign). Agents had used "free" to mean "all plans at no extra cost". Changed to `paid`, which is the schema's meaning for the cheapest paid plan.
+  - Left for a browser recheck, because the plan structure isn't clear enough to change blind: JetBrains Enforce MFA (`free` with plan "Organization"), Gorgias SSO/Enforce SSO/Enforce MFA (`free`, may have no free plan now), Shopify and ChatGPT Enterprise passkeys (`free` because passkeys are account-level, though neither product has a free tier for the admin side).
 - [x] Data model: 12 IAM capabilities, each with support, minimum tier, plan, notes, source, checked (`data/schema.yaml`)
 - [x] Split `unknown` into `undocumented` and `not_researched`
 - [x] **Core capabilities** (SSO, Enforce SSO, SCIM, Enforce MFA, Passkeys, Audit logs) checked against vendor docs for all 107 apps, including Snyk
@@ -84,16 +92,17 @@ _Last updated: 2026-09-24_
    | Custom roles | 160 |
    | Session controls | 150 |
    | API token controls | 163 |
-   Run the same way: parallel report-only agents, about 8 apps each, every value applied and reviewed in the main session. Use [research/BRIEF-jit-domain.md](research/BRIEF-jit-domain.md) as the pattern, but **these four need a rewritten brief**. JIT and domain verification usually sit on the one SSO docs page, and these do not: roles live in an admin guide, session controls in a security or policy page, API tokens in a developer doc. Expect more fetches per app and a lower hit rate. Carry over the three rules the first run proved necessary: never cite a page you could not fetch, never infer a tier, and define the `partial` boundary up front for each capability, since that is where every agent error landed.
+   Run the same way: parallel report-only agents, about 8 apps each, every value applied and reviewed in the main session. Use [research/BRIEF-roles-session-tokens.md](research/BRIEF-roles-session-tokens.md) (written 2026-09-27; pilot it on about 3 batches first, as with JIT). Why it needed rewriting: JIT and domain verification usually sit on the one SSO docs page, and these do not: roles live in an admin guide, session controls in a security or policy page, API tokens in a developer doc. Expect more fetches per app and a lower hit rate. Carry over the three rules the first run proved necessary: never cite a page you could not fetch, never infer a tier, and define the `partial` boundary up front for each capability, since that is where every agent error landed.
 4. [ ] Recheck values older than about 6 months (vendors change plans); `checked` dates make this a simple query
-5. [ ] Add more apps from [BACKLOG.md](BACKLOG.md): the first 72 P1 rows are done, so continue from P1 row 73, then P2/P3. Use `scratchpad/new/BRIEF.md` + `mk.py` as the pattern. Requests will also arrive through the website's "Add an app"
-6. [ ] The 65 apps added on 2026-09-22 are all `draft` — they need plan tiers before they can be published
+5. [ ] **Identity tools first (added 2026-09-27):** 52 IGA, access management, PAM and ITDR/NHI vendors now head [BACKLOG.md](BACKLOG.md) (SailPoint, Saviynt, Omada, ConductorOne, Veza, Ping, OneLogin, CyberArk, BeyondTrust, Delinea and more). None researched yet: the 2026-09-27 session's network policy blocked every vendor host. Research core capabilities with parallel report-only agents (about 20, 2-3 apps each) once vendor docs are reachable. Expect a lot of blocked or login-gated docs: CyberArk and Ping already failed in the P1 run.
+6. [ ] Add more apps from [BACKLOG.md](BACKLOG.md): the first 72 P1 rows are done, so continue from P1 row 73, then P2/P3. Use `scratchpad/new/BRIEF.md` + `mk.py` as the pattern. Requests will also arrive through the website's "Add an app"
+7. [ ] The 65 apps added on 2026-09-22 are all `draft` — they need plan tiers before they can be published
 
 ## To do: site
 
-- [ ] A page per app (`/apps/<id>/`) with all 12 capabilities, sources and notes. Add a "Help wanted" list there of not-researched values
-- [ ] Site-wide "Help wanted" view: filter the table to not-researched values
-- [ ] Show "last checked" on cells, and flag stale values
+- [x] A page per app (`/apps/<id>/`) with all 12 capabilities, sources, notes, a ✎ on each value, and a "Help wanted" list of not-researched values (done 2026-09-27; built by a content adapter, `site/content/apps/_content.gotmpl`, from `data/apps/`, so no content files to maintain). App names in the main table now link there
+- [x] Site-wide "Help wanted" view: `/apps/` lists every app with checked / not-researched counts, most work left first (done 2026-09-27)
+- [x] Show "last checked" on cells, and flag stale values (2026-09-27). The check date is in each cell's tooltip and on the app page. Values checked more than 6 months before the build get an amber source link and a note. It's judged at build time, so a redeploy moves the line forward.
 - [ ] Remove the `.Site.Data` deprecation warning (switch to `hugo.Data`) once Cloudflare's Hugo is ≥ 0.156
 
 ## Research rules (don't skip)

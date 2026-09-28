@@ -1,0 +1,61 @@
+name: "Windmill"
+category: "development"
+website: "https://www.windmill.dev"
+description: "Open-source developer platform for building internal scripts, workflows and apps."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML", "OIDC"]
+    notes: "SAML is an Enterprise Edition feature, set in instance settings. On Windmill Cloud, Enterprise gets a dedicated instance. OAuth/OIDC SSO also works without Enterprise but is capped at 10 SSO users."
+    source: "https://www.windmill.dev/docs/advanced/saml_and_scim"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM syncs users and groups from Okta or Entra ID. Deprovisioned users are disabled across the instance, not deleted."
+    source: "https://www.windmill.dev/docs/advanced/saml_and_scim"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "Team"
+    retention: "7 days on Team, 60 days on Enterprise (cloud)"
+    notes: "Logs every operation with side effects and who did it. On the free Community cloud plan audit logs are redacted."
+    source: "https://www.windmill.dev/docs/core_concepts/audit_logs"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    notes: "Users can sign in through SSO without being added first, unless an admin turns on the setting that requires manual addition."
+    source: "https://www.windmill.dev/docs/advanced/instance_settings"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+    notes: "SSO can be limited to allowed email domains, and on Cloud workspaces can auto-add users by domain, but no domain ownership check is documented."
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs describe fixed roles (superadmin, devops, admin, developer, operator) plus per-item permissions through groups and folders."
+  group_role_mapping:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM-synced instance groups can grant an instance role and can auto-add members to workspaces with a set role."
+    source: "https://www.windmill.dev/docs/advanced/saml_and_scim"
+    checked: "2026-09-27"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "User tokens can have an expiry date, be limited to scopes and resource paths, and be revoked at any time."
+    source: "https://www.windmill.dev/docs/core_concepts/user_tokens"
+    checked: "2026-09-27"

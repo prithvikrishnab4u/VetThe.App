@@ -1,0 +1,45 @@
+name: "Estuary Flow"
+category: "infrastructure"
+website: "https://estuary.dev"
+description: "Estuary Flow is a managed platform for real-time data integration and change data capture."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "SAML 2.0 SSO is set up by contacting Estuary support with your IdP metadata URL and company domain. No plan requirement is stated."
+    source: "https://docs.estuary.dev/getting-started/sso-setup/"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "not_supported"
+    notes: "The SSO docs say Estuary uses just-in-time account creation rather than SCIM."
+    source: "https://docs.estuary.dev/getting-started/sso-setup/"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "partial"
+    notes: "An account is created on first SSO login, but a tenant admin still has to send an invite link before the user can access the tenant."
+    source: "https://docs.estuary.dev/getting-started/sso-setup/"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "Only fixed read, write and admin capabilities on catalog prefixes are documented."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "partial"
+    notes: "The Admin > CLI-API tab issues access tokens and lets you revoke refresh tokens. No expiry policy or admin-wide controls are documented."
+    source: "https://docs.estuary.dev/guides/dashboard/admin/"
+    checked: "2026-09-27"

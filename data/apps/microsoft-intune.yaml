@@ -1,0 +1,56 @@
+name: "Microsoft Intune"
+category: "security"
+website: "https://www.microsoft.com/security/business/microsoft-intune"
+description: "Microsoft Intune is an endpoint and device management service that signs users in through Microsoft Entra ID."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    notes: "Microsoft Entra ID is the identity service for Intune; accounts can be synced from on-premises AD and federated (for example with AD FS) through Entra Connect."
+    source: "https://learn.microsoft.com/en-us/intune/fundamentals/tenant-administration/add-users"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    notes: "User accounts in Intune exist in Microsoft Entra ID; there's no separate Intune login."
+    source: "https://learn.microsoft.com/en-us/intune/fundamentals/tenant-administration/add-users"
+    checked: "2026-09-27"
+  scim:
+    support: "undocumented"
+    notes: "Users are provisioned into Entra ID rather than Intune; the Intune docs don't describe a SCIM endpoint."
+  mfa_enforcement:
+    support: "supported"
+    notes: "An Entra ID Conditional Access policy can require multifactor authentication at device enrollment; the doc says users need Microsoft Entra ID P1 or later."
+    source: "https://learn.microsoft.com/en-us/intune/device-enrollment/configure-multifactor-authentication"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "supported"
+    tier: "free"
+    plan: "Microsoft Entra ID Free"
+    notes: "Entra ID tenant control: passkeys (FIDO2) are available in all Entra ID editions, including Entra ID Free, with no extra licenses."
+    source: "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-passkeys-fido2"
+    checked: "2026-09-27"
+  audit_logs:
+    support: "supported"
+    retention: "Two years via Graph API"
+    notes: "Auditing is on for all customers and can't be turned off; it records create, update, delete, assign, and remote actions and can be sent to Azure Monitor."
+    source: "https://learn.microsoft.com/en-us/intune/governance/monitor-audit-logs"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    notes: "Admins can create custom Intune roles that include any Intune RBAC permission; built-in roles can't be edited."
+    source: "https://learn.microsoft.com/en-us/intune/fundamentals/role-based-access-control/create-custom-role"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "supported"
+    notes: "Intune RBAC roles are assigned to groups, not individual users, and every group member gets the role's permissions."
+    source: "https://learn.microsoft.com/en-us/intune/fundamentals/role-based-access-control/assign-role"
+    checked: "2026-09-27"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"

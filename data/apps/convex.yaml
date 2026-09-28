@@ -1,0 +1,72 @@
+name: "Convex"
+category: "development"
+website: "https://www.convex.dev"
+description: "Convex is a hosted backend platform with a reactive database, server functions and file storage for web apps."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "Single Sign-On through your identity provider is only available on Convex Business and Enterprise. It is set up per team on a verified domain."
+    source: "https://docs.convex.dev/team-management/sso"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "Turning on \"Require SSO to access team\" makes all members sign in through your IdP for both the dashboard and the CLI. By default, users on your verified domain also have to use SSO."
+    source: "https://docs.convex.dev/team-management/sso"
+    checked: "2026-09-27"
+  scim:
+    support: "partial"
+    tier: "paid"
+    plan: "Business"
+    notes: "Directory Sync (SCIM) is in beta on Business and Enterprise, and support has to turn it on. Users are offered the team rather than added directly, and it only covers accounts on a verified domain."
+    source: "https://docs.convex.dev/team-management/directory-sync"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Users can turn on MFA for their own account, but the docs don't describe a team setting that requires it."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The profile docs only mention an authenticator app as an extra factor."
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "Professional"
+    notes: "The team audit log shows actions members take in the team, like managing projects and deployments and inviting or removing members. It is only available on Professional, Business and Enterprise."
+    source: "https://docs.convex.dev/dashboard/teams"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "Domains are verified with a DNS record and show as Pending until it's picked up, then Verified."
+    source: "https://docs.convex.dev/team-management/sso"
+    checked: "2026-09-27"
+  custom_roles:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "Custom Roles are in beta on Business and Enterprise and use fine-grained permission policies."
+    source: "https://docs.convex.dev/team-management/custom-roles"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "With Directory Sync, each directory group maps to a Convex team role, including custom roles. Directory Sync is in beta."
+    source: "https://docs.convex.dev/team-management/directory-sync"
+    checked: "2026-09-27"
+  session_controls:
+    support: "undocumented"
+    notes: "Users can see and sign out their own active sessions, but no team-level session settings are documented."
+  api_token_controls:
+    support: "supported"
+    notes: "Personal access tokens can have an optional expiration, show when they were last used, and can be revoked. Tokens created through an SSO login are scoped to that team."
+    source: "https://docs.convex.dev/dashboard/profile"
+    checked: "2026-09-27"

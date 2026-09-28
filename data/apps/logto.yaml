@@ -1,0 +1,45 @@
+name: "Logto Cloud"
+category: "security"
+website: "https://logto.io"
+description: "Logto Cloud is a hosted authentication and authorization platform built on the open-source Logto project."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Logto Cloud supports enterprise SSO (for example Google Workspace, Okta, Azure AD) for signing in to Enterprise plan tenants; you contact Logto to set it up."
+    source: "https://docs.logto.io/logto-cloud/tenant-settings#enable-enterprise-sso"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+    notes: "The Logto Cloud docs don't describe SCIM provisioning of tenant members."
+  mfa_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Pro"
+    notes: "Pro and Enterprise tenants can require MFA for all tenant members. It isn't self-service yet; you contact Logto to turn it on."
+    source: "https://docs.logto.io/logto-cloud/tenant-settings#enable-mfa"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "Logto's WebAuthn/passkey docs cover your app's end users, not sign-in to the Logto Cloud console."
+  audit_logs:
+    support: "undocumented"
+    notes: "The Console audit log records end-user authentication events only and says Management API operations aren't recorded; it doesn't describe logging of console member actions."
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "Tenant members get one of two fixed roles, Admin or Collaborator; the docs don't mention custom roles."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"

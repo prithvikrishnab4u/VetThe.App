@@ -1,0 +1,40 @@
+name: "Grist"
+category: "productivity"
+website: "https://www.getgrist.com"
+description: "Grist is a spreadsheet-database hybrid for building and sharing relational data."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    plan: "Dedicated Server"
+    protocols: ["SAML", "OIDC"]
+    notes: "The regular hosted service uses email and password or Google sign-in. The Dedicated Server offering connects to the customer's own identity provider over OIDC or SAML."
+    source: "https://support.getgrist.com/data-security/"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+    notes: "The SCIM docs only cover self-managed Grist, where it's marked experimental."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Users can turn on MFA for themselves, but the docs don't say admins can require it."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+    notes: "Audit log streaming is documented only for self-managed Grist on the Enterprise plan."
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"
+    notes: "Users create and revoke their own API keys. Admin controls over keys are documented only for self-managed installs."
