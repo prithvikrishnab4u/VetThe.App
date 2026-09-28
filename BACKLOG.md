@@ -62,7 +62,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P1 | Netwrix | `netwrix` | security | https://netwrix.com |
 | P1 | WALLIX | `wallix` | security | https://wallix.com |
 | P1 | Segura | `segura` | security | https://segura.security |
-| P1 | Akeyless | `akeyless` | security | https://akeyless.io |
 
 ### Identity threat detection and non-human identity (ITDR, NHI, SSPM)
 

@@ -15460,6 +15460,76 @@
     "website": "https://www.pandadoc.com"
   },
   {
+    "_id": "passbolt",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-28",
+        "notes": "Pro and Cloud editions show resource and folder activity; exports are not recorded and updates do not show which fields changed.",
+        "source": "https://www.passbolt.com/docs/admin/audit-log/",
+        "support": "partial"
+      },
+      "custom_roles": {
+        "notes": "The docs describe admin and user system roles plus allow/deny settings for functionalities; creating custom roles is not described.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "notes": "Self-registration can be limited to allowed email domains, but domain ownership verification is not described.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-28",
+        "notes": "With self-registration enabled, users present in the identity provider can self-register through SSO.",
+        "source": "https://www.passbolt.com/docs/admin/authentication/sso/google/",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-28",
+        "notes": "The MFA policy can only prompt users to set up MFA; the docs say it does not block sign-in or make MFA mandatory.",
+        "source": "https://www.passbolt.com/docs/admin/authentication/mfa-policy/",
+        "support": "partial"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-28",
+        "notes": "Only YubiKey OTP is supported; security keys with FIDO2/U2F/WebAuthn support are not supported.",
+        "source": "https://www.passbolt.com/docs/admin/authentication/mfa/yubikey/",
+        "support": "not_supported"
+      },
+      "scim": {
+        "checked": "2026-09-28",
+        "notes": "Pro and Cloud editions; user provisioning from Microsoft Entra ID or Okta through the /Users endpoints.",
+        "source": "https://www.passbolt.com/docs/admin/user-provisioning/scim/",
+        "support": "supported"
+      },
+      "session_controls": {
+        "notes": "Session timeout is documented only for self-hosted CE and Pro via PHP settings.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-28",
+        "notes": "Available in the Pro and Cloud editions; providers include Microsoft Entra ID, Google, AD FS, Okta and Keycloak via OpenID Connect.",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://www.passbolt.com/docs/admin/authentication/sso/",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Passbolt is an open source password manager for teams, offered self-hosted or as Passbolt Cloud.",
+    "name": "Passbolt",
+    "status": "draft",
+    "website": "https://www.passbolt.com"
+  },
+  {
     "_id": "paycom",
     "capabilities": {
       "api_token_controls": {
