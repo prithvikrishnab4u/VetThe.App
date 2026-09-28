@@ -1,0 +1,59 @@
+name: "Hoppscotch"
+category: "development"
+website: "https://hoppscotch.io"
+description: "Open-source API development and testing client."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise Edition (self-hosted)"
+    protocols: ["SAML", "OIDC"]
+    notes: "SAML and OIDC SSO are part of the self-hosted Enterprise Edition. The Hoppscotch Cloud docs don't mention SSO."
+    source: "https://docs.hoppscotch.io/documentation/self-host/getting-started"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Site protection can require a login, but the docs don't say it can require SSO specifically."
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise Edition (self-hosted)"
+    notes: "SCIM 2.0 provisioning for users and groups, including deprovisioning. Self-hosted Enterprise Edition only."
+    source: "https://docs.hoppscotch.io/documentation/self-host/enterprise-edition/user-provisioning"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise Edition (self-hosted)"
+    notes: "Records platform actions with the event, user, resource and result. Admins can download logs as CSV. Needs ClickHouse."
+    source: "https://docs.hoppscotch.io/guides/articles/audit-logs"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "In the Enterprise Edition, users have to be invited by an admin."
+  domain_verification:
+    support: "undocumented"
+    notes: "Domain whitelisting lets users from a listed domain in without approval, but no check of domain ownership is documented."
+  custom_roles:
+    support: "undocumented"
+    notes: "Workspaces use fixed Owner, Editor and Viewer roles."
+  group_role_mapping:
+    support: "partial"
+    tier: "enterprise"
+    plan: "Enterprise Edition (self-hosted)"
+    notes: "SCIM pushes groups into User Groups, which carry roles, but an admin has to link each provisioned group to a team by hand."
+    source: "https://docs.hoppscotch.io/documentation/self-host/enterprise-edition/user-provisioning"
+    checked: "2026-09-27"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "Personal access tokens can expire after 7, 30, 60 or 90 days or never, can be read-only, and can be deleted. In self-hosted Enterprise, admins can see and delete every user's tokens."
+    source: "https://docs.hoppscotch.io/documentation/features/pat"
+    checked: "2026-09-27"

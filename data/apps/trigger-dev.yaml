@@ -1,0 +1,35 @@
+name: "Trigger.dev"
+category: "development"
+website: "https://trigger.dev"
+description: "Open-source platform for running background jobs and AI workflows written in TypeScript."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "undocumented"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "The self-hosting security page says RBAC is a plugin that isn't part of the open-source distribution. Cloud roles aren't described."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "Environment API keys can use access presets and be limited to specific tasks, can have an expiry date, and revoke immediately. Creating or revoking keys needs a role with permission to manage API keys, and keys aren't revoked when their creator is removed. Restricted presets are Cloud-only and some need a paid plan."
+    source: "https://trigger.dev/docs/apikeys"
+    checked: "2026-09-27"

@@ -8202,6 +8202,83 @@
     "website": "https://www.hootsuite.com"
   },
   {
+    "_id": "hoppscotch",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Personal access tokens can expire after 7, 30, 60 or 90 days or never, can be read-only, and can be deleted. In self-hosted Enterprise, admins can see and delete every user's tokens.",
+        "source": "https://docs.hoppscotch.io/documentation/features/pat",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Records platform actions with the event, user, resource and result. Admins can download logs as CSV. Needs ClickHouse.",
+        "plan": "Enterprise Edition (self-hosted)",
+        "source": "https://docs.hoppscotch.io/guides/articles/audit-logs",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "notes": "Workspaces use fixed Owner, Editor and Viewer roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "notes": "Domain whitelisting lets users from a listed domain in without approval, but no check of domain ownership is documented.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "SCIM pushes groups into User Groups, which carry roles, but an admin has to link each provisioned group to a team by hand.",
+        "plan": "Enterprise Edition (self-hosted)",
+        "source": "https://docs.hoppscotch.io/documentation/self-host/enterprise-edition/user-provisioning",
+        "support": "partial",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "notes": "In the Enterprise Edition, users have to be invited by an admin.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "SCIM 2.0 provisioning for users and groups, including deprovisioning. Self-hosted Enterprise Edition only.",
+        "plan": "Enterprise Edition (self-hosted)",
+        "source": "https://docs.hoppscotch.io/documentation/self-host/enterprise-edition/user-provisioning",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SAML and OIDC SSO are part of the self-hosted Enterprise Edition. The Hoppscotch Cloud docs don't mention SSO.",
+        "plan": "Enterprise Edition (self-hosted)",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.hoppscotch.io/documentation/self-host/getting-started",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "notes": "Site protection can require a login, but the docs don't say it can require SSO specifically.",
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "Open-source API development and testing client.",
+    "name": "Hoppscotch",
+    "status": "draft",
+    "website": "https://hoppscotch.io"
+  },
+  {
     "_id": "hubspot",
     "capabilities": {
       "api_token_controls": {
@@ -8538,6 +8615,74 @@
     "name": "InfluxDB Cloud",
     "status": "draft",
     "website": "https://www.influxdata.com"
+  },
+  {
+    "_id": "inngest",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "API keys can be scoped to a single environment and rotated. Only org admins can create, update or delete them.",
+        "source": "https://www.inngest.com/docs/platform/api-keys",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "The pricing page lists audit trails on Enterprise. Retention isn't stated.",
+        "plan": "Enterprise",
+        "source": "https://www.inngest.com/pricing",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "notes": "The pricing page lists RBAC on Enterprise but doesn't say whether roles can be customized.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "Enterprise users can enable SAML by contacting their account manager.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://www.inngest.com/docs/learn/security",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Once SAML is enabled, users must sign in through SAML.",
+        "plan": "Enterprise",
+        "source": "https://www.inngest.com/docs/learn/security",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "development",
+    "description": "Platform for running durable functions and background workflows.",
+    "name": "Inngest",
+    "status": "draft",
+    "website": "https://www.inngest.com"
   },
   {
     "_id": "insomnia",
@@ -12913,6 +13058,87 @@
     "name": "Notion",
     "status": "published",
     "website": "https://notion.so"
+  },
+  {
+    "_id": "novu",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Only Admins and Owners can manage API keys; scoping and expiry aren't documented.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "The docs describe four fixed roles (Owner, Admin, Author, Viewer), with RBAC on Team and Enterprise. Custom roles aren't mentioned.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "checked": "2026-09-27",
+        "notes": "Verified domains let users with a matching email auto-join or request to join as Viewer. An Owner from that domain has to set it up, public email domains are excluded, and it doesn't take over existing accounts.",
+        "source": "https://docs.novu.co/platform/account/manage-members",
+        "support": "partial"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "Users are created on first SSO sign-in.",
+        "plan": "Enterprise",
+        "source": "https://docs.novu.co/platform/account/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "notes": "The docs list MFA options but don't say admins can require MFA.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-27",
+        "notes": "Hardware keys are listed among the MFA options.",
+        "plan": "Enterprise",
+        "source": "https://docs.novu.co/platform/account/authentication",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "SCIM 2.0 can create, update and deactivate users. It works alongside SSO and is enabled through Novu support.",
+        "plan": "Enterprise",
+        "source": "https://docs.novu.co/platform/account/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "checked": "2026-09-27",
+        "notes": "Session management covers device monitoring, session revocation and adaptive session durations.",
+        "plan": "Enterprise",
+        "source": "https://docs.novu.co/platform/account/authentication",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SSO is available to Enterprise customers on Novu Cloud.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.novu.co/platform/account/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "Notification infrastructure platform for sending in-app, email, SMS, push and chat notifications.",
+    "name": "Novu",
+    "status": "draft",
+    "website": "https://novu.co"
   },
   {
     "_id": "octopus-deploy",
@@ -17989,6 +18215,56 @@
     "website": "https://trello.com"
   },
   {
+    "_id": "trigger-dev",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "Environment API keys can use access presets and be limited to specific tasks, can have an expiry date, and revoke immediately. Creating or revoking keys needs a role with permission to manage API keys, and keys aren't revoked when their creator is removed. Restricted presets are Cloud-only and some need a paid plan.",
+        "source": "https://trigger.dev/docs/apikeys",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "The self-hosting security page says RBAC is a plugin that isn't part of the open-source distribution. Cloud roles aren't described.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "support": "undocumented"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "Open-source platform for running background jobs and AI workflows written in TypeScript.",
+    "name": "Trigger.dev",
+    "status": "draft",
+    "website": "https://trigger.dev"
+  },
+  {
     "_id": "turso",
     "capabilities": {
       "api_token_controls": {
@@ -19072,6 +19348,85 @@
     "name": "Weights & Biases",
     "status": "draft",
     "website": "https://wandb.ai"
+  },
+  {
+    "_id": "windmill",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-27",
+        "notes": "User tokens can have an expiry date, be limited to scopes and resource paths, and be revoked at any time.",
+        "source": "https://www.windmill.dev/docs/core_concepts/user_tokens",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "Logs every operation with side effects and who did it. On the free Community cloud plan audit logs are redacted.",
+        "plan": "Team",
+        "retention": "7 days on Team, 60 days on Enterprise (cloud)",
+        "source": "https://www.windmill.dev/docs/core_concepts/audit_logs",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "custom_roles": {
+        "notes": "The docs describe fixed roles (superadmin, devops, admin, developer, operator) plus per-item permissions through groups and folders.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "notes": "SSO can be limited to allowed email domains, and on Cloud workspaces can auto-add users by domain, but no domain ownership check is documented.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "SCIM-synced instance groups can grant an instance role and can auto-add members to workspaces with a set role.",
+        "plan": "Enterprise",
+        "source": "https://www.windmill.dev/docs/advanced/saml_and_scim",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "Users can sign in through SSO without being added first, unless an admin turns on the setting that requires manual addition.",
+        "source": "https://www.windmill.dev/docs/advanced/instance_settings",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "SCIM syncs users and groups from Okta or Entra ID. Deprovisioned users are disabled across the instance, not deleted.",
+        "plan": "Enterprise",
+        "source": "https://www.windmill.dev/docs/advanced/saml_and_scim",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SAML is an Enterprise Edition feature, set in instance settings. On Windmill Cloud, Enterprise gets a dedicated instance. OAuth/OIDC SSO also works without Enterprise but is capped at 10 SSO users.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://www.windmill.dev/docs/advanced/saml_and_scim",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "Open-source developer platform for building internal scripts, workflows and apps.",
+    "name": "Windmill",
+    "status": "draft",
+    "website": "https://www.windmill.dev"
   },
   {
     "_id": "workato",
