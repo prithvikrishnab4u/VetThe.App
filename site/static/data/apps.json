@@ -7937,6 +7937,66 @@
     "website": "https://www.hibob.com"
   },
   {
+    "_id": "highlight-io",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-27",
+        "notes": "The pricing page lists \"RBAC & audit logs\" as an Enterprise plan feature. Retention isn't stated.",
+        "plan": "Enterprise",
+        "source": "https://www.highlight.io/pricing",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "notes": "The Enterprise plan mentions RBAC and fine-grained access controls, but nothing says you can create your own roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "The pricing page lists \"SAML & SSO\" as an Enterprise plan feature, so you can manage your team with your existing tooling.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://www.highlight.io/pricing",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "Highlight.io is an open-source observability platform for session replay, error monitoring, logging and tracing.",
+    "name": "Highlight.io",
+    "status": "draft",
+    "website": "https://www.highlight.io"
+  },
+  {
     "_id": "hootsuite",
     "capabilities": {
       "api_token_controls": {
