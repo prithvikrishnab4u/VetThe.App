@@ -2084,6 +2084,79 @@
     "website": "https://bitbucket.org"
   },
   {
+    "_id": "bitrise",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Docs cover role-scoped workspace API tokens with expiration, but not admin visibility or revocation of users' personal access tokens.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "notes": "The custom roles FAQ says a dedicated audit log view is not available yet.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "checked": "2026-09-28",
+        "notes": "Custom roles are an Enterprise-plan feature and can be assigned to workspace groups.",
+        "plan": "Enterprise",
+        "source": "https://docs.bitrise.io/en/bitrise-platform/workspaces/collaboration-and-permissions-in-workspaces/custom-roles/custom-roles-faq",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "domain_verification": {
+        "checked": "2026-09-28",
+        "notes": "Domains are verified by adding a DNS TXT record; verification can take up to 72 hours.",
+        "source": "https://docs.bitrise.io/en/bitrise-platform/accounts/saml-sso-in-bitrise/configuring-saml-sso-on-bitrise",
+        "support": "supported"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-28",
+        "notes": "The SCIM roles attribute can assign built-in workspace roles (Viewer, Contributor, Manager) and the RDE product role, but not custom or project-level roles.",
+        "source": "https://docs.bitrise.io/en/bitrise-platform/accounts/saml-sso-in-bitrise/configuring-scim",
+        "support": "partial"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "Docs describe per-user two-factor authentication only, with no admin enforcement setting.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-28",
+        "notes": "SCIM provisioning works with Okta and Microsoft Entra ID and requires a verified domain.",
+        "source": "https://docs.bitrise.io/en/bitrise-platform/accounts/saml-sso-in-bitrise/configuring-scim",
+        "support": "supported"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-28",
+        "notes": "SAML SSO is part of the paid plans and is only available on select plans; downgrading to a free plan removes it.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.bitrise.io/en/bitrise-ci/getting-started/migrating-to-bitrise/migrating-from-jenkins-to-bitrise",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-28",
+        "notes": "The Enforce SAML SSO option makes SAML SSO the only way to log in or sign up to the workspace.",
+        "source": "https://docs.bitrise.io/en/bitrise-platform/accounts/saml-sso-in-bitrise/configuring-saml-sso-on-bitrise",
+        "support": "supported"
+      }
+    },
+    "category": "development",
+    "description": "Bitrise is a mobile CI/CD platform for building, testing and releasing mobile apps.",
+    "name": "Bitrise",
+    "status": "draft",
+    "website": "https://bitrise.io"
+  },
+  {
     "_id": "box",
     "capabilities": {
       "api_token_controls": {
@@ -8472,6 +8545,87 @@
     "name": "Hasura Cloud",
     "status": "draft",
     "website": "https://hasura.io"
+  },
+  {
+    "_id": "hcp-boundary",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-28",
+        "notes": "HCP Boundary streams audit events for create, list, update and delete operations on sessions, auth methods, roles, users and other resources to AWS CloudWatch or Datadog in near real time. Events include the user ID, timestamp and full request and response.",
+        "source": "https://developer.hashicorp.com/hcp/docs/boundary/audit-logging",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-09-28",
+        "notes": "Boundary roles are created by admins and hold grant strings that set which actions principals can take on which resources.",
+        "source": "https://developer.hashicorp.com/boundary/docs/rbac/manage-roles",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "checked": "2026-09-28",
+        "notes": "For HCP organization SSO, you verify each email domain with a DNS TXT record, and a domain can only be used by one HCP organization.",
+        "source": "https://developer.hashicorp.com/hcp/docs/hcp/iam/sso/setup/saml",
+        "support": "supported"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-28",
+        "notes": "OIDC and LDAP managed groups use filters on IdP claims or LDAP group membership, and managed groups can be added as principals on roles.",
+        "source": "https://developer.hashicorp.com/boundary/docs/rbac/users/managed-groups",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-28",
+        "notes": "When someone first signs in successfully with a scope's primary auth method (such as OIDC or LDAP), Boundary creates the user automatically.",
+        "source": "https://developer.hashicorp.com/boundary/docs/authentication",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "notes": "HCP offers optional per-user OTP MFA for email sign-in; the docs don't describe a way for admins to require it, and the Boundary auth docs don't mention MFA.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-28",
+        "notes": "HCP offers one MFA method, a one-time password from an authenticator app, and only for email sign-in.",
+        "source": "https://developer.hashicorp.com/hcp/docs/hcp/iam/mfa",
+        "support": "not_supported"
+      },
+      "scim": {
+        "checked": "2026-09-28",
+        "notes": "HCP supports SCIM: the IdP creates, updates and deactivates or deletes HCP users and manages groups and membership. SAML SSO is required first.",
+        "source": "https://developer.hashicorp.com/hcp/docs/hcp/iam/scim",
+        "support": "supported"
+      },
+      "session_controls": {
+        "checked": "2026-09-28",
+        "notes": "Admins set the auth token time-to-live and time-to-stale (inactivity) in hours for an HCP Boundary cluster, which control how often users must sign in again.",
+        "source": "https://developer.hashicorp.com/hcp/docs/boundary/configure-ttl",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-09-28",
+        "notes": "The HashiCorp Cloud Platform (HCP) organization supports SAML 2.0 and OIDC SSO with providers such as Okta, Entra ID, Ping and Google. No plan is named. Sign-in to the Boundary cluster itself uses Boundary auth methods (password, OIDC or LDAP).",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://developer.hashicorp.com/hcp/docs/hcp/iam/sso",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-28",
+        "notes": "At the HCP organization level, once SSO is on, invitations stop and new users must come through the IdP, and existing SAML users on the SSO domain must use the SSO link. Existing personal accounts keep access until an admin removes them, and the owner can still use their original non-SSO login.",
+        "source": "https://developer.hashicorp.com/hcp/docs/hcp/iam/sso/manage",
+        "support": "partial"
+      }
+    },
+    "category": "security",
+    "description": "HCP Boundary is HashiCorp's fully managed Boundary service for identity-based access to remote hosts and systems, run on the HashiCorp Cloud Platform.",
+    "name": "HCP Boundary",
+    "status": "draft",
+    "website": "https://www.hashicorp.com/products/boundary"
   },
   {
     "_id": "hcp-terraform",
@@ -15784,6 +15938,90 @@
     "name": "Pomerium Zero",
     "status": "draft",
     "website": "https://www.pomerium.com"
+  },
+  {
+    "_id": "portkey",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-28",
+        "notes": "API key rotation is on all plans (Free, Growth, Enterprise); owners and admins can enforce a rotation period on workspace-user keys, and keys carry scoped permissions.",
+        "plan": "Free",
+        "source": "https://portkey.ai/docs/product/enterprise-offering/org-management/api-key-rotation",
+        "support": "supported",
+        "tier": "free"
+      },
+      "audit_logs": {
+        "checked": "2026-09-28",
+        "notes": "Records administrative actions with user attribution and filters; the page lists indefinite retention and custom retention policies.",
+        "plan": "Enterprise",
+        "retention": "Indefinite",
+        "source": "https://portkey.ai/docs/product/enterprise-offering/audit-logs",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "notes": "The docs describe fixed organization roles (Owner, Admin, Member) and workspace roles; no custom role builder is described.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "checked": "2026-09-28",
+        "notes": "SSO and SCIM only provision users whose email is on a verified domain listed under Allowed Domains.",
+        "plan": "Enterprise",
+        "source": "https://portkey.ai/docs/product/enterprise-offering/org-management/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-28",
+        "notes": "SCIM groups from Okta or Entra ID can be mapped to one or more workspaces with a role. The page does not name a plan.",
+        "source": "https://portkey.ai/docs/product/enterprise-offering/org-management/scim/group-management",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-28",
+        "notes": "First-time SSO users from a verified allowed domain are provisioned automatically; this can be turned off to allow invited users only.",
+        "plan": "Enterprise",
+        "source": "https://portkey.ai/docs/product/enterprise-offering/org-management/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-28",
+        "notes": "SCIM provisions and deprovisions users and syncs workspace memberships (Okta and Entra ID guides). The SCIM page does not name a plan.",
+        "source": "https://portkey.ai/docs/product/enterprise-offering/org-management/scim/scim",
+        "support": "supported"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-28",
+        "notes": "The control plane supports OIDC and SAML 2.0 SSO for enterprise customers.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://portkey.ai/docs/product/enterprise-offering/org-management/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "notes": "The SSO docs describe restricting auto-provisioning to invited users but not requiring SSO for every sign-in.",
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "Portkey is an AI gateway and LLMOps platform for routing, observing and governing LLM requests.",
+    "name": "Portkey",
+    "status": "draft",
+    "website": "https://portkey.ai"
   },
   {
     "_id": "posthog",
