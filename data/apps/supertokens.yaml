@@ -1,0 +1,34 @@
+name: "SuperTokens"
+category: "security"
+website: "https://supertokens.com"
+description: "SuperTokens is an open-source authentication provider offered as a managed service or self-hosted."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "undocumented"
+    notes: "SuperTokens' SSO docs cover sign-in for your app's users; the docs don't describe SSO for the SaaS dashboard."
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The docs don't describe requiring MFA for SaaS dashboard users."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "The user management dashboard only separates admins from read-only users by email list; the docs don't describe roles in the SaaS dashboard."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"

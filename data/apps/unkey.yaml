@@ -1,0 +1,39 @@
+name: "Unkey"
+category: "development"
+website: "https://unkey.com"
+description: "Unkey is an API development platform for issuing and verifying API keys, rate limiting and deploying APIs."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "undocumented"
+    notes: "The docs don't describe SSO for signing in to the Unkey dashboard."
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    notes: "Audit logs record every workspace change, such as key, permission, role and member changes, with the actor; retention depends on the plan."
+    source: "https://unkey.com/docs/audit-log/introduction"
+    checked: "2026-09-28"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "Team members have full access to workspace resources; the only distinction is that admins can manage members."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "Root keys for the Unkey API are scoped to one workspace, get only the permissions you select, and can be edited, rotated with a grace period, or deleted from Settings > Root Keys."
+    source: "https://unkey.com/docs/platform/root-keys/overview"
+    checked: "2026-09-28"

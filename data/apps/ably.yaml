@@ -1,0 +1,66 @@
+name: "Ably"
+category: "infrastructure"
+website: "https://ably.com"
+description: "Ably is a realtime messaging platform for building live, pub/sub features into apps."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML"]
+    notes: "SAML SSO with any SAML identity provider is restricted to Enterprise customers and is enabled by contacting Ably."
+    source: "https://ably.com/docs/platform/account/sso"
+    checked: "2026-09-28"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Strict mode requires users to sign in through the identity provider; account owners can still sign in by any method."
+    source: "https://ably.com/docs/platform/account/sso"
+    checked: "2026-09-28"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM through Organizations provisions and deprovisions users individually or by group; Organizations need an Enterprise account."
+    source: "https://ably.com/docs/platform/account/organizations"
+    checked: "2026-09-28"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Account owners can require two-factor authentication for all account users."
+    source: "https://ably.com/docs/platform/account/2fa"
+    checked: "2026-09-28"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The 2FA docs describe authenticator app codes only."
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "With SSO, a user's Ably account is created just in time on their first sign-in."
+    source: "https://ably.com/docs/platform/account/sso"
+    checked: "2026-09-28"
+  domain_verification:
+    support: "undocumented"
+    notes: "Organizations recognize one registered email domain, but the docs don't describe verifying it."
+  custom_roles:
+    support: "undocumented"
+    notes: "The team docs list only fixed roles: Developer, Billing, Admin and Owner."
+  group_role_mapping:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Groups synced from the identity provider can be given roles across accounts in the Organization."
+    source: "https://ably.com/docs/platform/account/organizations"
+    checked: "2026-09-28"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "Only account admins can create and rotate Control API access tokens, which have scoped capabilities, a 30, 60 or 90 day or no expiry, and can be revoked."
+    source: "https://ably.com/docs/platform/account/access-tokens"
+    checked: "2026-09-28"

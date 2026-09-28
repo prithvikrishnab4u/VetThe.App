@@ -89,6 +89,89 @@
     "website": "https://1password.com"
   },
   {
+    "_id": "ably",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-28",
+        "notes": "Only account admins can create and rotate Control API access tokens, which have scoped capabilities, a 30, 60 or 90 day or no expiry, and can be revoked.",
+        "source": "https://ably.com/docs/platform/account/access-tokens",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "The team docs list only fixed roles: Developer, Billing, Admin and Owner.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "notes": "Organizations recognize one registered email domain, but the docs don't describe verifying it.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-28",
+        "notes": "Groups synced from the identity provider can be given roles across accounts in the Organization.",
+        "plan": "Enterprise",
+        "source": "https://ably.com/docs/platform/account/organizations",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-28",
+        "notes": "With SSO, a user's Ably account is created just in time on their first sign-in.",
+        "plan": "Enterprise",
+        "source": "https://ably.com/docs/platform/account/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-28",
+        "notes": "Account owners can require two-factor authentication for all account users.",
+        "source": "https://ably.com/docs/platform/account/2fa",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The 2FA docs describe authenticator app codes only.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-28",
+        "notes": "SCIM through Organizations provisions and deprovisions users individually or by group; Organizations need an Enterprise account.",
+        "plan": "Enterprise",
+        "source": "https://ably.com/docs/platform/account/organizations",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-28",
+        "notes": "SAML SSO with any SAML identity provider is restricted to Enterprise customers and is enabled by contacting Ably.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://ably.com/docs/platform/account/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-28",
+        "notes": "Strict mode requires users to sign in through the identity provider; account owners can still sign in by any method.",
+        "plan": "Enterprise",
+        "source": "https://ably.com/docs/platform/account/sso",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Ably is a realtime messaging platform for building live, pub/sub features into apps.",
+    "name": "Ably",
+    "status": "draft",
+    "website": "https://ably.com"
+  },
+  {
     "_id": "activecampaign",
     "capabilities": {
       "api_token_controls": {
@@ -157,6 +240,75 @@
     "name": "ActiveCampaign",
     "status": "published",
     "website": "https://www.activecampaign.com"
+  },
+  {
+    "_id": "activepieces",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-09-28",
+        "notes": "Platform admins can view audit logs under Security, filter them by action, user, project and date, and stream them to a webhook or SIEM. Retention isn't stated. The docs call it a paid feature without naming a plan.",
+        "source": "https://www.activepieces.com/docs/admin-guide/security/audit-logs/overview",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-09-28",
+        "notes": "Platform admins can create custom project roles under Security > Project Roles. The docs call it a paid feature without naming a plan.",
+        "source": "https://www.activepieces.com/docs/admin-guide/guides/permissions",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "notes": "The SSO docs use an email domain to route users to SSO but don't describe verifying domain ownership.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-28",
+        "notes": "SCIM groups from Okta become projects and their members are added, but members get the default Editor project role; the platform role can be set with an Okta attribute.",
+        "source": "https://www.activepieces.com/docs/admin-guide/guides/scim/providers/okta",
+        "support": "partial"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "The docs don't describe requiring MFA for platform users.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-28",
+        "notes": "SCIM creates, updates and deactivates users from Okta or Microsoft Entra ID. The docs call it a paid feature without naming a plan.",
+        "source": "https://www.activepieces.com/docs/admin-guide/guides/scim/overview",
+        "support": "supported"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-28",
+        "notes": "Platform admins can set up SSO with Google, GitHub, Okta, Microsoft Entra ID or JumpCloud (SAML 2.0) under Platform Settings. The docs call it a paid feature without naming a plan.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://www.activepieces.com/docs/admin-guide/guides/sso",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-28",
+        "notes": "Admins can enforce SSO for users with matching email domains and turn off email and password login. The docs call it a paid feature without naming a plan.",
+        "source": "https://www.activepieces.com/docs/admin-guide/guides/sso",
+        "support": "supported"
+      }
+    },
+    "category": "productivity",
+    "description": "Activepieces is an open-source workflow automation platform for connecting apps and building automated flows.",
+    "name": "Activepieces",
+    "status": "draft",
+    "website": "https://www.activepieces.com"
   },
   {
     "_id": "adobe-acrobat-sign",
@@ -7714,6 +7866,55 @@
     "name": "Gusto",
     "status": "published",
     "website": "https://gusto.com"
+  },
+  {
+    "_id": "hanko",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "notes": "The Admin API audit logs cover your app's user events; the docs don't describe a log of Cloud Console admin actions.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "The docs don't describe requiring MFA for Hanko Cloud Console members.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "notes": "Hanko's enterprise SSO docs cover sign-in for your app's users; the docs don't describe SSO for Hanko Cloud Console members.",
+        "support": "undocumented"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Hanko is an open-source authentication and user management platform focused on passkeys.",
+    "name": "Hanko",
+    "status": "draft",
+    "website": "https://www.hanko.io"
   },
   {
     "_id": "harness",
@@ -17380,6 +17581,55 @@
     "website": "https://supabase.com"
   },
   {
+    "_id": "supertokens",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "The user management dashboard only separates admins from read-only users by email list; the docs don't describe roles in the SaaS dashboard.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "The docs don't describe requiring MFA for SaaS dashboard users.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "notes": "SuperTokens' SSO docs cover sign-in for your app's users; the docs don't describe SSO for the SaaS dashboard.",
+        "support": "undocumented"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "SuperTokens is an open-source authentication provider offered as a managed service or self-hosted.",
+    "name": "SuperTokens",
+    "status": "draft",
+    "website": "https://supertokens.com"
+  },
+  {
     "_id": "surveymonkey",
     "capabilities": {
       "api_token_controls": {
@@ -18899,6 +19149,60 @@
     "name": "UKG Pro",
     "status": "draft",
     "website": "https://www.ukg.com"
+  },
+  {
+    "_id": "unkey",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-28",
+        "notes": "Root keys for the Unkey API are scoped to one workspace, get only the permissions you select, and can be edited, rotated with a grace period, or deleted from Settings > Root Keys.",
+        "source": "https://unkey.com/docs/platform/root-keys/overview",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-28",
+        "notes": "Audit logs record every workspace change, such as key, permission, role and member changes, with the actor; retention depends on the plan.",
+        "source": "https://unkey.com/docs/audit-log/introduction",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "notes": "Team members have full access to workspace resources; the only distinction is that admins can manage members.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "notes": "The docs don't describe SSO for signing in to the Unkey dashboard.",
+        "support": "undocumented"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "Unkey is an API development platform for issuing and verifying API keys, rate limiting and deploying APIs.",
+    "name": "Unkey",
+    "status": "draft",
+    "website": "https://unkey.com"
   },
   {
     "_id": "unleash",
