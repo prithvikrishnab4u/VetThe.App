@@ -6233,6 +6233,58 @@
     "website": "https://estuary.dev"
   },
   {
+    "_id": "evidence",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "The docs list four fixed roles: Viewer, Org Viewer, Developer and Admin.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "notes": "Groups are created in Settings and used for page access; the docs don't describe syncing them from an identity provider.",
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-28",
+        "notes": "The Evidence Studio comparison table lists SSO with viewer, developer and admin roles. Self-hosted sites only get HTTP Basic Auth unless you put an authenticating proxy in front. The docs don't name the plan or protocols for Studio SSO.",
+        "source": "https://docs.evidence.studio/self-host",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "notes": "The docs don't say whether SSO can be required for Evidence Studio.",
+        "support": "undocumented"
+      }
+    },
+    "category": "productivity",
+    "description": "Evidence is a business intelligence tool that builds reports from SQL and markdown, hosted on its Evidence Studio platform or self-hosted.",
+    "name": "Evidence",
+    "status": "draft",
+    "website": "https://evidence.studio"
+  },
+  {
     "_id": "expensify",
     "capabilities": {
       "api_token_controls": {
@@ -10249,6 +10301,96 @@
     "name": "Klaviyo",
     "status": "draft",
     "website": "https://www.klaviyo.com"
+  },
+  {
+    "_id": "knock",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-28",
+        "notes": "Only owners and admins can create and revoke service tokens, and deleting a token revokes it immediately.",
+        "source": "https://docs.knock.app/developer-tools/service-tokens",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-09-28",
+        "notes": "Audit logs show the actor, action, time, IP and location, and only admins and owners can see them. Exports are by request to support. Retention comes from the data retention page.",
+        "retention": "90 days on Enterprise, 30 days on other plans",
+        "source": "https://docs.knock.app/manage-your-account/audit-logs",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-09-28",
+        "notes": "Custom permission groups are only available on the Enterprise plan.",
+        "plan": "Enterprise",
+        "source": "https://docs.knock.app/manage-your-account/roles-and-permissions",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "domain_verification": {
+        "notes": "Auto-join domains need an owner with an email on that domain; DNS verification isn't described.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-28",
+        "notes": "With directory sync, groups named knock-role-{key} map to roles. Custom group mappings are set up through support.",
+        "plan": "Enterprise",
+        "source": "https://docs.knock.app/manage-your-account/directory-sync",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "notes": "The SAML docs don't say whether accounts are created on first SSO login.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-28",
+        "notes": "Owners and admins can turn on \"Require multi-factor authentication\" on the Security page. The toggle isn't available when SAML SSO is on.",
+        "source": "https://docs.knock.app/manage-your-account/multi-factor-authentication",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-28",
+        "notes": "Passkeys, including hardware security keys, can be used as an MFA method.",
+        "source": "https://docs.knock.app/manage-your-account/multi-factor-authentication",
+        "support": "supported"
+      },
+      "scim": {
+        "checked": "2026-09-28",
+        "notes": "Directory sync (SCIM) creates users and assigns roles from group membership. You set it up by contacting Knock support.",
+        "plan": "Enterprise",
+        "source": "https://docs.knock.app/manage-your-account/directory-sync",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "notes": "The docs only say removing a member ends their sessions right away.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-28",
+        "notes": "SAML SSO is only available on the Enterprise plan. Google SSO and passwordless email login are also offered.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.knock.app/manage-your-account/saml-sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-28",
+        "notes": "Once SAML SSO is configured, all members must log in through the identity provider and can't use other login methods.",
+        "plan": "Enterprise",
+        "source": "https://docs.knock.app/manage-your-account/saml-sso",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "development",
+    "description": "Knock is a notification infrastructure platform for sending cross-channel product notifications through an API.",
+    "name": "Knock",
+    "status": "draft",
+    "website": "https://knock.app"
   },
   {
     "_id": "knowbe4",
