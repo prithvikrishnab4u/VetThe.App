@@ -1,0 +1,52 @@
+name: "Nx Cloud"
+category: "development"
+website: "https://nx.dev"
+description: "Nx Cloud is the hosted service for Nx monorepos that provides remote caching, distributed task execution and CI insights."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML"]
+    notes: "Direct SAML login is an Nx Enterprise feature. Other plans can sign in with Google or connect a SAML provider to Google."
+    source: "https://nx.dev/docs/kb/google-auth"
+    checked: "2026-09-28"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "The docs only describe a per-invite option that makes a member sign in with Google. They don't cover blocking other logins for the whole organization."
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise (single tenant)"
+    notes: "Okta SCIM can create, update and deactivate users. The guide is written for single-tenant Enterprise instances."
+    source: "https://nx.dev/docs/enterprise/single-tenant/okta-saml"
+    checked: "2026-09-28"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "The Okta SAML guide says assigned users can use the web app, but they still have to be invited by hand to your main workspace."
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+  group_role_mapping:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise (single tenant)"
+    notes: "A custom SCIM attribute, nxCloudAccessSpec, is set per Okta group and gives members Read or Write access to the organization."
+    source: "https://nx.dev/docs/enterprise/single-tenant/okta-saml"
+    checked: "2026-09-28"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "CI access tokens are read-only or read-write. Personal access tokens can be limited to read-only, and access without a login can be set to read-only or none."
+    source: "https://nx.dev/docs/kb/access-tokens"
+    checked: "2026-09-28"

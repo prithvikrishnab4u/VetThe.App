@@ -13974,6 +13974,75 @@
     "website": "https://novu.co"
   },
   {
+    "_id": "nx-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-28",
+        "notes": "CI access tokens are read-only or read-write. Personal access tokens can be limited to read-only, and access without a login can be set to read-only or none.",
+        "source": "https://nx.dev/docs/kb/access-tokens",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-28",
+        "notes": "A custom SCIM attribute, nxCloudAccessSpec, is set per Okta group and gives members Read or Write access to the organization.",
+        "plan": "Enterprise (single tenant)",
+        "source": "https://nx.dev/docs/enterprise/single-tenant/okta-saml",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "notes": "The Okta SAML guide says assigned users can use the web app, but they still have to be invited by hand to your main workspace.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-28",
+        "notes": "Okta SCIM can create, update and deactivate users. The guide is written for single-tenant Enterprise instances.",
+        "plan": "Enterprise (single tenant)",
+        "source": "https://nx.dev/docs/enterprise/single-tenant/okta-saml",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-28",
+        "notes": "Direct SAML login is an Nx Enterprise feature. Other plans can sign in with Google or connect a SAML provider to Google.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://nx.dev/docs/kb/google-auth",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "notes": "The docs only describe a per-invite option that makes a member sign in with Google. They don't cover blocking other logins for the whole organization.",
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "Nx Cloud is the hosted service for Nx monorepos that provides remote caching, distributed task execution and CI insights.",
+    "name": "Nx Cloud",
+    "status": "draft",
+    "website": "https://nx.dev"
+  },
+  {
     "_id": "octopus-deploy",
     "capabilities": {
       "api_token_controls": {
@@ -14117,6 +14186,159 @@
     "name": "Okta Workforce Identity",
     "status": "draft",
     "website": "https://okta.com"
+  },
+  {
+    "_id": "okteto",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-28",
+        "notes": "Personal access tokens get a name and an expiration and can be renewed or deleted. Admins can create admin access tokens for shared automations.",
+        "source": "https://www.okteto.com/docs/core/credentials/personal-access-tokens/",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "The docs describe only two built-in roles, Admin and Developer.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "notes": "The OIDC group setting only controls who can log in; it isn't described as mapping groups to roles.",
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-28",
+        "notes": "Users get an account on their first OIDC login. You can limit logins to members of one IdP group.",
+        "source": "https://www.okteto.com/docs/self-hosted/install/auth/openid-connect/",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "SCIM isn't mentioned. There's an Okta event hook that removes users when they're deactivated or deleted in Okta.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-28",
+        "notes": "Any OpenID Connect provider can be the login provider, with guides for Okta, Azure AD and GitLab. It's set in the instance's Helm configuration.",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://www.okteto.com/docs/self-hosted/install/auth/openid-connect/",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-28",
+        "notes": "The instance's auth configuration decides which login method users can use, so an OIDC-only setup means everyone signs in through your IdP.",
+        "source": "https://www.okteto.com/docs/self-hosted/install/auth/",
+        "support": "supported"
+      }
+    },
+    "category": "development",
+    "description": "Okteto is a platform for cloud development and preview environments on Kubernetes, run as a managed BYOC service or self-hosted.",
+    "name": "Okteto",
+    "status": "draft",
+    "website": "https://www.okteto.com"
+  },
+  {
+    "_id": "openproject",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-09-28",
+        "notes": "Users create and delete their own API tokens, and admins can turn the REST API on or off. The docs don't describe scoping tokens, setting an expiry, or admins reviewing users' tokens.",
+        "source": "https://www.openproject.org/docs/user-guide/account-settings/access-tokens/",
+        "support": "partial"
+      },
+      "audit_logs": {
+        "notes": "The docs don't describe an admin audit log.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "checked": "2026-09-28",
+        "notes": "Admins can create global roles and project roles with their own permission sets. The Administrator role can't be changed.",
+        "source": "https://www.openproject.org/docs/system-admin-guide/users-permissions/roles-permissions/",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-28",
+        "notes": "OpenID Connect providers can sync group memberships from a groups claim at each login, with optional regex filters. This maps IdP groups to OpenProject groups; roles still come from those groups' project memberships, not directly from the IdP.",
+        "plan": "Enterprise edition",
+        "source": "https://www.openproject.org/docs/system-admin-guide/authentication/openid-providers/",
+        "support": "partial",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-28",
+        "notes": "By default, users returning from a SAML identity provider are created automatically; admins can make this follow the self-registration setting instead.",
+        "plan": "Enterprise edition",
+        "source": "https://www.openproject.org/docs/system-admin-guide/authentication/saml/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-28",
+        "notes": "Admins can enforce 2FA for every user, who must then register a 2FA device at their next login. The page doesn't name a plan.",
+        "source": "https://www.openproject.org/docs/system-admin-guide/authentication/two-factor-authentication/",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-28",
+        "notes": "WebAuthn (hardware keys or keys stored in the browser or a password manager) is enabled by default as a 2FA method alongside TOTP. The page doesn't say admins can require WebAuthn specifically.",
+        "source": "https://www.openproject.org/docs/system-admin-guide/authentication/two-factor-authentication/",
+        "support": "supported"
+      },
+      "scim": {
+        "checked": "2026-09-28",
+        "notes": "SCIM provisioning is an Enterprise add-on and covers creating, updating and deleting both users and groups.",
+        "plan": "Enterprise edition",
+        "source": "https://www.openproject.org/docs/system-admin-guide/authentication/scim/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "checked": "2026-09-28",
+        "notes": "Admins can turn on session expiry after a set inactivity time and turn the \"Stay signed in\" autologin option on or off. Users can see and revoke their own sessions.",
+        "source": "https://www.openproject.org/docs/system-admin-guide/authentication/login-registration-settings/",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-09-28",
+        "notes": "SAML and OpenID Connect providers (including Google and Microsoft Entra ID) are Enterprise add-ons, available once the Enterprise edition is active.",
+        "plan": "Enterprise edition",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://www.openproject.org/docs/system-admin-guide/authentication/saml/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-28",
+        "notes": "Admins can disallow password login for SSO users or for everyone, keep break-glass users or groups who may still use a password, and redirect all logins straight to one SSO provider. The page doesn't name a plan, but SSO itself needs the Enterprise edition.",
+        "source": "https://www.openproject.org/docs/system-admin-guide/authentication/login-registration-settings/",
+        "support": "supported"
+      }
+    },
+    "category": "productivity",
+    "description": "OpenProject is an open-source project management tool available as a cloud service or self-hosted.",
+    "name": "OpenProject",
+    "status": "draft",
+    "website": "https://www.openproject.org"
   },
   {
     "_id": "oracle-hcm-cloud",
