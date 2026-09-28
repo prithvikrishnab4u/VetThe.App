@@ -1,0 +1,55 @@
+name: "Documenso"
+category: "productivity"
+website: "https://documenso.com"
+description: "Documenso is an open-source document signing platform with a hosted cloud version."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["OIDC"]
+    notes: "SSO is only on the Enterprise plan and works with any OpenID Connect (OIDC) identity provider."
+    source: "https://docs.documenso.com/docs/users/organisations/single-sign-on/configuration"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "not_supported"
+    notes: "The docs say SSO-only enforcement isn't available yet; users with a password can still sign in that way."
+    source: "https://docs.documenso.com/docs/users/organisations/single-sign-on/configuration"
+    checked: "2026-09-27"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Users can turn on 2FA themselves; the docs don't describe an org-wide requirement."
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Users can sign in with passkeys (biometrics, hardware security keys, or password managers)."
+    source: "https://docs.documenso.com/docs/users/settings/security"
+    checked: "2026-09-27"
+  audit_logs:
+    support: "undocumented"
+    notes: "Documents have signing audit trails, and users see their own security activity, but no org admin activity log is described."
+  jit_provisioning:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "On first SSO sign-in the user is added to the organisation with the default role."
+    source: "https://docs.documenso.com/docs/users/organisations/single-sign-on/configuration"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+    notes: "SSO has an allowed email domains list, and verified email domains are for sending mail, not claiming accounts."
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs list fixed roles (Admin, Manager, Member) only."
+  group_role_mapping:
+    support: "undocumented"
+    notes: "Organisation groups exist in the app, but the docs don't link them to identity provider groups."
+  session_controls:
+    support: "undocumented"
+    notes: "Users can view and revoke their own sessions; no admin session policy is described."
+  api_token_controls:
+    support: "undocumented"
+    notes: "Users create API tokens with optional expiry; no admin controls over tokens are described."

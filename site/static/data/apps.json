@@ -5243,6 +5243,78 @@
     "website": "https://hub.docker.com"
   },
   {
+    "_id": "documenso",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Users create API tokens with optional expiry; no admin controls over tokens are described.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "notes": "Documents have signing audit trails, and users see their own security activity, but no org admin activity log is described.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "The docs list fixed roles (Admin, Manager, Member) only.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "notes": "SSO has an allowed email domains list, and verified email domains are for sending mail, not claiming accounts.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "notes": "Organisation groups exist in the app, but the docs don't link them to identity provider groups.",
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "On first SSO sign-in the user is added to the organisation with the default role.",
+        "plan": "Enterprise",
+        "source": "https://docs.documenso.com/docs/users/organisations/single-sign-on/configuration",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "notes": "Users can turn on 2FA themselves; the docs don't describe an org-wide requirement.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-09-27",
+        "notes": "Users can sign in with passkeys (biometrics, hardware security keys, or password managers).",
+        "source": "https://docs.documenso.com/docs/users/settings/security",
+        "support": "supported"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "notes": "Users can view and revoke their own sessions; no admin session policy is described.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SSO is only on the Enterprise plan and works with any OpenID Connect (OIDC) identity provider.",
+        "plan": "Enterprise",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://docs.documenso.com/docs/users/organisations/single-sign-on/configuration",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "The docs say SSO-only enforcement isn't available yet; users with a password can still sign in that way.",
+        "source": "https://docs.documenso.com/docs/users/organisations/single-sign-on/configuration",
+        "support": "not_supported"
+      }
+    },
+    "category": "productivity",
+    "description": "Documenso is an open-source document signing platform with a hosted cloud version.",
+    "name": "Documenso",
+    "status": "draft",
+    "website": "https://documenso.com"
+  },
+  {
     "_id": "docusign",
     "capabilities": {
       "api_token_controls": {
@@ -10021,6 +10093,95 @@
     "name": "LinkedIn Sales Navigator",
     "status": "draft",
     "website": "https://business.linkedin.com/sales-solutions/sales-navigator"
+  },
+  {
+    "_id": "liveblocks",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Both Owners and Members can manage API keys for all projects; no finer controls are described.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "notes": "Plans list an event log retention limit, but no admin audit log for the dashboard is described.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "notes": "The team members docs describe two fixed roles, Owner and Member.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "checked": "2026-09-27",
+        "notes": "Once SSO is enabled, owners can verify domains themselves from the dashboard.",
+        "plan": "Pro and Enterprise (paid add-on)",
+        "source": "https://liveblocks.io/docs/platform/account-management/saml",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "group_role_mapping": {
+        "checked": "2026-09-27",
+        "notes": "Directory sync maps identity provider groups to Liveblocks team roles.",
+        "plan": "Enterprise (add-on)",
+        "source": "https://liveblocks.io/docs/platform/account-management/directory-sync",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "jit_provisioning": {
+        "checked": "2026-09-27",
+        "notes": "By default SSO users still need an invite; auto-adding SSO sign-ups to the team is available on request.",
+        "plan": "Pro and Enterprise (paid add-on)",
+        "source": "https://liveblocks.io/docs/platform/account-management/saml",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "Team owners can require authenticator-app MFA for all members. It doesn't apply to SSO members.",
+        "plan": "Enterprise (add-on)",
+        "source": "https://liveblocks.io/docs/platform/account-management/mfa",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The MFA docs only cover authenticator app codes; passkeys and security keys aren't mentioned.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-09-27",
+        "notes": "Directory sync is an Enterprise add-on and needs SSO set up first.",
+        "plan": "Enterprise (add-on)",
+        "source": "https://liveblocks.io/docs/platform/account-management/directory-sync",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-09-27",
+        "notes": "SAML SSO is a paid add-on on Pro and Enterprise, enabled through sales. The provider list includes some OpenID Connect options; other OIDC providers need a request to support.",
+        "plan": "Pro and Enterprise (paid add-on)",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://liveblocks.io/docs/platform/account-management/saml",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "sso_enforcement": {
+        "checked": "2026-09-27",
+        "notes": "SSO can be enforced for a team, but you have to ask support to turn it on.",
+        "plan": "Pro and Enterprise (paid add-on)",
+        "source": "https://liveblocks.io/docs/platform/account-management/saml",
+        "support": "supported",
+        "tier": "add_on"
+      }
+    },
+    "category": "development",
+    "description": "Liveblocks provides APIs and components for adding realtime collaboration features to apps.",
+    "name": "Liveblocks",
+    "status": "draft",
+    "website": "https://liveblocks.io"
   },
   {
     "_id": "logto",
