@@ -1,0 +1,61 @@
+name: "Axiom"
+category: "infrastructure"
+website: "https://axiom.co"
+description: "Axiom is a cloud platform for storing, querying and analysing logs, traces and other event data."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "add_on"
+    plan: "Axiom Cloud (SAML SSO add-on)"
+    protocols: ["SAML"]
+    notes: "SAML SSO, run through WorkOS, is an add-on on the Axiom Cloud plan and supports both IdP- and SP-initiated flows."
+    source: "https://axiom.co/docs/reference/settings"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "The docs don't say whether SSO can be required for all users."
+  scim:
+    support: "supported"
+    tier: "add_on"
+    plan: "Axiom Cloud (Directory Sync add-on)"
+    notes: "Directory Sync, run through WorkOS, is an add-on on the Axiom Cloud plan; the SAML SSO section says access grants stay up to date through SCIM."
+    source: "https://axiom.co/docs/reference/settings"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "not_supported"
+    notes: "Axiom doesn't offer 2FA natively. With SAML SSO you can turn on and enforce 2FA through your identity provider."
+    source: "https://axiom.co/docs/reference/settings"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "Axiom has no native 2FA, and the docs don't mention passkeys or security keys."
+  audit_logs:
+    support: "supported"
+    retention: "30 days by default; full access as an add-on"
+    notes: "Every organization gets the audit log, and by default it can be queried for the previous 30 days. Full access is sold as an add-on on the Axiom Cloud plan, and only the Owner role can view the log."
+    source: "https://axiom.co/docs/reference/audit-log"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    tier: "add_on"
+    plan: "Axiom Cloud (RBAC add-on)"
+    notes: "With the RBAC add-on, admins can create custom roles under Settings > Roles and set create, read, update and delete permissions for each capability."
+    source: "https://axiom.co/docs/reference/settings"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "undocumented"
+    notes: "Axiom groups assign roles to users, but the docs don't say that identity provider groups can be mapped to roles."
+  session_controls:
+    support: "undocumented"
+    notes: "Users can view and end their own active sessions. The docs mention no admin session timeout settings, apart from a 24-hour timeout that applies once a BAA is signed."
+  api_token_controls:
+    support: "supported"
+    notes: "API tokens can be limited to certain datasets and actions, given an expiry date, regenerated, deleted and capped on query cost. Personal access tokens carry the user's full permissions."
+    source: "https://axiom.co/docs/reference/tokens"
+    checked: "2026-09-27"

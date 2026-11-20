@@ -1,0 +1,44 @@
+name: "InfluxDB Cloud"
+category: "infrastructure"
+website: "https://www.influxdata.com"
+description: "InfluxDB Cloud is InfluxData's managed time-series database service."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Annual contract"
+    notes: "Logins from a given email domain can be routed to your enterprise SSO provider. It's only available with an annual commercial contract, and you set it up through sales."
+    source: "https://docs.influxdata.com/influxdb/cloud/reference/internals/security/"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The security page says MFA can only be turned on through an enterprise SSO connection, where your identity provider handles it."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+    notes: "The security page only says InfluxData logs and audits access internally."
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "not_supported"
+    notes: "InfluxDB Cloud has only one permission level for users, Owner, which has full access to the organization."
+    source: "https://docs.influxdata.com/influxdb/cloud/admin/organizations/users/"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "partial"
+    notes: "Tokens are listed on the API Tokens page and can be deleted there. They can be scoped to read or write specific buckets. The docs don't describe admin policies for tokens."
+    source: "https://docs.influxdata.com/influxdb/cloud/admin/tokens/view-tokens/"
+    checked: "2026-09-27"

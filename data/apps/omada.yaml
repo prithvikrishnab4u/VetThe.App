@@ -1,0 +1,54 @@
+name: "Omada Identity Cloud"
+category: "security"
+website: "https://omadaidentity.com"
+description: "Omada Identity Cloud is a SaaS identity governance and administration platform. Values here cover how customer admins sign in to and administer their Omada tenant, through the Omada Identity Portal and the Cloud Management Portal, not the identities Omada governs."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "The Omada Identity Portal supports SSO through OpenID Connect or SAML 2, with guides for Entra ID, Okta, Google, ForgeRock and AD FS. The Cloud Management Portal supports Entra ID federation. No docs page names the plan."
+    source: "https://documentation.omadaidentity.com/docs/getting-started/authentication-sso/"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    notes: "In the Cloud Management Portal, once a verified domain is assigned to an IdP, users of that domain must sign in through it and can no longer use local credentials. Blocking passwords for the Identity Portal isn't described."
+    source: "https://documentation.omadaidentity.com/docs/getting-started/cloud-portal/authentication/"
+    checked: "2026-11-20"
+  scim:
+    support: "undocumented"
+    notes: "Omada users are created when identities are onboarded from an HR system or similar source. SCIM provisioning of Omada's own users isn't described."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Cloud Management Portal admins can reset another admin's MFA, but no setting to require MFA for all users is described."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "partial"
+    notes: "The logging framework logs events including successful OpenID, SAML and forms logons, and can send them to targets such as Splunk or Azure Log Analytics. Cloud customers can't change the default log configuration yet, and no in-product log viewer for admin changes is described, so this is partial."
+    source: "https://documentation.omadaidentity.com/docs/configuration/event-logging/"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "not_supported"
+    notes: "The SSO page says Omada doesn't provision users or accounts from the IdP, so identities and users must exist before they can sign in through SSO."
+    source: "https://documentation.omadaidentity.com/docs/getting-started/authentication-sso/"
+    checked: "2026-11-20"
+  domain_verification:
+    support: "supported"
+    notes: "Customer administrators verify a domain with a DNS TXT record in the Cloud Management Portal. Assigning it to an IdP moves all existing users of that domain to federated sign-in. No docs page names the plan."
+    source: "https://documentation.omadaidentity.com/docs/getting-started/cloud-portal/authentication/"
+    checked: "2026-11-20"
+  custom_roles:
+    support: "supported"
+    notes: "Admins create authorization roles under Setup, Administration, Users & Security, pick create, read, update and delete permissions per element, and assign them to users or user groups. No docs page names the plan."
+    source: "https://documentation.omadaidentity.com/docs/theoretical-overview/security/usersandroles/users-and-roles-authorizationroles/"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "undocumented"
+    notes: "The SSO page says Omada doesn't sync any attributes from the IdP. Setting authorization roles from IdP groups isn't described."
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"
+    notes: "Cloud Management Portal admins create API keys and can restrict them to IP addresses. Controls over keys created by other users aren't described."

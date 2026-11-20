@@ -1,0 +1,46 @@
+name: "Thales SafeNet Trusted Access"
+category: "security"
+website: "https://cpl.thalesgroup.com"
+description: "SafeNet Trusted Access (STA) is Thales's cloud access management and MFA service. Values here cover how a customer's operators sign in to and are governed in the STA Token Management and Access Management consoles, not the app access STA sells."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "undocumented"
+    notes: "Operators sign in to the STA consoles with their email and a passcode from an enrolled STA token. External IdP orchestration in the docs covers users signing in to protected apps, not the consoles."
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+    notes: "The SCIM API manages the STA users and groups that STA protects. Operators are users promoted by hand or by role rules, and the docs don't describe SCIM for operator accounts."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Operators must enroll an STA token and enter a passcode from it at every console login. The docs don't describe this as a separate MFA setting."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "FIDO passkeys and security keys are covered for users signing in to protected apps through policies. The docs don't describe FIDO sign-in to the STA consoles."
+  audit_logs:
+    support: "supported"
+    notes: "The Audit Logs tab records each saved change by operators with timestamp, user ID, IP, action and object, filterable by user and date and exportable to CSV. The default view covers 90 days. No docs page names the plan."
+    source: "https://www.thalesdocs.com/sta/operator/dashboard/audit_lgs/index.html"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    notes: "Under Policy, Role Management, operators add or duplicate roles and choose access, edit, delete, add, import, export and view log rights per console tab and module. No docs page names the plan."
+    source: "https://www.thalesdocs.com/sta/operator/roles/index.html"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "supported"
+    notes: "Role provisioning rules promote members of chosen groups, such as synced Active Directory groups, to account manager with a set role and scope, and can remove them when they leave the group. No docs page names the plan."
+    source: "https://www.thalesdocs.com/sta/operator/roles/rl_prvn/index.html"
+    checked: "2026-11-20"
+  session_controls:
+    support: "undocumented"
+    notes: "The configurable SSO session timeout applies to users signing in to protected apps. The docs don't describe a session length or sign-out control for operator console sessions."
+  api_token_controls:
+    support: "undocumented"
+    notes: "REST and SCIM API keys are generated under Settings, API Keys and tied to a service account, and key changes are audited. The docs don't describe tokens that individual operators create."

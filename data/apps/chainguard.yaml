@@ -1,0 +1,61 @@
+name: "Chainguard"
+category: "security"
+website: "https://www.chainguard.dev"
+description: "Chainguard provides hardened, minimal container images and packages through its registry, managed in the Chainguard Console."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["OIDC"]
+    notes: "You can bring your own OIDC identity provider, such as Okta, Entra ID or Ping, for Console and chainctl logins. The docs don't name a plan."
+    source: "https://edu.chainguard.dev/platform/administration/custom-idps/custom-idps/"
+    checked: "2026-09-28"
+  sso_enforcement:
+    support: "not_supported"
+    notes: "The docs say there's no native setting to turn off social logins. If you use Google Workspace, you can block the Chainguard app there instead."
+    source: "https://edu.chainguard.dev/platform/administration/custom-idps/disabling-social-logins/"
+    checked: "2026-09-28"
+  scim:
+    support: "partial"
+    notes: "SCIM from Okta or Entra ID creates and deactivates users, but it can't push groups or assign roles. Users who aren't provisioned can still log in."
+    source: "https://edu.chainguard.dev/platform/administration/custom-idps/scim-provisioning/scim-overview/"
+    checked: "2026-09-28"
+  mfa_enforcement:
+    support: "partial"
+    notes: "Email and password accounts always have to use an authenticator app code. For SSO and social logins, MFA is up to that provider, and there's no organization setting to require it."
+    source: "https://edu.chainguard.dev/get-started/mfa-devices/"
+    checked: "2026-09-28"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The only MFA Chainguard itself manages is authenticator app codes on email and password accounts."
+  audit_logs:
+    support: "partial"
+    notes: "Chainguard sends CloudEvents, each naming the actor, to a webhook you subscribe. They cover IAM changes, logins and registry pulls. The docs don't describe a stored log you can search."
+    source: "https://edu.chainguard.dev/platform/administration/cloudevents/events-reference/"
+    checked: "2026-09-28"
+  jit_provisioning:
+    support: "supported"
+    notes: "Users who log in through a custom identity provider get the default role you set for that provider, such as viewer."
+    source: "https://edu.chainguard.dev/platform/administration/custom-idps/custom-idps/"
+    checked: "2026-09-28"
+  domain_verification:
+    support: "undocumented"
+    notes: "Support can mark an organization as verified by hand so users log in with the organization name. The docs don't say how domain ownership is checked."
+  custom_roles:
+    support: "supported"
+    notes: "Besides the built-in owner, editor, viewer and console_viewer roles, you can create roles from specific capabilities."
+    source: "https://edu.chainguard.dev/platform/administration/iam-organizations/roles-role-bindings/roles-role-bindings/"
+    checked: "2026-09-28"
+  group_role_mapping:
+    support: "supported"
+    notes: "Groups from your identity provider's OIDC token can be mapped to Chainguard roles. The roles last for that login session and are checked again at every login."
+    source: "https://edu.chainguard.dev/platform/administration/custom-idps/grant-roles-from-groups/"
+    checked: "2026-09-28"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "Registry pull tokens have a lifetime you set, 30 days by default and up to one year. CI systems can use assumable identities instead of long-lived tokens."
+    source: "https://edu.chainguard.dev/platform/chainctl/chainctl-docs/chainctl_auth_pull-token_create/"
+    checked: "2026-09-28"

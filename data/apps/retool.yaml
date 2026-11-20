@@ -1,0 +1,67 @@
+name: "Retool"
+category: "development"
+website: "https://retool.com"
+description: "Retool is a low-code platform for building internal tools, workflows and agents on top of databases and APIs."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "Retool supports OIDC and SAML identity providers. The docs pages don't name the plan, and retool.com/pricing was not reachable from this session."
+    source: "https://docs.retool.com/sso/quickstart"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    notes: "Admins can toggle Disable Login with Email and Password in the SSO settings so all users must sign in with SSO."
+    source: "https://docs.retool.com/sso/guides/authentication/enforce-sso"
+    checked: "2026-11-20"
+  scim:
+    support: "supported"
+    notes: "SCIM creates, updates and deactivates users; deactivated users are logged out immediately. Okta Group Push is supported."
+    source: "https://docs.retool.com/sso/guides/scim-user-provisioning"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Admins set Require Two Factor Authentication to OTP or FIDO2 in Advanced settings, and users must set it up at their next login."
+    source: "https://docs.retool.com/org-users/guides/user-management/two-factor-authentication"
+    checked: "2026-11-20"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Two-factor authentication can be required as FIDO2, using a hardware key such as a YubiKey or a passkey."
+    source: "https://docs.retool.com/org-users/guides/user-management/two-factor-authentication"
+    checked: "2026-11-20"
+  audit_logs:
+    support: "supported"
+    retention: "1 year (last 3 months shown in the UI)"
+    notes: "Retool logs user actions such as query runs and password resets. Cloud customers on Business or Enterprise can download the logs; streaming to Datadog or Splunk is Enterprise only. The page doesn't say which plan gets the Audit logs page itself."
+    source: "https://docs.retool.com/org-users/guides/monitoring/audit-logs"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "supported"
+    notes: "With Enable JIT user provisioning switched on, Retool creates an account the first time a user signs in over SSO."
+    source: "https://docs.retool.com/sso/guides/jit-provisioning"
+    checked: "2026-11-20"
+  domain_verification:
+    support: "undocumented"
+    notes: "Retool can restrict SSO to listed email domains, but that is an allowlist; the docs don't describe verifying domain ownership or claiming accounts."
+  custom_roles:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "Admins create named organization roles from permission scopes. Business plans get non-sensitive scopes; Enterprise adds sensitive admin functions."
+    source: "https://docs.retool.com/permissions/guides/business/create-org-roles"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "supported"
+    notes: "SAML group sync adds and removes users from matching Retool permission groups at every login. OIDC role mapping and SCIM Group Push are also supported."
+    source: "https://docs.retool.com/sso/guides/group-sync/saml-group-sync"
+    checked: "2026-11-20"
+  session_controls:
+    support: "supported"
+    notes: "SSO sessions last one week by default; admins can switch on Use short session to cut that to 12 hours. Those are the only two lengths."
+    source: "https://docs.retool.com/sso/guides/authentication/short-session"
+    checked: "2026-11-20"
+  api_token_controls:
+    support: "undocumented"
+    notes: "Retool API access tokens are created by admins with scopes; the docs don't describe admins managing tokens that other users create."

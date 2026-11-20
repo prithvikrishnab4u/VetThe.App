@@ -1,0 +1,60 @@
+name: "ConfigCat"
+category: "development"
+website: "https://configcat.com"
+description: "ConfigCat is a hosted feature flag and remote configuration service."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "Organization admins can set up SAML 2.0 single sign-on for a verified domain, with both IdP- and SP-initiated login. Google, Microsoft, GitHub and Bitbucket login are also available."
+    source: "https://configcat.com/docs/advanced/team-management/saml/saml-overview/"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Admins can turn individual login methods on or off for the organization, but the docs don't clearly say email and password login can be switched off to require SSO."
+  scim:
+    support: "supported"
+    notes: "SCIM syncs users and groups from your identity provider. A soft delete disables the user and a hard delete removes them from the organization."
+    source: "https://configcat.com/docs/advanced/team-management/scim/scim-overview/"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Admins can require two-factor authentication for team members from the Authentication & Provisioning page."
+    source: "https://configcat.com/docs/advanced/team-management/team-management-basics/"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "free"
+    plan: "Free"
+    retention: "7 days on Free, 35 days on Pro and Smart, 750 days on Enterprise and Dedicated"
+    notes: "Every plan has an audit log. How far back it goes depends on the plan."
+    source: "https://configcat.com/docs/subscription-plan-limits/"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    notes: "New users who sign up with an email on a verified domain are added to the organization automatically, with preset roles and product permissions."
+    source: "https://configcat.com/docs/advanced/team-management/auto-assign-users/"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "supported"
+    notes: "You verify ownership of your email domains. This is needed before you can use SAML SSO or auto-assign users."
+    source: "https://configcat.com/docs/advanced/team-management/domain-verification/"
+    checked: "2026-09-27"
+  custom_roles:
+    support: "supported"
+    notes: "Product-level permission groups are custom sets of permissions. The number you can create depends on the plan."
+    source: "https://configcat.com/docs/advanced/team-management/team-management-basics/"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "supported"
+    notes: "Groups synced over SCIM can be mapped to ConfigCat permission groups and to the Organization Admin and Billing Manager roles."
+    source: "https://configcat.com/docs/advanced/team-management/scim/scim-overview/"
+    checked: "2026-09-27"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"

@@ -1,0 +1,46 @@
+name: "Fly.io"
+category: "infrastructure"
+website: "https://fly.io"
+description: "Fly.io is a cloud platform for running apps and databases in VMs close to users around the world."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "partial"
+    notes: "Org SSO works only with Google Workspace (by hosted domain) or a GitHub organization as the identity provider. The docs don't mention SAML or other providers."
+    source: "https://fly.io/docs/security/sso/"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    notes: "SSO is set up as a requirement on the organization: members must re-authenticate with Google or GitHub to access that org's resources. No plan is named."
+    source: "https://fly.io/docs/security/sso/"
+    checked: "2026-09-27"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Users can turn on authenticator-app MFA, but the docs don't describe a way for admins to require it."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The docs only mention standard MFA apps. Passkeys come up only as something Google or GitHub provide when used for SSO."
+  audit_logs:
+    support: "undocumented"
+    notes: "The docs cover app logs and metrics, but not an audit log of org or account activity."
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "not_supported"
+    notes: "Organizations have just two roles, Member and Admin, and Fly.io says it keeps roles simple on purpose."
+    source: "https://fly.io/docs/security/org-roles-permissions/"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "Tokens can be scoped to an app, an org, read-only, SSH or specific commands, and can have an expiry. Org tokens can be listed and revoked with flyctl or in the dashboard."
+    source: "https://fly.io/docs/security/tokens/"
+    checked: "2026-09-27"

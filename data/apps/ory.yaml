@@ -1,0 +1,55 @@
+name: "Ory Network"
+category: "security"
+website: "https://www.ory.com"
+description: "Ory Network is a hosted identity and access platform for adding login, OAuth2 and permissions to applications."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Ory Enterprise"
+    protocols: ["SAML", "OIDC"]
+    notes: "The Ory Console supports SSO over OIDC or SAML, set up per workspace. Console SSO is available on Ory Enterprise plans."
+    source: "https://www.ory.com/docs/console/single-sign-on"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Ory Enterprise"
+    notes: "Once SSO is set up, everyone with an email on the enrolled domain has to use SSO and can't use a Console password. Owners can also limit the workspace to organization members who signed in through SSO. Designated members can be allowed break-glass recovery by email."
+    source: "https://www.ory.com/docs/console/single-sign-on"
+    checked: "2026-09-27"
+  scim:
+    support: "undocumented"
+    notes: "The docs cover SCIM for customers' own Ory projects, but nothing about provisioning Ory Console workspace members."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "No doc found on requiring MFA for Ory Console accounts."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "Passkey and WebAuthn docs are about customers' own projects, not signing in to the Ory Console."
+  audit_logs:
+    support: "undocumented"
+    notes: "No doc found on an audit log of Ory Console or workspace activity."
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "partial"
+    tier: "enterprise"
+    plan: "Ory Enterprise"
+    notes: "SSO setup enrolls your email domain, and all users on that domain are then forced through SSO. Only one domain per workspace, and the doc doesn't describe a DNS verification step."
+    source: "https://www.ory.com/docs/console/single-sign-on"
+    checked: "2026-09-27"
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs list fixed Owner and Developer roles at the workspace and project level; nothing about creating custom roles."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "Workspace API keys have an expiration date, and only workspace Owners can create or delete them; Developers can only view them. Project API keys can be managed by project Owners and Developers."
+    source: "https://www.ory.com/docs/console/roles-and-permissions"
+    checked: "2026-09-27"

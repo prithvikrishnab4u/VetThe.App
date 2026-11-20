@@ -1,0 +1,60 @@
+name: "Formbricks"
+category: "sales_marketing"
+website: "https://formbricks.com"
+description: "Formbricks is an open-source survey and experience management platform available as a cloud service or self-hosted."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise Edition"
+    protocols: ["SAML", "OIDC"]
+    notes: "SAML SSO is part of the Enterprise Edition and needs a licence. The docs only cover setting it up on a self-hosted instance through environment variables; they don't say whether Formbricks Cloud offers it."
+    source: "https://formbricks.com/docs/self-hosting/configuration/auth-sso/saml-sso"
+    checked: "2026-09-28"
+  sso_enforcement:
+    support: "partial"
+    notes: "Self-hosted only: setting EMAIL_AUTH_DISABLED turns off email and password sign-up and login for the whole instance. Nothing is documented for Formbricks Cloud."
+    source: "https://formbricks.com/docs/self-hosting/configuration/environment-variables"
+    checked: "2026-09-28"
+  scim:
+    support: "undocumented"
+    notes: "The docs don't mention SCIM."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Users can turn on authenticator-app 2FA (Enterprise Edition) for their own account; the docs don't describe a way for admins to require it."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The only 2FA method documented is a TOTP authenticator app, plus backup codes."
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise Edition"
+    notes: "Audit logging is an Enterprise feature. On a self-hosted instance you turn it on with environment variables, and events are written to stdout as JSON Lines for you to forward to your own logging. The docs don't cover audit logs on Formbricks Cloud."
+    source: "https://formbricks.com/docs/self-hosting/advanced/enterprise-features/audit-logging"
+    checked: "2026-09-28"
+  jit_provisioning:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise Edition"
+    notes: "Self-hosted: with AUTH_SKIP_INVITE_FOR_SSO, SSO users can create an account without an invite, and AUTH_SSO_DEFAULT_ORGANIZATION_ID (Enterprise Edition with SSO) adds them to an organization with a set role."
+    source: "https://formbricks.com/docs/self-hosting/configuration/environment-variables"
+    checked: "2026-09-28"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs list fixed organization roles (Owner, Manager, Billing, Member) and team roles as an Enterprise Edition feature, but don't describe creating custom roles."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "partial"
+    notes: "Self-hosted only: SESSION_MAX_AGE sets the maximum session age for the instance (24 hours by default). Nothing is documented for Formbricks Cloud."
+    source: "https://formbricks.com/docs/self-hosting/configuration/environment-variables"
+    checked: "2026-09-28"
+  api_token_controls:
+    support: "supported"
+    notes: "API keys are scoped per Workspace (read, write or manage) and to organization administration, and scopes are fixed at creation. Keys can be deleted to revoke access."
+    source: "https://formbricks.com/docs/api-reference/generate-key"
+    checked: "2026-09-28"

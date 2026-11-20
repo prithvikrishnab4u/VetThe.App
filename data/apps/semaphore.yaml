@@ -1,0 +1,69 @@
+name: "Semaphore"
+category: "development"
+website: "https://semaphore.io"
+description: "Semaphore is a CI/CD platform for building, testing and deploying code."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "The Plan"
+    protocols: ["SAML"]
+    notes: "Okta SSO over SAML 2.0 is documented; other identity providers such as JumpCloud need a request to support."
+    source: "https://docs.semaphore.io/using-semaphore/okta"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "The Plan"
+    notes: "Once enforced, Okta is the only login method allowed for all users in the organization."
+    source: "https://docs.semaphore.io/using-semaphore/okta"
+    checked: "2026-09-27"
+  scim:
+    support: "supported"
+    tier: "paid"
+    plan: "The Plan"
+    notes: "Okta provisioning can create users, update user attributes, deactivate users and push groups."
+    source: "https://docs.semaphore.io/using-semaphore/okta"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "The Plan"
+    notes: "Audit events are viewable in organization settings, exportable as CSV, and can be streamed to an S3-compatible bucket."
+    source: "https://docs.semaphore.io/using-semaphore/organizations#audit-log"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "Users are provisioned through SCIM; the docs don't mention creating accounts at first SSO sign-in."
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    tier: "paid"
+    plan: "The Plan"
+    notes: "You can create your own roles in addition to the pre-defined ones."
+    source: "https://docs.semaphore.io/using-semaphore/rbac#custom-roles"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "supported"
+    tier: "paid"
+    plan: "The Plan"
+    notes: "Groups pushed from Okta become Semaphore groups, and each group can have one role assigned."
+    source: "https://docs.semaphore.io/using-semaphore/rbac#org-groups"
+    checked: "2026-09-27"
+  session_controls:
+    support: "supported"
+    tier: "paid"
+    plan: "The Plan"
+    notes: "Admins can set the Okta SSO session expiration in days; the default is 14 and the maximum is 30."
+    source: "https://docs.semaphore.io/using-semaphore/okta"
+    checked: "2026-09-27"
+  api_token_controls:
+    support: "undocumented"
+    notes: "Users can reset their own API token and service account tokens can be regenerated; no admin policy over user tokens is described."

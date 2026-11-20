@@ -1,0 +1,57 @@
+name: "Aembit"
+category: "security"
+website: "https://aembit.io"
+description: "Aembit is a workload identity and access management platform that controls how software workloads and AI agents get credentials for the services they call. Values here cover signing in to and administering an Aembit Tenant."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "Admins can add SAML 2.0 or OIDC 1.0 identity providers so users sign in to the Aembit Tenant with SSO. Not enabled by default; Aembit support turns it on. No docs page names the plan."
+    source: "https://docs.aembit.io/user-guide/administration/identity-providers/create-idp-saml/"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    plan: "Identity Providers feature"
+    notes: "The Require Single Sign-On sign-on policy makes users authenticate through SSO; users with the Super Admin system role can still use username and password. The docs mark it a paid feature for tenants with the Identity Providers feature, but don't say which plan includes that."
+    source: "https://docs.aembit.io/user-guide/administration/sign-on-policy/"
+    checked: "2026-11-20"
+  scim:
+    support: "undocumented"
+    notes: "The docs describe users created by hand or automatically on first SSO sign-in. SCIM provisioning into the tenant isn't described."
+  mfa_enforcement:
+    support: "supported"
+    notes: "The Require multi-factor authentication for native sign-in policy makes native-login users enter an MFA code with their password. Users get a 24-hour grace period to enroll, then accounts without MFA are locked."
+    source: "https://docs.aembit.io/user-guide/administration/sign-on-policy/"
+    checked: "2026-11-20"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The sign-on policy mentions an MFA code. Security keys and passkeys aren't mentioned."
+  audit_logs:
+    support: "supported"
+    notes: "The Reporting dashboard's Audit Logs list events by category, including authentication, identity providers, roles, users and policies, with actor, target, result, client IP and JSON detail. The timespan filter goes back as far as 1 year or All; retention isn't stated. Log Streams can send events to S3, GCS, Splunk or CrowdStrike."
+    source: "https://docs.aembit.io/user-guide/audit-report/audit-logs/"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "supported"
+    notes: "Automatic user creation makes a new account when someone without one signs in through SSO, and assigns roles from mapped IdP group claims. Not enabled by default; Aembit support turns it on. No docs page names the plan."
+    source: "https://docs.aembit.io/user-guide/administration/identity-providers/automatic-user-creation/"
+    checked: "2026-11-20"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    notes: "Besides the SuperAdmin and Auditor system roles, admins can create roles with No Access, Read Only or Read/Write per resource type, and scope them to Resource Sets. No docs page names the plan."
+    source: "https://docs.aembit.io/user-guide/administration/roles/add-roles/"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "partial"
+    notes: "IdP group claims can be mapped to Aembit roles, but the mapping is used when automatic user creation makes a new account. For users who already exist, the docs say SSO just logs them in, so later group changes don't appear to update roles."
+    source: "https://docs.aembit.io/user-guide/administration/identity-providers/automatic-user-creation/"
+    checked: "2026-11-20"
+  session_controls:
+    support: "undocumented"
+    notes: "The docs cover viewing and revoking MCP user sessions on an identity provider, which are agent gateway sessions. Session length for the Aembit Tenant console isn't described."
+  api_token_controls:
+    support: "undocumented"

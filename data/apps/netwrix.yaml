@@ -1,0 +1,48 @@
+name: "Netwrix"
+category: "security"
+website: "https://netwrix.com"
+description: "Netwrix sells data security, auditing and identity products, mostly installed on-premises. Values here cover Netwrix 1Secure, its SaaS auditing and risk assessment service, and how admins sign in to and manage a 1Secure tenant."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["OIDC"]
+    notes: "Admins can set up SSO for a 1Secure tenant with Microsoft Entra ID or a generic OpenID Connect provider. Users must already be added to 1Secure to sign in. No docs page names the plan."
+    source: "https://docs.netwrix.com/docs/1secure/admin/login/sso"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "The docs describe switching the tenant's authentication settings to an SSO provider, but not whether 1Secure password login is then blocked."
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "supported"
+    notes: "With 1Secure's own authentication, every user must set up MFA (an authenticator app or a security key) the first time they log in. It isn't optional."
+    source: "https://docs.netwrix.com/docs/1secure/admin/login/"
+    checked: "2026-11-20"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Users can choose a security key as their MFA method when they first log in."
+    source: "https://docs.netwrix.com/docs/1secure/admin/login/"
+    checked: "2026-11-20"
+  audit_logs:
+    support: "supported"
+    notes: "The self-audit report under Configuration, Audit Logs lists configuration changes such as connectors, data sources and audit scope, with before and after values, since the organization was created. Only the managing service provider can generate it."
+    source: "https://docs.netwrix.com/docs/1secure/admin/searchandreports/auditlogs"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "The SSO page says users must already be added to 1Secure; it doesn't describe creating accounts on first sign-in."
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs list fixed roles (Administrator, Editor, Viewer, and Business Viewer and Co-managing Administrator for managed organizations). Custom roles aren't described."
+  group_role_mapping:
+    support: "undocumented"
+    notes: "Organization groups in 1Secure limit which managed organizations a user can see; they aren't IdP groups."
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"

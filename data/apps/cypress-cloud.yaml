@@ -1,0 +1,48 @@
+name: "Cypress Cloud"
+category: "development"
+website: "https://www.cypress.io"
+description: "Cypress Cloud records and analyzes test runs from the Cypress testing framework, with parallelization and flaky test reporting."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    protocols: ["SAML"]
+    notes: "SSO needs the Business or Enterprise plan and an organization owner to set it up. It connects over SAML to Okta, OneLogin or any SAML provider, or through an Azure AD app."
+    source: "https://docs.cypress.io/cloud/account-management/enterprise-sso"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Once SSO is set up, invites go through the IdP and the Cypress invite option is disabled. The doc doesn't say whether other sign-in methods are blocked."
+  scim:
+    support: "undocumented"
+    notes: "The SSO doc says revoking a user in the IdP removes their access, but it doesn't mention SCIM."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The SSO doc says MFA policies set in your IdP apply to Cypress Cloud. There's no Cypress setting of its own to require MFA."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The SSO doc says to contact support for Smart Card authentication. Nothing about passkeys."
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "Once SSO is on, users are invited through your IdP and added with the Member role when they first sign in."
+    source: "https://docs.cypress.io/cloud/account-management/enterprise-sso"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs list fixed roles (Viewer, Member, Team Admin, Org Admin, Owner). Nothing about custom roles."
+  group_role_mapping:
+    support: "undocumented"
+    notes: "SSO users start as Member, and an Owner or Admin changes their role in Cypress Cloud. Nothing about mapping IdP groups."
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"

@@ -1,0 +1,40 @@
+name: "Meltano"
+category: "infrastructure"
+website: "https://meltano.com"
+description: "Meltano is an open-source ELT tool with a hosted Meltano Cloud service for running data pipelines."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "partial"
+    notes: "Meltano Cloud supports signing in with a Microsoft account through Entra ID; the docs don't mention SAML or other identity providers."
+    source: "https://docs.meltano.com/releases/cloud/2026-06-04-cloud-changelog"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "partial"
+    notes: "Users on SSO-enforced domains are sent through Entra ID at login and on invitation with no password; this is Microsoft only, and the docs don't explain how a domain becomes enforced."
+    source: "https://docs.meltano.com/releases/cloud/2026-06-10-cloud-changelog"
+    checked: "2026-09-27"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+    notes: "Workspaces can limit invitations to approved email domains, but the docs don't describe verifying domain ownership."
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs list Owner, Administrator and Member roles and don't mention custom roles."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"
+    notes: "Each user has a Developer Token shown on the API Keys page; the docs don't describe scopes, expiry or admin controls."

@@ -1,0 +1,70 @@
+name: "Netlify"
+category: "development"
+website: "https://netlify.com"
+description: "Netlify is a platform for building, deploying and hosting websites and web apps. Values here cover signing in to and administering Netlify teams and organizations in the Netlify app."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML"]
+    notes: "Organization Owners can set up SAML SSO for all teams with a guided flow for many IdPs, and Team Owners can set up SAML SSO for a single team. Both are on Enterprise plans."
+    source: "https://docs.netlify.com/manage/security/secure-netlify-access/configure-organization-saml-sso/"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Owners can set login types to Only SSO allowed (strict), or to Only SSO allowed with an Owner fallback, which blocks email, Google and Git provider logins. Existing access tokens stop working until re-granted."
+    source: "https://docs.netlify.com/manage/security/secure-netlify-access/configure-team-saml-sso/"
+    checked: "2026-11-20"
+  scim:
+    support: "partial"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM Directory Sync provisions users into teams and roles from IdP groups and needs Organization SSO. The page doesn't say what happens in Netlify when a user is deactivated in the IdP."
+    source: "https://docs.netlify.com/manage/security/secure-netlify-access/directory-sync/"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "supported"
+    plan: "Pro"
+    notes: "Organization or Team Owners can set the 2FA policy to Enforced, which restricts access for members without 2FA. Available on the Pro plan or higher; no page shows whether Pro is the cheapest paid plan."
+    source: "https://docs.netlify.com/manage/security/secure-netlify-access/enforce-2fa/"
+    checked: "2026-11-20"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "Netlify 2FA uses an authenticator app with backup codes. The docs only suggest FIDO2 through your own identity provider, not security keys or passkeys on Netlify login."
+  audit_logs:
+    support: "supported"
+    plan: "Pro"
+    notes: "The team audit log records team and project changes with who made them and when, and can be filtered and sorted. Available on Pro and Enterprise plans; retention depends on the plan."
+    source: "https://docs.netlify.com/manage/accounts-and-billing/team-management/team-audit-log/"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "The Team SSO page says members provisioned through the IdP get a default role at first SSO login, but doesn't say a Netlify account is created at that point."
+  domain_verification:
+    support: "undocumented"
+    notes: "Enforcing Team SSO asks for the company email domain and removes members outside it, but the docs don't describe verifying domain ownership or claiming accounts."
+  custom_roles:
+    support: "undocumented"
+    notes: "Netlify has a fixed set of team roles such as Owner, Developer, Publisher, Internal Builder, Reviewer and Billing Admin. Owners can limit project access per member, but creating new roles isn't described."
+  group_role_mapping:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Organization Owners map IdP directory groups synced by SCIM to a Netlify team, role and site access, and only Organization Owners can then change those roles."
+    source: "https://docs.netlify.com/manage/security/secure-netlify-access/directory-sync/"
+    checked: "2026-11-20"
+  session_controls:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Team Owners set a session expiration for SSO sessions in the Team SSO login settings, after which members must log in again through the IdP."
+    source: "https://docs.netlify.com/manage/security/secure-netlify-access/configure-team-saml-sso/"
+    checked: "2026-11-20"
+  api_token_controls:
+    support: "undocumented"
+    notes: "Users set their own expiry on personal access tokens. When SSO is enforced, existing tokens are denied until re-granted with SSO, but admins listing or revoking other users' tokens isn't described."

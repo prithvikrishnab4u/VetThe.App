@@ -1,0 +1,68 @@
+name: "Temporal Cloud"
+category: "development"
+website: "https://temporal.io"
+description: "Managed cloud service for running Temporal durable execution workflows."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Developer"
+    protocols: ["SAML"]
+    notes: "SAML is included on every plan (Developer, Business, Enterprise, Mission Critical). Setup is finished through a support ticket."
+    source: "https://docs.temporal.io/cloud/manage-access/saml"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "partial"
+    notes: "Once SAML is set up, support can turn off Google and Microsoft social logins. The docs don't say email/password sign-in can be blocked."
+    source: "https://docs.temporal.io/best-practices/security-controls"
+    checked: "2026-09-27"
+  scim:
+    support: "supported"
+    tier: "add_on"
+    plan: "Add-on on Developer and Business ($500/month); included in Enterprise and Mission Critical"
+    notes: "Creates and removes users and syncs group membership. SAML has to be set up first."
+    source: "https://docs.temporal.io/cloud/pricing"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Users who sign up with email and password must use MFA with an authenticator app."
+    source: "https://docs.temporal.io/cloud/manage-access/"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    retention: "30 days"
+    notes: "Account Owners and Global Admins can view control-plane events in the UI or API, or stream them to AWS Kinesis or GCP Pub/Sub."
+    source: "https://docs.temporal.io/cloud/audit-logs"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "Docs only cover invited users being added through SAML."
+  domain_verification:
+    support: "undocumented"
+    notes: "IdP domains are mapped by support ticket; no verification step is described."
+  custom_roles:
+    support: "supported"
+    notes: "Pre-release. Custom permission sets can be assigned to users, groups, or service accounts."
+    source: "https://docs.temporal.io/cloud/manage-access/custom-roles"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "supported"
+    tier: "add_on"
+    plan: "SCIM add-on on Developer and Business; included in Enterprise and Mission Critical"
+    notes: "Groups synced over SCIM can be given roles and permissions."
+    source: "https://docs.temporal.io/cloud/manage-access/scim"
+    checked: "2026-09-27"
+  session_controls:
+    support: "supported"
+    notes: "Support can turn on Strict UI Session Mode for SAML sessions: 15-minute idle timeout and a 12-hour maximum session instead of 7 days."
+    source: "https://docs.temporal.io/best-practices/security-controls"
+    checked: "2026-09-27"
+  api_token_controls:
+    support: "supported"
+    notes: "Keys have expiry dates. Global Admins and Account Owners can view, disable, and delete any API key, and can stop users from creating keys."
+    source: "https://docs.temporal.io/cloud/api-keys"
+    checked: "2026-09-27"

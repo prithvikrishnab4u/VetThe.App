@@ -1,0 +1,48 @@
+name: "Hasura Cloud"
+category: "development"
+website: "https://hasura.io"
+description: "Hasura Cloud is a managed service for running the Hasura GraphQL Engine."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Cloud Enterprise"
+    protocols: ["SAML"]
+    notes: "SAML 2.0 SSO is set up through support; only SP-initiated login and HTTP POST binding are supported, with no single logout."
+    source: "https://hasura.io/docs/2.0/hasura-cloud/sso/"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Cloud Enterprise"
+    notes: "Once SSO is on for an org, emails on its domains can't use Google, GitHub or email login."
+    source: "https://hasura.io/docs/2.0/hasura-cloud/sso/"
+    checked: "2026-09-27"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+    notes: "You give support the email domains to use for SSO; no verification step is described."
+  custom_roles:
+    support: "undocumented"
+    notes: "Project collaborators are Admin or User; a User can be given Execute GraphQL and View Metrics permissions."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "not_supported"
+    notes: "The SSO docs say session expiry time is not configurable."
+    source: "https://hasura.io/docs/2.0/hasura-cloud/sso/"
+    checked: "2026-09-27"
+  api_token_controls:
+    support: "undocumented"
+    notes: "Users can create personal access tokens; no admin controls are described."

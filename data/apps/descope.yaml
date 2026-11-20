@@ -1,0 +1,63 @@
+name: "Descope"
+category: "security"
+website: "https://www.descope.com"
+description: "Descope is a customer identity and access management platform with drag-and-drop authentication flows, SSO, MFA and passkeys for apps and AI agents."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    notes: "Admins can set up SSO for the Descope console itself, for the people who manage the company (Descopers), through the SSO Setup Suite. The docs don't name the plan, and descope.com/pricing was not reachable from this session."
+    source: "https://docs.descope.com/management/company-settings"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    notes: "Once console SSO is configured, Enforce SSO makes Descopers log in through SSO. SSO Exclusions can list login IDs that may bypass it."
+    source: "https://docs.descope.com/management/company-settings"
+    checked: "2026-11-20"
+  scim:
+    support: "supported"
+    notes: "SCIM provisioning for the company can be set up in the SSO Setup Suite, so console access is managed by the IdP instead of JIT."
+    source: "https://docs.descope.com/management/company-settings"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Force MFA makes every Descoper go through MFA, choosing passkeys, SMS OTP or TOTP."
+    source: "https://docs.descope.com/management/company-settings"
+    checked: "2026-11-20"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Passkeys are one of the MFA methods Descopers can choose when Force MFA is on."
+    source: "https://docs.descope.com/management/company-settings"
+    checked: "2026-11-20"
+  audit_logs:
+    support: "supported"
+    notes: "Company-level audit events record project creation and deletion, management key changes, company setting changes and Descoper console logins, alongside project-level events. Retention isn't stated."
+    source: "https://docs.descope.com/audit-trails-and-integrations"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "supported"
+    notes: "Without SCIM, console access through SSO relies on just-in-time provisioning."
+    source: "https://docs.descope.com/management/company-settings"
+    checked: "2026-11-20"
+  domain_verification:
+    support: "undocumented"
+    notes: "Each console SSO configuration has its own SSO domains, but the docs don't describe verifying domain ownership or claiming accounts."
+  custom_roles:
+    support: "supported"
+    notes: "Besides the default Descoper roles, admins can add a custom role by naming it and choosing permission groups."
+    source: "https://docs.descope.com/management/company-settings"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "supported"
+    notes: "Role Mapping assigns full access, project roles or tag-based roles to Descopers by SSO group."
+    source: "https://docs.descope.com/management/company-settings"
+    checked: "2026-11-20"
+  session_controls:
+    support: "supported"
+    notes: "Company session settings set the console's session token duration, inactivity timeout and refresh token duration."
+    source: "https://docs.descope.com/management/company-settings"
+    checked: "2026-11-20"
+  api_token_controls:
+    support: "undocumented"
+    notes: "Management keys are company-level keys managed on the company page; the docs don't describe controls over keys individual Descopers create."

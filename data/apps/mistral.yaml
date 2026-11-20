@@ -1,0 +1,63 @@
+name: "Mistral AI"
+category: "productivity"
+website: "https://mistral.ai"
+description: "Mistral AI provides AI models through its API platform and the Le Chat assistant for teams and enterprises."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML"]
+    notes: "You need an Enterprise plan to configure SAML SSO; OIDC is not supported."
+    source: "https://docs.mistral.ai/admin/set-up-organization/sign-in-method/saml-sso"
+    checked: "2026-09-28"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Once SAML SSO is enabled, users whose email matches a verified domain are redirected to the identity provider and the password field is no longer shown."
+    source: "https://docs.mistral.ai/admin/set-up-organization/sign-in-method/saml-sso"
+    checked: "2026-09-28"
+  scim:
+    support: "undocumented"
+    notes: "Public docs refer to SCIM-managed profiles but have no SCIM setup page."
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Audit logs are available on Enterprise plans and viewed in the Admin Panel; export is not supported."
+    source: "https://docs.mistral.ai/admin/monitor-comply/audit-logs/overview"
+    checked: "2026-09-28"
+  jit_provisioning:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "With SAML SSO, the user's account is created on first sign-in through the identity provider."
+    source: "https://docs.mistral.ai/admin/set-up-organization/sign-in-method/saml-sso"
+    checked: "2026-09-28"
+  domain_verification:
+    support: "supported"
+    notes: "Domains are verified with a DNS TXT record; a verified domain is required for SAML SSO."
+    source: "https://docs.mistral.ai/admin/set-up-organization/verify-domain"
+    checked: "2026-09-28"
+  custom_roles:
+    support: "not_supported"
+    notes: "Docs state that roles are predefined, at Organization and Workspace scope."
+    source: "https://docs.mistral.ai/admin/identity-access/roles-permissions"
+    checked: "2026-09-28"
+  group_role_mapping:
+    support: "undocumented"
+    notes: "Groups can be assigned to a Workspace with a role and can be externally managed via SSO or SCIM, but mapping identity provider groups to roles is not described."
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "Organization Admins can create, review, rotate and delete API keys across Workspaces, and can set a maximum expiration policy for new keys."
+    source: "https://docs.mistral.ai/admin/identity-access/api-keys"
+    checked: "2026-09-28"

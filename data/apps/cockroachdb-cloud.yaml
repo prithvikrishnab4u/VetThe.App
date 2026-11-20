@@ -1,0 +1,56 @@
+name: "CockroachDB Cloud"
+category: "infrastructure"
+website: "https://www.cockroachlabs.com"
+description: "CockroachDB Cloud is a managed distributed SQL database service from Cockroach Labs."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "Cloud Organization SSO lets admins add custom SAML or OIDC authentication methods for IdPs like Okta, on top of the default GitHub, Google and Microsoft sign-in. The docs don't name a plan."
+    source: "https://www.cockroachlabs.com/docs/cockroachcloud/cloud-org-sso"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    notes: "With Cloud Organization SSO, admins can enable only SSO methods and disable password authentication to require SSO. Basic SSO can't enforce this."
+    source: "https://www.cockroachlabs.com/docs/cockroachcloud/configure-cloud-org-sso"
+    checked: "2026-09-27"
+  scim:
+    support: "supported"
+    notes: "SCIM creates, updates and deactivates Cloud organization users and can push groups. It needs Cloud Organization SSO and a service account with the Organization Admin role."
+    source: "https://www.cockroachlabs.com/docs/cockroachcloud/configure-scim-provisioning"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The docs only recommend turning on MFA at your SSO provider; they don't describe an in-app setting to require MFA."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    notes: "Organization Admins can view organization audit logs (cluster creation, members added or removed, and more) in the Console, and export them through the Cloud API."
+    source: "https://www.cockroachlabs.com/docs/cockroachcloud/organization-audit-logs-in-cloud-console"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    notes: "Autoprovisioning can be turned on per SSO method under Cloud Organization SSO; new users get an account with the Organization Member role on first sign-in."
+    source: "https://www.cockroachlabs.com/docs/cockroachcloud/cloud-org-sso"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+    notes: "Admins can limit an SSO method to allowed email domains, but that is an allowlist; the docs don't describe verifying a domain or claiming accounts on it."
+  custom_roles:
+    support: "undocumented"
+    notes: "The authorization docs only list fixed built-in roles such as Organization Admin, Cluster Admin and Cluster Developer."
+  group_role_mapping:
+    support: "supported"
+    notes: "With SCIM Group Push (Okta), admins can assign roles to a pushed group and its provisioned members get those roles automatically."
+    source: "https://www.cockroachlabs.com/docs/cockroachcloud/configure-scim-provisioning"
+    checked: "2026-09-27"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "API keys belong to service accounts that admins create on the Access Management page; admins can list each account's API keys, limit access through its roles, and delete keys."
+    source: "https://www.cockroachlabs.com/docs/cockroachcloud/managing-access"
+    checked: "2026-09-27"

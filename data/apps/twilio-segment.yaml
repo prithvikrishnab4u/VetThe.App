@@ -1,0 +1,81 @@
+name: "Segment"
+category: "sales_marketing"
+website: "https://segment.com"
+description: "Segment is a customer data platform from Twilio that collects, cleans, and routes customer event data to other tools."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Business"
+    protocols: ["SAML"]
+    notes: "SSO is available for Business Tier workspaces and works with SAML identity providers and GSuite."
+    source: "https://segment.com/docs/segment-app/iam/sso/"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Business"
+    notes: "Admins can turn on \"Require SSO\" in Advanced Settings so members must log in through SSO; exceptions can be set for specific users."
+    source: "https://segment.com/docs/segment-app/iam/sso/"
+    checked: "2026-09-27"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Business"
+    notes: "SCIM provisions users and groups and needs an SSO connection on the Business Tier. Deactivating or deleting a user removes them from the workspace, but the Segment account itself isn't deleted."
+    source: "https://segment.com/docs/segment-app/iam/scim/"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "supported"
+    tier: "free"
+    plan: "Free"
+    notes: "Workspace owners can require MFA for everyone in the workspace, on all plans. MFA uses SMS (US/Canada) or an authenticator app and doesn't apply to SSO logins."
+    source: "https://segment.com/docs/segment-app/iam/mfa/"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The MFA doc only lists SMS codes and authenticator apps."
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Business"
+    retention: "90 days"
+    notes: "The Audit Trail shows the last 90 days of user and system activity to Workspace Owners, and can be exported to an event stream source or CSV."
+    source: "https://segment.com/docs/segment-app/iam/audit-trail/"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Business"
+    notes: "New users who sign in through the IdP are created automatically as minimal-access members."
+    source: "https://segment.com/docs/segment-app/iam/sso/"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Business"
+    notes: "Domains are verified in Authentication > Domains with a meta tag or DNS TXT record, which lets users start SSO from the login page."
+    source: "https://segment.com/docs/segment-app/iam/sso/"
+    checked: "2026-09-27"
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs list built-in roles only and don't describe creating new ones."
+  group_role_mapping:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Business"
+    notes: "Groups pushed from the IdP over SCIM show up in Segment, where admins assign permissions to them."
+    source: "https://segment.com/docs/segment-app/iam/scim/"
+    checked: "2026-09-27"
+  session_controls:
+    support: "undocumented"
+    notes: "The docs say sessions last 7 days (15 minutes in HIPAA-eligible workspaces) but don't describe admin settings for this."
+  api_token_controls:
+    support: "supported"
+    tier: "paid"
+    plan: "Team"
+    notes: "Only Workspace Owners can create Public API tokens, with Owner or Member access. Tokens found exposed on GitHub are revoked automatically. The Public API is for Team and Business Tier customers."
+    source: "https://segment.com/docs/api/public-api/"
+    checked: "2026-09-27"

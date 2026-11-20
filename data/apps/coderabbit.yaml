@@ -1,0 +1,72 @@
+name: "CodeRabbit"
+category: "development"
+website: "https://www.coderabbit.ai"
+description: "CodeRabbit is an AI code review tool that reviews pull requests on GitHub, GitLab, Bitbucket and Azure DevOps."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML"]
+    notes: "Enterprise SSO signs users in through a SAML 2.0 identity provider. Without it, users sign in with their Git provider account."
+    source: "https://docs.coderabbit.ai/management/sso/index"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "After SSO is activated, users with a verified email domain must sign in through the identity provider."
+    source: "https://docs.coderabbit.ai/management/sso/okta-saml"
+    checked: "2026-11-20"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Okta or Entra ID SCIM adds, updates and deactivates workspace members."
+    source: "https://docs.coderabbit.ai/management/sso/scim"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The docs don't describe requiring MFA; sign-in goes through the Git provider or the SAML IdP."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The docs don't describe signing in with security keys or passkeys."
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Admins and Billing Admins can search a record of administrative actions such as settings, billing, seat and role changes, and pull it through the API. Retention isn't stated."
+    source: "https://docs.coderabbit.ai/management/audit-logs"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "The docs don't say whether accounts are created on first SSO sign-in."
+  domain_verification:
+    support: "partial"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Admins verify the email domain with a DNS TXT record during SSO setup, and users on that domain must then sign in through SSO. The docs don't describe taking over other accounts on the domain."
+    source: "https://docs.coderabbit.ai/management/sso/okta-saml"
+    checked: "2026-11-20"
+  custom_roles:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Enterprise admins can create named roles beyond Admin, Member and Billing Admin, setting no access, read or read-write per resource."
+    source: "https://docs.coderabbit.ai/management/custom-roles"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "partial"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM can map one identity provider group to the Admin role; general group-to-role mapping isn't described."
+    source: "https://docs.coderabbit.ai/management/sso/scim"
+    checked: "2026-11-20"
+  session_controls:
+    support: "undocumented"
+    notes: "The docs don't describe admin session controls."
+  api_token_controls:
+    support: "undocumented"
+    notes: "Enterprise workspaces have a shared API key; the docs don't describe controls over keys individual users create."

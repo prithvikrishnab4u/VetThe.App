@@ -7,7 +7,7 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "free"
+    tier: "paid"
     plan: "All Culture Amp subscriptions"
     protocols: ["SAML"]
     notes: "Also supports 'Sign in with Google'; available to Account Administrators on any plan."
@@ -15,7 +15,7 @@ capabilities:
     checked: "2026-09-22"
   sso_enforcement:
     support: "supported"
-    tier: "free"
+    tier: "paid"
     plan: "All Culture Amp subscriptions"
     notes: "Support recommends disabling Email and Google sign-in to make SSO the only login method; Culture Amp's support team performs this on request."
     source: "https://support.cultureamp.com/en/articles/7048521-single-sign-on"

@@ -1,0 +1,56 @@
+name: "Delinea"
+category: "security"
+website: "https://delinea.com"
+description: "Delinea sells privileged access management products, including Secret Server and the cloud Delinea Platform. Values here cover signing in to and administering the Delinea Platform tenant."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "Users can sign in to the Delinea Platform through a federated SAML or OIDC identity provider, chosen by the domain of their user ID. Delinea has guides for Entra ID, Okta, Google, Ping, OneLogin, AD FS and others. No docs page names the plan."
+    source: "https://docs.delinea.com/online-help/delinea-platform/federation/index.htm"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Delinea's tenant hardening guide recommends federated identity for everyone and break-glass local accounts, but the docs don't describe a setting that blocks local sign-in."
+  scim:
+    support: "supported"
+    notes: "The Delinea SCIM Cloud lets an IAM or IGA provider create, update and delete users and manage groups and membership over SCIM 2.0. Delinea has setup guides for Okta, Entra ID and SailPoint. No docs page names the plan."
+    source: "https://docs.delinea.com/online-help/delinea-platform/scim/scim-connector.htm"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Admins enable MFA with identity policies that apply to all web logins, assigned to specific groups or globally to every user in the tenant, with the challenges set in authentication profiles."
+    source: "https://docs.delinea.com/online-help/delinea-platform/authentication/auth-policies/index.htm"
+    checked: "2026-11-20"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Users can authenticate with FIDO2 hardware security keys or on-device authenticators. The newer passkey settings, including whether synced passkeys are allowed, are in public preview."
+    source: "https://docs.delinea.com/online-help/delinea-platform/authentication/hw-security-keys/configuring-passkeys.htm"
+    checked: "2026-11-20"
+  audit_logs:
+    support: "supported"
+    notes: "The Audit Log lists events across platform services, including identity, federation, MFA, permissions, policy and tenant changes, with filters. The date filter goes back up to 60 days; retention isn't stated."
+    source: "https://docs.delinea.com/online-help/delinea-platform/insights/audit-log/event-log.htm"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "The federation docs describe federated users and mapping them to groups, but don't say whether a platform account is created on first sign-in."
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    notes: "Besides the built-in Platform User and Platform Admin roles, admins can create, edit and delete custom roles. No docs page names the plan."
+    source: "https://docs.delinea.com/online-help/delinea-platform/roles-permissions/index.htm"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "supported"
+    notes: "Admins map IdP group Object IDs from the groups claim to platform groups, manually or automatically. At each login the user joins the mapped groups and inherits their roles."
+    source: "https://docs.delinea.com/online-help/delinea-platform/federation/fed-management.htm"
+    checked: "2026-11-20"
+  session_controls:
+    support: "undocumented"
+    notes: "Authentication profiles set how long a completed challenge suppresses step-up prompts, which is not a session length. Session recording in Delinea is about privileged sessions to target systems."
+  api_token_controls:
+    support: "undocumented"

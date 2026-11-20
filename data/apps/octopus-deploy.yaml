@@ -1,0 +1,61 @@
+name: "Octopus Deploy"
+category: "development"
+website: "https://octopus.com"
+description: "Octopus Deploy is a release and deployment automation platform, available as Octopus Cloud or self-hosted Octopus Server."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["OIDC"]
+    notes: "Octopus Cloud supports Microsoft Entra ID, Okta, Google Workspace and generic OpenID Connect providers; no plan is named."
+    source: "https://octopus.com/docs/security/authentication/auth-provider-compatibility"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "The username and password provider can be disabled, but the docs don't say whether Octopus ID sign-in can be turned off on Octopus Cloud."
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM 2 user and group provisioning works only with Microsoft Entra ID and needs a license that includes SCIM, such as Enterprise."
+    source: "https://octopus.com/docs/security/authentication/scim"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The docs recommend using an identity provider that supports MFA; Octopus has no setting of its own to require it."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    retention: "90 days by default, configurable up to 365 days on Cloud; older entries are archived as downloadable files"
+    notes: "Every create, edit and delete action is logged with who did it. Streaming to a SIEM is for enterprise-tier customers."
+    source: "https://octopus.com/docs/security/users-and-teams/auditing"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    notes: "OpenID Connect providers create a user automatically the first time someone signs in; this can be turned off."
+    source: "https://octopus.com/docs/security/authentication/auto-user-creation"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    notes: "Admins can create custom user roles with any combination of permissions and assign them to teams."
+    source: "https://octopus.com/docs/security/users-and-teams/user-roles"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "supported"
+    notes: "On Octopus Cloud, Entra ID and Okta groups can be added as members of Octopus teams; this doesn't work through Octopus ID."
+    source: "https://octopus.com/docs/security/authentication/auth-provider-compatibility"
+    checked: "2026-09-27"
+  session_controls:
+    support: "supported"
+    notes: "Admins can set the session timeout and maximum session duration, and can revoke a user's sessions."
+    source: "https://octopus.com/docs/security/users-and-teams/timeouts-and-invalidation"
+    checked: "2026-09-27"
+  api_token_controls:
+    support: "supported"
+    notes: "API keys can have an expiry date, and from 2025.4 the server enforces a configurable maximum expiry (366 days by default)."
+    source: "https://octopus.com/docs/api/authentication/create-an-api-key"
+    checked: "2026-09-27"

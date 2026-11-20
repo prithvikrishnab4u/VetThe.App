@@ -1,0 +1,57 @@
+name: "Semgrep"
+category: "security"
+website: "https://semgrep.dev"
+description: "Semgrep is a code security platform for static analysis, supply chain, and secrets scanning."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "SAML and OIDC SSO are supported on plans that include SSO; the docs don't name the plan and say to contact Semgrep to set it up. OIDC isn't supported with Entra ID."
+    source: "https://docs.semgrep.dev/deployment/sso"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    notes: "Once SSO is on, admins can turn off GitHub and GitLab login so members with an approved-domain email have to sign in through SSO."
+    source: "https://docs.semgrep.dev/deployment/sso"
+    checked: "2026-09-27"
+  scim:
+    support: "partial"
+    notes: "SCIM is in beta (contact your account team to join), needs SSO, and only works with Okta and Entra ID on multi-tenant deployments."
+    source: "https://docs.semgrep.dev/deployment/scim"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Sign-in goes through GitHub, GitLab, or SSO; no Semgrep setting to require MFA is described."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+    notes: "The docs mention scan and findings history for compliance, not a log of user or admin activity."
+  jit_provisioning:
+    support: "supported"
+    notes: "Any user at the configured SSO domain who signs in gets access; new SSO accounts get the Member role by default, which admins can change."
+    source: "https://docs.semgrep.dev/deployment/sso"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+    notes: "An email domain is set during SSO setup, but no verification step is described."
+  custom_roles:
+    support: "undocumented"
+    notes: "Only the built-in roles (Admin, Manager, Member, Read-only) are documented."
+  group_role_mapping:
+    support: "partial"
+    notes: "Only through beta SCIM: IdP groups map to Admin, Member, or Read-only, and groups named with a team prefix create Semgrep teams."
+    source: "https://docs.semgrep.dev/deployment/scim"
+    checked: "2026-09-27"
+  session_controls:
+    support: "not_supported"
+    notes: "Sessions last 7 days and the docs say this timeout isn't configurable."
+    source: "https://docs.semgrep.dev/deployment/checklist"
+    checked: "2026-09-27"
+  api_token_controls:
+    support: "supported"
+    notes: "Admins see API, CLI, and service tokens under Settings > Tokens and can revoke any of them. API tokens stay valid until revoked, even if the creator leaves."
+    source: "https://docs.semgrep.dev/deployment/tokens"
+    checked: "2026-09-27"

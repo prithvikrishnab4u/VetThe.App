@@ -1,0 +1,49 @@
+name: "Kinde"
+category: "security"
+website: "https://kinde.com"
+description: "Kinde is an authentication and user management platform for adding sign-in, organizations and billing to apps."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    plan: "Scale or Enterprise"
+    protocols: ["SAML"]
+    notes: "Team members can sign in to the Kinde dashboard through an enterprise connection such as SAML or Entra ID, set up on request to Kinde, on the Scale or Enterprise plan."
+    source: "https://docs.kinde.com/get-started/team-and-account/enterprise-access-to-kinde/"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+    notes: "The docs don't mention SCIM for provisioning team members to the Kinde dashboard."
+  mfa_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Paid plans"
+    notes: "MFA for Kinde dashboard access is set up by contacting support and can apply to the whole team or only certain roles; not available on the free plan."
+    source: "https://docs.kinde.com/get-started/team-and-account/mfa-for-kinde-access/"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The team MFA page lists email code, SMS code and authenticator app, not passkeys or security keys."
+  audit_logs:
+    support: "undocumented"
+    notes: "The documented audit log covers end-user auth events like sign-ups and tokens, not team member activity in the dashboard."
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs list only pre-defined team member roles (Owner, Admin, and specialist roles on paid plans); custom roles aren't mentioned."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+    notes: "Session settings in the docs apply to end users of your app, not to the Kinde dashboard."
+  api_token_controls:
+    support: "supported"
+    notes: "Management API access goes through machine-to-machine apps whose scopes admins choose and can change at any time."
+    source: "https://docs.kinde.com/developer-tools/kinde-api/about-m2m-scopes/"
+    checked: "2026-09-27"

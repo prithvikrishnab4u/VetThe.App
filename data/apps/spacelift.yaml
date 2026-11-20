@@ -1,0 +1,75 @@
+name: "Spacelift"
+category: "development"
+website: "https://spacelift.io"
+description: "Spacelift is an infrastructure-as-code orchestration platform for Terraform, OpenTofu, Pulumi, Ansible and Kubernetes workflows."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Any paid plan (OIDC); Enterprise for SAML"
+    protocols: ["SAML", "OIDC"]
+    notes: "OIDC SSO is available to paid accounts and SAML SSO to Enterprise. Without SSO, users log in with GitHub, GitLab or Google."
+    source: "https://docs.spacelift.io/integrations/single-sign-on"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Any paid plan (OIDC); Enterprise for SAML"
+    notes: "Once SSO is configured, the managed identity provider used to create the account is disabled, so users must sign in through SSO. It is re-enabled if SSO is turned off."
+    source: "https://docs.spacelift.io/integrations/single-sign-on"
+    checked: "2026-11-20"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM 2.0 syncs users and groups from the IdP. It doesn't assign permissions by itself; group roles come from the groups sent at login."
+    source: "https://docs.spacelift.io/integrations/single-sign-on/scim"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Organization admins can enforce MFA so every active user must have a registered security key. MFA needs the Enterprise plan with SSO enabled."
+    source: "https://docs.spacelift.io/product/security/mfa"
+    checked: "2026-11-20"
+  phishing_resistant_mfa:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Spacelift's own MFA uses registered security keys, on top of SSO."
+    source: "https://docs.spacelift.io/product/security/mfa"
+    checked: "2026-11-20"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    retention: "30 days"
+    notes: "Admins can view audit trail logs in account settings and forward them to a webhook."
+    source: "https://docs.spacelift.io/integrations/audit-trail"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "The SSO page says the first user to log in becomes the SSO Admin, but it doesn't say whether accounts are created for other users on first sign-in."
+  domain_verification:
+    support: "undocumented"
+    notes: "The docs don't describe verifying an email domain."
+  custom_roles:
+    support: "supported"
+    notes: "Admins create custom RBAC roles from individual permissions under Access Control Center > Roles. The page doesn't name a plan."
+    source: "https://docs.spacelift.io/concepts/authorization/rbac-system"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "supported"
+    notes: "IdP groups sent at login can be mapped and given role bindings, which apply to every member of the group."
+    source: "https://docs.spacelift.io/concepts/authorization/assigning-roles-groups"
+    checked: "2026-11-20"
+  session_controls:
+    support: "undocumented"
+    notes: "Enforcing MFA or changing a login policy invalidates other users' sessions, but the docs don't describe a session length setting or signing out a chosen user."
+  api_token_controls:
+    support: "supported"
+    notes: "Admins turn personal API keys on or off for the account, root administrators can see every active key with its owner, and an administrator can revoke a key. Keys expire within 180 days at most."
+    source: "https://docs.spacelift.io/integrations/personal-api-keys"
+    checked: "2026-11-20"

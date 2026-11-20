@@ -1,0 +1,40 @@
+name: "Permit.io"
+category: "security"
+website: "https://www.permit.io"
+description: "Permit.io is an authorization-as-a-service platform for managing application permissions and policies."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "undocumented"
+    notes: "The docs don't cover SSO for signing in to the Permit dashboard."
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+    notes: "The documented SCIM integration provisions your app's users into a Permit environment, not workspace members."
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    notes: "The activity log shows who made each administrative change in the workspace, filterable by date and member, and is also readable through the API."
+    source: "https://docs.permit.io/manage-your-account/permit-logs"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "Members get fixed Owner, Editor or Viewer roles at workspace, project or environment level; custom member roles aren't mentioned."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "API keys can be scoped to the organization, a project or an environment, and can be rotated or deleted from the dashboard."
+    source: "https://docs.permit.io/manage-your-account/workspace-settings"
+    checked: "2026-09-27"

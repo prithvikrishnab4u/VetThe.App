@@ -1,0 +1,41 @@
+name: "Clerk"
+category: "security"
+website: "https://clerk.com"
+description: "Clerk is an authentication and user management platform for developers."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "undocumented"
+    notes: "Clerk's enterprise SSO docs cover sign-in for your app's users; the docs don't describe SSO for Clerk Dashboard team members."
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+    notes: "The docs don't describe SCIM provisioning of Clerk Dashboard team members."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The docs don't describe requiring MFA for Clerk Dashboard team members."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    retention: "30 days on Business; custom on Enterprise"
+    notes: "Admin Logs record workspace admin actions made through the Dashboard, Backend API or Platform API; they're available on the Business and Enterprise plans only."
+    source: "https://clerk.com/docs/guides/dashboard/logs/overview"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "The team access docs list five fixed workspace Roles (Owner, Admin, Developer, Support, Viewer) and don't mention custom roles."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"

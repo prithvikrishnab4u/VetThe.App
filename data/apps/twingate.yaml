@@ -1,0 +1,61 @@
+name: "Twingate"
+category: "security"
+website: "https://www.twingate.com"
+description: "Twingate is a zero trust network access platform that replaces VPNs with identity-based access to private resources."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Teams (Google Workspace); Business for Okta, Entra ID and others"
+    notes: "Users sign in through the connected identity provider or a social login; Twingate has no password of its own. Google Workspace is on Teams, and Okta, Entra ID and other enterprise IdPs need Business."
+    source: "https://www.twingate.com/pricing"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "There is no Twingate password to switch off, but accounts can mix an enterprise IdP with social logins. The docs don't describe a setting that blocks social login once an IdP is connected."
+  scim:
+    support: "supported"
+    tier: "paid"
+    plan: "Business"
+    notes: "Okta, Entra ID, JumpCloud and OneLogin sync users and groups over SCIM. The pricing page lists user provisioning and management via IdP on Business."
+    source: "https://www.twingate.com/pricing"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Twingate's native MFA can be required by the Sign In Policy for every client sign-in, by Resource Policies, or for the Admin Console."
+    source: "https://www.twingate.com/docs/two-factor-authentication"
+    checked: "2026-11-20"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Native MFA accepts biometrics and FIDO2 security keys over WebAuthn. Users must also set up TOTP as a backup."
+    source: "https://www.twingate.com/docs/two-factor-authentication"
+    checked: "2026-11-20"
+  audit_logs:
+    support: "supported"
+    notes: "Admins can export audit logs of create, edit, delete and connect events across access, API keys, devices, policies, users and groups, or sync them to S3. The pricing comparison table didn't show which plans include admin audit logs."
+    source: "https://www.twingate.com/docs/audit-logs"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "Users and groups are synced from the IdP; the docs don't describe accounts being created on first sign-in."
+  domain_verification:
+    support: "undocumented"
+    notes: "The docs don't describe verifying an email domain."
+  custom_roles:
+    support: "undocumented"
+    notes: "Twingate has preset admin roles (Admin, DevOps, Helpdesk, Billing and others). The docs don't describe creating custom roles."
+  group_role_mapping:
+    support: "supported"
+    notes: "Groups synced from the IdP can be given Resources and access policies in Twingate, and membership is managed in the IdP."
+    source: "https://www.twingate.com/docs/groups"
+    checked: "2026-11-20"
+  session_controls:
+    support: "supported"
+    notes: "The Sign In Policy sets how often users must re-authenticate through the IdP, from every 7 to every 31 days."
+    source: "https://www.twingate.com/docs/sign-in-policy"
+    checked: "2026-11-20"
+  api_token_controls:
+    support: "undocumented"
+    notes: "API tokens are created by admins in the Admin Console; the docs don't describe controls over tokens other users create."

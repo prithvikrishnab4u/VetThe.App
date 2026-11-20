@@ -1,0 +1,34 @@
+name: "Hanko"
+category: "security"
+website: "https://www.hanko.io"
+description: "Hanko is an open-source authentication and user management platform focused on passkeys."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "undocumented"
+    notes: "Hanko's enterprise SSO docs cover sign-in for your app's users; the docs don't describe SSO for Hanko Cloud Console members."
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The docs don't describe requiring MFA for Hanko Cloud Console members."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+    notes: "The Admin API audit logs cover your app's user events; the docs don't describe a log of Cloud Console admin actions."
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"

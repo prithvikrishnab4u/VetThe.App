@@ -1,0 +1,79 @@
+name: "GitGuardian"
+category: "security"
+website: "https://www.gitguardian.com"
+description: "GitGuardian detects hardcoded secrets in source code, CI pipelines and collaboration tools, and plants honeytokens to catch leaks."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Growth"
+    protocols: ["SAML"]
+    notes: "SAML 2.0 SSO and SCIM are included on Growth and Enterprise, not on Free."
+    source: "https://docs.gitguardian.com/platform/user-account/plan-usage"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Growth"
+    notes: "With Force SSO on, every workspace member must sign in through the IdP; with it off, members can still sign up by email."
+    source: "https://docs.gitguardian.com/platform/enterprise-administration/saml-sso-configuration"
+    checked: "2026-11-20"
+  scim:
+    support: "supported"
+    tier: "paid"
+    plan: "Growth"
+    notes: "SCIM creates, updates, deactivates and deletes users and manages teams from Okta, Entra ID or JumpCloud. It needs SAML SSO configured first."
+    source: "https://docs.gitguardian.com/platform/enterprise-administration/scim-configuration"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Since 9 March 2026 every SaaS account that logs in with email and password gets email-verification MFA at login and before sensitive actions. SSO users rely on their IdP's MFA."
+    source: "https://docs.gitguardian.com/support/customer-notices/mfa-email-password-logins-2026-03-09"
+    checked: "2026-11-20"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "Native MFA is an email code; the docs don't describe security keys or passkeys."
+  audit_logs:
+    support: "supported"
+    tier: "free"
+    plan: "Free"
+    retention: "12 months on Growth, unlimited on Enterprise"
+    notes: "Owners and Managers can search the audit log of user activity, with actor, event, date and IP address. The plan table lists it on every plan."
+    source: "https://docs.gitguardian.com/platform/user-account/plan-usage"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "supported"
+    tier: "paid"
+    plan: "Growth"
+    notes: "Users authorized in the IdP are registered automatically on their first SAML login, with a default access level."
+    source: "https://docs.gitguardian.com/platform/enterprise-administration/saml-sso-configuration"
+    checked: "2026-11-20"
+  domain_verification:
+    support: "partial"
+    tier: "paid"
+    plan: "Growth"
+    notes: "After SSO is set up, a workspace can reserve its email domains. That stops new sign-ups and separate workspaces on the domain and routes users to SSO, but users who already have their own workspace are not affected."
+    source: "https://docs.gitguardian.com/platform/enterprise-administration/email-domain-management"
+    checked: "2026-11-20"
+  custom_roles:
+    support: "undocumented"
+    notes: "Members get one of the preset access levels (Owner, Manager, Member and others); the docs don't describe custom roles."
+  group_role_mapping:
+    support: "supported"
+    tier: "paid"
+    plan: "Growth"
+    notes: "SCIM provisions and manages GitGuardian teams from IdP groups, and teams set which incidents members can see."
+    source: "https://docs.gitguardian.com/platform/enterprise-administration/scim-configuration"
+    checked: "2026-11-20"
+  session_controls:
+    support: "undocumented"
+    notes: "The docs don't describe admin session controls."
+  api_token_controls:
+    support: "supported"
+    tier: "paid"
+    plan: "Growth"
+    notes: "On Growth and Enterprise, workspace Managers can view, filter and revoke the personal access tokens of all members."
+    source: "https://docs.gitguardian.com/api-docs/personal-access-tokens"
+    checked: "2026-11-20"

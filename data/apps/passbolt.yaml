@@ -1,0 +1,53 @@
+name: "Passbolt"
+category: "security"
+website: "https://www.passbolt.com"
+description: "Passbolt is an open source password manager for teams, offered self-hosted or as Passbolt Cloud."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["OIDC"]
+    notes: "Available in the Pro and Cloud editions; providers include Microsoft Entra ID, Google, AD FS, Okta and Keycloak via OpenID Connect."
+    source: "https://www.passbolt.com/docs/admin/authentication/sso/"
+    checked: "2026-09-28"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "supported"
+    notes: "Pro and Cloud editions; user provisioning from Microsoft Entra ID or Okta through the /Users endpoints."
+    source: "https://www.passbolt.com/docs/admin/user-provisioning/scim/"
+    checked: "2026-09-28"
+  mfa_enforcement:
+    support: "partial"
+    notes: "The MFA policy can only prompt users to set up MFA; the docs say it does not block sign-in or make MFA mandatory."
+    source: "https://www.passbolt.com/docs/admin/authentication/mfa-policy/"
+    checked: "2026-09-28"
+  phishing_resistant_mfa:
+    support: "not_supported"
+    notes: "Only YubiKey OTP is supported; security keys with FIDO2/U2F/WebAuthn support are not supported."
+    source: "https://www.passbolt.com/docs/admin/authentication/mfa/yubikey/"
+    checked: "2026-09-28"
+  audit_logs:
+    support: "partial"
+    notes: "Pro and Cloud editions show resource and folder activity; exports are not recorded and updates do not show which fields changed."
+    source: "https://www.passbolt.com/docs/admin/audit-log/"
+    checked: "2026-09-28"
+  jit_provisioning:
+    support: "supported"
+    notes: "With self-registration enabled, users present in the identity provider can self-register through SSO."
+    source: "https://www.passbolt.com/docs/admin/authentication/sso/google/"
+    checked: "2026-09-28"
+  domain_verification:
+    support: "undocumented"
+    notes: "Self-registration can be limited to allowed email domains, but domain ownership verification is not described."
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs describe admin and user system roles plus allow/deny settings for functionalities; creating custom roles is not described."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+    notes: "Session timeout is documented only for self-hosted CE and Pro via PHP settings."
+  api_token_controls:
+    support: "undocumented"

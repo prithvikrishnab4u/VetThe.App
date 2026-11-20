@@ -1,0 +1,58 @@
+name: "Codefresh"
+category: "development"
+website: "https://codefresh.io"
+description: "Codefresh is a CI/CD and GitOps platform built on Argo for deploying to Kubernetes."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "Federated SSO works with SAML 2.0 identity providers and OpenID Connect providers. LDAP is also an option."
+    source: "https://docs.codefresh.io/docs/administration/single-sign-on/"
+    checked: "2026-09-28"
+  sso_enforcement:
+    support: "supported"
+    notes: "Once SSO is turned on for a user, Codefresh blocks their logins through other providers. Admins can also hide login options on the sign-in page."
+    source: "https://docs.codefresh.io/docs/administration/single-sign-on/saml/"
+    checked: "2026-09-28"
+  scim:
+    support: "undocumented"
+    notes: "SCIM isn't mentioned. Users and teams are synced from some IdPs through Codefresh's own team sync instead."
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    notes: "Logs all API-driven actions from the UI, CLI and integrations, with filtering and CSV export. How far back it goes depends on your pricing tier."
+    source: "https://docs.codefresh.io/docs/administration/account-user-management/audit/"
+    checked: "2026-09-28"
+  jit_provisioning:
+    support: "supported"
+    notes: "For Okta SAML, the docs say to use the auto-sync and activate user options for just-in-time provisioning."
+    source: "https://docs.codefresh.io/docs/administration/single-sign-on/saml/saml-okta/"
+    checked: "2026-09-28"
+  domain_verification:
+    support: "undocumented"
+    notes: "Admins can limit invitations to listed email domains, but there's no domain ownership check in the docs."
+  custom_roles:
+    support: "partial"
+    notes: "There are only two roles, Admin and User. Finer access comes from attribute-based rules that combine teams, tags and CRUD permissions."
+    source: "https://docs.codefresh.io/docs/administration/account-user-management/access-control/"
+    checked: "2026-09-28"
+  group_role_mapping:
+    support: "supported"
+    notes: "Team sync pulls teams from Azure, Okta, Google and other IdPs into Codefresh teams, which access rules are built on. Automatic sync works only for some providers."
+    source: "https://docs.codefresh.io/docs/administration/single-sign-on/team-sync/"
+    checked: "2026-09-28"
+  session_controls:
+    support: "supported"
+    notes: "Admins can set an inactivity timeout of up to 30 days; users get a warning 15 minutes before being logged out."
+    source: "https://docs.codefresh.io/docs/administration/account-user-management/add-users/"
+    checked: "2026-09-28"
+  api_token_controls:
+    support: "supported"
+    notes: "Service accounts can hold multiple API keys; you pick scopes for each key and can edit the scopes or delete the key later."
+    source: "https://docs.codefresh.io/docs/administration/account-user-management/service-accounts/"
+    checked: "2026-09-28"

@@ -1,0 +1,67 @@
+name: "Dynatrace"
+category: "infrastructure"
+website: "https://dynatrace.com"
+description: "Dynatrace is an observability and application security platform. Values here cover signing in to and administering Dynatrace SaaS, including Account Management and its environments."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "Admins verify a domain and add a SAML 2.0 configuration under Identity & access management, scoped to the account, specific environments, or globally. No docs page names the plan."
+    source: "https://docs.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-saml"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    notes: "With global federation, users from the verified domain are always redirected to the IdP and can't sign in with credentials. With account or environment federation they can still sign in with credentials, without SAML groups."
+    source: "https://docs.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-saml"
+    checked: "2026-11-20"
+  scim:
+    support: "supported"
+    notes: "SCIM 2.0 syncs users and groups from the IdP, and disabling or removing a user in the IdP disables them in Dynatrace. Only users from verified domains can be provisioned. No docs page names the plan."
+    source: "https://docs.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-scim"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "partial"
+    notes: "Account admins can enforce MFA per environment for non-federated users, by email code or TOTP. The docs say MFA can't be forced on all non-federated users at the account level. No docs page names the plan."
+    source: "https://docs.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-mfa/environment-mfa"
+    checked: "2026-11-20"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The MFA docs describe email codes and TOTP authenticator apps only. Security keys or passkeys for Dynatrace sign-in aren't mentioned."
+  audit_logs:
+    support: "supported"
+    retention: "Up to 10 years (3650 days)"
+    notes: "The Account Management audit log records IAM changes such as group permissions, memberships, policies and boundaries, viewable in the UI or via API. The docs say some IAM and login events aren't recorded yet."
+    source: "https://docs.dynatrace.com/docs/manage/account-management/audit-logs"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "supported"
+    notes: "With SAML federation, a user who doesn't exist in Dynatrace is created automatically at sign-in, and federated users are created or updated on the fly. No docs page names the plan."
+    source: "https://docs.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-saml"
+    checked: "2026-11-20"
+  domain_verification:
+    support: "partial"
+    notes: "Domains are verified with a DNS TXT record before SAML or SCIM can be set up, and sign-ins from that domain are routed to the IdP. Moving an existing user's login to IdP control needs Dynatrace Support."
+    source: "https://docs.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-saml"
+    checked: "2026-11-20"
+  custom_roles:
+    support: "supported"
+    notes: "Admins create named IAM policies from individual permission statements and bind them to groups for the account or specific environments. No docs page names the plan."
+    source: "https://docs.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "supported"
+    notes: "Admins map IdP group claims to Dynatrace groups, and membership is checked at each SAML sign-in. SCIM also syncs groups, but permissions on SCIM groups are assigned in Dynatrace. No docs page names the plan."
+    source: "https://docs.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-saml"
+    checked: "2026-11-20"
+  session_controls:
+    support: "not_supported"
+    notes: "Session limits are system-wide and not adjustable: 12 hours maximum session validity and a 1-hour inactivity timeout."
+    source: "https://docs.dynatrace.com/docs/manage/identity-access-management/iam-limits"
+    checked: "2026-11-20"
+  api_token_controls:
+    support: "supported"
+    notes: "Account admins can disable or delete platform tokens created by any user in the account, and can turn off platform token creation for the whole account. No docs page names the plan."
+    source: "https://docs.dynatrace.com/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens"
+    checked: "2026-11-20"

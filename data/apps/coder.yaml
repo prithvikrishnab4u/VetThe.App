@@ -1,0 +1,66 @@
+name: "Coder"
+category: "development"
+website: "https://coder.com"
+description: "Coder is a self-hosted platform for running cloud development environments on your own infrastructure."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["OIDC"]
+    notes: "OpenID Connect login works with any OIDC provider. GitHub OAuth login is also available. Coder is self-hosted, so you configure this on your own deployment."
+    source: "https://coder.com/docs/admin/users/oidc-auth"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    notes: "Setting CODER_DISABLE_PASSWORD_AUTH=true turns off email and password login."
+    source: "https://coder.com/docs/admin/users/password-auth"
+    checked: "2026-09-27"
+  scim:
+    support: "partial"
+    tier: "enterprise"
+    plan: "Premium"
+    notes: "Only covers users: provisioning, listing and deprovisioning (deprovisioned users get suspended, not deleted). Coder says it isn't a full SCIM 2.0 implementation."
+    source: "https://coder.com/docs/admin/users/oidc-auth"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The docs say to enforce MFA in your identity provider."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Premium"
+    retention: "Configurable via CODER_AUDIT_LOGS_RETENTION"
+    source: "https://coder.com/docs/admin/security/audit-logs"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+    notes: "CODER_OIDC_EMAIL_DOMAIN limits which email domains can log in, but that's not domain verification."
+  custom_roles:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Premium"
+    notes: "Custom roles can be created at the organization level (since v2.16.0)."
+    source: "https://coder.com/docs/admin/users/groups-roles"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Premium"
+    notes: "IdP sync maps OIDC claims to Coder groups, roles and organizations."
+    source: "https://coder.com/docs/admin/users/idp-sync"
+    checked: "2026-09-27"
+  session_controls:
+    support: "supported"
+    notes: "Sessions last 24 hours by default and refresh while in use. CODER_SESSION_DURATION changes the length, and CODER_DISABLE_SESSION_EXPIRY_REFRESH turns off the refresh."
+    source: "https://coder.com/docs/admin/users/sessions-tokens"
+    checked: "2026-09-27"
+  api_token_controls:
+    support: "supported"
+    notes: "CODER_MAX_TOKEN_LIFETIME caps how long tokens can live. Tokens can be scoped and expired."
+    source: "https://coder.com/docs/admin/users/sessions-tokens"
+    checked: "2026-09-27"

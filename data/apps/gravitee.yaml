@@ -1,0 +1,54 @@
+name: "Gravitee"
+category: "development"
+website: "https://www.gravitee.io"
+description: "Gravitee is an API management platform for designing, securing and running APIs and event streams."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["OIDC"]
+    notes: "Gravitee Cloud sign-in can be federated with your IdP over OAuth 2.0 and OpenID Connect; the docs call SSO an enterprise feature."
+    source: "https://documentation.gravitee.io/gravitee-cloud/guides/configure-sso"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "The SSO guide recommends keeping the Account Primary Owner as a non-SSO user and does not describe requiring SSO."
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise Edition"
+    notes: "The API Management Console has an Audit Trail of events you can filter by event, type and date, with patch details; it is an Enterprise Edition feature."
+    source: "https://documentation.gravitee.io/apim/4.12/analyze-and-monitor-apis/audit-trail"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise Edition"
+    notes: "API Management lets admins create custom roles with their own create, read, update and delete permissions at each scope; custom roles are an Enterprise Edition feature."
+    source: "https://documentation.gravitee.io/apim/4.12/configure-and-manage-the-platform/manage-organizations-and-environments/user-management"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "supported"
+    notes: "In API Management, each identity provider has Groups Mapping and Roles Mapping that turn IdP roles, groups or claims into Gravitee groups and roles."
+    source: "https://documentation.gravitee.io/apim/4.12/configure-and-manage-the-platform/manage-organizations-and-environments/authentication/roles-and-groups-mapping"
+    checked: "2026-09-27"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "Only account admins can create Gravitee Cloud account tokens; tokens take the creator's permissions, at most 10 can be active, and they can be revoked."
+    source: "https://documentation.gravitee.io/gravitee-cloud/guides/account-token"
+    checked: "2026-09-27"

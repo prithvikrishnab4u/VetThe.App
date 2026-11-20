@@ -1,0 +1,71 @@
+name: "OpenProject"
+category: "productivity"
+website: "https://www.openproject.org"
+description: "OpenProject is an open-source project management tool available as a cloud service or self-hosted."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise edition"
+    protocols: ["SAML", "OIDC"]
+    notes: "SAML and OpenID Connect providers (including Google and Microsoft Entra ID) are Enterprise add-ons, available once the Enterprise edition is active."
+    source: "https://www.openproject.org/docs/system-admin-guide/authentication/saml/"
+    checked: "2026-09-28"
+  sso_enforcement:
+    support: "supported"
+    notes: "Admins can disallow password login for SSO users or for everyone, keep break-glass users or groups who may still use a password, and redirect all logins straight to one SSO provider. The page doesn't name a plan, but SSO itself needs the Enterprise edition."
+    source: "https://www.openproject.org/docs/system-admin-guide/authentication/login-registration-settings/"
+    checked: "2026-09-28"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise edition"
+    notes: "SCIM provisioning is an Enterprise add-on and covers creating, updating and deleting both users and groups."
+    source: "https://www.openproject.org/docs/system-admin-guide/authentication/scim/"
+    checked: "2026-09-28"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Admins can enforce 2FA for every user, who must then register a 2FA device at their next login. The page doesn't name a plan."
+    source: "https://www.openproject.org/docs/system-admin-guide/authentication/two-factor-authentication/"
+    checked: "2026-09-28"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "WebAuthn (hardware keys or keys stored in the browser or a password manager) is enabled by default as a 2FA method alongside TOTP. The page doesn't say admins can require WebAuthn specifically."
+    source: "https://www.openproject.org/docs/system-admin-guide/authentication/two-factor-authentication/"
+    checked: "2026-09-28"
+  audit_logs:
+    support: "undocumented"
+    notes: "The docs don't describe an admin audit log."
+  jit_provisioning:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise edition"
+    notes: "By default, users returning from a SAML identity provider are created automatically; admins can make this follow the self-registration setting instead."
+    source: "https://www.openproject.org/docs/system-admin-guide/authentication/saml/"
+    checked: "2026-09-28"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    notes: "Admins can create global roles and project roles with their own permission sets. The Administrator role can't be changed."
+    source: "https://www.openproject.org/docs/system-admin-guide/users-permissions/roles-permissions/"
+    checked: "2026-09-28"
+  group_role_mapping:
+    support: "partial"
+    tier: "enterprise"
+    plan: "Enterprise edition"
+    notes: "OpenID Connect providers can sync group memberships from a groups claim at each login, with optional regex filters. This maps IdP groups to OpenProject groups; roles still come from those groups' project memberships, not directly from the IdP."
+    source: "https://www.openproject.org/docs/system-admin-guide/authentication/openid-providers/"
+    checked: "2026-09-28"
+  session_controls:
+    support: "supported"
+    notes: "Admins can turn on session expiry after a set inactivity time and turn the \"Stay signed in\" autologin option on or off. Users can see and revoke their own sessions."
+    source: "https://www.openproject.org/docs/system-admin-guide/authentication/login-registration-settings/"
+    checked: "2026-09-28"
+  api_token_controls:
+    support: "partial"
+    notes: "Users create and delete their own API tokens, and admins can turn the REST API on or off. The docs don't describe scoping tokens, setting an expiry, or admins reviewing users' tokens."
+    source: "https://www.openproject.org/docs/user-guide/account-settings/access-tokens/"
+    checked: "2026-09-28"

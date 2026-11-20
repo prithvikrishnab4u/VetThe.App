@@ -1,0 +1,60 @@
+name: "Opal"
+category: "security"
+website: "https://opal.dev"
+description: "Opal is an access management platform for requesting, approving and reviewing access to cloud infrastructure and SaaS apps. Values here cover signing in to and administering Opal itself."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "Users can sign in to Opal through a SAML provider. Okta and Google are officially supported; other SAML providers should work. No docs page names the plan."
+    source: "https://docs.opal.dev/docs/sso-with-saml"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    notes: "The Restrict logins to SAML only setting blocks other sign-in methods. Named SAML breakglass users can still sign in other ways. No docs page names the plan."
+    source: "https://docs.opal.dev/docs/sso-with-saml"
+    checked: "2026-11-20"
+  scim:
+    support: "partial"
+    notes: "Okta SCIM provisioning only pushes new users into Opal, and username or email changes are not propagated. Opal mainly syncs users, attributes and offboarding from a connected IdP/HRIS integration instead."
+    source: "https://docs.opal.dev/docs/okta-scim-integration"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "supported"
+    notes: "The Require Opal MFA for logins setting makes users complete Opal-managed MFA when they sign in. Admins can instead rely on their SAML provider's MFA, and can also require MFA for individual actions such as requesting or approving access."
+    source: "https://docs.opal.dev/docs/configure-sso-and-mfa"
+    checked: "2026-11-20"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The docs don't say which factors Opal-managed login MFA accepts. WebAuthn is mentioned only for the OIDC MFA provider used to gate Opal actions, where the factor comes from the customer's IdP."
+  audit_logs:
+    support: "supported"
+    retention: "90 days guaranteed in the app and exports; stream events to keep them longer"
+    notes: "Admins can view, filter and export events covering configuration changes, actions in Opal and access changes, in the UI or through the /events API."
+    source: "https://docs.opal.dev/docs/event-types"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "The SAML setup guide says the IdP email must match an existing Opal account for login to succeed, and doesn't describe creating accounts on first sign-in. Users normally arrive through the IdP/HRIS sync."
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    notes: "Opal admins can create custom roles from granular permissions, scoped to all assets or to chosen ones, and assign them to users and groups. No docs page names the plan."
+    source: "https://docs.opal.dev/docs/custom-opal-roles"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "undocumented"
+    notes: "Custom roles can be granted to Opal groups, but the docs don't say directly that IdP groups map to Opal roles."
+  session_controls:
+    support: "partial"
+    notes: "The revoke-all API ends a user's Opal sessions and deletes their API tokens as an incident-response action. The docs don't describe a configurable session length."
+    source: "https://docs.opal.dev/api-reference/users/revoke-all-of-a-users-access"
+    checked: "2026-11-20"
+  api_token_controls:
+    support: "supported"
+    notes: "By default only admins can create personal access tokens; an admin setting lets all users create them. Admins can see every token on the API Access Tokens page and revoke any of them."
+    source: "https://docs.opal.dev/reference/authentication"
+    checked: "2026-11-20"

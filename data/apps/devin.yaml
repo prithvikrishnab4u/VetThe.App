@@ -1,0 +1,73 @@
+name: "Devin"
+category: "development"
+website: "https://devin.ai"
+description: "Devin is an AI software engineering agent from Cognition that works in cloud sessions, a CLI and a desktop app. Values here cover signing in to and administering Devin team and enterprise accounts in the Devin web app."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    plan: "Teams"
+    protocols: ["SAML", "OIDC"]
+    notes: "Teams admins can connect a SAML 2.0 or OIDC identity provider under Settings, Authentication, and Enterprise also has SSO. On Teams, SSO signs in existing members only. Teams is not the cheapest paid plan."
+    source: "https://docs.devin.ai/admin/billing/self-serve"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    notes: "After an SSO connection works, admins can turn off email, Google and GitHub under Sign-in methods so SSO is the only way in. No docs page names the plan for this setting."
+    source: "https://docs.devin.ai/enterprise/security-access/sso/guide"
+    checked: "2026-11-20"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM 2.0 creates, updates, deactivates and deletes users and pushes groups. Deprovisioned users lose enterprise membership right away. SCIM is Enterprise only."
+    source: "https://docs.devin.ai/enterprise/security-access/scim"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Enterprise and organization audit logs can be listed through the v3 API with the ViewAccountAuditLogs permission. The SSO guide says logins and membership changes are recorded."
+    source: "https://docs.devin.ai/api-reference/v3/audit-logs/enterprise-audit-logs"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "With auto-membership on, users are created on first SSO login with the default Enterprise Member role. The Teams plan has no just-in-time provisioning."
+    source: "https://docs.devin.ai/enterprise/security-access/sso/guide"
+    checked: "2026-11-20"
+  domain_verification:
+    support: "partial"
+    notes: "Admins verify an email domain with a DNS TXT record before adding an SSO connection for it. Taking over existing accounts on that domain isn't described. No docs page names the plan."
+    source: "https://docs.devin.ai/enterprise/security-access/sso/guide"
+    checked: "2026-11-20"
+  custom_roles:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Enterprise admins create named roles at enterprise or organization level by picking permissions, and assign them to users or IdP groups."
+    source: "https://docs.devin.ai/enterprise/security-access/custom-roles"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "IdP groups from SSO logins or SCIM can be mapped to enterprise roles and to organizations with a role. Login-synced groups update on each login, SCIM groups in real time."
+    source: "https://docs.devin.ai/enterprise/security-access/sso/guide"
+    checked: "2026-11-20"
+  session_controls:
+    support: "undocumented"
+    notes: "The SSO guide says existing sessions stay active until they expire, but no admin setting for session length or sign-out is described."
+  api_token_controls:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Enterprise admins set a PAT policy (disabled, approval required or self serve) with a maximum lifetime, and can view and revoke any member's PATs in the PAT inventory."
+    source: "https://docs.devin.ai/api-reference/personal-access-tokens"
+    checked: "2026-11-20"

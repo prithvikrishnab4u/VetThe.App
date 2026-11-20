@@ -1,0 +1,47 @@
+name: "P0 Security"
+category: "security"
+website: "https://p0.dev"
+description: "P0 Security is a cloud privileged access management platform for just-in-time access, access inventory and posture scanning. Values here cover signing in to and administering the P0 app itself."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["OIDC"]
+    notes: "Users can sign in to the P0 web app and CLI with Okta over OIDC, set up with P0 support, as well as with Google or Microsoft Entra ID accounts. No docs page names the plan."
+    source: "https://docs.p0.dev/getting-started/p0-security-onboarding/supported-identity-providers"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Email and password sign-up is listed as an option, and the docs don't describe a way for admins to turn it off."
+  scim:
+    support: "undocumented"
+    notes: "The directory integrations with Okta, Google Workspace and Entra ID are for managing access in those directories, not for provisioning P0 users. No SCIM endpoint for P0 itself is documented."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The docs leave MFA to the corporate identity provider and don't describe MFA for P0's own email and password accounts."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    notes: "P0 streams structured audit logs covering policy, role, integration, API key and access request actions to Amazon S3, Amazon SQS, Datadog or Splunk. The docs describe streaming, not an in-app log viewer."
+    source: "https://docs.p0.dev/integrations/siem-integrations/audit-log-format"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "Users who sign in with Google, Entra ID or Okta can use P0, but the docs don't describe how accounts are created on first sign-in."
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs list fixed P0 roles (Owner, Security Reviewer, Auditor, Approver, Assessment User and Viewer) and don't describe creating roles with custom permissions."
+  group_role_mapping:
+    support: "supported"
+    notes: "Admins can map identity-provider group names from an OIDC groups claim, such as Okta groups, to any P0 role. Membership is read at each sign-in, so removing someone from the group removes the role. Not available with Google Workspace sign-in. No docs page names the plan."
+    source: "https://docs.p0.dev/p0-management/group-based-access-control"
+    checked: "2026-11-20"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"
+    notes: "API keys are org-level keys that carry the Owner role and only Owners can create them. The docs don't describe controls over tokens individual users create; CLI tokens are short-lived and tied to the user's login."

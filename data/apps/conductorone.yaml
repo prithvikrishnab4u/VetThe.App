@@ -1,0 +1,51 @@
+name: "C1 (formerly ConductorOne)"
+category: "security"
+website: "https://www.c1.ai"
+description: "C1, formerly ConductorOne, is an identity governance and access management platform for access requests, reviews and just-in-time access. Values here cover signing in to and administering the C1 tenant web app itself."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["OIDC"]
+    notes: "A C1 tenant is created and signed in to through an SSO provider: Google, Okta, Microsoft, OneLogin, JumpCloud, PingOne or any OIDC provider. No docs page names the plan."
+    source: "https://www.c1.ai/docs/product/how-to/qs-set-up-c1"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Setup docs only describe signing in through an SSO provider, but no page says whether a C1 password login exists or can be blocked."
+  scim:
+    support: "undocumented"
+    notes: "C1 creates its users from a designated directory app synced by a connector, such as an IdP or HR system. SCIM provisioning into C1 itself isn't described."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Sign-in goes through the customer's IdP. Step-up authentication for sensitive approvals relies on IdP MFA; no C1 setting to require MFA at login is described."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    notes: "System logs record actions taken through the C1 API, covering end-user and admin activity, in OCSF format. They can be read through the API or exported to S3 or Azure Blob for a SIEM. No docs page names the plan."
+    source: "https://www.c1.ai/docs/product/admin/system-log"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "Users who sign in for the first time get the Basic User role, but C1 users are created from directory sync. Creating accounts on first SSO sign-in isn't described."
+  domain_verification:
+    support: "undocumented"
+    notes: "Admins can list trusted domains so other accounts are tagged External. No domain verification or account takeover is described."
+  custom_roles:
+    support: "undocumented"
+    notes: "C1 documents a set of built-in end-user and admin roles that Super Administrators assign on the Users page. Creating new roles isn't described."
+  group_role_mapping:
+    support: "undocumented"
+    notes: "C1 roles are assigned to users on the Users page. Setting C1 roles from IdP groups isn't described."
+  session_controls:
+    support: "supported"
+    notes: "Super Administrators set the maximum session length for all users under Settings, SSO & sessions, from 45 minutes to 20 hours. The default is 20 hours. No docs page names the plan."
+    source: "https://www.c1.ai/docs/product/admin/global-settings"
+    checked: "2026-11-20"
+  api_token_controls:
+    support: "partial"
+    notes: "Admins can set IP allow lists for API keys of all users or with Super Administrator permissions; an empty list blocks those keys. Listing or revoking other users' keys isn't described."
+    source: "https://www.c1.ai/docs/product/admin/global-settings"
+    checked: "2026-11-20"

@@ -1,0 +1,67 @@
+{{ $schema := site.Data.schema }}
+{{ $total := len $schema.capabilities }}
+{{/* Build one row per app with its counts, so the list can sort by what is left to do. */}}
+{{ $rows := slice }}
+{{ range $id, $app := site.Data.apps }}
+  {{ $sourced := 0 }}{{ $todo := 0 }}
+  {{ range $schema.capabilities }}
+    {{ $cap := (index $app.capabilities .id) | default (dict) }}
+    {{ if $cap.source }}{{ $sourced = add $sourced 1 }}{{ end }}
+    {{ if eq ($cap.support | default "not_researched") "not_researched" }}{{ $todo = add $todo 1 }}{{ end }}
+  {{ end }}
+  {{ $rows = $rows | append (dict "id" $id "name" $app.name "website" $app.website "status" $app.status "sourced" $sourced "todo" $todo) }}
+{{ end }}
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+{{ partial "head.html" . }}
+
+<body class="min-h-screen">
+    <a href="#apps" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] btn btn-primary">Skip to the list</a>
+    {{ partial "header.html" . }}
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <nav class="text-sm text-muted" aria-label="Breadcrumb">
+            <a href="/" class="hover:text-accent">Home</a> <span aria-hidden="true">/</span>
+            <span class="text-ink">Apps</span>
+        </nav>
+        <h1 class="mt-4 text-2xl sm:text-3xl font-semibold text-ink">All apps</h1>
+        <p class="mt-2 text-body">
+            {{ len $rows }} apps. Each one has {{ $total }} capabilities to check.
+            The ones with the most left to research come first. Pick one, find the vendor's own page, and click ✎ on the value.
+        </p>
+
+        <section id="apps" class="panel mt-6 overflow-hidden scroll-mt-16">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-separate border-spacing-0">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="px-4 py-2.5 border-b border-line text-xs font-semibold text-muted">App</th>
+                            <th scope="col" class="px-4 py-2.5 border-b border-line text-xs font-semibold text-muted whitespace-nowrap">Checked</th>
+                            <th scope="col" class="px-4 py-2.5 border-b border-line text-xs font-semibold text-muted whitespace-nowrap">Not researched</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{ range sort (sort $rows "name") "todo" "desc" }}
+                        <tr class="hover:bg-subtle">
+                            <th scope="row" class="px-4 py-2.5 border-b border-line font-normal">
+                                <a href="/apps/{{ .id }}/" class="flex items-center gap-3 text-sm font-semibold text-ink hover:text-accent">
+                                    <img src="https://www.google.com/s2/favicons?domain={{ .website }}&sz=64" alt="" loading="lazy"
+                                        class="app-favicon" onerror="this.style.visibility='hidden'">
+                                    {{ .name }}
+                                    {{ if ne .status "published" }}<span class="chip font-normal">Draft</span>{{ end }}
+                                </a>
+                            </th>
+                            <td class="px-4 py-2.5 border-b border-line text-sm text-body tabular-nums">{{ .sourced }} / {{ $total }}</td>
+                            <td class="px-4 py-2.5 border-b border-line text-sm tabular-nums {{ if .todo }}text-ink font-medium{{ else }}text-muted{{ end }}">{{ .todo }}</td>
+                        </tr>
+                        {{ end }}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    {{ partial "footer.html" . }}
+    {{ partial "suggest.html" . }}
+    {{ partial "theme-toggle.html" . }}
+</body>
+
+</html>

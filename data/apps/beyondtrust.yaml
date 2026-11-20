@@ -1,0 +1,52 @@
+name: "BeyondTrust"
+category: "security"
+website: "https://beyondtrust.com"
+description: "BeyondTrust sells privileged access products, including Password Safe, Privileged Remote Access, Remote Support and Endpoint Privilege Management. Values here cover signing in to and administering BeyondTrust Pathfinder, the cloud platform those products run on."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "Pathfinder supports SAML SSO with any SAML identity provider, alongside local and AD/LDAP sign-in. Each SAML IdP is tied to an email domain. No docs page names the plan."
+    source: "https://docs.beyondtrust.com/bt-docs/docs/identity-providers"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    notes: "When a user's email domain matches a configured SAML IdP, Pathfinder starts SAML authentication automatically and treats the user as federated, re-checking the domain at every login. Users on other domains still sign in locally, so it works per domain rather than as one org-wide switch."
+    source: "https://docs.beyondtrust.com/bt-docs/docs/user-management"
+    checked: "2026-11-20"
+  scim:
+    support: "supported"
+    notes: "An IdP can create, update, deactivate and delete users and groups in Pathfinder over SCIM 2.0, using a SCIM token an admin generates. No docs page names the plan."
+    source: "https://docs.beyondtrust.com/bt-docs/docs/scim-provisioning"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Users who don't sign in through SSO can turn on MFA from their profile and are prompted to on first login. The docs don't describe admins requiring it."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "partial"
+    notes: "Admins can view audit logs by date range, but for now they only cover user management: user details, password resets, and machine and personal access tokens. BeyondTrust says auditing for other areas will come later."
+    source: "https://docs.beyondtrust.com/bt-docs/docs/pathfinder-audit-logs"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "supported"
+    notes: "Users who aren't pre-provisioned get an account on their first IdP-initiated SAML login. Default access rules set their role and site access on that first login. No docs page names the plan."
+    source: "https://docs.beyondtrust.com/bt-docs/docs/identity-providers"
+    checked: "2026-11-20"
+  domain_verification:
+    support: "undocumented"
+    notes: "SAML IdPs are matched to an email domain, but the docs don't describe proving ownership of the domain."
+  custom_roles:
+    support: "undocumented"
+    notes: "The organization role is Standard User or Administrator, plus per-site application access. Custom roles aren't described."
+  group_role_mapping:
+    support: "undocumented"
+    notes: "SAML group claims can be passed through for Pathfinder applications to use, but the docs don't describe mapping IdP groups to the Pathfinder organization role."
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"
+    notes: "Users create their own personal access tokens with an expiry of 30, 60, 90 days or a custom value, and token changes show in the audit log. The docs don't describe admins revoking other users' tokens."

@@ -1,0 +1,48 @@
+name: "Mage Pro"
+category: "infrastructure"
+website: "https://www.mage.ai"
+description: "Mage Pro is the managed version of the Mage data pipeline and orchestration platform."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "The Mage Pro SaaS architecture page lists SAML/OAuth2 support for SSO, and the auth docs cover OIDC, Okta, Microsoft and Google sign-in. No plan is named."
+    source: "https://docs.mage.ai/pro-architecture/saas"
+    checked: "2026-09-28"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "supported"
+    notes: "The OSS-to-Pro comparison lists SCIM user and group provisioning from IdPs such as Okta, Azure AD and Google Workspace as a Pro feature. No setup guide or plan is published."
+    source: "https://docs.mage.ai/migrations/mage-oss-to-mage-pro"
+    checked: "2026-09-28"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "TOTP MFA is Pro-only but configured per user from their own account settings; no admin setting to require it is described."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    notes: "The OSS-to-Pro comparison lists user activity tracking and audit logs as a Pro feature. No retention or plan is given."
+    source: "https://docs.mage.ai/migrations/mage-oss-to-mage-pro"
+    checked: "2026-09-28"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    notes: "Mage Pro lets admins define roles, define permissions, and attach permissions to roles and roles to users."
+    source: "https://docs.mage.ai/production/authentication/permissions/overview"
+    checked: "2026-09-28"
+  group_role_mapping:
+    support: "supported"
+    notes: "The OSS-to-Pro comparison lists enterprise SSO with group mapping per tenant; the auth docs also map Active Directory app roles and LDAP groups to Mage roles."
+    source: "https://docs.mage.ai/migrations/mage-oss-to-mage-pro"
+    checked: "2026-09-28"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"

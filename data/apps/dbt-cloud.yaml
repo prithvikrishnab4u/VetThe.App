@@ -1,0 +1,77 @@
+name: "dbt Cloud"
+category: "development"
+website: "https://www.getdbt.com"
+description: "dbt Cloud (the dbt platform) is a hosted service for building, testing and scheduling SQL data transformations."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML", "OIDC"]
+    notes: "SSO needs an Enterprise or Enterprise+ plan. The docs cover SAML 2.0, Okta, Microsoft Entra ID and Google Workspace (an OAuth client with the openid scope)."
+    source: "https://docs.getdbt.com/docs/platform/manage-access/sso-overview"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Turning on SSO forces SSO-only login for non-admin users. Admins with a password keep it unless you turn off \"Allow password logins for account administrators\"."
+    source: "https://docs.getdbt.com/docs/platform/manage-access/sso-overview"
+    checked: "2026-09-27"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM handles user provisioning and deprovisioning, profile updates and groups. It needs an Enterprise or Enterprise+ plan and Okta or Entra ID as the SSO provider."
+    source: "https://docs.getdbt.com/docs/platform/manage-access/scim"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "supported"
+    tier: "free"
+    plan: "All plans"
+    notes: "dbt enforces MFA for every user with a username and password, on all plans. Users who don't enroll can't get in."
+    source: "https://docs.getdbt.com/docs/platform/manage-access/mfa"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "supported"
+    tier: "free"
+    plan: "All plans"
+    notes: "A WebAuthn-compliant security key is one of the three MFA methods, next to SMS and an authenticator app."
+    source: "https://docs.getdbt.com/docs/platform/manage-access/mfa"
+    checked: "2026-09-27"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    retention: "At least 12 months"
+    notes: "The audit log is only on Enterprise plans. The UI shows the last 90 days, and older events can be exported. Events are kept for at least 12 months."
+    source: "https://docs.getdbt.com/docs/platform/manage-access/audit-log"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "dbt supports JIT provisioning: a user who signs in with SSO and doesn't exist yet gets created."
+    source: "https://docs.getdbt.com/docs/platform/manage-access/sso-overview"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+    notes: "The SSO setup pages ask for your IdP domain, but don't describe verifying a domain or claiming accounts on it."
+  custom_roles:
+    support: "undocumented"
+    notes: "Access is built from dbt's fixed permission sets assigned to groups; the docs don't describe creating custom roles."
+  group_role_mapping:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SSO mappings tie an IdP group to a dbt group, and group memberships (and permissions) update each time the user signs in."
+    source: "https://docs.getdbt.com/docs/platform/manage-access/about-user-access"
+    checked: "2026-09-27"
+  session_controls:
+    support: "undocumented"
+    notes: "SSO users are asked to re-authenticate every 24 hours, but the docs don't describe a setting admins can change."
+  api_token_controls:
+    support: "undocumented"
+    notes: "The token docs cover creating personal and service account tokens but not admin review or revocation of users' tokens."

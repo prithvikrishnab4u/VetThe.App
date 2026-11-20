@@ -1,0 +1,67 @@
+name: "Strapi Cloud"
+category: "development"
+website: "https://strapi.io/cloud"
+description: "Strapi Cloud is the managed hosting service for Strapi, an open-source headless CMS."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "CMS Enterprise (or SSO add-on with CMS Growth)"
+    protocols: ["OIDC"]
+    notes: "Admin panel SSO for your hosted Strapi project, set up with OAuth/OIDC providers through Passport strategies. Logging in to the Strapi Cloud dashboard itself uses GitHub, Google, GitLab or a one-time code."
+    source: "https://docs.strapi.io/cms/features/sso"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "CMS Enterprise (or SSO add-on with CMS Growth)"
+    notes: "You can turn on local authentication lock-out per role, so users with that role have to sign in through SSO."
+    source: "https://docs.strapi.io/cms/features/sso"
+    checked: "2026-09-27"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "CMS Enterprise"
+    retention: "90 days by default (configurable)"
+    notes: "Records admin panel actions. On Strapi Cloud projects, the license's retention applies unless you configure a smaller value."
+    source: "https://docs.strapi.io/cms/features/audit-logs"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    tier: "enterprise"
+    plan: "CMS Enterprise (or SSO add-on with CMS Growth)"
+    notes: "SSO auto-registration creates a user on first login and gives them a default role."
+    source: "https://docs.strapi.io/cms/features/sso"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    tier: "free"
+    plan: "Free feature"
+    notes: "You can create admin roles with custom permissions in the admin panel."
+    source: "https://docs.strapi.io/cms/features/rbac"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "undocumented"
+    notes: "The SSO docs only cover a single default role for auto-registered users."
+  session_controls:
+    support: "supported"
+    notes: "The admin auth.sessions config sets the access token lifespan, the idle session lifespan (1 hour by default) and the max session lifespan (30 days by default). Sessions can also be revoked."
+    source: "https://docs.strapi.io/cms/configurations/admin-panel"
+    checked: "2026-09-27"
+  api_token_controls:
+    support: "supported"
+    tier: "free"
+    plan: "Free feature"
+    notes: "API tokens last 7, 30 or 90 days, or never expire. Types are read-only, full access or custom scopes, and tokens can be regenerated."
+    source: "https://docs.strapi.io/cms/features/api-tokens"
+    checked: "2026-09-27"

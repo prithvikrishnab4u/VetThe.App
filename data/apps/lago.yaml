@@ -1,0 +1,58 @@
+name: "Lago"
+category: "finance"
+website: "https://www.getlago.com"
+description: "Lago is an open-source billing platform for usage metering, subscriptions and invoicing."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "add_on"
+    plan: "Premium add-on"
+    protocols: ["OIDC"]
+    notes: "Okta and Microsoft Entra ID SSO over OIDC are premium add-ons available on request. Google sign-in is also available."
+    source: "https://getlago.com/docs/guide/security/sso"
+    checked: "2026-09-28"
+  sso_enforcement:
+    support: "supported"
+    tier: "add_on"
+    plan: "Premium add-on"
+    notes: "Admins can turn off password and Google login under Organization Settings, Authentication, so that only the connected SSO methods remain."
+    source: "https://getlago.com/docs/guide/security/sso"
+    checked: "2026-09-28"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "Premium"
+    retention: "30 days"
+    notes: "Activity and API logs are not available on Free. Premium keeps 30 days; an Enterprise add-on gives full history. Separate security logs track user, role and API key events."
+    source: "https://getlago.com/docs/guide/security/audit-logs"
+    checked: "2026-09-28"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    tier: "add_on"
+    plan: "Premium add-on"
+    notes: "Custom roles with per-object permissions are a premium add-on available on request. The system roles (Admin, Account manager, Finance & analyst) need a license."
+    source: "https://getlago.com/docs/guide/security/rbac"
+    checked: "2026-09-28"
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    tier: "paid"
+    plan: "Premium"
+    notes: "Premium allows multiple API keys and scheduled rotation, and admins are emailed when keys are created or rotated. Keys show a Last used time. Per-object read and write permissions need an Enterprise add-on."
+    source: "https://getlago.com/docs/guide/security/api-keys"
+    checked: "2026-09-28"

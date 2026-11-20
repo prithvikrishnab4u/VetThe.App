@@ -1,0 +1,60 @@
+name: "BugSnag"
+category: "development"
+website: "https://www.bugsnag.com"
+description: "BugSnag, part of SmartBear, monitors errors and app stability across web, mobile and backend applications."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Preferred"
+    protocols: ["SAML"]
+    notes: "SAML SSO is available on Preferred and Enterprise plans, with guides for Okta, OneLogin, Google Cloud Identity, Auth0 and others."
+    source: "https://docs.bugsnag.com/product/single-sign-on/"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "The docs don't describe blocking password login once SSO is on."
+  scim:
+    support: "supported"
+    tier: "paid"
+    plan: "Preferred"
+    notes: "Okta provisioning creates users, updates names and emails, and deactivates users. The SSO page lists user provisioning among the SSO features on Preferred and Enterprise."
+    source: "https://docs.bugsnag.com/product/single-sign-on/okta-scim/"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Login runs through SmartBear ID, where each user can turn on MFA. The docs don't describe admins requiring it."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The docs describe MFA with an authenticator app only."
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Admins can see audit logs of collaborator creation, access and authentication setting changes in the organization settings. Retention isn't stated."
+    source: "https://docs.bugsnag.com/product/account-and-security/"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "Accounts are created by SCIM provisioning; the docs don't describe accounts being created at first SSO sign-in."
+  domain_verification:
+    support: "undocumented"
+    notes: "The docs don't describe verifying an email domain."
+  custom_roles:
+    support: "undocumented"
+    notes: "Collaborators get preset organization and project roles; the docs don't describe custom roles."
+  group_role_mapping:
+    support: "supported"
+    tier: "paid"
+    plan: "Preferred"
+    notes: "Pushing an Okta Group creates or links a BugSnag team and keeps its membership in sync, and teams carry project roles."
+    source: "https://docs.bugsnag.com/product/single-sign-on/okta-scim-provisioning/"
+    checked: "2026-11-20"
+  session_controls:
+    support: "undocumented"
+    notes: "The docs don't describe admin session controls."
+  api_token_controls:
+    support: "undocumented"
+    notes: "The docs don't describe admin controls over users' API tokens."

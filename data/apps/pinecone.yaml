@@ -1,0 +1,69 @@
+name: "Pinecone"
+category: "infrastructure"
+website: "https://www.pinecone.io"
+description: "Pinecone is a managed vector database and retrieval platform for search, RAG and AI agent applications."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Standard"
+    protocols: ["SAML"]
+    notes: "SAML 2.0 SSO is available on the Standard and Enterprise plans."
+    source: "https://docs.pinecone.io/admin/security/configure-single-sign-on/okta"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Standard"
+    notes: "During SSO setup, organization owners can choose Enforce SSO for all users on the company's email domains."
+    source: "https://docs.pinecone.io/admin/security/configure-single-sign-on/okta"
+    checked: "2026-11-20"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Okta SCIM provisions members and their roles; deactivating or removing a member in Okta removes them from the organization. Group push isn't supported."
+    source: "https://docs.pinecone.io/admin/security/configure-single-sign-on/okta-scim-provisioning"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The security docs don't describe requiring MFA."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The docs don't describe signing in with security keys or passkeys."
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    retention: "Set by the customer's own storage bucket"
+    notes: "Audit logs of user, service account and API actions on the management and control plane are written to an Amazon S3 or Google Cloud Storage bucket the customer controls."
+    source: "https://docs.pinecone.io/admin/security/configure-audit-logs"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "supported"
+    tier: "paid"
+    plan: "Standard"
+    notes: "Admins set a default role for users who sign up through SSO; users get it on their first SSO login."
+    source: "https://docs.pinecone.io/admin/security/configure-single-sign-on/okta"
+    checked: "2026-11-20"
+  domain_verification:
+    support: "undocumented"
+    notes: "SSO setup asks for the company's email domains, but the docs don't describe verifying ownership or claiming accounts."
+  custom_roles:
+    support: "undocumented"
+    notes: "Pinecone uses preset organization and project roles that can be combined; the docs don't describe creating custom roles."
+  group_role_mapping:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SAML role management replaces each user's organization and project roles with the roles the IdP sends on every login. SCIM can set roles the same way from user attributes."
+    source: "https://docs.pinecone.io/admin/security/configure-single-sign-on/okta-role-management"
+    checked: "2026-11-20"
+  session_controls:
+    support: "undocumented"
+    notes: "The docs don't describe admin session controls."
+  api_token_controls:
+    support: "undocumented"
+    notes: "API keys belong to projects and can be limited to project roles on Standard and Enterprise; the docs don't describe admins controlling keys individual users create."

@@ -1,0 +1,79 @@
+name: "Hugging Face"
+category: "development"
+website: "https://huggingface.co"
+description: "Hub for hosting and sharing machine learning models, datasets and Spaces."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Team"
+    protocols: ["SAML", "OIDC"]
+    notes: "Basic SSO is on Team and Enterprise and works with any SAML or OIDC IdP. Managed SSO, which replaces the Hugging Face login, is on Enterprise Plus."
+    source: "https://huggingface.co/docs/hub/security-sso-basic"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Team"
+    notes: "Basic SSO can be enforced for anything under the org namespace, but members still sign in to Hugging Face with their own credentials first. Making the IdP the only login needs Managed SSO on Enterprise Plus."
+    source: "https://huggingface.co/docs/hub/security-sso-basic"
+    checked: "2026-09-27"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "On Enterprise, SCIM only invites existing Hugging Face users and can't change their profiles; deprovisioning and group push work. Full lifecycle provisioning needs Enterprise Plus."
+    source: "https://huggingface.co/docs/hub/enterprise-scim"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Team"
+    notes: "Admins can require all org members to enable 2FA."
+    source: "https://huggingface.co/docs/hub/enterprise-advanced-security"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "2FA docs only cover authenticator apps and recovery codes."
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "Team"
+    notes: "Admins can review member actions in org settings and export them as JSON or via the API. No retention period is stated."
+    source: "https://huggingface.co/docs/hub/audit-logs"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise Plus"
+    notes: "With Managed SSO, an account is created automatically the first time a user signs in through the IdP."
+    source: "https://huggingface.co/docs/hub/enterprise-advanced-sso"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+    notes: "Docs mention orgs with a verified domain and an org email domain setting, but don't describe how a domain is verified."
+  custom_roles:
+    support: "undocumented"
+  group_role_mapping:
+    support: "supported"
+    tier: "paid"
+    plan: "Team"
+    notes: "Role Mapping assigns org roles from an IdP attribute such as groups; Resource Group Mapping works the same way for resource groups."
+    source: "https://huggingface.co/docs/hub/security-sso-user-management"
+    checked: "2026-09-27"
+  session_controls:
+    support: "supported"
+    tier: "paid"
+    plan: "Team"
+    notes: "Admins set the SSO session length, after which members must re-authenticate with the IdP. Default is 7 days."
+    source: "https://huggingface.co/docs/hub/security-sso-user-management"
+    checked: "2026-09-27"
+  api_token_controls:
+    support: "supported"
+    tier: "paid"
+    plan: "Team"
+    notes: "Admins can list all org tokens and require fine-grained tokens or admin approval. Revoking tokens needs Enterprise or higher."
+    source: "https://huggingface.co/docs/hub/enterprise-tokens-management"
+    checked: "2026-09-27"

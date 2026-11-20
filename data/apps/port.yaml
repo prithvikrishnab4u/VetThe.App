@@ -1,0 +1,63 @@
+name: "Port"
+category: "development"
+website: "https://www.port.io"
+description: "Port is an internal developer portal with a software catalog, self-service actions, scorecards and workflows."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML", "OIDC"]
+    notes: "Port supports SAML 2.0 and OIDC identity providers. Self-serve SSO setup is for enterprise accounts only."
+    source: "https://docs.port.io/platform-administration/sso-authentication/self-serve-sso"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "The docs don't describe blocking password or social login once SSO is on."
+  scim:
+    support: "partial"
+    notes: "SCIM creates, updates and deletes users from Okta, Entra ID or Google Workspace, but group provisioning isn't supported; group membership syncs at SSO login instead."
+    source: "https://docs.port.io/platform-administration/sso-authentication/SCIM"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Port encourages MFA and points to the SSO provider's MFA; the docs don't describe admins requiring it."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The docs don't describe signing in with security keys or passkeys."
+  audit_logs:
+    support: "supported"
+    retention: "90 days (sign-in logs 30 days)"
+    notes: "The audit log page records every change in the organization, who made it and whether it succeeded. The page doesn't name a plan."
+    source: "https://docs.port.io/platform-administration/audit-log"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Without SCIM, users are created in Port when they first log in through SSO."
+    source: "https://docs.port.io/platform-administration/sso-authentication/SCIM"
+    checked: "2026-11-20"
+  domain_verification:
+    support: "undocumented"
+    notes: "The docs don't describe verifying an email domain."
+  custom_roles:
+    support: "undocumented"
+    notes: "Users get one of the preset roles (Admin, Member, Moderator of a blueprint); the docs don't describe creating custom roles."
+  group_role_mapping:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "With SSO, Port syncs IdP teams and their membership at each login. These teams can't be edited in Port and are used for permissions and ownership."
+    source: "https://docs.port.io/platform-administration/users-and-teams/manage-users-teams"
+    checked: "2026-11-20"
+  session_controls:
+    support: "supported"
+    notes: "Admins can turn on an inactivity timeout that signs every member out of the Port app. It doesn't cover API or MCP access."
+    source: "https://docs.port.io/platform-administration/security/authentication-and-access"
+    checked: "2026-11-20"
+  api_token_controls:
+    support: "undocumented"
+    notes: "The API authenticates with client ID and secret; the docs don't describe admin controls over users' credentials."

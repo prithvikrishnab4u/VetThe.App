@@ -1,0 +1,56 @@
+name: "Zitadel Cloud"
+category: "security"
+website: "https://zitadel.com"
+description: "Zitadel Cloud is a hosted identity and access management platform built on the open-source Zitadel project."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    notes: "Console admins sign in through Zitadel itself, so the login settings of the organization holding them can allow external identity providers; the hardening guide says to limit which IdPs admins may use."
+    source: "https://zitadel.com/docs/guides/manage/console/administrator-hardening"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    notes: "If \"Username Password allowed\" is turned off in the login settings, only login with external identity providers is allowed. Admins can be kept in a dedicated organization that has its own login settings."
+    source: "https://zitadel.com/docs/guides/manage/console/default-settings#login-behavior-and-security"
+    checked: "2026-09-27"
+  scim:
+    support: "undocumented"
+    notes: "The console docs don't describe provisioning console administrators or their roles over SCIM."
+  mfa_enforcement:
+    support: "supported"
+    notes: "The \"Force MFA\" login setting requires users to register and use MFA, or only for local logins if you pick \"Force MFA for local authenticated users\". The hardening guide recommends enforcing it for the organization that holds admins."
+    source: "https://zitadel.com/docs/guides/manage/console/default-settings#multifactor-mfa"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "The login settings can allow passkeys and U2F security keys; passkeys need U2F with PIN enabled."
+    source: "https://zitadel.com/docs/guides/manage/console/default-settings#passkeys"
+    checked: "2026-09-27"
+  audit_logs:
+    support: "supported"
+    retention: "Unlimited (append-only event store)"
+    notes: "Every change is kept as an event. Admins can browse and filter all instance events in the Console Event Viewer, pull them through the Event API, or stream them to a SIEM."
+    source: "https://zitadel.com/docs/concepts/features/audit-trail"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "supported"
+    notes: "Organization domains can be verified with a DNS or HTTP challenge in the Console."
+    source: "https://zitadel.com/docs/guides/manage/console/organizations-overview#domain-verification-guide"
+    checked: "2026-09-27"
+  custom_roles:
+    support: "undocumented"
+    notes: "The hardening guide says custom administrator role permission mappings (InternalAuthZ.RolePermissionMappings) are only for self-hosted deployments; it doesn't say whether Zitadel Cloud offers custom roles."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "supported"
+    notes: "Login settings set how long password, external login, and MFA checks last before users must reauthenticate. Separate lockout settings cap password and OTP attempts."
+    source: "https://zitadel.com/docs/guides/manage/console/default-settings#login-lifetimes"
+    checked: "2026-09-27"
+  api_token_controls:
+    support: "undocumented"
+    notes: "The hardening guide uses personal access tokens on service accounts but doesn't describe expiry or scoping controls for them."
