@@ -1,0 +1,59 @@
+name: "SailPoint Identity Security Cloud"
+category: "security"
+website: "https://sailpoint.com"
+description: "SailPoint's SaaS identity governance platform, now documented as SailPoint Human Fabric (formerly Identity Security Cloud), for access requests, certifications, provisioning and roles. Values here cover signing in to and administering the SaaS tenant itself."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "Admins can set SailPoint up as a SAML service provider for an existing IdP under Admin, Global, Security Settings, Service Provider. Users need a matching identity in SailPoint unless JIT account creation is set up. No docs page names the plan."
+    source: "https://documentation.sailpoint.com/saas/help/common/config_isc_service_provider.html"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    notes: "With a remote IdP enabled, end users can only launch SailPoint after signing in to the IdP. Users with an elevated user level can bypass the IdP with a sign-in URL, so access continues if the IdP is down."
+    source: "https://documentation.sailpoint.com/saas/help/common/config_isc_service_provider.html"
+    checked: "2026-11-20"
+  scim:
+    support: "undocumented"
+    notes: "Identities are loaded by aggregating accounts from sources and building identity profiles. The help center doesn't describe an IdP pushing users into the tenant over SCIM."
+  mfa_enforcement:
+    support: "supported"
+    notes: "Admins can set Multifactor Authentication as the sign-in method on an identity profile, so its users must use an external authenticator app. Elevated accounts require MFA by default."
+    source: "https://documentation.sailpoint.com/saas/help/common/strong_auth.html"
+    checked: "2026-11-20"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The MFA page describes TOTP authenticator apps only."
+  audit_logs:
+    support: "supported"
+    retention: "1 year plus the current month; up to 5 years by support request"
+    notes: "Nearly all activity, including authentication into the tenant and admin changes, is tracked in audit events that can be searched and downloaded as reports."
+    source: "https://documentation.sailpoint.com/saas/help/common/audit-reports.html"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "supported"
+    notes: "A SAML Just-in-Time Provisioning source creates an identity for users without an account when they first sign in through the IdP, and can update it when IdP data changes. SailPoint asks customers to contact its services team before setting it up."
+    source: "https://documentation.sailpoint.com/saas/help/common/jit-accounts.html"
+    checked: "2026-11-20"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    plan: "Custom User Levels"
+    notes: "Organizations that have Custom User Levels can create up to 100 named user levels with chosen permissions. The page says 'if your organization has Custom User Levels' but doesn't say which plan or add-on includes it."
+    source: "https://documentation.sailpoint.com/saas/help/common/users/custom_user_levels.html"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "undocumented"
+    notes: "Custom user levels publish as requestable entitlements, but the help center doesn't describe assigning user levels from IdP groups."
+  session_controls:
+    support: "supported"
+    notes: "Admins set the maximum session length (default 12 hours, up to 7 days), the idle timeout (default 15 minutes, up to 24 hours) and whether closing the browser ends the session. Sessions through an IdP expire after 90 days regardless."
+    source: "https://documentation.sailpoint.com/saas/help/common/session_lengths.html"
+    checked: "2026-11-20"
+  api_token_controls:
+    support: "undocumented"
+    notes: "Admins create, review last-used dates for and delete API clients under Security Settings, API Management. The help center doesn't say whether admins can see or revoke other users' personal access tokens."

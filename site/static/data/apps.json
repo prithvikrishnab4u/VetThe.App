@@ -2293,6 +2293,75 @@
     "website": "https://beyondidentity.com"
   },
   {
+    "_id": "beyondtrust",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Users create their own personal access tokens with an expiry of 30, 60, 90 days or a custom value, and token changes show in the audit log. The docs don't describe admins revoking other users' tokens.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Admins can view audit logs by date range, but for now they only cover user management: user details, password resets, and machine and personal access tokens. BeyondTrust says auditing for other areas will come later.",
+        "source": "https://docs.beyondtrust.com/bt-docs/docs/pathfinder-audit-logs",
+        "support": "partial"
+      },
+      "custom_roles": {
+        "notes": "The organization role is Standard User or Administrator, plus per-site application access. Custom roles aren't described.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "notes": "SAML IdPs are matched to an email domain, but the docs don't describe proving ownership of the domain.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "notes": "SAML group claims can be passed through for Pathfinder applications to use, but the docs don't describe mapping IdP groups to the Pathfinder organization role.",
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-20",
+        "notes": "Users who aren't pre-provisioned get an account on their first IdP-initiated SAML login. Default access rules set their role and site access on that first login. No docs page names the plan.",
+        "source": "https://docs.beyondtrust.com/bt-docs/docs/identity-providers",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "notes": "Users who don't sign in through SSO can turn on MFA from their profile and are prompted to on first login. The docs don't describe admins requiring it.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "An IdP can create, update, deactivate and delete users and groups in Pathfinder over SCIM 2.0, using a SCIM token an admin generates. No docs page names the plan.",
+        "source": "https://docs.beyondtrust.com/bt-docs/docs/scim-provisioning",
+        "support": "supported"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Pathfinder supports SAML SSO with any SAML identity provider, alongside local and AD/LDAP sign-in. Each SAML IdP is tied to an email domain. No docs page names the plan.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.beyondtrust.com/bt-docs/docs/identity-providers",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "When a user's email domain matches a configured SAML IdP, Pathfinder starts SAML authentication automatically and treats the user as federated, re-checking the domain at every login. Users on other domains still sign in locally, so it works per domain rather than as one org-wide switch.",
+        "source": "https://docs.beyondtrust.com/bt-docs/docs/user-management",
+        "support": "supported"
+      }
+    },
+    "category": "security",
+    "description": "BeyondTrust sells privileged access products, including Password Safe, Privileged Remote Access, Remote Support and Endpoint Privilege Management. Values here cover signing in to and administering BeyondTrust Pathfinder, the cloud platform those products run on.",
+    "name": "BeyondTrust",
+    "status": "draft",
+    "website": "https://beyondtrust.com"
+  },
+  {
     "_id": "bill-com",
     "capabilities": {
       "api_token_controls": {
@@ -6398,6 +6467,80 @@
     "name": "Deel",
     "status": "draft",
     "website": "https://www.deel.com"
+  },
+  {
+    "_id": "delinea",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "The Audit Log lists events across platform services, including identity, federation, MFA, permissions, policy and tenant changes, with filters. The date filter goes back up to 60 days; retention isn't stated.",
+        "source": "https://docs.delinea.com/online-help/delinea-platform/insights/audit-log/event-log.htm",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Besides the built-in Platform User and Platform Admin roles, admins can create, edit and delete custom roles. No docs page names the plan.",
+        "source": "https://docs.delinea.com/online-help/delinea-platform/roles-permissions/index.htm",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "Admins map IdP group Object IDs from the groups claim to platform groups, manually or automatically. At each login the user joins the mapped groups and inherits their roles.",
+        "source": "https://docs.delinea.com/online-help/delinea-platform/federation/fed-management.htm",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "notes": "The federation docs describe federated users and mapping them to groups, but don't say whether a platform account is created on first sign-in.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Admins enable MFA with identity policies that apply to all web logins, assigned to specific groups or globally to every user in the tenant, with the challenges set in authentication profiles.",
+        "source": "https://docs.delinea.com/online-help/delinea-platform/authentication/auth-policies/index.htm",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-11-20",
+        "notes": "Users can authenticate with FIDO2 hardware security keys or on-device authenticators. The newer passkey settings, including whether synced passkeys are allowed, are in public preview.",
+        "source": "https://docs.delinea.com/online-help/delinea-platform/authentication/hw-security-keys/configuring-passkeys.htm",
+        "support": "supported"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "The Delinea SCIM Cloud lets an IAM or IGA provider create, update and delete users and manage groups and membership over SCIM 2.0. Delinea has setup guides for Okta, Entra ID and SailPoint. No docs page names the plan.",
+        "source": "https://docs.delinea.com/online-help/delinea-platform/scim/scim-connector.htm",
+        "support": "supported"
+      },
+      "session_controls": {
+        "notes": "Authentication profiles set how long a completed challenge suppresses step-up prompts, which is not a session length. Session recording in Delinea is about privileged sessions to target systems.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Users can sign in to the Delinea Platform through a federated SAML or OIDC identity provider, chosen by the domain of their user ID. Delinea has guides for Entra ID, Okta, Google, Ping, OneLogin, AD FS and others. No docs page names the plan.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.delinea.com/online-help/delinea-platform/federation/index.htm",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "notes": "Delinea's tenant hardening guide recommends federated identity for everyone and break-glass local accounts, but the docs don't describe a setting that blocks local sign-in.",
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Delinea sells privileged access management products, including Secret Server and the cloud Delinea Platform. Values here cover signing in to and administering the Delinea Platform tenant.",
+    "name": "Delinea",
+    "status": "draft",
+    "website": "https://delinea.com"
   },
   {
     "_id": "deno-deploy",
@@ -15877,6 +16020,71 @@
     "website": "https://www.netsuite.com"
   },
   {
+    "_id": "netwrix",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "The self-audit report under Configuration, Audit Logs lists configuration changes such as connectors, data sources and audit scope, with before and after values, since the organization was created. Only the managing service provider can generate it.",
+        "source": "https://docs.netwrix.com/docs/1secure/admin/searchandreports/auditlogs",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "notes": "The docs list fixed roles (Administrator, Editor, Viewer, and Business Viewer and Co-managing Administrator for managed organizations). Custom roles aren't described.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "notes": "Organization groups in 1Secure limit which managed organizations a user can see; they aren't IdP groups.",
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "notes": "The SSO page says users must already be added to 1Secure; it doesn't describe creating accounts on first sign-in.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "With 1Secure's own authentication, every user must set up MFA (an authenticator app or a security key) the first time they log in. It isn't optional.",
+        "source": "https://docs.netwrix.com/docs/1secure/admin/login/",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-11-20",
+        "notes": "Users can choose a security key as their MFA method when they first log in.",
+        "source": "https://docs.netwrix.com/docs/1secure/admin/login/",
+        "support": "supported"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Admins can set up SSO for a 1Secure tenant with Microsoft Entra ID or a generic OpenID Connect provider. Users must already be added to 1Secure to sign in. No docs page names the plan.",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://docs.netwrix.com/docs/1secure/admin/login/sso",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "notes": "The docs describe switching the tenant's authentication settings to an SSO provider, but not whether 1Secure password login is then blocked.",
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Netwrix sells data security, auditing and identity products, mostly installed on-premises. Values here cover Netwrix 1Secure, its SaaS auditing and risk assessment service, and how admins sign in to and manage a 1Secure tenant.",
+    "name": "Netwrix",
+    "status": "draft",
+    "website": "https://netwrix.com"
+  },
+  {
     "_id": "new-relic",
     "capabilities": {
       "api_token_controls": {
@@ -19811,6 +20019,82 @@
     "name": "Rollbar",
     "status": "draft",
     "website": "https://rollbar.com"
+  },
+  {
+    "_id": "sailpoint",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Admins create, review last-used dates for and delete API clients under Security Settings, API Management. The help center doesn't say whether admins can see or revoke other users' personal access tokens.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Nearly all activity, including authentication into the tenant and admin changes, is tracked in audit events that can be searched and downloaded as reports.",
+        "retention": "1 year plus the current month; up to 5 years by support request",
+        "source": "https://documentation.sailpoint.com/saas/help/common/audit-reports.html",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Organizations that have Custom User Levels can create up to 100 named user levels with chosen permissions. The page says 'if your organization has Custom User Levels' but doesn't say which plan or add-on includes it.",
+        "plan": "Custom User Levels",
+        "source": "https://documentation.sailpoint.com/saas/help/common/users/custom_user_levels.html",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "notes": "Custom user levels publish as requestable entitlements, but the help center doesn't describe assigning user levels from IdP groups.",
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-20",
+        "notes": "A SAML Just-in-Time Provisioning source creates an identity for users without an account when they first sign in through the IdP, and can update it when IdP data changes. SailPoint asks customers to contact its services team before setting it up.",
+        "source": "https://documentation.sailpoint.com/saas/help/common/jit-accounts.html",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Admins can set Multifactor Authentication as the sign-in method on an identity profile, so its users must use an external authenticator app. Elevated accounts require MFA by default.",
+        "source": "https://documentation.sailpoint.com/saas/help/common/strong_auth.html",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The MFA page describes TOTP authenticator apps only.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "Identities are loaded by aggregating accounts from sources and building identity profiles. The help center doesn't describe an IdP pushing users into the tenant over SCIM.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "checked": "2026-11-20",
+        "notes": "Admins set the maximum session length (default 12 hours, up to 7 days), the idle timeout (default 15 minutes, up to 24 hours) and whether closing the browser ends the session. Sessions through an IdP expire after 90 days regardless.",
+        "source": "https://documentation.sailpoint.com/saas/help/common/session_lengths.html",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Admins can set SailPoint up as a SAML service provider for an existing IdP under Admin, Global, Security Settings, Service Provider. Users need a matching identity in SailPoint unless JIT account creation is set up. No docs page names the plan.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://documentation.sailpoint.com/saas/help/common/config_isc_service_provider.html",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "With a remote IdP enabled, end users can only launch SailPoint after signing in to the IdP. Users with an elevated user level can bypass the IdP with a sign-in URL, so access continues if the IdP is down.",
+        "source": "https://documentation.sailpoint.com/saas/help/common/config_isc_service_provider.html",
+        "support": "supported"
+      }
+    },
+    "category": "security",
+    "description": "SailPoint's SaaS identity governance platform, now documented as SailPoint Human Fabric (formerly Identity Security Cloud), for access requests, certifications, provisioning and roles. Values here cover signing in to and administering the SaaS tenant itself.",
+    "name": "SailPoint Identity Security Cloud",
+    "status": "draft",
+    "website": "https://sailpoint.com"
   },
   {
     "_id": "salesforce-marketing-cloud",

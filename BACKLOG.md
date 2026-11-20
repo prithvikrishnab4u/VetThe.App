@@ -10,7 +10,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 
 | Priority | App | Proposed id | Category | Website |
 |---|---|---|---|---|
-| P1 | SailPoint Identity Security Cloud | `sailpoint` | security | https://sailpoint.com |
 | P1 | Saviynt | `saviynt` | security | https://saviynt.com |
 | P1 | Omada Identity Cloud | `omada` | security | https://omadaidentity.com |
 | P1 | One Identity Manager On Demand | `one-identity` | security | https://oneidentity.com |
@@ -46,11 +45,8 @@ The site is about IAM, so the identity vendors themselves come before everything
 | Priority | App | Proposed id | Category | Website |
 |---|---|---|---|---|
 | P1 | CyberArk | `cyberark` | security | https://cyberark.com |
-| P1 | BeyondTrust | `beyondtrust` | security | https://beyondtrust.com |
-| P1 | Delinea | `delinea` | security | https://delinea.com |
 | P1 | StrongDM | `strongdm` | security | https://strongdm.com |
 | P1 | Teleport | `teleport` | security | https://goteleport.com |
-| P1 | Netwrix | `netwrix` | security | https://netwrix.com |
 | P1 | WALLIX | `wallix` | security | https://wallix.com |
 | P1 | Segura | `segura` | security | https://segura.security |
 
