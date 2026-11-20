@@ -1,0 +1,53 @@
+name: "Cribl Cloud"
+category: "infrastructure"
+website: "https://cribl.io"
+description: "Cribl Cloud is the hosted version of Cribl's telemetry pipeline, search and data lake products for routing and processing logs, metrics and traces."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "Cribl.Cloud can use an IdP for SSO over OIDC or SAML on \"certain plan/license tiers\"; the page doesn't name them."
+    source: "https://docs.cribl.io/iam/sso-cloud"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "The docs recommend keeping a fallback user on a non-corporate domain in case SSO breaks, but don't describe blocking password login."
+  scim:
+    support: "undocumented"
+    notes: "The Cribl.Cloud docs don't describe SCIM provisioning."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The Cribl.Cloud docs don't describe requiring MFA."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The docs don't describe signing in with security keys or passkeys."
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    retention: "Last 30 days downloadable"
+    notes: "Cloud Identity event logs record authentication, authorization and administrative actions. Organization Owners on a Cribl.Cloud Enterprise license can download them or forward them."
+    source: "https://docs.cribl.io/iam/cloud-identity-event-logs"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "The SSO docs don't say whether accounts are created on first sign-in."
+  domain_verification:
+    support: "undocumented"
+    notes: "One IdP can connect one email domain to one Cribl organization, but the docs don't describe verifying domain ownership or claiming accounts."
+  custom_roles:
+    support: "undocumented"
+    notes: "Cribl.Cloud uses a fixed Permissions model; the legacy custom Roles and Policies model is on-prem only and not supported on Cribl.Cloud."
+  group_role_mapping:
+    support: "supported"
+    notes: "IdP group names that follow Cribl's naming patterns map automatically to organization-level Permissions, and Teams can list IdP group names to grant workspace- and product-level Permissions."
+    source: "https://docs.cribl.io/iam/sso-initial-steps"
+    checked: "2026-11-20"
+  session_controls:
+    support: "undocumented"
+    notes: "The Cribl.Cloud docs don't describe admin session controls."
+  api_token_controls:
+    support: "undocumented"
+    notes: "The docs cover creating API credentials but not admin controls over credentials other users create."

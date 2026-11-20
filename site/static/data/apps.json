@@ -4853,6 +4853,89 @@
     "website": "https://configcat.com"
   },
   {
+    "_id": "confluent-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-11-20",
+        "notes": "An OrganizationAdmin can view, edit and delete API keys across the organization in the Cloud Console.",
+        "source": "https://docs.confluent.io/cloud/current/security/authenticate/workload-identities/service-accounts/api-keys/manage-api-keys.html",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Audit logs record activity on Standard, Enterprise, Dedicated and other cluster types, kept on a separate cluster that you consume with an API key. Availability depends on cluster type rather than a named plan.",
+        "retention": "7 days by default (extendable)",
+        "source": "https://docs.confluent.io/cloud/current/monitoring/audit-logging/cloud-audit-log-concepts.html",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "notes": "RBAC uses predefined roles; the docs don't describe creating custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "checked": "2026-11-20",
+        "notes": "Trusted domains are verified with a DNS TXT record or HTML file. They let SSO users reach the support portal and are required for SCIM; the docs don't describe taking over existing accounts on the domain.",
+        "source": "https://docs.confluent.io/cloud/current/security/authenticate/user-identities/user-idps/sso/trusted-domains.html",
+        "support": "partial"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "Group mappings assign Confluent Cloud RBAC roles to IdP groups, applied automatically when an SSO user signs in.",
+        "source": "https://docs.confluent.io/cloud/current/security/authenticate/user-identities/user-idps/sso/group-mapping/overview.html",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-20",
+        "notes": "When an SSO user signs in for the first time, Confluent Cloud creates their user account automatically.",
+        "source": "https://docs.confluent.io/cloud/current/security/authenticate/user-identities/user-idps/sso/jit-user-provisioning.html",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "An OrganizationAdmin can require MFA with FIDO2 for all local user accounts in the organization.",
+        "source": "https://docs.confluent.io/cloud/current/security/authenticate/user-identities/user-accounts/multi-factor-auth.html",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-11-20",
+        "notes": "MFA for local users is FIDO2 only, using a security key such as a YubiKey or a passkey.",
+        "source": "https://docs.confluent.io/cloud/current/security/authenticate/user-identities/user-accounts/multi-factor-auth.html",
+        "support": "supported"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "SCIM adds, updates and deactivates users from the IdP. It needs the Advanced Security add-on, SSO and at least one verified trusted domain.",
+        "plan": "Advanced Security add-on",
+        "source": "https://docs.confluent.io/cloud/current/security/authenticate/user-identities/user-idps/sso/scim.html",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "session_controls": {
+        "notes": "The docs don't describe admin controls over session length or signing users out.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Users can sign in through a SAML identity provider, or an OIDC provider for Azure Marketplace organizations. The SSO pages don't name a plan.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.confluent.io/cloud/current/security/authenticate/user-identities/user-idps/sso/overview.html",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "notes": "Each user's authentication type is set to Local or SSO, and local accounts keep working when SSO is on. The docs don't describe an organization-wide setting that blocks local sign-in.",
+        "support": "undocumented"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Confluent Cloud is a fully managed data streaming platform built on Apache Kafka and Apache Flink.",
+    "name": "Confluent Cloud",
+    "status": "draft",
+    "website": "https://www.confluent.io"
+  },
+  {
     "_id": "convex",
     "capabilities": {
       "api_token_controls": {
@@ -5055,6 +5138,77 @@
     "name": "Coursera for Business",
     "status": "published",
     "website": "https://www.coursera.org/business"
+  },
+  {
+    "_id": "cribl",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "The docs cover creating API credentials but not admin controls over credentials other users create.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Cloud Identity event logs record authentication, authorization and administrative actions. Organization Owners on a Cribl.Cloud Enterprise license can download them or forward them.",
+        "plan": "Enterprise",
+        "retention": "Last 30 days downloadable",
+        "source": "https://docs.cribl.io/iam/cloud-identity-event-logs",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "notes": "Cribl.Cloud uses a fixed Permissions model; the legacy custom Roles and Policies model is on-prem only and not supported on Cribl.Cloud.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "notes": "One IdP can connect one email domain to one Cribl organization, but the docs don't describe verifying domain ownership or claiming accounts.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "IdP group names that follow Cribl's naming patterns map automatically to organization-level Permissions, and Teams can list IdP group names to grant workspace- and product-level Permissions.",
+        "source": "https://docs.cribl.io/iam/sso-initial-steps",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "notes": "The SSO docs don't say whether accounts are created on first sign-in.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "The Cribl.Cloud docs don't describe requiring MFA.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The docs don't describe signing in with security keys or passkeys.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "The Cribl.Cloud docs don't describe SCIM provisioning.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "notes": "The Cribl.Cloud docs don't describe admin session controls.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Cribl.Cloud can use an IdP for SSO over OIDC or SAML on \"certain plan/license tiers\"; the page doesn't name them.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.cribl.io/iam/sso-cloud",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "notes": "The docs recommend keeping a fallback user on a non-corporate domain in case SSO breaks, but don't describe blocking password login.",
+        "support": "undocumented"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Cribl Cloud is the hosted version of Cribl's telemetry pipeline, search and data lake products for routing and processing logs, metrics and traces.",
+    "name": "Cribl Cloud",
+    "status": "draft",
+    "website": "https://cribl.io"
   },
   {
     "_id": "crowdstrike",
@@ -9487,6 +9641,84 @@
     "name": "Highlight.io",
     "status": "draft",
     "website": "https://www.highlight.io"
+  },
+  {
+    "_id": "honeycomb",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Management API keys manage the team's environment API keys; the docs don't describe controls over tokens individual users create.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "The Activity Log tracks configuration changes, logins and sessions, API keys and other team activity, and can be queried in Honeycomb or downloaded as a CSV.",
+        "plan": "Enterprise",
+        "retention": "60 days (CSV download)",
+        "source": "https://docs.honeycomb.io/configure/teams/investigate-activity",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "notes": "The docs describe three roles (Team Owner, Team Member, Read-Only) and don't mention custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "notes": "Team Owners can set allowed email domains for joining, but that is an allowlist; the docs don't describe verifying domain ownership.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "notes": "The docs don't describe assigning roles from identity provider groups.",
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-20",
+        "notes": "A user without a Honeycomb account gets one created during their first SAML login.",
+        "plan": "Pro",
+        "source": "https://docs.honeycomb.io/get-started/honeycomb/log-in-with-saml-sso",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "mfa_enforcement": {
+        "notes": "The docs don't describe requiring MFA for team members.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The docs don't describe signing in with security keys or passkeys.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "The docs don't describe SCIM provisioning.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "notes": "The docs don't describe admin controls over session length or signing users out.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Team members can sign in with Google SSO or a SAML 2.0 identity provider such as Okta or Entra ID. Available on Pro and Enterprise.",
+        "plan": "Pro",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.honeycomb.io/configure/teams/configure-access",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Team Owners can require that team members authenticate through the SAML identity provider (Make team SSO-only).",
+        "plan": "Pro",
+        "source": "https://docs.honeycomb.io/configure/teams/configure-access/sso-okta-saml",
+        "support": "supported",
+        "tier": "paid"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Honeycomb is an observability platform for querying traces, logs and metrics from production systems.",
+    "name": "Honeycomb",
+    "status": "draft",
+    "website": "https://www.honeycomb.io"
   },
   {
     "_id": "hootsuite",
@@ -18193,6 +18425,94 @@
     "name": "Rippling",
     "status": "published",
     "website": "https://www.rippling.com"
+  },
+  {
+    "_id": "rollbar",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-11-20",
+        "notes": "Account owners can see and revoke every user's personal access tokens under Settings > API access tokens > Personal. The page doesn't name a plan.",
+        "source": "https://docs.rollbar.com/docs/access-tokens",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "The Security Audit Log in Account settings shows recent actions by all users, with timestamp, event, acting user and IP address. Retention isn't stated.",
+        "plan": "Enterprise",
+        "source": "https://docs.rollbar.com/docs/enterprise-security-controls",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "notes": "Access is granted through teams assigned to projects; the docs don't describe custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "notes": "The docs don't describe verifying an email domain.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "Okta Push Groups creates Rollbar teams from Okta groups and keeps membership in sync. Teams control which projects users can reach.",
+        "plan": "Enterprise",
+        "source": "https://docs.rollbar.com/docs/okta",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "notes": "The Okta guide says Okta users with an existing Rollbar user can log in; the docs don't describe creating accounts on first sign-in.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "Each user can turn on two-factor authentication; the docs don't describe admins requiring it.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The two-factor page describes only authenticator-app codes; it doesn't mention security keys or passkeys.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "SCIM provisions users and teams. The Okta guide says provisioning is available on Enterprise plans only and must be enabled by sales.",
+        "plan": "Enterprise",
+        "source": "https://docs.rollbar.com/docs/okta",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "checked": "2026-11-20",
+        "notes": "Enterprise security controls set Max Session Length and Max Inactive Time for users.",
+        "plan": "Enterprise",
+        "source": "https://docs.rollbar.com/docs/enterprise-security-controls",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Account owners can configure a SAML identity provider on Advanced and Enterprise plans. A separate guide covers OneLogin as an OIDC provider.",
+        "plan": "Advanced",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.rollbar.com/docs/saml",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Require Log In via SAML forces users to authenticate through the IdP whenever they open the account. They can still use other login methods for other Rollbar accounts.",
+        "plan": "Advanced",
+        "source": "https://docs.rollbar.com/docs/saml",
+        "support": "supported",
+        "tier": "paid"
+      }
+    },
+    "category": "development",
+    "description": "Rollbar is an error monitoring service that tracks exceptions and deploys across web, mobile and backend apps.",
+    "name": "Rollbar",
+    "status": "draft",
+    "website": "https://rollbar.com"
   },
   {
     "_id": "salesforce-marketing-cloud",

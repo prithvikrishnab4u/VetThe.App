@@ -1,0 +1,70 @@
+name: "Rollbar"
+category: "development"
+website: "https://rollbar.com"
+description: "Rollbar is an error monitoring service that tracks exceptions and deploys across web, mobile and backend apps."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Advanced"
+    protocols: ["SAML", "OIDC"]
+    notes: "Account owners can configure a SAML identity provider on Advanced and Enterprise plans. A separate guide covers OneLogin as an OIDC provider."
+    source: "https://docs.rollbar.com/docs/saml"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Advanced"
+    notes: "Require Log In via SAML forces users to authenticate through the IdP whenever they open the account. They can still use other login methods for other Rollbar accounts."
+    source: "https://docs.rollbar.com/docs/saml"
+    checked: "2026-11-20"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM provisions users and teams. The Okta guide says provisioning is available on Enterprise plans only and must be enabled by sales."
+    source: "https://docs.rollbar.com/docs/okta"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Each user can turn on two-factor authentication; the docs don't describe admins requiring it."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The two-factor page describes only authenticator-app codes; it doesn't mention security keys or passkeys."
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "The Security Audit Log in Account settings shows recent actions by all users, with timestamp, event, acting user and IP address. Retention isn't stated."
+    source: "https://docs.rollbar.com/docs/enterprise-security-controls"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "The Okta guide says Okta users with an existing Rollbar user can log in; the docs don't describe creating accounts on first sign-in."
+  domain_verification:
+    support: "undocumented"
+    notes: "The docs don't describe verifying an email domain."
+  custom_roles:
+    support: "undocumented"
+    notes: "Access is granted through teams assigned to projects; the docs don't describe custom roles."
+  group_role_mapping:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Okta Push Groups creates Rollbar teams from Okta groups and keeps membership in sync. Teams control which projects users can reach."
+    source: "https://docs.rollbar.com/docs/okta"
+    checked: "2026-11-20"
+  session_controls:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Enterprise security controls set Max Session Length and Max Inactive Time for users."
+    source: "https://docs.rollbar.com/docs/enterprise-security-controls"
+    checked: "2026-11-20"
+  api_token_controls:
+    support: "supported"
+    notes: "Account owners can see and revoke every user's personal access tokens under Settings > API access tokens > Personal. The page doesn't name a plan."
+    source: "https://docs.rollbar.com/docs/access-tokens"
+    checked: "2026-11-20"

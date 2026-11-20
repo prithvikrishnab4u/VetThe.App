@@ -1,0 +1,65 @@
+name: "Confluent Cloud"
+category: "infrastructure"
+website: "https://www.confluent.io"
+description: "Confluent Cloud is a fully managed data streaming platform built on Apache Kafka and Apache Flink."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "Users can sign in through a SAML identity provider, or an OIDC provider for Azure Marketplace organizations. The SSO pages don't name a plan."
+    source: "https://docs.confluent.io/cloud/current/security/authenticate/user-identities/user-idps/sso/overview.html"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Each user's authentication type is set to Local or SSO, and local accounts keep working when SSO is on. The docs don't describe an organization-wide setting that blocks local sign-in."
+  scim:
+    support: "supported"
+    tier: "add_on"
+    plan: "Advanced Security add-on"
+    notes: "SCIM adds, updates and deactivates users from the IdP. It needs the Advanced Security add-on, SSO and at least one verified trusted domain."
+    source: "https://docs.confluent.io/cloud/current/security/authenticate/user-identities/user-idps/sso/scim.html"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "supported"
+    notes: "An OrganizationAdmin can require MFA with FIDO2 for all local user accounts in the organization."
+    source: "https://docs.confluent.io/cloud/current/security/authenticate/user-identities/user-accounts/multi-factor-auth.html"
+    checked: "2026-11-20"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "MFA for local users is FIDO2 only, using a security key such as a YubiKey or a passkey."
+    source: "https://docs.confluent.io/cloud/current/security/authenticate/user-identities/user-accounts/multi-factor-auth.html"
+    checked: "2026-11-20"
+  audit_logs:
+    support: "supported"
+    retention: "7 days by default (extendable)"
+    notes: "Audit logs record activity on Standard, Enterprise, Dedicated and other cluster types, kept on a separate cluster that you consume with an API key. Availability depends on cluster type rather than a named plan."
+    source: "https://docs.confluent.io/cloud/current/monitoring/audit-logging/cloud-audit-log-concepts.html"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "supported"
+    notes: "When an SSO user signs in for the first time, Confluent Cloud creates their user account automatically."
+    source: "https://docs.confluent.io/cloud/current/security/authenticate/user-identities/user-idps/sso/jit-user-provisioning.html"
+    checked: "2026-11-20"
+  domain_verification:
+    support: "partial"
+    notes: "Trusted domains are verified with a DNS TXT record or HTML file. They let SSO users reach the support portal and are required for SCIM; the docs don't describe taking over existing accounts on the domain."
+    source: "https://docs.confluent.io/cloud/current/security/authenticate/user-identities/user-idps/sso/trusted-domains.html"
+    checked: "2026-11-20"
+  custom_roles:
+    support: "undocumented"
+    notes: "RBAC uses predefined roles; the docs don't describe creating custom roles."
+  group_role_mapping:
+    support: "supported"
+    notes: "Group mappings assign Confluent Cloud RBAC roles to IdP groups, applied automatically when an SSO user signs in."
+    source: "https://docs.confluent.io/cloud/current/security/authenticate/user-identities/user-idps/sso/group-mapping/overview.html"
+    checked: "2026-11-20"
+  session_controls:
+    support: "undocumented"
+    notes: "The docs don't describe admin controls over session length or signing users out."
+  api_token_controls:
+    support: "supported"
+    notes: "An OrganizationAdmin can view, edit and delete API keys across the organization in the Cloud Console."
+    source: "https://docs.confluent.io/cloud/current/security/authenticate/workload-identities/service-accounts/api-keys/manage-api-keys.html"
+    checked: "2026-11-20"

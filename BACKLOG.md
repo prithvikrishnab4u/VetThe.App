@@ -208,14 +208,12 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P2 | Atlan | `atlan` | infrastructure | https://atlan.com |
 | P2 | Atlassian Statuspage | `atlassian-statuspage` | infrastructure | https://atlassian.com/software/statuspage |
 | P2 | Collibra | `collibra` | infrastructure | https://collibra.com |
-| P2 | Confluent Cloud | `confluent-cloud` | infrastructure | https://confluent.io |
 | P2 | DigitalOcean | `digitalocean` | infrastructure | https://digitalocean.com |
 | P2 | Druva | `druva` | infrastructure | https://druva.com |
 | P2 | Elastic Cloud | `elastic-cloud` | infrastructure | https://elastic.co/cloud |
 | P2 | Fastly | `fastly` | infrastructure | https://fastly.com |
 | P2 | Heroku | `heroku` | infrastructure | https://heroku.com |
 | P2 | Hightouch | `hightouch` | infrastructure | https://hightouch.com |
-| P2 | Honeycomb | `honeycomb` | infrastructure | https://honeycomb.io |
 | P2 | incident.io | `incident-io` | infrastructure | https://incident.io |
 | P2 | Ivanti Neurons for ITSM | `ivanti-neurons-itsm` | infrastructure | https://ivanti.com |
 | P2 | ManageEngine ServiceDesk Plus Cloud | `manageengine-servicedesk-plus` | infrastructure | https://manageengine.com/products/service-desk |
@@ -244,7 +242,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P3 | Lovable | `lovable` | development | https://lovable.dev |
 | P3 | MuleSoft Anypoint Platform | `mulesoft` | development | https://mulesoft.com |
 | P3 | ReadMe | `readme` | development | https://readme.com |
-| P3 | Rollbar | `rollbar` | development | https://rollbar.com |
 | P3 | Tabnine | `tabnine` | development | https://tabnine.com |
 | P3 | Temporal Cloud | `temporal-cloud` | development | https://temporal.io |
 | P3 | Common Room | `common-room` | sales_marketing | https://commonroom.io |
@@ -282,7 +279,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P3 | Atera | `atera` | infrastructure | https://atera.com |
 | P3 | Backblaze B2 | `backblaze` | infrastructure | https://backblaze.com |
 | P3 | ClickHouse Cloud | `clickhouse-cloud` | infrastructure | https://clickhouse.com |
-| P3 | Cribl Cloud | `cribl` | infrastructure | https://cribl.io |
 | P3 | FireHydrant | `firehydrant` | infrastructure | https://firehydrant.com |
 | P3 | Kaseya VSA | `kaseya-vsa` | infrastructure | https://kaseya.com |
 | P3 | Neon | `neon` | infrastructure | https://neon.com |
