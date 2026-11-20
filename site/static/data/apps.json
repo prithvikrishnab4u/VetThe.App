@@ -6061,6 +6061,84 @@
     "website": "https://depot.dev"
   },
   {
+    "_id": "descope",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Management keys are company-level keys managed on the company page; the docs don't describe controls over keys individual Descopers create.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Company-level audit events record project creation and deletion, management key changes, company setting changes and Descoper console logins, alongside project-level events. Retention isn't stated.",
+        "source": "https://docs.descope.com/audit-trails-and-integrations",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Besides the default Descoper roles, admins can add a custom role by naming it and choosing permission groups.",
+        "source": "https://docs.descope.com/management/company-settings",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "notes": "Each console SSO configuration has its own SSO domains, but the docs don't describe verifying domain ownership or claiming accounts.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "Role Mapping assigns full access, project roles or tag-based roles to Descopers by SSO group.",
+        "source": "https://docs.descope.com/management/company-settings",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-20",
+        "notes": "Without SCIM, console access through SSO relies on just-in-time provisioning.",
+        "source": "https://docs.descope.com/management/company-settings",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Force MFA makes every Descoper go through MFA, choosing passkeys, SMS OTP or TOTP.",
+        "source": "https://docs.descope.com/management/company-settings",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-11-20",
+        "notes": "Passkeys are one of the MFA methods Descopers can choose when Force MFA is on.",
+        "source": "https://docs.descope.com/management/company-settings",
+        "support": "supported"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "SCIM provisioning for the company can be set up in the SSO Setup Suite, so console access is managed by the IdP instead of JIT.",
+        "source": "https://docs.descope.com/management/company-settings",
+        "support": "supported"
+      },
+      "session_controls": {
+        "checked": "2026-11-20",
+        "notes": "Company session settings set the console's session token duration, inactivity timeout and refresh token duration.",
+        "source": "https://docs.descope.com/management/company-settings",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Admins can set up SSO for the Descope console itself, for the people who manage the company (Descopers), through the SSO Setup Suite. The docs don't name the plan, and descope.com/pricing was not reachable from this session.",
+        "source": "https://docs.descope.com/management/company-settings",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Once console SSO is configured, Enforce SSO makes Descopers log in through SSO. SSO Exclusions can list login IDs that may bypass it.",
+        "source": "https://docs.descope.com/management/company-settings",
+        "support": "supported"
+      }
+    },
+    "category": "security",
+    "description": "Descope is a customer identity and access management platform with drag-and-drop authentication flows, SSO, MFA and passkeys for apps and AI agents.",
+    "name": "Descope",
+    "status": "draft",
+    "website": "https://www.descope.com"
+  },
+  {
     "_id": "dify-cloud",
     "capabilities": {
       "api_token_controls": {
@@ -7250,6 +7328,83 @@
     "name": "Five9",
     "status": "draft",
     "website": "https://www.five9.com"
+  },
+  {
+    "_id": "fivetran",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Admins manage service account API keys; the docs don't describe controls over keys individual users create.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "The Fivetran Platform Connector delivers dashboard user actions and API calls to your destination. The separate Audit Trail table needs Enterprise or Business Critical.",
+        "source": "https://fivetran.com/docs/logs",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "RBAC offers standard roles plus custom roles that admins create. The page doesn't name the plan.",
+        "source": "https://fivetran.com/docs/getting-started/fivetran-dashboard/account-settings/role-based-access-control",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "notes": "The docs don't describe verifying an email domain.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "Okta Group Push creates, updates and deletes Fivetran teams and their membership. Team roles themselves are set in Fivetran, not mapped from groups.",
+        "source": "https://fivetran.com/docs/getting-started/fivetran-dashboard/account-settings/scim/okta-scim",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "notes": "The SSO page doesn't say whether accounts are created on first sign-in.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Fivetran says it doesn't support two-factor authentication for native Fivetran logins and points to SAML with the IdP's MFA instead.",
+        "source": "https://fivetran.com/docs/getting-started/fivetran-dashboard/account-settings/troubleshooting/use-two-factor-authentication",
+        "support": "not_supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-11-20",
+        "notes": "Native Fivetran logins have no two-factor authentication at all, so no security keys or passkeys either.",
+        "source": "https://fivetran.com/docs/getting-started/fivetran-dashboard/account-settings/troubleshooting/use-two-factor-authentication",
+        "support": "not_supported"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "Okta SCIM creates users, updates name and role, and soft-deletes deactivated users. Group Push manages teams. Entra ID is also supported.",
+        "source": "https://fivetran.com/docs/getting-started/fivetran-dashboard/account-settings/scim/okta-scim",
+        "support": "supported"
+      },
+      "session_controls": {
+        "notes": "The docs don't describe admin session controls.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "SSO uses SAML with Okta, Entra ID, Google Workspace, OneLogin, PingOne, RSA or any SAML 2.0 provider. The docs don't name a plan, and the pricing page was not reachable from this session.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://fivetran.com/docs/getting-started/fivetran-dashboard/account-settings/sso",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Setting Required authentication type to SAML or Google OAuth stops users logging in with email and password.",
+        "source": "https://fivetran.com/docs/getting-started/fivetran-dashboard/account-settings/troubleshooting/users-bypass-sso",
+        "support": "supported"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Fivetran is a managed data movement platform that replicates data from SaaS apps and databases into warehouses and lakes.",
+    "name": "Fivetran",
+    "status": "draft",
+    "website": "https://www.fivetran.com"
   },
   {
     "_id": "flagsmith",
@@ -16300,6 +16455,82 @@
     "website": "https://www.pandadoc.com"
   },
   {
+    "_id": "panther",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "API tokens are created under Settings > API Tokens with chosen permissions and optional IP limits; the docs don't clearly describe admins managing tokens other users created.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Panther generates audit logs of actions in the Console and API automatically; they can be enabled as a log source to search and write detections on.",
+        "retention": "5 years",
+        "source": "https://docs.panther.com/data-onboarding/supported-logs/panther-audit-logs",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Admins can customise the three default roles or create new roles from individual permissions, and limit some permissions to chosen log types.",
+        "source": "https://docs.panther.com/system-configuration/rbac",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "notes": "The docs don't describe verifying an email domain.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "Roles can't be set from SAML attributes. With Okta SCIM, a custom Panther role attribute (taken from the user's first assigned group if they have several) keeps the role in sync. Okta only.",
+        "source": "https://docs.panther.com/system-configuration/saml/okta/okta-scim",
+        "support": "partial"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-20",
+        "notes": "SAML accounts are created on first login with a default role you choose.",
+        "source": "https://docs.panther.com/system-configuration/saml",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "notes": "The docs don't describe requiring MFA for password logins.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The docs don't describe signing in with security keys or passkeys.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "Okta SCIM updates profiles and roles and deactivates users, but doesn't create users (they come from JIT at first login) and the /Groups endpoint isn't supported.",
+        "source": "https://docs.panther.com/system-configuration/saml/okta/okta-scim",
+        "support": "partial"
+      },
+      "session_controls": {
+        "notes": "The docs don't describe admin session controls.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Users can log in to the Panther Console through a SAML provider such as Okta, Entra ID, Google Workspace, OneLogin or Duo. The docs don't name a plan.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.panther.com/system-configuration/saml",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "An Admin can enforce SSO so users can no longer log in with a username and password.",
+        "source": "https://docs.panther.com/system-configuration/saml",
+        "support": "supported"
+      }
+    },
+    "category": "security",
+    "description": "Panther is a cloud SIEM for collecting security logs, writing detections as code and investigating alerts.",
+    "name": "Panther",
+    "status": "draft",
+    "website": "https://panther.com"
+  },
+  {
     "_id": "passbolt",
     "capabilities": {
       "api_token_controls": {
@@ -16735,6 +16966,92 @@
     "name": "Personio",
     "status": "draft",
     "website": "https://www.personio.com"
+  },
+  {
+    "_id": "pinecone",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "API keys belong to projects and can be limited to project roles on Standard and Enterprise; the docs don't describe admins controlling keys individual users create.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Audit logs of user, service account and API actions on the management and control plane are written to an Amazon S3 or Google Cloud Storage bucket the customer controls.",
+        "plan": "Enterprise",
+        "retention": "Set by the customer's own storage bucket",
+        "source": "https://docs.pinecone.io/admin/security/configure-audit-logs",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "notes": "Pinecone uses preset organization and project roles that can be combined; the docs don't describe creating custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "notes": "SSO setup asks for the company's email domains, but the docs don't describe verifying ownership or claiming accounts.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "SAML role management replaces each user's organization and project roles with the roles the IdP sends on every login. SCIM can set roles the same way from user attributes.",
+        "plan": "Enterprise",
+        "source": "https://docs.pinecone.io/admin/security/configure-single-sign-on/okta-role-management",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-20",
+        "notes": "Admins set a default role for users who sign up through SSO; users get it on their first SSO login.",
+        "plan": "Standard",
+        "source": "https://docs.pinecone.io/admin/security/configure-single-sign-on/okta",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "mfa_enforcement": {
+        "notes": "The security docs don't describe requiring MFA.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The docs don't describe signing in with security keys or passkeys.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "Okta SCIM provisions members and their roles; deactivating or removing a member in Okta removes them from the organization. Group push isn't supported.",
+        "plan": "Enterprise",
+        "source": "https://docs.pinecone.io/admin/security/configure-single-sign-on/okta-scim-provisioning",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "notes": "The docs don't describe admin session controls.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "SAML 2.0 SSO is available on the Standard and Enterprise plans.",
+        "plan": "Standard",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.pinecone.io/admin/security/configure-single-sign-on/okta",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "During SSO setup, organization owners can choose Enforce SSO for all users on the company's email domains.",
+        "plan": "Standard",
+        "source": "https://docs.pinecone.io/admin/security/configure-single-sign-on/okta",
+        "support": "supported",
+        "tier": "paid"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Pinecone is a managed vector database and retrieval platform for search, RAG and AI agent applications.",
+    "name": "Pinecone",
+    "status": "draft",
+    "website": "https://www.pinecone.io"
   },
   {
     "_id": "pipedrive",

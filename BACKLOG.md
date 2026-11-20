@@ -41,7 +41,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P1 | Imprivata | `imprivata` | security | https://imprivata.com |
 | P1 | Transmit Security | `transmit-security` | security | https://transmitsecurity.com |
 | P1 | WorkOS | `workos` | security | https://workos.com |
-| P1 | Descope | `descope` | security | https://descope.com |
 | P1 | Stytch | `stytch` | security | https://stytch.com |
 | P1 | Frontegg | `frontegg` | security | https://frontegg.com |
 | P1 | FusionAuth | `fusionauth` | security | https://fusionauth.io |
@@ -88,7 +87,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P1 | Cloudflare | `cloudflare` | infrastructure | https://cloudflare.com |
 | P1 | dbt Cloud | `dbt-cloud` | infrastructure | https://getdbt.com |
 | P1 | Dynatrace | `dynatrace` | infrastructure | https://dynatrace.com |
-| P1 | Fivetran | `fivetran` | infrastructure | https://fivetran.com |
 | P1 | Google Cloud | `google-cloud` | infrastructure | https://cloud.google.com |
 | P1 | Grafana Cloud | `grafana-cloud` | infrastructure | https://grafana.com |
 | P1 | HCP Terraform | `hcp-terraform` | infrastructure | https://hashicorp.com/products/terraform |
@@ -266,7 +264,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P3 | Kolide | `kolide` | security | https://kolide.com |
 | P3 | Nightfall AI | `nightfall-ai` | security | https://nightfall.ai |
 | P3 | Nudge Security | `nudge-security` | security | https://nudgesecurity.com |
-| P3 | Panther | `panther` | security | https://panther.com |
 | P3 | Proton for Business | `proton-business` | security | https://proton.me/business |
 | P3 | SafeBase | `safebase` | security | https://safebase.io |
 | P3 | SecurityScorecard | `securityscorecard` | security | https://securityscorecard.com |
@@ -280,7 +277,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P3 | FireHydrant | `firehydrant` | infrastructure | https://firehydrant.com |
 | P3 | Kaseya VSA | `kaseya-vsa` | infrastructure | https://kaseya.com |
 | P3 | Neon | `neon` | infrastructure | https://neon.com |
-| P3 | Pinecone | `pinecone` | infrastructure | https://pinecone.io |
 | P3 | PlanetScale | `planetscale` | infrastructure | https://planetscale.com |
 | P3 | Rootly | `rootly` | infrastructure | https://rootly.com |
 | P3 | Salesforce Own | `salesforce-own` | infrastructure | https://salesforce.com/platform/data-backup |

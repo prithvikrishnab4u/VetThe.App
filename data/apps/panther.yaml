@@ -1,0 +1,59 @@
+name: "Panther"
+category: "security"
+website: "https://panther.com"
+description: "Panther is a cloud SIEM for collecting security logs, writing detections as code and investigating alerts."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "Users can log in to the Panther Console through a SAML provider such as Okta, Entra ID, Google Workspace, OneLogin or Duo. The docs don't name a plan."
+    source: "https://docs.panther.com/system-configuration/saml"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    notes: "An Admin can enforce SSO so users can no longer log in with a username and password."
+    source: "https://docs.panther.com/system-configuration/saml"
+    checked: "2026-11-20"
+  scim:
+    support: "partial"
+    notes: "Okta SCIM updates profiles and roles and deactivates users, but doesn't create users (they come from JIT at first login) and the /Groups endpoint isn't supported."
+    source: "https://docs.panther.com/system-configuration/saml/okta/okta-scim"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The docs don't describe requiring MFA for password logins."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The docs don't describe signing in with security keys or passkeys."
+  audit_logs:
+    support: "supported"
+    retention: "5 years"
+    notes: "Panther generates audit logs of actions in the Console and API automatically; they can be enabled as a log source to search and write detections on."
+    source: "https://docs.panther.com/data-onboarding/supported-logs/panther-audit-logs"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "supported"
+    notes: "SAML accounts are created on first login with a default role you choose."
+    source: "https://docs.panther.com/system-configuration/saml"
+    checked: "2026-11-20"
+  domain_verification:
+    support: "undocumented"
+    notes: "The docs don't describe verifying an email domain."
+  custom_roles:
+    support: "supported"
+    notes: "Admins can customise the three default roles or create new roles from individual permissions, and limit some permissions to chosen log types."
+    source: "https://docs.panther.com/system-configuration/rbac"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "partial"
+    notes: "Roles can't be set from SAML attributes. With Okta SCIM, a custom Panther role attribute (taken from the user's first assigned group if they have several) keeps the role in sync. Okta only."
+    source: "https://docs.panther.com/system-configuration/saml/okta/okta-scim"
+    checked: "2026-11-20"
+  session_controls:
+    support: "undocumented"
+    notes: "The docs don't describe admin session controls."
+  api_token_controls:
+    support: "undocumented"
+    notes: "API tokens are created under Settings > API Tokens with chosen permissions and optional IP limits; the docs don't clearly describe admins managing tokens other users created."
