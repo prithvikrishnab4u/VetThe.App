@@ -14,16 +14,27 @@ _Last updated: 2026-11-20_
 
 ## Where the data stands
 
-336 apps: 79 `published`, 257 `draft`. 4,032 data points:
+350 apps: 79 `published`, 271 `draft`. 4,200 data points:
 
 | | Count |
 |---|---|
-| Verified (has `source` + `checked`) | 1,827 |
+| Verified (has `source` + `checked`) | 1,908 |
 | Unverified (a value with no source, carried over from the old dataset) | 0 |
-| Not documented (checked, the vendor says nothing) | 1,567 |
+| Not documented (checked, the vendor says nothing) | 1,654 |
 | Not researched | 638 |
 
 ## Done
+
+- [x] **14 identity vendors from BACKLOG P1, read from their own docs hosts (2026-11-20, second session).** Added as `draft`, `category: security`: opal, p0-security, apono, britive, workos, stytch, aembit, push-security, beyond-identity, ping-identity, sailpoint, delinea, beyondtrust, netwrix. All 12 capabilities filled per app, every value sourced or `undocumented`, and every cited URL checked to return 200. **No tiers at all**: none of these docs pages name a plan, and the vendors' pricing pages weren't on the allowed hosts. Two values carry a `plan` without a tier because the docs name a feature gate but not a plan: Aembit Enforce SSO ("Identity Providers feature", marked a paid feature) and SailPoint custom roles ("Custom User Levels").
+  - **Which product each file describes.** These are identity products, so every value is about how the customer's own admins sign in to and run the product, not what it sells. Ping is the PingOne admin console. SailPoint is its SaaS tenant, now documented as Human Fabric (formerly Identity Security Cloud). Delinea is the Delinea Platform, BeyondTrust is the Pathfinder cloud platform, Netwrix is 1Secure (its SaaS product), and Beyond Identity is the Secure Access console. WorkOS and Stytch are their own dashboards, not the SSO/SCIM/MFA they sell to developers. That trap is the main thing to watch on any recheck: Stytch's docs are almost all about the customer's app, so its file is mostly `undocumented`.
+  - Calls worth knowing: WorkOS has exactly five fixed dashboard roles, so custom roles is `not_supported`. Push Security's admin console has a fixed three-day rolling session, so session controls is `not_supported`. Beyond Identity console sessions are fixed (24h, 15 min idle for admins) but suspension logs a user out, so `partial`. BeyondTrust Pathfinder's audit log only covers user management for now, so `partial`. Aembit maps IdP groups to roles only when it creates the account, so group mapping is `partial`. Opal's SCIM only pushes new users, so `partial`. Stytch's "JIT" lets anyone with a verified email on a domain join the workspace, not SSO-based, so `partial`.
+  - **Skipped (not added), because no usable vendor page could be read:**
+    - **saviynt:** docs.saviyntcloud.com redirects every page to a GitBook visitor login (OIDC), so it is login-gated.
+    - **veza:** docs.veza.com returns 401 "Authentication missing" for every page.
+    - **conductorone:** www.conductorone.com redirects to www.c1.ai (rebranded), which this session's network did not allow.
+    - **frontegg:** docs.frontegg.com redirects to developers.frontegg.com, which was not allowed.
+    - **strongdm:** www.strongdm.com redirects to delinea.com (Delinea acquired StrongDM), and docs to docs.strongdm.com. Neither was allowed. Worth checking whether StrongDM should now be folded into the Delinea row.
+    - **cyberark:** docs.cyberark.com returns 404 for the root and every known docs path to automated fetches. It failed the same way in the P1 run, so it needs a person in a browser.
 
 - [x] **20 apps from the skipped list, read straight from vendor docs hosts (2026-11-20).** This session's network allowed 20 vendor docs hosts, one per app: bitwarden, retool, twingate, doppler, honeycomb, rollbar, cribl, confluent-cloud, statsig, gitguardian, spacelift, port, pinecone, descope, panther, fivetran, bugsnag, coderabbit, hightouch, tines. All 12 capabilities filled per app, every value sourced or `undocumented`, no inferred tiers. All `draft`. Pages were fetched with curl and read as text; many Mintlify/GitBook/ReadMe sites serve a `.md` twin or `llms.txt`, which made this fast. Cited URLs are the published HTML pages, each checked to return 200.
   - **Hosts that were not allowed, so values stayed untiered or `undocumented`:** retool.com/pricing (Retool tiers), doppler.com/pricing (Doppler SSO tier), descope.com/pricing (Descope tiers), www.fivetran.com/pricing (Fivetran SSO/SCIM tiers; fivetran.com redirects there), and **docs.hightouch.com** (hightouch.com/docs redirects there). Hightouch is the thinnest file: SSO, SCIM, custom roles and audit logs come from hightouch.com's pricing and security pages, the other eight values are `undocumented` until someone can read docs.hightouch.com.
@@ -99,7 +110,7 @@ _Last updated: 2026-11-20_
    | API token controls | 163 |
    Run the same way: parallel report-only agents, about 8 apps each, every value applied and reviewed in the main session. Use [research/BRIEF-roles-session-tokens.md](research/BRIEF-roles-session-tokens.md) (written 2026-09-27; pilot it on about 3 batches first, as with JIT). Why it needed rewriting: JIT and domain verification usually sit on the one SSO docs page, and these do not: roles live in an admin guide, session controls in a security or policy page, API tokens in a developer doc. Expect more fetches per app and a lower hit rate. Carry over the three rules the first run proved necessary: never cite a page you could not fetch, never infer a tier, and define the `partial` boundary up front for each capability, since that is where every agent error landed.
 4. [ ] Recheck values older than about 6 months (vendors change plans); `checked` dates make this a simple query
-5. [ ] **Identity tools first (added 2026-09-27):** 52 IGA, access management, PAM and ITDR/NHI vendors now head [BACKLOG.md](BACKLOG.md) (SailPoint, Saviynt, Omada, ConductorOne, Veza, Ping, OneLogin, CyberArk, BeyondTrust, Delinea and more). None researched yet: the 2026-09-27 session's network policy blocked every vendor host. Research core capabilities with parallel report-only agents (about 20, 2-3 apps each) once vendor docs are reachable. Expect a lot of blocked or login-gated docs: CyberArk and Ping already failed in the P1 run.
+5. [ ] **Identity tools first (added 2026-09-27):** IGA, access management, PAM and ITDR/NHI vendors head [BACKLOG.md](BACKLOG.md). 14 were added on 2026-11-20 (see Done). Still to go include Omada, OneLogin and the rest of the identity block, plus the six skipped that day (saviynt, veza, conductorone, frontegg, strongdm, cyberark), each needing a different host allowed or a browser.
 6. [ ] Add more apps from [BACKLOG.md](BACKLOG.md): the first 72 P1 rows are done, so continue from P1 row 73, then P2/P3. Use `scratchpad/new/BRIEF.md` + `mk.py` as the pattern. Requests will also arrive through the website's "Add an app"
 7. [ ] The 65 apps added on 2026-09-22 are all `draft` — they need plan tiers before they can be published
 
