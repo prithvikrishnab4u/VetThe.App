@@ -82,7 +82,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 |---|---|---|---|---|
 | P1 | SAP Ariba | `sap-ariba` | finance | https://sap.com/products/spend-management/ariba.html |
 | P1 | Zip | `zip` | finance | https://ziphq.com |
-| P1 | Bitwarden | `bitwarden` | security | https://bitwarden.com |
 | P1 | Mimecast | `mimecast` | security | https://mimecast.com |
 | P1 | SentinelOne | `sentinelone` | security | https://sentinelone.com |
 | P1 | Wiz | `wiz` | security | https://wiz.io |
@@ -129,7 +128,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P2 | Devin | `devin` | development | https://devin.ai |
 | P2 | Kong Konnect | `kong-konnect` | development | https://konghq.com |
 | P2 | Netlify | `netlify` | development | https://netlify.com |
-| P2 | Retool | `retool` | development | https://retool.com |
 | P2 | SonarQube Cloud | `sonarqube-cloud` | development | https://sonarsource.com/products/sonarcloud |
 | P2 | Sonatype Nexus | `sonatype` | development | https://sonatype.com |
 | P2 | Sourcegraph | `sourcegraph` | development | https://sourcegraph.com |
@@ -203,7 +201,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P2 | Semgrep | `semgrep` | security | https://semgrep.dev |
 | P2 | Sophos Central | `sophos-central` | security | https://sophos.com |
 | P2 | Tines | `tines` | security | https://tines.com |
-| P2 | Twingate | `twingate` | security | https://twingate.com |
 | P2 | Varonis | `varonis` | security | https://varonis.com |
 | P2 | Veracode | `veracode` | security | https://veracode.com |
 | P2 | Airbyte Cloud | `airbyte` | infrastructure | https://airbyte.com |

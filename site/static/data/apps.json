@@ -2309,6 +2309,113 @@
     "website": "https://bitrise.io"
   },
   {
+    "_id": "bitwarden",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "The help center doesn't describe admins listing or revoking members' personal API keys. Secrets Manager access tokens belong to machine accounts, which is a different thing.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Teams and Enterprise organizations get event logs in the web app and through the Public API's /events endpoint.",
+        "plan": "Teams",
+        "retention": "Kept indefinitely; up to 367 days viewable at a time",
+        "source": "https://bitwarden.com/help/event-logs/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Besides owner, admin and user, Enterprise organizations can create custom roles with configurable permissions.",
+        "plan": "Enterprise",
+        "source": "https://bitwarden.com/help/user-types-access-control/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "domain_verification": {
+        "checked": "2026-11-20",
+        "notes": "Enterprise organizations claim a domain with a DNS TXT record. That blocks outside sign-ups on the domain and lets admins delete claimed members' accounts, but it only affects users who are already confirmed members; it does not pull in other accounts on the domain.",
+        "plan": "Enterprise",
+        "source": "https://bitwarden.com/help/claimed-domains/",
+        "support": "partial",
+        "tier": "enterprise"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "SCIM syncs groups and their members from the IdP, and groups carry collection access.",
+        "plan": "Teams",
+        "source": "https://bitwarden.com/help/about-scim/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-20",
+        "notes": "SSO for Enterprise organizations includes just-in-time provisioning of members.",
+        "plan": "Enterprise",
+        "source": "https://bitwarden.com/help/about-sso/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "The Require two-step login enterprise policy makes members use a two-step login method to access their vaults.",
+        "plan": "Enterprise",
+        "source": "https://bitwarden.com/help/policies/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-11-20",
+        "notes": "Two-step login with FIDO2 WebAuthn credentials, including security keys and passkeys, is free to all users. Passkeys can also be used to log in.",
+        "plan": "All plans",
+        "source": "https://bitwarden.com/help/setup-two-step-login-fido/",
+        "support": "supported",
+        "tier": "free"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "Teams and Enterprise organizations can use SCIM to provision and deprovision members and groups. Suspending a user in the IdP revokes their access.",
+        "plan": "Teams",
+        "source": "https://bitwarden.com/help/about-scim/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "session_controls": {
+        "checked": "2026-11-20",
+        "notes": "The Session timeout enterprise policy sets a maximum timeout for members and whether a timed-out session locks or logs out.",
+        "plan": "Enterprise",
+        "source": "https://bitwarden.com/help/policies/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Login with SSO is for Enterprise organizations and supports SAML 2.0 and OIDC.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://bitwarden.com/help/about-sso/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "The Require single sign-on enterprise policy makes non-owner, non-admin members log in with SSO. On cloud it is not enforced for owners and admins; self-hosted servers can enforce it for them with an environment variable.",
+        "plan": "Enterprise",
+        "source": "https://bitwarden.com/help/policies/",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "security",
+    "description": "Bitwarden is an open-source password manager for individuals and businesses, with a separate Secrets Manager for machine credentials.",
+    "name": "Bitwarden",
+    "status": "draft",
+    "website": "https://bitwarden.com"
+  },
+  {
     "_id": "box",
     "capabilities": {
       "api_token_controls": {
@@ -6142,6 +6249,95 @@
     "name": "DocuSign",
     "status": "published",
     "website": "https://docusign.com"
+  },
+  {
+    "_id": "doppler",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-11-20",
+        "notes": "Revoke Access Tokens revokes every personal or CLI token in the workplace at once. The docs don't describe listing or revoking a single user's token.",
+        "source": "https://docs.doppler.com/docs/workplace-settings",
+        "support": "partial"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "The Activity Logs page records every action the team takes, from adding members to changing secrets. Forwarding to a SIEM is Enterprise only. Retention isn't stated.",
+        "source": "https://docs.doppler.com/docs/workplace-logs",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Admins create custom workplace and project roles from a list of permissions under Team > Roles.",
+        "plan": "Enterprise, or an add-on to Team",
+        "source": "https://docs.doppler.com/docs/custom-roles",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "domain_verification": {
+        "checked": "2026-11-20",
+        "notes": "Owners verify a domain with a DNS TXT record. A verified domain restricts which email accounts can join the workplace and is needed for SAML SSO; the docs don't describe taking over existing accounts.",
+        "source": "https://docs.doppler.com/docs/domain-verification",
+        "support": "partial"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "User Groups and their members are provisioned from the IdP over SCIM, and groups are given project roles. Groups can't hold a workplace role.",
+        "plan": "Enterprise, or an add-on to Team",
+        "source": "https://docs.doppler.com/docs/user-groups",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "jit_provisioning": {
+        "notes": "The SAML guide sets a default role for users who log in via SSO but doesn't say whether accounts are created on first sign-in.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Every Doppler account has email-based MFA on by default, so a code is needed at each login. Users can swap it for an authenticator app or a security key.",
+        "plan": "All plans",
+        "source": "https://docs.doppler.com/docs/multi-factor-authentication",
+        "support": "supported",
+        "tier": "free"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-11-20",
+        "notes": "Users can register security keys such as a YubiKey, Touch ID or Face ID as their second factor.",
+        "source": "https://docs.doppler.com/docs/multi-factor-authentication",
+        "support": "supported"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "SCIM adds, updates and removes users and groups. The Okta SCIM guide lists an Enterprise subscription as a requirement.",
+        "plan": "Enterprise",
+        "source": "https://docs.doppler.com/docs/okta-scim",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "checked": "2026-11-20",
+        "notes": "Invalidate All Sessions signs every member out of the dashboard at once. The docs don't describe setting a session length or signing out one user.",
+        "source": "https://docs.doppler.com/docs/workplace-settings",
+        "support": "partial"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "SAML SSO works with Okta, Entra ID, Google, JumpCloud, OneLogin and others, and needs a verified workplace domain. The SAML pages don't name the plan, and doppler.com/pricing was not reachable from this session.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.doppler.com/docs/setting-up-saml-sso",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "notes": "The docs don't describe a setting that blocks password sign-in once SAML is on.",
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "Doppler is a secrets manager that stores and syncs environment variables and credentials across teams, apps and cloud providers.",
+    "name": "Doppler",
+    "status": "draft",
+    "website": "https://www.doppler.com"
   },
   {
     "_id": "drata",
@@ -17787,6 +17983,91 @@
     "website": "https://remote.com"
   },
   {
+    "_id": "retool",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Retool API access tokens are created by admins with scopes; the docs don't describe admins managing tokens that other users create.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Retool logs user actions such as query runs and password resets. Cloud customers on Business or Enterprise can download the logs; streaming to Datadog or Splunk is Enterprise only. The page doesn't say which plan gets the Audit logs page itself.",
+        "retention": "1 year (last 3 months shown in the UI)",
+        "source": "https://docs.retool.com/org-users/guides/monitoring/audit-logs",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Admins create named organization roles from permission scopes. Business plans get non-sensitive scopes; Enterprise adds sensitive admin functions.",
+        "plan": "Business",
+        "source": "https://docs.retool.com/permissions/guides/business/create-org-roles",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "domain_verification": {
+        "notes": "Retool can restrict SSO to listed email domains, but that is an allowlist; the docs don't describe verifying domain ownership or claiming accounts.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "SAML group sync adds and removes users from matching Retool permission groups at every login. OIDC role mapping and SCIM Group Push are also supported.",
+        "source": "https://docs.retool.com/sso/guides/group-sync/saml-group-sync",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-20",
+        "notes": "With Enable JIT user provisioning switched on, Retool creates an account the first time a user signs in over SSO.",
+        "source": "https://docs.retool.com/sso/guides/jit-provisioning",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Admins set Require Two Factor Authentication to OTP or FIDO2 in Advanced settings, and users must set it up at their next login.",
+        "source": "https://docs.retool.com/org-users/guides/user-management/two-factor-authentication",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-11-20",
+        "notes": "Two-factor authentication can be required as FIDO2, using a hardware key such as a YubiKey or a passkey.",
+        "source": "https://docs.retool.com/org-users/guides/user-management/two-factor-authentication",
+        "support": "supported"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "SCIM creates, updates and deactivates users; deactivated users are logged out immediately. Okta Group Push is supported.",
+        "source": "https://docs.retool.com/sso/guides/scim-user-provisioning",
+        "support": "supported"
+      },
+      "session_controls": {
+        "checked": "2026-11-20",
+        "notes": "SSO sessions last one week by default; admins can switch on Use short session to cut that to 12 hours. Those are the only two lengths.",
+        "source": "https://docs.retool.com/sso/guides/authentication/short-session",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Retool supports OIDC and SAML identity providers. The docs pages don't name the plan, and retool.com/pricing was not reachable from this session.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.retool.com/sso/quickstart",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Admins can toggle Disable Login with Email and Password in the SSO settings so all users must sign in with SSO.",
+        "source": "https://docs.retool.com/sso/guides/authentication/enforce-sso",
+        "support": "supported"
+      }
+    },
+    "category": "development",
+    "description": "Retool is a low-code platform for building internal tools, workflows and agents on top of databases and APIs.",
+    "name": "Retool",
+    "status": "draft",
+    "website": "https://retool.com"
+  },
+  {
     "_id": "ringcentral",
     "capabilities": {
       "api_token_controls": {
@@ -21040,6 +21321,82 @@
     "name": "Twilio",
     "status": "draft",
     "website": "https://www.twilio.com"
+  },
+  {
+    "_id": "twingate",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "API tokens are created by admins in the Admin Console; the docs don't describe controls over tokens other users create.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Admins can export audit logs of create, edit, delete and connect events across access, API keys, devices, policies, users and groups, or sync them to S3. The pricing comparison table didn't show which plans include admin audit logs.",
+        "source": "https://www.twingate.com/docs/audit-logs",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "notes": "Twingate has preset admin roles (Admin, DevOps, Helpdesk, Billing and others). The docs don't describe creating custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "notes": "The docs don't describe verifying an email domain.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "Groups synced from the IdP can be given Resources and access policies in Twingate, and membership is managed in the IdP.",
+        "source": "https://www.twingate.com/docs/groups",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "notes": "Users and groups are synced from the IdP; the docs don't describe accounts being created on first sign-in.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Twingate's native MFA can be required by the Sign In Policy for every client sign-in, by Resource Policies, or for the Admin Console.",
+        "source": "https://www.twingate.com/docs/two-factor-authentication",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-11-20",
+        "notes": "Native MFA accepts biometrics and FIDO2 security keys over WebAuthn. Users must also set up TOTP as a backup.",
+        "source": "https://www.twingate.com/docs/two-factor-authentication",
+        "support": "supported"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "Okta, Entra ID, JumpCloud and OneLogin sync users and groups over SCIM. The pricing page lists user provisioning and management via IdP on Business.",
+        "plan": "Business",
+        "source": "https://www.twingate.com/pricing",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "session_controls": {
+        "checked": "2026-11-20",
+        "notes": "The Sign In Policy sets how often users must re-authenticate through the IdP, from every 7 to every 31 days.",
+        "source": "https://www.twingate.com/docs/sign-in-policy",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Users sign in through the connected identity provider or a social login; Twingate has no password of its own. Google Workspace is on Teams, and Okta, Entra ID and other enterprise IdPs need Business.",
+        "plan": "Teams (Google Workspace); Business for Okta, Entra ID and others",
+        "source": "https://www.twingate.com/pricing",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "notes": "There is no Twingate password to switch off, but accounts can mix an enterprise IdP with social logins. The docs don't describe a setting that blocks social login once an IdP is connected.",
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Twingate is a zero trust network access platform that replaces VPNs with identity-based access to private resources.",
+    "name": "Twingate",
+    "status": "draft",
+    "website": "https://www.twingate.com"
   },
   {
     "_id": "tyk-cloud",
