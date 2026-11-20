@@ -1,0 +1,59 @@
+name: "WorkOS"
+category: "security"
+website: "https://workos.com"
+description: "WorkOS is an authentication and identity platform that developers use to add SSO, directory sync, audit logs and user management to their apps. Values here cover the WorkOS dashboard that the customer's own team signs in to."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    notes: "Admins can set up SSO for the dashboard team through a guided connection to their identity provider. It needs a verified domain and an active production environment. The page doesn't name a plan or list protocols for the dashboard connection."
+    source: "https://workos.com/docs/dashboard/authentication"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    notes: "Once the SSO connection is active, all team members must sign in through the identity provider instead of email-based authentication."
+    source: "https://workos.com/docs/dashboard/authentication"
+    checked: "2026-11-20"
+  scim:
+    support: "supported"
+    notes: "Directory provisioning creates and removes dashboard accounts from the identity provider using Directory Sync. Provisioned members can only be removed in the IdP. Needs a verified domain and an active production environment."
+    source: "https://workos.com/docs/dashboard/authentication"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Admins can require MFA for the whole team; members who haven't enrolled are prompted at their next sign-in. The setting isn't available while SSO is on, because the IdP enforces MFA then."
+    source: "https://workos.com/docs/dashboard/authentication"
+    checked: "2026-11-20"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The dashboard docs mention an authenticator for MFA and don't say whether dashboard members can use passkeys or security keys. Passkeys in AuthKit are for customers' own apps."
+  audit_logs:
+    support: "supported"
+    retention: "Filterable over the previous 90 days; can be streamed to a SIEM or storage"
+    notes: "Team admins get an Activity Log of actions on members, organizations, API keys, connections, webhooks and settings, with actor, targets and JSON details."
+    source: "https://workos.com/docs/dashboard/team-activity"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "Dashboard members join by invitation or through directory provisioning. Creating accounts on first SSO sign-in isn't described."
+  domain_verification:
+    support: "partial"
+    notes: "Admins verify their email domain with a DNS record before setting up SSO or directory provisioning. The page doesn't say that verifying it claims existing accounts on the domain, and a user can belong to only one team."
+    source: "https://workos.com/docs/dashboard/authentication"
+    checked: "2026-11-20"
+  custom_roles:
+    support: "not_supported"
+    notes: "Every dashboard member has one of five fixed roles (Admin, Developer, Sandbox Developer, Support, Support Viewer), and roles can't be scoped to individual products."
+    source: "https://workos.com/docs/dashboard/members-and-roles"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "supported"
+    notes: "With directory provisioning, dashboard roles are synced from identity provider groups mapped to roles, and those mappings override changes made in the dashboard."
+    source: "https://workos.com/docs/dashboard/authentication"
+    checked: "2026-11-20"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"
+    notes: "The dashboard docs don't describe controls over API keys created by individual team members. The API keys widget is for customers' own apps."

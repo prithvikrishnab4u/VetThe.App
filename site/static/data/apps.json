@@ -1126,6 +1126,73 @@
     "website": "https://www.apollo.io"
   },
   {
+    "_id": "apono",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Users create and delete their own personal API tokens, which stop working when the user is deleted. Admin controls over other users' tokens aren't described.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "The Audit Log page lists administrative events in the Apono admin console with who, what, when and where, with filters, and a webhook can send each event to another system. Retention isn't stated.",
+        "source": "https://docs.apono.io/docs/audits-and-reports/audit-log",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "notes": "The RBAC reference lists six built-in roles (Admin, Space Owner, Space Manager, Power User, Deployment, Viewer) and doesn't describe creating custom ones.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "The Okta SAML setup includes an optional groups attribute statement that maps Okta groups to Apono roles. No docs page names the plan.",
+        "source": "https://docs.apono.io/docs/additional-integrations/identity-providers/okta-sso-for-apono-logins",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "Admins can require authenticator-app MFA on specific access flows, so it applies to access requests rather than to signing in to Apono.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "Apono's own MFA uses six-digit codes from an authenticator app. Security keys and passkeys aren't mentioned.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "The Okta Directory (SCIM) integration pushes users and groups to Apono, and deactivating or removing a user in Okta terminates them in Apono. No docs page names the plan.",
+        "source": "https://docs.apono.io/docs/additional-integrations/identity-providers/okta-scim",
+        "support": "supported"
+      },
+      "session_controls": {
+        "notes": "Apono's Session Audit records privileged sessions to target systems, which is a different feature. Sign-in session length for Apono isn't described.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Okta SAML SSO lets users log in to Apono with their company domain; Ping Identity SSO has its own guide. No docs page names the plan.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.apono.io/docs/additional-integrations/identity-providers/okta-sso-for-apono-logins",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "notes": "The SSO guides don't describe blocking password sign-in once SSO is on.",
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Apono is a cloud privileged access platform for just-in-time, time-bound access to infrastructure, databases and SaaS apps. Values here cover signing in to and administering Apono itself.",
+    "name": "Apono",
+    "status": "draft",
+    "website": "https://apono.io"
+  },
+  {
     "_id": "appsmith",
     "capabilities": {
       "api_token_controls": {
@@ -2634,6 +2701,83 @@
     "name": "Brex",
     "status": "draft",
     "website": "https://www.brex.com"
+  },
+  {
+    "_id": "britive",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Admins create and manage API tokens with a validity period under System admin, Security, API Tokens. The docs don't describe controls over tokens that individual users create.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "The audit log records user and system activity, including logins, profile checkouts and admin changes, with actor, event, target and result. It can be searched and filtered, and queried through the API.",
+        "retention": "Up to 90 days",
+        "source": "https://docs.britive.com/docs/audit-log",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Admins can add roles built from existing or new permissions, or clone and fine-tune a predefined role, under Role & Policy Management. No docs page names the plan.",
+        "source": "https://docs.britive.com/docs/create-roles",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "SCIM group sync from Okta or Entra ID keeps group memberships current in Britive, and groups can be targeted by Britive profiles and policies to assign permissions. No docs page names the plan.",
+        "source": "https://docs.britive.com/docs/group-sync-with-scim",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "notes": "External users are onboarded from an identity provider or through SCIM. Creating accounts on first SSO sign-in isn't described.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Admins choose the allowed MFA options for login and step-up under System admin, Security, MFA Settings. Users created with Britive credentials must register OTP or WebAuthn at first login and authenticate with it at every login.",
+        "source": "https://docs.britive.com/docs/mfa-registration",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-11-20",
+        "notes": "Users can register a WebAuthn device such as a security key or biometric device and use it to log in to the Britive portal, if admins allow WebAuthn. Not supported in the Slack and Teams apps.",
+        "source": "https://docs.britive.com/docs/mfa-registration",
+        "support": "supported"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "Okta provisioning creates users, pushes profile updates and groups, and deactivates the user in Britive when they are deactivated or unassigned in Okta. No docs page names the plan.",
+        "source": "https://docs.britive.com/docs/okta-scim-provisioning",
+        "support": "supported"
+      },
+      "session_controls": {
+        "checked": "2026-11-20",
+        "notes": "Admins set a global session timeout of 1 to 12 hours for all users, including IdP-authenticated users, plus an application token expiry of 1 to 720 hours. No docs page names the plan.",
+        "source": "https://docs.britive.com/docs/global-session-settings",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Admins add a SAML identity provider under System admin, Identity Management, and Britive has SSO guides for Okta, Entra ID, PingOne, Duo, CyberArk Identity and custom IdPs. No docs page names the plan.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.britive.com/docs/identity-providers",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "notes": "Each user is tied to one identity provider, Britive by default or an external IdP, but the docs don't describe an org-wide setting that blocks Britive passwords.",
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Britive is a cloud privileged access management platform for just-in-time access to cloud, SaaS and infrastructure. Values here cover signing in to and administering the Britive console itself.",
+    "name": "Britive",
+    "status": "draft",
+    "website": "https://britive.com"
   },
   {
     "_id": "browserstack",
@@ -16224,6 +16368,83 @@
     "website": "https://www.okteto.com"
   },
   {
+    "_id": "opal",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-11-20",
+        "notes": "By default only admins can create personal access tokens; an admin setting lets all users create them. Admins can see every token on the API Access Tokens page and revoke any of them.",
+        "source": "https://docs.opal.dev/reference/authentication",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Admins can view, filter and export events covering configuration changes, actions in Opal and access changes, in the UI or through the /events API.",
+        "retention": "90 days guaranteed in the app and exports; stream events to keep them longer",
+        "source": "https://docs.opal.dev/docs/event-types",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Opal admins can create custom roles from granular permissions, scoped to all assets or to chosen ones, and assign them to users and groups. No docs page names the plan.",
+        "source": "https://docs.opal.dev/docs/custom-opal-roles",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "notes": "Custom roles can be granted to Opal groups, but the docs don't say directly that IdP groups map to Opal roles.",
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "notes": "The SAML setup guide says the IdP email must match an existing Opal account for login to succeed, and doesn't describe creating accounts on first sign-in. Users normally arrive through the IdP/HRIS sync.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "The Require Opal MFA for logins setting makes users complete Opal-managed MFA when they sign in. Admins can instead rely on their SAML provider's MFA, and can also require MFA for individual actions such as requesting or approving access.",
+        "source": "https://docs.opal.dev/docs/configure-sso-and-mfa",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The docs don't say which factors Opal-managed login MFA accepts. WebAuthn is mentioned only for the OIDC MFA provider used to gate Opal actions, where the factor comes from the customer's IdP.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "Okta SCIM provisioning only pushes new users into Opal, and username or email changes are not propagated. Opal mainly syncs users, attributes and offboarding from a connected IdP/HRIS integration instead.",
+        "source": "https://docs.opal.dev/docs/okta-scim-integration",
+        "support": "partial"
+      },
+      "session_controls": {
+        "checked": "2026-11-20",
+        "notes": "The revoke-all API ends a user's Opal sessions and deletes their API tokens as an incident-response action. The docs don't describe a configurable session length.",
+        "source": "https://docs.opal.dev/api-reference/users/revoke-all-of-a-users-access",
+        "support": "partial"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Users can sign in to Opal through a SAML provider. Okta and Google are officially supported; other SAML providers should work. No docs page names the plan.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.opal.dev/docs/sso-with-saml",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "The Restrict logins to SAML only setting blocks other sign-in methods. Named SAML breakglass users can still sign in other ways. No docs page names the plan.",
+        "source": "https://docs.opal.dev/docs/sso-with-saml",
+        "support": "supported"
+      }
+    },
+    "category": "security",
+    "description": "Opal is an access management platform for requesting, approving and reviewing access to cloud infrastructure and SaaS apps. Values here cover signing in to and administering Opal itself.",
+    "name": "Opal",
+    "status": "draft",
+    "website": "https://opal.dev"
+  },
+  {
     "_id": "openproject",
     "capabilities": {
       "api_token_controls": {
@@ -16522,6 +16743,70 @@
     "name": "Outreach",
     "status": "draft",
     "website": "https://www.outreach.io"
+  },
+  {
+    "_id": "p0-security",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "API keys are org-level keys that carry the Owner role and only Owners can create them. The docs don't describe controls over tokens individual users create; CLI tokens are short-lived and tied to the user's login.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "P0 streams structured audit logs covering policy, role, integration, API key and access request actions to Amazon S3, Amazon SQS, Datadog or Splunk. The docs describe streaming, not an in-app log viewer.",
+        "source": "https://docs.p0.dev/integrations/siem-integrations/audit-log-format",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "notes": "The docs list fixed P0 roles (Owner, Security Reviewer, Auditor, Approver, Assessment User and Viewer) and don't describe creating roles with custom permissions.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "Admins can map identity-provider group names from an OIDC groups claim, such as Okta groups, to any P0 role. Membership is read at each sign-in, so removing someone from the group removes the role. Not available with Google Workspace sign-in. No docs page names the plan.",
+        "source": "https://docs.p0.dev/p0-management/group-based-access-control",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "notes": "Users who sign in with Google, Entra ID or Okta can use P0, but the docs don't describe how accounts are created on first sign-in.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "The docs leave MFA to the corporate identity provider and don't describe MFA for P0's own email and password accounts.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "The directory integrations with Okta, Google Workspace and Entra ID are for managing access in those directories, not for provisioning P0 users. No SCIM endpoint for P0 itself is documented.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Users can sign in to the P0 web app and CLI with Okta over OIDC, set up with P0 support, as well as with Google or Microsoft Entra ID accounts. No docs page names the plan.",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://docs.p0.dev/getting-started/p0-security-onboarding/supported-identity-providers",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "notes": "Email and password sign-up is listed as an option, and the docs don't describe a way for admins to turn it off.",
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "P0 Security is a cloud privileged access management platform for just-in-time access, access inventory and posture scanning. Values here cover signing in to and administering the P0 app itself.",
+    "name": "P0 Security",
+    "status": "draft",
+    "website": "https://p0.dev"
   },
   {
     "_id": "pagerduty",
@@ -21138,6 +21423,66 @@
     "website": "https://stripe.com"
   },
   {
+    "_id": "stytch",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "API keys are project secrets per environment. Only Admins can manage Live keys and Developers can manage Test keys, but there are no per-user tokens to control.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Event logs record Stytch API requests and meaningful dashboard actions. All dashboard roles can view them.",
+        "retention": "30 days in the dashboard; stream to Datadog or Grafana Loki for longer",
+        "source": "https://stytch.com/docs/resources/workspace-management/event-logs",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "notes": "The dashboard has five built-in roles (Admin, Developer, Support Manager, Support Agent, No Access). The docs don't describe custom dashboard roles; RBAC in the docs is for the customer's own apps.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "notes": "Automatic role assignment works by email domain, not by IdP group.",
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-20",
+        "notes": "Admins can turn on JIT provisioning so people with a verified email on a chosen domain can discover and join the workspace without an invite. It is by email domain, and the docs don't tie it to SSO sign-in. Those members get the Support Agent role unless an automatic role assignment is set for the domain.",
+        "source": "https://stytch.com/docs/resources/workspace-management/dashboard-roles-and-permissions",
+        "support": "partial"
+      },
+      "mfa_enforcement": {
+        "notes": "The Require MFA setting in the docs applies to Organizations in the customer's B2B app, not to dashboard members.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "SCIM in the docs is for provisioning into the customer's own apps, not into the Stytch workspace.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "notes": "The Revoke Sessions permission is about end users of the customer's app, not dashboard members.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "notes": "Stytch's SSO docs cover SSO for the customer's own apps. The docs don't describe signing in to the Stytch dashboard through a company IdP.",
+        "support": "undocumented"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Stytch is an authentication platform that developers use to add passwordless login, passkeys, SSO and fraud prevention to their apps. Values here cover the Stytch dashboard (workspace) that the customer's own team signs in to.",
+    "name": "Stytch",
+    "status": "draft",
+    "website": "https://stytch.com"
+  },
+  {
     "_id": "sumo-logic",
     "capabilities": {
       "api_token_controls": {
@@ -23888,6 +24233,80 @@
     "name": "Workday",
     "status": "published",
     "website": "https://www.workday.com"
+  },
+  {
+    "_id": "workos",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "The dashboard docs don't describe controls over API keys created by individual team members. The API keys widget is for customers' own apps.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Team admins get an Activity Log of actions on members, organizations, API keys, connections, webhooks and settings, with actor, targets and JSON details.",
+        "retention": "Filterable over the previous 90 days; can be streamed to a SIEM or storage",
+        "source": "https://workos.com/docs/dashboard/team-activity",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Every dashboard member has one of five fixed roles (Admin, Developer, Sandbox Developer, Support, Support Viewer), and roles can't be scoped to individual products.",
+        "source": "https://workos.com/docs/dashboard/members-and-roles",
+        "support": "not_supported"
+      },
+      "domain_verification": {
+        "checked": "2026-11-20",
+        "notes": "Admins verify their email domain with a DNS record before setting up SSO or directory provisioning. The page doesn't say that verifying it claims existing accounts on the domain, and a user can belong to only one team.",
+        "source": "https://workos.com/docs/dashboard/authentication",
+        "support": "partial"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "With directory provisioning, dashboard roles are synced from identity provider groups mapped to roles, and those mappings override changes made in the dashboard.",
+        "source": "https://workos.com/docs/dashboard/authentication",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "notes": "Dashboard members join by invitation or through directory provisioning. Creating accounts on first SSO sign-in isn't described.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Admins can require MFA for the whole team; members who haven't enrolled are prompted at their next sign-in. The setting isn't available while SSO is on, because the IdP enforces MFA then.",
+        "source": "https://workos.com/docs/dashboard/authentication",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The dashboard docs mention an authenticator for MFA and don't say whether dashboard members can use passkeys or security keys. Passkeys in AuthKit are for customers' own apps.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "Directory provisioning creates and removes dashboard accounts from the identity provider using Directory Sync. Provisioned members can only be removed in the IdP. Needs a verified domain and an active production environment.",
+        "source": "https://workos.com/docs/dashboard/authentication",
+        "support": "supported"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Admins can set up SSO for the dashboard team through a guided connection to their identity provider. It needs a verified domain and an active production environment. The page doesn't name a plan or list protocols for the dashboard connection.",
+        "source": "https://workos.com/docs/dashboard/authentication",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Once the SSO connection is active, all team members must sign in through the identity provider instead of email-based authentication.",
+        "source": "https://workos.com/docs/dashboard/authentication",
+        "support": "supported"
+      }
+    },
+    "category": "security",
+    "description": "WorkOS is an authentication and identity platform that developers use to add SSO, directory sync, audit logs and user management to their apps. Values here cover the WorkOS dashboard that the customer's own team signs in to.",
+    "name": "WorkOS",
+    "status": "draft",
+    "website": "https://workos.com"
   },
   {
     "_id": "wrike",

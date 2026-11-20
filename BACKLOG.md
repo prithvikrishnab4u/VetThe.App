@@ -17,7 +17,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P1 | ConductorOne | `conductorone` | security | https://conductorone.com |
 | P1 | Lumos | `lumos` | security | https://lumos.com |
 | P1 | Veza | `veza` | security | https://veza.com |
-| P1 | Opal | `opal` | security | https://opal.dev |
 | P1 | Zluri | `zluri` | security | https://zluri.com |
 | P1 | Clarity Security | `clarity-security` | security | https://claritysecurity.com |
 | P1 | EmpowerID | `empowerid` | security | https://empowerid.com |
@@ -40,8 +39,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P1 | Silverfort | `silverfort` | security | https://silverfort.com |
 | P1 | Imprivata | `imprivata` | security | https://imprivata.com |
 | P1 | Transmit Security | `transmit-security` | security | https://transmitsecurity.com |
-| P1 | WorkOS | `workos` | security | https://workos.com |
-| P1 | Stytch | `stytch` | security | https://stytch.com |
 | P1 | Frontegg | `frontegg` | security | https://frontegg.com |
 | P1 | FusionAuth | `fusionauth` | security | https://fusionauth.io |
 | P1 | Clerk | `clerk` | security | https://clerk.com |
@@ -55,9 +52,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P1 | Delinea | `delinea` | security | https://delinea.com |
 | P1 | StrongDM | `strongdm` | security | https://strongdm.com |
 | P1 | Teleport | `teleport` | security | https://goteleport.com |
-| P1 | Britive | `britive` | security | https://britive.com |
-| P1 | Apono | `apono` | security | https://apono.io |
-| P1 | P0 Security | `p0-security` | security | https://p0.dev |
 | P1 | Netwrix | `netwrix` | security | https://netwrix.com |
 | P1 | WALLIX | `wallix` | security | https://wallix.com |
 | P1 | Segura | `segura` | security | https://segura.security |
