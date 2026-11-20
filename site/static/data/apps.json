@@ -7952,6 +7952,102 @@
     "website": "https://www.gitbook.com"
   },
   {
+    "_id": "gitguardian",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-11-20",
+        "notes": "On Growth and Enterprise, workspace Managers can view, filter and revoke the personal access tokens of all members.",
+        "plan": "Growth",
+        "source": "https://docs.gitguardian.com/api-docs/personal-access-tokens",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Owners and Managers can search the audit log of user activity, with actor, event, date and IP address. The plan table lists it on every plan.",
+        "plan": "Free",
+        "retention": "12 months on Growth, unlimited on Enterprise",
+        "source": "https://docs.gitguardian.com/platform/user-account/plan-usage",
+        "support": "supported",
+        "tier": "free"
+      },
+      "custom_roles": {
+        "notes": "Members get one of the preset access levels (Owner, Manager, Member and others); the docs don't describe custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "checked": "2026-11-20",
+        "notes": "After SSO is set up, a workspace can reserve its email domains. That stops new sign-ups and separate workspaces on the domain and routes users to SSO, but users who already have their own workspace are not affected.",
+        "plan": "Growth",
+        "source": "https://docs.gitguardian.com/platform/enterprise-administration/email-domain-management",
+        "support": "partial",
+        "tier": "paid"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "SCIM provisions and manages GitGuardian teams from IdP groups, and teams set which incidents members can see.",
+        "plan": "Growth",
+        "source": "https://docs.gitguardian.com/platform/enterprise-administration/scim-configuration",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-20",
+        "notes": "Users authorized in the IdP are registered automatically on their first SAML login, with a default access level.",
+        "plan": "Growth",
+        "source": "https://docs.gitguardian.com/platform/enterprise-administration/saml-sso-configuration",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Since 9 March 2026 every SaaS account that logs in with email and password gets email-verification MFA at login and before sensitive actions. SSO users rely on their IdP's MFA.",
+        "source": "https://docs.gitguardian.com/support/customer-notices/mfa-email-password-logins-2026-03-09",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "Native MFA is an email code; the docs don't describe security keys or passkeys.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "SCIM creates, updates, deactivates and deletes users and manages teams from Okta, Entra ID or JumpCloud. It needs SAML SSO configured first.",
+        "plan": "Growth",
+        "source": "https://docs.gitguardian.com/platform/enterprise-administration/scim-configuration",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "session_controls": {
+        "notes": "The docs don't describe admin session controls.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "SAML 2.0 SSO and SCIM are included on Growth and Enterprise, not on Free.",
+        "plan": "Growth",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.gitguardian.com/platform/user-account/plan-usage",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "With Force SSO on, every workspace member must sign in through the IdP; with it off, members can still sign up by email.",
+        "plan": "Growth",
+        "source": "https://docs.gitguardian.com/platform/enterprise-administration/saml-sso-configuration",
+        "support": "supported",
+        "tier": "paid"
+      }
+    },
+    "category": "security",
+    "description": "GitGuardian detects hardcoded secrets in source code, CI pipelines and collaboration tools, and plants honeytokens to catch leaks.",
+    "name": "GitGuardian",
+    "status": "draft",
+    "website": "https://www.gitguardian.com"
+  },
+  {
     "_id": "github",
     "capabilities": {
       "api_token_controls": {
@@ -16985,6 +17081,87 @@
     "website": "https://www.pomerium.com"
   },
   {
+    "_id": "port",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "The API authenticates with client ID and secret; the docs don't describe admin controls over users' credentials.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "The audit log page records every change in the organization, who made it and whether it succeeded. The page doesn't name a plan.",
+        "retention": "90 days (sign-in logs 30 days)",
+        "source": "https://docs.port.io/platform-administration/audit-log",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "notes": "Users get one of the preset roles (Admin, Member, Moderator of a blueprint); the docs don't describe creating custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "notes": "The docs don't describe verifying an email domain.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "With SSO, Port syncs IdP teams and their membership at each login. These teams can't be edited in Port and are used for permissions and ownership.",
+        "plan": "Enterprise",
+        "source": "https://docs.port.io/platform-administration/users-and-teams/manage-users-teams",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-20",
+        "notes": "Without SCIM, users are created in Port when they first log in through SSO.",
+        "plan": "Enterprise",
+        "source": "https://docs.port.io/platform-administration/sso-authentication/SCIM",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "notes": "Port encourages MFA and points to the SSO provider's MFA; the docs don't describe admins requiring it.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The docs don't describe signing in with security keys or passkeys.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "SCIM creates, updates and deletes users from Okta, Entra ID or Google Workspace, but group provisioning isn't supported; group membership syncs at SSO login instead.",
+        "source": "https://docs.port.io/platform-administration/sso-authentication/SCIM",
+        "support": "partial"
+      },
+      "session_controls": {
+        "checked": "2026-11-20",
+        "notes": "Admins can turn on an inactivity timeout that signs every member out of the Port app. It doesn't cover API or MCP access.",
+        "source": "https://docs.port.io/platform-administration/security/authentication-and-access",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Port supports SAML 2.0 and OIDC identity providers. Self-serve SSO setup is for enterprise accounts only.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.port.io/platform-administration/sso-authentication/self-serve-sso",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "notes": "The docs don't describe blocking password or social login once SSO is on.",
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "Port is an internal developer portal with a software catalog, self-service actions, scorecards and workflows.",
+    "name": "Port",
+    "status": "draft",
+    "website": "https://www.port.io"
+  },
+  {
     "_id": "portkey",
     "capabilities": {
       "api_token_controls": {
@@ -19839,6 +20016,99 @@
     "website": "https://sourcegraph.com"
   },
   {
+    "_id": "spacelift",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-11-20",
+        "notes": "Admins turn personal API keys on or off for the account, root administrators can see every active key with its owner, and an administrator can revoke a key. Keys expire within 180 days at most.",
+        "source": "https://docs.spacelift.io/integrations/personal-api-keys",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Admins can view audit trail logs in account settings and forward them to a webhook.",
+        "plan": "Enterprise",
+        "retention": "30 days",
+        "source": "https://docs.spacelift.io/integrations/audit-trail",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Admins create custom RBAC roles from individual permissions under Access Control Center > Roles. The page doesn't name a plan.",
+        "source": "https://docs.spacelift.io/concepts/authorization/rbac-system",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "notes": "The docs don't describe verifying an email domain.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "IdP groups sent at login can be mapped and given role bindings, which apply to every member of the group.",
+        "source": "https://docs.spacelift.io/concepts/authorization/assigning-roles-groups",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "notes": "The SSO page says the first user to log in becomes the SSO Admin, but it doesn't say whether accounts are created for other users on first sign-in.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Organization admins can enforce MFA so every active user must have a registered security key. MFA needs the Enterprise plan with SSO enabled.",
+        "plan": "Enterprise",
+        "source": "https://docs.spacelift.io/product/security/mfa",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-11-20",
+        "notes": "Spacelift's own MFA uses registered security keys, on top of SSO.",
+        "plan": "Enterprise",
+        "source": "https://docs.spacelift.io/product/security/mfa",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "SCIM 2.0 syncs users and groups from the IdP. It doesn't assign permissions by itself; group roles come from the groups sent at login.",
+        "plan": "Enterprise",
+        "source": "https://docs.spacelift.io/integrations/single-sign-on/scim",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "notes": "Enforcing MFA or changing a login policy invalidates other users' sessions, but the docs don't describe a session length setting or signing out a chosen user.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "OIDC SSO is available to paid accounts and SAML SSO to Enterprise. Without SSO, users log in with GitHub, GitLab or Google.",
+        "plan": "Any paid plan (OIDC); Enterprise for SAML",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.spacelift.io/integrations/single-sign-on",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Once SSO is configured, the managed identity provider used to create the account is disabled, so users must sign in through SSO. It is re-enabled if SSO is turned off.",
+        "plan": "Any paid plan (OIDC); Enterprise for SAML",
+        "source": "https://docs.spacelift.io/integrations/single-sign-on",
+        "support": "supported",
+        "tier": "paid"
+      }
+    },
+    "category": "development",
+    "description": "Spacelift is an infrastructure-as-code orchestration platform for Terraform, OpenTofu, Pulumi, Ansible and Kubernetes workflows.",
+    "name": "Spacelift",
+    "status": "draft",
+    "website": "https://spacelift.io"
+  },
+  {
     "_id": "speakeasy",
     "capabilities": {
       "api_token_controls": {
@@ -20043,6 +20313,93 @@
     "name": "Sprout Social",
     "status": "draft",
     "website": "https://sproutsocial.com"
+  },
+  {
+    "_id": "statsig",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Users can create personal Console API keys scoped to their role; the docs don't describe admins listing or revoking them.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "The Console API's audit_logs endpoint returns change history with action type, user and time, searching the last 90 days by default. The docs don't name a plan or retention period.",
+        "source": "https://docs.statsig.com/api-reference/audit-logs/list-audit-logs",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Enterprise customers can create roles beyond Admin, Member and Read-Only and choose their permissions.",
+        "plan": "Enterprise",
+        "source": "https://docs.statsig.com/access-management/projects",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "domain_verification": {
+        "notes": "Projects can auto-add users with the owner's email domain, but the docs don't describe verifying domain ownership.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "SCIM groups named Statsig-<Project>-<Role> (or mapped through aliases) set a user's project and team roles, and an Okta attribute can set the organization role.",
+        "plan": "Enterprise",
+        "source": "https://docs.statsig.com/access-management/scim/concepts",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-20",
+        "notes": "Statsig provisions new users automatically after they authenticate with the IdP, with the Member role by default.",
+        "plan": "Enterprise",
+        "source": "https://docs.statsig.com/access-management/sso/overview",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "notes": "The docs don't describe requiring MFA.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The docs don't describe signing in with security keys or passkeys.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "Okta and Entra ID push users and groups over SCIM. Unassigning a user deactivates them and wipes their roles. SCIM runs at the organization level, which is Enterprise only.",
+        "plan": "Enterprise",
+        "source": "https://docs.statsig.com/access-management/scim/overview",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "notes": "The docs don't describe admin session controls.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "SSO uses OIDC with any compliant identity provider and is an Enterprise feature.",
+        "plan": "Enterprise",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://docs.statsig.com/access-management/sso/overview",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Strict SSO requires every project member except the Owner to log in through SSO. The Owner keeps a break-glass password URL.",
+        "plan": "Enterprise",
+        "source": "https://docs.statsig.com/access-management/sso/overview",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "development",
+    "description": "Statsig is a product experimentation platform for feature flags, A/B tests, analytics and session replay.",
+    "name": "Statsig",
+    "status": "draft",
+    "website": "https://statsig.com"
   },
   {
     "_id": "strapi-cloud",

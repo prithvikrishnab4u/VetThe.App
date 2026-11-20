@@ -1,0 +1,70 @@
+name: "Statsig"
+category: "development"
+website: "https://statsig.com"
+description: "Statsig is a product experimentation platform for feature flags, A/B tests, analytics and session replay."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["OIDC"]
+    notes: "SSO uses OIDC with any compliant identity provider and is an Enterprise feature."
+    source: "https://docs.statsig.com/access-management/sso/overview"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Strict SSO requires every project member except the Owner to log in through SSO. The Owner keeps a break-glass password URL."
+    source: "https://docs.statsig.com/access-management/sso/overview"
+    checked: "2026-11-20"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Okta and Entra ID push users and groups over SCIM. Unassigning a user deactivates them and wipes their roles. SCIM runs at the organization level, which is Enterprise only."
+    source: "https://docs.statsig.com/access-management/scim/overview"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The docs don't describe requiring MFA."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The docs don't describe signing in with security keys or passkeys."
+  audit_logs:
+    support: "supported"
+    notes: "The Console API's audit_logs endpoint returns change history with action type, user and time, searching the last 90 days by default. The docs don't name a plan or retention period."
+    source: "https://docs.statsig.com/api-reference/audit-logs/list-audit-logs"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Statsig provisions new users automatically after they authenticate with the IdP, with the Member role by default."
+    source: "https://docs.statsig.com/access-management/sso/overview"
+    checked: "2026-11-20"
+  domain_verification:
+    support: "undocumented"
+    notes: "Projects can auto-add users with the owner's email domain, but the docs don't describe verifying domain ownership."
+  custom_roles:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Enterprise customers can create roles beyond Admin, Member and Read-Only and choose their permissions."
+    source: "https://docs.statsig.com/access-management/projects"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM groups named Statsig-<Project>-<Role> (or mapped through aliases) set a user's project and team roles, and an Okta attribute can set the organization role."
+    source: "https://docs.statsig.com/access-management/scim/concepts"
+    checked: "2026-11-20"
+  session_controls:
+    support: "undocumented"
+    notes: "The docs don't describe admin session controls."
+  api_token_controls:
+    support: "undocumented"
+    notes: "Users can create personal Console API keys scoped to their role; the docs don't describe admins listing or revoking them."

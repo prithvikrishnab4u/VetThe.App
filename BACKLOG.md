@@ -131,7 +131,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P2 | SonarQube Cloud | `sonarqube-cloud` | development | https://sonarsource.com/products/sonarcloud |
 | P2 | Sonatype Nexus | `sonatype` | development | https://sonatype.com |
 | P2 | Sourcegraph | `sourcegraph` | development | https://sourcegraph.com |
-| P2 | Statsig | `statsig` | development | https://statsig.com |
 | P2 | Supabase | `supabase` | development | https://supabase.com |
 | P2 | 6sense | `6sense` | sales_marketing | https://6sense.com |
 | P2 | Adobe Experience Manager | `adobe-experience-manager` | sales_marketing | https://business.adobe.com/products/experience-manager/adobe-experience-manager.html |
@@ -262,7 +261,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P3 | BitSight | `bitsight` | security | https://bitsight.com |
 | P3 | Cyera | `cyera` | security | https://cyera.com |
 | P3 | Endor Labs | `endor-labs` | security | https://endorlabs.com |
-| P3 | GitGuardian | `gitguardian` | security | https://gitguardian.com |
 | P3 | Hoxhunt | `hoxhunt` | security | https://hoxhunt.com |
 | P3 | Hyperproof | `hyperproof` | security | https://hyperproof.io |
 | P3 | Kolide | `kolide` | security | https://kolide.com |
