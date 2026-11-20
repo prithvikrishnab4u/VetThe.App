@@ -1,0 +1,62 @@
+name: "Qlik Cloud"
+category: "productivity"
+website: "https://qlik.com"
+description: "Qlik Cloud is Qlik's SaaS platform for analytics (Qlik Cloud Analytics) and data integration. Values here cover signing in to and administering a Qlik Cloud tenant, not Qlik Sense Enterprise on Windows."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "Tenant admins configure an interactive OIDC or SAML identity provider, such as Entra ID, Okta or Auth0, in the Administration activity center. IdP integration depends on the license; no docs page names the plan."
+    source: "https://help.qlik.com/en-US/cloud-services/Subsystems/Hub/Content/Sense_Hub/Admin/mc-creating-idp.htm"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    notes: "A tenant has one active interactive IdP, and deploying a corporate IdP replaces the default Qlik Account login. No docs page names the plan."
+    source: "https://help.qlik.com/en-US/cloud-services/Subsystems/Hub/Content/Sense_Hub/Admin/mc-creating-idp.htm"
+    checked: "2026-11-20"
+  scim:
+    support: "supported"
+    notes: "SCIM 2.0 creates, updates and deprovisions users and IdP-managed groups. Microsoft Entra ID is the supported SCIM connector. No docs page names the plan."
+    source: "https://help.qlik.com/en-US/cloud-services/Subsystems/Hub/Content/Sense_Hub/Admin/auto-provisioning-using-SCIM.htm"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "not_supported"
+    notes: "With Qlik Account as the IdP, MFA is optional per user. Qlik says to use a third-party IdP if MFA must be mandatory."
+    source: "https://help.qlik.com/en-US/cloud-services/Subsystems/Hub/Content/Sense_Hub/Introduction/qcs-MFA.htm"
+    checked: "2026-11-20"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "Qlik Account MFA uses one-time codes from an authenticator app. The docs don't mention security keys or passkeys."
+  audit_logs:
+    support: "supported"
+    retention: "90 days on the Events page, then archived and available through the Audits API for the lifetime of the tenant"
+    notes: "The Events page in the Administration activity center shows system events such as user sessions, app creation and role assignments, with the user who triggered them. No docs page names the plan."
+    source: "https://help.qlik.com/en-US/cloud-services/Subsystems/Hub/Content/Sense_Hub/Admin/mc-administer-events.htm"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "Users are added to the tenant through the IdP integration and get entitlements at login, but no page states that accounts are created on first SSO sign-in."
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    notes: "Tenant admins create named custom roles by choosing permissions and assign them to users or groups. Custom roles can only add to default permissions. No docs page names the plan."
+    source: "https://help.qlik.com/en-US/cloud-services/Subsystems/Hub/Content/Sense_Hub/Admin/permissions-custom-roles-capacity-model.htm"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "supported"
+    notes: "IdP groups are created in Qlik Cloud when members log in, or pushed by SCIM, are managed only from the IdP, and can be given security roles and space roles. No docs page names the plan."
+    source: "https://help.qlik.com/en-US/cloud-services/Subsystems/Hub/Content/Sense_Hub/Admin/mc-managing-groups-capacity-model.htm"
+    checked: "2026-11-20"
+  session_controls:
+    support: "supported"
+    notes: "Tenant admins set a session inactivity timeout of 15 to 1,440 minutes and a maximum session duration of 1 to 168 hours. No docs page names the plan."
+    source: "https://help.qlik.com/en-US/cloud-services/Subsystems/Hub/Content/Sense_Hub/Admin/configure-session-timeout.htm"
+    checked: "2026-11-20"
+  api_token_controls:
+    support: "supported"
+    notes: "Admins control who can generate API keys through the Manage API keys permission, set maximum expiry and keys per user, and can view and revoke any key in the tenant. No docs page names the plan."
+    source: "https://help.qlik.com/en-US/cloud-services/Subsystems/Hub/Content/Sense_Hub/Admin/mc-generate-api-keys.htm"
+    checked: "2026-11-20"

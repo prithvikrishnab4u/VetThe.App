@@ -19566,6 +19566,86 @@
     "website": "https://qdrant.tech"
   },
   {
+    "_id": "qlik-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-11-20",
+        "notes": "Admins control who can generate API keys through the Manage API keys permission, set maximum expiry and keys per user, and can view and revoke any key in the tenant. No docs page names the plan.",
+        "source": "https://help.qlik.com/en-US/cloud-services/Subsystems/Hub/Content/Sense_Hub/Admin/mc-generate-api-keys.htm",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "The Events page in the Administration activity center shows system events such as user sessions, app creation and role assignments, with the user who triggered them. No docs page names the plan.",
+        "retention": "90 days on the Events page, then archived and available through the Audits API for the lifetime of the tenant",
+        "source": "https://help.qlik.com/en-US/cloud-services/Subsystems/Hub/Content/Sense_Hub/Admin/mc-administer-events.htm",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Tenant admins create named custom roles by choosing permissions and assign them to users or groups. Custom roles can only add to default permissions. No docs page names the plan.",
+        "source": "https://help.qlik.com/en-US/cloud-services/Subsystems/Hub/Content/Sense_Hub/Admin/permissions-custom-roles-capacity-model.htm",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "IdP groups are created in Qlik Cloud when members log in, or pushed by SCIM, are managed only from the IdP, and can be given security roles and space roles. No docs page names the plan.",
+        "source": "https://help.qlik.com/en-US/cloud-services/Subsystems/Hub/Content/Sense_Hub/Admin/mc-managing-groups-capacity-model.htm",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "notes": "Users are added to the tenant through the IdP integration and get entitlements at login, but no page states that accounts are created on first SSO sign-in.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "With Qlik Account as the IdP, MFA is optional per user. Qlik says to use a third-party IdP if MFA must be mandatory.",
+        "source": "https://help.qlik.com/en-US/cloud-services/Subsystems/Hub/Content/Sense_Hub/Introduction/qcs-MFA.htm",
+        "support": "not_supported"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "Qlik Account MFA uses one-time codes from an authenticator app. The docs don't mention security keys or passkeys.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "SCIM 2.0 creates, updates and deprovisions users and IdP-managed groups. Microsoft Entra ID is the supported SCIM connector. No docs page names the plan.",
+        "source": "https://help.qlik.com/en-US/cloud-services/Subsystems/Hub/Content/Sense_Hub/Admin/auto-provisioning-using-SCIM.htm",
+        "support": "supported"
+      },
+      "session_controls": {
+        "checked": "2026-11-20",
+        "notes": "Tenant admins set a session inactivity timeout of 15 to 1,440 minutes and a maximum session duration of 1 to 168 hours. No docs page names the plan.",
+        "source": "https://help.qlik.com/en-US/cloud-services/Subsystems/Hub/Content/Sense_Hub/Admin/configure-session-timeout.htm",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Tenant admins configure an interactive OIDC or SAML identity provider, such as Entra ID, Okta or Auth0, in the Administration activity center. IdP integration depends on the license; no docs page names the plan.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://help.qlik.com/en-US/cloud-services/Subsystems/Hub/Content/Sense_Hub/Admin/mc-creating-idp.htm",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "A tenant has one active interactive IdP, and deploying a corporate IdP replaces the default Qlik Account login. No docs page names the plan.",
+        "source": "https://help.qlik.com/en-US/cloud-services/Subsystems/Hub/Content/Sense_Hub/Admin/mc-creating-idp.htm",
+        "support": "supported"
+      }
+    },
+    "category": "productivity",
+    "description": "Qlik Cloud is Qlik's SaaS platform for analytics (Qlik Cloud Analytics) and data integration. Values here cover signing in to and administering a Qlik Cloud tenant, not Qlik Sense Enterprise on Windows.",
+    "name": "Qlik Cloud",
+    "status": "draft",
+    "website": "https://qlik.com"
+  },
+  {
     "_id": "qovery",
     "capabilities": {
       "api_token_controls": {
@@ -21385,6 +21465,89 @@
     "name": "Shortcut",
     "status": "published",
     "website": "https://www.shortcut.com"
+  },
+  {
+    "_id": "sigma-computing",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-11-20",
+        "notes": "Only admins or account types with the Create API keys permission can create API client credentials, and admins can create and manage credentials for any member. No docs page names the plan.",
+        "source": "https://help.sigmacomputing.com/reference/generate-client-credentials",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Admins enable the Sigma Audit Logs connection, which records user-initiated events such as logins and admin changes and can be exported to cloud storage. No docs page names the plan.",
+        "retention": "30 days in the AUDIT_LOGS table",
+        "source": "https://help.sigmacomputing.com/docs/access-and-explore-audit-logs",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Admins create custom account types with a name and any combination of permissions and assign them to users. No docs page names the plan.",
+        "source": "https://help.sigmacomputing.com/docs/create-and-manage-account-types",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "notes": "Company Domain Signup lets anyone with a listed email domain create an account without an invite, but the docs don't describe verifying a domain or claiming existing accounts.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "The SAML userRole attribute sets the account type and userGroups syncs Sigma team membership at each login, overriding changes made in Sigma. SCIM can also push IdP groups as teams. No docs page names the plan.",
+        "source": "https://help.sigmacomputing.com/docs/single-sign-on-with-saml",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-20",
+        "notes": "With SAML, new users get the account type from the userRole attribute, or the default View or Lite type, when they sign in. Teams are synced from userGroups at each login. No docs page names the plan.",
+        "source": "https://help.sigmacomputing.com/docs/single-sign-on-with-saml",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Two-factor authentication is automatically on and mandatory for every user who signs in with a password, by email code or an authenticator app. No docs page names the plan.",
+        "source": "https://help.sigmacomputing.com/docs/manage-password-authentication",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "Password users get two-factor codes by email or an authenticator app. The docs don't mention security keys or passkeys.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "With Okta, SCIM creates users, pushes name and account type updates, and deactivates users in Sigma. Requires SAML-only login and is not available on free trials. No docs page names the plan.",
+        "source": "https://help.sigmacomputing.com/docs/manage-users-and-teams-with-scim-and-okta",
+        "support": "supported"
+      },
+      "session_controls": {
+        "checked": "2026-11-20",
+        "notes": "Admins can enforce an inactivity timeout from 5 minutes to 12 hours, and set a session length in hours for SAML and password users. No docs page names the plan.",
+        "source": "https://help.sigmacomputing.com/docs/set-up-inactivity-timeouts",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Sigma supports SAML 2.0 and OAuth 2.0 with OIDC for signing in to the organization, set under Administration, Authentication. No docs page names the plan.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://help.sigmacomputing.com/docs/organization-authentication-methods",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Admins can move from SAML or password to the SAML authentication method, which enforces SAML login for all users. No docs page names the plan.",
+        "source": "https://help.sigmacomputing.com/docs/single-sign-on-with-saml",
+        "support": "supported"
+      }
+    },
+    "category": "productivity",
+    "description": "Sigma is a cloud analytics and BI platform that runs on top of a cloud data warehouse. Values here cover signing in to and administering a Sigma organization.",
+    "name": "Sigma Computing",
+    "status": "draft",
+    "website": "https://sigmacomputing.com"
   },
   {
     "_id": "signoz",
@@ -23508,6 +23671,87 @@
     "name": "Tenable",
     "status": "draft",
     "website": "https://tenable.com"
+  },
+  {
+    "_id": "thoughtspot",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-11-20",
+        "notes": "Only in Analyst Studio: admins turn member API tokens on, see all tokens with creator and expiry, and revoke one or all. Controls for main ThoughtSpot REST API tokens aren't described. No page names the plan.",
+        "source": "https://docs.thoughtspot.com/cloud/latest/analyst-studio-api-tokens",
+        "support": "partial"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Security audit events such as logins, token creation and role or privilege changes can be pulled through the Audit Logs API or pushed to a SIEM, which is set up through support. No docs page names the plan.",
+        "retention": "30 days",
+        "source": "https://docs.thoughtspot.com/cloud/latest/audit-logs",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "With RBAC enabled, admins create roles from a set of privileges and assign them to groups. The RBAC page does not name the plan.",
+        "source": "https://docs.thoughtspot.com/cloud/latest/rbac",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "SCIM provisions users into groups and Orgs and keeps them in sync, and roles are assigned to groups. SAML group mapping at sign-in is also available, enabled by support. No docs page names the plan.",
+        "source": "https://docs.thoughtspot.com/cloud/latest/group-user-management-scim",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-20",
+        "notes": "Admins can choose to automatically create SAML users in ThoughtSpot on their first successful SSO login. OIDC on IAMv2 has a similar Auto create user (JIT) toggle. No docs page names the plan.",
+        "source": "https://docs.thoughtspot.com/cloud/latest/authentication-integration",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "On IAMv2 clusters, cluster admins can enable MFA for all local-login users, using Okta Verify, Google Authenticator or email codes. No docs page names the plan.",
+        "source": "https://docs.thoughtspot.com/cloud/latest/authentication-local-mfa",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The local-login MFA page lists Okta Verify, Google Authenticator and email codes. It doesn't mention security keys or passkeys.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "SCIM creates, updates and deletes users and groups from Okta, Entra ID and other IdPs. De-provisioning is a permanent delete, not a deactivation. No docs page names the plan.",
+        "source": "https://docs.thoughtspot.com/cloud/latest/group-user-management-scim",
+        "support": "supported"
+      },
+      "session_controls": {
+        "notes": "The SAML page covers assertion validity checks from the IdP, but the Cloud docs don't describe an admin setting for session length or ending a user's sessions.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "The editions security table lists SSO via SAML and via OAuth and OIDC on Pro and Enterprise, not on Team or Essentials. Pro is a middle edition, so no tier is set.",
+        "plan": "Pro",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.thoughtspot.com/cloud/latest/editions-security",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Admins can disable local authentication in the Admin Console once a SAML or OIDC connection is active, so no local user can sign in. No docs page names the plan.",
+        "source": "https://docs.thoughtspot.com/cloud/latest/authentication-local",
+        "support": "supported"
+      }
+    },
+    "category": "productivity",
+    "description": "ThoughtSpot is an AI-powered search and analytics platform. Values here cover signing in to and administering ThoughtSpot Cloud, not the self-managed ThoughtSpot Software edition.",
+    "name": "ThoughtSpot",
+    "status": "draft",
+    "website": "https://thoughtspot.com"
   },
   {
     "_id": "timescale-cloud",

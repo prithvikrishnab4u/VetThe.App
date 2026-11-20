@@ -1,0 +1,65 @@
+name: "Sigma Computing"
+category: "productivity"
+website: "https://sigmacomputing.com"
+description: "Sigma is a cloud analytics and BI platform that runs on top of a cloud data warehouse. Values here cover signing in to and administering a Sigma organization."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "Sigma supports SAML 2.0 and OAuth 2.0 with OIDC for signing in to the organization, set under Administration, Authentication. No docs page names the plan."
+    source: "https://help.sigmacomputing.com/docs/organization-authentication-methods"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    notes: "Admins can move from SAML or password to the SAML authentication method, which enforces SAML login for all users. No docs page names the plan."
+    source: "https://help.sigmacomputing.com/docs/single-sign-on-with-saml"
+    checked: "2026-11-20"
+  scim:
+    support: "supported"
+    notes: "With Okta, SCIM creates users, pushes name and account type updates, and deactivates users in Sigma. Requires SAML-only login and is not available on free trials. No docs page names the plan."
+    source: "https://help.sigmacomputing.com/docs/manage-users-and-teams-with-scim-and-okta"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Two-factor authentication is automatically on and mandatory for every user who signs in with a password, by email code or an authenticator app. No docs page names the plan."
+    source: "https://help.sigmacomputing.com/docs/manage-password-authentication"
+    checked: "2026-11-20"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "Password users get two-factor codes by email or an authenticator app. The docs don't mention security keys or passkeys."
+  audit_logs:
+    support: "supported"
+    retention: "30 days in the AUDIT_LOGS table"
+    notes: "Admins enable the Sigma Audit Logs connection, which records user-initiated events such as logins and admin changes and can be exported to cloud storage. No docs page names the plan."
+    source: "https://help.sigmacomputing.com/docs/access-and-explore-audit-logs"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "supported"
+    notes: "With SAML, new users get the account type from the userRole attribute, or the default View or Lite type, when they sign in. Teams are synced from userGroups at each login. No docs page names the plan."
+    source: "https://help.sigmacomputing.com/docs/single-sign-on-with-saml"
+    checked: "2026-11-20"
+  domain_verification:
+    support: "undocumented"
+    notes: "Company Domain Signup lets anyone with a listed email domain create an account without an invite, but the docs don't describe verifying a domain or claiming existing accounts."
+  custom_roles:
+    support: "supported"
+    notes: "Admins create custom account types with a name and any combination of permissions and assign them to users. No docs page names the plan."
+    source: "https://help.sigmacomputing.com/docs/create-and-manage-account-types"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "supported"
+    notes: "The SAML userRole attribute sets the account type and userGroups syncs Sigma team membership at each login, overriding changes made in Sigma. SCIM can also push IdP groups as teams. No docs page names the plan."
+    source: "https://help.sigmacomputing.com/docs/single-sign-on-with-saml"
+    checked: "2026-11-20"
+  session_controls:
+    support: "supported"
+    notes: "Admins can enforce an inactivity timeout from 5 minutes to 12 hours, and set a session length in hours for SAML and password users. No docs page names the plan."
+    source: "https://help.sigmacomputing.com/docs/set-up-inactivity-timeouts"
+    checked: "2026-11-20"
+  api_token_controls:
+    support: "supported"
+    notes: "Only admins or account types with the Create API keys permission can create API client credentials, and admins can create and manage credentials for any member. No docs page names the plan."
+    source: "https://help.sigmacomputing.com/reference/generate-client-credentials"
+    checked: "2026-11-20"

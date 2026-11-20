@@ -86,9 +86,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P2 | Perplexity Enterprise Pro | `perplexity-enterprise` | productivity | https://perplexity.ai/enterprise |
 | P2 | Planview AdaptiveWork | `planview` | productivity | https://planview.com |
 | P2 | Productboard | `productboard` | productivity | https://productboard.com |
-| P2 | Qlik Cloud | `qlik-cloud` | productivity | https://qlik.com |
-| P2 | Sigma Computing | `sigma-computing` | productivity | https://sigmacomputing.com |
-| P2 | ThoughtSpot | `thoughtspot` | productivity | https://thoughtspot.com |
 | P2 | WalkMe | `walkme` | productivity | https://walkme.com |
 | P2 | Writer | `writer` | productivity | https://writer.com |
 | P2 | Algolia | `algolia` | development | https://algolia.com |

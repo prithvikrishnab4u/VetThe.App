@@ -1,0 +1,63 @@
+name: "ThoughtSpot"
+category: "productivity"
+website: "https://thoughtspot.com"
+description: "ThoughtSpot is an AI-powered search and analytics platform. Values here cover signing in to and administering ThoughtSpot Cloud, not the self-managed ThoughtSpot Software edition."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    plan: "Pro"
+    protocols: ["SAML", "OIDC"]
+    notes: "The editions security table lists SSO via SAML and via OAuth and OIDC on Pro and Enterprise, not on Team or Essentials. Pro is a middle edition, so no tier is set."
+    source: "https://docs.thoughtspot.com/cloud/latest/editions-security"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    notes: "Admins can disable local authentication in the Admin Console once a SAML or OIDC connection is active, so no local user can sign in. No docs page names the plan."
+    source: "https://docs.thoughtspot.com/cloud/latest/authentication-local"
+    checked: "2026-11-20"
+  scim:
+    support: "supported"
+    notes: "SCIM creates, updates and deletes users and groups from Okta, Entra ID and other IdPs. De-provisioning is a permanent delete, not a deactivation. No docs page names the plan."
+    source: "https://docs.thoughtspot.com/cloud/latest/group-user-management-scim"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "supported"
+    notes: "On IAMv2 clusters, cluster admins can enable MFA for all local-login users, using Okta Verify, Google Authenticator or email codes. No docs page names the plan."
+    source: "https://docs.thoughtspot.com/cloud/latest/authentication-local-mfa"
+    checked: "2026-11-20"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The local-login MFA page lists Okta Verify, Google Authenticator and email codes. It doesn't mention security keys or passkeys."
+  audit_logs:
+    support: "supported"
+    retention: "30 days"
+    notes: "Security audit events such as logins, token creation and role or privilege changes can be pulled through the Audit Logs API or pushed to a SIEM, which is set up through support. No docs page names the plan."
+    source: "https://docs.thoughtspot.com/cloud/latest/audit-logs"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "supported"
+    notes: "Admins can choose to automatically create SAML users in ThoughtSpot on their first successful SSO login. OIDC on IAMv2 has a similar Auto create user (JIT) toggle. No docs page names the plan."
+    source: "https://docs.thoughtspot.com/cloud/latest/authentication-integration"
+    checked: "2026-11-20"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    notes: "With RBAC enabled, admins create roles from a set of privileges and assign them to groups. The RBAC page does not name the plan."
+    source: "https://docs.thoughtspot.com/cloud/latest/rbac"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "supported"
+    notes: "SCIM provisions users into groups and Orgs and keeps them in sync, and roles are assigned to groups. SAML group mapping at sign-in is also available, enabled by support. No docs page names the plan."
+    source: "https://docs.thoughtspot.com/cloud/latest/group-user-management-scim"
+    checked: "2026-11-20"
+  session_controls:
+    support: "undocumented"
+    notes: "The SAML page covers assertion validity checks from the IdP, but the Cloud docs don't describe an admin setting for session length or ending a user's sessions."
+  api_token_controls:
+    support: "partial"
+    notes: "Only in Analyst Studio: admins turn member API tokens on, see all tokens with creator and expiry, and revoke one or all. Controls for main ThoughtSpot REST API tokens aren't described. No page names the plan."
+    source: "https://docs.thoughtspot.com/cloud/latest/analyst-studio-api-tokens"
+    checked: "2026-11-20"
