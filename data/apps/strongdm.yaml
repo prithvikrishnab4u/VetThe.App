@@ -1,0 +1,60 @@
+name: "StrongDM"
+category: "security"
+website: "https://strongdm.com"
+description: "StrongDM, now part of Delinea, is a privileged access platform that brokers connections to databases, servers, clusters and cloud resources. Values here cover signing in to and administering StrongDM itself through its Admin UI."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "Admins configure an SSO provider under Settings, User Management, Single Sign-on, with guides for Okta, Entra ID, Google, OneLogin, Ping and others plus generic SAML and OIDC. No docs page names the plan."
+    source: "https://docs.strongdm.com/admin/principals/sso"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    notes: "With SSO on, password login for admins and password-only non-SSO users are separate opt-in settings, so both can be left off. No docs page names the plan."
+    source: "https://docs.strongdm.com/admin/principals/sso"
+    checked: "2026-11-20"
+  scim:
+    support: "supported"
+    notes: "Okta SCIM provisioning creates users, updates their attributes and suspends them in StrongDM when deactivated or unassigned. A generic SCIM API is also offered. No docs page names the plan."
+    source: "https://docs.strongdm.com/admin/principals/provisioning/okta-provisioning"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "supported"
+    notes: "MFA at login can be set for the whole organization in Security Settings, using Duo, Okta Verify or TOTP. With SSO in place, login MFA must come from the SSO provider. No docs page names the plan."
+    source: "https://docs.strongdm.com/admin/principals/mfa"
+    checked: "2026-11-20"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The MFA page lists Duo, Okta Verify and TOTP as providers. Security keys or passkeys for StrongDM login aren't described."
+  audit_logs:
+    support: "supported"
+    retention: "30 days in the Admin UI, 13 months on the Enterprise plan"
+    notes: "Activity logs record user events such as logins and logouts, resource changes and settings or permission changes, with filters in the Admin UI and fuller logs from the CLI."
+    source: "https://docs.strongdm.com/admin/audit/logs/view-adminui"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "not_supported"
+    notes: "The SSO page says users must already exist in the StrongDM Admin UI for SSO sign-in to succeed."
+    source: "https://docs.strongdm.com/admin/principals/sso"
+    checked: "2026-11-20"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "Admin rights come from fixed permission levels such as Administrator, Auditor, Database Administrator and Team Leader. StrongDM roles grant resource access, not admin permissions."
+  group_role_mapping:
+    support: "supported"
+    notes: "Okta groups pushed over SCIM become StrongDM roles, which grant resource access, and membership stays in sync. Admin permission levels are set in the Admin UI. No docs page names the plan."
+    source: "https://docs.strongdm.com/admin/principals/provisioning/okta-provisioning"
+    checked: "2026-11-20"
+  session_controls:
+    support: "supported"
+    notes: "Admins set session and idle timeouts separately for the Admin UI and the desktop app or CLI under Settings, Security, and can allow only one session per user. No docs page names the plan."
+    source: "https://docs.strongdm.com/admin/principals/authentication"
+    checked: "2026-11-20"
+  api_token_controls:
+    support: "undocumented"
+    notes: "Admins create, view and delete organization API keys and admin tokens with expiry and scoped permissions under Principals, Tokens. Tokens created by individual users aren't described."
