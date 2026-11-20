@@ -1,0 +1,60 @@
+name: "Sonatype Nexus"
+category: "development"
+website: "https://sonatype.com"
+description: "Sonatype makes Nexus Repository, an artifact repository manager, and Sonatype Lifecycle for software composition analysis. Values here cover the Sonatype Cloud editions (Nexus Repository Cloud and Lifecycle Cloud), where sign-in and IdP setup run through my.sonatype.com, not self-hosted Nexus."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    plan: "Pro"
+    protocols: ["SAML", "OIDC"]
+    notes: "Organization admins connect an IdP in my.sonatype.com, with guides for Entra ID, Okta, Google Workspace, PingFederate, generic OIDC and custom SAML. The editions page lists SSO in Pro and above, and Cloud is only sold as Pro or higher. No vendor page reached says whether Pro is self-serve or sales-led, so no tier is set."
+    source: "https://help.sonatype.com/en/configure-identity-provider.html"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Cloud tenants have no local or LDAP user management, but Sonatype's own email and password login remains. The docs don't describe a setting that forces SSO."
+  scim:
+    support: "undocumented"
+    notes: "No Sonatype Cloud docs page describes SCIM provisioning. Users are invited in the User Management view or my.sonatype.com."
+  mfa_enforcement:
+    support: "supported"
+    notes: "For Sonatype's own login, new users set a password and then must scan a QR code with an authenticator app during setup. The Nexus Repository Cloud page says 2FA is on by default. No docs page names the plan."
+    source: "https://help.sonatype.com/en/authentication-with-sonatype-cloud.html"
+    checked: "2026-11-20"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "Listed MFA authenticators are Google Authenticator, Auth0 Guardian and Microsoft Authenticator. Security keys and passkeys aren't mentioned."
+  audit_logs:
+    support: "supported"
+    notes: "For Lifecycle Cloud, customers read audit logs directly through the API. For Nexus Repository Cloud, access to logs goes through a Sonatype support ticket. No docs page names the plan."
+    source: "https://help.sonatype.com/en/feature-parity-with-sonatype-cloud.html"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "The IdP setup page covers connecting the IdP and IdP groups, but doesn't say whether accounts are created on first SSO sign-in."
+  domain_verification:
+    support: "undocumented"
+    notes: "Admins can verify the organization in my.sonatype.com, but the docs don't describe verifying an email domain."
+  custom_roles:
+    support: "supported"
+    notes: "Admins create Nexus roles with a chosen set of privileges and contained roles. Nexus Repository Cloud has the same functionality as self-hosted, including role-based access control. No docs page names the plan."
+    source: "https://help.sonatype.com/en/roles.html"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "supported"
+    notes: "With Enable Identity Provider Groups, the IdP sends a groups claim that is used to assign product roles through external role mappings. No docs page names the plan."
+    source: "https://help.sonatype.com/en/configure-identity-provider.html"
+    checked: "2026-11-20"
+  session_controls:
+    support: "partial"
+    notes: "The session timeout defaults to 30 minutes and in SaaS Sonatype manages it for each tenant, so customers can't set it themselves. No admin action to sign users out is described."
+    source: "https://help.sonatype.com/en/authentication-with-sonatype-cloud.html"
+    checked: "2026-11-20"
+  api_token_controls:
+    support: "supported"
+    plan: "Pro"
+    notes: "On Sonatype Cloud, admins can list and delete users' tokens through the User Tokens API, set token expiry from 1 to 999 days, and require tokens for repository access. Pro and higher editions."
+    source: "https://help.sonatype.com/en/user-tokens.html"
+    checked: "2026-11-20"

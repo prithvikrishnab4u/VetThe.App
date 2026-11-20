@@ -7377,6 +7377,90 @@
     "website": "https://dropbox.com"
   },
   {
+    "_id": "dynatrace",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-11-20",
+        "notes": "Account admins can disable or delete platform tokens created by any user in the account, and can turn off platform token creation for the whole account. No docs page names the plan.",
+        "source": "https://docs.dynatrace.com/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "The Account Management audit log records IAM changes such as group permissions, memberships, policies and boundaries, viewable in the UI or via API. The docs say some IAM and login events aren't recorded yet.",
+        "retention": "Up to 10 years (3650 days)",
+        "source": "https://docs.dynatrace.com/docs/manage/account-management/audit-logs",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Admins create named IAM policies from individual permission statements and bind them to groups for the account or specific environments. No docs page names the plan.",
+        "source": "https://docs.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "checked": "2026-11-20",
+        "notes": "Domains are verified with a DNS TXT record before SAML or SCIM can be set up, and sign-ins from that domain are routed to the IdP. Moving an existing user's login to IdP control needs Dynatrace Support.",
+        "source": "https://docs.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-saml",
+        "support": "partial"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "Admins map IdP group claims to Dynatrace groups, and membership is checked at each SAML sign-in. SCIM also syncs groups, but permissions on SCIM groups are assigned in Dynatrace. No docs page names the plan.",
+        "source": "https://docs.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-saml",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-20",
+        "notes": "With SAML federation, a user who doesn't exist in Dynatrace is created automatically at sign-in, and federated users are created or updated on the fly. No docs page names the plan.",
+        "source": "https://docs.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-saml",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Account admins can enforce MFA per environment for non-federated users, by email code or TOTP. The docs say MFA can't be forced on all non-federated users at the account level. No docs page names the plan.",
+        "source": "https://docs.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-mfa/environment-mfa",
+        "support": "partial"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The MFA docs describe email codes and TOTP authenticator apps only. Security keys or passkeys for Dynatrace sign-in aren't mentioned.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "SCIM 2.0 syncs users and groups from the IdP, and disabling or removing a user in the IdP disables them in Dynatrace. Only users from verified domains can be provisioned. No docs page names the plan.",
+        "source": "https://docs.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-scim",
+        "support": "supported"
+      },
+      "session_controls": {
+        "checked": "2026-11-20",
+        "notes": "Session limits are system-wide and not adjustable: 12 hours maximum session validity and a 1-hour inactivity timeout.",
+        "source": "https://docs.dynatrace.com/docs/manage/identity-access-management/iam-limits",
+        "support": "not_supported"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Admins verify a domain and add a SAML 2.0 configuration under Identity & access management, scoped to the account, specific environments, or globally. No docs page names the plan.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-saml",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "With global federation, users from the verified domain are always redirected to the IdP and can't sign in with credentials. With account or environment federation they can still sign in with credentials, without SAML groups.",
+        "source": "https://docs.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-saml",
+        "support": "supported"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Dynatrace is an observability and application security platform. Values here cover signing in to and administering Dynatrace SaaS, including Account Management and its environments.",
+    "name": "Dynatrace",
+    "status": "draft",
+    "website": "https://dynatrace.com"
+  },
+  {
     "_id": "egnyte",
     "capabilities": {
       "api_token_controls": {
@@ -9136,6 +9220,82 @@
     "website": "https://www.gong.io"
   },
   {
+    "_id": "google-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Service account key and API key restrictions are documented on docs.cloud.google.com, which could not be fetched for this check.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Cloud Audit Logs record who did what, when and where for admin and data access activity. Admin activity is always on and kept for 400 days at no additional cost.",
+        "retention": "400 days for admin activity audit logs",
+        "source": "https://cloud.google.com/logging",
+        "support": "supported",
+        "tier": "free"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Cloud IAM includes unlimited custom roles and permissions at no additional cost per user or identity.",
+        "source": "https://cloud.google.com/products/iam",
+        "support": "supported",
+        "tier": "free"
+      },
+      "domain_verification": {
+        "notes": "Domain verification for Cloud Identity is covered on docs.cloud.google.com, which could not be fetched for this check.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "notes": "Workforce Identity Federation maps IdP attributes to Google Cloud attributes to scope access, but the product page doesn't say IdP groups can grant IAM roles. The docs on docs.cloud.google.com could not be fetched for this check.",
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "notes": "Workforce Identity Federation needs no directory sync, but the product page doesn't say whether a user record is created at first sign-in. The docs moved to docs.cloud.google.com, which could not be fetched for this check.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Security key enforcement lets Google Cloud admins require security keys for users in their organization. No vendor page reached names the plan.",
+        "source": "https://cloud.google.com/security/products/titan-security-key",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-11-20",
+        "notes": "Titan and other FIDO security keys can be used to sign in to Google and Google Cloud, and admins can require them. No vendor page reached names the plan.",
+        "source": "https://cloud.google.com/security/products/titan-security-key",
+        "support": "supported"
+      },
+      "scim": {
+        "notes": "Workforce Identity Federation is described as syncless, with no directory sync. Cloud Identity provisioning docs are on docs.cloud.google.com, which could not be fetched for this check.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "notes": "Session length and reauthentication settings are documented on docs.cloud.google.com and Google Workspace help, which could not be fetched for this check.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Workforce Identity Federation lets employees sign in to Google Cloud with an external IdP such as Okta, Ping, AD FS or Entra ID over SAML 2.0 or OIDC. Google says it is free of charge.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://cloud.google.com/workforce-identity-federation",
+        "support": "supported",
+        "tier": "free"
+      },
+      "sso_enforcement": {
+        "notes": "Google Cloud docs pages redirect to docs.cloud.google.com, which could not be fetched for this check.",
+        "support": "undocumented"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Google Cloud is a public cloud platform. Values here cover signing in to and administering the Google Cloud console and projects, through Cloud Identity accounts or Workforce Identity Federation, with access managed in Cloud IAM.",
+    "name": "Google Cloud",
+    "status": "draft",
+    "website": "https://cloud.google.com"
+  },
+  {
     "_id": "googleworkspace",
     "capabilities": {
       "api_token_controls": {
@@ -10362,6 +10522,88 @@
     "name": "Helicone",
     "status": "draft",
     "website": "https://www.helicone.ai"
+  },
+  {
+    "_id": "hex",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-11-20",
+        "notes": "Admins can turn API access on or off, revoke it for an individual user, and set a maximum expiration for personal access tokens; lowering it revokes older tokens. Available on Team and Enterprise plans.",
+        "plan": "Team",
+        "source": "https://learn.hex.tech/docs/administration/workspace_settings/workspace-security",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Admins enable audit logs and view them in a WorkOS interface with actor, time and event JSON, export CSV, or stream them to S3, Datadog, Splunk or Google Cloud Storage.",
+        "plan": "Enterprise",
+        "retention": "30 days in the UI; longer when streamed to your own SIEM or storage",
+        "source": "https://learn.hex.tech/docs/administration/workspace_settings/audit-logs/audit-logs-overview",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Every user is assigned one of six fixed workspace roles: Admin, Manager, Editor, Explorer, Viewer or Guest. Groups grant access to assets but don't define permissions.",
+        "source": "https://learn.hex.tech/docs/collaborate/sharing-and-permissions/roles",
+        "support": "not_supported"
+      },
+      "domain_verification": {
+        "notes": "Admins can add allowed email domains so matching users can join, but the docs don't describe proving domain ownership or taking control of existing accounts.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "Directory sync groups can be mapped to the Admin and Editor roles, other synced users become Viewers, and synced groups can be given access to shared workspace assets.",
+        "plan": "Enterprise",
+        "source": "https://learn.hex.tech/docs/administration/workspace_settings/directory-sync",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "notes": "Allowed domains let anyone with a matching email join the workspace with a default role, but the SSO page doesn't say accounts are created on first SSO sign-in.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "The docs don't describe MFA for Hex's own email and password login.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The docs don't mention security keys or passkeys for signing in to Hex.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "Directory sync with Okta, Entra ID, Google, Rippling and others creates users and syncs groups and roles. The page doesn't say SCIM or describe deactivating users who lose access.",
+        "plan": "Enterprise",
+        "source": "https://learn.hex.tech/docs/administration/workspace_settings/directory-sync",
+        "support": "partial"
+      },
+      "session_controls": {
+        "notes": "The workspace settings and security pages don't describe a session length setting or a way for admins to sign users out.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Admins configure OIDC SSO under Access & Security in workspace settings; SAML is not supported. The page says Enterprise plan, but no reachable docs page shows where Enterprise sits among the plans.",
+        "plan": "Enterprise",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://learn.hex.tech/docs/administration/sso",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "The Enforce SSO toggle hides the email and password form for all users, including Admins. Admins keep an unlinked emergency password login URL.",
+        "plan": "Enterprise",
+        "source": "https://learn.hex.tech/docs/administration/sso",
+        "support": "supported"
+      }
+    },
+    "category": "productivity",
+    "description": "Hex is a collaborative data workspace for SQL and Python notebooks, data apps and AI-assisted analysis. Values here cover signing in to and administering a Hex workspace.",
+    "name": "Hex",
+    "status": "draft",
+    "website": "https://hex.tech"
   },
   {
     "_id": "hibob",
@@ -21339,6 +21581,181 @@
     "name": "Snyk",
     "status": "published",
     "website": "https://snyk.io"
+  },
+  {
+    "_id": "sonarqube-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-11-20",
+        "notes": "Restrict DevOps platform access blocks personal access tokens created by DevOps platform accounts on verified domains, and SCIM deprovisioning revokes a user's tokens. Admins can't list or revoke other users' tokens per the docs.",
+        "plan": "Enterprise",
+        "source": "https://docs.sonarsource.com/sonarqube-cloud/administering-sonarcloud/enterprise-security/sso-and-provisioning/sso-restrictions",
+        "support": "partial",
+        "tier": "enterprise"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Enterprise admins read audit logs through the Audit logs API. Events include SSO logins and logouts, user and group changes, permission changes and scoped organization token creation and deletion.",
+        "plan": "Enterprise",
+        "retention": "180 days",
+        "source": "https://docs.sonarsource.com/sonarqube-cloud/administering-sonarcloud/enterprise-security/audit-logs",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "There are no named roles; admins create custom groups and grant each group individual organization, project and portfolio permissions. The permissions page says Team and Enterprise, the groups page says Enterprise only.",
+        "source": "https://docs.sonarsource.com/sonarqube-cloud/administering-sonarcloud/permissions",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "checked": "2026-11-20",
+        "notes": "Admins verify domains with a DNS TXT record. Users on a verified domain can then be forced to use SSO, but their existing DevOps platform accounts are blocked rather than taken over, and SSO accounts start with no history.",
+        "plan": "Enterprise",
+        "source": "https://docs.sonarsource.com/sonarqube-cloud/administering-sonarcloud/enterprise-security/sso-and-provisioning/sso-restrictions",
+        "support": "partial",
+        "tier": "enterprise"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "SCIM groups are mapped to organizations and kept in sync, and permissions are set on those groups in SonarQube Cloud. With JIT, memberships of same-named groups are reset to match the IdP at each login.",
+        "plan": "Enterprise",
+        "source": "https://docs.sonarsource.com/sonarqube-cloud/administering-sonarcloud/enterprise-security/sso-and-provisioning/about",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-20",
+        "notes": "Without SCIM, an SSO account is created on first SSO login, and the user is added to organization groups whose names match their IdP groups. JIT does not remove users who leave the IdP.",
+        "plan": "Enterprise",
+        "source": "https://docs.sonarsource.com/sonarqube-cloud/administering-sonarcloud/enterprise-security/sso-and-provisioning/about",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "notes": "SonarQube Cloud has no password login of its own; users sign in through a DevOps platform account or SSO. The docs don't describe an MFA requirement set in SonarQube Cloud.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "Sign-in is delegated to DevOps platforms or the company IdP. The docs don't mention security keys or passkeys for SonarQube Cloud itself.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "SCIM provisions and deprovisions users and groups and syncs group memberships. Deprovisioning revokes the user's sessions and personal access tokens and deletes the SSO account.",
+        "plan": "Enterprise",
+        "source": "https://docs.sonarsource.com/sonarqube-cloud/administering-sonarcloud/enterprise-security/sso-and-provisioning/about",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "notes": "SCIM deprovisioning revokes a user's active sessions. The docs don't describe a session length setting or an admin action to sign a user out.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Enterprises can set up SP-initiated SSO with SAML or OIDC; IdP-initiated SSO is not supported except through Okta Express Configuration. Without SSO, users sign in with GitHub, GitLab, Bitbucket or Azure DevOps.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.sonarsource.com/sonarqube-cloud/administering-sonarcloud/enterprise-security/sso-and-provisioning/about",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Restrict DevOps platform access forces every user whose email is on a verified domain to log in only through SSO and blocks their DevOps platform logins. Requires domain verification.",
+        "plan": "Enterprise",
+        "source": "https://docs.sonarsource.com/sonarqube-cloud/administering-sonarcloud/enterprise-security/sso-and-provisioning/sso-restrictions",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "development",
+    "description": "SonarQube Cloud (formerly SonarCloud) is Sonar's hosted code quality and code security analysis service. Values here cover signing in to and administering SonarQube Cloud organizations and enterprises, not the self-managed SonarQube Server.",
+    "name": "SonarQube Cloud",
+    "status": "draft",
+    "website": "https://sonarsource.com/products/sonarcloud"
+  },
+  {
+    "_id": "sonatype",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-11-20",
+        "notes": "On Sonatype Cloud, admins can list and delete users' tokens through the User Tokens API, set token expiry from 1 to 999 days, and require tokens for repository access. Pro and higher editions.",
+        "plan": "Pro",
+        "source": "https://help.sonatype.com/en/user-tokens.html",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "For Lifecycle Cloud, customers read audit logs directly through the API. For Nexus Repository Cloud, access to logs goes through a Sonatype support ticket. No docs page names the plan.",
+        "source": "https://help.sonatype.com/en/feature-parity-with-sonatype-cloud.html",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Admins create Nexus roles with a chosen set of privileges and contained roles. Nexus Repository Cloud has the same functionality as self-hosted, including role-based access control. No docs page names the plan.",
+        "source": "https://help.sonatype.com/en/roles.html",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "notes": "Admins can verify the organization in my.sonatype.com, but the docs don't describe verifying an email domain.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "With Enable Identity Provider Groups, the IdP sends a groups claim that is used to assign product roles through external role mappings. No docs page names the plan.",
+        "source": "https://help.sonatype.com/en/configure-identity-provider.html",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "notes": "The IdP setup page covers connecting the IdP and IdP groups, but doesn't say whether accounts are created on first SSO sign-in.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "For Sonatype's own login, new users set a password and then must scan a QR code with an authenticator app during setup. The Nexus Repository Cloud page says 2FA is on by default. No docs page names the plan.",
+        "source": "https://help.sonatype.com/en/authentication-with-sonatype-cloud.html",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "Listed MFA authenticators are Google Authenticator, Auth0 Guardian and Microsoft Authenticator. Security keys and passkeys aren't mentioned.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "No Sonatype Cloud docs page describes SCIM provisioning. Users are invited in the User Management view or my.sonatype.com.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "checked": "2026-11-20",
+        "notes": "The session timeout defaults to 30 minutes and in SaaS Sonatype manages it for each tenant, so customers can't set it themselves. No admin action to sign users out is described.",
+        "source": "https://help.sonatype.com/en/authentication-with-sonatype-cloud.html",
+        "support": "partial"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Organization admins connect an IdP in my.sonatype.com, with guides for Entra ID, Okta, Google Workspace, PingFederate, generic OIDC and custom SAML. The editions page lists SSO in Pro and above, and Cloud is only sold as Pro or higher. No vendor page reached says whether Pro is self-serve or sales-led, so no tier is set.",
+        "plan": "Pro",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://help.sonatype.com/en/configure-identity-provider.html",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "notes": "Cloud tenants have no local or LDAP user management, but Sonatype's own email and password login remains. The docs don't describe a setting that forces SSO.",
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "Sonatype makes Nexus Repository, an artifact repository manager, and Sonatype Lifecycle for software composition analysis. Values here cover the Sonatype Cloud editions (Nexus Repository Cloud and Lifecycle Cloud), where sign-in and IdP setup run through my.sonatype.com, not self-hosted Nexus.",
+    "name": "Sonatype Nexus",
+    "status": "draft",
+    "website": "https://sonatype.com"
   },
   {
     "_id": "sourcegraph",

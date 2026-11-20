@@ -67,8 +67,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P1 | Mimecast | `mimecast` | security | https://mimecast.com |
 | P1 | SentinelOne | `sentinelone` | security | https://sentinelone.com |
 | P1 | Wiz | `wiz` | security | https://wiz.io |
-| P1 | Dynatrace | `dynatrace` | infrastructure | https://dynatrace.com |
-| P1 | Google Cloud | `google-cloud` | infrastructure | https://cloud.google.com |
 | P1 | Jira Service Management | `jira-service-management` | infrastructure | https://atlassian.com/software/jira/service-management |
 | P2 | Dialpad | `dialpad` | collaboration | https://dialpad.com |
 | P2 | Frame.io | `frame-io` | collaboration | https://frame.io |
@@ -86,7 +84,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P2 | Guru | `guru` | productivity | https://getguru.com |
 | P2 | Harvey | `harvey` | productivity | https://harvey.ai |
 | P2 | Heap | `heap` | productivity | https://heap.io |
-| P2 | Hex | `hex` | productivity | https://hex.tech |
 | P2 | Icertis | `icertis` | productivity | https://icertis.com |
 | P2 | LinkSquares | `linksquares` | productivity | https://linksquares.com |
 | P2 | Otter.ai | `otter-ai` | productivity | https://otter.ai |
@@ -102,8 +99,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P2 | Apigee | `apigee` | development | https://cloud.google.com/apigee |
 | P2 | Devin | `devin` | development | https://devin.ai |
 | P2 | Netlify | `netlify` | development | https://netlify.com |
-| P2 | SonarQube Cloud | `sonarqube-cloud` | development | https://sonarsource.com/products/sonarcloud |
-| P2 | Sonatype Nexus | `sonatype` | development | https://sonatype.com |
 | P2 | 6sense | `6sense` | sales_marketing | https://6sense.com |
 | P2 | Adobe Experience Manager | `adobe-experience-manager` | sales_marketing | https://business.adobe.com/products/experience-manager/adobe-experience-manager.html |
 | P2 | Ahrefs | `ahrefs` | sales_marketing | https://ahrefs.com |

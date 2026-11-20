@@ -1,0 +1,65 @@
+name: "Hex"
+category: "productivity"
+website: "https://hex.tech"
+description: "Hex is a collaborative data workspace for SQL and Python notebooks, data apps and AI-assisted analysis. Values here cover signing in to and administering a Hex workspace."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    plan: "Enterprise"
+    protocols: ["OIDC"]
+    notes: "Admins configure OIDC SSO under Access & Security in workspace settings; SAML is not supported. The page says Enterprise plan, but no reachable docs page shows where Enterprise sits among the plans."
+    source: "https://learn.hex.tech/docs/administration/sso"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    plan: "Enterprise"
+    notes: "The Enforce SSO toggle hides the email and password form for all users, including Admins. Admins keep an unlinked emergency password login URL."
+    source: "https://learn.hex.tech/docs/administration/sso"
+    checked: "2026-11-20"
+  scim:
+    support: "partial"
+    plan: "Enterprise"
+    notes: "Directory sync with Okta, Entra ID, Google, Rippling and others creates users and syncs groups and roles. The page doesn't say SCIM or describe deactivating users who lose access."
+    source: "https://learn.hex.tech/docs/administration/workspace_settings/directory-sync"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The docs don't describe MFA for Hex's own email and password login."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The docs don't mention security keys or passkeys for signing in to Hex."
+  audit_logs:
+    support: "supported"
+    plan: "Enterprise"
+    retention: "30 days in the UI; longer when streamed to your own SIEM or storage"
+    notes: "Admins enable audit logs and view them in a WorkOS interface with actor, time and event JSON, export CSV, or stream them to S3, Datadog, Splunk or Google Cloud Storage."
+    source: "https://learn.hex.tech/docs/administration/workspace_settings/audit-logs/audit-logs-overview"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "Allowed domains let anyone with a matching email join the workspace with a default role, but the SSO page doesn't say accounts are created on first SSO sign-in."
+  domain_verification:
+    support: "undocumented"
+    notes: "Admins can add allowed email domains so matching users can join, but the docs don't describe proving domain ownership or taking control of existing accounts."
+  custom_roles:
+    support: "not_supported"
+    notes: "Every user is assigned one of six fixed workspace roles: Admin, Manager, Editor, Explorer, Viewer or Guest. Groups grant access to assets but don't define permissions."
+    source: "https://learn.hex.tech/docs/collaborate/sharing-and-permissions/roles"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "supported"
+    plan: "Enterprise"
+    notes: "Directory sync groups can be mapped to the Admin and Editor roles, other synced users become Viewers, and synced groups can be given access to shared workspace assets."
+    source: "https://learn.hex.tech/docs/administration/workspace_settings/directory-sync"
+    checked: "2026-11-20"
+  session_controls:
+    support: "undocumented"
+    notes: "The workspace settings and security pages don't describe a session length setting or a way for admins to sign users out."
+  api_token_controls:
+    support: "supported"
+    plan: "Team"
+    notes: "Admins can turn API access on or off, revoke it for an individual user, and set a maximum expiration for personal access tokens; lowering it revokes older tokens. Available on Team and Enterprise plans."
+    source: "https://learn.hex.tech/docs/administration/workspace_settings/workspace-security"
+    checked: "2026-11-20"

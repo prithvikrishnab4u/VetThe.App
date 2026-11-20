@@ -1,0 +1,79 @@
+name: "SonarQube Cloud"
+category: "development"
+website: "https://sonarsource.com/products/sonarcloud"
+description: "SonarQube Cloud (formerly SonarCloud) is Sonar's hosted code quality and code security analysis service. Values here cover signing in to and administering SonarQube Cloud organizations and enterprises, not the self-managed SonarQube Server."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML", "OIDC"]
+    notes: "Enterprises can set up SP-initiated SSO with SAML or OIDC; IdP-initiated SSO is not supported except through Okta Express Configuration. Without SSO, users sign in with GitHub, GitLab, Bitbucket or Azure DevOps."
+    source: "https://docs.sonarsource.com/sonarqube-cloud/administering-sonarcloud/enterprise-security/sso-and-provisioning/about"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Restrict DevOps platform access forces every user whose email is on a verified domain to log in only through SSO and blocks their DevOps platform logins. Requires domain verification."
+    source: "https://docs.sonarsource.com/sonarqube-cloud/administering-sonarcloud/enterprise-security/sso-and-provisioning/sso-restrictions"
+    checked: "2026-11-20"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM provisions and deprovisions users and groups and syncs group memberships. Deprovisioning revokes the user's sessions and personal access tokens and deletes the SSO account."
+    source: "https://docs.sonarsource.com/sonarqube-cloud/administering-sonarcloud/enterprise-security/sso-and-provisioning/about"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "SonarQube Cloud has no password login of its own; users sign in through a DevOps platform account or SSO. The docs don't describe an MFA requirement set in SonarQube Cloud."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "Sign-in is delegated to DevOps platforms or the company IdP. The docs don't mention security keys or passkeys for SonarQube Cloud itself."
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    retention: "180 days"
+    notes: "Enterprise admins read audit logs through the Audit logs API. Events include SSO logins and logouts, user and group changes, permission changes and scoped organization token creation and deletion."
+    source: "https://docs.sonarsource.com/sonarqube-cloud/administering-sonarcloud/enterprise-security/audit-logs"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Without SCIM, an SSO account is created on first SSO login, and the user is added to organization groups whose names match their IdP groups. JIT does not remove users who leave the IdP."
+    source: "https://docs.sonarsource.com/sonarqube-cloud/administering-sonarcloud/enterprise-security/sso-and-provisioning/about"
+    checked: "2026-11-20"
+  domain_verification:
+    support: "partial"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Admins verify domains with a DNS TXT record. Users on a verified domain can then be forced to use SSO, but their existing DevOps platform accounts are blocked rather than taken over, and SSO accounts start with no history."
+    source: "https://docs.sonarsource.com/sonarqube-cloud/administering-sonarcloud/enterprise-security/sso-and-provisioning/sso-restrictions"
+    checked: "2026-11-20"
+  custom_roles:
+    support: "supported"
+    notes: "There are no named roles; admins create custom groups and grant each group individual organization, project and portfolio permissions. The permissions page says Team and Enterprise, the groups page says Enterprise only."
+    source: "https://docs.sonarsource.com/sonarqube-cloud/administering-sonarcloud/permissions"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM groups are mapped to organizations and kept in sync, and permissions are set on those groups in SonarQube Cloud. With JIT, memberships of same-named groups are reset to match the IdP at each login."
+    source: "https://docs.sonarsource.com/sonarqube-cloud/administering-sonarcloud/enterprise-security/sso-and-provisioning/about"
+    checked: "2026-11-20"
+  session_controls:
+    support: "undocumented"
+    notes: "SCIM deprovisioning revokes a user's active sessions. The docs don't describe a session length setting or an admin action to sign a user out."
+  api_token_controls:
+    support: "partial"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Restrict DevOps platform access blocks personal access tokens created by DevOps platform accounts on verified domains, and SCIM deprovisioning revokes a user's tokens. Admins can't list or revoke other users' tokens per the docs."
+    source: "https://docs.sonarsource.com/sonarqube-cloud/administering-sonarcloud/enterprise-security/sso-and-provisioning/sso-restrictions"
+    checked: "2026-11-20"
