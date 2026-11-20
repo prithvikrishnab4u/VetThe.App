@@ -63,7 +63,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P1 | Mimecast | `mimecast` | security | https://mimecast.com |
 | P1 | SentinelOne | `sentinelone` | security | https://sentinelone.com |
 | P1 | Wiz | `wiz` | security | https://wiz.io |
-| P1 | Jira Service Management | `jira-service-management` | infrastructure | https://atlassian.com/software/jira/service-management |
 | P2 | Dialpad | `dialpad` | collaboration | https://dialpad.com |
 | P2 | Frame.io | `frame-io` | collaboration | https://frame.io |
 | P2 | GoTo Connect | `goto-connect` | collaboration | https://goto.com/connect |
@@ -88,10 +87,7 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P2 | Productboard | `productboard` | productivity | https://productboard.com |
 | P2 | WalkMe | `walkme` | productivity | https://walkme.com |
 | P2 | Writer | `writer` | productivity | https://writer.com |
-| P2 | Algolia | `algolia` | development | https://algolia.com |
 | P2 | Apigee | `apigee` | development | https://cloud.google.com/apigee |
-| P2 | Devin | `devin` | development | https://devin.ai |
-| P2 | Netlify | `netlify` | development | https://netlify.com |
 | P2 | 6sense | `6sense` | sales_marketing | https://6sense.com |
 | P2 | Adobe Experience Manager | `adobe-experience-manager` | sales_marketing | https://business.adobe.com/products/experience-manager/adobe-experience-manager.html |
 | P2 | Ahrefs | `ahrefs` | sales_marketing | https://ahrefs.com |

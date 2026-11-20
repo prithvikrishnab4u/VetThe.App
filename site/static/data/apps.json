@@ -975,6 +975,67 @@
     "website": "https://www.akeyless.io"
   },
   {
+    "_id": "algolia",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "API keys belong to the application, not to individual users. They are listed in the dashboard and can be deleted, but the docs don't describe controls over keys that team members create.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "notes": "The pricing page lists Activity Logs under Analytics on Grow Plus and Elevate, but no docs page shows that it records user and admin activity in the dashboard.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "When adding a team member, admins can restrict them to chosen indices and refine their permissions. Index restrictions need Team Advanced Permissions, part of the Enterprise add-on. Named custom roles aren't described.",
+        "plan": "Enterprise add-on (Team Advanced Permissions)",
+        "source": "https://www.algolia.com/doc/guides/sending-and-managing-data/manage-indices-and-apps/manage-your-apps",
+        "support": "partial",
+        "tier": "add_on"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "Users can turn on 2FA with an authenticator app in their account details, and Algolia recommends it for everyone, but an admin setting that requires it isn't described.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The docs only describe 2FA with an authenticator app such as Google Authenticator or Authy.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "The pricing page lists Access to SSO on the Elevate annual plan, the top tier above Free, Grow and Grow Plus. No public docs page describes the setup or protocols.",
+        "plan": "Elevate",
+        "source": "https://www.algolia.com/pricing/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "notes": "The public docs have no SSO setup page, so requiring SSO isn't described.",
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "Algolia is a hosted search and discovery API with AI ranking, recommendations and merchandising tools. Values here cover signing in to and administering the Algolia dashboard and its team members.",
+    "name": "Algolia",
+    "status": "draft",
+    "website": "https://algolia.com"
+  },
+  {
     "_id": "amazon-web-services-aws",
     "capabilities": {
       "api_token_controls": {
@@ -6799,6 +6860,97 @@
     "website": "https://www.descope.com"
   },
   {
+    "_id": "devin",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-11-20",
+        "notes": "Enterprise admins set a PAT policy (disabled, approval required or self serve) with a maximum lifetime, and can view and revoke any member's PATs in the PAT inventory.",
+        "plan": "Enterprise",
+        "source": "https://docs.devin.ai/api-reference/personal-access-tokens",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Enterprise and organization audit logs can be listed through the v3 API with the ViewAccountAuditLogs permission. The SSO guide says logins and membership changes are recorded.",
+        "plan": "Enterprise",
+        "source": "https://docs.devin.ai/api-reference/v3/audit-logs/enterprise-audit-logs",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Enterprise admins create named roles at enterprise or organization level by picking permissions, and assign them to users or IdP groups.",
+        "plan": "Enterprise",
+        "source": "https://docs.devin.ai/enterprise/security-access/custom-roles",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "domain_verification": {
+        "checked": "2026-11-20",
+        "notes": "Admins verify an email domain with a DNS TXT record before adding an SSO connection for it. Taking over existing accounts on that domain isn't described. No docs page names the plan.",
+        "source": "https://docs.devin.ai/enterprise/security-access/sso/guide",
+        "support": "partial"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "IdP groups from SSO logins or SCIM can be mapped to enterprise roles and to organizations with a role. Login-synced groups update on each login, SCIM groups in real time.",
+        "plan": "Enterprise",
+        "source": "https://docs.devin.ai/enterprise/security-access/sso/guide",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-20",
+        "notes": "With auto-membership on, users are created on first SSO login with the default Enterprise Member role. The Teams plan has no just-in-time provisioning.",
+        "plan": "Enterprise",
+        "source": "https://docs.devin.ai/enterprise/security-access/sso/guide",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "mfa_enforcement": {
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "SCIM 2.0 creates, updates, deactivates and deletes users and pushes groups. Deprovisioned users lose enterprise membership right away. SCIM is Enterprise only.",
+        "plan": "Enterprise",
+        "source": "https://docs.devin.ai/enterprise/security-access/scim",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "notes": "The SSO guide says existing sessions stay active until they expire, but no admin setting for session length or sign-out is described.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Teams admins can connect a SAML 2.0 or OIDC identity provider under Settings, Authentication, and Enterprise also has SSO. On Teams, SSO signs in existing members only. Teams is not the cheapest paid plan.",
+        "plan": "Teams",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.devin.ai/admin/billing/self-serve",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "After an SSO connection works, admins can turn off email, Google and GitHub under Sign-in methods so SSO is the only way in. No docs page names the plan for this setting.",
+        "source": "https://docs.devin.ai/enterprise/security-access/sso/guide",
+        "support": "supported"
+      }
+    },
+    "category": "development",
+    "description": "Devin is an AI software engineering agent from Cognition that works in cloud sessions, a CLI and a desktop app. Values here cover signing in to and administering Devin team and enterprise accounts in the Devin web app.",
+    "name": "Devin",
+    "status": "draft",
+    "website": "https://devin.ai"
+  },
+  {
     "_id": "dify-cloud",
     "capabilities": {
       "api_token_controls": {
@@ -11979,6 +12131,115 @@
     "website": "https://jfrog.com"
   },
   {
+    "_id": "jira-service-management",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-11-20",
+        "notes": "Org admins can revoke one or many of a managed account's API tokens under Insights, API token activity. Admins can also block API token access for external users.",
+        "plan": "Atlassian Guard Standard",
+        "source": "https://support.atlassian.com/security-and-access-policies/docs/revoke-user-api-tokens/",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "The organization audit log lists activities with actor, app, IP address and time, and can be searched and filtered. It needs Atlassian Guard or an Enterprise plan; without them no org-level events are stored.",
+        "plan": "Atlassian Guard Standard or Enterprise",
+        "source": "https://support.atlassian.com/security-and-access-policies/docs/view-audit-log-activities/",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Jira admins create named space roles and grant them permissions in permission schemes. Free sites can't assign space roles or restrict permissions with schemes; Standard, Premium and Enterprise can.",
+        "plan": "Standard",
+        "source": "https://support.atlassian.com/jira-cloud-administration/docs/permissions-limitations-in-free-jira-sites/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "domain_verification": {
+        "checked": "2026-11-20",
+        "notes": "Verifying a domain proves ownership and claims existing accounts on it, which become managed accounts that admins can edit, deactivate or delete. Available on all plans.",
+        "plan": "All plans",
+        "source": "https://support.atlassian.com/user-management/docs/verify-a-domain-to-manage-accounts/",
+        "support": "supported",
+        "tier": "free"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "SCIM syncs IdP groups to the organization and its sites, where admins assign groups app access and use them in Jira permissions.",
+        "plan": "Atlassian Guard Standard",
+        "source": "https://support.atlassian.com/provisioning-users/docs/understand-user-provisioning/",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-20",
+        "notes": "After linking domains to the IdP directory and enforcing SAML SSO on the default policy, an Atlassian account is created when a user first logs in with SAML.",
+        "plan": "Atlassian Guard Standard",
+        "source": "https://support.atlassian.com/security-and-access-policies/docs/configure-saml-single-sign-on-with-an-identity-provider/",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Org admins set two-step verification to Mandatory in an authentication policy for managed accounts. Available on all plans. With SSO enforced, 2FA is handled by the IdP instead.",
+        "plan": "All plans",
+        "source": "https://support.atlassian.com/security-and-access-policies/docs/enforce-two-step-verification/",
+        "support": "supported",
+        "tier": "free"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-11-20",
+        "notes": "Admins can allow passkeys per authentication policy so managed users sign in to Atlassian products with a passkey. Blocked by default, and not offered when SSO is enforced.",
+        "plan": "All plans",
+        "source": "https://support.atlassian.com/security-and-access-policies/docs/manage-passkey-authentication/",
+        "support": "supported",
+        "tier": "free"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "SCIM 2.0 user provisioning creates, updates and deactivates Atlassian accounts from the identity provider and syncs groups to Jira and Confluence.",
+        "plan": "Atlassian Guard Standard",
+        "source": "https://support.atlassian.com/provisioning-users/docs/understand-user-provisioning/",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "session_controls": {
+        "checked": "2026-11-20",
+        "notes": "Admins set an idle session duration in an authentication policy for managed accounts, on all plans. A maximum session expiration also exists with Atlassian Guard Standard.",
+        "plan": "All plans",
+        "source": "https://support.atlassian.com/security-and-access-policies/docs/update-idle-session-duration/",
+        "support": "supported",
+        "tier": "free"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Org admins configure SAML SSO with an identity provider for accounts on verified domains. It requires a subscription to Atlassian Guard Standard, which is bought separately for the organization.",
+        "plan": "Atlassian Guard Standard",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://support.atlassian.com/security-and-access-policies/docs/configure-saml-single-sign-on-with-an-identity-provider/",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Admins select Enforce single sign-on in an authentication policy, so SSO is required for the managed accounts in that policy.",
+        "plan": "Atlassian Guard Standard",
+        "source": "https://support.atlassian.com/security-and-access-policies/docs/configure-saml-single-sign-on-with-an-identity-provider/",
+        "support": "supported",
+        "tier": "add_on"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Jira Service Management is Atlassian's IT service management and help desk app. Values here cover how agents and admins sign in with Atlassian accounts and how org admins manage them in Atlassian Administration. SSO, SCIM and some controls need Atlassian Guard, a separate subscription.",
+    "name": "Jira Service Management",
+    "status": "draft",
+    "website": "https://atlassian.com/software/jira/service-management"
+  },
+  {
     "_id": "jumpcloud",
     "capabilities": {
       "api_token_controls": {
@@ -16267,6 +16528,93 @@
     "name": "NetBird",
     "status": "draft",
     "website": "https://netbird.io"
+  },
+  {
+    "_id": "netlify",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Users set their own expiry on personal access tokens. When SSO is enforced, existing tokens are denied until re-granted with SSO, but admins listing or revoking other users' tokens isn't described.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "The team audit log records team and project changes with who made them and when, and can be filtered and sorted. Available on Pro and Enterprise plans; retention depends on the plan.",
+        "plan": "Pro",
+        "source": "https://docs.netlify.com/manage/accounts-and-billing/team-management/team-audit-log/",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "notes": "Netlify has a fixed set of team roles such as Owner, Developer, Publisher, Internal Builder, Reviewer and Billing Admin. Owners can limit project access per member, but creating new roles isn't described.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "notes": "Enforcing Team SSO asks for the company email domain and removes members outside it, but the docs don't describe verifying domain ownership or claiming accounts.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "Organization Owners map IdP directory groups synced by SCIM to a Netlify team, role and site access, and only Organization Owners can then change those roles.",
+        "plan": "Enterprise",
+        "source": "https://docs.netlify.com/manage/security/secure-netlify-access/directory-sync/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "notes": "The Team SSO page says members provisioned through the IdP get a default role at first SSO login, but doesn't say a Netlify account is created at that point.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Organization or Team Owners can set the 2FA policy to Enforced, which restricts access for members without 2FA. Available on the Pro plan or higher; no page shows whether Pro is the cheapest paid plan.",
+        "plan": "Pro",
+        "source": "https://docs.netlify.com/manage/security/secure-netlify-access/enforce-2fa/",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "Netlify 2FA uses an authenticator app with backup codes. The docs only suggest FIDO2 through your own identity provider, not security keys or passkeys on Netlify login.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "SCIM Directory Sync provisions users into teams and roles from IdP groups and needs Organization SSO. The page doesn't say what happens in Netlify when a user is deactivated in the IdP.",
+        "plan": "Enterprise",
+        "source": "https://docs.netlify.com/manage/security/secure-netlify-access/directory-sync/",
+        "support": "partial",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "checked": "2026-11-20",
+        "notes": "Team Owners set a session expiration for SSO sessions in the Team SSO login settings, after which members must log in again through the IdP.",
+        "plan": "Enterprise",
+        "source": "https://docs.netlify.com/manage/security/secure-netlify-access/configure-team-saml-sso/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Organization Owners can set up SAML SSO for all teams with a guided flow for many IdPs, and Team Owners can set up SAML SSO for a single team. Both are on Enterprise plans.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.netlify.com/manage/security/secure-netlify-access/configure-organization-saml-sso/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Owners can set login types to Only SSO allowed (strict), or to Only SSO allowed with an Owner fallback, which blocks email, Google and Git provider logins. Existing access tokens stop working until re-granted.",
+        "plan": "Enterprise",
+        "source": "https://docs.netlify.com/manage/security/secure-netlify-access/configure-team-saml-sso/",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "development",
+    "description": "Netlify is a platform for building, deploying and hosting websites and web apps. Values here cover signing in to and administering Netlify teams and organizations in the Netlify app.",
+    "name": "Netlify",
+    "status": "draft",
+    "website": "https://netlify.com"
   },
   {
     "_id": "netskope",
