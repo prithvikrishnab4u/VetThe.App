@@ -29,12 +29,10 @@ The site is about IAM, so the identity vendors themselves come before everything
 
 | Priority | App | Proposed id | Category | Website |
 |---|---|---|---|---|
-| P1 | Ping Identity | `ping-identity` | security | https://pingidentity.com |
 | P1 | OneLogin | `onelogin` | security | https://onelogin.com |
 | P1 | IBM Verify | `ibm-verify` | security | https://ibm.com/verify |
 | P1 | RSA ID Plus | `rsa-id-plus` | security | https://rsa.com |
 | P1 | Thales SafeNet Trusted Access | `thales-sta` | security | https://cpl.thalesgroup.com |
-| P1 | Beyond Identity | `beyond-identity` | security | https://beyondidentity.com |
 | P1 | HYPR | `hypr` | security | https://hypr.com |
 | P1 | Silverfort | `silverfort` | security | https://silverfort.com |
 | P1 | Imprivata | `imprivata` | security | https://imprivata.com |
@@ -60,10 +58,8 @@ The site is about IAM, so the identity vendors themselves come before everything
 
 | Priority | App | Proposed id | Category | Website |
 |---|---|---|---|---|
-| P1 | Push Security | `push-security` | security | https://pushsecurity.com |
 | P1 | Astrix Security | `astrix` | security | https://astrix.security |
 | P1 | Oasis Security | `oasis-security` | security | https://oasis.security |
-| P1 | Aembit | `aembit` | security | https://aembit.io |
 | P1 | Obsidian Security | `obsidian-security` | security | https://obsidiansecurity.com |
 | P1 | AppOmni | `appomni` | security | https://appomni.com |
 | P1 | Grip Security | `grip-security` | security | https://grip.security |

@@ -511,6 +511,81 @@
     "website": "https://www.adp.com"
   },
   {
+    "_id": "aembit",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "The Reporting dashboard's Audit Logs list events by category, including authentication, identity providers, roles, users and policies, with actor, target, result, client IP and JSON detail. The timespan filter goes back as far as 1 year or All; retention isn't stated. Log Streams can send events to S3, GCS, Splunk or CrowdStrike.",
+        "source": "https://docs.aembit.io/user-guide/audit-report/audit-logs/",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Besides the SuperAdmin and Auditor system roles, admins can create roles with No Access, Read Only or Read/Write per resource type, and scope them to Resource Sets. No docs page names the plan.",
+        "source": "https://docs.aembit.io/user-guide/administration/roles/add-roles/",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "IdP group claims can be mapped to Aembit roles, but the mapping is used when automatic user creation makes a new account. For users who already exist, the docs say SSO just logs them in, so later group changes don't appear to update roles.",
+        "source": "https://docs.aembit.io/user-guide/administration/identity-providers/automatic-user-creation/",
+        "support": "partial"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-20",
+        "notes": "Automatic user creation makes a new account when someone without one signs in through SSO, and assigns roles from mapped IdP group claims. Not enabled by default; Aembit support turns it on. No docs page names the plan.",
+        "source": "https://docs.aembit.io/user-guide/administration/identity-providers/automatic-user-creation/",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "The Require multi-factor authentication for native sign-in policy makes native-login users enter an MFA code with their password. Users get a 24-hour grace period to enroll, then accounts without MFA are locked.",
+        "source": "https://docs.aembit.io/user-guide/administration/sign-on-policy/",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The sign-on policy mentions an MFA code. Security keys and passkeys aren't mentioned.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "The docs describe users created by hand or automatically on first SSO sign-in. SCIM provisioning into the tenant isn't described.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "notes": "The docs cover viewing and revoking MCP user sessions on an identity provider, which are agent gateway sessions. Session length for the Aembit Tenant console isn't described.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Admins can add SAML 2.0 or OIDC 1.0 identity providers so users sign in to the Aembit Tenant with SSO. Not enabled by default; Aembit support turns it on. No docs page names the plan.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.aembit.io/user-guide/administration/identity-providers/create-idp-saml/",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "The Require Single Sign-On sign-on policy makes users authenticate through SSO; users with the Super Admin system role can still use username and password. The docs mark it a paid feature for tenants with the Identity Providers feature, but don't say which plan includes that.",
+        "plan": "Identity Providers feature",
+        "source": "https://docs.aembit.io/user-guide/administration/sign-on-policy/",
+        "support": "supported"
+      }
+    },
+    "category": "security",
+    "description": "Aembit is a workload identity and access management platform that controls how software workloads and AI agents get credentials for the services they call. Values here cover signing in to and administering an Aembit Tenant.",
+    "name": "Aembit",
+    "status": "draft",
+    "website": "https://aembit.io"
+  },
+  {
     "_id": "airbyte",
     "capabilities": {
       "api_token_controls": {
@@ -2152,6 +2227,70 @@
     "name": "Basecamp",
     "status": "published",
     "website": "https://basecamp.com"
+  },
+  {
+    "_id": "beyond-identity",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "notes": "The Secure Access docs cover pushing events to a SIEM and a log of those pushes, but not an admin activity log in the console.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Admins can create roles with chosen permissions over identities, passkeys, groups and other areas, for example a help desk role that can send enrollment emails but not delete identities. No docs page names the plan.",
+        "source": "https://docs.beyondidentity.com/docs/directory/role-management/create-roles",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "Directory groups can be added to a role so their members inherit its permissions, and groups can be synced over SCIM. No docs page names the plan.",
+        "source": "https://docs.beyondidentity.com/docs/directory/role-management/group-roles",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "Users sign in with passkeys bound to their device through the Authenticator. The docs don't describe a password login for the console, or a separate MFA requirement.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-11-20",
+        "notes": "After enrollment through the Beyond Identity Authenticator, users sign in and access resources with phishing-resistant passkeys bound to their identity. No docs page names the plan.",
+        "source": "https://docs.beyondidentity.com/docs/directory/manage-users/add-users",
+        "support": "supported"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "Each realm has a SCIM server: users an IdP creates, updates or deletes over SCIM become Beyond Identity identities, and SCIM groups map to directory groups. No docs page names the plan.",
+        "source": "https://docs.beyondidentity.com/docs/scim-server",
+        "support": "supported"
+      },
+      "session_controls": {
+        "checked": "2026-11-20",
+        "notes": "Console sessions are fixed at 24 hours, with a 15-minute inactivity timeout for privileged users; the docs don't say admins can change them. Suspending a user or removing their privileged role logs them out at once.",
+        "source": "https://docs.beyondidentity.com/docs/resources/platform-information/session-behavior",
+        "support": "partial"
+      },
+      "sso": {
+        "notes": "Beyond Identity is itself the IdP. External identity providers (generic OIDC, Nametag) are used to verify users before they enroll a credential, and the docs don't describe signing in to the admin console through another IdP.",
+        "support": "undocumented"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Beyond Identity is a passwordless, phishing-resistant authentication platform with device trust and SSO. Values here cover signing in to and administering the Secure Access admin console.",
+    "name": "Beyond Identity",
+    "status": "draft",
+    "website": "https://beyondidentity.com"
   },
   {
     "_id": "bill-com",
@@ -17574,6 +17713,86 @@
     "website": "https://www.pinecone.io"
   },
   {
+    "_id": "ping-identity",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "The Audit page and the PingOne APIs report on user events and admin console configuration changes, querying up to 14 days at a time. Webhooks can stream events for longer retention.",
+        "retention": "Admin console events 2 years; user events and DaVinci admin events 90 days",
+        "source": "https://docs.pingidentity.com/pingone/monitoring/p1_reporting.html",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Organization Admins or Custom Roles Admins can add custom administrator roles on the Administrator Roles page. No docs page names the plan.",
+        "source": "https://docs.pingidentity.com/pingone/directory/p1_custom_role_add.html",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "notes": "Verified domains in PingOne are used for sending email (trusted email addresses), not for claiming accounts.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "Group membership can be mapped from an external IdP's SAML assertions or ID tokens, once or at every sign-on, and administrator roles can be assigned to static groups. Removing a user from a group removes roles they had only through it.",
+        "source": "https://docs.pingidentity.com/pingone/directory/p1_provision_external_groups.html",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "notes": "PingOne provisions group membership just in time from an external IdP, but the admin console docs don't describe creating administrator accounts on first SSO sign-in.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Ping requires MFA for all PingOne administrators since June 1, 2025. With PingOne as the source, a built-in policy requires MFA and admins pick the allowed methods; with an external IdP, the IdP handles it.",
+        "source": "https://docs.pingidentity.com/pingone/settings/p1_administrator_security.html",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-11-20",
+        "notes": "FIDO2 is one of the allowed MFA methods for admin console sign-in, alongside authenticator app (TOTP) and email.",
+        "source": "https://docs.pingidentity.com/pingone/settings/p1_configure_administrator_security.html",
+        "support": "supported"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "The admin console docs point to the PingOne API for inbound SCIM user provisioning; the Provisioning page itself sets up outbound SCIM. The admin console page doesn't detail which operations inbound SCIM supports.",
+        "source": "https://docs.pingidentity.com/pingone/integrations/p1_create_scim_connection.html",
+        "support": "supported"
+      },
+      "session_controls": {
+        "checked": "2026-11-20",
+        "notes": "Admins set the refresh token duration (1 to 60 minutes), when a password is needed again (up to 12 hours) and when MFA is needed again (up to 24 hours) for the admin console. Admins must sign in again after at most 8 hours.",
+        "source": "https://docs.pingidentity.com/pingone/settings/p1_configure_administrator_security.html",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Under Settings, Administrator Security, admins can make an external SAML or OIDC identity provider the authentication source for the PingOne admin console, alone or together with PingOne. No docs page names the plan.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.pingidentity.com/pingone/settings/p1_configure_administrator_security.html",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Choosing External IdP as the authentication source makes the IdP the only way into the admin console. The PingOne & External IdP option instead falls back to PingOne credentials if the IdP connection fails.",
+        "source": "https://docs.pingidentity.com/pingone/settings/p1_configure_administrator_security.html",
+        "support": "supported"
+      }
+    },
+    "category": "security",
+    "description": "Ping Identity sells workforce and customer identity products, including the PingOne cloud platform, PingFederate and PingID. Values here cover signing in to and administering the PingOne admin console.",
+    "name": "Ping Identity",
+    "status": "draft",
+    "website": "https://pingidentity.com"
+  },
+  {
     "_id": "pipedrive",
     "capabilities": {
       "api_token_controls": {
@@ -18567,6 +18786,71 @@
     "name": "Pulumi Cloud",
     "status": "draft",
     "website": "https://www.pulumi.com"
+  },
+  {
+    "_id": "push-security",
+    "capabilities": {
+      "api_token_controls": {
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "The pricing page lists admin audit logs (regular and extended) under Administration, and says every license includes the full platform. Where the logs are viewed and how long they're kept isn't described.",
+        "source": "https://pushsecurity.com/pricing",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "notes": "The help center mentions Full access and Read only admin roles and doesn't describe custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "notes": "Custom login domains in Push are the customer's IdP and app login URLs used for detection, not email domain verification.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-20",
+        "notes": "New admins who sign in through SAML get a default admin role (Full access or Read only) set in the wizard, so invitations are no longer needed and access is managed in the IdP.",
+        "source": "https://pushsecurity.com/help/10123",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "notes": "Push's MFA features are about employees' logins to other apps. MFA for the admin console isn't described.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "support": "undocumented"
+      },
+      "scim": {
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "checked": "2026-11-20",
+        "notes": "The admin console uses a fixed three-day rolling session, renewed on each visit. The help center doesn't describe a way for admins to change it. Push support can restrict admin logins to allowed IP addresses.",
+        "source": "https://pushsecurity.com/help/10074",
+        "support": "not_supported"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Admins can set up custom SAML for the Push admin console under Settings, Organization. Logins are IdP-initiated; SP-initiated login needs Push support. The help center doesn't name a plan.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://pushsecurity.com/help/10123",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "notes": "After SAML is set up, admins can remove the older password-based admin records, but the help center doesn't describe a setting that blocks password login.",
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Push Security is a browser extension platform that detects phishing, session hijacking and risky logins in employees' browsers. Values here cover signing in to and administering the Push admin console.",
+    "name": "Push Security",
+    "status": "draft",
+    "website": "https://pushsecurity.com"
   },
   {
     "_id": "qdrant-cloud",
