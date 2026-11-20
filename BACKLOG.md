@@ -37,8 +37,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P1 | Imprivata | `imprivata` | security | https://imprivata.com |
 | P1 | Transmit Security | `transmit-security` | security | https://transmitsecurity.com |
 | P1 | Frontegg | `frontegg` | security | https://frontegg.com |
-| P1 | FusionAuth | `fusionauth` | security | https://fusionauth.io |
-| P1 | Clerk | `clerk` | security | https://clerk.com |
 
 ### Privileged access and secrets (PAM)
 
@@ -46,7 +44,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 |---|---|---|---|---|
 | P1 | CyberArk | `cyberark` | security | https://cyberark.com |
 | P1 | StrongDM | `strongdm` | security | https://strongdm.com |
-| P1 | Teleport | `teleport` | security | https://goteleport.com |
 | P1 | WALLIX | `wallix` | security | https://wallix.com |
 | P1 | Segura | `segura` | security | https://segura.security |
 
@@ -70,12 +67,8 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P1 | Mimecast | `mimecast` | security | https://mimecast.com |
 | P1 | SentinelOne | `sentinelone` | security | https://sentinelone.com |
 | P1 | Wiz | `wiz` | security | https://wiz.io |
-| P1 | Cloudflare | `cloudflare` | infrastructure | https://cloudflare.com |
-| P1 | dbt Cloud | `dbt-cloud` | infrastructure | https://getdbt.com |
 | P1 | Dynatrace | `dynatrace` | infrastructure | https://dynatrace.com |
 | P1 | Google Cloud | `google-cloud` | infrastructure | https://cloud.google.com |
-| P1 | Grafana Cloud | `grafana-cloud` | infrastructure | https://grafana.com |
-| P1 | HCP Terraform | `hcp-terraform` | infrastructure | https://hashicorp.com/products/terraform |
 | P1 | Jira Service Management | `jira-service-management` | infrastructure | https://atlassian.com/software/jira/service-management |
 | P2 | Dialpad | `dialpad` | collaboration | https://dialpad.com |
 | P2 | Frame.io | `frame-io` | collaboration | https://frame.io |
@@ -99,7 +92,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P2 | Otter.ai | `otter-ai` | productivity | https://otter.ai |
 | P2 | Perplexity Enterprise Pro | `perplexity-enterprise` | productivity | https://perplexity.ai/enterprise |
 | P2 | Planview AdaptiveWork | `planview` | productivity | https://planview.com |
-| P2 | PostHog | `posthog` | productivity | https://posthog.com |
 | P2 | Productboard | `productboard` | productivity | https://productboard.com |
 | P2 | Qlik Cloud | `qlik-cloud` | productivity | https://qlik.com |
 | P2 | Sigma Computing | `sigma-computing` | productivity | https://sigmacomputing.com |
@@ -108,14 +100,10 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P2 | Writer | `writer` | productivity | https://writer.com |
 | P2 | Algolia | `algolia` | development | https://algolia.com |
 | P2 | Apigee | `apigee` | development | https://cloud.google.com/apigee |
-| P2 | Buildkite | `buildkite` | development | https://buildkite.com |
 | P2 | Devin | `devin` | development | https://devin.ai |
-| P2 | Kong Konnect | `kong-konnect` | development | https://konghq.com |
 | P2 | Netlify | `netlify` | development | https://netlify.com |
 | P2 | SonarQube Cloud | `sonarqube-cloud` | development | https://sonarsource.com/products/sonarcloud |
 | P2 | Sonatype Nexus | `sonatype` | development | https://sonatype.com |
-| P2 | Sourcegraph | `sourcegraph` | development | https://sourcegraph.com |
-| P2 | Supabase | `supabase` | development | https://supabase.com |
 | P2 | 6sense | `6sense` | sales_marketing | https://6sense.com |
 | P2 | Adobe Experience Manager | `adobe-experience-manager` | sales_marketing | https://business.adobe.com/products/experience-manager/adobe-experience-manager.html |
 | P2 | Ahrefs | `ahrefs` | sales_marketing | https://ahrefs.com |
@@ -181,18 +169,15 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P2 | Orca Security | `orca-security` | security | https://orca.security |
 | P2 | Palo Alto Networks Prisma Access | `prisma-access` | security | https://paloaltonetworks.com/sase/access |
 | P2 | Secureframe | `secureframe` | security | https://secureframe.com |
-| P2 | Semgrep | `semgrep` | security | https://semgrep.dev |
 | P2 | Sophos Central | `sophos-central` | security | https://sophos.com |
 | P2 | Varonis | `varonis` | security | https://varonis.com |
 | P2 | Veracode | `veracode` | security | https://veracode.com |
-| P2 | Airbyte Cloud | `airbyte` | infrastructure | https://airbyte.com |
 | P2 | Akamai | `akamai` | infrastructure | https://akamai.com |
 | P2 | Atlan | `atlan` | infrastructure | https://atlan.com |
 | P2 | Atlassian Statuspage | `atlassian-statuspage` | infrastructure | https://atlassian.com/software/statuspage |
 | P2 | Collibra | `collibra` | infrastructure | https://collibra.com |
 | P2 | DigitalOcean | `digitalocean` | infrastructure | https://digitalocean.com |
 | P2 | Druva | `druva` | infrastructure | https://druva.com |
-| P2 | Elastic Cloud | `elastic-cloud` | infrastructure | https://elastic.co/cloud |
 | P2 | Fastly | `fastly` | infrastructure | https://fastly.com |
 | P2 | Heroku | `heroku` | infrastructure | https://heroku.com |
 | P2 | incident.io | `incident-io` | infrastructure | https://incident.io |
@@ -205,7 +190,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P2 | Rubrik | `rubrik` | infrastructure | https://rubrik.com |
 | P2 | SolarWinds Service Desk | `solarwinds-service-desk` | infrastructure | https://solarwinds.com/service-desk |
 | P2 | Splunk AppDynamics | `appdynamics` | infrastructure | https://splunk.com/en_us/products/appdynamics.html |
-| P2 | Sumo Logic | `sumo-logic` | infrastructure | https://sumologic.com |
 | P3 | Element | `element` | collaboration | https://element.io |
 | P3 | Whimsical | `whimsical` | collaboration | https://whimsical.com |
 | P3 | Appcues | `appcues` | productivity | https://appcues.com |
@@ -216,13 +200,11 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P3 | Make | `make` | productivity | https://make.com |
 | P3 | Relativity One | `relativityone` | productivity | https://relativity.com |
 | P3 | Tray.ai | `tray-ai` | productivity | https://tray.ai |
-| P3 | Coder | `coder` | development | https://coder.com |
 | P3 | Graphite | `graphite` | development | https://graphite.dev |
 | P3 | Lovable | `lovable` | development | https://lovable.dev |
 | P3 | MuleSoft Anypoint Platform | `mulesoft` | development | https://mulesoft.com |
 | P3 | ReadMe | `readme` | development | https://readme.com |
 | P3 | Tabnine | `tabnine` | development | https://tabnine.com |
-| P3 | Temporal Cloud | `temporal-cloud` | development | https://temporal.io |
 | P3 | Common Room | `common-room` | sales_marketing | https://commonroom.io |
 | P3 | Loopio | `loopio` | sales_marketing | https://loopio.com |
 | P3 | Responsive | `responsive` | sales_marketing | https://responsive.io |
@@ -255,10 +237,8 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P3 | Whistic | `whistic` | security | https://whistic.com |
 | P3 | Atera | `atera` | infrastructure | https://atera.com |
 | P3 | Backblaze B2 | `backblaze` | infrastructure | https://backblaze.com |
-| P3 | ClickHouse Cloud | `clickhouse-cloud` | infrastructure | https://clickhouse.com |
 | P3 | FireHydrant | `firehydrant` | infrastructure | https://firehydrant.com |
 | P3 | Kaseya VSA | `kaseya-vsa` | infrastructure | https://kaseya.com |
-| P3 | Neon | `neon` | infrastructure | https://neon.com |
 | P3 | PlanetScale | `planetscale` | infrastructure | https://planetscale.com |
 | P3 | Rootly | `rootly` | infrastructure | https://rootly.com |
 | P3 | Salesforce Own | `salesforce-own` | infrastructure | https://salesforce.com/platform/data-backup |
