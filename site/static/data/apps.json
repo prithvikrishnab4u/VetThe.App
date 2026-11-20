@@ -11474,6 +11474,157 @@
     "website": "https://huggingface.co"
   },
   {
+    "_id": "hypr",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-11-20",
+        "notes": "The Access Tokens list shows each token's creator, permissions, last use and expiry, and admins can revoke tokens. Tokens carry a set expiry date and lapse after 30 days unused. No docs page names the plan.",
+        "source": "https://docs.hypr.com/docs/auth/authInstallCfg/authInstallCfgAppMgmt/auth-install-cfg-app-mgmt-access-tokens/",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "The per-application Audit Trail records user and Control Center admin events such as logins, token creation and configuration changes, with search, CSV export and an API. Admin page views can also be logged.",
+        "retention": "30 days in the Audit Trail; older events archived indefinitely",
+        "source": "https://docs.hypr.com/docs/cc/ccAnalytics/ccAnalyticsAuditTrail/cc-analytics-audit-trail/",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Control Center has five fixed, task-based roles: Admin, App Manager, User Manager, Viewer and Basic Login, plus an optional Audit Trail access toggle.",
+        "source": "https://docs.hypr.com/docs/cc/ccInstallCfg/ccInstallCfgUserMgmt/cc-install-cfg-user-mgmt-user-roles/",
+        "support": "not_supported"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "Entra ID app roles assigned to users or groups are sent in a hypr_role claim, and Control Center applies the role on every sign-in. Okta works through an OIDC custom claim. No docs page names the plan.",
+        "source": "https://docs.hypr.com/docs/cc/ccInstallCfg/ccInstallCfgServer/cc-install-cfg-server-idp-entra-authentication/",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-20",
+        "notes": "With Entra ID as the OIDC provider, Control Center creates the admin account on first sign-in and applies the role from the hypr_role claim. No docs page names the plan.",
+        "source": "https://docs.hypr.com/docs/cc/ccInstallCfg/ccInstallCfgServer/cc-install-cfg-server-idp-entra-authentication/",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "notes": "Control Center has no password login; users sign in with a registered phone or, if enabled, a FIDO2 authenticator. The docs don't describe a separate MFA requirement setting.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-11-20",
+        "notes": "Admins can enable FIDO2 for the Control Center so users sign in with a security key, FIDO2 smart card or platform biometrics, and can choose whether synced passkeys are accepted. No docs page names the plan.",
+        "source": "https://docs.hypr.com/docs/auth/authInstallCfg/authInstallCfgAppMgmt/auth-install-cfg-app-mgmt-fido2-settings/",
+        "support": "supported"
+      },
+      "scim": {
+        "notes": "Control Center user accounts are created by email invitation or on first IdP sign-in. The docs don't describe SCIM provisioning of Control Center users.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "notes": "The docs cover magic link lifetimes and network access rules, but not a session length or idle timeout for Control Center sign-ins.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Admins can set Control Center sign-in to go through an OIDC identity provider, with guides for Microsoft Entra ID and Okta. No docs page names the plan.",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://docs.hypr.com/docs/cc/ccInstallCfg/ccInstallCfgServer/cc-install-cfg-server-idp-entra-authentication/",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Once the IdP settings are saved, Control Center sign-in goes through the identity provider, and HYPR warns admins to give themselves the admin role first to avoid lockout. No docs page names the plan.",
+        "source": "https://docs.hypr.com/docs/cc/ccInstallCfg/ccInstallCfgServer/cc-install-cfg-server-idp-entra-authentication/",
+        "support": "supported"
+      }
+    },
+    "category": "security",
+    "description": "HYPR is a passwordless authentication and identity assurance platform for workforces. Values here cover signing in to and administering the HYPR Control Center admin console, not the passwordless login HYPR sells for a customer's workforce.",
+    "name": "HYPR",
+    "status": "draft",
+    "website": "https://hypr.com"
+  },
+  {
+    "_id": "ibm-verify",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "API access uses API clients that admins create with chosen entitlements. The docs read don't describe tokens that individual administrators create or controls over them.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "The Administrator activity report shows changes made by administrators and application owners, such as access policy, API client, group and identity provider changes.",
+        "source": "https://www.ibm.com/docs/en/security-verify?topic=reports-administrator-activity",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Admins create custom administrator roles from selected permissions and other roles, optionally scoped to specific groups. Built-in roles can't be changed. No docs page names a plan.",
+        "source": "https://www.ibm.com/docs/en/security-verify?topic=roles-creating-administrator-role",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "notes": "The Managing domains page only lists CORS origins allowed to call the Verify APIs. The docs don't describe verifying an email domain.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "Administrator roles can be assigned to groups, and a SAML enterprise IdP can be set to take group membership from the groupIds claim at each sign-in. No docs page names a plan.",
+        "source": "https://www.ibm.com/docs/en/security-verify?topic=providers-adding-saml-enterprise-identity-provider",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-20",
+        "notes": "A SAML enterprise identity provider can have just-in-time provisioning turned on, which creates and updates the user account in Cloud Directory at sign-in. No docs page names a plan.",
+        "source": "https://www.ibm.com/docs/en/security-verify?topic=providers-adding-saml-enterprise-identity-provider",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "notes": "Access policies can require MFA for applications, but the docs read don't describe a policy that requires MFA for administrator sign-in to the console.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-11-20",
+        "notes": "Under Security, Sign-in options, admins can turn on FIDO2 device login for administrator sign-in per identity provider. Pricing is usage based and no docs page names a plan.",
+        "source": "https://www.ibm.com/docs/en/security-verify?topic=security-managing-sign-in-options",
+        "support": "supported"
+      },
+      "scim": {
+        "notes": "The docs cover outbound provisioning to target apps and LDAP sync, but not an external IdP provisioning Verify administrators over SCIM.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "notes": "The docs read don't describe a session length, idle timeout or forced sign-out for administrator console sessions.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Admins add SAML or OIDC enterprise identity providers and choose under Security, Sign-in options which ones are shown at administrator login. Pricing is usage based and no docs page names a plan.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://www.ibm.com/docs/en/security-verify?topic=security-managing-sign-in-options",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "notes": "Sign-in options control which identity providers are shown at administrator login, but the docs don't say that hiding Cloud Directory blocks password sign-in to the console.",
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "IBM Verify is IBM's SaaS identity and access management platform for workforce and customer identity. Values here cover how a tenant's administrators sign in to and are governed in the IBM Verify SaaS administration console.",
+    "name": "IBM Verify",
+    "status": "draft",
+    "website": "https://ibm.com/verify"
+  },
+  {
     "_id": "infisical",
     "capabilities": {
       "api_token_controls": {
@@ -24021,6 +24172,67 @@
     "website": "https://tenable.com"
   },
   {
+    "_id": "thales-sta",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "REST and SCIM API keys are generated under Settings, API Keys and tied to a service account, and key changes are audited. The docs don't describe tokens that individual operators create.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "The Audit Logs tab records each saved change by operators with timestamp, user ID, IP, action and object, filterable by user and date and exportable to CSV. The default view covers 90 days. No docs page names the plan.",
+        "source": "https://www.thalesdocs.com/sta/operator/dashboard/audit_lgs/index.html",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Under Policy, Role Management, operators add or duplicate roles and choose access, edit, delete, add, import, export and view log rights per console tab and module. No docs page names the plan.",
+        "source": "https://www.thalesdocs.com/sta/operator/roles/index.html",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "Role provisioning rules promote members of chosen groups, such as synced Active Directory groups, to account manager with a set role and scope, and can remove them when they leave the group. No docs page names the plan.",
+        "source": "https://www.thalesdocs.com/sta/operator/roles/rl_prvn/index.html",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "Operators must enroll an STA token and enter a passcode from it at every console login. The docs don't describe this as a separate MFA setting.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "FIDO passkeys and security keys are covered for users signing in to protected apps through policies. The docs don't describe FIDO sign-in to the STA consoles.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "The SCIM API manages the STA users and groups that STA protects. Operators are users promoted by hand or by role rules, and the docs don't describe SCIM for operator accounts.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "notes": "The configurable SSO session timeout applies to users signing in to protected apps. The docs don't describe a session length or sign-out control for operator console sessions.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "notes": "Operators sign in to the STA consoles with their email and a passcode from an enrolled STA token. External IdP orchestration in the docs covers users signing in to protected apps, not the consoles.",
+        "support": "undocumented"
+      },
+      "sso_enforcement": {
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "SafeNet Trusted Access (STA) is Thales's cloud access management and MFA service. Values here cover how a customer's operators sign in to and are governed in the STA Token Management and Access Management consoles, not the app access STA sells.",
+    "name": "Thales SafeNet Trusted Access",
+    "status": "draft",
+    "website": "https://cpl.thalesgroup.com"
+  },
+  {
     "_id": "thoughtspot",
     "capabilities": {
       "api_token_controls": {
@@ -24324,6 +24536,79 @@
     "name": "ToolJet",
     "status": "draft",
     "website": "https://www.tooljet.ai"
+  },
+  {
+    "_id": "transmit-security",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "API access uses tenant management apps with client secrets that admins create and rotate. The docs don't describe tokens that individual admins create or controls over them.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Admin Activity lists admin events with time, actor, client, activity type, target and IP, filterable by date, event type and user. No docs page names the plan or the retention.",
+        "source": "https://developer.transmitsecurity.com/guides/user/admin_audit_logs",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Besides the Global admin, Global reader and Support roles, admins can add custom admin roles built from a permission tree per service and per Settings tab. No docs page names the plan.",
+        "source": "https://developer.transmitsecurity.com/guides/platform/manage_admin_users",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "With JIT SSO, a SAML attribute or OIDC claim carrying IdP roles is mapped to Mosaic admin roles, and roles are updated on each sign-in. No docs page names the plan.",
+        "source": "https://developer.transmitsecurity.com/guides/platform/jit_sso",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-20",
+        "notes": "With JIT provisioning enabled, an admin's first SSO sign-in creates their Admin Portal account with the role taken from the IdP. No docs page names the plan.",
+        "source": "https://developer.transmitsecurity.com/guides/platform/jit_sso",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "notes": "Admin Portal sign-in uses an email magic link or SSO. The docs don't describe an MFA requirement for admin sign-in.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The Mosaic passkey docs cover passkeys for a customer's own users. The docs don't describe passkey or security key sign-in to the Admin Portal.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "Admin users are invited by email or created through JIT SSO. The docs don't describe SCIM provisioning of Admin Portal users.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "notes": "The session docs cover sessions for a customer's own users. The docs don't describe a session length or sign-out control for Admin Portal admins.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Admins can set up Admin Portal sign-in through an external SAML or OIDC identity provider under Settings, Single sign-on, with guides for Microsoft and Google. No docs page names the plan.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://developer.transmitsecurity.com/guides/platform/sso_admin_login_saml",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Once SSO is set up, admins are authenticated by the IdP instead of an email magic link. Only designated recovery admins can choose an email link when SSO has problems. No docs page names the plan.",
+        "source": "https://developer.transmitsecurity.com/guides/platform/sso_admin_login_oidc",
+        "support": "supported"
+      }
+    },
+    "category": "security",
+    "description": "Transmit Security sells Mosaic, a customer identity, fraud prevention and identity verification platform. Values here cover signing in to and administering the Mosaic Admin Portal, not the CIAM services it sells for a customer's own users.",
+    "name": "Transmit Security",
+    "status": "draft",
+    "website": "https://transmitsecurity.com"
   },
   {
     "_id": "travis-ci",

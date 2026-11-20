@@ -27,13 +27,9 @@ The site is about IAM, so the identity vendors themselves come before everything
 | Priority | App | Proposed id | Category | Website |
 |---|---|---|---|---|
 | P1 | OneLogin | `onelogin` | security | https://onelogin.com |
-| P1 | IBM Verify | `ibm-verify` | security | https://ibm.com/verify |
 | P1 | RSA ID Plus | `rsa-id-plus` | security | https://rsa.com |
-| P1 | Thales SafeNet Trusted Access | `thales-sta` | security | https://cpl.thalesgroup.com |
-| P1 | HYPR | `hypr` | security | https://hypr.com |
 | P1 | Silverfort | `silverfort` | security | https://silverfort.com |
 | P1 | Imprivata | `imprivata` | security | https://imprivata.com |
-| P1 | Transmit Security | `transmit-security` | security | https://transmitsecurity.com |
 
 ### Privileged access and secrets (PAM)
 
