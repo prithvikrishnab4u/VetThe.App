@@ -1188,6 +1188,82 @@
     "website": "https://amplitude.com"
   },
   {
+    "_id": "apigee",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Admin API calls use Google Cloud OAuth credentials. The Apigee docs reached don't describe admin controls over user-created tokens; Apigee's own API keys are for API consumers, not admins.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Cloud Audit Logs record Apigee API calls: methods that change configuration write Admin Activity audit logs, and read methods write Data Access audit logs. Admins view them in Logs Explorer.",
+        "source": "https://docs.cloud.google.com/apigee/docs/api-platform/debug/audit-logging",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Apigee ships predefined IAM roles such as Org Admin, API Admin and Read Only Admin. Admins can also create roles on the IAM Roles page; the docs say these must include apigee.projectorganizations.get. Roles can be granted per project or per environment.",
+        "source": "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/apigee-roles",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "checked": "2026-11-20",
+        "notes": "Google identities used for Apigee live in a Cloud Identity or Workspace account tied to verified DNS domains. Consumer accounts on a verified domain appear as unmanaged accounts that users can be asked to transfer.",
+        "source": "https://docs.cloud.google.com/architecture/identity/migrating-consumer-accounts",
+        "support": "supported"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "Workforce Identity Federation maps the IdP's groups claim to google.groups, and allow policies can grant IAM roles, including Apigee roles, to every workforce identity in a group.",
+        "source": "https://docs.cloud.google.com/iam/docs/workforce-identity-federation",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "notes": "Workforce Identity Federation doesn't store user accounts in Google Cloud, and the docs don't describe accounts being created at first SSO sign-in.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "Two-step verification for Google identities is set in the Google admin console, whose help pages were not on the docs host checked.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "Security key and passkey sign-in for Google identities is documented outside docs.cloud.google.com, which was the host checked.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "The Apigee and Google Cloud docs reached don't describe SCIM provisioning of console users. Workforce Identity Federation's SCIM support covers only Gemini Enterprise and Looker.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "checked": "2026-11-20",
+        "notes": "Admins set a workforce identity pool's session duration from 15 minutes to 12 hours, which limits how long federated console sessions last. Applies to Workforce Identity Federation users only.",
+        "source": "https://docs.cloud.google.com/iam/docs/manage-workforce-identity-pools-providers",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Apigee is listed as generally available for Workforce Identity Federation, so users from an external IdP can use the Apigee console. Preview features and the API Management APIs don't support federated users yet.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Apigee users sign in with Google identities. With Cloud Identity SAML profiles, admins decide for each user, group or organizational unit whether they must use SSO. Super admins can bypass SSO.",
+        "source": "https://docs.cloud.google.com/architecture/identity/single-sign-on",
+        "support": "supported"
+      }
+    },
+    "category": "development",
+    "description": "Apigee is Google Cloud's API management platform. Values here cover Apigee on Google Cloud (Apigee X), where admins and developers sign in through the Google Cloud console with Google identities or Workforce Identity Federation, and access is granted with Cloud IAM roles. API keys Apigee issues to API consumers are not covered.",
+    "name": "Apigee",
+    "status": "draft",
+    "website": "https://cloud.google.com/apigee"
+  },
+  {
     "_id": "apollo-io",
     "capabilities": {
       "api_token_controls": {
@@ -6144,6 +6220,90 @@
     "website": "https://cursor.com"
   },
   {
+    "_id": "customer-io",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-11-20",
+        "notes": "API keys are created and revoked on the API Credentials page, which needs Account Admin or the Manage API credentials permission. Keys can be limited to audit logs, and API access can be restricted by IP address.",
+        "source": "https://docs.customer.io/accounts/settings/managing-credentials/",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Account Admins see an account audit log (sessions, failed sign-ins, permission changes, API key deletions, SSO settings) and a workspace audit log. Both can be exported to CSV, read through the API or exported to a storage bucket.",
+        "retention": "30 days on Essentials; any period on Premium or Enterprise (export up to one year)",
+        "source": "https://docs.customer.io/accounts/audit-logs/",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Account Admins can create workspace-level custom roles with their own permission sets on Premium or Enterprise plans. Other plans use the standard Workspace Admin, Author and Viewer roles.",
+        "plan": "Premium or Enterprise",
+        "source": "https://docs.customer.io/accounts/settings/team/create-roles/",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "notes": "The account and SSO docs don't describe verifying a sign-in domain or claiming accounts on it. Domain verification in the docs is about email sending.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "The SSO docs say it isn't possible to define a user's permissions from the IdP; roles are managed only in Customer.io, even with SCIM.",
+        "source": "https://docs.customer.io/accounts/settings/login-with-sso/",
+        "support": "not_supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-20",
+        "notes": "The SSO docs say Customer.io doesn't support Just-in-Time provisioning. Team members must be added in Customer.io or through SCIM.",
+        "source": "https://docs.customer.io/accounts/settings/login-with-sso/",
+        "support": "not_supported"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Non-SSO logins always need a second step, an emailed magic link by default. Account Admins can require an authenticator app (TOTP) for all team members, who must set it up before they can continue.",
+        "source": "https://docs.customer.io/accounts/settings/two-factor-auth/",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The two-factor docs list an email link and authenticator apps only, and don't mention security keys or passkeys.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "With a SAML integration, admins can enable SCIM 2.0 so team members added or removed in the IdP are added to or removed from Customer.io. Roles and permissions can only be managed in Customer.io.",
+        "source": "https://docs.customer.io/accounts/settings/login-with-sso/",
+        "support": "supported"
+      },
+      "session_controls": {
+        "checked": "2026-11-20",
+        "notes": "Admins set the login session length for everyone, from 14 days down to one hour. Deleting a team member ends their active sessions.",
+        "source": "https://docs.customer.io/accounts/security/login-session/",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Account Admins can set up SSO with Google Workspace, Okta, Microsoft Entra, a generic OpenID Connect provider, or SAML 2.0. Only SP-initiated sign-in from the Customer.io login page is supported. The docs don't name a plan.",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://docs.customer.io/accounts/settings/login-with-sso/",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Once SSO is enabled, team members must sign in through the IdP and can no longer use a username and password. Guests sign in through their own main account, so the SSO requirement doesn't apply to them.",
+        "source": "https://docs.customer.io/accounts/settings/login-with-sso/",
+        "support": "supported"
+      }
+    },
+    "category": "sales_marketing",
+    "description": "Customer.io is a customer messaging and marketing automation platform. Values here cover how team members sign in to the Customer.io web app (fly.customer.io) and how Account Admins manage them.",
+    "name": "Customer.io",
+    "status": "draft",
+    "website": "https://customer.io"
+  },
+  {
     "_id": "cypress-cloud",
     "capabilities": {
       "api_token_controls": {
@@ -6997,6 +7157,83 @@
     "name": "Dify Cloud",
     "status": "draft",
     "website": "https://dify.ai"
+  },
+  {
+    "_id": "digitalocean",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-11-20",
+        "notes": "Team roles carry separate permissions to create, view, update and delete API access tokens, so custom roles can restrict who manages tokens. A token's scopes are limited to what the creator's role allows, and tokens can be given an expiry.",
+        "source": "https://docs.digitalocean.com/platform/teams/roles/permissions/tokens/",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "A team's Security History lists actions such as creating or deleting resources and API tokens, with the user, originating IP address and time. Older data needs a support ticket. SSO sign-ins have their own activity page.",
+        "source": "https://docs.digitalocean.com/platform/teams/how-to/view-security-history/",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Besides six predefined roles, teams can create custom roles with only the permissions they choose. DigitalOcean says custom roles are free and unlimited.",
+        "source": "https://docs.digitalocean.com/platform/teams/roles/custom/",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "notes": "The team and SSO docs don't describe verifying an email domain or claiming accounts on it.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "The IdP can send a team_role claim naming a predefined or custom role. DigitalOcean applies it and keeps it in sync for existing members; without the claim, new members get the default role set for SSO.",
+        "source": "https://docs.digitalocean.com/platform/teams/how-to/configure-sso/",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-20",
+        "notes": "When someone with no DigitalOcean account signs in through the team's SSO, DigitalOcean creates an account for them and they join the team after confirming their email. Existing DigitalOcean users get an invitation instead.",
+        "source": "https://docs.digitalocean.com/platform/teams/how-to/configure-sso/",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Owners can require secure sign-in for a team. Members who sign in with a DigitalOcean password must then have 2FA on; members who sign in with Google or GitHub manage 2FA there.",
+        "source": "https://docs.digitalocean.com/platform/teams/how-to/require-secure-sign-in/",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The 2FA docs offer an authenticator app or SMS as the second factor and don't mention security keys or passkeys.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "The team and SSO docs don't mention SCIM. Deactivating a user in the IdP cuts access only as the IdP's token and session settings allow.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "notes": "Session duration (1 hour to 30 days) is a setting each user changes for their own account. The docs reached don't describe a team-wide session limit or a way for owners to sign someone out.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Teams can enable SSO with an OIDC-compatible IdP such as Okta or Microsoft Entra ID. SAML isn't offered. The docs don't name a plan.",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://docs.digitalocean.com/platform/teams/how-to/configure-sso/",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "After testing, admins enable Require sign-in via SSO only. Once enforced, team members can't sign in with other methods such as email and password.",
+        "source": "https://docs.digitalocean.com/platform/teams/how-to/configure-sso/",
+        "support": "supported"
+      }
+    },
+    "category": "infrastructure",
+    "description": "DigitalOcean is a cloud infrastructure provider. Values here cover how team members sign in to the DigitalOcean Control Panel and how team owners manage access to a team.",
+    "name": "DigitalOcean",
+    "status": "draft",
+    "website": "https://digitalocean.com"
   },
   {
     "_id": "directus-cloud",
@@ -9499,8 +9736,10 @@
     "_id": "google-cloud",
     "capabilities": {
       "api_token_controls": {
-        "notes": "Service account key and API key restrictions are documented on docs.cloud.google.com, which could not be fetched for this check.",
-        "support": "undocumented"
+        "checked": "2026-11-20",
+        "notes": "Admins can list, restrict and delete API keys, and organization policy constraints can stop API keys being bound to service accounts or block service account key creation.",
+        "source": "https://docs.cloud.google.com/docs/authentication/api-keys",
+        "support": "supported"
       },
       "audit_logs": {
         "checked": "2026-11-20",
@@ -9518,15 +9757,19 @@
         "tier": "free"
       },
       "domain_verification": {
-        "notes": "Domain verification for Cloud Identity is covered on docs.cloud.google.com, which could not be fetched for this check.",
-        "support": "undocumented"
+        "checked": "2026-11-20",
+        "notes": "A Cloud Identity account is tied to DNS domains that admins verify. Existing consumer accounts on a verified domain show up as unmanaged accounts, and their users can be asked to transfer them into the managed account.",
+        "source": "https://docs.cloud.google.com/architecture/identity/migrating-consumer-accounts",
+        "support": "supported"
       },
       "group_role_mapping": {
-        "notes": "Workforce Identity Federation maps IdP attributes to Google Cloud attributes to scope access, but the product page doesn't say IdP groups can grant IAM roles. The docs on docs.cloud.google.com could not be fetched for this check.",
-        "support": "undocumented"
+        "checked": "2026-11-20",
+        "notes": "Workforce Identity Federation maps the IdP's groups claim to google.groups, and allow policies can grant IAM roles to every workforce identity in a group.",
+        "source": "https://docs.cloud.google.com/iam/docs/workforce-identity-federation",
+        "support": "supported"
       },
       "jit_provisioning": {
-        "notes": "Workforce Identity Federation needs no directory sync, but the product page doesn't say whether a user record is created at first sign-in. The docs moved to docs.cloud.google.com, which could not be fetched for this check.",
+        "notes": "Workforce Identity Federation is sync-less and doesn't store user accounts in Google Cloud, so there is no account to create. The docs don't describe creating Cloud Identity users at first SSO sign-in.",
         "support": "undocumented"
       },
       "mfa_enforcement": {
@@ -9542,12 +9785,14 @@
         "support": "supported"
       },
       "scim": {
-        "notes": "Workforce Identity Federation is described as syncless, with no directory sync. Cloud Identity provisioning docs are on docs.cloud.google.com, which could not be fetched for this check.",
+        "notes": "Google's architecture docs show Entra ID creating and suspending users in Cloud Identity, but don't say this uses SCIM. Workforce Identity Federation's SCIM support applies only to Gemini Enterprise and Looker, not the console.",
         "support": "undocumented"
       },
       "session_controls": {
-        "notes": "Session length and reauthentication settings are documented on docs.cloud.google.com and Google Workspace help, which could not be fetched for this check.",
-        "support": "undocumented"
+        "checked": "2026-11-20",
+        "notes": "Admins set a session duration on a workforce identity pool, from 15 minutes to 12 hours (default one hour), which limits how long federated console and gcloud sessions stay valid. Covers Workforce Identity Federation users only.",
+        "source": "https://docs.cloud.google.com/iam/docs/manage-workforce-identity-pools-providers",
+        "support": "supported"
       },
       "sso": {
         "checked": "2026-11-20",
@@ -9561,8 +9806,10 @@
         "tier": "free"
       },
       "sso_enforcement": {
-        "notes": "Google Cloud docs pages redirect to docs.cloud.google.com, which could not be fetched for this check.",
-        "support": "undocumented"
+        "checked": "2026-11-20",
+        "notes": "With Cloud Identity SAML profiles, admins decide for each user, group or organizational unit whether they must use SSO, so those users are redirected to the IdP instead of entering a Google password. Super admins can bypass SSO.",
+        "source": "https://docs.cloud.google.com/architecture/identity/single-sign-on",
+        "support": "supported"
       }
     },
     "category": "infrastructure",

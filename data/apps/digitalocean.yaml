@@ -1,0 +1,60 @@
+name: "DigitalOcean"
+category: "infrastructure"
+website: "https://digitalocean.com"
+description: "DigitalOcean is a cloud infrastructure provider. Values here cover how team members sign in to the DigitalOcean Control Panel and how team owners manage access to a team."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["OIDC"]
+    notes: "Teams can enable SSO with an OIDC-compatible IdP such as Okta or Microsoft Entra ID. SAML isn't offered. The docs don't name a plan."
+    source: "https://docs.digitalocean.com/platform/teams/how-to/configure-sso/"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    notes: "After testing, admins enable Require sign-in via SSO only. Once enforced, team members can't sign in with other methods such as email and password."
+    source: "https://docs.digitalocean.com/platform/teams/how-to/configure-sso/"
+    checked: "2026-11-20"
+  scim:
+    support: "undocumented"
+    notes: "The team and SSO docs don't mention SCIM. Deactivating a user in the IdP cuts access only as the IdP's token and session settings allow."
+  mfa_enforcement:
+    support: "supported"
+    notes: "Owners can require secure sign-in for a team. Members who sign in with a DigitalOcean password must then have 2FA on; members who sign in with Google or GitHub manage 2FA there."
+    source: "https://docs.digitalocean.com/platform/teams/how-to/require-secure-sign-in/"
+    checked: "2026-11-20"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The 2FA docs offer an authenticator app or SMS as the second factor and don't mention security keys or passkeys."
+  audit_logs:
+    support: "supported"
+    notes: "A team's Security History lists actions such as creating or deleting resources and API tokens, with the user, originating IP address and time. Older data needs a support ticket. SSO sign-ins have their own activity page."
+    source: "https://docs.digitalocean.com/platform/teams/how-to/view-security-history/"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "supported"
+    notes: "When someone with no DigitalOcean account signs in through the team's SSO, DigitalOcean creates an account for them and they join the team after confirming their email. Existing DigitalOcean users get an invitation instead."
+    source: "https://docs.digitalocean.com/platform/teams/how-to/configure-sso/"
+    checked: "2026-11-20"
+  domain_verification:
+    support: "undocumented"
+    notes: "The team and SSO docs don't describe verifying an email domain or claiming accounts on it."
+  custom_roles:
+    support: "supported"
+    notes: "Besides six predefined roles, teams can create custom roles with only the permissions they choose. DigitalOcean says custom roles are free and unlimited."
+    source: "https://docs.digitalocean.com/platform/teams/roles/custom/"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "supported"
+    notes: "The IdP can send a team_role claim naming a predefined or custom role. DigitalOcean applies it and keeps it in sync for existing members; without the claim, new members get the default role set for SSO."
+    source: "https://docs.digitalocean.com/platform/teams/how-to/configure-sso/"
+    checked: "2026-11-20"
+  session_controls:
+    support: "undocumented"
+    notes: "Session duration (1 hour to 30 days) is a setting each user changes for their own account. The docs reached don't describe a team-wide session limit or a way for owners to sign someone out."
+  api_token_controls:
+    support: "supported"
+    notes: "Team roles carry separate permissions to create, view, update and delete API access tokens, so custom roles can restrict who manages tokens. A token's scopes are limited to what the creator's role allows, and tokens can be given an expiry."
+    source: "https://docs.digitalocean.com/platform/teams/roles/permissions/tokens/"
+    checked: "2026-11-20"

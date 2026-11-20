@@ -13,11 +13,13 @@ capabilities:
     source: "https://cloud.google.com/workforce-identity-federation"
     checked: "2026-11-20"
   sso_enforcement:
-    support: "undocumented"
-    notes: "Google Cloud docs pages redirect to docs.cloud.google.com, which could not be fetched for this check."
+    support: "supported"
+    notes: "With Cloud Identity SAML profiles, admins decide for each user, group or organizational unit whether they must use SSO, so those users are redirected to the IdP instead of entering a Google password. Super admins can bypass SSO."
+    source: "https://docs.cloud.google.com/architecture/identity/single-sign-on"
+    checked: "2026-11-20"
   scim:
     support: "undocumented"
-    notes: "Workforce Identity Federation is described as syncless, with no directory sync. Cloud Identity provisioning docs are on docs.cloud.google.com, which could not be fetched for this check."
+    notes: "Google's architecture docs show Entra ID creating and suspending users in Cloud Identity, but don't say this uses SCIM. Workforce Identity Federation's SCIM support applies only to Gemini Enterprise and Looker, not the console."
   mfa_enforcement:
     support: "supported"
     notes: "Security key enforcement lets Google Cloud admins require security keys for users in their organization. No vendor page reached names the plan."
@@ -37,10 +39,12 @@ capabilities:
     checked: "2026-11-20"
   jit_provisioning:
     support: "undocumented"
-    notes: "Workforce Identity Federation needs no directory sync, but the product page doesn't say whether a user record is created at first sign-in. The docs moved to docs.cloud.google.com, which could not be fetched for this check."
+    notes: "Workforce Identity Federation is sync-less and doesn't store user accounts in Google Cloud, so there is no account to create. The docs don't describe creating Cloud Identity users at first SSO sign-in."
   domain_verification:
-    support: "undocumented"
-    notes: "Domain verification for Cloud Identity is covered on docs.cloud.google.com, which could not be fetched for this check."
+    support: "supported"
+    notes: "A Cloud Identity account is tied to DNS domains that admins verify. Existing consumer accounts on a verified domain show up as unmanaged accounts, and their users can be asked to transfer them into the managed account."
+    source: "https://docs.cloud.google.com/architecture/identity/migrating-consumer-accounts"
+    checked: "2026-11-20"
   custom_roles:
     support: "supported"
     tier: "free"
@@ -48,11 +52,17 @@ capabilities:
     source: "https://cloud.google.com/products/iam"
     checked: "2026-11-20"
   group_role_mapping:
-    support: "undocumented"
-    notes: "Workforce Identity Federation maps IdP attributes to Google Cloud attributes to scope access, but the product page doesn't say IdP groups can grant IAM roles. The docs on docs.cloud.google.com could not be fetched for this check."
+    support: "supported"
+    notes: "Workforce Identity Federation maps the IdP's groups claim to google.groups, and allow policies can grant IAM roles to every workforce identity in a group."
+    source: "https://docs.cloud.google.com/iam/docs/workforce-identity-federation"
+    checked: "2026-11-20"
   session_controls:
-    support: "undocumented"
-    notes: "Session length and reauthentication settings are documented on docs.cloud.google.com and Google Workspace help, which could not be fetched for this check."
+    support: "supported"
+    notes: "Admins set a session duration on a workforce identity pool, from 15 minutes to 12 hours (default one hour), which limits how long federated console and gcloud sessions stay valid. Covers Workforce Identity Federation users only."
+    source: "https://docs.cloud.google.com/iam/docs/manage-workforce-identity-pools-providers"
+    checked: "2026-11-20"
   api_token_controls:
-    support: "undocumented"
-    notes: "Service account key and API key restrictions are documented on docs.cloud.google.com, which could not be fetched for this check."
+    support: "supported"
+    notes: "Admins can list, restrict and delete API keys, and organization policy constraints can stop API keys being bound to service accounts or block service account key creation."
+    source: "https://docs.cloud.google.com/docs/authentication/api-keys"
+    checked: "2026-11-20"

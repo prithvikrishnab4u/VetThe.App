@@ -83,13 +83,11 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P2 | Productboard | `productboard` | productivity | https://productboard.com |
 | P2 | WalkMe | `walkme` | productivity | https://walkme.com |
 | P2 | Writer | `writer` | productivity | https://writer.com |
-| P2 | Apigee | `apigee` | development | https://cloud.google.com/apigee |
 | P2 | 6sense | `6sense` | sales_marketing | https://6sense.com |
 | P2 | Adobe Experience Manager | `adobe-experience-manager` | sales_marketing | https://business.adobe.com/products/experience-manager/adobe-experience-manager.html |
 | P2 | Ahrefs | `ahrefs` | sales_marketing | https://ahrefs.com |
 | P2 | Chili Piper | `chili-piper` | sales_marketing | https://chilipiper.com |
 | P2 | Contentful | `contentful` | sales_marketing | https://contentful.com |
-| P2 | Customer.io | `customer-io` | sales_marketing | https://customer.io |
 | P2 | Cvent | `cvent` | sales_marketing | https://cvent.com |
 | P2 | Demandbase | `demandbase` | sales_marketing | https://demandbase.com |
 | P2 | Highspot | `highspot` | sales_marketing | https://highspot.com |
@@ -156,7 +154,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P2 | Atlan | `atlan` | infrastructure | https://atlan.com |
 | P2 | Atlassian Statuspage | `atlassian-statuspage` | infrastructure | https://atlassian.com/software/statuspage |
 | P2 | Collibra | `collibra` | infrastructure | https://collibra.com |
-| P2 | DigitalOcean | `digitalocean` | infrastructure | https://digitalocean.com |
 | P2 | Druva | `druva` | infrastructure | https://druva.com |
 | P2 | Fastly | `fastly` | infrastructure | https://fastly.com |
 | P2 | Heroku | `heroku` | infrastructure | https://heroku.com |

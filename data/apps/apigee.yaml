@@ -1,0 +1,58 @@
+name: "Apigee"
+category: "development"
+website: "https://cloud.google.com/apigee"
+description: "Apigee is Google Cloud's API management platform. Values here cover Apigee on Google Cloud (Apigee X), where admins and developers sign in through the Google Cloud console with Google identities or Workforce Identity Federation, and access is granted with Cloud IAM roles. API keys Apigee issues to API consumers are not covered."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "Apigee is listed as generally available for Workforce Identity Federation, so users from an external IdP can use the Apigee console. Preview features and the API Management APIs don't support federated users yet."
+    source: "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    notes: "Apigee users sign in with Google identities. With Cloud Identity SAML profiles, admins decide for each user, group or organizational unit whether they must use SSO. Super admins can bypass SSO."
+    source: "https://docs.cloud.google.com/architecture/identity/single-sign-on"
+    checked: "2026-11-20"
+  scim:
+    support: "undocumented"
+    notes: "The Apigee and Google Cloud docs reached don't describe SCIM provisioning of console users. Workforce Identity Federation's SCIM support covers only Gemini Enterprise and Looker."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Two-step verification for Google identities is set in the Google admin console, whose help pages were not on the docs host checked."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "Security key and passkey sign-in for Google identities is documented outside docs.cloud.google.com, which was the host checked."
+  audit_logs:
+    support: "supported"
+    notes: "Cloud Audit Logs record Apigee API calls: methods that change configuration write Admin Activity audit logs, and read methods write Data Access audit logs. Admins view them in Logs Explorer."
+    source: "https://docs.cloud.google.com/apigee/docs/api-platform/debug/audit-logging"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "Workforce Identity Federation doesn't store user accounts in Google Cloud, and the docs don't describe accounts being created at first SSO sign-in."
+  domain_verification:
+    support: "supported"
+    notes: "Google identities used for Apigee live in a Cloud Identity or Workspace account tied to verified DNS domains. Consumer accounts on a verified domain appear as unmanaged accounts that users can be asked to transfer."
+    source: "https://docs.cloud.google.com/architecture/identity/migrating-consumer-accounts"
+    checked: "2026-11-20"
+  custom_roles:
+    support: "supported"
+    notes: "Apigee ships predefined IAM roles such as Org Admin, API Admin and Read Only Admin. Admins can also create roles on the IAM Roles page; the docs say these must include apigee.projectorganizations.get. Roles can be granted per project or per environment."
+    source: "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/apigee-roles"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "supported"
+    notes: "Workforce Identity Federation maps the IdP's groups claim to google.groups, and allow policies can grant IAM roles, including Apigee roles, to every workforce identity in a group."
+    source: "https://docs.cloud.google.com/iam/docs/workforce-identity-federation"
+    checked: "2026-11-20"
+  session_controls:
+    support: "supported"
+    notes: "Admins set a workforce identity pool's session duration from 15 minutes to 12 hours, which limits how long federated console sessions last. Applies to Workforce Identity Federation users only."
+    source: "https://docs.cloud.google.com/iam/docs/manage-workforce-identity-pools-providers"
+    checked: "2026-11-20"
+  api_token_controls:
+    support: "undocumented"
+    notes: "Admin API calls use Google Cloud OAuth credentials. The Apigee docs reached don't describe admin controls over user-created tokens; Apigee's own API keys are for API consumers, not admins."
