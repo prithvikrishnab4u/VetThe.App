@@ -2,7 +2,7 @@
 
 Running log of what's done and what's next. **Update this file at the end of every work session**: tick items off, add what you found, and refresh the numbers with `.venv/bin/python scripts/validate.py`.
 
-_Last updated: 2026-09-28_
+_Last updated: 2026-11-20_
 
 ## Remind the user
 
@@ -14,19 +14,24 @@ _Last updated: 2026-09-28_
 
 ## Where the data stands
 
-316 apps: 79 `published`, 237 `draft`. 3,792 data points:
+336 apps: 79 `published`, 257 `draft`. 4,032 data points:
 
 | | Count |
 |---|---|
-| Verified (has `source` + `checked`) | 1,680 |
+| Verified (has `source` + `checked`) | 1,827 |
 | Unverified (a value with no source, carried over from the old dataset) | 0 |
-| Not documented (checked, the vendor says nothing) | 1,474 |
+| Not documented (checked, the vendor says nothing) | 1,567 |
 | Not researched | 638 |
 
 ## Done
 
+- [x] **20 apps from the skipped list, read straight from vendor docs hosts (2026-11-20).** This session's network allowed 20 vendor docs hosts, one per app: bitwarden, retool, twingate, doppler, honeycomb, rollbar, cribl, confluent-cloud, statsig, gitguardian, spacelift, port, pinecone, descope, panther, fivetran, bugsnag, coderabbit, hightouch, tines. All 12 capabilities filled per app, every value sourced or `undocumented`, no inferred tiers. All `draft`. Pages were fetched with curl and read as text; many Mintlify/GitBook/ReadMe sites serve a `.md` twin or `llms.txt`, which made this fast. Cited URLs are the published HTML pages, each checked to return 200.
+  - **Hosts that were not allowed, so values stayed untiered or `undocumented`:** retool.com/pricing (Retool tiers), doppler.com/pricing (Doppler SSO tier), descope.com/pricing (Descope tiers), www.fivetran.com/pricing (Fivetran SSO/SCIM tiers; fivetran.com redirects there), and **docs.hightouch.com** (hightouch.com/docs redirects there). Hightouch is the thinnest file: SSO, SCIM, custom roles and audit logs come from hightouch.com's pricing and security pages, the other eight values are `undocumented` until someone can read docs.hightouch.com.
+  - Calls worth knowing: Fivetran says outright it has no 2FA for native logins, so both MFA columns are `not_supported`. Bitwarden, Doppler, Confluent Cloud, GitGuardian and CodeRabbit verify a domain but only to block sign-ups or route SSO, so they are `partial` under the JIT/domain brief. Doppler's "revoke all personal tokens" and "sign everyone out" are org-wide switches only, so `partial`. Descope was researched as the Descope console (company settings for Descopers), not the CIAM product it sells. Twingate has no password login at all; its SSO tier is Teams for Google Workspace and Business for other IdPs.
+  - Several "supported" values have no tier because the vendor docs don't name a plan (Retool SSO/SCIM, Confluent Cloud SSO, Cribl SSO, Panther, Tines SCIM/JIT "not in all plans"). Those need a pricing page before the app can be published.
+
 - [x] **144 new apps from vendors' public docs repos (2026-09-28).** Goal is 500 apps by year end. This session's network blocked vendor websites but allowed `git clone` from GitHub/GitLab, so agents sparse-cloned each vendor's docs source (Markdown/MDX) and cited the published URL each file maps to. All 12 capabilities filled per app, every value sourced or `undocumented`, no inferred tiers. All added as `draft`: most docs name a feature but not the plan, so tiers are often missing. Brief lives in the session scratchpad; the rules are the same as the P1 run.
-  - **The method is running dry.** Most well-known SaaS vendors don't publish docs on GitHub. Skipped because no current public docs repo was found (need a browser): statsig, coderabbit, bugsnag, graphite, socket, gitguardian, rudderstack, astronomer, spacelift, port, env0, pinecone, oso-cloud, descope, endor-labs, nocodb, baserow, rootly, panther, humanitec, courier, roadie, rocket-chat, codecov, chatwoot, infracost, pipedream, bitwarden (help repo archived), p0-security, apono, hightouch, fivetran, tines, confluent-cloud, launchable, retool, twingate, cribl, honeycomb, rollbar (docs repo deprecated), cloudsmith, doppler, gitpod (docs archived), scalr, xata (docs archived), opslevel, element (docs archived).
+  - **The method is running dry.** Most well-known SaaS vendors don't publish docs on GitHub. Skipped because no current public docs repo was found (need a browser or an allowed docs host): graphite, socket, rudderstack, astronomer, env0, oso-cloud, endor-labs, nocodb, baserow, rootly, humanitec, courier, roadie, rocket-chat, codecov, chatwoot, infracost, pipedream, p0-security, apono, launchable, cloudsmith, gitpod (docs archived), scalr, xata (docs archived), opslevel, element (docs archived). The other 20 on this list were added on 2026-11-20 (see above).
   - Getting to 500 needs vendor websites reachable again. With that, BACKLOG.md P1/P2 is the obvious source.
 
 - [x] **Offline consistency audit** (2026-09-27, no network needed). Checked every file for IdP-sourced values, tiers that contradict the plan name, JIT or group mapping without SSO/SCIM, and future `checked` dates. Fixed:

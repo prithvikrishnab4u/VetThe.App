@@ -1,0 +1,67 @@
+name: "Tines"
+category: "security"
+website: "https://www.tines.com"
+description: "Tines is a workflow automation platform for security and IT teams, with no-code stories, cases and AI agents."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "free"
+    plan: "All plans, including Community Edition"
+    protocols: ["SAML", "OIDC"]
+    notes: "SSO over SAML or OIDC is optional on all Tines tenants, paid and Community Edition alike."
+    source: "https://www.tines.com/stories/docs/admin/single-sign-on/"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    tier: "free"
+    plan: "All plans, including Community Edition"
+    notes: "Tines has no passwords. The default email magic-link login is only enabled when SSO is not set up, so configuring SSO makes it the tenant's sign-in method."
+    source: "https://www.tines.com/stories/docs/admin/email-based-login-flow/"
+    checked: "2026-11-20"
+  scim:
+    support: "supported"
+    notes: "SCIM v2 endpoints provision users and groups, with group mappings to teams and roles. Tines says SCIM isn't in every plan and doesn't name which."
+    source: "https://www.tines.com/stories/docs/admin/user-administration/scim/"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Sign-in is by SSO, Google, Microsoft or an emailed one-time link; the docs don't describe an MFA requirement in Tines itself."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The docs don't describe signing in with security keys or passkeys."
+  audit_logs:
+    support: "supported"
+    retention: "2 years by default (can be set as low as 30 days)"
+    notes: "Tines records an audit log whenever a user changes data in the tenant, and keeps two years of sign-in activity. The page doesn't name a plan."
+    source: "https://www.tines.com/stories/docs/admin/audit-logs/"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "supported"
+    notes: "With SAML or OIDC SSO, admins can turn on just-in-time provisioning that creates users at first sign-in and maps IdP groups to teams and roles. Tines says JIT isn't in every plan and doesn't name which."
+    source: "https://www.tines.com/stories/docs/admin/user-administration/jit/"
+    checked: "2026-11-20"
+  domain_verification:
+    support: "undocumented"
+    notes: "Tines supports custom tenant domains, but the docs don't describe verifying an email domain or claiming accounts."
+  custom_roles:
+    support: "supported"
+    notes: "Administrators create custom team roles starting from the viewer, builder and manager defaults. The page doesn't name a plan."
+    source: "https://www.tines.com/stories/docs/admin/user-administration/custom-roles/"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "supported"
+    notes: "Tenant owners map IdP groups to tenant owner status, teams, roles and permissions. With Enhanced JIT syncing or SCIM the mapping is reapplied on every login; plain JIT applies it only at first sign-in."
+    source: "https://www.tines.com/stories/docs/admin/user-administration/user-provisioning/"
+    checked: "2026-11-20"
+  session_controls:
+    support: "supported"
+    notes: "Tenant owners set the session length as an absolute or idle timeout, can invalidate every session in the tenant, and can invalidate a specific user's sessions."
+    source: "https://www.tines.com/stories/docs/admin/authentication-settings/"
+    checked: "2026-11-20"
+  api_token_controls:
+    support: "supported"
+    notes: "A tenant owner can restrict API key creation to owners and users granted the API_KEY_CREATE permission. Personal keys can only be deleted by their owner."
+    source: "https://www.tines.com/stories/docs/api/authentication/"
+    checked: "2026-11-20"

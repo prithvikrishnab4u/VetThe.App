@@ -2797,6 +2797,83 @@
     "website": "https://budibase.com"
   },
   {
+    "_id": "bugsnag",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "The docs don't describe admin controls over users' API tokens.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Admins can see audit logs of collaborator creation, access and authentication setting changes in the organization settings. Retention isn't stated.",
+        "plan": "Enterprise",
+        "source": "https://docs.bugsnag.com/product/account-and-security/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "notes": "Collaborators get preset organization and project roles; the docs don't describe custom roles.",
+        "support": "undocumented"
+      },
+      "domain_verification": {
+        "notes": "The docs don't describe verifying an email domain.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "Pushing an Okta Group creates or links a BugSnag team and keeps its membership in sync, and teams carry project roles.",
+        "plan": "Preferred",
+        "source": "https://docs.bugsnag.com/product/single-sign-on/okta-scim-provisioning/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "jit_provisioning": {
+        "notes": "Accounts are created by SCIM provisioning; the docs don't describe accounts being created at first SSO sign-in.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "Login runs through SmartBear ID, where each user can turn on MFA. The docs don't describe admins requiring it.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The docs describe MFA with an authenticator app only.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "Okta provisioning creates users, updates names and emails, and deactivates users. The SSO page lists user provisioning among the SSO features on Preferred and Enterprise.",
+        "plan": "Preferred",
+        "source": "https://docs.bugsnag.com/product/single-sign-on/okta-scim/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "session_controls": {
+        "notes": "The docs don't describe admin session controls.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "SAML SSO is available on Preferred and Enterprise plans, with guides for Okta, OneLogin, Google Cloud Identity, Auth0 and others.",
+        "plan": "Preferred",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.bugsnag.com/product/single-sign-on/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "notes": "The docs don't describe blocking password login once SSO is on.",
+        "support": "undocumented"
+      }
+    },
+    "category": "development",
+    "description": "BugSnag, part of SmartBear, monitors errors and app stability across web, mobile and backend applications.",
+    "name": "BugSnag",
+    "status": "draft",
+    "website": "https://www.bugsnag.com"
+  },
+  {
     "_id": "buildkite",
     "capabilities": {
       "api_token_controls": {
@@ -4774,6 +4851,95 @@
     "name": "Coder",
     "status": "draft",
     "website": "https://coder.com"
+  },
+  {
+    "_id": "coderabbit",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Enterprise workspaces have a shared API key; the docs don't describe controls over keys individual users create.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Admins and Billing Admins can search a record of administrative actions such as settings, billing, seat and role changes, and pull it through the API. Retention isn't stated.",
+        "plan": "Enterprise",
+        "source": "https://docs.coderabbit.ai/management/audit-logs",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Enterprise admins can create named roles beyond Admin, Member and Billing Admin, setting no access, read or read-write per resource.",
+        "plan": "Enterprise",
+        "source": "https://docs.coderabbit.ai/management/custom-roles",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "domain_verification": {
+        "checked": "2026-11-20",
+        "notes": "Admins verify the email domain with a DNS TXT record during SSO setup, and users on that domain must then sign in through SSO. The docs don't describe taking over other accounts on the domain.",
+        "plan": "Enterprise",
+        "source": "https://docs.coderabbit.ai/management/sso/okta-saml",
+        "support": "partial",
+        "tier": "enterprise"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "SCIM can map one identity provider group to the Admin role; general group-to-role mapping isn't described.",
+        "plan": "Enterprise",
+        "source": "https://docs.coderabbit.ai/management/sso/scim",
+        "support": "partial",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "notes": "The docs don't say whether accounts are created on first SSO sign-in.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "The docs don't describe requiring MFA; sign-in goes through the Git provider or the SAML IdP.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The docs don't describe signing in with security keys or passkeys.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "Okta or Entra ID SCIM adds, updates and deactivates workspace members.",
+        "plan": "Enterprise",
+        "source": "https://docs.coderabbit.ai/management/sso/scim",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "notes": "The docs don't describe admin session controls.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Enterprise SSO signs users in through a SAML 2.0 identity provider. Without it, users sign in with their Git provider account.",
+        "plan": "Enterprise",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.coderabbit.ai/management/sso/index",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "After SSO is activated, users with a verified email domain must sign in through the identity provider.",
+        "plan": "Enterprise",
+        "source": "https://docs.coderabbit.ai/management/sso/okta-saml",
+        "support": "supported",
+        "tier": "enterprise"
+      }
+    },
+    "category": "development",
+    "description": "CodeRabbit is an AI code review tool that reviews pull requests on GitHub, GitLab, Bitbucket and Azure DevOps.",
+    "name": "CodeRabbit",
+    "status": "draft",
+    "website": "https://www.coderabbit.ai"
   },
   {
     "_id": "configcat",
@@ -9892,6 +10058,75 @@
     "name": "Highlight.io",
     "status": "draft",
     "website": "https://www.highlight.io"
+  },
+  {
+    "_id": "hightouch",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Not confirmed: docs.hightouch.com was not reachable from this session.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Audit logs track and search all in-app user activity, with export to other tools. The pricing page lists them in the Customer Data Platform and AI Decisioning plans.",
+        "source": "https://hightouch.com/platform/security",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "The security page describes fine-grained permissions and custom roles over workspace resources such as models, destinations and syncs.",
+        "source": "https://hightouch.com/platform/security",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "notes": "Not confirmed: docs.hightouch.com was not reachable from this session.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "notes": "Not confirmed: docs.hightouch.com was not reachable from this session.",
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "notes": "Not confirmed: docs.hightouch.com was not reachable from this session.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "Not confirmed: docs.hightouch.com was not reachable from this session.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "Not confirmed: docs.hightouch.com was not reachable from this session.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "The security page says SAML SSO comes with support for SCIM to keep access grants up to date. It doesn't say whether deactivation is covered.",
+        "source": "https://hightouch.com/platform/security",
+        "support": "supported"
+      },
+      "session_controls": {
+        "notes": "Not confirmed: docs.hightouch.com was not reachable from this session.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "The pricing page lists Google and Azure SSO and SAML SSO (Okta, Azure AD, OneLogin and others) among the features in the Customer Data Platform and AI Decisioning plans. Those plans are quoted, so no tier is set. docs.hightouch.com was not reachable from this session.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://hightouch.com/pricing",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "notes": "Not confirmed: the product docs at docs.hightouch.com were not reachable from this session, and the marketing pages don't say.",
+        "support": "undocumented"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Hightouch is a composable customer data platform with reverse ETL, audience building and AI decisioning on top of the data warehouse.",
+    "name": "Hightouch",
+    "status": "draft",
+    "website": "https://hightouch.com"
   },
   {
     "_id": "honeycomb",
@@ -21730,6 +21965,91 @@
     "name": "Timescale Cloud",
     "status": "draft",
     "website": "https://www.tigerdata.com"
+  },
+  {
+    "_id": "tines",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-11-20",
+        "notes": "A tenant owner can restrict API key creation to owners and users granted the API_KEY_CREATE permission. Personal keys can only be deleted by their owner.",
+        "source": "https://www.tines.com/stories/docs/api/authentication/",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Tines records an audit log whenever a user changes data in the tenant, and keeps two years of sign-in activity. The page doesn't name a plan.",
+        "retention": "2 years by default (can be set as low as 30 days)",
+        "source": "https://www.tines.com/stories/docs/admin/audit-logs/",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Administrators create custom team roles starting from the viewer, builder and manager defaults. The page doesn't name a plan.",
+        "source": "https://www.tines.com/stories/docs/admin/user-administration/custom-roles/",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "notes": "Tines supports custom tenant domains, but the docs don't describe verifying an email domain or claiming accounts.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "Tenant owners map IdP groups to tenant owner status, teams, roles and permissions. With Enhanced JIT syncing or SCIM the mapping is reapplied on every login; plain JIT applies it only at first sign-in.",
+        "source": "https://www.tines.com/stories/docs/admin/user-administration/user-provisioning/",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-20",
+        "notes": "With SAML or OIDC SSO, admins can turn on just-in-time provisioning that creates users at first sign-in and maps IdP groups to teams and roles. Tines says JIT isn't in every plan and doesn't name which.",
+        "source": "https://www.tines.com/stories/docs/admin/user-administration/jit/",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "notes": "Sign-in is by SSO, Google, Microsoft or an emailed one-time link; the docs don't describe an MFA requirement in Tines itself.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The docs don't describe signing in with security keys or passkeys.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "SCIM v2 endpoints provision users and groups, with group mappings to teams and roles. Tines says SCIM isn't in every plan and doesn't name which.",
+        "source": "https://www.tines.com/stories/docs/admin/user-administration/scim/",
+        "support": "supported"
+      },
+      "session_controls": {
+        "checked": "2026-11-20",
+        "notes": "Tenant owners set the session length as an absolute or idle timeout, can invalidate every session in the tenant, and can invalidate a specific user's sessions.",
+        "source": "https://www.tines.com/stories/docs/admin/authentication-settings/",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "SSO over SAML or OIDC is optional on all Tines tenants, paid and Community Edition alike.",
+        "plan": "All plans, including Community Edition",
+        "protocols": [
+          "SAML",
+          "OIDC"
+        ],
+        "source": "https://www.tines.com/stories/docs/admin/single-sign-on/",
+        "support": "supported",
+        "tier": "free"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Tines has no passwords. The default email magic-link login is only enabled when SSO is not set up, so configuring SSO makes it the tenant's sign-in method.",
+        "plan": "All plans, including Community Edition",
+        "source": "https://www.tines.com/stories/docs/admin/email-based-login-flow/",
+        "support": "supported",
+        "tier": "free"
+      }
+    },
+    "category": "security",
+    "description": "Tines is a workflow automation platform for security and IT teams, with no-code stories, cases and AI agents.",
+    "name": "Tines",
+    "status": "draft",
+    "website": "https://www.tines.com"
   },
   {
     "_id": "tooljet",

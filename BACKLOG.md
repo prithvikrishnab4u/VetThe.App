@@ -197,7 +197,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P2 | Secureframe | `secureframe` | security | https://secureframe.com |
 | P2 | Semgrep | `semgrep` | security | https://semgrep.dev |
 | P2 | Sophos Central | `sophos-central` | security | https://sophos.com |
-| P2 | Tines | `tines` | security | https://tines.com |
 | P2 | Varonis | `varonis` | security | https://varonis.com |
 | P2 | Veracode | `veracode` | security | https://veracode.com |
 | P2 | Airbyte Cloud | `airbyte` | infrastructure | https://airbyte.com |
@@ -210,7 +209,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P2 | Elastic Cloud | `elastic-cloud` | infrastructure | https://elastic.co/cloud |
 | P2 | Fastly | `fastly` | infrastructure | https://fastly.com |
 | P2 | Heroku | `heroku` | infrastructure | https://heroku.com |
-| P2 | Hightouch | `hightouch` | infrastructure | https://hightouch.com |
 | P2 | incident.io | `incident-io` | infrastructure | https://incident.io |
 | P2 | Ivanti Neurons for ITSM | `ivanti-neurons-itsm` | infrastructure | https://ivanti.com |
 | P2 | ManageEngine ServiceDesk Plus Cloud | `manageengine-servicedesk-plus` | infrastructure | https://manageengine.com/products/service-desk |
@@ -232,9 +230,7 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P3 | Make | `make` | productivity | https://make.com |
 | P3 | Relativity One | `relativityone` | productivity | https://relativity.com |
 | P3 | Tray.ai | `tray-ai` | productivity | https://tray.ai |
-| P3 | Bugsnag | `bugsnag` | development | https://bugsnag.com |
 | P3 | Coder | `coder` | development | https://coder.com |
-| P3 | CodeRabbit | `coderabbit` | development | https://coderabbit.ai |
 | P3 | Graphite | `graphite` | development | https://graphite.dev |
 | P3 | Lovable | `lovable` | development | https://lovable.dev |
 | P3 | MuleSoft Anypoint Platform | `mulesoft` | development | https://mulesoft.com |
