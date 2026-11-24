@@ -103,8 +103,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P2 | Kustomer | `kustomer` | support | https://kustomer.com |
 | P2 | NICE CXone | `nice-cxone` | support | https://nice.com |
 | P2 | Talkdesk | `talkdesk` | support | https://talkdesk.com |
-| P2 | Twilio Flex | `twilio-flex` | support | https://twilio.com/flex |
-| P2 | Zoho Desk | `zoho-desk` | support | https://zoho.com/desk |
 | P2 | Brandfolder | `brandfolder` | design | https://brandfolder.com |
 | P2 | Bynder | `bynder` | design | https://bynder.com |
 | P2 | Framer | `framer` | design | https://framer.com |

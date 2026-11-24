@@ -25829,6 +25829,80 @@
     "website": "https://twenty.com"
   },
   {
+    "_id": "twilio-flex",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-11-24",
+        "notes": "Twilio API keys can be issued per developer or application and revoked at any time. Restricted API keys limit access to specific API resources.",
+        "source": "https://www.twilio.com/docs/iam/api-keys",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-11-24",
+        "notes": "Monitor Events logs virtually every action in the account, whether through the API or by a user in Twilio Console, including changes to security settings, with the actor behind each event.",
+        "retention": "30 days on the free version; 13 months with Administration, Security or Enterprise Edition packages",
+        "source": "https://www.twilio.com/docs/usage/monitor-events",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-24",
+        "notes": "Flex UI users have one of a fixed set of roles: Administrator, Read-only Administrator, Supervisor or Agent.",
+        "source": "https://www.twilio.com/docs/flex/admin-guide/setup/flex-ui-users",
+        "support": "not_supported"
+      },
+      "domain_verification": {
+        "notes": "The Flex docs only describe authenticating email domains for sending email, not for sign-in or account control.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-24",
+        "notes": "The attributes the IdP passes at SSO sign-in decide the Flex UI role (agent, supervisor or admin) of the worker. The Read-only Admin role can't be assigned through SSO.",
+        "source": "https://www.twilio.com/docs/flex/admin-guide/setup/flex-ui-users",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-24",
+        "notes": "Flex UI users are TaskRouter workers, and a worker is created whenever a user logs in to Flex UI, including through SSO. The IdP's attributes set the new worker's role.",
+        "source": "https://www.twilio.com/docs/flex/admin-guide/setup/flex-ui-users",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "notes": "Twilio Console's two-factor settings are documented on Twilio's help center, which wasn't on the host checked.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The docs reached don't mention security keys or passkeys for Console or Flex sign-in.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "The Flex docs reached don't describe SCIM. Removing an SSO-created user means deleting the TaskRouter worker and removing the user in the IdP.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "notes": "Flex's automatic logout settings change a disconnected agent's status to offline for routing; the docs reached don't describe a session length or a way to sign users out.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-24",
+        "notes": "Flex integrates with any SAML 2.0 identity provider, such as Okta, Entra ID, Google or Salesforce, so agents, supervisors and administrators sign in with SSO. The docs don't name a plan.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://www.twilio.com/docs/flex/admin-guide/setup/sso-configuration",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "notes": "SSO is the preferred way to create agents and supervisors, but Console users with Owner, Administrator, Developer or Support roles can also open Flex from Console. The docs don't describe requiring SSO for everyone.",
+        "support": "undocumented"
+      }
+    },
+    "category": "support",
+    "description": "Twilio Flex is Twilio's programmable contact center. Values here cover how agents, supervisors and admins sign in to Flex UI and how account users are managed in Twilio Console, not the authentication Flex offers to the end customers it serves.",
+    "name": "Twilio Flex",
+    "status": "draft",
+    "website": "https://twilio.com/flex"
+  },
+  {
     "_id": "twilio-segment",
     "capabilities": {
       "api_token_controls": {
@@ -27906,6 +27980,76 @@
     "name": "Zoho CRM",
     "status": "draft",
     "website": "https://www.zoho.com/crm"
+  },
+  {
+    "_id": "zoho-desk",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "Not covered by the pages reached.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-24",
+        "notes": "The audit log shows the sequence of events performed by users and tracks activity across automations, custom modules and other settings. The edition comparison lists it on Enterprise and Ultimate, both self-serve plans.",
+        "plan": "Enterprise",
+        "source": "https://www.zoho.com/desk/pricing-comparison.html",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "custom_roles": {
+        "checked": "2026-11-24",
+        "notes": "Profiles set agents' permissions to modules, fields and utilities, and roles mirror the org chart with a profile each. Free and Express have only the default, non-editable ones; Standard allows 5 profiles, Professional 25, Enterprise 50 and Ultimate 200.",
+        "plan": "Standard",
+        "source": "https://www.zoho.com/desk/pricing-comparison.html",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "domain_verification": {
+        "notes": "Not covered by the pages reached.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "notes": "Not covered by the pages reached.",
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "notes": "Not covered by the pages reached.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "notes": "The edition comparison lists MFA only for Help Center end users. Agent MFA is a Zoho account setting documented on help.zoho.com, which couldn't be reached.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "Not covered by the pages reached; Zoho account sign-in docs are on help.zoho.com.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "Not covered by the Zoho Desk pages on www.zoho.com; Zoho's provisioning docs are on help.zoho.com, which couldn't be reached.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "notes": "Not covered by the Zoho Desk pages reached; Zoho account session settings are documented on help.zoho.com.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-24",
+        "notes": "The edition comparison lists an Office 365 integration that adds Office 365 users as agents who sign in with single sign-on, from the Standard plan up. Zoho's SAML setup for agent sign-in is documented on help.zoho.com, which couldn't be reached. The SAML, OpenID Connect and MFA rows on the page are for Help Center end users.",
+        "plan": "Standard",
+        "source": "https://www.zoho.com/desk/pricing-comparison.html",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "notes": "Zoho account sign-in policies are documented on help.zoho.com, which couldn't be reached for this check.",
+        "support": "undocumented"
+      }
+    },
+    "category": "support",
+    "description": "Zoho Desk is Zoho's customer service help desk. Values here cover how agents and admins sign in to Zoho Desk and how admins control their access, not Help Center sign-in for end customers. Agents sign in with Zoho accounts, whose SAML and MFA settings are documented on help.zoho.com, which couldn't be reached for this check, so most values come from the edition comparison page.",
+    "name": "Zoho Desk",
+    "status": "draft",
+    "website": "https://zoho.com/desk"
   },
   {
     "_id": "zoom",
