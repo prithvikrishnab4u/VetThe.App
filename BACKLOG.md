@@ -107,7 +107,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P2 | Bynder | `bynder` | design | https://bynder.com |
 | P2 | Framer | `framer` | design | https://framer.com |
 | P2 | Frontify | `frontify` | design | https://frontify.com |
-| P2 | Sketch | `sketch` | design | https://sketch.com |
 | P2 | UserTesting | `usertesting` | design | https://usertesting.com |
 | P2 | 15Five | `15five` | hr | https://15five.com |
 | P2 | Checkr | `checkr` | hr | https://checkr.com |
@@ -134,7 +133,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P2 | Zylo | `zylo` | finance | https://zylo.com |
 | P2 | Abnormal Security | `abnormal-security` | security | https://abnormalsecurity.com |
 | P2 | AuditBoard | `auditboard` | security | https://auditboard.com |
-| P2 | Axonius | `axonius` | security | https://axonius.com |
 | P2 | Checkmarx One | `checkmarx` | security | https://checkmarx.com |
 | P2 | Cisco Umbrella | `cisco-umbrella` | security | https://umbrella.cisco.com |
 | P2 | Cortex XDR | `cortex-xdr` | security | https://paloaltonetworks.com/cortex/cortex-xdr |

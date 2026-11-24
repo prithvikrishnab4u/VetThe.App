@@ -2402,6 +2402,83 @@
     "website": "https://axiom.co"
   },
   {
+    "_id": "axonius",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-11-24",
+        "notes": "API access goes through service accounts that admins create in System Settings, each with a role that has API access permission and either an API key and secret or OAuth 2.1 client credentials.",
+        "source": "https://docs.axonius.com/docs/manage-service-accounts",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-11-24",
+        "notes": "The Activity Logs page tracks all user and system activities except reads, which admins can choose to log as well in the Activity Logs settings.",
+        "source": "https://docs.axonius.com/docs/activity-logs-page",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-24",
+        "notes": "Admins create roles in the Roles page by choosing permissions by category, and data scopes can further limit which assets a role sees.",
+        "source": "https://docs.axonius.com/docs/manage-roles",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "notes": "The login and user management docs don't describe verifying an email domain.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-24",
+        "notes": "Role assignment rules match SAML attributes such as group membership to Axonius roles. Okta needs custom group attributes set to pass groups.",
+        "source": "https://docs.axonius.com/docs/mapping-roles-in-axonius-to-okta-groups-in-saml",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-24",
+        "notes": "Users signing in with SAML get an Axonius account and a role from admin-defined rules or a default SAML role. Admins choose whether role rules apply to new users only or to new and existing users on every login.",
+        "source": "https://docs.axonius.com/docs/saml-based-login-settings",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "notes": "The login settings docs reached don't describe requiring MFA for local username and password logins.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "Smart card login is listed as a login option, but the docs reached don't mention WebAuthn security keys or passkeys.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "notes": "The user management docs don't describe SCIM provisioning of Axonius console users. The SCIM pages in the docs are adapters and actions for other systems.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "checked": "2026-11-24",
+        "notes": "With SAML session reauthentication enabled, users must sign in again when a timeout passed from the IdP in a claim is reached. The docs reached don't describe a session length for local logins.",
+        "source": "https://docs.axonius.com/docs/saml-based-login-settings",
+        "support": "partial"
+      },
+      "sso": {
+        "checked": "2026-11-24",
+        "notes": "Admins can set up one or more SAML identity providers, with examples for Okta, Microsoft AD and Entra ID. LDAP and smart card login are also offered. The docs don't name a plan.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.axonius.com/docs/saml-based-login-settings",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-24",
+        "notes": "The Restrict to SAML login only setting allows only SAML-based logins and disables manual login. Admins can also redirect all logins to the IdP automatically.",
+        "source": "https://docs.axonius.com/docs/saml-based-login-settings",
+        "support": "supported"
+      }
+    },
+    "category": "security",
+    "description": "Axonius is a cyber asset management platform. Values here cover how users sign in to the Axonius web console and how admins manage users, roles and API access in System Settings, not the identity data Axonius collects through its adapters.",
+    "name": "Axonius",
+    "status": "draft",
+    "website": "https://axonius.com"
+  },
+  {
     "_id": "azure-devops",
     "capabilities": {
       "api_token_controls": {
@@ -22925,6 +23002,89 @@
     "name": "SigNoz Cloud",
     "status": "draft",
     "website": "https://signoz.io"
+  },
+  {
+    "_id": "sketch",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "The docs reached don't describe API tokens or admin controls over them.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "notes": "The Workspace settings and pricing pages reached don't mention an audit log.",
+        "support": "undocumented"
+      },
+      "custom_roles": {
+        "checked": "2026-11-24",
+        "notes": "Workspace members are Viewers, Editors or Guests, with Admins managing settings. Editors can limit editing on individual documents, but new roles can't be defined.",
+        "source": "https://www.sketch.com/docs/interface-and-settings/workspace-and-account-settings/editors-viewers-and-guests/",
+        "support": "not_supported"
+      },
+      "domain_verification": {
+        "notes": "The SSO docs identify a Workspace by a shortname and don't describe verifying an email domain.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-24",
+        "notes": "With SCIM, IdP groups (for example Sketch-editors and Sketch-viewers in Okta) decide whether synced users get Editor or Viewer access.",
+        "plan": "Enterprise or Private Cloud",
+        "source": "https://www.sketch.com/docs/getting-started/single-sign-on/scim-provisioning/okta/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-24",
+        "notes": "Sketch's SAML SSO includes JIT provisioning: the first successful sign-in through the IdP creates an account with membership of the Workspace that IdP belongs to.",
+        "plan": "Professional",
+        "source": "https://www.sketch.com/docs/getting-started/single-sign-on/sso-and-provisioning/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "mfa_enforcement": {
+        "notes": "Each member can turn on 2FA with an authenticator app, but the docs reached don't describe admins requiring it.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The 2FA docs describe authenticator app codes only, with no mention of security keys or passkeys.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-11-24",
+        "notes": "SCIM lets the IdP create, update and deactivate Sketch accounts. It's on the Enterprise and Private Cloud plans, which are sold through sales.",
+        "plan": "Enterprise or Private Cloud",
+        "source": "https://www.sketch.com/docs/getting-started/single-sign-on/scim-provisioning/",
+        "support": "supported",
+        "tier": "enterprise"
+      },
+      "session_controls": {
+        "notes": "Members can review their own sessions and sign out of all of them, but the docs reached don't describe admin controls over session length or signing others out.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-24",
+        "notes": "SAML 2.0 SSO works with IdPs such as Google, Okta, OneLogin, Azure and Ping for both the Mac and web apps. The pricing page lists SSO on Professional, a self-serve plan, and above.",
+        "plan": "Professional",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://www.sketch.com/pricing/",
+        "support": "supported",
+        "tier": "paid"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-24",
+        "notes": "In an SSO Workspace, only users given access through the IdP can sign in, and other people can't be invited; they need an IdP account and the Workspace shortname.",
+        "plan": "Professional",
+        "source": "https://www.sketch.com/docs/getting-started/single-sign-on/sso-and-provisioning/",
+        "support": "supported",
+        "tier": "paid"
+      }
+    },
+    "category": "design",
+    "description": "Sketch is a design tool with a Mac app and a web app. Values here cover how members sign in to a Sketch Workspace and how Workspace admins manage them.",
+    "name": "Sketch",
+    "status": "draft",
+    "website": "https://sketch.com"
   },
   {
     "_id": "slack",

@@ -1,0 +1,60 @@
+name: "Axonius"
+category: "security"
+website: "https://axonius.com"
+description: "Axonius is a cyber asset management platform. Values here cover how users sign in to the Axonius web console and how admins manage users, roles and API access in System Settings, not the identity data Axonius collects through its adapters."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "Admins can set up one or more SAML identity providers, with examples for Okta, Microsoft AD and Entra ID. LDAP and smart card login are also offered. The docs don't name a plan."
+    source: "https://docs.axonius.com/docs/saml-based-login-settings"
+    checked: "2026-11-24"
+  sso_enforcement:
+    support: "supported"
+    notes: "The Restrict to SAML login only setting allows only SAML-based logins and disables manual login. Admins can also redirect all logins to the IdP automatically."
+    source: "https://docs.axonius.com/docs/saml-based-login-settings"
+    checked: "2026-11-24"
+  scim:
+    support: "undocumented"
+    notes: "The user management docs don't describe SCIM provisioning of Axonius console users. The SCIM pages in the docs are adapters and actions for other systems."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The login settings docs reached don't describe requiring MFA for local username and password logins."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "Smart card login is listed as a login option, but the docs reached don't mention WebAuthn security keys or passkeys."
+  audit_logs:
+    support: "supported"
+    notes: "The Activity Logs page tracks all user and system activities except reads, which admins can choose to log as well in the Activity Logs settings."
+    source: "https://docs.axonius.com/docs/activity-logs-page"
+    checked: "2026-11-24"
+  jit_provisioning:
+    support: "supported"
+    notes: "Users signing in with SAML get an Axonius account and a role from admin-defined rules or a default SAML role. Admins choose whether role rules apply to new users only or to new and existing users on every login."
+    source: "https://docs.axonius.com/docs/saml-based-login-settings"
+    checked: "2026-11-24"
+  domain_verification:
+    support: "undocumented"
+    notes: "The login and user management docs don't describe verifying an email domain."
+  custom_roles:
+    support: "supported"
+    notes: "Admins create roles in the Roles page by choosing permissions by category, and data scopes can further limit which assets a role sees."
+    source: "https://docs.axonius.com/docs/manage-roles"
+    checked: "2026-11-24"
+  group_role_mapping:
+    support: "supported"
+    notes: "Role assignment rules match SAML attributes such as group membership to Axonius roles. Okta needs custom group attributes set to pass groups."
+    source: "https://docs.axonius.com/docs/mapping-roles-in-axonius-to-okta-groups-in-saml"
+    checked: "2026-11-24"
+  session_controls:
+    support: "partial"
+    notes: "With SAML session reauthentication enabled, users must sign in again when a timeout passed from the IdP in a claim is reached. The docs reached don't describe a session length for local logins."
+    source: "https://docs.axonius.com/docs/saml-based-login-settings"
+    checked: "2026-11-24"
+  api_token_controls:
+    support: "supported"
+    notes: "API access goes through service accounts that admins create in System Settings, each with a role that has API access permission and either an API key and secret or OAuth 2.1 client credentials."
+    source: "https://docs.axonius.com/docs/manage-service-accounts"
+    checked: "2026-11-24"
