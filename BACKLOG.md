@@ -147,8 +147,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P2 | Secureframe | `secureframe` | security | https://secureframe.com |
 | P2 | Varonis | `varonis` | security | https://varonis.com |
 | P2 | Veracode | `veracode` | security | https://veracode.com |
-| P2 | Akamai | `akamai` | infrastructure | https://akamai.com |
-| P2 | Atlan | `atlan` | infrastructure | https://atlan.com |
 | P2 | Collibra | `collibra` | infrastructure | https://collibra.com |
 | P2 | Druva | `druva` | infrastructure | https://druva.com |
 | P2 | Fastly | `fastly` | infrastructure | https://fastly.com |

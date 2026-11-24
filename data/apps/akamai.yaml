@@ -1,0 +1,51 @@
+name: "Akamai"
+category: "infrastructure"
+website: "https://akamai.com"
+description: "Akamai provides CDN, security and cloud services. Values here cover how users sign in to Akamai Control Center and how administrators manage them in Identity and Access Management. Akamai's IAM user guide needs a login, so values come from the public Identity and Access Management API reference."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "undocumented"
+    notes: "Akamai's Identity and Access Management guide is behind a login, and the public API reference doesn't describe SSO for Control Center."
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Not covered by the public API reference; the IAM guide needs a login."
+  scim:
+    support: "undocumented"
+    notes: "The public API reference covers creating and updating users by API but doesn't mention SCIM."
+  mfa_enforcement:
+    support: "partial"
+    notes: "Administrators can set each user's multi-factor method to TFA, MFA or NONE and reset it. The public docs describe this per user and don't describe an account-wide requirement."
+    source: "https://techdocs.akamai.com/iam-api/reference/put-ui-identity-additional-authentication"
+    checked: "2026-11-24"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The API reference names TFA and MFA methods but doesn't say whether security keys or passkeys are supported."
+  audit_logs:
+    support: "undocumented"
+    notes: "The public docs reached don't describe an audit log for Control Center user and admin activity. The audit log in Akamai's docs belongs to Identity Cloud, a separate product."
+  jit_provisioning:
+    support: "undocumented"
+    notes: "Not covered by the public docs reached."
+  domain_verification:
+    support: "undocumented"
+    notes: "Not covered by the public docs reached. Email addresses are verified per user with a one-time code."
+  custom_roles:
+    support: "supported"
+    notes: "Besides standard and account roles defined by Akamai, users can create custom roles from grantable roles, and only custom roles can be modified or deleted."
+    source: "https://techdocs.akamai.com/iam-api/reference/get-roles"
+    checked: "2026-11-24"
+  group_role_mapping:
+    support: "undocumented"
+    notes: "Roles are assigned per group in Control Center, but the public docs don't describe assigning them from IdP groups."
+  session_controls:
+    support: "supported"
+    notes: "Administrators set each user's Control Center session timeout from the supported timeout policies, up to the account's Max session timeout set in Identity and Access Management settings."
+    source: "https://techdocs.akamai.com/iam-api/reference/get-common-timeout-policies"
+    checked: "2026-11-24"
+  api_token_controls:
+    support: "supported"
+    notes: "Administrators can list the API clients on an account and lock them so they can't make requests, as well as deactivate or delete their credentials."
+    source: "https://techdocs.akamai.com/iam-api/reference/put-lock-api-client"
+    checked: "2026-11-24"
