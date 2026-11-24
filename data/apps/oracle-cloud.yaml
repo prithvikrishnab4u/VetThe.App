@@ -1,0 +1,70 @@
+name: "Oracle Cloud Infrastructure"
+category: "infrastructure"
+website: "https://oracle.com/cloud"
+description: "Oracle Cloud Infrastructure (OCI) is Oracle's public cloud. Values here cover how users sign in to the OCI Console through OCI IAM identity domains, and how administrators control access with groups and IAM policies. Every tenancy starts with a Free identity domain type."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "free"
+    plan: "Free identity domain type and above"
+    protocols: ["SAML"]
+    notes: "Identity domains can add external SAML identity providers for inbound SSO. Oracle's feature table lists external IdP federation for every domain type, including the Free domain each tenancy gets."
+    source: "https://docs.oracle.com/en-us/iaas/Content/Identity/sku/overview.htm"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Identity domains support IdP routing and sign-on policies, but the pages reached don't describe blocking local password sign-in for all users."
+  scim:
+    support: "supported"
+    notes: "An IdP such as Microsoft Entra ID can provision users and groups to an identity domain through its /admin/v1 SCIM endpoint, using a confidential application's secret token. Oracle's tutorial says removing a user from the Entra app deactivates them in OCI IAM."
+    source: "https://docs.oracle.com/en-us/iaas/Content/Identity/tutorials/azure_ad/lifecycle_azure/01-config-azure-template.htm"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Identity domains are seeded with the Security Policy for OCI Console sign-on policy. Once an administrator activates it, all local users must use MFA to sign in to the Console. Other sign-on policies can also require MFA."
+    source: "https://docs.oracle.com/en-us/iaas/Content/Security/Reference/iam_security_topic-iam_mfa_identity_domains_signon_policy.htm"
+    checked: "2026-11-20"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Administrators can enable the FIDO passkey authenticator so users authenticate with a security key such as a YubiKey or a platform authenticator such as Windows Hello or Touch ID."
+    source: "https://docs.oracle.com/en-us/iaas/Content/Identity/mfa/configure-fido-security.htm"
+    checked: "2026-11-20"
+  audit_logs:
+    support: "supported"
+    tier: "free"
+    plan: "Free identity domain type and above"
+    notes: "Each identity domain has an Audit Log report of system activity such as successful and failed logins and user creation, updates and deletion. Oracle lists auditing and reporting for every domain type."
+    source: "https://docs.oracle.com/en-us/iaas/Content/Identity/reports/understand-types-reports.htm"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "supported"
+    tier: "free"
+    plan: "Free identity domain type and above"
+    notes: "A SAML identity provider can be set to create a new identity domain user, or update an existing one, at sign-in. Oracle's feature table lists JIT provisioning for every domain type."
+    source: "https://docs.oracle.com/en-us/iaas/Content/Identity/identityproviders/add-saml-idp-jit-prov.htm"
+    checked: "2026-11-20"
+  domain_verification:
+    support: "undocumented"
+    notes: "The identity domain pages reached don't describe verifying an email domain or claiming accounts on it."
+  custom_roles:
+    support: "supported"
+    notes: "Access to OCI resources is granted with IAM policies that admins write for groups, scoped to the tenancy or a compartment, so permissions can be tailored beyond the predefined administrator roles."
+    source: "https://docs.oracle.com/en-us/iaas/Content/Identity/policieshow/Policy_Basics.htm"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "supported"
+    notes: "With SAML JIT provisioning, admins can enable group mapping from an IdP group membership attribute, either by explicit mapping of IdP groups to identity domain groups or by name. Policies then grant those groups access."
+    source: "https://docs.oracle.com/en-us/iaas/Content/Identity/identityproviders/add-saml-idp-jit-prov.htm"
+    checked: "2026-11-20"
+  session_controls:
+    support: "supported"
+    notes: "Identity domain administrators set a session duration between 1 and 32,767 minutes. Sessions time out after that regardless of activity."
+    source: "https://docs.oracle.com/en-us/iaas/Content/Identity/sessionsettings/session-limits.htm"
+    checked: "2026-11-20"
+  api_token_controls:
+    support: "supported"
+    notes: "Users can manage their own API keys, and members of the Administrators group (or a group with tenancy permission) can manage all aspects of API keys and other credentials for every user."
+    source: "https://docs.oracle.com/en-us/iaas/Content/Identity/access/working-with-console-passwords-and-API-keys.htm"
+    checked: "2026-11-20"

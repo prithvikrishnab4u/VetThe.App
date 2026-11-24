@@ -1694,6 +1694,90 @@
     "website": "https://www.ashbyhq.com"
   },
   {
+    "_id": "atlassian-statuspage",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-11-20",
+        "notes": "API keys are organization-level and managed only by account owners, who can see, name and delete them. New keys expire after 1 to 365 days.",
+        "source": "https://support.atlassian.com/statuspage/docs/create-and-manage-api-keys/",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Statuspage's security FAQ says it offers no periodic reports on user activity or configuration changes, only some insight into recent activity through the activity log.",
+        "source": "https://support.atlassian.com/statuspage/docs/account-security-information/",
+        "support": "partial"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Role based access control adds three fixed roles per page, and admins choose which pages and roles each team member gets. New roles with custom permissions can't be defined.",
+        "plan": "Business, Corporate, Enterprise or Audience Specific",
+        "source": "https://support.atlassian.com/statuspage/docs/set-up-role-based-access-control/",
+        "support": "partial"
+      },
+      "domain_verification": {
+        "checked": "2026-11-20",
+        "notes": "Statuspage team members use Atlassian accounts. Verifying a domain in Atlassian Administration claims existing accounts on it as managed accounts that admins can edit, deactivate or delete.",
+        "source": "https://support.atlassian.com/user-management/docs/verify-a-domain-to-manage-accounts/",
+        "support": "supported"
+      },
+      "group_role_mapping": {
+        "notes": "Users invited through admin.atlassian.com can be put in a group with Statuspage product admin access, but the docs don't describe mapping IdP groups to Statuspage roles.",
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "notes": "Atlassian creates accounts at first SAML sign-in for linked domains, but the Statuspage docs don't say whether those accounts get Statuspage access.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Statuspage uses Atlassian accounts, and org admins can set two-step verification to Mandatory in an authentication policy for managed accounts.",
+        "source": "https://support.atlassian.com/security-and-access-policies/docs/enforce-two-step-verification/",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-11-20",
+        "notes": "Admins can allow passkeys in an authentication policy so managed Atlassian accounts sign in with a passkey. Blocked by default, and not offered when SSO is enforced.",
+        "source": "https://support.atlassian.com/security-and-access-policies/docs/manage-passkey-authentication/",
+        "support": "supported"
+      },
+      "scim": {
+        "notes": "Atlassian's user provisioning docs describe syncing users and groups to Jira and Confluence but don't say whether provisioned users get Statuspage access.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "checked": "2026-11-20",
+        "notes": "Statuspage's security FAQ says users are logged out automatically after one month and this can't be customized. Removing a team member ends their access immediately.",
+        "source": "https://support.atlassian.com/statuspage/docs/account-security-information/",
+        "support": "partial"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "SAML SSO for Statuspage team members is set up in Atlassian Administration and needs an Atlassian Guard Standard subscription. Statuspage users on plans other than Free and Hobby aren't billed for Guard Standard.",
+        "plan": "Atlassian Guard Standard",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://support.atlassian.com/statuspage/docs/migrate-to-an-atlassian-account-while-using-single-sign-on/",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Statuspage team members sign in with Atlassian accounts, and org admins select Enforce single sign-on in an authentication policy so SSO is required for the managed accounts in that policy.",
+        "plan": "Atlassian Guard Standard",
+        "source": "https://support.atlassian.com/security-and-access-policies/docs/configure-saml-single-sign-on-with-an-identity-provider/",
+        "support": "supported",
+        "tier": "add_on"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Statuspage is Atlassian's status page and incident communication product. Values here cover how team members sign in to the Statuspage management interface with Atlassian accounts, managed in Atlassian Administration, not how subscribers or viewers of private pages authenticate.",
+    "name": "Atlassian Statuspage",
+    "status": "draft",
+    "website": "https://atlassian.com/software/statuspage"
+  },
+  {
     "_id": "atlassianconfluence",
     "capabilities": {
       "api_token_controls": {
@@ -11047,6 +11131,85 @@
     "website": "https://www.helicone.ai"
   },
   {
+    "_id": "heroku",
+    "capabilities": {
+      "api_token_controls": {
+        "notes": "The SSO docs advise removing departing users from the team so their API keys can't reach team resources, but no page reached describes admin controls over users' API keys or OAuth authorizations.",
+        "support": "undocumented"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Enterprise accounts can export a JSON audit trail of selected account events, one archive per calendar month, from the Dashboard or CLI. There's no real-time log or in-app log viewer.",
+        "plan": "Heroku Enterprise",
+        "source": "https://devcenter.heroku.com/articles/audit-trail",
+        "support": "partial"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Team roles (admin, member, viewer, collaborator) are fixed, but admins can grant each user any combination of view, deploy, operate and manage permissions per app. There's no way to define a new named role.",
+        "source": "https://devcenter.heroku.com/articles/app-permissions",
+        "support": "partial"
+      },
+      "domain_verification": {
+        "notes": "The SSO and team docs don't describe verifying an email domain. Domain docs on Dev Center cover custom domains for apps.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "notes": "The SSO docs only describe a default role for new users. They don't describe assigning roles from IdP groups.",
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-20",
+        "notes": "The first time a user signs in through the IdP, Heroku creates their account and gives them the team's default role for new users (member unless an admin changes it).",
+        "plan": "Heroku Teams or Heroku Enterprise",
+        "source": "https://devcenter.heroku.com/articles/using-sso-services-with-heroku",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Heroku requires MFA for every customer who signs in with a Heroku username and password. With SSO, MFA must be enforced at the IdP instead.",
+        "source": "https://devcenter.heroku.com/articles/multi-factor-authentication",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-11-20",
+        "notes": "Users can register any USB, Lightning or NFC security key compatible with FIDO2 WebAuthn, such as a YubiKey or Titan Key, as an MFA method.",
+        "source": "https://devcenter.heroku.com/articles/security-keys",
+        "support": "supported"
+      },
+      "scim": {
+        "notes": "The SSO docs don't mention SCIM. Removing a user in the IdP stops them logging in but doesn't remove the Heroku account; removing an IdP-created account needs Heroku Support.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "notes": "The Dev Center pages reached don't describe admin settings for session length or signing users out.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Team admins can set up SAML 2.0 SSO with an IdP such as Okta, Entra ID, Google Cloud Identity or Salesforce Identity. Heroku says SSO is available only for Heroku Teams and Heroku Enterprise customers.",
+        "plan": "Heroku Teams or Heroku Enterprise",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://devcenter.heroku.com/articles/using-sso-services-with-heroku",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "With SSO enabled, Heroku's own login mechanism is disabled for those users and authentication moves to the IdP. Heroku advises keeping an admin account created directly with Heroku in case the IdP is down.",
+        "plan": "Heroku Teams or Heroku Enterprise",
+        "source": "https://devcenter.heroku.com/articles/using-sso-services-with-heroku",
+        "support": "supported"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Heroku is Salesforce's cloud application platform. Values here cover how users sign in to the Heroku Dashboard and CLI, and how admins of Heroku Teams and Heroku Enterprise accounts manage access.",
+    "name": "Heroku",
+    "status": "draft",
+    "website": "https://heroku.com"
+  },
+  {
     "_id": "hex",
     "capabilities": {
       "api_token_controls": {
@@ -18063,6 +18226,93 @@
     "name": "OpenProject",
     "status": "draft",
     "website": "https://www.openproject.org"
+  },
+  {
+    "_id": "oracle-cloud",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-11-20",
+        "notes": "Users can manage their own API keys, and members of the Administrators group (or a group with tenancy permission) can manage all aspects of API keys and other credentials for every user.",
+        "source": "https://docs.oracle.com/en-us/iaas/Content/Identity/access/working-with-console-passwords-and-API-keys.htm",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-11-20",
+        "notes": "Each identity domain has an Audit Log report of system activity such as successful and failed logins and user creation, updates and deletion. Oracle lists auditing and reporting for every domain type.",
+        "plan": "Free identity domain type and above",
+        "source": "https://docs.oracle.com/en-us/iaas/Content/Identity/reports/understand-types-reports.htm",
+        "support": "supported",
+        "tier": "free"
+      },
+      "custom_roles": {
+        "checked": "2026-11-20",
+        "notes": "Access to OCI resources is granted with IAM policies that admins write for groups, scoped to the tenancy or a compartment, so permissions can be tailored beyond the predefined administrator roles.",
+        "source": "https://docs.oracle.com/en-us/iaas/Content/Identity/policieshow/Policy_Basics.htm",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "notes": "The identity domain pages reached don't describe verifying an email domain or claiming accounts on it.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-20",
+        "notes": "With SAML JIT provisioning, admins can enable group mapping from an IdP group membership attribute, either by explicit mapping of IdP groups to identity domain groups or by name. Policies then grant those groups access.",
+        "source": "https://docs.oracle.com/en-us/iaas/Content/Identity/identityproviders/add-saml-idp-jit-prov.htm",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-20",
+        "notes": "A SAML identity provider can be set to create a new identity domain user, or update an existing one, at sign-in. Oracle's feature table lists JIT provisioning for every domain type.",
+        "plan": "Free identity domain type and above",
+        "source": "https://docs.oracle.com/en-us/iaas/Content/Identity/identityproviders/add-saml-idp-jit-prov.htm",
+        "support": "supported",
+        "tier": "free"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-20",
+        "notes": "Identity domains are seeded with the Security Policy for OCI Console sign-on policy. Once an administrator activates it, all local users must use MFA to sign in to the Console. Other sign-on policies can also require MFA.",
+        "source": "https://docs.oracle.com/en-us/iaas/Content/Security/Reference/iam_security_topic-iam_mfa_identity_domains_signon_policy.htm",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-11-20",
+        "notes": "Administrators can enable the FIDO passkey authenticator so users authenticate with a security key such as a YubiKey or a platform authenticator such as Windows Hello or Touch ID.",
+        "source": "https://docs.oracle.com/en-us/iaas/Content/Identity/mfa/configure-fido-security.htm",
+        "support": "supported"
+      },
+      "scim": {
+        "checked": "2026-11-20",
+        "notes": "An IdP such as Microsoft Entra ID can provision users and groups to an identity domain through its /admin/v1 SCIM endpoint, using a confidential application's secret token. Oracle's tutorial says removing a user from the Entra app deactivates them in OCI IAM.",
+        "source": "https://docs.oracle.com/en-us/iaas/Content/Identity/tutorials/azure_ad/lifecycle_azure/01-config-azure-template.htm",
+        "support": "supported"
+      },
+      "session_controls": {
+        "checked": "2026-11-20",
+        "notes": "Identity domain administrators set a session duration between 1 and 32,767 minutes. Sessions time out after that regardless of activity.",
+        "source": "https://docs.oracle.com/en-us/iaas/Content/Identity/sessionsettings/session-limits.htm",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-11-20",
+        "notes": "Identity domains can add external SAML identity providers for inbound SSO. Oracle's feature table lists external IdP federation for every domain type, including the Free domain each tenancy gets.",
+        "plan": "Free identity domain type and above",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.oracle.com/en-us/iaas/Content/Identity/sku/overview.htm",
+        "support": "supported",
+        "tier": "free"
+      },
+      "sso_enforcement": {
+        "notes": "Identity domains support IdP routing and sign-on policies, but the pages reached don't describe blocking local password sign-in for all users.",
+        "support": "undocumented"
+      }
+    },
+    "category": "infrastructure",
+    "description": "Oracle Cloud Infrastructure (OCI) is Oracle's public cloud. Values here cover how users sign in to the OCI Console through OCI IAM identity domains, and how administrators control access with groups and IAM policies. Every tenancy starts with a Free identity domain type.",
+    "name": "Oracle Cloud Infrastructure",
+    "status": "draft",
+    "website": "https://oracle.com/cloud"
   },
   {
     "_id": "oracle-hcm-cloud",

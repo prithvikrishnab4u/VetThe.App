@@ -152,18 +152,15 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P2 | Veracode | `veracode` | security | https://veracode.com |
 | P2 | Akamai | `akamai` | infrastructure | https://akamai.com |
 | P2 | Atlan | `atlan` | infrastructure | https://atlan.com |
-| P2 | Atlassian Statuspage | `atlassian-statuspage` | infrastructure | https://atlassian.com/software/statuspage |
 | P2 | Collibra | `collibra` | infrastructure | https://collibra.com |
 | P2 | Druva | `druva` | infrastructure | https://druva.com |
 | P2 | Fastly | `fastly` | infrastructure | https://fastly.com |
-| P2 | Heroku | `heroku` | infrastructure | https://heroku.com |
 | P2 | incident.io | `incident-io` | infrastructure | https://incident.io |
 | P2 | Ivanti Neurons for ITSM | `ivanti-neurons-itsm` | infrastructure | https://ivanti.com |
 | P2 | ManageEngine ServiceDesk Plus Cloud | `manageengine-servicedesk-plus` | infrastructure | https://manageengine.com/products/service-desk |
 | P2 | Matillion | `matillion` | infrastructure | https://matillion.com |
 | P2 | Moveworks | `moveworks` | infrastructure | https://moveworks.com |
 | P2 | NinjaOne | `ninjaone` | infrastructure | https://ninjaone.com |
-| P2 | Oracle Cloud Infrastructure | `oracle-cloud` | infrastructure | https://oracle.com/cloud |
 | P2 | Rubrik | `rubrik` | infrastructure | https://rubrik.com |
 | P2 | SolarWinds Service Desk | `solarwinds-service-desk` | infrastructure | https://solarwinds.com/service-desk |
 | P2 | Splunk AppDynamics | `appdynamics` | infrastructure | https://splunk.com/en_us/products/appdynamics.html |
