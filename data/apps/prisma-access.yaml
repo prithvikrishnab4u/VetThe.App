@@ -1,0 +1,60 @@
+name: "Palo Alto Networks Prisma Access"
+category: "security"
+website: "https://paloaltonetworks.com/sase/access"
+description: "Prisma Access is Palo Alto Networks' cloud-delivered SASE service. Values here cover how administrators sign in to and manage it in Strata Cloud Manager, whose users, roles and identity federation are handled by Palo Alto Networks Common Services (Identity & Access), not the remote-user authentication Prisma Access enforces."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "Admins add an identity federation in Common Services with a SAML IdP such as Microsoft AD FS or Entra ID, after proving ownership of the domain with a DNS TXT record. The docs don't name a plan."
+    source: "https://docs.paloaltonetworks.com/common-services/identity-and-access-access-management/manage-third-party-identity-provider-integrations/add-identity-federations"
+    checked: "2026-11-24"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "The identity federation docs don't describe blocking Palo Alto Networks account password sign-in once a federation is added."
+  scim:
+    support: "supported"
+    notes: "Strata Cloud Manager integrates with SCIM providers such as SailPoint, Oracle Cloud Infrastructure and Okta to automate provisioning, deprovisioning and access control. An optional SCIM-only mode allows access changes only through the SCIM provider."
+    source: "https://docs.paloaltonetworks.com/common-services/identity-and-access-access-management/manage-third-party-identity-provider-integrations/scim-config"
+    checked: "2026-11-24"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The Common Services and Strata Cloud Manager docs reached don't describe an admin setting that requires MFA for Palo Alto Networks account sign-in."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The docs reached don't mention security keys or passkeys for administrator sign-in."
+  audit_logs:
+    support: "supported"
+    notes: "System Settings, Audit Logs lists actions taken by Strata Cloud Manager users, with the change, its owner, the date and time and a description, filterable by date, user, category and type of change."
+    source: "https://docs.paloaltonetworks.com/strata-cloud-manager/navigation/system-settings/system-settings-audit-logs"
+    checked: "2026-11-24"
+  jit_provisioning:
+    support: "supported"
+    notes: "When a tenant is mapped to the identity federation for authorization, users' access comes from their SAML sign-in and admins no longer have to add users and access directly in Common Services."
+    source: "https://docs.paloaltonetworks.com/common-services/identity-and-access-access-management/manage-third-party-identity-provider-integrations/map-tenants-for-authorization"
+    checked: "2026-11-24"
+  domain_verification:
+    support: "partial"
+    notes: "Adding an identity federation requires verifying the domain with a DNS TXT record. The docs describe this only as a step for federation, not as a way to take control of accounts on the domain."
+    source: "https://docs.paloaltonetworks.com/common-services/identity-and-access-access-management/manage-third-party-identity-provider-integrations/add-identity-federations"
+    checked: "2026-11-24"
+  custom_roles:
+    support: "supported"
+    notes: "Admins can add custom roles made of chosen permissions and permission sets when the predefined roles aren't granular enough. A custom role is assignable within the tenant hierarchy where it's defined."
+    source: "https://docs.paloaltonetworks.com/common-services/identity-and-access-access-management/manage-identity-and-access/add-custom-roles"
+    checked: "2026-11-24"
+  group_role_mapping:
+    support: "supported"
+    notes: "Federated role mapping assigns Strata Cloud Manager roles from SAML attribute values such as group membership or memberOf. Roles are evaluated each time users authenticate."
+    source: "https://docs.paloaltonetworks.com/common-services/identity-and-access-access-management/manage-third-party-identity-provider-integrations/configure-identity-role-mapping"
+    checked: "2026-11-24"
+  session_controls:
+    support: "undocumented"
+    notes: "The Common Services and Strata Cloud Manager docs reached don't describe admin session length settings for the management console."
+  api_token_controls:
+    support: "supported"
+    notes: "API access uses service accounts that admins add, update and remove in Common Services. Each has a client ID and secret for OAuth 2.0 client credentials and isn't tied to a user; its access depends on the tenant and role it's given."
+    source: "https://docs.paloaltonetworks.com/common-services/identity-and-access-access-management/manage-identity-and-access/add-service-accounts"
+    checked: "2026-11-24"

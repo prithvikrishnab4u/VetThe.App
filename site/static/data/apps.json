@@ -3963,6 +3963,95 @@
     "website": "https://www.chainguard.dev"
   },
   {
+    "_id": "chargebee",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-11-24",
+        "notes": "API keys are site-level and created under Settings, API Keys and Webhooks, as full-access, read-only or publishable keys with limited operations. Keys can be disabled or deleted. They aren't tied to individual users.",
+        "source": "https://www.chargebee.com/docs/billing/2.0/site-configuration/api_keys",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-11-24",
+        "notes": "Changes to customers, subscriptions, plans, add-ons and coupons are recorded as events and activity logs that can be filtered by team member. The docs reached don't describe a log of sign-ins or admin and security changes.",
+        "source": "https://www.chargebee.com/docs/billing/2.0/kb/platform/how-to-find-which-team-member-performed-a-certain-activity-on-chargebee-app",
+        "support": "partial"
+      },
+      "custom_roles": {
+        "checked": "2026-11-24",
+        "notes": "Besides predefined roles, sites can have up to 18 custom roles with chosen privileges across modules such as the product catalog. Chargebee support adds them, and they are available only on selected plans; the docs don't name which.",
+        "source": "https://www.chargebee.com/docs/billing/2.0/site-configuration/account_settings",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "notes": "The team and security docs don't describe verifying an email domain or claiming accounts on it.",
+        "support": "undocumented"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-24",
+        "notes": "With SCIM, Okta groups named CB/<domain>/ROLE/<role_name> are pushed to Chargebee and assign that access role to their members.",
+        "plan": "Enterprise access controls (paid add-on on Enterprise)",
+        "source": "https://www.chargebee.com/docs/billing/2.0/data-privacy-security/scim",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-24",
+        "notes": "The pricing comparison lists JIT provisioning with SAML and SCIM as an Enterprise access control. The SAML docs themselves say a team member's email must already exist in Chargebee.",
+        "plan": "Enterprise access controls (paid add-on on Enterprise)",
+        "source": "https://www.chargebee.com/pricing/",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-24",
+        "notes": "Under Settings, Security, admins can make sign-in with a six-digit authenticator code mandatory for every user, alone or together with mandatory Google sign-in. Enabling SAML turns Chargebee's 2FA off.",
+        "source": "https://www.chargebee.com/docs/billing/2.0/site-configuration/account_settings",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The 2FA docs describe authenticator app codes and recovery codes only, with no mention of security keys or passkeys.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-11-24",
+        "notes": "With SAML on, Chargebee support enables provisioning, and Okta can push new users, profile updates, deactivation, reactivation and groups over SCIM. Okta is the only IdP described.",
+        "plan": "Enterprise access controls (paid add-on on Enterprise)",
+        "source": "https://www.chargebee.com/docs/billing/2.0/data-privacy-security/scim",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "session_controls": {
+        "notes": "The docs reached don't describe admin settings for session length or signing users out.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-24",
+        "notes": "Sites can use SAML 2.0 SSO with Okta, OneLogin or Microsoft Entra ID, one IdP per site. The pricing comparison lists SAML, SCIM and JIT provisioning as Enterprise access controls: not included on Flow, a paid extra on Enterprise.",
+        "plan": "Enterprise access controls (paid add-on on Enterprise)",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://www.chargebee.com/pricing/",
+        "support": "supported",
+        "tier": "add_on"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-24",
+        "notes": "Chargebee says enabling SAML requires all users to sign in only through SAML. Separately, admins can make Google sign-in mandatory for every user.",
+        "plan": "Enterprise access controls (paid add-on on Enterprise)",
+        "source": "https://www.chargebee.com/docs/billing/2.0/data-privacy-security/saml",
+        "support": "supported",
+        "tier": "add_on"
+      }
+    },
+    "category": "finance",
+    "description": "Chargebee is a subscription billing and revenue management platform. Values here cover how team members sign in to a Chargebee Billing site and how site admins manage them.",
+    "name": "Chargebee",
+    "status": "draft",
+    "website": "https://chargebee.com"
+  },
+  {
     "_id": "chatgpt-enterprise",
     "capabilities": {
       "api_token_controls": {
@@ -20217,6 +20306,83 @@
     "website": "https://www.prefect.io"
   },
   {
+    "_id": "prisma-access",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-11-24",
+        "notes": "API access uses service accounts that admins add, update and remove in Common Services. Each has a client ID and secret for OAuth 2.0 client credentials and isn't tied to a user; its access depends on the tenant and role it's given.",
+        "source": "https://docs.paloaltonetworks.com/common-services/identity-and-access-access-management/manage-identity-and-access/add-service-accounts",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-11-24",
+        "notes": "System Settings, Audit Logs lists actions taken by Strata Cloud Manager users, with the change, its owner, the date and time and a description, filterable by date, user, category and type of change.",
+        "source": "https://docs.paloaltonetworks.com/strata-cloud-manager/navigation/system-settings/system-settings-audit-logs",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-24",
+        "notes": "Admins can add custom roles made of chosen permissions and permission sets when the predefined roles aren't granular enough. A custom role is assignable within the tenant hierarchy where it's defined.",
+        "source": "https://docs.paloaltonetworks.com/common-services/identity-and-access-access-management/manage-identity-and-access/add-custom-roles",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "checked": "2026-11-24",
+        "notes": "Adding an identity federation requires verifying the domain with a DNS TXT record. The docs describe this only as a step for federation, not as a way to take control of accounts on the domain.",
+        "source": "https://docs.paloaltonetworks.com/common-services/identity-and-access-access-management/manage-third-party-identity-provider-integrations/add-identity-federations",
+        "support": "partial"
+      },
+      "group_role_mapping": {
+        "checked": "2026-11-24",
+        "notes": "Federated role mapping assigns Strata Cloud Manager roles from SAML attribute values such as group membership or memberOf. Roles are evaluated each time users authenticate.",
+        "source": "https://docs.paloaltonetworks.com/common-services/identity-and-access-access-management/manage-third-party-identity-provider-integrations/configure-identity-role-mapping",
+        "support": "supported"
+      },
+      "jit_provisioning": {
+        "checked": "2026-11-24",
+        "notes": "When a tenant is mapped to the identity federation for authorization, users' access comes from their SAML sign-in and admins no longer have to add users and access directly in Common Services.",
+        "source": "https://docs.paloaltonetworks.com/common-services/identity-and-access-access-management/manage-third-party-identity-provider-integrations/map-tenants-for-authorization",
+        "support": "supported"
+      },
+      "mfa_enforcement": {
+        "notes": "The Common Services and Strata Cloud Manager docs reached don't describe an admin setting that requires MFA for Palo Alto Networks account sign-in.",
+        "support": "undocumented"
+      },
+      "phishing_resistant_mfa": {
+        "notes": "The docs reached don't mention security keys or passkeys for administrator sign-in.",
+        "support": "undocumented"
+      },
+      "scim": {
+        "checked": "2026-11-24",
+        "notes": "Strata Cloud Manager integrates with SCIM providers such as SailPoint, Oracle Cloud Infrastructure and Okta to automate provisioning, deprovisioning and access control. An optional SCIM-only mode allows access changes only through the SCIM provider.",
+        "source": "https://docs.paloaltonetworks.com/common-services/identity-and-access-access-management/manage-third-party-identity-provider-integrations/scim-config",
+        "support": "supported"
+      },
+      "session_controls": {
+        "notes": "The Common Services and Strata Cloud Manager docs reached don't describe admin session length settings for the management console.",
+        "support": "undocumented"
+      },
+      "sso": {
+        "checked": "2026-11-24",
+        "notes": "Admins add an identity federation in Common Services with a SAML IdP such as Microsoft AD FS or Entra ID, after proving ownership of the domain with a DNS TXT record. The docs don't name a plan.",
+        "protocols": [
+          "SAML"
+        ],
+        "source": "https://docs.paloaltonetworks.com/common-services/identity-and-access-access-management/manage-third-party-identity-provider-integrations/add-identity-federations",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "notes": "The identity federation docs don't describe blocking Palo Alto Networks account password sign-in once a federation is added.",
+        "support": "undocumented"
+      }
+    },
+    "category": "security",
+    "description": "Prisma Access is Palo Alto Networks' cloud-delivered SASE service. Values here cover how administrators sign in to and manage it in Strata Cloud Manager, whose users, roles and identity federation are handled by Palo Alto Networks Common Services (Identity & Access), not the remote-user authentication Prisma Access enforces.",
+    "name": "Palo Alto Networks Prisma Access",
+    "status": "draft",
+    "website": "https://paloaltonetworks.com/sase/access"
+  },
+  {
     "_id": "prisma-cloud",
     "capabilities": {
       "api_token_controls": {
@@ -23111,6 +23277,86 @@
     "name": "Sonatype Nexus",
     "status": "draft",
     "website": "https://sonatype.com"
+  },
+  {
+    "_id": "sophos-central",
+    "capabilities": {
+      "api_token_controls": {
+        "checked": "2026-11-24",
+        "notes": "Only Super Admins can add and manage API credentials, and each credential is given a role that limits what it can do. Legacy SIEM API tokens can still be viewed but no longer created.",
+        "source": "https://docs.sophos.com/central/customer/help/en-us/ManageYourProducts/GlobalSettings/AccessControl/APICredentials/",
+        "support": "supported"
+      },
+      "audit_logs": {
+        "checked": "2026-11-24",
+        "notes": "The Audit Log report records monitored activity, including sign-ins and changes, with the admin account, item type, item changed and a description. It shows 7 days by default, up to 90 days, and can be exported.",
+        "retention": "90 days in the console",
+        "source": "https://docs.sophos.com/central/customer/help/en-us/ManageYourProducts/LogsReports/Logs/AuditLogs/",
+        "support": "supported"
+      },
+      "custom_roles": {
+        "checked": "2026-11-24",
+        "notes": "Super Admins can add custom roles based on a predefined role, limited to specific products and to full or read-only access per product.",
+        "source": "https://docs.sophos.com/central/customer/help/en-us/ManageYourProducts/GlobalSettings/AccessControl/Roles/AddCustomRole/",
+        "support": "supported"
+      },
+      "domain_verification": {
+        "checked": "2026-11-24",
+        "notes": "Admins verify domains with a DNS TXT record, which is required for federated sign-in and Phish Threat. Verification routes sign-in to the IdP; the docs don't describe taking over accounts on the domain.",
+        "source": "https://docs.sophos.com/central/customer/help/en-us/ManageYourProducts/GlobalSettings/Platform/FederatedDomain/",
+        "support": "partial"
+      },
+      "group_role_mapping": {
+        "notes": "The role and federated sign-in docs reached don't describe assigning admin roles from IdP groups.",
+        "support": "undocumented"
+      },
+      "jit_provisioning": {
+        "notes": "The federated sign-in docs say administrators and users must already be assigned to a domain and an identity provider. They don't describe creating accounts at first sign-in.",
+        "support": "undocumented"
+      },
+      "mfa_enforcement": {
+        "checked": "2026-11-24",
+        "notes": "MFA is mandatory: administrators who sign in with a username and password must use a TOTP authenticator app, and must register at least two MFA methods. Admins can also extend MFA prompts to managed users and require re-authentication before high-risk actions.",
+        "source": "https://docs.sophos.com/central/customer/help/en-us/ManageYourAccount/ModernAuthentication/ModernAuthAbout/",
+        "support": "supported"
+      },
+      "phishing_resistant_mfa": {
+        "checked": "2026-11-24",
+        "notes": "Administrators can sign in with a passkey stored in a browser, operating system or credential manager, or on a USB security key. Sophos recommends passkeys.",
+        "source": "https://docs.sophos.com/central/customer/help/en-us/ManageYourAccount/ModernAuthentication/ModernAuthPasskeys/",
+        "support": "supported"
+      },
+      "scim": {
+        "notes": "The console syncs users from Active Directory or Entra ID through its directory service, but the docs reached don't describe SCIM provisioning of administrators.",
+        "support": "undocumented"
+      },
+      "session_controls": {
+        "checked": "2026-11-24",
+        "notes": "Admins set a session idle timeout of 1 to 23 hours for administrator sessions under Sign-in and Identity, Connected Sessions.",
+        "source": "https://docs.sophos.com/central/customer/help/en-us/ManageYourProducts/GlobalSettings/AccessControl/SignIn/SessionIdleTimeout/",
+        "support": "supported"
+      },
+      "sso": {
+        "checked": "2026-11-24",
+        "notes": "Administrators and users can use federated sign-in through Microsoft Entra ID, an OpenID Connect provider or Microsoft AD FS, after the domain is verified. Sign-in is SP-initiated. The docs don't name a plan.",
+        "protocols": [
+          "OIDC"
+        ],
+        "source": "https://docs.sophos.com/central/customer/help/en-us/ManageYourProducts/GlobalSettings/AccessControl/SignIn/FederatedIDP/",
+        "support": "supported"
+      },
+      "sso_enforcement": {
+        "checked": "2026-11-24",
+        "notes": "Admins choose either federated sign-in only, or a choice between federated sign-in and Sophos email and password. The docs note Entra ID users still see a screen offering both, even with federated sign-in only.",
+        "source": "https://docs.sophos.com/central/customer/help/en-us/ManageYourProducts/GlobalSettings/AccessControl/SignIn/SophosSignin/SigninOptions/",
+        "support": "supported"
+      }
+    },
+    "category": "security",
+    "description": "Sophos Central is Sophos's cloud console for managing its endpoint, server, email and network security products; its docs now call the admin console Sophos Fusion Admin. Values here cover how administrators sign in to and manage the console, not the protection it applies to managed devices.",
+    "name": "Sophos Central",
+    "status": "draft",
+    "website": "https://sophos.com"
   },
   {
     "_id": "sourcegraph",

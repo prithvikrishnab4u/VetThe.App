@@ -124,7 +124,6 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P2 | Anaplan | `anaplan` | finance | https://anaplan.com |
 | P2 | Avalara | `avalara` | finance | https://avalara.com |
 | P2 | BlackLine | `blackline` | finance | https://blackline.com |
-| P2 | Chargebee | `chargebee` | finance | https://chargebee.com |
 | P2 | FloQast | `floqast` | finance | https://floqast.com |
 | P2 | Pigment | `pigment` | finance | https://pigment.com |
 | P2 | Procurify | `procurify` | finance | https://procurify.com |
@@ -145,9 +144,7 @@ The site is about IAM, so the identity vendors themselves come before everything
 | P2 | Lacework FortiCNAPP | `lacework` | security | https://fortinet.com/products/forticnapp |
 | P2 | OneTrust | `onetrust` | security | https://onetrust.com |
 | P2 | Orca Security | `orca-security` | security | https://orca.security |
-| P2 | Palo Alto Networks Prisma Access | `prisma-access` | security | https://paloaltonetworks.com/sase/access |
 | P2 | Secureframe | `secureframe` | security | https://secureframe.com |
-| P2 | Sophos Central | `sophos-central` | security | https://sophos.com |
 | P2 | Varonis | `varonis` | security | https://varonis.com |
 | P2 | Veracode | `veracode` | security | https://veracode.com |
 | P2 | Akamai | `akamai` | infrastructure | https://akamai.com |
