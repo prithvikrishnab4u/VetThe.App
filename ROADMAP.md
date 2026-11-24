@@ -2,7 +2,7 @@
 
 Running log of what's done and what's next. **Update this file at the end of every work session**: tick items off, add what you found, and refresh the numbers with `.venv/bin/python scripts/validate.py`.
 
-_Last updated: 2026-11-20_
+_Last updated: 2026-11-24_
 
 ## Remind the user
 
@@ -14,25 +14,39 @@ _Last updated: 2026-11-20_
 
 ## Where the data stands
 
-370 apps: 79 `published`, 291 `draft`. 4,440 data points:
+385 apps: 79 `published`, 306 `draft`. 4,620 data points:
 
 | | Count |
 |---|---|
-| Verified (has `source` + `checked`) | 2,047 |
+| Verified (has `source` + `checked`) | 2,165 |
 | Unverified (a value with no source, carried over from the old dataset) | 0 |
-| Not documented (checked, the vendor says nothing) | 1,755 |
+| Not documented (checked, the vendor says nothing) | 1,817 |
 | Not researched | 638 |
 
 ## Done
+
+- [x] **15 apps from BACKLOG P2 plus a Google Cloud refill, read from their own docs hosts (2026-11-20 to 11-24, fourth session).** Added as `draft`: apigee, customer-io, digitalocean, heroku, atlassian-statuspage, oracle-cloud, chargebee, sophos-central, prisma-access, akamai, atlan, twilio-flex, zoho-desk, axonius, sketch. All 12 capabilities filled per app, every value sourced or `undocumented`, every cited URL checked to return 200. Pages were read with curl; Customer.io, DigitalOcean, Chargebee, Atlan, Axonius, Twilio and Akamai serve Markdown twins (`.md`, `index.html.md` or `llms.txt`), which made them quick.
+  - **Google Cloud** now reads docs.cloud.google.com: SSO enforcement (Cloud Identity SAML profiles, super admins can bypass), domain verification, group → role mapping and session duration (Workforce Identity Federation pools) and API key controls are sourced. SCIM stays `undocumented` (Entra provisioning into Cloud Identity isn't described as SCIM; WIF's SCIM covers only Gemini Enterprise and Looker), and JIT stays `undocumented`.
+  - **Which product each file covers.** Apigee is Apigee X on Google Cloud (Cloud IAM roles, WIF sign-in). Oracle Cloud is the OCI Console through IAM identity domains. Statuspage is the management interface with Atlassian accounts (Guard Standard for SAML, free for Statuspage users on paid plans). Prisma Access is Strata Cloud Manager through Palo Alto Common Services. Sophos Central's docs now call the console Sophos Fusion Admin. Twilio Flex covers Flex UI plus Twilio Console.
+  - **Tiers set only where a vendor page names the plan and its place in the lineup:** Oracle (Free identity domain type: SSO, JIT, audit), Statuspage (Guard add-on), Chargebee (SAML, SCIM, JIT as a paid add-on on Enterprise, from its pricing comparison), Zoho Desk (Standard for SSO and profiles, Enterprise for audit log, all self-serve), Sketch (Professional self-serve for SSO and JIT; Enterprise through sales for SCIM).
+  - **Thin on purpose:** Akamai's IAM user guide (techdocs.akamai.com/iam) is login-gated, so its file comes from the public IAM API reference: custom roles, session timeouts and API client locking are sourced, SSO/SCIM/audit are `undocumented`. Zoho Desk's help moved to help.zoho.com (not allowed), so it comes from the edition comparison page only.
+  - Calls worth knowing: Heroku requires MFA for everyone and its audit trail is a monthly JSON export on Enterprise (`partial`). Customer.io says outright it has no JIT and no IdP-driven roles (`not_supported`). Statuspage's own security FAQ says session length can't be customized (`partial`). Twilio Flex UI roles are a fixed list (`not_supported`). Sophos and Prisma Access verify domains only to route federated sign-in (`partial`).
+  - **Skipped (not added):**
+    - **fastly:** docs.fastly.com now holds only product descriptions; every guide redirects to www.fastly.com/documentation, which was not allowed.
+    - **incident-io:** help.incident.io redirects to docs.incident.io, which was not allowed.
+    - **cortex-xdr:** docs.paloaltonetworks.com/cortex redirects to docs-cortex.paloaltonetworks.com, which was not allowed.
+    - **matillion:** Data Productivity Cloud docs redirect to docs.maia.ai, which was not allowed. Only the self-hosted Matillion ETL docs remain on docs.matillion.com.
+    - **zuora:** knowledgecenter.zuora.com redirects to docs.zuora.com, which was not allowed.
+    - **framer:** framer.com redirects every page to www.framer.com, which was not allowed.
 
 - [x] **20 apps from BACKLOG P1/P2, read from their own docs hosts (2026-11-20, third session).** Added as `draft`: conductorone (now C1, www.c1.ai), omada, strongdm, frontegg, hypr, transmit-security, ibm-verify, thales-sta, dynatrace, google-cloud, jira-service-management, netlify, algolia, sonarqube-cloud, sonatype, hex, sigma-computing, thoughtspot, qlik-cloud, devin. All 12 capabilities filled per app, every value sourced or `undocumented`. Report-only agents wrote the files and the main session reviewed each value before committing. Tiers are set only where a cited vendor page names the plan and its place in the lineup: SonarQube Cloud (Enterprise, from its docs plans page), Jira Service Management (Atlassian Guard is an add-on; 2SV, passkeys, domain verification and idle timeout are on all plans), Netlify (pages labelled "Enterprise plans"), and a few on Google Cloud, Algolia and Devin.
   - **Which product each identity file describes.** C1 is its tenant web app, Omada is the Identity Portal plus the Cloud Management Portal, StrongDM is the Admin UI (StrongDM is now part of Delinea; kept as its own row because its docs stand alone), Frontegg is the Frontegg Portal, HYPR is the Control Center, Transmit is the Mosaic Admin Portal, IBM Verify is the SaaS admin console, and Thales STA is the Token/Access Management operator consoles. **Frontegg and Thales STA are thin on purpose:** almost all their docs describe what they sell, so most values are `undocumented`. STA operators always sign in with email plus an STA token passcode, but no page frames that as an MFA setting, so `mfa_enforcement` stays `undocumented`.
   - Fixed in review: Google Cloud JIT and group mapping (product page didn't say either; now `undocumented`), Sonatype tiers removed (no page says whether Pro is self-serve), ThoughtSpot custom roles plan removed (cited page didn't name it), Omada audit logs down to `partial` (logon event stream, no admin log viewer described), JSM custom roles re-sourced to the page that names the Free-site limit, Netlify JIT and Algolia API tokens to `undocumented`, IBM Verify audit retention removed (it came from an uncited page).
   - Calls worth knowing: Dynatrace session length is fixed system-wide (`not_supported`). Qlik says outright that MFA can't be made mandatory with Qlik Account (`not_supported`). Hex has six fixed roles and HYPR five (`not_supported` custom roles). Hex SSO is OIDC only.
-  - **Google Cloud is thin:** every cloud.google.com/*/docs URL now 301s to **docs.cloud.google.com**, which wasn't allowed, so it is sourced from product pages only. Allowing that host would fill SSO enforcement, SCIM, domain verification, session controls and API keys.
+  - **Google Cloud is thin:** every cloud.google.com/*/docs URL now 301s to **docs.cloud.google.com**, which wasn't allowed, so it is sourced from product pages only. Filled from that host in the fourth session (see above).
   - **Hosts not reachable this session:** hex.tech (pricing, so no Hex tiers), www.netlify.com, sonarsource.com, transmitsecurity.com, support.algolia.com (Algolia's SSO/team docs likely live there, so Algolia is mostly `undocumented`), developers.thoughtspot.com.
   - **Skipped (not added):**
-    - **apigee:** its docs under cloud.google.com/apigee/docs redirect to docs.cloud.google.com, which was not allowed, and the product and pricing pages say nothing about admin sign-in. Retry with that host allowed.
+    - **apigee:** added on 2026-11-20 in the fourth session, once docs.cloud.google.com was allowed.
 
 - [x] **14 identity vendors from BACKLOG P1, read from their own docs hosts (2026-11-20, second session).** Added as `draft`, `category: security`: opal, p0-security, apono, britive, workos, stytch, aembit, push-security, beyond-identity, ping-identity, sailpoint, delinea, beyondtrust, netwrix. All 12 capabilities filled per app, every value sourced or `undocumented`, and every cited URL checked to return 200. **No tiers at all**: none of these docs pages name a plan, and the vendors' pricing pages weren't on the allowed hosts. Two values carry a `plan` without a tier because the docs name a feature gate but not a plan: Aembit Enforce SSO ("Identity Providers feature", marked a paid feature) and SailPoint custom roles ("Custom User Levels").
   - **Which product each file describes.** These are identity products, so every value is about how the customer's own admins sign in to and run the product, not what it sells. Ping is the PingOne admin console. SailPoint is its SaaS tenant, now documented as Human Fabric (formerly Identity Security Cloud). Delinea is the Delinea Platform, BeyondTrust is the Pathfinder cloud platform, Netwrix is 1Secure (its SaaS product), and Beyond Identity is the Secure Access console. WorkOS and Stytch are their own dashboards, not the SSO/SCIM/MFA they sell to developers. That trap is the main thing to watch on any recheck: Stytch's docs are almost all about the customer's app, so its file is mostly `undocumented`.
