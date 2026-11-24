@@ -1,0 +1,61 @@
+name: "Honeycomb"
+category: "infrastructure"
+website: "https://www.honeycomb.io"
+description: "Honeycomb is an observability platform for querying traces, logs and metrics from production systems."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Pro"
+    protocols: ["SAML"]
+    notes: "Team members can sign in with Google SSO or a SAML 2.0 identity provider such as Okta or Entra ID. Available on Pro and Enterprise."
+    source: "https://docs.honeycomb.io/configure/teams/configure-access"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Pro"
+    notes: "Team Owners can require that team members authenticate through the SAML identity provider (Make team SSO-only)."
+    source: "https://docs.honeycomb.io/configure/teams/configure-access/sso-okta-saml"
+    checked: "2026-11-20"
+  scim:
+    support: "undocumented"
+    notes: "The docs don't describe SCIM provisioning."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The docs don't describe requiring MFA for team members."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The docs don't describe signing in with security keys or passkeys."
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    retention: "60 days (CSV download)"
+    notes: "The Activity Log tracks configuration changes, logins and sessions, API keys and other team activity, and can be queried in Honeycomb or downloaded as a CSV."
+    source: "https://docs.honeycomb.io/configure/teams/investigate-activity"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "supported"
+    tier: "paid"
+    plan: "Pro"
+    notes: "A user without a Honeycomb account gets one created during their first SAML login."
+    source: "https://docs.honeycomb.io/get-started/honeycomb/log-in-with-saml-sso"
+    checked: "2026-11-20"
+  domain_verification:
+    support: "undocumented"
+    notes: "Team Owners can set allowed email domains for joining, but that is an allowlist; the docs don't describe verifying domain ownership."
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs describe three roles (Team Owner, Team Member, Read-Only) and don't mention custom roles."
+  group_role_mapping:
+    support: "undocumented"
+    notes: "The docs don't describe assigning roles from identity provider groups."
+  session_controls:
+    support: "undocumented"
+    notes: "The docs don't describe admin controls over session length or signing users out."
+  api_token_controls:
+    support: "undocumented"
+    notes: "Management API keys manage the team's environment API keys; the docs don't describe controls over tokens individual users create."

@@ -1,0 +1,72 @@
+name: "Chargebee"
+category: "finance"
+website: "https://chargebee.com"
+description: "Chargebee is a subscription billing and revenue management platform. Values here cover how team members sign in to a Chargebee Billing site and how site admins manage them."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "add_on"
+    plan: "Enterprise access controls (paid add-on on Enterprise)"
+    protocols: ["SAML"]
+    notes: "Sites can use SAML 2.0 SSO with Okta, OneLogin or Microsoft Entra ID, one IdP per site. The pricing comparison lists SAML, SCIM and JIT provisioning as Enterprise access controls: not included on Flow, a paid extra on Enterprise."
+    source: "https://www.chargebee.com/pricing/"
+    checked: "2026-11-24"
+  sso_enforcement:
+    support: "supported"
+    tier: "add_on"
+    plan: "Enterprise access controls (paid add-on on Enterprise)"
+    notes: "Chargebee says enabling SAML requires all users to sign in only through SAML. Separately, admins can make Google sign-in mandatory for every user."
+    source: "https://www.chargebee.com/docs/billing/2.0/data-privacy-security/saml"
+    checked: "2026-11-24"
+  scim:
+    support: "supported"
+    tier: "add_on"
+    plan: "Enterprise access controls (paid add-on on Enterprise)"
+    notes: "With SAML on, Chargebee support enables provisioning, and Okta can push new users, profile updates, deactivation, reactivation and groups over SCIM. Okta is the only IdP described."
+    source: "https://www.chargebee.com/docs/billing/2.0/data-privacy-security/scim"
+    checked: "2026-11-24"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Under Settings, Security, admins can make sign-in with a six-digit authenticator code mandatory for every user, alone or together with mandatory Google sign-in. Enabling SAML turns Chargebee's 2FA off."
+    source: "https://www.chargebee.com/docs/billing/2.0/site-configuration/account_settings"
+    checked: "2026-11-24"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The 2FA docs describe authenticator app codes and recovery codes only, with no mention of security keys or passkeys."
+  audit_logs:
+    support: "partial"
+    notes: "Changes to customers, subscriptions, plans, add-ons and coupons are recorded as events and activity logs that can be filtered by team member. The docs reached don't describe a log of sign-ins or admin and security changes."
+    source: "https://www.chargebee.com/docs/billing/2.0/kb/platform/how-to-find-which-team-member-performed-a-certain-activity-on-chargebee-app"
+    checked: "2026-11-24"
+  jit_provisioning:
+    support: "supported"
+    tier: "add_on"
+    plan: "Enterprise access controls (paid add-on on Enterprise)"
+    notes: "The pricing comparison lists JIT provisioning with SAML and SCIM as an Enterprise access control. The SAML docs themselves say a team member's email must already exist in Chargebee."
+    source: "https://www.chargebee.com/pricing/"
+    checked: "2026-11-24"
+  domain_verification:
+    support: "undocumented"
+    notes: "The team and security docs don't describe verifying an email domain or claiming accounts on it."
+  custom_roles:
+    support: "supported"
+    notes: "Besides predefined roles, sites can have up to 18 custom roles with chosen privileges across modules such as the product catalog. Chargebee support adds them, and they are available only on selected plans; the docs don't name which."
+    source: "https://www.chargebee.com/docs/billing/2.0/site-configuration/account_settings"
+    checked: "2026-11-24"
+  group_role_mapping:
+    support: "supported"
+    tier: "add_on"
+    plan: "Enterprise access controls (paid add-on on Enterprise)"
+    notes: "With SCIM, Okta groups named CB/<domain>/ROLE/<role_name> are pushed to Chargebee and assign that access role to their members."
+    source: "https://www.chargebee.com/docs/billing/2.0/data-privacy-security/scim"
+    checked: "2026-11-24"
+  session_controls:
+    support: "undocumented"
+    notes: "The docs reached don't describe admin settings for session length or signing users out."
+  api_token_controls:
+    support: "supported"
+    notes: "API keys are site-level and created under Settings, API Keys and Webhooks, as full-access, read-only or publishable keys with limited operations. Keys can be disabled or deleted. They aren't tied to individual users."
+    source: "https://www.chargebee.com/docs/billing/2.0/site-configuration/api_keys"
+    checked: "2026-11-24"

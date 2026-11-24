@@ -1,0 +1,60 @@
+name: "ToolJet"
+category: "development"
+website: "https://www.tooljet.ai"
+description: "Low-code platform for building internal tools and business apps, available as ToolJet Cloud or self-hosted."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Paid plans"
+    protocols: ["SAML", "OIDC"]
+    notes: "Workspaces can use Google, GitHub, OpenID Connect, LDAP, and SAML. The OIDC page is marked as a paid feature. The SAML page doesn't name a plan."
+    source: "https://docs.tooljet.ai/docs/user-management/sso/oidc/setup"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    notes: "Admins can turn off password login in workspace login settings. With one SSO provider and password login off, Automatic SSO Login skips the login page."
+    source: "https://docs.tooljet.ai/docs/user-management/authentication/cloud-login"
+    checked: "2026-09-27"
+  scim:
+    support: "undocumented"
+    notes: "No SCIM docs found. Group sync happens at login through OIDC."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "2FA is mentioned, but the docs don't describe admins requiring it."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "Paid plans"
+    notes: "Paid feature. Records user, app, query, and group permission events with IP address, and can be filtered. Self-hosted instances can also write a daily-rotated log file."
+    source: "https://docs.tooljet.ai/docs/security/audit-logs"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "The SAML page says both that unknown users get an error and that first-time users go to onboarding. Sign-up without invitation is a separate setting."
+  domain_verification:
+    support: "undocumented"
+    notes: "Allowed Domains limits sign-up and login by email domain, but no verification step is described."
+  custom_roles:
+    support: "supported"
+    notes: "Besides the Admin, Builder, and End-user roles, admins can create custom groups with their own permissions and per-app or per-data-source access."
+    source: "https://docs.tooljet.ai/docs/user-management/role-based-access/custom-groups"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "supported"
+    tier: "paid"
+    plan: "Paid plans"
+    notes: "Paid feature. OIDC group sync maps IdP groups to ToolJet roles and custom groups at each login, per workspace."
+    source: "https://docs.tooljet.ai/docs/user-management/group-sync/oidc"
+    checked: "2026-09-27"
+  session_controls:
+    support: "partial"
+    notes: "Self-hosted only: the USER_SESSION_EXPIRY environment variable sets session length (default 10 days). No setting is documented for ToolJet Cloud."
+    source: "https://docs.tooljet.ai/docs/setup/env-vars"
+    checked: "2026-09-27"
+  api_token_controls:
+    support: "undocumented"

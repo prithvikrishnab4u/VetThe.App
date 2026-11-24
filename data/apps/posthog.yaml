@@ -1,0 +1,81 @@
+name: "PostHog"
+category: "development"
+website: "https://posthog.com"
+description: "PostHog is a product analytics platform with session replay, feature flags, experiments, and surveys."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "add_on"
+    plan: "Scale or Enterprise platform package"
+    protocols: ["SAML", "OIDC"]
+    notes: "SAML and OIDC need a platform package that includes them (Scale or Enterprise). Google, GitHub, and GitLab social login are also available."
+    source: "https://posthog.com/docs/settings/authentication/saml"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    tier: "add_on"
+    plan: "Boost, Scale, or Enterprise platform package"
+    notes: "SSO enforcement for a verified domain blocks password logins and password resets for those users, owners included."
+    source: "https://posthog.com/docs/settings/authentication/sso"
+    checked: "2026-09-27"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM creates users with their mapped roles, updates matching users, and deactivates users removed in the IdP."
+    source: "https://posthog.com/docs/settings/authentication/scim"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Org admins and owners can change 2FA enforcement in the authentication settings. The page doesn't name a plan for it."
+    source: "https://posthog.com/docs/settings/access-control"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Users can add passkeys and use them for 2FA. The page doesn't name a plan for it."
+    source: "https://posthog.com/docs/settings/account-settings"
+    checked: "2026-09-27"
+  audit_logs:
+    support: "supported"
+    tier: "add_on"
+    plan: "Scale or Enterprise platform package"
+    retention: "Depends on platform package"
+    notes: "Activity logs record changes across the organization, including auth settings, and are available on the Scale and Enterprise packages."
+    source: "https://posthog.com/docs/settings/activity-logs"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    tier: "add_on"
+    plan: "Boost, Scale, or Enterprise platform package"
+    notes: "Users signing in with an email on a verified domain get an account created automatically."
+    source: "https://posthog.com/docs/settings/authentication/sso"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "supported"
+    notes: "Authentication domains are verified with a _posthog-challenge DNS TXT record."
+    source: "https://posthog.com/docs/settings/authentication/sso"
+    checked: "2026-09-27"
+  custom_roles:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Roles can be created on any plan, but they only work for access control (project and resource permissions) on Enterprise."
+    source: "https://posthog.com/docs/settings/access-control"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "With SCIM, IdP roles or pushed groups are mapped to PostHog roles by name."
+    source: "https://posthog.com/docs/settings/authentication/scim"
+    checked: "2026-09-27"
+  session_controls:
+    support: "undocumented"
+    notes: "The docs list events that sign users out of other sessions but no admin session settings."
+  api_token_controls:
+    support: "supported"
+    notes: "Personal API keys can be scoped, and org admins and owners can see every key that reaches the org, with scopes and last use. This needs a plan with organization security settings, which the page doesn't name."
+    source: "https://posthog.com/docs/api/personal-api-keys"
+    checked: "2026-09-27"

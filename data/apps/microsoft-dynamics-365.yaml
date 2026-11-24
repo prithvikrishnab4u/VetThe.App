@@ -7,14 +7,14 @@ status: "draft"
 capabilities:
   sso:
     support: "supported"
-    tier: "free"
+    tier: "paid"
     protocols: ["SAML", "OIDC"]
     notes: "Dynamics 365 apps are Microsoft Entra ID (Azure AD) enterprise applications; sign-in is exclusively via Microsoft Entra ID, which supports SAML and OpenID Connect, included with the underlying tenant at no extra cost."
     source: "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/add-application-portal-setup-sso"
     checked: "2026-09-22"
   sso_enforcement:
     support: "supported"
-    tier: "free"
+    tier: "paid"
     notes: "Dynamics 365 has no separate local password; all sign-in goes through the organization's Microsoft Entra ID tenant, so SSO is inherently required rather than optional."
     source: "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/add-application-portal-setup-sso"
     checked: "2026-09-22"
@@ -30,13 +30,13 @@ capabilities:
     checked: "2026-09-22"
   phishing_resistant_mfa:
     support: "supported"
-    tier: "free"
+    tier: "paid"
     notes: "Microsoft Entra ID supports FIDO2 security keys, Windows Hello for Business, and passkeys as phishing-resistant sign-in methods for the tenant Dynamics 365 users sign in through, at no extra licensing cost."
     source: "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-passkeys-fido2"
     checked: "2026-09-22"
   audit_logs:
     support: "supported"
-    tier: "free"
+    tier: "paid"
     retention: "Forever (default); configurable up to 24,855 days"
     notes: "Dataverse auditing logs record create/update/delete operations, security role changes, and user access (sign-in) with an admin-configurable retention period."
     source: "https://learn.microsoft.com/en-us/power-platform/admin/manage-dataverse-auditing"

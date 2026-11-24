@@ -1,0 +1,59 @@
+name: "HCP Vault Dedicated"
+category: "security"
+website: "https://www.hashicorp.com/products/vault"
+description: "HCP Vault Dedicated is HashiCorp's managed Vault service for secrets management, run on the HashiCorp Cloud Platform."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "Access is managed through the HashiCorp Cloud Platform (HCP) organization, which supports SAML 2.0 and OIDC SSO with providers such as Okta, Entra ID, Ping and Google. No plan is named."
+    source: "https://developer.hashicorp.com/hcp/docs/hcp/iam/sso"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "partial"
+    notes: "Once SSO is on, invitations stop and new users must come through the IdP, and existing SAML users on the SSO domain must use the SSO link. Existing personal accounts keep access until an admin removes them, and the owner can still use their original non-SSO login."
+    source: "https://developer.hashicorp.com/hcp/docs/hcp/iam/sso/manage"
+    checked: "2026-09-27"
+  scim:
+    support: "supported"
+    notes: "With SCIM, the IdP creates, updates and deactivates or deletes users, and manages groups and group membership in HCP. SAML SSO is required first. Entra ID and Okta have HCP guides."
+    source: "https://developer.hashicorp.com/hcp/docs/hcp/iam/scim"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "HCP offers optional per-user OTP MFA for email sign-in, set up in each user's account settings. The docs don't describe a way for admins to require it."
+  phishing_resistant_mfa:
+    support: "not_supported"
+    notes: "HCP offers one MFA method, a one-time password from an authenticator app, and only for email sign-in."
+    source: "https://developer.hashicorp.com/hcp/docs/hcp/iam/mfa"
+    checked: "2026-09-27"
+  audit_logs:
+    support: "supported"
+    notes: "HCP produces platform audit logs (such as sign-ins and project creation) and product audit logs, which you stream to a SIEM such as Splunk, Datadog or CloudWatch rather than view in HCP."
+    source: "https://developer.hashicorp.com/hcp/docs/hcp/audit-log"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    notes: "Users with an email on a configured SSO domain can sign up as new SSO users and get the organization's default role."
+    source: "https://developer.hashicorp.com/hcp/docs/hcp/iam/sso/manage"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "supported"
+    notes: "You verify each email domain with a DNS TXT record before setting up SSO, and a domain can only be used by one HCP organization."
+    source: "https://developer.hashicorp.com/hcp/docs/hcp/iam/sso/setup/saml"
+    checked: "2026-09-27"
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs list built-in roles (Owner, Admin, Contributor, Viewer, Browser and service-specific roles) and don't mention custom roles."
+  group_role_mapping:
+    support: "supported"
+    notes: "Groups and their members can be synced from the IdP over SCIM, and admins assign roles to groups per project."
+    source: "https://developer.hashicorp.com/hcp/docs/hcp/iam/groups"
+    checked: "2026-09-27"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"
+    notes: "API access uses service principals and keys managed by admins; controls over user-created tokens aren't described."

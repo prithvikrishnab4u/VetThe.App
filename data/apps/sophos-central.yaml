@@ -1,0 +1,63 @@
+name: "Sophos Central"
+category: "security"
+website: "https://sophos.com"
+description: "Sophos Central is Sophos's cloud console for managing its endpoint, server, email and network security products; its docs now call the admin console Sophos Fusion Admin. Values here cover how administrators sign in to and manage the console, not the protection it applies to managed devices."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["OIDC"]
+    notes: "Administrators and users can use federated sign-in through Microsoft Entra ID, an OpenID Connect provider or Microsoft AD FS, after the domain is verified. Sign-in is SP-initiated. The docs don't name a plan."
+    source: "https://docs.sophos.com/central/customer/help/en-us/ManageYourProducts/GlobalSettings/AccessControl/SignIn/FederatedIDP/"
+    checked: "2026-11-24"
+  sso_enforcement:
+    support: "supported"
+    notes: "Admins choose either federated sign-in only, or a choice between federated sign-in and Sophos email and password. The docs note Entra ID users still see a screen offering both, even with federated sign-in only."
+    source: "https://docs.sophos.com/central/customer/help/en-us/ManageYourProducts/GlobalSettings/AccessControl/SignIn/SophosSignin/SigninOptions/"
+    checked: "2026-11-24"
+  scim:
+    support: "undocumented"
+    notes: "The console syncs users from Active Directory or Entra ID through its directory service, but the docs reached don't describe SCIM provisioning of administrators."
+  mfa_enforcement:
+    support: "supported"
+    notes: "MFA is mandatory: administrators who sign in with a username and password must use a TOTP authenticator app, and must register at least two MFA methods. Admins can also extend MFA prompts to managed users and require re-authentication before high-risk actions."
+    source: "https://docs.sophos.com/central/customer/help/en-us/ManageYourAccount/ModernAuthentication/ModernAuthAbout/"
+    checked: "2026-11-24"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Administrators can sign in with a passkey stored in a browser, operating system or credential manager, or on a USB security key. Sophos recommends passkeys."
+    source: "https://docs.sophos.com/central/customer/help/en-us/ManageYourAccount/ModernAuthentication/ModernAuthPasskeys/"
+    checked: "2026-11-24"
+  audit_logs:
+    support: "supported"
+    retention: "90 days in the console"
+    notes: "The Audit Log report records monitored activity, including sign-ins and changes, with the admin account, item type, item changed and a description. It shows 7 days by default, up to 90 days, and can be exported."
+    source: "https://docs.sophos.com/central/customer/help/en-us/ManageYourProducts/LogsReports/Logs/AuditLogs/"
+    checked: "2026-11-24"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "The federated sign-in docs say administrators and users must already be assigned to a domain and an identity provider. They don't describe creating accounts at first sign-in."
+  domain_verification:
+    support: "partial"
+    notes: "Admins verify domains with a DNS TXT record, which is required for federated sign-in and Phish Threat. Verification routes sign-in to the IdP; the docs don't describe taking over accounts on the domain."
+    source: "https://docs.sophos.com/central/customer/help/en-us/ManageYourProducts/GlobalSettings/Platform/FederatedDomain/"
+    checked: "2026-11-24"
+  custom_roles:
+    support: "supported"
+    notes: "Super Admins can add custom roles based on a predefined role, limited to specific products and to full or read-only access per product."
+    source: "https://docs.sophos.com/central/customer/help/en-us/ManageYourProducts/GlobalSettings/AccessControl/Roles/AddCustomRole/"
+    checked: "2026-11-24"
+  group_role_mapping:
+    support: "undocumented"
+    notes: "The role and federated sign-in docs reached don't describe assigning admin roles from IdP groups."
+  session_controls:
+    support: "supported"
+    notes: "Admins set a session idle timeout of 1 to 23 hours for administrator sessions under Sign-in and Identity, Connected Sessions."
+    source: "https://docs.sophos.com/central/customer/help/en-us/ManageYourProducts/GlobalSettings/AccessControl/SignIn/SessionIdleTimeout/"
+    checked: "2026-11-24"
+  api_token_controls:
+    support: "supported"
+    notes: "Only Super Admins can add and manage API credentials, and each credential is given a role that limits what it can do. Legacy SIEM API tokens can still be viewed but no longer created."
+    source: "https://docs.sophos.com/central/customer/help/en-us/ManageYourProducts/GlobalSettings/AccessControl/APICredentials/"
+    checked: "2026-11-24"

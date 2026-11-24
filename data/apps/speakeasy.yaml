@@ -1,0 +1,54 @@
+name: "Speakeasy"
+category: "development"
+website: "https://www.speakeasy.com"
+description: "Speakeasy is an API tooling platform with an AI Control Plane for managing MCP servers and tools."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML", "OIDC"]
+    notes: "SSO over OIDC and SAML runs through WorkOS and is available on request to enterprise customers."
+    source: "https://www.speakeasy.com/docs/ai-control-plane/reference/platform-security"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "supported"
+    notes: "Your directory pushes user adds, edits, removals and group changes over SCIM; the docs say this is gated by plan without naming one."
+    source: "https://www.speakeasy.com/docs/ai-control-plane/org-admin/identity"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    notes: "An org-wide feed shows who changed what, when and from which surface, with filters and diffs; viewing it needs the org:read permission."
+    source: "https://www.speakeasy.com/docs/ai-control-plane/org-admin/audit-logs"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+    notes: "The docs cover custom domain verification only for MCP server URLs, not for claiming an org's email domain."
+  custom_roles:
+    support: "supported"
+    notes: "The role editor lets admins create custom roles with permissions scoped down to specific servers and tools."
+    source: "https://www.speakeasy.com/docs/ai-control-plane/org-admin/roles-and-permissions"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "supported"
+    notes: "Each directory group maps to a Control Plane role, so roles are assigned from IdP group membership."
+    source: "https://www.speakeasy.com/docs/ai-control-plane/org-admin/identity"
+    checked: "2026-09-27"
+  session_controls:
+    support: "undocumented"
+    notes: "The docs describe session length only for MCP server sign-ins, not dashboard sessions."
+  api_token_controls:
+    support: "supported"
+    notes: "API keys have scopes, can be bound to one project, show when they were last used, and can be revoked right away; only admins can manage them."
+    source: "https://www.speakeasy.com/docs/ai-control-plane/org-admin/api-keys"
+    checked: "2026-09-27"

@@ -1,0 +1,36 @@
+name: "Deno Deploy"
+category: "infrastructure"
+website: "https://deno.com/deploy"
+description: "Serverless hosting platform for JavaScript and TypeScript apps."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "undocumented"
+    notes: "Docs only mention signing in with GitHub or Google accounts."
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "not_supported"
+    notes: "Docs say all organization members currently have owner permissions."
+    source: "https://docs.deno.com/deploy/reference/organizations/"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"
+    notes: "Organization access tokens exist, but the docs don't describe any controls over them."

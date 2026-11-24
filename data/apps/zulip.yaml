@@ -1,0 +1,60 @@
+name: "Zulip Cloud"
+category: "collaboration"
+website: "https://zulip.com"
+description: "Zulip Cloud is the hosted version of Zulip, an open-source team chat app that organizes conversations into topics."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Zulip Cloud Plus"
+    protocols: ["SAML", "OIDC"]
+    notes: "Zulip Cloud needs the Plus plan for SAML and OpenID Connect; you then ask support to turn them on. Entra ID OAuth2 login also works on Cloud Standard."
+    source: "https://zulip.com/help/configure-authentication-methods"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Zulip Cloud Plus"
+    notes: "Owners choose which login methods are on, so they can switch off email/password and social logins and leave only SAML."
+    source: "https://zulip.com/help/configure-authentication-methods"
+    checked: "2026-09-27"
+  scim:
+    support: "supported"
+    tier: "paid"
+    plan: "Zulip Cloud Plus"
+    notes: "Creates, updates and deactivates users. Okta can also push groups; the Entra ID setup says group provisioning isn't supported. Zulip support issues the SCIM token."
+    source: "https://zulip.com/help/scim"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The Zulip Cloud help center has no page on two-factor authentication."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+    notes: "The help center has no page on an admin-facing audit log."
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+    notes: "Admins can limit sign-ups to certain email domains, but the help center describes no domain ownership check."
+  custom_roles:
+    support: "undocumented"
+    notes: "There are five built-in roles, and extra permissions go through custom user groups. The help center doesn't mention custom roles."
+  group_role_mapping:
+    support: "partial"
+    tier: "paid"
+    plan: "Zulip Cloud Plus"
+    notes: "IdP groups sync into Zulip user groups through SAML (Okta) or SCIM, and those groups can carry permissions. The org role comes from a separate SCIM attribute, not from a group."
+    source: "https://zulip.com/help/saml-authentication"
+    checked: "2026-09-27"
+  session_controls:
+    support: "partial"
+    notes: "Deactivating a user logs them out of every session right away. The help center doesn't cover setting session length."
+    source: "https://zulip.com/help/deactivate-or-reactivate-a-user"
+    checked: "2026-09-27"
+  api_token_controls:
+    support: "undocumented"
+    notes: "Every user has an API key they can change themselves. The help center doesn't describe admin controls over those keys."

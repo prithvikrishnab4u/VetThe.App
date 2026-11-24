@@ -1,0 +1,48 @@
+name: "Push Security"
+category: "security"
+website: "https://pushsecurity.com"
+description: "Push Security is a browser extension platform that detects phishing, session hijacking and risky logins in employees' browsers. Values here cover signing in to and administering the Push admin console."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "Admins can set up custom SAML for the Push admin console under Settings, Organization. Logins are IdP-initiated; SP-initiated login needs Push support. The help center doesn't name a plan."
+    source: "https://pushsecurity.com/help/10123"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "After SAML is set up, admins can remove the older password-based admin records, but the help center doesn't describe a setting that blocks password login."
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Push's MFA features are about employees' logins to other apps. MFA for the admin console isn't described."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    notes: "The pricing page lists admin audit logs (regular and extended) under Administration, and says every license includes the full platform. Where the logs are viewed and how long they're kept isn't described."
+    source: "https://pushsecurity.com/pricing"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "supported"
+    notes: "New admins who sign in through SAML get a default admin role (Full access or Read only) set in the wizard, so invitations are no longer needed and access is managed in the IdP."
+    source: "https://pushsecurity.com/help/10123"
+    checked: "2026-11-20"
+  domain_verification:
+    support: "undocumented"
+    notes: "Custom login domains in Push are the customer's IdP and app login URLs used for detection, not email domain verification."
+  custom_roles:
+    support: "undocumented"
+    notes: "The help center mentions Full access and Read only admin roles and doesn't describe custom roles."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "not_supported"
+    notes: "The admin console uses a fixed three-day rolling session, renewed on each visit. The help center doesn't describe a way for admins to change it. Push support can restrict admin logins to allowed IP addresses."
+    source: "https://pushsecurity.com/help/10074"
+    checked: "2026-11-20"
+  api_token_controls:
+    support: "undocumented"

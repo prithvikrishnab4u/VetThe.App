@@ -1,0 +1,67 @@
+name: "Airbyte Cloud"
+category: "infrastructure"
+website: "https://airbyte.com"
+description: "Airbyte Cloud is the hosted version of Airbyte, a data integration platform that syncs data from sources into warehouses and other destinations."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Plus"
+    protocols: ["OIDC"]
+    notes: "SSO uses OIDC with an identity provider such as Okta or Entra ID. The page marks it for the Plus, Pro and Enterprise Flex plans and says it isn't on Cloud Standard."
+    source: "https://docs.airbyte.com/platform/access-management/sso"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Plus"
+    notes: "Once SSO is activated, users with a verified email domain have to sign in through SSO."
+    source: "https://docs.airbyte.com/platform/access-management/sso-providers/okta"
+    checked: "2026-09-27"
+  scim:
+    support: "supported"
+    tier: "paid"
+    plan: "Pro"
+    notes: "Needs the Pro or Enterprise Flex plan and SSO, and Airbyte has to turn SCIM on for you. Okta or Entra ID can create, update and deactivate users and manage groups."
+    source: "https://docs.airbyte.com/platform/access-management/scim"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The security page lists email/password, Google and GitHub sign-in, but doesn't mention MFA."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "Pro"
+    retention: "365 days"
+    notes: "Available in Pro and Enterprise Flex, and only org admins can see it. It logs changes to workspaces, connections, connectors, users, permissions, SSO and SCIM."
+    source: "https://docs.airbyte.com/platform/access-management/audit-logs"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "The SSO docs don't say whether an account is created on first SSO sign-in without SCIM."
+  domain_verification:
+    support: "supported"
+    tier: "paid"
+    plan: "Plus"
+    notes: "SSO setup requires verifying each domain with a DNS TXT record. Users with email addresses on a verified domain must then sign in with SSO."
+    source: "https://docs.airbyte.com/platform/access-management/sso-providers/okta"
+    checked: "2026-09-27"
+  custom_roles:
+    support: "undocumented"
+    notes: "The RBAC page only lists fixed organization and workspace roles such as Reader, Runner, Editor and Admin."
+  group_role_mapping:
+    support: "supported"
+    tier: "paid"
+    plan: "Pro"
+    notes: "Groups and their members come from the identity provider over SCIM, and an org admin gives each group permissions in Airbyte. SCIM itself can't assign roles."
+    source: "https://docs.airbyte.com/platform/access-management/user-groups"
+    checked: "2026-09-27"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"
+    notes: "API access tokens belong to a user's application and expire after 15 minutes, but the docs don't describe admins viewing or revoking other users' applications."

@@ -1,0 +1,72 @@
+name: "Doppler"
+category: "development"
+website: "https://www.doppler.com"
+description: "Doppler is a secrets manager that stores and syncs environment variables and credentials across teams, apps and cloud providers."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "SAML SSO works with Okta, Entra ID, Google, JumpCloud, OneLogin and others, and needs a verified workplace domain. The SAML pages don't name the plan, and doppler.com/pricing was not reachable from this session."
+    source: "https://docs.doppler.com/docs/setting-up-saml-sso"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "The docs don't describe a setting that blocks password sign-in once SAML is on."
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM adds, updates and removes users and groups. The Okta SCIM guide lists an Enterprise subscription as a requirement."
+    source: "https://docs.doppler.com/docs/okta-scim"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "supported"
+    tier: "free"
+    plan: "All plans"
+    notes: "Every Doppler account has email-based MFA on by default, so a code is needed at each login. Users can swap it for an authenticator app or a security key."
+    source: "https://docs.doppler.com/docs/multi-factor-authentication"
+    checked: "2026-11-20"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Users can register security keys such as a YubiKey, Touch ID or Face ID as their second factor."
+    source: "https://docs.doppler.com/docs/multi-factor-authentication"
+    checked: "2026-11-20"
+  audit_logs:
+    support: "supported"
+    notes: "The Activity Logs page records every action the team takes, from adding members to changing secrets. Forwarding to a SIEM is Enterprise only. Retention isn't stated."
+    source: "https://docs.doppler.com/docs/workplace-logs"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "The SAML guide sets a default role for users who log in via SSO but doesn't say whether accounts are created on first sign-in."
+  domain_verification:
+    support: "partial"
+    notes: "Owners verify a domain with a DNS TXT record. A verified domain restricts which email accounts can join the workplace and is needed for SAML SSO; the docs don't describe taking over existing accounts."
+    source: "https://docs.doppler.com/docs/domain-verification"
+    checked: "2026-11-20"
+  custom_roles:
+    support: "supported"
+    tier: "add_on"
+    plan: "Enterprise, or an add-on to Team"
+    notes: "Admins create custom workplace and project roles from a list of permissions under Team > Roles."
+    source: "https://docs.doppler.com/docs/custom-roles"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "supported"
+    tier: "add_on"
+    plan: "Enterprise, or an add-on to Team"
+    notes: "User Groups and their members are provisioned from the IdP over SCIM, and groups are given project roles. Groups can't hold a workplace role."
+    source: "https://docs.doppler.com/docs/user-groups"
+    checked: "2026-11-20"
+  session_controls:
+    support: "partial"
+    notes: "Invalidate All Sessions signs every member out of the dashboard at once. The docs don't describe setting a session length or signing out one user."
+    source: "https://docs.doppler.com/docs/workplace-settings"
+    checked: "2026-11-20"
+  api_token_controls:
+    support: "partial"
+    notes: "Revoke Access Tokens revokes every personal or CLI token in the workplace at once. The docs don't describe listing or revoking a single user's token."
+    source: "https://docs.doppler.com/docs/workplace-settings"
+    checked: "2026-11-20"

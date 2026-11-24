@@ -1,0 +1,62 @@
+name: "Ping Identity"
+category: "security"
+website: "https://pingidentity.com"
+description: "Ping Identity sells workforce and customer identity products, including the PingOne cloud platform, PingFederate and PingID. Values here cover signing in to and administering the PingOne admin console."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "Under Settings, Administrator Security, admins can make an external SAML or OIDC identity provider the authentication source for the PingOne admin console, alone or together with PingOne. No docs page names the plan."
+    source: "https://docs.pingidentity.com/pingone/settings/p1_configure_administrator_security.html"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    notes: "Choosing External IdP as the authentication source makes the IdP the only way into the admin console. The PingOne & External IdP option instead falls back to PingOne credentials if the IdP connection fails."
+    source: "https://docs.pingidentity.com/pingone/settings/p1_configure_administrator_security.html"
+    checked: "2026-11-20"
+  scim:
+    support: "supported"
+    notes: "The admin console docs point to the PingOne API for inbound SCIM user provisioning; the Provisioning page itself sets up outbound SCIM. The admin console page doesn't detail which operations inbound SCIM supports."
+    source: "https://docs.pingidentity.com/pingone/integrations/p1_create_scim_connection.html"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Ping requires MFA for all PingOne administrators since June 1, 2025. With PingOne as the source, a built-in policy requires MFA and admins pick the allowed methods; with an external IdP, the IdP handles it."
+    source: "https://docs.pingidentity.com/pingone/settings/p1_administrator_security.html"
+    checked: "2026-11-20"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "FIDO2 is one of the allowed MFA methods for admin console sign-in, alongside authenticator app (TOTP) and email."
+    source: "https://docs.pingidentity.com/pingone/settings/p1_configure_administrator_security.html"
+    checked: "2026-11-20"
+  audit_logs:
+    support: "supported"
+    retention: "Admin console events 2 years; user events and DaVinci admin events 90 days"
+    notes: "The Audit page and the PingOne APIs report on user events and admin console configuration changes, querying up to 14 days at a time. Webhooks can stream events for longer retention."
+    source: "https://docs.pingidentity.com/pingone/monitoring/p1_reporting.html"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "PingOne provisions group membership just in time from an external IdP, but the admin console docs don't describe creating administrator accounts on first SSO sign-in."
+  domain_verification:
+    support: "undocumented"
+    notes: "Verified domains in PingOne are used for sending email (trusted email addresses), not for claiming accounts."
+  custom_roles:
+    support: "supported"
+    notes: "Organization Admins or Custom Roles Admins can add custom administrator roles on the Administrator Roles page. No docs page names the plan."
+    source: "https://docs.pingidentity.com/pingone/directory/p1_custom_role_add.html"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "supported"
+    notes: "Group membership can be mapped from an external IdP's SAML assertions or ID tokens, once or at every sign-on, and administrator roles can be assigned to static groups. Removing a user from a group removes roles they had only through it."
+    source: "https://docs.pingidentity.com/pingone/directory/p1_provision_external_groups.html"
+    checked: "2026-11-20"
+  session_controls:
+    support: "supported"
+    notes: "Admins set the refresh token duration (1 to 60 minutes), when a password is needed again (up to 12 hours) and when MFA is needed again (up to 24 hours) for the admin console. Admins must sign in again after at most 8 hours."
+    source: "https://docs.pingidentity.com/pingone/settings/p1_configure_administrator_security.html"
+    checked: "2026-11-20"
+  api_token_controls:
+    support: "undocumented"

@@ -1,0 +1,53 @@
+name: "Plane"
+category: "productivity"
+website: "https://plane.so"
+description: "Plane is an open-source project management tool available as a cloud service or self-hosted."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Pro, Business"
+    protocols: ["SAML", "OIDC"]
+    notes: "The SAML and OIDC SSO pages are marked Pro and Business. They're part of the self-hosting docs and describe setup in the instance admin panel (God mode); the developer docs don't cover SSO setup on Plane Cloud."
+    source: "https://developers.plane.so/self-hosting/govern/saml-sso"
+    checked: "2026-09-28"
+  sso_enforcement:
+    support: "partial"
+    notes: "Self-hosted only: instance admins can turn off password login in the instance authentication settings so people use another method such as SSO. Nothing is documented for Plane Cloud."
+    source: "https://developers.plane.so/self-hosting/govern/authentication"
+    checked: "2026-09-28"
+  scim:
+    support: "undocumented"
+    notes: "The developer docs don't mention SCIM."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The developer docs don't mention 2FA or MFA."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+    notes: "The developer docs don't describe audit logs."
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+    notes: "The custom domain page is about hosting a self-hosted instance on your own domain, not verifying email domains."
+  custom_roles:
+    support: "undocumented"
+  group_role_mapping:
+    support: "supported"
+    notes: "IdP group sync maps IdP groups to workspace and project roles, can sync on login and can remove users who leave a group. The docs cover the API for it, not which plans include it."
+    source: "https://developers.plane.so/api-reference/idp-group-sync/overview"
+    checked: "2026-09-28"
+  session_controls:
+    support: "partial"
+    notes: "Self-hosted only: instance admins set an inactivity-based session expiry for the whole instance (7 days by default) and a separate absolute limit for the admin panel. It can't be set per workspace. Nothing is documented for Plane Cloud."
+    source: "https://developers.plane.so/self-hosting/govern/god-mode/session-expiry"
+    checked: "2026-09-28"
+  api_token_controls:
+    support: "partial"
+    notes: "API keys are personal access tokens with an optional expiry; OAuth apps get scoped tokens. The docs don't describe admin controls over users' tokens."
+    source: "https://developers.plane.so/api-reference/introduction"
+    checked: "2026-09-28"

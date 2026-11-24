@@ -1,0 +1,64 @@
+name: "Plausible Analytics"
+category: "sales_marketing"
+website: "https://plausible.io"
+description: "Plausible Analytics is a privacy-friendly, cookie-free web analytics service."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML"]
+    notes: "SSO is Enterprise plan only and uses SAML 2.0, working with IdPs like Google Workspace, Okta and Microsoft Entra ID."
+    source: "https://plausible.io/docs/sso"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Owners can turn on \"Force Single Sign-On\" so only SSO users can access the team. Owners keep an email and password fallback and must have 2FA enabled first."
+    source: "https://plausible.io/docs/sso"
+    checked: "2026-09-27"
+  scim:
+    support: "undocumented"
+    notes: "The docs describe just-in-time SSO provisioning but don't mention SCIM."
+  mfa_enforcement:
+    support: "supported"
+    notes: "Owners can use \"Force Two-Factor Authentication (2FA)\" in Team Settings to make 2FA mandatory for all team members. No plan is stated."
+    source: "https://plausible.io/docs/2fa"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The 2FA docs only cover authenticator app codes; passkeys and security keys aren't mentioned."
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Accounts are created automatically on first SSO login, with a configurable default role (Viewer by default)."
+    source: "https://plausible.io/docs/sso"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SSO domains must be verified with a DNS TXT record, a file or route, or a META tag before SSO works."
+    source: "https://plausible.io/docs/sso"
+    checked: "2026-09-27"
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs list five built-in team roles (Owner, Admin, Editor, Billing, Viewer) and don't mention custom roles."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "partial"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Admins can set the session timeout for SSO users (up to 12 hours) and view or log out members' active SSO sessions. This applies to SSO accounts only."
+    source: "https://plausible.io/docs/sso"
+    checked: "2026-09-27"
+  api_token_controls:
+    support: "undocumented"
+    notes: "API keys are scoped to one team and Viewers can't create them, but the docs don't describe admins viewing or revoking other members' keys."

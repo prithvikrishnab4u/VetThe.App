@@ -1,0 +1,45 @@
+name: "Stytch"
+category: "security"
+website: "https://stytch.com"
+description: "Stytch is an authentication platform that developers use to add passwordless login, passkeys, SSO and fraud prevention to their apps. Values here cover the Stytch dashboard (workspace) that the customer's own team signs in to."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "undocumented"
+    notes: "Stytch's SSO docs cover SSO for the customer's own apps. The docs don't describe signing in to the Stytch dashboard through a company IdP."
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+    notes: "SCIM in the docs is for provisioning into the customer's own apps, not into the Stytch workspace."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The Require MFA setting in the docs applies to Organizations in the customer's B2B app, not to dashboard members."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    retention: "30 days in the dashboard; stream to Datadog or Grafana Loki for longer"
+    notes: "Event logs record Stytch API requests and meaningful dashboard actions. All dashboard roles can view them."
+    source: "https://stytch.com/docs/resources/workspace-management/event-logs"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "partial"
+    notes: "Admins can turn on JIT provisioning so people with a verified email on a chosen domain can discover and join the workspace without an invite. It is by email domain, and the docs don't tie it to SSO sign-in. Those members get the Support Agent role unless an automatic role assignment is set for the domain."
+    source: "https://stytch.com/docs/resources/workspace-management/dashboard-roles-and-permissions"
+    checked: "2026-11-20"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "The dashboard has five built-in roles (Admin, Developer, Support Manager, Support Agent, No Access). The docs don't describe custom dashboard roles; RBAC in the docs is for the customer's own apps."
+  group_role_mapping:
+    support: "undocumented"
+    notes: "Automatic role assignment works by email domain, not by IdP group."
+  session_controls:
+    support: "undocumented"
+    notes: "The Revoke Sessions permission is about end users of the customer's app, not dashboard members."
+  api_token_controls:
+    support: "undocumented"
+    notes: "API keys are project secrets per environment. Only Admins can manage Live keys and Developers can manage Test keys, but there are no per-user tokens to control."

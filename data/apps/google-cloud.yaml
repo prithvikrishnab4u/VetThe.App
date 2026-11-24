@@ -1,0 +1,68 @@
+name: "Google Cloud"
+category: "infrastructure"
+website: "https://cloud.google.com"
+description: "Google Cloud is a public cloud platform. Values here cover signing in to and administering the Google Cloud console and projects, through Cloud Identity accounts or Workforce Identity Federation, with access managed in Cloud IAM."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "free"
+    protocols: ["SAML", "OIDC"]
+    notes: "Workforce Identity Federation lets employees sign in to Google Cloud with an external IdP such as Okta, Ping, AD FS or Entra ID over SAML 2.0 or OIDC. Google says it is free of charge."
+    source: "https://cloud.google.com/workforce-identity-federation"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    notes: "With Cloud Identity SAML profiles, admins decide for each user, group or organizational unit whether they must use SSO, so those users are redirected to the IdP instead of entering a Google password. Super admins can bypass SSO."
+    source: "https://docs.cloud.google.com/architecture/identity/single-sign-on"
+    checked: "2026-11-20"
+  scim:
+    support: "undocumented"
+    notes: "Google's architecture docs show Entra ID creating and suspending users in Cloud Identity, but don't say this uses SCIM. Workforce Identity Federation's SCIM support applies only to Gemini Enterprise and Looker, not the console."
+  mfa_enforcement:
+    support: "supported"
+    notes: "Security key enforcement lets Google Cloud admins require security keys for users in their organization. No vendor page reached names the plan."
+    source: "https://cloud.google.com/security/products/titan-security-key"
+    checked: "2026-11-20"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Titan and other FIDO security keys can be used to sign in to Google and Google Cloud, and admins can require them. No vendor page reached names the plan."
+    source: "https://cloud.google.com/security/products/titan-security-key"
+    checked: "2026-11-20"
+  audit_logs:
+    support: "supported"
+    tier: "free"
+    retention: "400 days for admin activity audit logs"
+    notes: "Cloud Audit Logs record who did what, when and where for admin and data access activity. Admin activity is always on and kept for 400 days at no additional cost."
+    source: "https://cloud.google.com/logging"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "Workforce Identity Federation is sync-less and doesn't store user accounts in Google Cloud, so there is no account to create. The docs don't describe creating Cloud Identity users at first SSO sign-in."
+  domain_verification:
+    support: "supported"
+    notes: "A Cloud Identity account is tied to DNS domains that admins verify. Existing consumer accounts on a verified domain show up as unmanaged accounts, and their users can be asked to transfer them into the managed account."
+    source: "https://docs.cloud.google.com/architecture/identity/migrating-consumer-accounts"
+    checked: "2026-11-20"
+  custom_roles:
+    support: "supported"
+    tier: "free"
+    notes: "Cloud IAM includes unlimited custom roles and permissions at no additional cost per user or identity."
+    source: "https://cloud.google.com/products/iam"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "supported"
+    notes: "Workforce Identity Federation maps the IdP's groups claim to google.groups, and allow policies can grant IAM roles to every workforce identity in a group."
+    source: "https://docs.cloud.google.com/iam/docs/workforce-identity-federation"
+    checked: "2026-11-20"
+  session_controls:
+    support: "supported"
+    notes: "Admins set a session duration on a workforce identity pool, from 15 minutes to 12 hours (default one hour), which limits how long federated console and gcloud sessions stay valid. Covers Workforce Identity Federation users only."
+    source: "https://docs.cloud.google.com/iam/docs/manage-workforce-identity-pools-providers"
+    checked: "2026-11-20"
+  api_token_controls:
+    support: "supported"
+    notes: "Admins can list, restrict and delete API keys, and organization policy constraints can stop API keys being bound to service accounts or block service account key creation."
+    source: "https://docs.cloud.google.com/docs/authentication/api-keys"
+    checked: "2026-11-20"

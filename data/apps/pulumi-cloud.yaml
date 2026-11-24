@@ -1,0 +1,82 @@
+name: "Pulumi Cloud"
+category: "infrastructure"
+website: "https://www.pulumi.com"
+description: "Pulumi Cloud is the hosted service behind Pulumi infrastructure as code, managing state, secrets, deployments and policy for teams."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Pro"
+    protocols: ["SAML"]
+    notes: "Works with any SAML 2.0 identity provider; the docs mark SAML SSO as a Pro and Enterprise feature."
+    source: "https://www.pulumi.com/docs/administration/guides/saml/"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Pro"
+    notes: "An org backed by a SAML identity provider draws its membership from the users the IdP assigns to the Pulumi app. One SAML admin keeps another login method as a break-glass account."
+    source: "https://www.pulumi.com/docs/administration/concepts/identity-providers/"
+    checked: "2026-09-27"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM 2.0 provisions users and syncs groups to teams. It can't set roles, and deprovisioning deactivates rather than deletes users."
+    source: "https://www.pulumi.com/docs/administration/guides/scim/"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Users can enroll in TOTP themselves; for SSO or social logins the docs say to enforce MFA at that provider. No org-wide MFA requirement is described."
+  phishing_resistant_mfa:
+    support: "supported"
+    tier: "free"
+    plan: "All editions"
+    notes: "Users can sign in with WebAuthn passkeys, including hardware security keys, in every edition. Org-managed SAML/SCIM accounts can't register passkeys."
+    source: "https://www.pulumi.com/docs/administration/concepts/accounts/"
+    checked: "2026-09-27"
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "Essentials"
+    retention: "Limited window; exact period not stated"
+    notes: "Org admins can view and download audit logs; automatic export to Amazon S3 or Microsoft Sentinel needs Pro or Enterprise."
+    source: "https://www.pulumi.com/docs/administration/concepts/audit-logs/"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    tier: "paid"
+    plan: "Pro"
+    notes: "Signing in through the org's SAML SSO without an existing Pulumi account creates an org-managed account."
+    source: "https://www.pulumi.com/docs/administration/concepts/org-managed-users/"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    tier: "paid"
+    plan: "Pro"
+    notes: "Pro allows up to 25 custom roles and Enterprise allows unlimited ones."
+    source: "https://www.pulumi.com/docs/administration/concepts/rbac/roles/"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM groups become Pulumi teams, and you grant those teams roles and access in Pulumi; SCIM itself can't set roles."
+    source: "https://www.pulumi.com/docs/administration/guides/scim/"
+    checked: "2026-09-27"
+  session_controls:
+    support: "partial"
+    tier: "paid"
+    plan: "Pro"
+    notes: "SSO session length comes from the IdP's SessionNotOnOrAfter attribute (default 12 hours); there's no session setting in Pulumi itself."
+    source: "https://www.pulumi.com/docs/administration/guides/saml/sso/"
+    checked: "2026-09-27"
+  api_token_controls:
+    support: "supported"
+    notes: "Admins can set a maximum token expiry that applies to personal, org and team tokens used against the org, and can create and delete org tokens."
+    source: "https://www.pulumi.com/docs/administration/concepts/access-tokens/"
+    checked: "2026-09-27"

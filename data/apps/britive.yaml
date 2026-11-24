@@ -1,0 +1,60 @@
+name: "Britive"
+category: "security"
+website: "https://britive.com"
+description: "Britive is a cloud privileged access management platform for just-in-time access to cloud, SaaS and infrastructure. Values here cover signing in to and administering the Britive console itself."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "Admins add a SAML identity provider under System admin, Identity Management, and Britive has SSO guides for Okta, Entra ID, PingOne, Duo, CyberArk Identity and custom IdPs. No docs page names the plan."
+    source: "https://docs.britive.com/docs/identity-providers"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Each user is tied to one identity provider, Britive by default or an external IdP, but the docs don't describe an org-wide setting that blocks Britive passwords."
+  scim:
+    support: "supported"
+    notes: "Okta provisioning creates users, pushes profile updates and groups, and deactivates the user in Britive when they are deactivated or unassigned in Okta. No docs page names the plan."
+    source: "https://docs.britive.com/docs/okta-scim-provisioning"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Admins choose the allowed MFA options for login and step-up under System admin, Security, MFA Settings. Users created with Britive credentials must register OTP or WebAuthn at first login and authenticate with it at every login."
+    source: "https://docs.britive.com/docs/mfa-registration"
+    checked: "2026-11-20"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Users can register a WebAuthn device such as a security key or biometric device and use it to log in to the Britive portal, if admins allow WebAuthn. Not supported in the Slack and Teams apps."
+    source: "https://docs.britive.com/docs/mfa-registration"
+    checked: "2026-11-20"
+  audit_logs:
+    support: "supported"
+    retention: "Up to 90 days"
+    notes: "The audit log records user and system activity, including logins, profile checkouts and admin changes, with actor, event, target and result. It can be searched and filtered, and queried through the API."
+    source: "https://docs.britive.com/docs/audit-log"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "External users are onboarded from an identity provider or through SCIM. Creating accounts on first SSO sign-in isn't described."
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    notes: "Admins can add roles built from existing or new permissions, or clone and fine-tune a predefined role, under Role & Policy Management. No docs page names the plan."
+    source: "https://docs.britive.com/docs/create-roles"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "supported"
+    notes: "SCIM group sync from Okta or Entra ID keeps group memberships current in Britive, and groups can be targeted by Britive profiles and policies to assign permissions. No docs page names the plan."
+    source: "https://docs.britive.com/docs/group-sync-with-scim"
+    checked: "2026-11-20"
+  session_controls:
+    support: "supported"
+    notes: "Admins set a global session timeout of 1 to 12 hours for all users, including IdP-authenticated users, plus an application token expiry of 1 to 720 hours. No docs page names the plan."
+    source: "https://docs.britive.com/docs/global-session-settings"
+    checked: "2026-11-20"
+  api_token_controls:
+    support: "undocumented"
+    notes: "Admins create and manage API tokens with a validity period under System admin, Security, API Tokens. The docs don't describe controls over tokens that individual users create."

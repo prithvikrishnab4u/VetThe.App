@@ -1,0 +1,70 @@
+name: "Cube Cloud"
+category: "development"
+website: "https://cube.dev"
+description: "Cube Cloud is a managed semantic layer and analytics platform built on the open-source Cube project."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML"]
+    notes: "SAML SSO with guides for Okta, Google Workspace and Microsoft Entra ID. Password, Google and GitHub sign-in are also available."
+    source: "https://docs.cube.dev/admin/sso"
+    checked: "2026-09-28"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Admins can turn off the Password, Google and GitHub sign-in methods under Admin, Settings, Authentication & SSO."
+    source: "https://docs.cube.dev/admin/sso"
+    checked: "2026-09-28"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM for Okta and Microsoft Entra ID creates, updates and deactivates users and pushes groups. Authenticates with an API key and needs SAML set up first."
+    source: "https://docs.cube.dev/admin/sso/okta/scim"
+    checked: "2026-09-28"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Must be turned on. Shows security events across deployments with user, IP address, event and deployment, and can be filtered and downloaded. Billed in S and M tiers; export needs tier M. No retention stated."
+    source: "https://docs.cube.dev/admin/monitoring/audit-log"
+    checked: "2026-09-28"
+  jit_provisioning:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "With Auto-provision new users on, users are created at first SAML sign-in with the Viewer role or a configured default role."
+    source: "https://docs.cube.dev/admin/sso/okta/saml"
+    checked: "2026-09-28"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Custom roles start from a base role (Viewer, Explorer or Developer) and add global and per-deployment permissions."
+    source: "https://docs.cube.dev/admin/users-and-permissions/custom-roles"
+    checked: "2026-09-28"
+  group_role_mapping:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Map roles by group assigns roles from identity provider groups. Over SAML this applies only when a user is first provisioned; SCIM group pushes also apply it."
+    source: "https://docs.cube.dev/admin/sso/okta/saml"
+    checked: "2026-09-28"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "Admins create and revoke API keys. Personal keys for non-admins are optional and carry the owner's permissions. Keys can be limited to deployments; no expiry is mentioned."
+    source: "https://docs.cube.dev/admin/account-billing/api-keys"
+    checked: "2026-09-28"

@@ -25,7 +25,7 @@ capabilities:
     checked: "2026-09-22"
   mfa_enforcement:
     support: "supported"
-    tier: "free"
+    tier: "paid"
     plan: "Essentials"
     notes: "Admins can enable two-factor authentication (email code) for all users with dashboard access from Company > Security settings; 2FA is listed on all plans including Essentials."
     source: "https://support.aircall.io/hc/en-gb/articles/16403056597149-Enabling-Two-Factor-Authentication"

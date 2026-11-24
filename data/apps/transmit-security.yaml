@@ -1,0 +1,55 @@
+name: "Transmit Security"
+category: "security"
+website: "https://transmitsecurity.com"
+description: "Transmit Security sells Mosaic, a customer identity, fraud prevention and identity verification platform. Values here cover signing in to and administering the Mosaic Admin Portal, not the CIAM services it sells for a customer's own users."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "Admins can set up Admin Portal sign-in through an external SAML or OIDC identity provider under Settings, Single sign-on, with guides for Microsoft and Google. No docs page names the plan."
+    source: "https://developer.transmitsecurity.com/guides/platform/sso_admin_login_saml"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    notes: "Once SSO is set up, admins are authenticated by the IdP instead of an email magic link. Only designated recovery admins can choose an email link when SSO has problems. No docs page names the plan."
+    source: "https://developer.transmitsecurity.com/guides/platform/sso_admin_login_oidc"
+    checked: "2026-11-20"
+  scim:
+    support: "undocumented"
+    notes: "Admin users are invited by email or created through JIT SSO. The docs don't describe SCIM provisioning of Admin Portal users."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Admin Portal sign-in uses an email magic link or SSO. The docs don't describe an MFA requirement for admin sign-in."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The Mosaic passkey docs cover passkeys for a customer's own users. The docs don't describe passkey or security key sign-in to the Admin Portal."
+  audit_logs:
+    support: "supported"
+    notes: "Admin Activity lists admin events with time, actor, client, activity type, target and IP, filterable by date, event type and user. No docs page names the plan or the retention."
+    source: "https://developer.transmitsecurity.com/guides/user/admin_audit_logs"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "supported"
+    notes: "With JIT provisioning enabled, an admin's first SSO sign-in creates their Admin Portal account with the role taken from the IdP. No docs page names the plan."
+    source: "https://developer.transmitsecurity.com/guides/platform/jit_sso"
+    checked: "2026-11-20"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    notes: "Besides the Global admin, Global reader and Support roles, admins can add custom admin roles built from a permission tree per service and per Settings tab. No docs page names the plan."
+    source: "https://developer.transmitsecurity.com/guides/platform/manage_admin_users"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "supported"
+    notes: "With JIT SSO, a SAML attribute or OIDC claim carrying IdP roles is mapped to Mosaic admin roles, and roles are updated on each sign-in. No docs page names the plan."
+    source: "https://developer.transmitsecurity.com/guides/platform/jit_sso"
+    checked: "2026-11-20"
+  session_controls:
+    support: "undocumented"
+    notes: "The session docs cover sessions for a customer's own users. The docs don't describe a session length or sign-out control for Admin Portal admins."
+  api_token_controls:
+    support: "undocumented"
+    notes: "API access uses tenant management apps with client secrets that admins create and rotate. The docs don't describe tokens that individual admins create or controls over them."

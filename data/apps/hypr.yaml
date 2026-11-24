@@ -1,0 +1,60 @@
+name: "HYPR"
+category: "security"
+website: "https://hypr.com"
+description: "HYPR is a passwordless authentication and identity assurance platform for workforces. Values here cover signing in to and administering the HYPR Control Center admin console, not the passwordless login HYPR sells for a customer's workforce."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["OIDC"]
+    notes: "Admins can set Control Center sign-in to go through an OIDC identity provider, with guides for Microsoft Entra ID and Okta. No docs page names the plan."
+    source: "https://docs.hypr.com/docs/cc/ccInstallCfg/ccInstallCfgServer/cc-install-cfg-server-idp-entra-authentication/"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    notes: "Once the IdP settings are saved, Control Center sign-in goes through the identity provider, and HYPR warns admins to give themselves the admin role first to avoid lockout. No docs page names the plan."
+    source: "https://docs.hypr.com/docs/cc/ccInstallCfg/ccInstallCfgServer/cc-install-cfg-server-idp-entra-authentication/"
+    checked: "2026-11-20"
+  scim:
+    support: "undocumented"
+    notes: "Control Center user accounts are created by email invitation or on first IdP sign-in. The docs don't describe SCIM provisioning of Control Center users."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Control Center has no password login; users sign in with a registered phone or, if enabled, a FIDO2 authenticator. The docs don't describe a separate MFA requirement setting."
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Admins can enable FIDO2 for the Control Center so users sign in with a security key, FIDO2 smart card or platform biometrics, and can choose whether synced passkeys are accepted. No docs page names the plan."
+    source: "https://docs.hypr.com/docs/auth/authInstallCfg/authInstallCfgAppMgmt/auth-install-cfg-app-mgmt-fido2-settings/"
+    checked: "2026-11-20"
+  audit_logs:
+    support: "supported"
+    retention: "30 days in the Audit Trail; older events archived indefinitely"
+    notes: "The per-application Audit Trail records user and Control Center admin events such as logins, token creation and configuration changes, with search, CSV export and an API. Admin page views can also be logged."
+    source: "https://docs.hypr.com/docs/cc/ccAnalytics/ccAnalyticsAuditTrail/cc-analytics-audit-trail/"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "supported"
+    notes: "With Entra ID as the OIDC provider, Control Center creates the admin account on first sign-in and applies the role from the hypr_role claim. No docs page names the plan."
+    source: "https://docs.hypr.com/docs/cc/ccInstallCfg/ccInstallCfgServer/cc-install-cfg-server-idp-entra-authentication/"
+    checked: "2026-11-20"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "not_supported"
+    notes: "Control Center has five fixed, task-based roles: Admin, App Manager, User Manager, Viewer and Basic Login, plus an optional Audit Trail access toggle."
+    source: "https://docs.hypr.com/docs/cc/ccInstallCfg/ccInstallCfgUserMgmt/cc-install-cfg-user-mgmt-user-roles/"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "supported"
+    notes: "Entra ID app roles assigned to users or groups are sent in a hypr_role claim, and Control Center applies the role on every sign-in. Okta works through an OIDC custom claim. No docs page names the plan."
+    source: "https://docs.hypr.com/docs/cc/ccInstallCfg/ccInstallCfgServer/cc-install-cfg-server-idp-entra-authentication/"
+    checked: "2026-11-20"
+  session_controls:
+    support: "undocumented"
+    notes: "The docs cover magic link lifetimes and network access rules, but not a session length or idle timeout for Control Center sign-ins."
+  api_token_controls:
+    support: "supported"
+    notes: "The Access Tokens list shows each token's creator, permissions, last use and expiry, and admins can revoke tokens. Tokens carry a set expiry date and lapse after 30 days unused. No docs page names the plan."
+    source: "https://docs.hypr.com/docs/auth/authInstallCfg/authInstallCfgAppMgmt/auth-install-cfg-app-mgmt-access-tokens/"
+    checked: "2026-11-20"

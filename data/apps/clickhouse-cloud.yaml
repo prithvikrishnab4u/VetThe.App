@@ -1,0 +1,78 @@
+name: "ClickHouse Cloud"
+category: "infrastructure"
+website: "https://clickhouse.com"
+description: "ClickHouse Cloud is the managed cloud service for the ClickHouse analytical database."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML"]
+    notes: "SAML SSO is marked as an Enterprise plan feature. Only service provider-initiated sign-in is supported; IdP-initiated sign-in isn't."
+    source: "https://clickhouse.com/docs/cloud/security/saml-setup"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "To enforce SAML-only sign-in, you remove users with other authentication methods once at least one SAML user has the Admin role. It's done by removing users rather than through a setting."
+    source: "https://clickhouse.com/docs/cloud/security/manage-cloud-users"
+    checked: "2026-09-27"
+  scim:
+    support: "partial"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM 2.0 user and group provisioning is marked as an Enterprise plan feature, but it's in private preview, with guides for Okta and Entra ID only. SAML SSO has to be set up first."
+    source: "https://clickhouse.com/docs/cloud/security/scim-setup"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The docs cover users setting up authenticator-app MFA for themselves, but not an admin setting to require it."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The MFA docs only mention authenticator (TOTP) apps."
+  audit_logs:
+    support: "supported"
+    notes: "Admins and Developers can see console activity (who did what, IP address and time) in the Audit tab, export it to CSV, or pull it through the Cloud API activity endpoint. The docs don't name a plan."
+    source: "https://clickhouse.com/docs/cloud/security/audit-logging/console-audit-log"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SAML SSO includes just-in-time provisioning. New users get the default role you set in the SAML configuration the first time they sign in."
+    source: "https://clickhouse.com/docs/cloud/security/saml-setup"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SAML setup requires you to verify your domain with a DNS TXT record."
+    source: "https://clickhouse.com/docs/cloud/security/saml-setup"
+    checked: "2026-09-27"
+  custom_roles:
+    support: "supported"
+    notes: "Admins can create custom roles that combine organization, service and database permissions, scoped to all or some services and databases. The docs don't name a plan."
+    source: "https://clickhouse.com/docs/cloud/guides/security/manage-custom-roles"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "partial"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM groups map to custom roles by name, but not to predefined system roles. It depends on SCIM, which is in private preview. SAML attribute mapping isn't supported yet."
+    source: "https://clickhouse.com/docs/cloud/security/scim-setup"
+    checked: "2026-09-27"
+  session_controls:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Once SAML SSO is set up, admins can adjust session timeout settings."
+    source: "https://clickhouse.com/docs/cloud/security/saml-setup"
+    checked: "2026-09-27"
+  api_token_controls:
+    support: "supported"
+    notes: "Each API key has a role-based set of permissions, an expiration time and an optional IP allowlist. Keys can be edited, disabled or deleted from the API Keys page."
+    source: "https://clickhouse.com/docs/cloud/manage/openapi"
+    checked: "2026-09-27"

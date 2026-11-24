@@ -1,0 +1,8 @@
+{{/* The theme button lives in the header. scripts.html wires it up on the home page;
+     pages without the table use this instead. */}}
+<script>
+    document.getElementById('themeToggle').addEventListener('click', () => {
+        const dark = document.documentElement.classList.toggle('dark');
+        try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+    });
+</script>

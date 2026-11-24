@@ -1,0 +1,48 @@
+name: "Penpot"
+category: "design"
+website: "https://penpot.app"
+description: "Penpot is an open-source design and prototyping platform for product teams."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["OIDC"]
+    notes: "The SSO module for Enterprise organizations is set up in the Admin Console with generic OIDC, Azure AD (OIDC) or Google OAuth. Self-hosted server admins can separately enable OIDC login for the whole instance."
+    source: "https://help.penpot.app/user-guide/account-teams/organizations/"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Once SSO is active, all org members must sign in through the IdP to reach the organization's teams and files. The Admin Console stays reachable without SSO."
+    source: "https://help.penpot.app/user-guide/account-teams/organizations/"
+    checked: "2026-09-27"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "not_supported"
+    notes: "A successful SSO login never grants org membership on its own; members still need an invitation from the org owner."
+    source: "https://help.penpot.app/user-guide/account-teams/organizations/"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "Teams use fixed roles (Viewer, Editor, Admin, Owner). The Enterprise Advanced Permissions module restricts actions org-wide on top of these roles but doesn't add new roles."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+    notes: "SSO sessions last a fixed 4 hours; the docs don't describe admins changing this or signing users out."
+  api_token_controls:
+    support: "undocumented"
+    notes: "Users can create personal access tokens, but the docs don't describe admin controls over them."

@@ -1,0 +1,62 @@
+name: "Atlan"
+category: "infrastructure"
+website: "https://atlan.com"
+description: "Atlan is a data catalog and governance platform. Values here cover how users sign in to an Atlan workspace and how Atlan admins manage users, roles and access, not the data-source credentials Atlan connects with."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "Atlan supports SAML 2.0 SSO with Okta, Azure AD, Google, JumpCloud, OneLogin, PingFederate or any SAML provider. The docs don't name a plan."
+    source: "https://docs.atlan.com/product/integrations/identity-management/sso"
+    checked: "2026-11-24"
+  sso_enforcement:
+    support: "supported"
+    notes: "Workspaces can have SSO enforced. Users are then added through the identity provider instead of email invites from the Atlan UI. The docs reached don't show the setting itself."
+    source: "https://docs.atlan.com/product/capabilities/governance/users-and-groups/how-tos/invite-new-users"
+    checked: "2026-11-24"
+  scim:
+    support: "supported"
+    notes: "Okta and Azure AD can provision users over SCIM 2.0, keep attributes in sync, deactivate users removed in the IdP and optionally push groups. The other SSO providers are SSO only."
+    source: "https://docs.atlan.com/product/integrations/identity-management/scim/how-tos/enable-okta-for-scim-provisioning"
+    checked: "2026-11-24"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The authentication docs cover basic email and password sign-in, SSO and SCIM, but don't describe an MFA requirement for basic sign-in."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The docs reached don't mention security keys or passkeys."
+  audit_logs:
+    support: "supported"
+    notes: "Atlan streams IAM events, including sign-in, sign-out and admin events, to a storage bucket the customer owns in OTLP format. Asset changes can be queried through audit search. The docs don't describe an in-app viewer for sign-in events."
+    source: "https://docs.atlan.com/platform/references/api-audit-usage"
+    checked: "2026-11-24"
+  jit_provisioning:
+    support: "supported"
+    notes: "When a user signs in through SSO for the first time, Atlan creates their account and gives it the default role set for that SSO provider (Guest, Member or Admin)."
+    source: "https://docs.atlan.com/product/integrations/identity-management/sso/how-tos/set-default-user-roles-for-sso"
+    checked: "2026-11-24"
+  domain_verification:
+    support: "undocumented"
+    notes: "The access control docs don't describe verifying an email domain. Domains in Atlan are business groupings of data assets."
+  custom_roles:
+    support: "partial"
+    notes: "Workspace roles are fixed (Admin, Member, Guest, plus Governance Admin and Workflow Admin sub-roles). Custom access is built with personas, which bundle users and groups with access policies on assets."
+    source: "https://docs.atlan.com/product/capabilities/governance/access-control/concepts/what-are-personas"
+    checked: "2026-11-24"
+  group_role_mapping:
+    support: "supported"
+    notes: "IdP groups in the SAML memberOf attribute are mapped to Atlan groups at each sign-in, and the User Role Sync app assigns Atlan roles and sub-roles from group membership."
+    source: "https://docs.atlan.com/product/capabilities/governance/access-control/auto-assign-roles-by-group"
+    checked: "2026-11-24"
+  session_controls:
+    support: "supported"
+    notes: "Admins set session idle and maximum timeouts, plus separate Remember me timeouts, from 1 minute to 30 days for all users. Changing a user's role signs them out of all sessions."
+    source: "https://docs.atlan.com/product/capabilities/governance/users-and-groups/how-tos/manage-user-authentication"
+    checked: "2026-11-24"
+  api_token_controls:
+    support: "supported"
+    notes: "API tokens are their own service principals with their own permissions, not personal access tokens. They can be created, linked to personas, rotated and deleted."
+    source: "https://docs.atlan.com/product/capabilities/build-apps/sdks/python/access-control/how-tos/manage-api-tokens"
+    checked: "2026-11-24"

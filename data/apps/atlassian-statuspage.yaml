@@ -1,0 +1,67 @@
+name: "Atlassian Statuspage"
+category: "infrastructure"
+website: "https://atlassian.com/software/statuspage"
+description: "Statuspage is Atlassian's status page and incident communication product. Values here cover how team members sign in to the Statuspage management interface with Atlassian accounts, managed in Atlassian Administration, not how subscribers or viewers of private pages authenticate."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "add_on"
+    plan: "Atlassian Guard Standard"
+    protocols: ["SAML"]
+    notes: "SAML SSO for Statuspage team members is set up in Atlassian Administration and needs an Atlassian Guard Standard subscription. Statuspage users on plans other than Free and Hobby aren't billed for Guard Standard."
+    source: "https://support.atlassian.com/statuspage/docs/migrate-to-an-atlassian-account-while-using-single-sign-on/"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    tier: "add_on"
+    plan: "Atlassian Guard Standard"
+    notes: "Statuspage team members sign in with Atlassian accounts, and org admins select Enforce single sign-on in an authentication policy so SSO is required for the managed accounts in that policy."
+    source: "https://support.atlassian.com/security-and-access-policies/docs/configure-saml-single-sign-on-with-an-identity-provider/"
+    checked: "2026-11-20"
+  scim:
+    support: "undocumented"
+    notes: "Atlassian's user provisioning docs describe syncing users and groups to Jira and Confluence but don't say whether provisioned users get Statuspage access."
+  mfa_enforcement:
+    support: "supported"
+    notes: "Statuspage uses Atlassian accounts, and org admins can set two-step verification to Mandatory in an authentication policy for managed accounts."
+    source: "https://support.atlassian.com/security-and-access-policies/docs/enforce-two-step-verification/"
+    checked: "2026-11-20"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Admins can allow passkeys in an authentication policy so managed Atlassian accounts sign in with a passkey. Blocked by default, and not offered when SSO is enforced."
+    source: "https://support.atlassian.com/security-and-access-policies/docs/manage-passkey-authentication/"
+    checked: "2026-11-20"
+  audit_logs:
+    support: "partial"
+    notes: "Statuspage's security FAQ says it offers no periodic reports on user activity or configuration changes, only some insight into recent activity through the activity log."
+    source: "https://support.atlassian.com/statuspage/docs/account-security-information/"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "Atlassian creates accounts at first SAML sign-in for linked domains, but the Statuspage docs don't say whether those accounts get Statuspage access."
+  domain_verification:
+    support: "supported"
+    notes: "Statuspage team members use Atlassian accounts. Verifying a domain in Atlassian Administration claims existing accounts on it as managed accounts that admins can edit, deactivate or delete."
+    source: "https://support.atlassian.com/user-management/docs/verify-a-domain-to-manage-accounts/"
+    checked: "2026-11-20"
+  custom_roles:
+    support: "partial"
+    plan: "Business, Corporate, Enterprise or Audience Specific"
+    notes: "Role based access control adds three fixed roles per page, and admins choose which pages and roles each team member gets. New roles with custom permissions can't be defined."
+    source: "https://support.atlassian.com/statuspage/docs/set-up-role-based-access-control/"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "undocumented"
+    notes: "Users invited through admin.atlassian.com can be put in a group with Statuspage product admin access, but the docs don't describe mapping IdP groups to Statuspage roles."
+  session_controls:
+    support: "partial"
+    notes: "Statuspage's security FAQ says users are logged out automatically after one month and this can't be customized. Removing a team member ends their access immediately."
+    source: "https://support.atlassian.com/statuspage/docs/account-security-information/"
+    checked: "2026-11-20"
+  api_token_controls:
+    support: "supported"
+    notes: "API keys are organization-level and managed only by account owners, who can see, name and delete them. New keys expire after 1 to 365 days."
+    source: "https://support.atlassian.com/statuspage/docs/create-and-manage-api-keys/"
+    checked: "2026-11-20"

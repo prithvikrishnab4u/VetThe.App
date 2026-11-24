@@ -1,0 +1,78 @@
+name: "Mintlify"
+category: "development"
+website: "https://www.mintlify.com"
+description: "Mintlify is a platform for building and hosting documentation websites."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML", "OIDC"]
+    notes: "Admins can set up SAML for Okta and Microsoft Entra themselves; other providers, like Google Workspace or Okta OIDC, are set up through support."
+    source: "https://www.mintlify.com/docs/dashboard/sso"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "A Require SSO setting blocks password, magic link and Google sign-in, with break-glass access for named members."
+    source: "https://www.mintlify.com/docs/dashboard/sso"
+    checked: "2026-09-27"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Provisions and deprovisions members from any SCIM 2.0 identity provider; Okta create, update and deactivate are supported."
+    source: "https://www.mintlify.com/docs/dashboard/scim"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The docs don't describe a setting to require MFA."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    retention: "2 years"
+    notes: "Admins can view logs, export them to CSV, and stream them to S3 or Datadog."
+    source: "https://www.mintlify.com/docs/dashboard/audit-logs"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Needs SSO, and only works for sign-ins started from the identity provider."
+    source: "https://www.mintlify.com/docs/dashboard/sso"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "partial"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Once SSO is active you can verify up to 25 domains, and users on them are sent to your identity provider. The docs don't say existing accounts are claimed."
+    source: "https://www.mintlify.com/docs/dashboard/sso"
+    checked: "2026-09-27"
+  custom_roles:
+    support: "undocumented"
+    notes: "The roles page lists only three built-in roles (viewer, editor, admin)."
+  group_role_mapping:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "A SAML groups attribute can be mapped to roles (set up with your account rep), and SCIM groups can be mapped to roles."
+    source: "https://www.mintlify.com/docs/dashboard/sso"
+    checked: "2026-09-27"
+  session_controls:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Idle timeout and maximum session length from 5 minutes to 14 days, plus an IP allowlist."
+    source: "https://www.mintlify.com/docs/dashboard/session-security"
+    checked: "2026-09-27"
+  api_token_controls:
+    support: "supported"
+    notes: "Admins can revoke a member's sessions, CLI tokens, API keys, discovery API keys, M2M clients and connected apps."
+    source: "https://www.mintlify.com/docs/dashboard/roles"
+    checked: "2026-09-27"

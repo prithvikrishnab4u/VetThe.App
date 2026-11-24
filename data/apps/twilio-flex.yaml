@@ -1,0 +1,57 @@
+name: "Twilio Flex"
+category: "support"
+website: "https://twilio.com/flex"
+description: "Twilio Flex is Twilio's programmable contact center. Values here cover how agents, supervisors and admins sign in to Flex UI and how account users are managed in Twilio Console, not the authentication Flex offers to the end customers it serves."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "Flex integrates with any SAML 2.0 identity provider, such as Okta, Entra ID, Google or Salesforce, so agents, supervisors and administrators sign in with SSO. The docs don't name a plan."
+    source: "https://www.twilio.com/docs/flex/admin-guide/setup/sso-configuration"
+    checked: "2026-11-24"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "SSO is the preferred way to create agents and supervisors, but Console users with Owner, Administrator, Developer or Support roles can also open Flex from Console. The docs don't describe requiring SSO for everyone."
+  scim:
+    support: "undocumented"
+    notes: "The Flex docs reached don't describe SCIM. Removing an SSO-created user means deleting the TaskRouter worker and removing the user in the IdP."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Twilio Console's two-factor settings are documented on Twilio's help center, which wasn't on the host checked."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The docs reached don't mention security keys or passkeys for Console or Flex sign-in."
+  audit_logs:
+    support: "supported"
+    retention: "30 days on the free version; 13 months with Administration, Security or Enterprise Edition packages"
+    notes: "Monitor Events logs virtually every action in the account, whether through the API or by a user in Twilio Console, including changes to security settings, with the actor behind each event."
+    source: "https://www.twilio.com/docs/usage/monitor-events"
+    checked: "2026-11-24"
+  jit_provisioning:
+    support: "supported"
+    notes: "Flex UI users are TaskRouter workers, and a worker is created whenever a user logs in to Flex UI, including through SSO. The IdP's attributes set the new worker's role."
+    source: "https://www.twilio.com/docs/flex/admin-guide/setup/flex-ui-users"
+    checked: "2026-11-24"
+  domain_verification:
+    support: "undocumented"
+    notes: "The Flex docs only describe authenticating email domains for sending email, not for sign-in or account control."
+  custom_roles:
+    support: "not_supported"
+    notes: "Flex UI users have one of a fixed set of roles: Administrator, Read-only Administrator, Supervisor or Agent."
+    source: "https://www.twilio.com/docs/flex/admin-guide/setup/flex-ui-users"
+    checked: "2026-11-24"
+  group_role_mapping:
+    support: "supported"
+    notes: "The attributes the IdP passes at SSO sign-in decide the Flex UI role (agent, supervisor or admin) of the worker. The Read-only Admin role can't be assigned through SSO."
+    source: "https://www.twilio.com/docs/flex/admin-guide/setup/flex-ui-users"
+    checked: "2026-11-24"
+  session_controls:
+    support: "undocumented"
+    notes: "Flex's automatic logout settings change a disconnected agent's status to offline for routing; the docs reached don't describe a session length or a way to sign users out."
+  api_token_controls:
+    support: "supported"
+    notes: "Twilio API keys can be issued per developer or application and revoked at any time. Restricted API keys limit access to specific API resources."
+    source: "https://www.twilio.com/docs/iam/api-keys"
+    checked: "2026-11-24"

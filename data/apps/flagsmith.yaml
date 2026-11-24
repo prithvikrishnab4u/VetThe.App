@@ -1,0 +1,67 @@
+name: "Flagsmith"
+category: "development"
+website: "https://www.flagsmith.com"
+description: "Flagsmith is an open-source feature flag and remote config service."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML"]
+    notes: "SAML 2.0 single sign-on needs an Enterprise subscription. LDAP and Microsoft ADFS are also Enterprise options."
+    source: "https://docs.flagsmith.com/administration-and-security/access-control/saml"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "You can force SSO by restricting sign-in methods per email domain. On SaaS and private cloud you ask Flagsmith support to set this up."
+    source: "https://docs.flagsmith.com/administration-and-security/access-control/"
+    checked: "2026-09-27"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM 2.0 creates, deactivates and deletes users and pushes permission groups and their membership. Needs SSO set up first."
+    source: "https://docs.flagsmith.com/administration-and-security/access-control/scim"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Two-factor authentication is available on Start-Up and Enterprise, but the docs don't say admins can require it."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    notes: "Every action in the dashboard is logged and can be filtered in the app, or streamed to your own systems with audit log webhooks."
+    source: "https://docs.flagsmith.com/administration-and-security/governance-and-compliance/audit-logs"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    notes: "Users can join your organisation by signing in through SSO. By default they get no permissions unless a group is set to add new users automatically."
+    source: "https://docs.flagsmith.com/administration-and-security/access-control/rbac"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    tier: "paid"
+    plan: "Scale-Up"
+    notes: "Role-based access control with custom roles needs a Scale-Up or Enterprise subscription."
+    source: "https://docs.flagsmith.com/administration-and-security/access-control/rbac"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "On SAML sign-in, users are added to or removed from pre-created Flagsmith groups whose External ID matches the groups claim."
+    source: "https://docs.flagsmith.com/administration-and-security/access-control/saml"
+    checked: "2026-09-27"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "Management API keys are created at the organisation level and act as either full admin or a chosen set of RBAC roles. Granular key permissions need Scale-Up or Enterprise."
+    source: "https://docs.flagsmith.com/integrating-with-flagsmith/flagsmith-api-overview/management-api/authentication"
+    checked: "2026-09-27"

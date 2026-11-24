@@ -1,0 +1,61 @@
+name: "Kong Konnect"
+category: "infrastructure"
+website: "https://konghq.com"
+description: "Kong Konnect is Kong's hosted API management platform for running and managing API gateways, Dev Portals, and service catalogs."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "Org admins can set up SSO with any SAML or OIDC identity provider. You can combine built-in login with SAML or OIDC, but not SAML and OIDC together. The docs don't name a plan."
+    source: "https://developer.konghq.com/konnect-platform/sso/"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    notes: "Once SSO has been tested, admins can turn off built-in username and password login."
+    source: "https://developer.konghq.com/konnect-platform/sso/"
+    checked: "2026-09-27"
+  scim:
+    support: "undocumented"
+    notes: "The Konnect docs describe IdP team mapping at SSO login but no SCIM provisioning."
+  mfa_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Konnect Plus"
+    notes: "MFA is required for Konnect Plus and Enterprise users who sign in with username and password. They're asked to set it up at first sign-in. Other orgs can opt in."
+    source: "https://developer.konghq.com/konnect-platform/authentication/"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Users who sign in with username and password can also set up passkeys."
+    source: "https://developer.konghq.com/konnect-platform/authentication/"
+    checked: "2026-09-27"
+  audit_logs:
+    support: "supported"
+    retention: "7 days"
+    notes: "Org and Dev Portal audit logs go out through a webhook, and org logs can also be pulled from the API. Konnect keeps logs for 7 days."
+    source: "https://developer.konghq.com/konnect-platform/audit-logs/"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    notes: "With team mappings set up, Konnect creates the account with the mapped roles the first time a user logs in through the IdP."
+    source: "https://developer.konghq.com/konnect-platform/sso/"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs describe custom teams built from predefined roles, but not custom roles."
+  group_role_mapping:
+    support: "supported"
+    notes: "IdP groups can be mapped to Konnect org teams and Dev Portal teams. Changes to group membership in the IdP carry over to Konnect."
+    source: "https://developer.konghq.com/konnect-platform/sso/"
+    checked: "2026-09-27"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "Each user gets up to 10 personal access tokens. Tokens unused for 12 months are revoked, and org admins can revoke users' tokens. System account tokens last at most 12 months."
+    source: "https://developer.konghq.com/konnect-api/"
+    checked: "2026-09-27"

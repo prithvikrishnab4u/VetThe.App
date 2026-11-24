@@ -2,7 +2,7 @@
 
 Running log of what's done and what's next. **Update this file at the end of every work session**: tick items off, add what you found, and refresh the numbers with `.venv/bin/python scripts/validate.py`.
 
-_Last updated: 2026-09-24_
+_Last updated: 2026-11-24_
 
 ## Remind the user
 
@@ -10,21 +10,68 @@ _Last updated: 2026-09-24_
 
 ## In progress
 
-- Nothing running.
+- **Brief for the last four non-core columns is written** (2026-09-27): [research/BRIEF-roles-session-tokens.md](research/BRIEF-roles-session-tokens.md). It says where each answer usually lives, defines the `partial` boundary and the same-word traps for each capability, and adds two rules from the last run: the cited page must be about the capability, and silence on one page is `undocumented`, not `not_supported`. The pilot has not run yet: the 2026-09-27 session's network policy blocked vendor hosts (slack.com), so it needs an environment whose network access allows vendor docs.
 
 ## Where the data stands
 
-172 apps: 79 `published`, 93 `draft`. 2,064 data points:
+385 apps: 79 `published`, 306 `draft`. 4,620 data points:
 
 | | Count |
 |---|---|
-| Verified (has `source` + `checked`) | 854 |
+| Verified (has `source` + `checked`) | 2,165 |
 | Unverified (a value with no source, carried over from the old dataset) | 0 |
-| Not documented (checked, the vendor says nothing) | 572 |
+| Not documented (checked, the vendor says nothing) | 1,817 |
 | Not researched | 638 |
 
 ## Done
 
+- [x] **15 apps from BACKLOG P2 plus a Google Cloud refill, read from their own docs hosts (2026-11-20 to 11-24, fourth session).** Added as `draft`: apigee, customer-io, digitalocean, heroku, atlassian-statuspage, oracle-cloud, chargebee, sophos-central, prisma-access, akamai, atlan, twilio-flex, zoho-desk, axonius, sketch. All 12 capabilities filled per app, every value sourced or `undocumented`, every cited URL checked to return 200. Pages were read with curl; Customer.io, DigitalOcean, Chargebee, Atlan, Axonius, Twilio and Akamai serve Markdown twins (`.md`, `index.html.md` or `llms.txt`), which made them quick.
+  - **Google Cloud** now reads docs.cloud.google.com: SSO enforcement (Cloud Identity SAML profiles, super admins can bypass), domain verification, group → role mapping and session duration (Workforce Identity Federation pools) and API key controls are sourced. SCIM stays `undocumented` (Entra provisioning into Cloud Identity isn't described as SCIM; WIF's SCIM covers only Gemini Enterprise and Looker), and JIT stays `undocumented`.
+  - **Which product each file covers.** Apigee is Apigee X on Google Cloud (Cloud IAM roles, WIF sign-in). Oracle Cloud is the OCI Console through IAM identity domains. Statuspage is the management interface with Atlassian accounts (Guard Standard for SAML, free for Statuspage users on paid plans). Prisma Access is Strata Cloud Manager through Palo Alto Common Services. Sophos Central's docs now call the console Sophos Fusion Admin. Twilio Flex covers Flex UI plus Twilio Console.
+  - **Tiers set only where a vendor page names the plan and its place in the lineup:** Oracle (Free identity domain type: SSO, JIT, audit), Statuspage (Guard add-on), Chargebee (SAML, SCIM, JIT as a paid add-on on Enterprise, from its pricing comparison), Zoho Desk (Standard for SSO and profiles, Enterprise for audit log, all self-serve), Sketch (Professional self-serve for SSO and JIT; Enterprise through sales for SCIM).
+  - **Thin on purpose:** Akamai's IAM user guide (techdocs.akamai.com/iam) is login-gated, so its file comes from the public IAM API reference: custom roles, session timeouts and API client locking are sourced, SSO/SCIM/audit are `undocumented`. Zoho Desk's help moved to help.zoho.com (not allowed), so it comes from the edition comparison page only.
+  - Calls worth knowing: Heroku requires MFA for everyone and its audit trail is a monthly JSON export on Enterprise (`partial`). Customer.io says outright it has no JIT and no IdP-driven roles (`not_supported`). Statuspage's own security FAQ says session length can't be customized (`partial`). Twilio Flex UI roles are a fixed list (`not_supported`). Sophos and Prisma Access verify domains only to route federated sign-in (`partial`).
+  - **Skipped (not added):**
+    - **fastly:** docs.fastly.com now holds only product descriptions; every guide redirects to www.fastly.com/documentation, which was not allowed.
+    - **incident-io:** help.incident.io redirects to docs.incident.io, which was not allowed.
+    - **cortex-xdr:** docs.paloaltonetworks.com/cortex redirects to docs-cortex.paloaltonetworks.com, which was not allowed.
+    - **matillion:** Data Productivity Cloud docs redirect to docs.maia.ai, which was not allowed. Only the self-hosted Matillion ETL docs remain on docs.matillion.com.
+    - **zuora:** knowledgecenter.zuora.com redirects to docs.zuora.com, which was not allowed.
+    - **framer:** framer.com redirects every page to www.framer.com, which was not allowed.
+
+- [x] **20 apps from BACKLOG P1/P2, read from their own docs hosts (2026-11-20, third session).** Added as `draft`: conductorone (now C1, www.c1.ai), omada, strongdm, frontegg, hypr, transmit-security, ibm-verify, thales-sta, dynatrace, google-cloud, jira-service-management, netlify, algolia, sonarqube-cloud, sonatype, hex, sigma-computing, thoughtspot, qlik-cloud, devin. All 12 capabilities filled per app, every value sourced or `undocumented`. Report-only agents wrote the files and the main session reviewed each value before committing. Tiers are set only where a cited vendor page names the plan and its place in the lineup: SonarQube Cloud (Enterprise, from its docs plans page), Jira Service Management (Atlassian Guard is an add-on; 2SV, passkeys, domain verification and idle timeout are on all plans), Netlify (pages labelled "Enterprise plans"), and a few on Google Cloud, Algolia and Devin.
+  - **Which product each identity file describes.** C1 is its tenant web app, Omada is the Identity Portal plus the Cloud Management Portal, StrongDM is the Admin UI (StrongDM is now part of Delinea; kept as its own row because its docs stand alone), Frontegg is the Frontegg Portal, HYPR is the Control Center, Transmit is the Mosaic Admin Portal, IBM Verify is the SaaS admin console, and Thales STA is the Token/Access Management operator consoles. **Frontegg and Thales STA are thin on purpose:** almost all their docs describe what they sell, so most values are `undocumented`. STA operators always sign in with email plus an STA token passcode, but no page frames that as an MFA setting, so `mfa_enforcement` stays `undocumented`.
+  - Fixed in review: Google Cloud JIT and group mapping (product page didn't say either; now `undocumented`), Sonatype tiers removed (no page says whether Pro is self-serve), ThoughtSpot custom roles plan removed (cited page didn't name it), Omada audit logs down to `partial` (logon event stream, no admin log viewer described), JSM custom roles re-sourced to the page that names the Free-site limit, Netlify JIT and Algolia API tokens to `undocumented`, IBM Verify audit retention removed (it came from an uncited page).
+  - Calls worth knowing: Dynatrace session length is fixed system-wide (`not_supported`). Qlik says outright that MFA can't be made mandatory with Qlik Account (`not_supported`). Hex has six fixed roles and HYPR five (`not_supported` custom roles). Hex SSO is OIDC only.
+  - **Google Cloud is thin:** every cloud.google.com/*/docs URL now 301s to **docs.cloud.google.com**, which wasn't allowed, so it is sourced from product pages only. Filled from that host in the fourth session (see above).
+  - **Hosts not reachable this session:** hex.tech (pricing, so no Hex tiers), www.netlify.com, sonarsource.com, transmitsecurity.com, support.algolia.com (Algolia's SSO/team docs likely live there, so Algolia is mostly `undocumented`), developers.thoughtspot.com.
+  - **Skipped (not added):**
+    - **apigee:** added on 2026-11-20 in the fourth session, once docs.cloud.google.com was allowed.
+
+- [x] **14 identity vendors from BACKLOG P1, read from their own docs hosts (2026-11-20, second session).** Added as `draft`, `category: security`: opal, p0-security, apono, britive, workos, stytch, aembit, push-security, beyond-identity, ping-identity, sailpoint, delinea, beyondtrust, netwrix. All 12 capabilities filled per app, every value sourced or `undocumented`, and every cited URL checked to return 200. **No tiers at all**: none of these docs pages name a plan, and the vendors' pricing pages weren't on the allowed hosts. Two values carry a `plan` without a tier because the docs name a feature gate but not a plan: Aembit Enforce SSO ("Identity Providers feature", marked a paid feature) and SailPoint custom roles ("Custom User Levels").
+  - **Which product each file describes.** These are identity products, so every value is about how the customer's own admins sign in to and run the product, not what it sells. Ping is the PingOne admin console. SailPoint is its SaaS tenant, now documented as Human Fabric (formerly Identity Security Cloud). Delinea is the Delinea Platform, BeyondTrust is the Pathfinder cloud platform, Netwrix is 1Secure (its SaaS product), and Beyond Identity is the Secure Access console. WorkOS and Stytch are their own dashboards, not the SSO/SCIM/MFA they sell to developers. That trap is the main thing to watch on any recheck: Stytch's docs are almost all about the customer's app, so its file is mostly `undocumented`.
+  - Calls worth knowing: WorkOS has exactly five fixed dashboard roles, so custom roles is `not_supported`. Push Security's admin console has a fixed three-day rolling session, so session controls is `not_supported`. Beyond Identity console sessions are fixed (24h, 15 min idle for admins) but suspension logs a user out, so `partial`. BeyondTrust Pathfinder's audit log only covers user management for now, so `partial`. Aembit maps IdP groups to roles only when it creates the account, so group mapping is `partial`. Opal's SCIM only pushes new users, so `partial`. Stytch's "JIT" lets anyone with a verified email on a domain join the workspace, not SSO-based, so `partial`.
+  - **Skipped (not added), because no usable vendor page could be read:**
+    - **saviynt:** docs.saviyntcloud.com redirects every page to a GitBook visitor login (OIDC), so it is login-gated.
+    - **veza:** docs.veza.com returns 401 "Authentication missing" for every page.
+    - **conductorone:** www.conductorone.com redirects to www.c1.ai (rebranded), which this session's network did not allow.
+    - **frontegg:** docs.frontegg.com redirects to developers.frontegg.com, which was not allowed.
+    - **strongdm:** www.strongdm.com redirects to delinea.com (Delinea acquired StrongDM), and docs to docs.strongdm.com. Neither was allowed. Worth checking whether StrongDM should now be folded into the Delinea row.
+    - **cyberark:** docs.cyberark.com returns 404 for the root and every known docs path to automated fetches. It failed the same way in the P1 run, so it needs a person in a browser.
+
+- [x] **20 apps from the skipped list, read straight from vendor docs hosts (2026-11-20).** This session's network allowed 20 vendor docs hosts, one per app: bitwarden, retool, twingate, doppler, honeycomb, rollbar, cribl, confluent-cloud, statsig, gitguardian, spacelift, port, pinecone, descope, panther, fivetran, bugsnag, coderabbit, hightouch, tines. All 12 capabilities filled per app, every value sourced or `undocumented`, no inferred tiers. All `draft`. Pages were fetched with curl and read as text; many Mintlify/GitBook/ReadMe sites serve a `.md` twin or `llms.txt`, which made this fast. Cited URLs are the published HTML pages, each checked to return 200.
+  - **Hosts that were not allowed, so values stayed untiered or `undocumented`:** retool.com/pricing (Retool tiers), doppler.com/pricing (Doppler SSO tier), descope.com/pricing (Descope tiers), www.fivetran.com/pricing (Fivetran SSO/SCIM tiers; fivetran.com redirects there), and **docs.hightouch.com** (hightouch.com/docs redirects there). Hightouch is the thinnest file: SSO, SCIM, custom roles and audit logs come from hightouch.com's pricing and security pages, the other eight values are `undocumented` until someone can read docs.hightouch.com.
+  - Calls worth knowing: Fivetran says outright it has no 2FA for native logins, so both MFA columns are `not_supported`. Bitwarden, Doppler, Confluent Cloud, GitGuardian and CodeRabbit verify a domain but only to block sign-ups or route SSO, so they are `partial` under the JIT/domain brief. Doppler's "revoke all personal tokens" and "sign everyone out" are org-wide switches only, so `partial`. Descope was researched as the Descope console (company settings for Descopers), not the CIAM product it sells. Twingate has no password login at all; its SSO tier is Teams for Google Workspace and Business for other IdPs.
+  - Several "supported" values have no tier because the vendor docs don't name a plan (Retool SSO/SCIM, Confluent Cloud SSO, Cribl SSO, Panther, Tines SCIM/JIT "not in all plans"). Those need a pricing page before the app can be published.
+
+- [x] **144 new apps from vendors' public docs repos (2026-09-28).** Goal is 500 apps by year end. This session's network blocked vendor websites but allowed `git clone` from GitHub/GitLab, so agents sparse-cloned each vendor's docs source (Markdown/MDX) and cited the published URL each file maps to. All 12 capabilities filled per app, every value sourced or `undocumented`, no inferred tiers. All added as `draft`: most docs name a feature but not the plan, so tiers are often missing. Brief lives in the session scratchpad; the rules are the same as the P1 run.
+  - **The method is running dry.** Most well-known SaaS vendors don't publish docs on GitHub. Skipped because no current public docs repo was found (need a browser or an allowed docs host): graphite, socket, rudderstack, astronomer, env0, oso-cloud, endor-labs, nocodb, baserow, rootly, humanitec, courier, roadie, rocket-chat, codecov, chatwoot, infracost, pipedream, p0-security, apono, launchable, cloudsmith, gitpod (docs archived), scalr, xata (docs archived), opslevel, element (docs archived). The other 20 on this list were added on 2026-11-20 (see above).
+  - Getting to 500 needs vendor websites reachable again. With that, BACKLOG.md P1/P2 is the obvious source.
+
+- [x] **Offline consistency audit** (2026-09-27, no network needed). Checked every file for IdP-sourced values, tiers that contradict the plan name, JIT or group mapping without SSO/SCIM, and future `checked` dates. Fixed:
+  - Google Workspace SCIM cited an Entra tutorial (IdP docs never count). Now `undocumented` until a Google-owned page is found.
+  - `tier: "free"` on 13 values from apps that have no free plan (Aircall, Ashby, Culture Amp, Dynamics 365, Marketing Cloud, Acrobat Sign). Agents had used "free" to mean "all plans at no extra cost". Changed to `paid`, which is the schema's meaning for the cheapest paid plan.
+  - Left for a browser recheck, because the plan structure isn't clear enough to change blind: JetBrains Enforce MFA (`free` with plan "Organization"), Gorgias SSO/Enforce SSO/Enforce MFA (`free`, may have no free plan now), Shopify and ChatGPT Enterprise passkeys (`free` because passkeys are account-level, though neither product has a free tier for the admin side).
 - [x] Data model: 12 IAM capabilities, each with support, minimum tier, plan, notes, source, checked (`data/schema.yaml`)
 - [x] Split `unknown` into `undocumented` and `not_researched`
 - [x] **Core capabilities** (SSO, Enforce SSO, SCIM, Enforce MFA, Passkeys, Audit logs) checked against vendor docs for all 107 apps, including Snyk
@@ -84,16 +131,17 @@ _Last updated: 2026-09-24_
    | Custom roles | 160 |
    | Session controls | 150 |
    | API token controls | 163 |
-   Run the same way: parallel report-only agents, about 8 apps each, every value applied and reviewed in the main session. Use [research/BRIEF-jit-domain.md](research/BRIEF-jit-domain.md) as the pattern, but **these four need a rewritten brief**. JIT and domain verification usually sit on the one SSO docs page, and these do not: roles live in an admin guide, session controls in a security or policy page, API tokens in a developer doc. Expect more fetches per app and a lower hit rate. Carry over the three rules the first run proved necessary: never cite a page you could not fetch, never infer a tier, and define the `partial` boundary up front for each capability, since that is where every agent error landed.
+   Run the same way: parallel report-only agents, about 8 apps each, every value applied and reviewed in the main session. Use [research/BRIEF-roles-session-tokens.md](research/BRIEF-roles-session-tokens.md) (written 2026-09-27; pilot it on about 3 batches first, as with JIT). Why it needed rewriting: JIT and domain verification usually sit on the one SSO docs page, and these do not: roles live in an admin guide, session controls in a security or policy page, API tokens in a developer doc. Expect more fetches per app and a lower hit rate. Carry over the three rules the first run proved necessary: never cite a page you could not fetch, never infer a tier, and define the `partial` boundary up front for each capability, since that is where every agent error landed.
 4. [ ] Recheck values older than about 6 months (vendors change plans); `checked` dates make this a simple query
-5. [ ] Add more apps from [BACKLOG.md](BACKLOG.md): the first 72 P1 rows are done, so continue from P1 row 73, then P2/P3. Use `scratchpad/new/BRIEF.md` + `mk.py` as the pattern. Requests will also arrive through the website's "Add an app"
-6. [ ] The 65 apps added on 2026-09-22 are all `draft` — they need plan tiers before they can be published
+5. [ ] **Identity tools first (added 2026-09-27):** IGA, access management, PAM and ITDR/NHI vendors head [BACKLOG.md](BACKLOG.md). 14 were added on 2026-11-20 (see Done). Eight more were added in the third 2026-11-20 session (conductorone, omada, strongdm, frontegg, hypr, transmit-security, ibm-verify, thales-sta). Still to go include OneLogin and the rest of the identity block, plus saviynt, veza and cyberark, each needing a browser.
+6. [ ] Add more apps from [BACKLOG.md](BACKLOG.md): the first 72 P1 rows are done, so continue from P1 row 73, then P2/P3. Use `scratchpad/new/BRIEF.md` + `mk.py` as the pattern. Requests will also arrive through the website's "Add an app"
+7. [ ] The 65 apps added on 2026-09-22 are all `draft` — they need plan tiers before they can be published
 
 ## To do: site
 
-- [ ] A page per app (`/apps/<id>/`) with all 12 capabilities, sources and notes. Add a "Help wanted" list there of not-researched values
-- [ ] Site-wide "Help wanted" view: filter the table to not-researched values
-- [ ] Show "last checked" on cells, and flag stale values
+- [x] A page per app (`/apps/<id>/`) with all 12 capabilities, sources, notes, a ✎ on each value, and a "Help wanted" list of not-researched values (done 2026-09-27; built by a content adapter, `site/content/apps/_content.gotmpl`, from `data/apps/`, so no content files to maintain). App names in the main table now link there
+- [x] Site-wide "Help wanted" view: `/apps/` lists every app with checked / not-researched counts, most work left first (done 2026-09-27)
+- [x] Show "last checked" on cells, and flag stale values (2026-09-27). The check date is in each cell's tooltip and on the app page. Values checked more than 6 months before the build get an amber source link and a note. It's judged at build time, so a redeploy moves the line forward.
 - [ ] Remove the `.Site.Data` deprecation warning (switch to `hugo.Data`) once Cloudflare's Hugo is ≥ 0.156
 
 ## Research rules (don't skip)

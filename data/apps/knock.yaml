@@ -1,0 +1,73 @@
+name: "Knock"
+category: "development"
+website: "https://knock.app"
+description: "Knock is a notification infrastructure platform for sending cross-channel product notifications through an API."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML"]
+    notes: "SAML SSO is only available on the Enterprise plan. Google SSO and passwordless email login are also offered."
+    source: "https://docs.knock.app/manage-your-account/saml-sso"
+    checked: "2026-09-28"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Once SAML SSO is configured, all members must log in through the identity provider and can't use other login methods."
+    source: "https://docs.knock.app/manage-your-account/saml-sso"
+    checked: "2026-09-28"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Directory sync (SCIM) creates users and assigns roles from group membership. You set it up by contacting Knock support."
+    source: "https://docs.knock.app/manage-your-account/directory-sync"
+    checked: "2026-09-28"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Owners and admins can turn on \"Require multi-factor authentication\" on the Security page. The toggle isn't available when SAML SSO is on."
+    source: "https://docs.knock.app/manage-your-account/multi-factor-authentication"
+    checked: "2026-09-28"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Passkeys, including hardware security keys, can be used as an MFA method."
+    source: "https://docs.knock.app/manage-your-account/multi-factor-authentication"
+    checked: "2026-09-28"
+  audit_logs:
+    support: "supported"
+    retention: "90 days on Enterprise, 30 days on other plans"
+    notes: "Audit logs show the actor, action, time, IP and location, and only admins and owners can see them. Exports are by request to support. Retention comes from the data retention page."
+    source: "https://docs.knock.app/manage-your-account/audit-logs"
+    checked: "2026-09-28"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "The SAML docs don't say whether accounts are created on first SSO login."
+  domain_verification:
+    support: "undocumented"
+    notes: "Auto-join domains need an owner with an email on that domain; DNS verification isn't described."
+  custom_roles:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Custom permission groups are only available on the Enterprise plan."
+    source: "https://docs.knock.app/manage-your-account/roles-and-permissions"
+    checked: "2026-09-28"
+  group_role_mapping:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "With directory sync, groups named knock-role-{key} map to roles. Custom group mappings are set up through support."
+    source: "https://docs.knock.app/manage-your-account/directory-sync"
+    checked: "2026-09-28"
+  session_controls:
+    support: "undocumented"
+    notes: "The docs only say removing a member ends their sessions right away."
+  api_token_controls:
+    support: "supported"
+    notes: "Only owners and admins can create and revoke service tokens, and deleting a token revokes it immediately."
+    source: "https://docs.knock.app/developer-tools/service-tokens"
+    checked: "2026-09-28"

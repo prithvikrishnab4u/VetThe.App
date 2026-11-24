@@ -1,0 +1,63 @@
+name: "Novu"
+category: "development"
+website: "https://novu.co"
+description: "Notification infrastructure platform for sending in-app, email, SMS, push and chat notifications."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML", "OIDC"]
+    notes: "SSO is available to Enterprise customers on Novu Cloud."
+    source: "https://docs.novu.co/platform/account/sso"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM 2.0 can create, update and deactivate users. It works alongside SSO and is enabled through Novu support."
+    source: "https://docs.novu.co/platform/account/sso"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The docs list MFA options but don't say admins can require MFA."
+  phishing_resistant_mfa:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Hardware keys are listed among the MFA options."
+    source: "https://docs.novu.co/platform/account/authentication"
+    checked: "2026-09-27"
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Users are created on first SSO sign-in."
+    source: "https://docs.novu.co/platform/account/sso"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "partial"
+    notes: "Verified domains let users with a matching email auto-join or request to join as Viewer. An Owner from that domain has to set it up, public email domains are excluded, and it doesn't take over existing accounts."
+    source: "https://docs.novu.co/platform/account/manage-members"
+    checked: "2026-09-27"
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs describe four fixed roles (Owner, Admin, Author, Viewer), with RBAC on Team and Enterprise. Custom roles aren't mentioned."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Session management covers device monitoring, session revocation and adaptive session durations."
+    source: "https://docs.novu.co/platform/account/authentication"
+    checked: "2026-09-27"
+  api_token_controls:
+    support: "undocumented"
+    notes: "Only Admins and Owners can manage API keys; scoping and expiry aren't documented."

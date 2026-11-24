@@ -1,0 +1,49 @@
+name: "Beyond Identity"
+category: "security"
+website: "https://beyondidentity.com"
+description: "Beyond Identity is a passwordless, phishing-resistant authentication platform with device trust and SSO. Values here cover signing in to and administering the Secure Access admin console."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "undocumented"
+    notes: "Beyond Identity is itself the IdP. External identity providers (generic OIDC, Nametag) are used to verify users before they enroll a credential, and the docs don't describe signing in to the admin console through another IdP."
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "supported"
+    notes: "Each realm has a SCIM server: users an IdP creates, updates or deletes over SCIM become Beyond Identity identities, and SCIM groups map to directory groups. No docs page names the plan."
+    source: "https://docs.beyondidentity.com/docs/scim-server"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Users sign in with passkeys bound to their device through the Authenticator. The docs don't describe a password login for the console, or a separate MFA requirement."
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "After enrollment through the Beyond Identity Authenticator, users sign in and access resources with phishing-resistant passkeys bound to their identity. No docs page names the plan."
+    source: "https://docs.beyondidentity.com/docs/directory/manage-users/add-users"
+    checked: "2026-11-20"
+  audit_logs:
+    support: "undocumented"
+    notes: "The Secure Access docs cover pushing events to a SIEM and a log of those pushes, but not an admin activity log in the console."
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    notes: "Admins can create roles with chosen permissions over identities, passkeys, groups and other areas, for example a help desk role that can send enrollment emails but not delete identities. No docs page names the plan."
+    source: "https://docs.beyondidentity.com/docs/directory/role-management/create-roles"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "supported"
+    notes: "Directory groups can be added to a role so their members inherit its permissions, and groups can be synced over SCIM. No docs page names the plan."
+    source: "https://docs.beyondidentity.com/docs/directory/role-management/group-roles"
+    checked: "2026-11-20"
+  session_controls:
+    support: "partial"
+    notes: "Console sessions are fixed at 24 hours, with a 15-minute inactivity timeout for privileged users; the docs don't say admins can change them. Suspending a user or removing their privileged role logs them out at once."
+    source: "https://docs.beyondidentity.com/docs/resources/platform-information/session-behavior"
+    checked: "2026-11-20"
+  api_token_controls:
+    support: "undocumented"

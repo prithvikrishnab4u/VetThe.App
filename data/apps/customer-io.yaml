@@ -1,0 +1,66 @@
+name: "Customer.io"
+category: "sales_marketing"
+website: "https://customer.io"
+description: "Customer.io is a customer messaging and marketing automation platform. Values here cover how team members sign in to the Customer.io web app (fly.customer.io) and how Account Admins manage them."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "Account Admins can set up SSO with Google Workspace, Okta, Microsoft Entra, a generic OpenID Connect provider, or SAML 2.0. Only SP-initiated sign-in from the Customer.io login page is supported. The docs don't name a plan."
+    source: "https://docs.customer.io/accounts/settings/login-with-sso/"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    notes: "Once SSO is enabled, team members must sign in through the IdP and can no longer use a username and password. Guests sign in through their own main account, so the SSO requirement doesn't apply to them."
+    source: "https://docs.customer.io/accounts/settings/login-with-sso/"
+    checked: "2026-11-20"
+  scim:
+    support: "supported"
+    notes: "With a SAML integration, admins can enable SCIM 2.0 so team members added or removed in the IdP are added to or removed from Customer.io. Roles and permissions can only be managed in Customer.io."
+    source: "https://docs.customer.io/accounts/settings/login-with-sso/"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Non-SSO logins always need a second step, an emailed magic link by default. Account Admins can require an authenticator app (TOTP) for all team members, who must set it up before they can continue."
+    source: "https://docs.customer.io/accounts/settings/two-factor-auth/"
+    checked: "2026-11-20"
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The two-factor docs list an email link and authenticator apps only, and don't mention security keys or passkeys."
+  audit_logs:
+    support: "supported"
+    retention: "30 days on Essentials; any period on Premium or Enterprise (export up to one year)"
+    notes: "Account Admins see an account audit log (sessions, failed sign-ins, permission changes, API key deletions, SSO settings) and a workspace audit log. Both can be exported to CSV, read through the API or exported to a storage bucket."
+    source: "https://docs.customer.io/accounts/audit-logs/"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "not_supported"
+    notes: "The SSO docs say Customer.io doesn't support Just-in-Time provisioning. Team members must be added in Customer.io or through SCIM."
+    source: "https://docs.customer.io/accounts/settings/login-with-sso/"
+    checked: "2026-11-20"
+  domain_verification:
+    support: "undocumented"
+    notes: "The account and SSO docs don't describe verifying a sign-in domain or claiming accounts on it. Domain verification in the docs is about email sending."
+  custom_roles:
+    support: "supported"
+    plan: "Premium or Enterprise"
+    notes: "Account Admins can create workspace-level custom roles with their own permission sets on Premium or Enterprise plans. Other plans use the standard Workspace Admin, Author and Viewer roles."
+    source: "https://docs.customer.io/accounts/settings/team/create-roles/"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "not_supported"
+    notes: "The SSO docs say it isn't possible to define a user's permissions from the IdP; roles are managed only in Customer.io, even with SCIM."
+    source: "https://docs.customer.io/accounts/settings/login-with-sso/"
+    checked: "2026-11-20"
+  session_controls:
+    support: "supported"
+    notes: "Admins set the login session length for everyone, from 14 days down to one hour. Deleting a team member ends their active sessions."
+    source: "https://docs.customer.io/accounts/security/login-session/"
+    checked: "2026-11-20"
+  api_token_controls:
+    support: "supported"
+    notes: "API keys are created and revoked on the API Credentials page, which needs Account Admin or the Manage API credentials permission. Keys can be limited to audit logs, and API access can be restricted by IP address."
+    source: "https://docs.customer.io/accounts/settings/managing-credentials/"
+    checked: "2026-11-20"

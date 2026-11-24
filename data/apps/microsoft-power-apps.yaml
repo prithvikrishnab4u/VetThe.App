@@ -1,0 +1,61 @@
+name: "Microsoft Power Apps"
+category: "productivity"
+website: "https://www.microsoft.com/power-platform/products/power-apps"
+description: "Microsoft Power Apps is a low-code app builder on Power Platform and Dataverse that signs users in through Microsoft Entra ID."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    notes: "Power Platform uses Microsoft Entra ID for identity and access management; tenant-level access requires an active Entra account."
+    source: "https://learn.microsoft.com/en-us/power-platform/guidance/adoption/conditional-access"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    notes: "Tenant-level access uses Entra ID: users need an active Entra account and must meet any Conditional Access policies to sign in."
+    source: "https://learn.microsoft.com/en-us/power-platform/guidance/adoption/conditional-access"
+    checked: "2026-09-27"
+  scim:
+    support: "undocumented"
+    notes: "Users are created in Microsoft 365 / Entra ID and synced to environments; no SCIM endpoint is documented."
+  mfa_enforcement:
+    support: "supported"
+    notes: "Entra ID Conditional Access can require multifactor authentication, for example to open a Power Apps canvas app."
+    source: "https://learn.microsoft.com/en-us/power-platform/guidance/adoption/conditional-access"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "supported"
+    tier: "free"
+    plan: "Microsoft Entra ID Free"
+    notes: "Entra ID tenant control: passkeys (FIDO2) are available in all Entra ID editions, including Entra ID Free, with no extra licenses."
+    source: "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-passkeys-fido2"
+    checked: "2026-09-27"
+  audit_logs:
+    support: "supported"
+    notes: "Power Apps activities such as creating, using, and deleting canvas apps are logged in Microsoft Purview; viewing needs the Audit Logs role."
+    source: "https://learn.microsoft.com/en-us/power-platform/admin/activity-logging-auditing/activity-logs-power-apps"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    notes: "When a member of an Entra ID group team accesses Dataverse and doesn't exist there yet, the user is added just-in-time."
+    source: "https://learn.microsoft.com/en-us/power-apps/developer/data-platform/aad-group-team"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    notes: "Admins with the System Administrator role can create and edit Dataverse security roles."
+    source: "https://learn.microsoft.com/en-us/power-platform/admin/create-edit-security-role"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "supported"
+    notes: "Entra ID security and Microsoft 365 groups can be mapped to Dataverse group teams with security roles, and members get access automatically."
+    source: "https://learn.microsoft.com/en-us/power-platform/admin/manage-group-teams"
+    checked: "2026-09-27"
+  session_controls:
+    support: "partial"
+    notes: "Per-environment session expiration and inactivity timeout can be set, but Power Apps canvas apps don't enforce the user session timeout."
+    source: "https://learn.microsoft.com/en-us/power-platform/admin/user-session-management"
+    checked: "2026-09-27"
+  api_token_controls:
+    support: "undocumented"

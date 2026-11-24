@@ -1,0 +1,62 @@
+name: "Heroku"
+category: "infrastructure"
+website: "https://heroku.com"
+description: "Heroku is Salesforce's cloud application platform. Values here cover how users sign in to the Heroku Dashboard and CLI, and how admins of Heroku Teams and Heroku Enterprise accounts manage access."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    plan: "Heroku Teams or Heroku Enterprise"
+    protocols: ["SAML"]
+    notes: "Team admins can set up SAML 2.0 SSO with an IdP such as Okta, Entra ID, Google Cloud Identity or Salesforce Identity. Heroku says SSO is available only for Heroku Teams and Heroku Enterprise customers."
+    source: "https://devcenter.heroku.com/articles/using-sso-services-with-heroku"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    plan: "Heroku Teams or Heroku Enterprise"
+    notes: "With SSO enabled, Heroku's own login mechanism is disabled for those users and authentication moves to the IdP. Heroku advises keeping an admin account created directly with Heroku in case the IdP is down."
+    source: "https://devcenter.heroku.com/articles/using-sso-services-with-heroku"
+    checked: "2026-11-20"
+  scim:
+    support: "undocumented"
+    notes: "The SSO docs don't mention SCIM. Removing a user in the IdP stops them logging in but doesn't remove the Heroku account; removing an IdP-created account needs Heroku Support."
+  mfa_enforcement:
+    support: "supported"
+    notes: "Heroku requires MFA for every customer who signs in with a Heroku username and password. With SSO, MFA must be enforced at the IdP instead."
+    source: "https://devcenter.heroku.com/articles/multi-factor-authentication"
+    checked: "2026-11-20"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Users can register any USB, Lightning or NFC security key compatible with FIDO2 WebAuthn, such as a YubiKey or Titan Key, as an MFA method."
+    source: "https://devcenter.heroku.com/articles/security-keys"
+    checked: "2026-11-20"
+  audit_logs:
+    support: "partial"
+    plan: "Heroku Enterprise"
+    notes: "Enterprise accounts can export a JSON audit trail of selected account events, one archive per calendar month, from the Dashboard or CLI. There's no real-time log or in-app log viewer."
+    source: "https://devcenter.heroku.com/articles/audit-trail"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "supported"
+    plan: "Heroku Teams or Heroku Enterprise"
+    notes: "The first time a user signs in through the IdP, Heroku creates their account and gives them the team's default role for new users (member unless an admin changes it)."
+    source: "https://devcenter.heroku.com/articles/using-sso-services-with-heroku"
+    checked: "2026-11-20"
+  domain_verification:
+    support: "undocumented"
+    notes: "The SSO and team docs don't describe verifying an email domain. Domain docs on Dev Center cover custom domains for apps."
+  custom_roles:
+    support: "partial"
+    notes: "Team roles (admin, member, viewer, collaborator) are fixed, but admins can grant each user any combination of view, deploy, operate and manage permissions per app. There's no way to define a new named role."
+    source: "https://devcenter.heroku.com/articles/app-permissions"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "undocumented"
+    notes: "The SSO docs only describe a default role for new users. They don't describe assigning roles from IdP groups."
+  session_controls:
+    support: "undocumented"
+    notes: "The Dev Center pages reached don't describe admin settings for session length or signing users out."
+  api_token_controls:
+    support: "undocumented"
+    notes: "The SSO docs advise removing departing users from the team so their API keys can't reach team resources, but no page reached describes admin controls over users' API keys or OAuth authorizations."

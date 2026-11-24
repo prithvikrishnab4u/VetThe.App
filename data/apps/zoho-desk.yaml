@@ -1,0 +1,55 @@
+name: "Zoho Desk"
+category: "support"
+website: "https://zoho.com/desk"
+description: "Zoho Desk is Zoho's customer service help desk. Values here cover how agents and admins sign in to Zoho Desk and how admins control their access, not Help Center sign-in for end customers. Agents sign in with Zoho accounts, whose SAML and MFA settings are documented on help.zoho.com, which couldn't be reached for this check, so most values come from the edition comparison page."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Standard"
+    notes: "The edition comparison lists an Office 365 integration that adds Office 365 users as agents who sign in with single sign-on, from the Standard plan up. Zoho's SAML setup for agent sign-in is documented on help.zoho.com, which couldn't be reached. The SAML, OpenID Connect and MFA rows on the page are for Help Center end users."
+    source: "https://www.zoho.com/desk/pricing-comparison.html"
+    checked: "2026-11-24"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Zoho account sign-in policies are documented on help.zoho.com, which couldn't be reached for this check."
+  scim:
+    support: "undocumented"
+    notes: "Not covered by the Zoho Desk pages on www.zoho.com; Zoho's provisioning docs are on help.zoho.com, which couldn't be reached."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The edition comparison lists MFA only for Help Center end users. Agent MFA is a Zoho account setting documented on help.zoho.com, which couldn't be reached."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "Not covered by the pages reached; Zoho account sign-in docs are on help.zoho.com."
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "Enterprise"
+    notes: "The audit log shows the sequence of events performed by users and tracks activity across automations, custom modules and other settings. The edition comparison lists it on Enterprise and Ultimate, both self-serve plans."
+    source: "https://www.zoho.com/desk/pricing-comparison.html"
+    checked: "2026-11-24"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "Not covered by the pages reached."
+  domain_verification:
+    support: "undocumented"
+    notes: "Not covered by the pages reached."
+  custom_roles:
+    support: "supported"
+    tier: "paid"
+    plan: "Standard"
+    notes: "Profiles set agents' permissions to modules, fields and utilities, and roles mirror the org chart with a profile each. Free and Express have only the default, non-editable ones; Standard allows 5 profiles, Professional 25, Enterprise 50 and Ultimate 200."
+    source: "https://www.zoho.com/desk/pricing-comparison.html"
+    checked: "2026-11-24"
+  group_role_mapping:
+    support: "undocumented"
+    notes: "Not covered by the pages reached."
+  session_controls:
+    support: "undocumented"
+    notes: "Not covered by the Zoho Desk pages reached; Zoho account session settings are documented on help.zoho.com."
+  api_token_controls:
+    support: "undocumented"
+    notes: "Not covered by the pages reached."

@@ -1,0 +1,52 @@
+name: "Hightouch"
+category: "infrastructure"
+website: "https://hightouch.com"
+description: "Hightouch is a composable customer data platform with reverse ETL, audience building and AI decisioning on top of the data warehouse."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "The pricing page lists Google and Azure SSO and SAML SSO (Okta, Azure AD, OneLogin and others) among the features in the Customer Data Platform and AI Decisioning plans. Those plans are quoted, so no tier is set. docs.hightouch.com was not reachable from this session."
+    source: "https://hightouch.com/pricing"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Not confirmed: the product docs at docs.hightouch.com were not reachable from this session, and the marketing pages don't say."
+  scim:
+    support: "supported"
+    notes: "The security page says SAML SSO comes with support for SCIM to keep access grants up to date. It doesn't say whether deactivation is covered."
+    source: "https://hightouch.com/platform/security"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Not confirmed: docs.hightouch.com was not reachable from this session."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "Not confirmed: docs.hightouch.com was not reachable from this session."
+  audit_logs:
+    support: "supported"
+    notes: "Audit logs track and search all in-app user activity, with export to other tools. The pricing page lists them in the Customer Data Platform and AI Decisioning plans."
+    source: "https://hightouch.com/platform/security"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "Not confirmed: docs.hightouch.com was not reachable from this session."
+  domain_verification:
+    support: "undocumented"
+    notes: "Not confirmed: docs.hightouch.com was not reachable from this session."
+  custom_roles:
+    support: "supported"
+    notes: "The security page describes fine-grained permissions and custom roles over workspace resources such as models, destinations and syncs."
+    source: "https://hightouch.com/platform/security"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "undocumented"
+    notes: "Not confirmed: docs.hightouch.com was not reachable from this session."
+  session_controls:
+    support: "undocumented"
+    notes: "Not confirmed: docs.hightouch.com was not reachable from this session."
+  api_token_controls:
+    support: "undocumented"
+    notes: "Not confirmed: docs.hightouch.com was not reachable from this session."

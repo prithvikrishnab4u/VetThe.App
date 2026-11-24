@@ -1,0 +1,63 @@
+name: "HCP Boundary"
+category: "security"
+website: "https://www.hashicorp.com/products/boundary"
+description: "HCP Boundary is HashiCorp's fully managed Boundary service for identity-based access to remote hosts and systems, run on the HashiCorp Cloud Platform."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "The HashiCorp Cloud Platform (HCP) organization supports SAML 2.0 and OIDC SSO with providers such as Okta, Entra ID, Ping and Google. No plan is named. Sign-in to the Boundary cluster itself uses Boundary auth methods (password, OIDC or LDAP)."
+    source: "https://developer.hashicorp.com/hcp/docs/hcp/iam/sso"
+    checked: "2026-09-28"
+  sso_enforcement:
+    support: "partial"
+    notes: "At the HCP organization level, once SSO is on, invitations stop and new users must come through the IdP, and existing SAML users on the SSO domain must use the SSO link. Existing personal accounts keep access until an admin removes them, and the owner can still use their original non-SSO login."
+    source: "https://developer.hashicorp.com/hcp/docs/hcp/iam/sso/manage"
+    checked: "2026-09-28"
+  scim:
+    support: "supported"
+    notes: "HCP supports SCIM: the IdP creates, updates and deactivates or deletes HCP users and manages groups and membership. SAML SSO is required first."
+    source: "https://developer.hashicorp.com/hcp/docs/hcp/iam/scim"
+    checked: "2026-09-28"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "HCP offers optional per-user OTP MFA for email sign-in; the docs don't describe a way for admins to require it, and the Boundary auth docs don't mention MFA."
+  phishing_resistant_mfa:
+    support: "not_supported"
+    notes: "HCP offers one MFA method, a one-time password from an authenticator app, and only for email sign-in."
+    source: "https://developer.hashicorp.com/hcp/docs/hcp/iam/mfa"
+    checked: "2026-09-28"
+  audit_logs:
+    support: "supported"
+    notes: "HCP Boundary streams audit events for create, list, update and delete operations on sessions, auth methods, roles, users and other resources to AWS CloudWatch or Datadog in near real time. Events include the user ID, timestamp and full request and response."
+    source: "https://developer.hashicorp.com/hcp/docs/boundary/audit-logging"
+    checked: "2026-09-28"
+  jit_provisioning:
+    support: "supported"
+    notes: "When someone first signs in successfully with a scope's primary auth method (such as OIDC or LDAP), Boundary creates the user automatically."
+    source: "https://developer.hashicorp.com/boundary/docs/authentication"
+    checked: "2026-09-28"
+  domain_verification:
+    support: "supported"
+    notes: "For HCP organization SSO, you verify each email domain with a DNS TXT record, and a domain can only be used by one HCP organization."
+    source: "https://developer.hashicorp.com/hcp/docs/hcp/iam/sso/setup/saml"
+    checked: "2026-09-28"
+  custom_roles:
+    support: "supported"
+    notes: "Boundary roles are created by admins and hold grant strings that set which actions principals can take on which resources."
+    source: "https://developer.hashicorp.com/boundary/docs/rbac/manage-roles"
+    checked: "2026-09-28"
+  group_role_mapping:
+    support: "supported"
+    notes: "OIDC and LDAP managed groups use filters on IdP claims or LDAP group membership, and managed groups can be added as principals on roles."
+    source: "https://developer.hashicorp.com/boundary/docs/rbac/users/managed-groups"
+    checked: "2026-09-28"
+  session_controls:
+    support: "supported"
+    notes: "Admins set the auth token time-to-live and time-to-stale (inactivity) in hours for an HCP Boundary cluster, which control how often users must sign in again."
+    source: "https://developer.hashicorp.com/hcp/docs/boundary/configure-ttl"
+    checked: "2026-09-28"
+  api_token_controls:
+    support: "undocumented"

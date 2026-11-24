@@ -1,0 +1,41 @@
+name: "Frontegg"
+category: "security"
+website: "https://frontegg.com"
+description: "Frontegg is a customer identity and access management platform that SaaS companies embed for login, SSO and user management. Values here cover the Frontegg Portal, the dashboard where Frontegg's customers' teams configure environments, not the login box Frontegg sells."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "undocumented"
+    notes: "The quick start says you sign up for the Frontegg Portal with email or a GitHub or Google account. SAML or OIDC SSO into the Portal itself isn't described; the SSO docs cover end users of customers' apps."
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+    notes: "The SCIM docs cover provisioning end users into customers' accounts, not Frontegg Portal users."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The MFA docs cover end users of customers' apps. Requiring MFA for Frontegg Portal users isn't described."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "partial"
+    retention: "30 days by default, configurable per environment"
+    notes: "The environment Audit trail in the Portal records configuration changes such as SSO, social login, MFA and mail settings. Most events are about end users, and Portal team sign-ins aren't listed."
+    source: "https://developers.frontegg.com/ciam/guides/monitoring/audit-logs"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "Portal access is granted with built-in roles: Admin, Backoffice editor and viewer, Entitlements editor and viewer, and Impersonator. Custom Portal roles aren't described."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+    notes: "Session settings in the docs apply to end users of customers' apps. Session limits for the Frontegg Portal aren't described."
+  api_token_controls:
+    support: "undocumented"
+    notes: "The docs cover environment tokens and tokens for customers' end users. Admin controls over tokens created by Portal users aren't described."

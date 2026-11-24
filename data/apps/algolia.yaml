@@ -1,0 +1,46 @@
+name: "Algolia"
+category: "development"
+website: "https://algolia.com"
+description: "Algolia is a hosted search and discovery API with AI ranking, recommendations and merchandising tools. Values here cover signing in to and administering the Algolia dashboard and its team members."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Elevate"
+    notes: "The pricing page lists Access to SSO on the Elevate annual plan, the top tier above Free, Grow and Grow Plus. No public docs page describes the setup or protocols."
+    source: "https://www.algolia.com/pricing/"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "The public docs have no SSO setup page, so requiring SSO isn't described."
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Users can turn on 2FA with an authenticator app in their account details, and Algolia recommends it for everyone, but an admin setting that requires it isn't described."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The docs only describe 2FA with an authenticator app such as Google Authenticator or Authy."
+  audit_logs:
+    support: "undocumented"
+    notes: "The pricing page lists Activity Logs under Analytics on Grow Plus and Elevate, but no docs page shows that it records user and admin activity in the dashboard."
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "partial"
+    tier: "add_on"
+    plan: "Enterprise add-on (Team Advanced Permissions)"
+    notes: "When adding a team member, admins can restrict them to chosen indices and refine their permissions. Index restrictions need Team Advanced Permissions, part of the Enterprise add-on. Named custom roles aren't described."
+    source: "https://www.algolia.com/doc/guides/sending-and-managing-data/manage-indices-and-apps/manage-your-apps"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"
+    notes: "API keys belong to the application, not to individual users. They are listed in the dashboard and can be deleted, but the docs don't describe controls over keys that team members create."

@@ -1,0 +1,34 @@
+name: "Travis CI"
+category: "development"
+website: "https://www.travis-ci.com"
+description: "Travis CI is a hosted continuous integration and delivery service."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "undocumented"
+    notes: "The docs describe signing in with a GitHub, Bitbucket, GitLab or Assembla account only. SAML is mentioned only for the self-hosted Travis CI Enterprise, through GitHub Enterprise."
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Sign-in goes through the code host account, and the docs don't describe any Travis CI setting to require MFA."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"
+    notes: "Users get a personal API token from their account settings page; the docs don't describe any admin view or revocation of other users' tokens."

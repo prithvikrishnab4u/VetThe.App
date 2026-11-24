@@ -1,0 +1,50 @@
+name: "Apono"
+category: "security"
+website: "https://apono.io"
+description: "Apono is a cloud privileged access platform for just-in-time, time-bound access to infrastructure, databases and SaaS apps. Values here cover signing in to and administering Apono itself."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "Okta SAML SSO lets users log in to Apono with their company domain; Ping Identity SSO has its own guide. No docs page names the plan."
+    source: "https://docs.apono.io/docs/additional-integrations/identity-providers/okta-sso-for-apono-logins"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "The SSO guides don't describe blocking password sign-in once SSO is on."
+  scim:
+    support: "supported"
+    notes: "The Okta Directory (SCIM) integration pushes users and groups to Apono, and deactivating or removing a user in Okta terminates them in Apono. No docs page names the plan."
+    source: "https://docs.apono.io/docs/additional-integrations/identity-providers/okta-scim"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Admins can require authenticator-app MFA on specific access flows, so it applies to access requests rather than to signing in to Apono."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "Apono's own MFA uses six-digit codes from an authenticator app. Security keys and passkeys aren't mentioned."
+  audit_logs:
+    support: "supported"
+    notes: "The Audit Log page lists administrative events in the Apono admin console with who, what, when and where, with filters, and a webhook can send each event to another system. Retention isn't stated."
+    source: "https://docs.apono.io/docs/audits-and-reports/audit-log"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "The RBAC reference lists six built-in roles (Admin, Space Owner, Space Manager, Power User, Deployment, Viewer) and doesn't describe creating custom ones."
+  group_role_mapping:
+    support: "supported"
+    notes: "The Okta SAML setup includes an optional groups attribute statement that maps Okta groups to Apono roles. No docs page names the plan."
+    source: "https://docs.apono.io/docs/additional-integrations/identity-providers/okta-sso-for-apono-logins"
+    checked: "2026-11-20"
+  session_controls:
+    support: "undocumented"
+    notes: "Apono's Session Audit records privileged sessions to target systems, which is a different feature. Sign-in session length for Apono isn't described."
+  api_token_controls:
+    support: "undocumented"
+    notes: "Users create and delete their own personal API tokens, which stop working when the user is deleted. Admin controls over other users' tokens aren't described."

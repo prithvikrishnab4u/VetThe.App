@@ -1,0 +1,56 @@
+name: "IBM Verify"
+category: "security"
+website: "https://ibm.com/verify"
+description: "IBM Verify is IBM's SaaS identity and access management platform for workforce and customer identity. Values here cover how a tenant's administrators sign in to and are governed in the IBM Verify SaaS administration console."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "Admins add SAML or OIDC enterprise identity providers and choose under Security, Sign-in options which ones are shown at administrator login. Pricing is usage based and no docs page names a plan."
+    source: "https://www.ibm.com/docs/en/security-verify?topic=security-managing-sign-in-options"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Sign-in options control which identity providers are shown at administrator login, but the docs don't say that hiding Cloud Directory blocks password sign-in to the console."
+  scim:
+    support: "undocumented"
+    notes: "The docs cover outbound provisioning to target apps and LDAP sync, but not an external IdP provisioning Verify administrators over SCIM."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Access policies can require MFA for applications, but the docs read don't describe a policy that requires MFA for administrator sign-in to the console."
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Under Security, Sign-in options, admins can turn on FIDO2 device login for administrator sign-in per identity provider. Pricing is usage based and no docs page names a plan."
+    source: "https://www.ibm.com/docs/en/security-verify?topic=security-managing-sign-in-options"
+    checked: "2026-11-20"
+  audit_logs:
+    support: "supported"
+    notes: "The Administrator activity report shows changes made by administrators and application owners, such as access policy, API client, group and identity provider changes."
+    source: "https://www.ibm.com/docs/en/security-verify?topic=reports-administrator-activity"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "supported"
+    notes: "A SAML enterprise identity provider can have just-in-time provisioning turned on, which creates and updates the user account in Cloud Directory at sign-in. No docs page names a plan."
+    source: "https://www.ibm.com/docs/en/security-verify?topic=providers-adding-saml-enterprise-identity-provider"
+    checked: "2026-11-20"
+  domain_verification:
+    support: "undocumented"
+    notes: "The Managing domains page only lists CORS origins allowed to call the Verify APIs. The docs don't describe verifying an email domain."
+  custom_roles:
+    support: "supported"
+    notes: "Admins create custom administrator roles from selected permissions and other roles, optionally scoped to specific groups. Built-in roles can't be changed. No docs page names a plan."
+    source: "https://www.ibm.com/docs/en/security-verify?topic=roles-creating-administrator-role"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "supported"
+    notes: "Administrator roles can be assigned to groups, and a SAML enterprise IdP can be set to take group membership from the groupIds claim at each sign-in. No docs page names a plan."
+    source: "https://www.ibm.com/docs/en/security-verify?topic=providers-adding-saml-enterprise-identity-provider"
+    checked: "2026-11-20"
+  session_controls:
+    support: "undocumented"
+    notes: "The docs read don't describe a session length, idle timeout or forced sign-out for administrator console sessions."
+  api_token_controls:
+    support: "undocumented"
+    notes: "API access uses API clients that admins create with chosen entitlements. The docs read don't describe tokens that individual administrators create or controls over them."

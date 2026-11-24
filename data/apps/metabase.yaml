@@ -1,0 +1,75 @@
+name: "Metabase Cloud"
+category: "productivity"
+website: "https://www.metabase.com"
+description: "Metabase Cloud is the hosted version of Metabase, a business intelligence tool for querying data and building dashboards."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Pro"
+    protocols: ["SAML", "OIDC"]
+    notes: "SAML, OIDC and JWT sign-in are listed for Pro and Enterprise plans. Starter and open source only get Google Sign-in and LDAP."
+    source: "https://www.metabase.com/docs/latest/people-and-groups/start"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Pro"
+    notes: "On Pro and Enterprise plans, admins can require SSO by turning off password logins. That applies to admin accounts too."
+    source: "https://www.metabase.com/docs/latest/people-and-groups/changing-password-complexity"
+    checked: "2026-09-27"
+  scim:
+    support: "supported"
+    notes: "SCIM is tested with Okta and Entra ID. Okta can provision users and groups, while Entra ID provisions users only. The page doesn't name a plan in its text."
+    source: "https://www.metabase.com/docs/latest/people-and-groups/user-provisioning"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Pro"
+    notes: "A Pro/Enterprise feature. Admins can require authenticator-app 2FA right away or by a deadline. It covers password and LDAP logins; SSO logins rely on the identity provider's MFA."
+    source: "https://www.metabase.com/docs/latest/people-and-groups/two-factor-authentication"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "not_supported"
+    notes: "Metabase's own 2FA doesn't support passkeys, U2F or WebAuthn. SSO users get whatever their identity provider offers."
+    source: "https://www.metabase.com/docs/latest/people-and-groups/two-factor-authentication"
+    checked: "2026-09-27"
+  audit_logs:
+    support: "supported"
+    tier: "paid"
+    plan: "Pro"
+    retention: "720 days by default"
+    notes: "Usage analytics tracks who viewed or changed what, including settings changes and invites. Starter doesn't collect activity and view data, but Pro and Enterprise do."
+    source: "https://www.metabase.com/docs/latest/usage-and-performance-tools/usage-analytics"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    notes: "With SAML, user provisioning is on by default, so Metabase creates an account the first time someone signs in through SSO. Admins can turn it off."
+    source: "https://www.metabase.com/docs/latest/people-and-groups/authenticating-with-saml"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+    notes: "Google Sign-in lets you name a domain whose users can sign up themselves, but the docs don't describe verifying a domain or claiming its accounts."
+  custom_roles:
+    support: "supported"
+    notes: "Admins create groups and choose each group's access to databases, collections and other items. Administrators and All Users are built-in groups."
+    source: "https://www.metabase.com/docs/latest/people-and-groups/managing"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "supported"
+    notes: "SAML can put people into Metabase groups from a user attribute sent by the identity provider. OIDC and SCIM with Okta can sync groups too."
+    source: "https://www.metabase.com/docs/latest/people-and-groups/authenticating-with-saml"
+    checked: "2026-09-27"
+  session_controls:
+    support: "supported"
+    notes: "Admins can set an inactivity timeout in the admin settings. The maximum session age and browser-close logout are set with environment variables."
+    source: "https://www.metabase.com/docs/latest/people-and-groups/changing-session-expiration"
+    checked: "2026-09-27"
+  api_token_controls:
+    support: "supported"
+    notes: "Only admins create API keys, and each key gets the permissions of the group it's assigned to. Admins can view, edit, regenerate and delete keys."
+    source: "https://www.metabase.com/docs/latest/people-and-groups/api-keys"
+    checked: "2026-09-27"

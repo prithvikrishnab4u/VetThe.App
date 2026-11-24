@@ -1,0 +1,75 @@
+name: "ngrok"
+category: "infrastructure"
+website: "https://ngrok.com"
+description: "ngrok is an API gateway and tunneling service that puts local and private services on the internet."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "add_on"
+    plan: "Pay-as-you-go with SSO & RBAC add-on"
+    protocols: ["SAML", "OIDC"]
+    notes: "Dashboard SSO with SAML or OpenID Connect. The add-on is $10 per user/month and must cover all users."
+    source: "https://ngrok.com/docs/iam/sso/"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    tier: "add_on"
+    plan: "Pay-as-you-go with SSO & RBAC add-on"
+    notes: "\"SSO Enforced\" mode makes every user sign in through the IdP; other login methods stop working."
+    source: "https://ngrok.com/docs/iam/sso/"
+    checked: "2026-09-27"
+  scim:
+    support: "partial"
+    tier: "add_on"
+    plan: "Pay-as-you-go with Identity and Access Governance Suite"
+    notes: "Provisions and deprovisions users only; groups aren't supported. Needs SSO set up first."
+    source: "https://ngrok.com/docs/iam/sso/"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "supported"
+    notes: "You can set the account to require MFA for all users."
+    source: "https://ngrok.com/docs/iam/users/"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "not_supported"
+    notes: "MFA only supports one-time passwords (TOTP)."
+    source: "https://ngrok.com/docs/iam/users/"
+    checked: "2026-09-27"
+  audit_logs:
+    support: "supported"
+    tier: "add_on"
+    plan: "Pay-as-you-go with Identity and Access Governance Suite"
+    notes: "Audit events for account changes (domains, API keys, IP policies, etc.) are sent through Log Exports to destinations like a SIEM or Datadog. Retention isn't stated."
+    source: "https://ngrok.com/docs/pricing-limits/how-ngrok-charges/"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    notes: "Users signing in through SSO without an existing account are created automatically, with a Read/Write Developer role and Invite Team role."
+    source: "https://ngrok.com/docs/iam/users/"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "supported"
+    tier: "add_on"
+    plan: "Pay-as-you-go with Identity and Access Governance Suite"
+    notes: "Domain Controls let you claim an email domain via a DNS TXT record and route its logins and sign-ups to your SSO. Requires SSO."
+    source: "https://ngrok.com/docs/pricing-limits/how-ngrok-charges/"
+    checked: "2026-09-27"
+  custom_roles:
+    support: "undocumented"
+    notes: "The RBAC docs only describe fixed Developer, Team, Billing and Administrator roles."
+  group_role_mapping:
+    support: "not_supported"
+    notes: "SCIM doesn't support groups, and SCIM and JIT users always get the same fixed roles."
+    source: "https://ngrok.com/docs/iam/users/"
+    checked: "2026-09-27"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    tier: "paid"
+    plan: "Pay-as-you-go"
+    notes: "Authtoken ACLs restrict what endpoints a token can create. Disabling or deleting a user blocks or revokes their authtokens and API keys."
+    source: "https://ngrok.com/docs/pricing-limits/how-ngrok-charges/"
+    checked: "2026-09-27"

@@ -1,0 +1,74 @@
+name: "Cloudflare"
+category: "infrastructure"
+website: "https://www.cloudflare.com"
+description: "Cloudflare provides CDN, DNS, security, and Zero Trust services managed from the Cloudflare dashboard."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "free"
+    plan: "Free"
+    notes: "Dashboard SSO is free on all plans for users with a custom email domain. It uses an identity provider set up in Cloudflare Zero Trust, which needs a Zero Trust organization (the Free tier works)."
+    source: "https://developers.cloudflare.com/fundamentals/manage-members/dashboard-sso/"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    tier: "free"
+    plan: "Free"
+    notes: "Once the SSO connector is enabled, everyone with that email domain must sign in through the IdP, including users who registered before SSO was set up."
+    source: "https://developers.cloudflare.com/fundamentals/manage-members/dashboard-sso/"
+    checked: "2026-09-27"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Dashboard SCIM is for Enterprise customers using Okta, Microsoft Entra, or Authentik. It adds and removes account members and syncs groups. Removing a user from the account needs the IdP to send active: false."
+    source: "https://developers.cloudflare.com/fundamentals/account/account-security/scim-setup/"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "supported"
+    notes: "Super Administrators can turn on 2FA Enforcement so all members must set up 2FA. The page doesn't name a plan for it."
+    source: "https://developers.cloudflare.com/fundamentals/user-profiles/2fa/"
+    checked: "2026-09-27"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "Users can add WebAuthn security keys or built-in authenticators such as Touch ID or Windows Hello as a 2FA method. The page doesn't name a plan for it."
+    source: "https://developers.cloudflare.com/fundamentals/user-profiles/2fa/"
+    checked: "2026-09-27"
+  audit_logs:
+    support: "supported"
+    retention: "18 months"
+    notes: "Audit Logs record user and system actions across the API and dashboard and are kept for 18 months. The UI covers the last 90 days, and the API or Logpush reaches the full period. Enterprise customers can use Logpush to keep logs longer."
+    source: "https://developers.cloudflare.com/fundamentals/account/account-security/audit-logs/"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "The dashboard SSO docs don't say whether accounts are created automatically on first SSO login."
+  domain_verification:
+    support: "supported"
+    tier: "free"
+    plan: "Free"
+    notes: "To set up dashboard SSO, you verify your email domain with a cloudflare_dashboard_sso DNS TXT record."
+    source: "https://developers.cloudflare.com/fundamentals/manage-members/dashboard-sso/"
+    checked: "2026-09-27"
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs list predefined roles, which are combined with scopes in policies. They don't describe creating new roles."
+  group_role_mapping:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Groups pushed from the IdP over SCIM become User Groups, and admins assign them policies that grant roles."
+    source: "https://developers.cloudflare.com/fundamentals/account/account-security/scim-setup/"
+    checked: "2026-09-27"
+  session_controls:
+    support: "undocumented"
+    notes: "The docs say dashboard sessions time out after 72 hours of inactivity by default, and users can revoke their own sessions. They don't describe admin session settings."
+  api_token_controls:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "On Enterprise accounts, Super Administrators can turn off API access for the whole account or for specific members. Any API token can also be limited by IP range and given an expiry date."
+    source: "https://developers.cloudflare.com/fundamentals/api/how-to/control-api-access/"
+    checked: "2026-09-27"

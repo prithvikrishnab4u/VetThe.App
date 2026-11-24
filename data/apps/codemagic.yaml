@@ -1,0 +1,46 @@
+name: "Codemagic"
+category: "development"
+website: "https://codemagic.io"
+description: "Codemagic is a CI/CD service for building, testing and publishing mobile apps."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML", "OIDC"]
+    notes: "The pricing page lists SSO login (OpenID, OAuth2 or SAML 2.0) as part of the Enterprise offering."
+    source: "https://docs.codemagic.io/billing/pricing/"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "Docs mention Enterprise SSO can limit access by geolocation, device and time range, but say nothing about requiring SSO for all members."
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Docs suggest turning on MFA at your OAuth provider (e.g. GitHub); there is no admin setting to require it."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "The pricing page lists an Audit Log Connector for Enterprise, with no further detail."
+    source: "https://docs.codemagic.io/billing/pricing/"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "The teams docs only describe the fixed Admin, Member and User roles."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"
+    notes: "Each user has a personal API token; the docs describe no admin controls over tokens."

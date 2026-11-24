@@ -1,0 +1,60 @@
+name: "Fivetran"
+category: "infrastructure"
+website: "https://www.fivetran.com"
+description: "Fivetran is a managed data movement platform that replicates data from SaaS apps and databases into warehouses and lakes."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML"]
+    notes: "SSO uses SAML with Okta, Entra ID, Google Workspace, OneLogin, PingOne, RSA or any SAML 2.0 provider. The docs don't name a plan, and the pricing page was not reachable from this session."
+    source: "https://fivetran.com/docs/getting-started/fivetran-dashboard/account-settings/sso"
+    checked: "2026-11-20"
+  sso_enforcement:
+    support: "supported"
+    notes: "Setting Required authentication type to SAML or Google OAuth stops users logging in with email and password."
+    source: "https://fivetran.com/docs/getting-started/fivetran-dashboard/account-settings/troubleshooting/users-bypass-sso"
+    checked: "2026-11-20"
+  scim:
+    support: "supported"
+    notes: "Okta SCIM creates users, updates name and role, and soft-deletes deactivated users. Group Push manages teams. Entra ID is also supported."
+    source: "https://fivetran.com/docs/getting-started/fivetran-dashboard/account-settings/scim/okta-scim"
+    checked: "2026-11-20"
+  mfa_enforcement:
+    support: "not_supported"
+    notes: "Fivetran says it doesn't support two-factor authentication for native Fivetran logins and points to SAML with the IdP's MFA instead."
+    source: "https://fivetran.com/docs/getting-started/fivetran-dashboard/account-settings/troubleshooting/use-two-factor-authentication"
+    checked: "2026-11-20"
+  phishing_resistant_mfa:
+    support: "not_supported"
+    notes: "Native Fivetran logins have no two-factor authentication at all, so no security keys or passkeys either."
+    source: "https://fivetran.com/docs/getting-started/fivetran-dashboard/account-settings/troubleshooting/use-two-factor-authentication"
+    checked: "2026-11-20"
+  audit_logs:
+    support: "supported"
+    notes: "The Fivetran Platform Connector delivers dashboard user actions and API calls to your destination. The separate Audit Trail table needs Enterprise or Business Critical."
+    source: "https://fivetran.com/docs/logs"
+    checked: "2026-11-20"
+  jit_provisioning:
+    support: "undocumented"
+    notes: "The SSO page doesn't say whether accounts are created on first sign-in."
+  domain_verification:
+    support: "undocumented"
+    notes: "The docs don't describe verifying an email domain."
+  custom_roles:
+    support: "supported"
+    notes: "RBAC offers standard roles plus custom roles that admins create. The page doesn't name the plan."
+    source: "https://fivetran.com/docs/getting-started/fivetran-dashboard/account-settings/role-based-access-control"
+    checked: "2026-11-20"
+  group_role_mapping:
+    support: "supported"
+    notes: "Okta Group Push creates, updates and deletes Fivetran teams and their membership. Team roles themselves are set in Fivetran, not mapped from groups."
+    source: "https://fivetran.com/docs/getting-started/fivetran-dashboard/account-settings/scim/okta-scim"
+    checked: "2026-11-20"
+  session_controls:
+    support: "undocumented"
+    notes: "The docs don't describe admin session controls."
+  api_token_controls:
+    support: "undocumented"
+    notes: "Admins manage service account API keys; the docs don't describe controls over keys individual users create."

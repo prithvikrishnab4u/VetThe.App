@@ -1,0 +1,70 @@
+name: "Weights & Biases"
+category: "development"
+website: "https://wandb.ai"
+description: "Platform for tracking, evaluating and managing machine learning experiments and models."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["OIDC"]
+    notes: "SSO is available on all Enterprise licenses. The SSO docs cover OIDC (plus LDAP for self-managed) and say SAML isn't supported. Multi-tenant Cloud customers set it up through W&B support."
+    source: "https://docs.wandb.ai/platform/hosting/iam/access-management/manage-organization"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM provisioning is listed as an Enterprise license feature. The SCIM API provisions and deprovisions users, and SCIM groups map to W&B teams."
+    source: "https://docs.wandb.ai/platform/hosting/enterprise-licenses"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    retention: "Not stated; W&B recommends exporting logs to long-term storage"
+    notes: "On Multi-tenant Cloud, audit logs are Enterprise-only and fetched through the API as JSON. Dedicated Cloud can also sync them to your own bucket."
+    source: "https://docs.wandb.ai/platform/hosting/monitoring-usage/audit-logging"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Auto-provisioning creates an account the first time a user with a matching email domain signs in through SSO, with the Member role by default. It can't be configured on Multi-tenant Cloud."
+    source: "https://docs.wandb.ai/platform/hosting/iam/access-management/manage-organization"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "supported"
+    notes: "Domain capture lets admins claim an email domain so new sign-ups from it join the org's default team. Not available on free or trial plans; a domain can belong to only one org."
+    source: "https://docs.wandb.ai/platform/hosting/iam/access-management/manage-organization"
+    checked: "2026-09-27"
+  custom_roles:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Admins build custom roles on top of the Viewer or Member role and add permissions; team admins assign them."
+    source: "https://docs.wandb.ai/platform/hosting/iam/access-management/manage-organization"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "undocumented"
+    notes: "IdP groups can set team membership (SCIM, or OIDC group claims on Dedicated Cloud/Self-Managed), but docs don't describe mapping groups to roles."
+  session_controls:
+    support: "partial"
+    notes: "Session length can be changed with the SESSION_LENGTH setting (default 720 hours), but only on Dedicated Cloud or Self-Managed, not Multi-tenant Cloud."
+    source: "https://docs.wandb.ai/platform/hosting/iam/advanced_env_vars"
+    checked: "2026-09-27"
+  api_token_controls:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Enterprise orgs on Multi-tenant Cloud can issue org API keys and block personal keys from reaching org resources. Dedicated Cloud and Self-Managed can turn off API key creation for members."
+    source: "https://docs.wandb.ai/platform/hosting/iam/api-keys"
+    checked: "2026-09-27"

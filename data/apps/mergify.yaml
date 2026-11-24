@@ -1,0 +1,44 @@
+name: "Mergify"
+category: "development"
+website: "https://mergify.com"
+description: "Mergify is a merge queue and CI automation service for GitHub pull requests."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "partial"
+    notes: "Sign-in is only through GitHub OAuth, and you can't connect your identity provider to Mergify directly. SAML SSO set up on your GitHub organization applies to Mergify."
+    source: "https://docs.mergify.com/security/"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "partial"
+    notes: "To enforce SSO, the docs say to enforce SAML SSO on your GitHub organization; there's no Mergify-side setting."
+    source: "https://docs.mergify.com/security/"
+    checked: "2026-09-27"
+  scim:
+    support: "undocumented"
+    notes: "Mergify has no identity system of its own; access and roles come from GitHub."
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Login goes through GitHub; the docs don't mention MFA."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+    notes: "The Activity Log covers pull request and queue events, not admin or user actions."
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "Roles come from GitHub. On Enterprise, owners can hand out four fixed delegated admin roles (Billing, CI, Integrations, Delegation); custom roles aren't described."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "Application keys belong to the GitHub account, not a person, and are scoped to admin or ci; deleting the application in the dashboard revokes the key."
+    source: "https://docs.mergify.com/api/usage/"
+    checked: "2026-09-27"

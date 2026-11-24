@@ -1,0 +1,59 @@
+name: "Chromatic"
+category: "development"
+website: "https://www.chromatic.com"
+description: "Chromatic is a visual testing and review service for UI components built with Storybook, Playwright or Cypress."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML"]
+    notes: "SSO is available only on the Enterprise plan and works with any SAML 2.0 identity provider; Chromatic enables it on the account and users sign in through a custom subdomain."
+    source: "https://chromatic.com/docs/access/sso"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Once SSO is on, every account collaborator has to sign in through SAML, and accounts with SSO don't allow external collaborators outside the SSO flow."
+    source: "https://chromatic.com/docs/access/sso"
+    checked: "2026-09-27"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "SCIM pushes profiles and groups from the IdP, can assign roles, and removes access when the IdP disables someone; groups become Teams."
+    source: "https://chromatic.com/docs/access/sso"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+  jit_provisioning:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "JIT provisioning creates a profile the first time someone signs in through SSO."
+    source: "https://chromatic.com/docs/access/sso"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+    notes: "Chromatic Support manages an allow list of email domains for SSO sign-in; verifying domain ownership isn't described."
+  custom_roles:
+    support: "undocumented"
+    notes: "The docs describe fixed account and project roles and don't mention custom roles."
+  group_role_mapping:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Directory groups map to account roles (set up by Chromatic Support), and SCIM-synced Teams can grant project roles."
+    source: "https://chromatic.com/docs/access/sso"
+    checked: "2026-09-27"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"

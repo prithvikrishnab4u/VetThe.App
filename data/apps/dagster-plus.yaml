@@ -1,0 +1,60 @@
+name: "Dagster+"
+category: "development"
+website: "https://dagster.io"
+description: "Managed cloud platform for running and observing Dagster data pipelines."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    plan: "Pro"
+    protocols: ["SAML"]
+    notes: "SAML SSO needs a Pro plan. There are setup guides for Okta, Entra ID, Google Workspace, OneLogin and PingOne."
+    source: "https://docs.dagster.io/deployment/dagster-plus/authentication-and-access-control/sso/okta-sso"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+    notes: "The SSO guides don't say whether password or social login can be turned off."
+  scim:
+    support: "supported"
+    plan: "Pro"
+    notes: "SCIM works with Okta and Entra ID. It creates, updates and removes users and pushes IdP groups as teams."
+    source: "https://docs.dagster.io/deployment/dagster-plus/authentication-and-access-control/scim/okta-scim"
+    checked: "2026-09-27"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "The Dagster+ access-control docs don't mention MFA."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    plan: "Pro"
+    notes: "Pro organization admins can view and filter the audit log in the UI or pull it with the GraphQL API. It covers logins, token changes, permission changes, secrets and code locations."
+    source: "https://docs.dagster.io/deployment/dagster-plus/authentication-and-access-control/rbac/audit-logs"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "supported"
+    plan: "Pro"
+    notes: "New users signing in through SSO for the first time get a default role, which is Viewer unless you set sso_default_role. Setting it to NO_ACCESS stops accounts being created on first login."
+    source: "https://docs.dagster.io/deployment/dagster-plus/authentication-and-access-control/scim"
+    checked: "2026-09-27"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "supported"
+    notes: "Admins can create custom roles for deployments or the organization from the Roles tab. The page doesn't say which plan this needs."
+    source: "https://docs.dagster.io/deployment/dagster-plus/authentication-and-access-control/rbac/user-roles-permissions"
+    checked: "2026-09-27"
+  group_role_mapping:
+    support: "supported"
+    plan: "Pro"
+    notes: "SCIM syncs IdP groups to Dagster+ teams, and you give those teams roles in Dagster+. SCIM doesn't set roles directly."
+    source: "https://docs.dagster.io/deployment/dagster-plus/authentication-and-access-control/scim"
+    checked: "2026-09-27"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "supported"
+    notes: "Organization Admins can revoke any user's token and set which deployments each agent token can reach. Nobody can create or view another user's token. The docs don't mention token expiry."
+    source: "https://docs.dagster.io/deployment/dagster-plus/management/tokens/user-tokens"
+    checked: "2026-09-27"

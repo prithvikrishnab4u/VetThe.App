@@ -1,0 +1,43 @@
+name: "Highlight.io"
+category: "development"
+website: "https://www.highlight.io"
+description: "Highlight.io is an open-source observability platform for session replay, error monitoring, logging and tracing."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    protocols: ["SAML"]
+    notes: "The pricing page lists \"SAML & SSO\" as an Enterprise plan feature, so you can manage your team with your existing tooling."
+    source: "https://www.highlight.io/pricing"
+    checked: "2026-09-27"
+  sso_enforcement:
+    support: "undocumented"
+  scim:
+    support: "undocumented"
+  mfa_enforcement:
+    support: "undocumented"
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "The pricing page lists \"RBAC & audit logs\" as an Enterprise plan feature. Retention isn't stated."
+    source: "https://www.highlight.io/pricing"
+    checked: "2026-09-27"
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "undocumented"
+  custom_roles:
+    support: "undocumented"
+    notes: "The Enterprise plan mentions RBAC and fine-grained access controls, but nothing says you can create your own roles."
+  group_role_mapping:
+    support: "undocumented"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"

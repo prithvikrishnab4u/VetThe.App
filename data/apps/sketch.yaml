@@ -1,0 +1,66 @@
+name: "Sketch"
+category: "design"
+website: "https://sketch.com"
+description: "Sketch is a design tool with a Mac app and a web app. Values here cover how members sign in to a Sketch Workspace and how Workspace admins manage them."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    plan: "Professional"
+    protocols: ["SAML"]
+    notes: "SAML 2.0 SSO works with IdPs such as Google, Okta, OneLogin, Azure and Ping for both the Mac and web apps. The pricing page lists SSO on Professional, a self-serve plan, and above."
+    source: "https://www.sketch.com/pricing/"
+    checked: "2026-11-24"
+  sso_enforcement:
+    support: "supported"
+    tier: "paid"
+    plan: "Professional"
+    notes: "In an SSO Workspace, only users given access through the IdP can sign in, and other people can't be invited; they need an IdP account and the Workspace shortname."
+    source: "https://www.sketch.com/docs/getting-started/single-sign-on/sso-and-provisioning/"
+    checked: "2026-11-24"
+  scim:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise or Private Cloud"
+    notes: "SCIM lets the IdP create, update and deactivate Sketch accounts. It's on the Enterprise and Private Cloud plans, which are sold through sales."
+    source: "https://www.sketch.com/docs/getting-started/single-sign-on/scim-provisioning/"
+    checked: "2026-11-24"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Each member can turn on 2FA with an authenticator app, but the docs reached don't describe admins requiring it."
+  phishing_resistant_mfa:
+    support: "undocumented"
+    notes: "The 2FA docs describe authenticator app codes only, with no mention of security keys or passkeys."
+  audit_logs:
+    support: "undocumented"
+    notes: "The Workspace settings and pricing pages reached don't mention an audit log."
+  jit_provisioning:
+    support: "supported"
+    tier: "paid"
+    plan: "Professional"
+    notes: "Sketch's SAML SSO includes JIT provisioning: the first successful sign-in through the IdP creates an account with membership of the Workspace that IdP belongs to."
+    source: "https://www.sketch.com/docs/getting-started/single-sign-on/sso-and-provisioning/"
+    checked: "2026-11-24"
+  domain_verification:
+    support: "undocumented"
+    notes: "The SSO docs identify a Workspace by a shortname and don't describe verifying an email domain."
+  custom_roles:
+    support: "not_supported"
+    notes: "Workspace members are Viewers, Editors or Guests, with Admins managing settings. Editors can limit editing on individual documents, but new roles can't be defined."
+    source: "https://www.sketch.com/docs/interface-and-settings/workspace-and-account-settings/editors-viewers-and-guests/"
+    checked: "2026-11-24"
+  group_role_mapping:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise or Private Cloud"
+    notes: "With SCIM, IdP groups (for example Sketch-editors and Sketch-viewers in Okta) decide whether synced users get Editor or Viewer access."
+    source: "https://www.sketch.com/docs/getting-started/single-sign-on/scim-provisioning/okta/"
+    checked: "2026-11-24"
+  session_controls:
+    support: "undocumented"
+    notes: "Members can review their own sessions and sign out of all of them, but the docs reached don't describe admin controls over session length or signing others out."
+  api_token_controls:
+    support: "undocumented"
+    notes: "The docs reached don't describe API tokens or admin controls over them."

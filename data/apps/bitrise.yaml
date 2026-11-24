@@ -1,0 +1,56 @@
+name: "Bitrise"
+category: "development"
+website: "https://bitrise.io"
+description: "Bitrise is a mobile CI/CD platform for building, testing and releasing mobile apps."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    tier: "paid"
+    protocols: ["SAML"]
+    notes: "SAML SSO is part of the paid plans and is only available on select plans; downgrading to a free plan removes it."
+    source: "https://docs.bitrise.io/en/bitrise-ci/getting-started/migrating-to-bitrise/migrating-from-jenkins-to-bitrise"
+    checked: "2026-09-28"
+  sso_enforcement:
+    support: "supported"
+    notes: "The Enforce SAML SSO option makes SAML SSO the only way to log in or sign up to the workspace."
+    source: "https://docs.bitrise.io/en/bitrise-platform/accounts/saml-sso-in-bitrise/configuring-saml-sso-on-bitrise"
+    checked: "2026-09-28"
+  scim:
+    support: "supported"
+    notes: "SCIM provisioning works with Okta and Microsoft Entra ID and requires a verified domain."
+    source: "https://docs.bitrise.io/en/bitrise-platform/accounts/saml-sso-in-bitrise/configuring-scim"
+    checked: "2026-09-28"
+  mfa_enforcement:
+    support: "undocumented"
+    notes: "Docs describe per-user two-factor authentication only, with no admin enforcement setting."
+  phishing_resistant_mfa:
+    support: "undocumented"
+  audit_logs:
+    support: "undocumented"
+    notes: "The custom roles FAQ says a dedicated audit log view is not available yet."
+  jit_provisioning:
+    support: "undocumented"
+  domain_verification:
+    support: "supported"
+    notes: "Domains are verified by adding a DNS TXT record; verification can take up to 72 hours."
+    source: "https://docs.bitrise.io/en/bitrise-platform/accounts/saml-sso-in-bitrise/configuring-saml-sso-on-bitrise"
+    checked: "2026-09-28"
+  custom_roles:
+    support: "supported"
+    tier: "enterprise"
+    plan: "Enterprise"
+    notes: "Custom roles are an Enterprise-plan feature and can be assigned to workspace groups."
+    source: "https://docs.bitrise.io/en/bitrise-platform/workspaces/collaboration-and-permissions-in-workspaces/custom-roles/custom-roles-faq"
+    checked: "2026-09-28"
+  group_role_mapping:
+    support: "partial"
+    notes: "The SCIM roles attribute can assign built-in workspace roles (Viewer, Contributor, Manager) and the RDE product role, but not custom or project-level roles."
+    source: "https://docs.bitrise.io/en/bitrise-platform/accounts/saml-sso-in-bitrise/configuring-scim"
+    checked: "2026-09-28"
+  session_controls:
+    support: "undocumented"
+  api_token_controls:
+    support: "undocumented"
+    notes: "Docs cover role-scoped workspace API tokens with expiration, but not admin visibility or revocation of users' personal access tokens."

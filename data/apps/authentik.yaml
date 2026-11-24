@@ -1,0 +1,67 @@
+name: "authentik"
+category: "security"
+website: "https://goauthentik.io"
+description: "authentik is an open-source identity provider for single sign-on, user provisioning and access control, with a paid Enterprise edition."
+status: "draft"
+
+capabilities:
+  sso:
+    support: "supported"
+    protocols: ["SAML", "OIDC"]
+    notes: "authentik can sign users in through an external identity provider using a SAML source or an OAuth/OpenID Connect source."
+    source: "https://docs.goauthentik.io/users-sources/sources/protocols/saml/"
+    checked: "2026-09-28"
+  sso_enforcement:
+    support: "supported"
+    notes: "If no user fields are selected on the Identification stage, only the configured sources are shown, and with a single source users are redirected to it automatically."
+    source: "https://docs.goauthentik.io/add-secure-apps/flows-stages/stages/identification/"
+    checked: "2026-09-28"
+  scim:
+    support: "supported"
+    notes: "The SCIM source lets an identity provider such as Entra ID, Google Workspace or Okta create, update and delete users and groups in authentik."
+    source: "https://docs.goauthentik.io/users-sources/sources/protocols/scim/"
+    checked: "2026-09-28"
+  mfa_enforcement:
+    support: "supported"
+    notes: "The Authenticator validation stage can deny users who have no authenticator, or force them to set one up."
+    source: "https://docs.goauthentik.io/add-secure-apps/flows-stages/stages/authenticator_validate/"
+    checked: "2026-09-28"
+  phishing_resistant_mfa:
+    support: "supported"
+    notes: "The WebAuthn stage supports security keys like YubiKey and Titan, platform authenticators and passkeys, including passwordless passkey login."
+    source: "https://docs.goauthentik.io/add-secure-apps/flows-stages/stages/authenticator_webauthn/"
+    checked: "2026-09-28"
+  audit_logs:
+    support: "supported"
+    retention: "365 days by default (configurable)"
+    notes: "Every event is logged and kept for 365 days by default. Enhanced audit logging with before/after diffs is an Enterprise feature."
+    source: "https://docs.goauthentik.io/sys-mgmt/events/"
+    checked: "2026-09-28"
+  jit_provisioning:
+    support: "supported"
+    notes: "New users signing in through a SAML or OAuth source are created through the source's enrollment flow."
+    source: "https://docs.goauthentik.io/users-sources/sources/protocols/saml/"
+    checked: "2026-09-28"
+  domain_verification:
+    support: "undocumented"
+    notes: "The docs don't describe verifying ownership of an email domain."
+  custom_roles:
+    support: "supported"
+    notes: "Roles are collections of permissions that admins create and assign to users or groups."
+    source: "https://docs.goauthentik.io/users-sources/roles/"
+    checked: "2026-09-28"
+  group_role_mapping:
+    support: "supported"
+    notes: "Roles can be assigned to groups, and group members inherit them. Groups can be synced from sources such as LDAP and SCIM."
+    source: "https://docs.goauthentik.io/users-sources/roles/"
+    checked: "2026-09-28"
+  session_controls:
+    support: "supported"
+    notes: "The User login stage sets session duration and can terminate a user's other sessions on login."
+    source: "https://docs.goauthentik.io/add-secure-apps/flows-stages/stages/user_login/"
+    checked: "2026-09-28"
+  api_token_controls:
+    support: "supported"
+    notes: "Admins can review tokens and app passwords under Directory > Tokens and App passwords, and viewing token values is controlled by permissions."
+    source: "https://docs.goauthentik.io/security/security-hardening/"
+    checked: "2026-09-28"
